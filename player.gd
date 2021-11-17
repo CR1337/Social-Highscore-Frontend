@@ -67,3 +67,9 @@ func _on_InputUI_up_pressed():
 
 func _on_InputUI_up_released():
 	up_pressed = false
+
+
+func _on_NativeCameraController_got_image(image):
+	var texture = ImageTexture.new()
+	texture.create_from_image(image, 0)
+	$Sprite.texture = texture

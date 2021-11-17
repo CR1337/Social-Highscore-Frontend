@@ -11,6 +11,7 @@ signal right_released
 signal action_pressed
 signal action_released
 
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -67,8 +68,14 @@ func _on_action_button_released():
 
 
 func _on_phone_button_pressed():
-	pass # Replace with function body.
+	var phoneMenu = preload("res://SmartphoneMenu.tscn").instance()
+	add_child(phoneMenu)
 
 
 func _on_phone_button_released():
 	pass # Replace with function body.
+
+
+func _on_menu_button_pressed():
+	var gameMenu = preload("res://GameMenu.tscn").instance()
+	add_child(gameMenu)

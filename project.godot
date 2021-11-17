@@ -13,6 +13,16 @@ config_version=4
 config/name="SocialHighscoreFrontend"
 run/main_scene="res://mainScene.tscn"
 config/icon="res://icon.png"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
+
+[display]
+
+window/size/width=600
+window/size/height=1024
+window/handheld/orientation="portrait"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [physics]
 
