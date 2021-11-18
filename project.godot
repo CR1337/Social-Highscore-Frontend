@@ -13,7 +13,6 @@ config_version=4
 config/name="SocialHighscoreFrontend"
 run/main_scene="res://mainScene.tscn"
 config/icon="res://icon.png"
-config/auto_accept_quit=false
 config/quit_on_go_back=false
 
 [display]
