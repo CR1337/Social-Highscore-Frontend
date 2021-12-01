@@ -1,23 +1,41 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://InputUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://NativeCameraController.gd" type="Script" id=3]
+[ext_resource path="res://TestArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://AreaManager.gd" type="Script" id=5]
+[ext_resource path="res://TestArea2.tscn" type="PackedScene" id=6]
 
 [node name="mainScene" type="Node2D"]
 
 [node name="NativeCameraController" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -54.2144, -284.478 )
-
-[node name="InputUI" parent="." instance=ExtResource( 2 )]
-position = Vector2( -4.17731, 8.83795 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -2, -2 )
 current = true
+
+[node name="TestArea" parent="." instance=ExtResource( 4 )]
+position = Vector2( -385.536, -682.877 )
+leaveLeftAreaPath = NodePath("../TestArea2")
+leaveLeftPlayerPosition = Vector2( 5.5, -3 )
+
+[node name="InputUI" parent="." instance=ExtResource( 2 )]
+position = Vector2( -4.17731, 183.838 )
+
+[node name="AreaManager" type="Node" parent="."]
+script = ExtResource( 5 )
+playerPath = NodePath("../player")
+startArea = NodePath("../TestArea")
+
+[node name="TestArea2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 417.194, -680.367 )
+leaveRightAreaPath = NodePath("../TestArea")
+leaveRightPlayerPosition = Vector2( -5.5, -5 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4.26776, -141.773 )
 
 [connection signal="got_image" from="NativeCameraController" to="player" method="_on_NativeCameraController_got_image"]
 [connection signal="action_pressed" from="InputUI" to="NativeCameraController" method="_take_image"]
