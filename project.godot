@@ -32,6 +32,7 @@ window/stretch/aspect="keep"
 kame=false
 kamera=false
 screen=false
+Collision=false
 
 [physics]
 

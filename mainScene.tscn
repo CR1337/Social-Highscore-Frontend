@@ -27,9 +27,9 @@ playerPath = NodePath("../player")
 startArea = NodePath("../TestArea")
 
 [node name="TestArea2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 883.358, -665.535 )
+position = Vector2( -1179.73, -685.778 )
 leaveRightAreaPath = NodePath("../TestArea")
-leaveRightPlayerPosition = Vector2( -5.5, -5 )
+leaveRightPlayerPosition = Vector2( -5.5, -3 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4.26776, -141.773 )

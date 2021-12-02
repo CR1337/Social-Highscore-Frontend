@@ -123,6 +123,7 @@ tile_data = PoolIntArray( 0, 0, 65536, 1, 0, 65536, 2, 0, 65536, 3, 0, 65536, 4,
 position = Vector2( 736.653, 510.056 )
 scale = Vector2( 0.9, 2 )
 is_activated_by_collision = true
+walkable = true
 collisionTriggerPath = NodePath("../LeaveRightTrigger")
 
 [node name="LeaveRightTrigger" type="Node" parent="."]

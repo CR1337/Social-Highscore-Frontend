@@ -20,7 +20,6 @@ position = Vector2( 0.631386, -0.56123 )
 shape = SubResource( 1 )
 
 [node name="RayCast2DMovement" type="RayCast2D" parent="."]
-collide_with_areas = true
 
 [node name="Tween" type="Tween" parent="."]
 
