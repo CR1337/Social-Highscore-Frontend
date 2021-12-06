@@ -37,7 +37,7 @@ speed = 4
 movement_cooldown = 0.0
 
 [node name="InputUI" parent="." instance=ExtResource( 2 )]
-position = Vector2( -4.17731, 183.838 )
+position = Vector2( 0, 0 )
 
 [connection signal="got_image" from="NativeCameraController" to="player" method="_on_NativeCameraController_got_image"]
 [connection signal="action_pressed" from="InputUI" to="NativeCameraController" method="_take_image"]
