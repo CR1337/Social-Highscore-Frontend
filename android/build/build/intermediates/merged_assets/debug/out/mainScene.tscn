@@ -2,15 +2,12 @@
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://InputUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://NativeCameraController.gd" type="Script" id=3]
+[ext_resource path="res://DemoFaceScene.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TestArea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://AreaManager.gd" type="Script" id=5]
 [ext_resource path="res://TestArea2.tscn" type="PackedScene" id=6]
 
 [node name="mainScene" type="Node2D"]
-
-[node name="NativeCameraController" type="Node" parent="."]
-script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -2, -2 )
@@ -27,18 +24,20 @@ playerPath = NodePath("../player")
 startArea = NodePath("../TestArea")
 
 [node name="TestArea2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 883.358, -665.535 )
+position = Vector2( -1179.73, -685.778 )
 leaveRightAreaPath = NodePath("../TestArea")
-leaveRightPlayerPosition = Vector2( -5.5, -5 )
+leaveRightPlayerPosition = Vector2( -5.5, -3 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4.26776, -141.773 )
+speed = 4
 
 [node name="InputUI" parent="." instance=ExtResource( 2 )]
-position = Vector2( -4.17731, 183.838 )
+position = Vector2( 0, 0 )
 
-[connection signal="got_image" from="NativeCameraController" to="player" method="_on_NativeCameraController_got_image"]
-[connection signal="action_pressed" from="InputUI" to="NativeCameraController" method="_take_image"]
+[node name="DemoFaceScene" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1122.78, 25.3451 )
+
 [connection signal="down_pressed" from="InputUI" to="player" method="_on_InputUI_down_pressed"]
 [connection signal="down_released" from="InputUI" to="player" method="_on_InputUI_down_released"]
 [connection signal="left_pressed" from="InputUI" to="player" method="_on_InputUI_left_pressed"]

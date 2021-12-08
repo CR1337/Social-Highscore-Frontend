@@ -4,9 +4,6 @@ extends Area2D
 export var speed = 3
 var tile_size = 64
 
-export var movement_cooldown = 0.2
-var movement_cooldown_counter = 0
-
 onready var movementRay = $RayCast2DMovement
 onready var triggerRay = $RayCast2DTrigger
 
@@ -21,6 +18,24 @@ var down_pressed = false
 var left_pressed = false
 var right_pressed = false
 
+var looking_direction: Vector2
+var idle_frame_idxs = {
+	Vector2.DOWN: 1,
+	Vector2.LEFT: 4,
+	Vector2.RIGHT: 7,
+	Vector2.UP: 10,
+}
+var movement_frame_idxs = {
+	Vector2.DOWN: [0, 2],
+	Vector2.LEFT: [3, 5],
+	Vector2.RIGHT: [6, 8],
+	Vector2.UP: [9, 11],
+}
+var animation_counter = 0
+var movement_frame_idx = 0
+export var animation_period = 0.25
+
+
 var dx = 0
 var dy = 0
 
@@ -30,20 +45,33 @@ func _ready():
 	position = position.snapped(Vector2.ONE * tile_size)
 	position += Vector2.LEFT * tile_size/2
 	
+	looking_direction = Vector2.DOWN
+	
 	
 func _process(delta):
-	movement_cooldown_counter -= delta
-	if movement_cooldown_counter < 0:
-		movement_cooldown_counter = 0
-	if movement_cooldown_counter == 0 and not tween.is_active():
+	if not tween.is_active():
 		if down_pressed:
+			looking_direction = Vector2.DOWN
 			move('down')
 		if up_pressed:
+			looking_direction = Vector2.UP
 			move('up')
 		if left_pressed:
+			looking_direction = Vector2.LEFT
 			move('left')
 		if right_pressed:
+			looking_direction = Vector2.RIGHT
 			move('right')
+		$Sprite.frame = idle_frame_idxs[looking_direction]
+	
+	else:
+		animation_counter += delta
+		if animation_counter > animation_period:
+			animation_counter = 0
+			movement_frame_idx = (movement_frame_idx + 1) % len(movement_frame_idxs[looking_direction])
+			$Sprite.frame = movement_frame_idxs[looking_direction][movement_frame_idx]
+
+		
 	
 func move_tween(dir):
 	tween.interpolate_property(self, "position",
@@ -52,8 +80,6 @@ func move_tween(dir):
 	tween.start()
 
 func move(dir):
-	movement_cooldown_counter = movement_cooldown
-	
 	triggerRay.cast_to = inputs[dir] * tile_size
 	triggerRay.force_raycast_update()		
 	if triggerRay.is_colliding():
