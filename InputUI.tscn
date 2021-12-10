@@ -19,37 +19,41 @@ position = Vector2( -4.30763, 0.561867 )
 script = ExtResource( 4 )
 
 [node name="up_button" type="TouchScreenButton" parent="."]
-position = Vector2( -249.735, 323.778 )
+position = Vector2( -233.113, 358.019 )
+scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 9 )
 pressed = ExtResource( 6 )
 
 [node name="down_button" type="TouchScreenButton" parent="."]
-position = Vector2( -248.259, 550.601 )
+position = Vector2( -232.51, 560.993 )
+scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 11 )
 pressed = ExtResource( 8 )
 
 [node name="left_button" type="TouchScreenButton" parent="."]
-position = Vector2( -364.458, 438.994 )
+position = Vector2( -334.286, 459.495 )
+scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 1 )
 pressed = ExtResource( 10 )
 
 [node name="right_button" type="TouchScreenButton" parent="."]
-position = Vector2( -129.55, 440.538 )
+position = Vector2( -131.597, 459.796 )
+scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 13 )
 pressed = ExtResource( 2 )
 
 [node name="action_button" type="TouchScreenButton" parent="."]
-position = Vector2( 244.596, 546.734 )
+position = Vector2( 204.908, 508.13 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 7 )
 
 [node name="phone_button" type="TouchScreenButton" parent="."]
-position = Vector2( 169.3, 383.405 )
+position = Vector2( 74.176, 376.299 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 3 )
 
 [node name="menu_button" type="TouchScreenButton" parent="."]
-position = Vector2( -379.419, -680.565 )
+position = Vector2( -369.297, 363.299 )
 scale = Vector2( 0.498869, 0.498869 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 5 )

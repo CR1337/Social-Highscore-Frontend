@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://InputUI.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://AreaManager.gd" type="Script" id=5]
 [ext_resource path="res://TestArea2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ShaderRect.gd" type="Script" id=7]
+[ext_resource path="res://DebugLabel.gd" type="Script" id=8]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -61,6 +62,17 @@ margin_right = 382.0
 margin_bottom = 338.0
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DebugLabel" type="Label" parent="."]
+margin_left = -125.0
+margin_top = 660.0
+margin_right = 375.0
+margin_bottom = 674.0
+text = "Debug Message"
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
