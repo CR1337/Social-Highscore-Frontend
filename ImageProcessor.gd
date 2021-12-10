@@ -49,7 +49,7 @@ func _got_image(image, rawImage):
 	match job_type_and_handle[0]:
 		JOB_TYPE.ANALYZE:
 			endpoint = "analyze"
-			body = {'img': b64_image, 'angle': 90}
+			body = {'img': b64_image, 'angle': 90, 'handle': job_type_and_handle[1]}
 		JOB_TYPE.AUTHENTICATE:
 			endpoint = "authenticate"
 			body = {}
