@@ -71,3 +71,4 @@ pressed = ExtResource( 5 )
 [connection signal="pressed" from="phone_button" to="." method="_on_phone_button_pressed"]
 [connection signal="released" from="phone_button" to="." method="_on_phone_button_released"]
 [connection signal="pressed" from="menu_button" to="." method="_on_menu_button_pressed"]
+[connection signal="released" from="menu_button" to="." method="_on_menu_button_released"]

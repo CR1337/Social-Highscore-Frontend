@@ -20,6 +20,7 @@ config/quit_on_go_back=false
 EventBus="*res://EventBus.gd"
 NativeCameraController="*res://NativeCameraController.gd"
 ImageProcessor="*res://ImageProcessor.gd"
+InputBus="*res://InputBus.gd"
 
 [display]
 

@@ -71,17 +71,7 @@ margin_left = -125.0
 margin_top = 660.0
 margin_right = 375.0
 margin_bottom = 674.0
-text = "Debug Message"
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="down_pressed" from="InputUI" to="player" method="_on_InputUI_down_pressed"]
-[connection signal="down_released" from="InputUI" to="player" method="_on_InputUI_down_released"]
-[connection signal="left_pressed" from="InputUI" to="player" method="_on_InputUI_left_pressed"]
-[connection signal="left_released" from="InputUI" to="player" method="_on_InputUI_left_released"]
-[connection signal="right_pressed" from="InputUI" to="player" method="_on_InputUI_right_pressed"]
-[connection signal="right_released" from="InputUI" to="player" method="_on_InputUI_right_released"]
-[connection signal="up_pressed" from="InputUI" to="player" method="_on_InputUI_up_pressed"]
-[connection signal="up_released" from="InputUI" to="player" method="_on_InputUI_up_released"]
