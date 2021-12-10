@@ -49,7 +49,7 @@ func _process(delta):
 func move_tween():
 	tween.interpolate_property(self, "position",
 		position, position + looking_direction * tile_size,
-		1.0 / speed, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+		1.0 / speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 
 func move():

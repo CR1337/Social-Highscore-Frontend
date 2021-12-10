@@ -47,6 +47,7 @@ leaveRightPlayerPosition = Vector2( -5.5, -3 )
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4.26776, -141.773 )
 speed = 4
+animation_period = 0.15
 
 [node name="InputUI" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
