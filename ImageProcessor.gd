@@ -7,9 +7,9 @@ enum JOB_TYPE {
 	IDLE
 }
 
-var base_url = "http://78.47.102.251:80/"
+# var base_url = "http://78.47.102.251:80/"
 # var base_url = "http://127.0.0.1:5000/"
-# var base_url = "http://192.168.0.135:5000/"
+var base_url = "http://192.168.0.135:5000/"
 var http_request
 
 var angle: int
@@ -17,7 +17,7 @@ var angle: int
 var busy = false
 var current_job_type = JOB_TYPE.IDLE
 var current_job_id = null
-var next_job_id = 0
+var next_job_id = 1
 
 var image_dict: Dictionary
 
@@ -28,7 +28,7 @@ var b64_reference_image: String
 var reference_image: Image
 
 func _ready():
-	angle = 90  # FIXME: only for debugging
+	angle = 0  # FIXME: only for debugging
 	NativeCameraController.connect("got_image", self, "_on_got_image")
 	http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -56,6 +56,8 @@ func _do_job(job_type):
 	return current_job_id
 
 func _on_got_image(image, rawImage):
+	print(rawImage.size())
+	busy = false
 	var b64_image = "data:image/jpeg;base64," + Marshalls.raw_to_base64(rawImage)
 	var endpoint
 	var body
@@ -74,7 +76,7 @@ func _on_got_image(image, rawImage):
 			do_request = false
 			
 	if do_request:
-		image_dict[current_job_id] = image
+		image_dict[str(current_job_id)] = image
 		var error = http_request.request(base_url + endpoint, [], false, HTTPClient.METHOD_POST, JSON.print(body))
 		if error != OK:
 			print("Request Error!")
@@ -87,10 +89,12 @@ func _on_got_image(image, rawImage):
 	current_job_id = null
 	
 func _handle_response(response, body):
-	var parsed_response = JSON.parse(body.get_string_from_utf8())
+	var parsed_response = JSON.parse(body.get_string_from_utf8()).result
 	var job_id = parsed_response['job_id']
-	var image = image_dict[job_id]
-	emit_signal("image_processing_done", response, job_id, image)
+	print(job_id)
+	print(image_dict)
+	var image = image_dict[str(job_id)]
+	emit_signal("image_processing_done", parsed_response, job_id, image)
 	image_dict.erase(job_id)
 	return parsed_response
 	
@@ -104,3 +108,4 @@ func _on_request_completed(result, response_code, headers, body):
 		_:
 			EventBus.emit_signal("debug_error", str(response_code))
 			emit_signal("image_processing_error", response_code)
+			

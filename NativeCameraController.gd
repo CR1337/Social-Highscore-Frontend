@@ -1,13 +1,21 @@
 extends Node
 
-var dummy:PoolByteArray
+# FOR DEBUGGING ONLY:
+var debug_image: Image
+var raw_debug_image: PoolByteArray
 
 var imagePlugin
 signal got_image(image, rawImage)
+
 func _ready():
 	if Engine.has_singleton("GodotGetImage"):
 		imagePlugin = Engine.get_singleton("GodotGetImage")
 		imagePlugin.connect("image_request_completed", self, "_received_image") 
+
+	# FOR DEBUGGING ONLY:
+	raw_debug_image = Marshalls.base64_to_raw(Debug.b64_debug_image)
+	debug_image = Image.new()
+	debug_image.load_jpg_from_buffer(raw_debug_image)
 
 func _received_image(dict):
 	EventBus.emit_signal("debug_error", dict)
@@ -25,4 +33,5 @@ func take_image():
 		imagePlugin.getCameraImage()
 	else:
 		EventBus.emit_signal("debug_error", "plugin not loaded")
-		emit_signal("got_image", dummy)
+		print(raw_debug_image.size())
+		emit_signal("got_image", debug_image, raw_debug_image)
