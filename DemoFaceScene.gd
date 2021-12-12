@@ -16,7 +16,7 @@ func _ready():
 #	pass
 
 func trigger():
-	ImageProcessor.analyze(1)
+	ImageProcessor.analyze()
 	position = Vector2(0, 0)
 	
 func _image_processing_done(response, handle, image):

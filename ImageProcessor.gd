@@ -1,87 +1,106 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 enum JOB_TYPE {
 	ANALYZE,
-	AUTHENTICATE,
-	ANALYZE_AND_AUTHENTICATE
+	VERIFY,
+	REFERENCE_IMAGE,
+	IDLE
 }
-
-var job_queue: Array
-var request_queue: Array
 
 var base_url = "http://78.47.102.251:80/"
 # var base_url = "http://127.0.0.1:5000/"
 # var base_url = "http://192.168.0.135:5000/"
 var http_request
 
-signal image_processing_done(response, handle, image)
+var angle: int
 
-# Called when the node enters the scene tree for the first time.
+var busy = false
+var current_job_type = JOB_TYPE.IDLE
+var current_job_id = null
+var next_job_id = 0
+
+var image_dict: Dictionary
+
+signal image_processing_done(response, job_id, image)
+signal image_processing_error(response_code)
+
+var b64_reference_image: String
+var reference_image: Image
+
 func _ready():
-	NativeCameraController.connect("got_image", self, "_got_image")
+	angle = 90  # FIXME: only for debugging
+	NativeCameraController.connect("got_image", self, "_on_got_image")
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.connect("request_completed", self, "_on_request_completed")
 	
-func analyze(handle):
-	job_queue.push_front([JOB_TYPE.ANALYZE, handle])
-	NativeCameraController.take_image()
+func take_reference_image():
+	return _do_job(JOB_TYPE.REFERENCE_IMAGE)
 	
-func authenticate(handle):
-	job_queue.push_front([JOB_TYPE.AUTHENTICATE, handle])
-	NativeCameraController.take_image()
+func analyze():
+	return _do_job(JOB_TYPE.ANALYZE)
 	
-func analyze_and_authenticate(handle):
-	job_queue.push_front([JOB_TYPE.ANALYZE_AND_AUTHENTICATE, handle])
+func verify():
+	return _do_job(JOB_TYPE.VERIFY)
+	
+func _do_job(job_type):
+	if busy:
+		return null
+	if reference_image == null and job_type == JOB_TYPE.VERIFY:
+		return null
+	busy = true
+	current_job_type = job_type
+	current_job_id = next_job_id
+	next_job_id += 1
 	NativeCameraController.take_image()
+	return current_job_id
 
-func _got_image(image, rawImage):
-	var job_type_and_handle = job_queue.pop_back()
-	var endpoint
+func _on_got_image(image, rawImage):
 	var b64_image = "data:image/jpeg;base64," + Marshalls.raw_to_base64(rawImage)
+	var endpoint
 	var body
-	# TODO: Server also needs handle
-	match job_type_and_handle[0]:
+	var do_request = true
+	
+	match current_job_type:
 		JOB_TYPE.ANALYZE:
 			endpoint = "analyze"
-			body = {'img': b64_image, 'angle': 90, 'handle': job_type_and_handle[1]}
-		JOB_TYPE.AUTHENTICATE:
-			endpoint = "authenticate"
-			body = {}
-			# TODO: haw to handle the reference image?
-		JOB_TYPE.ANALYZE_AND_AUTHENTICATE:
-			endpoint = "analyze_and_authenticate"
-			body = {}
-	EventBus.emit_signal("debug_error", "Now request")	
-	var error = http_request.request(base_url + endpoint, [], false, HTTPClient.METHOD_POST, JSON.print(body))
-	print("BODY: ", to_json(body))
-	if error != OK:
-		print("Request Error!")
-		EventBus.emit_signal("debug_error", error)
-		return
-	else:
-		EventBus.emit_signal("debug_error", "Request OK")
-	request_queue.push_front([job_type_and_handle[0], job_type_and_handle[1], image])
+			body = {'img': b64_image, 'angle': angle, 'job_id': current_job_id}
+		JOB_TYPE.VERIFY:
+			endpoint = "verify"
+			body = {'img0': b64_image, 'img1': b64_reference_image, 'angle': angle, 'job_id': current_job_id}
+		JOB_TYPE.REFERENCE_IMAGE:
+			reference_image = image
+			b64_reference_image = b64_image
+			do_request = false
+			
+	if do_request:
+		image_dict[current_job_id] = image
+		var error = http_request.request(base_url + endpoint, [], false, HTTPClient.METHOD_POST, JSON.print(body))
+		if error != OK:
+			print("Request Error!")
+			EventBus.emit_signal("debug_error", error)
+			return
+		else:
+			EventBus.emit_signal("debug_error", "Request OK")
+			
+	current_job_type = JOB_TYPE.IDLE
+	current_job_id = null
 	
-			
+func _handle_response(response, body):
+	var parsed_response = JSON.parse(body.get_string_from_utf8())
+	var job_id = parsed_response['job_id']
+	var image = image_dict[job_id]
+	emit_signal("image_processing_done", response, job_id, image)
+	image_dict.erase(job_id)
+	return parsed_response
+	
 func _on_request_completed(result, response_code, headers, body):
-	EventBus.emit_signal("debug_error", "Request completed")
-	var job_type_handle_and_image = request_queue.pop_back()
-	if response_code != 200:
-		print("Response Error:", str(response_code))
-		return
-	elif result != HTTPRequest.RESULT_SUCCESS:
-		print("Result Error:", str(result))
-		return
-	var response = JSON.parse(body.get_string_from_utf8())
-	emit_signal("image_processing_done", response, job_type_handle_and_image[1], job_type_handle_and_image[2])	
-			
-			
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	match response_code:
+		200:
+			_handle_response(result, body)
+		400:
+			var response = _handle_response(result, body)
+			EventBus.emit_signal("debug_error", response['error'])
+		_:
+			EventBus.emit_signal("debug_error", str(response_code))
+			emit_signal("image_processing_error", response_code)
