@@ -1,0 +1,41 @@
+{
+    "texts": {
+        "0": "Hi",
+        "1": "Wie gehts?",
+        "2": "Tschüss!"
+    },
+    "answers": {
+        "0": "Auch Hi",
+        "1": "Hallo",
+        "2": "Ganz gut",
+        "3": "Schrecklich"
+    },
+    "graphs": {
+        "state0": {
+            "node0": {
+                "text": "0",
+                "answers": [
+                    {"aid": "0", "nid": "node1"},
+                    {"aid": "1", "nid": "node1"}
+                ],
+                "trigger_id": null,
+                "end": false
+            },
+            "node1": {
+                "text": "1",
+                "answers": [
+                    {"aid": "2", "nid": "node2"},
+                    {"aid": "3", "nid": "node2"}
+                ],
+                "trigger_id": null,
+                "end": false
+            },
+            "node2": {
+                "text": "2",
+                "answers": [],
+                "trigger_id": null,
+                "end": true
+            }
+        }
+    }
+}

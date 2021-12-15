@@ -1,0 +1,22 @@
+{
+    "state0": {
+        "sequence": [
+            {"direction": "left", "trigger_id": null},
+            {"direction": "right", "trigger_id": null},
+            {"direction": "up", "trigger_id": null},
+            {"direction": "down", "trigger_id": null},
+            {"direction": "wait", "trigger_id": "trigger0"}
+        ],
+        "repeats": 3
+    },
+    "state1": {
+        "sequence": [
+            {"direction": "left", "trigger_id": null},
+            {"direction": "right", "trigger_id": null},
+            {"direction": "up", "trigger_id": null},
+            {"direction": "down", "trigger_id": null},
+            {"direction": "wait", "trigger_id": "trigger1"}
+        ],
+        "repeats": "infinity"
+    }
+}
