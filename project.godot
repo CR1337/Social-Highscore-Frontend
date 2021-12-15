@@ -11,17 +11,17 @@ config_version=4
 [application]
 
 config/name="SocialHighscoreFrontend"
-run/main_scene="res://mainScene.tscn"
+run/main_scene="res://content/mainScene.tscn"
 config/icon="res://icon.png"
 config/quit_on_go_back=false
 
 [autoload]
 
-EventBus="*res://EventBus.gd"
-NativeCameraController="*res://NativeCameraController.gd"
-ImageProcessor="*res://ImageProcessor.gd"
-InputBus="*res://InputBus.gd"
-Debug="*res://Debug.gd"
+EventBus="*res://content/singletons/EventBus.gd"
+NativeCameraController="*res://content/singletons/NativeCameraController.gd"
+ImageProcessor="*res://content/singletons/ImageProcessor.gd"
+InputBus="*res://content/singletons/InputBus.gd"
+Debug="*res://content/singletons/Debug.gd"
 
 [display]
 

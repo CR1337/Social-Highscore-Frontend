@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://content/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://content/DemoFaceScene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://content/areas/testArea1/TestArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://content/singletons/AreaManager.gd" type="Script" id=5]
+[ext_resource path="res://content/areas/testArea2/TestArea2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://content/gfx/ShaderRect.gd" type="Script" id=7]
+[ext_resource path="res://content/gui/DebugLabel.gd" type="Script" id=8]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float opacity = 0.0;
+
+void fragment() {
+	COLOR = vec4(0.0, 0.0, 0.0, opacity);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/opacity = 0.0
+
+[node name="mainScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -2, -2 )
+current = true
+
+[node name="TestArea" parent="." instance=ExtResource( 4 )]
+position = Vector2( -385.536, -682.877 )
+leaveLeftAreaPath = NodePath("../TestArea2")
+leaveLeftPlayerPosition = Vector2( 5.5, -3 )
+
+[node name="AreaManager" type="Node" parent="."]
+script = ExtResource( 5 )
+playerPath = NodePath("../player")
+startArea = NodePath("../TestArea")
+shaderRectPath = NodePath("../ShaderRect")
+
+[node name="TestArea2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1179.73, -685.778 )
+leaveRightAreaPath = NodePath("../TestArea")
+leaveRightPlayerPosition = Vector2( -5.5, -3 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4.26776, -141.773 )
+speed = 4
+animation_period = 0.15
+
+[node name="InputUI" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+
+[node name="DemoFaceScene" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1122.78, 25.3451 )
+
+[node name="ShaderRect" type="ColorRect" parent="."]
+material = SubResource( 2 )
+margin_left = -386.0
+margin_top = -686.0
+margin_right = 382.0
+margin_bottom = 338.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DebugLabel" type="Label" parent="."]
+margin_left = -125.0
+margin_top = 660.0
+margin_right = 375.0
+margin_bottom = 674.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
