@@ -22,6 +22,7 @@ NativeCameraController="*res://content/singletons/NativeCameraController.gd"
 ImageProcessor="*res://content/singletons/ImageProcessor.gd"
 InputBus="*res://content/singletons/InputBus.gd"
 Debug="*res://content/singletons/Debug.gd"
+ViewportManager="*res://content/singletons/ViewportManager.gd"
 
 [display]
 

@@ -21,4 +21,4 @@ func _on_ExitGame_pressed():
 
 
 func _on_ContinueGame_pressed():
-	queue_free()
+	ViewportManager.change_to_transparent()

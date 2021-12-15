@@ -12,7 +12,7 @@ func _ready():
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
-		queue_free()
+		ViewportManager.change_to_transparent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

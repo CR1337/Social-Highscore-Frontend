@@ -42,8 +42,6 @@ func _on_action_button_released():
 
 func _on_phone_button_pressed():
 	InputBus.emit_signal("phone_pressed")
-	var phoneMenu = preload("res://content/gui/menus/SmartphoneMenu.tscn").instance()
-	add_child(phoneMenu)
 
 
 func _on_phone_button_released():
@@ -52,8 +50,6 @@ func _on_phone_button_released():
 
 func _on_menu_button_pressed():
 	InputBus.emit_signal("menu_pressed")
-	var gameMenu = preload("res://content/gui/menus/GameMenu.tscn").instance()
-	add_child(gameMenu)
 
 
 func _on_menu_button_released():
