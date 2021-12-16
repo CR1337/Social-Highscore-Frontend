@@ -9,8 +9,6 @@ enum JOB_TYPE {
 
 var http_request
 
-var angle: int
-
 var busy = false
 var current_job_type = JOB_TYPE.IDLE
 var current_job_id = null
@@ -25,7 +23,6 @@ var b64_reference_image: String
 var reference_image: Image
 
 func _ready():
-	angle = 0  # FIXME: only for debugging
 	NativeCameraController.connect("got_image", self, "_on_got_image")
 	http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -63,10 +60,10 @@ func _on_got_image(image, rawImage):
 	match current_job_type:
 		JOB_TYPE.ANALYZE:
 			endpoint = "analyze"
-			body = {'img': b64_image, 'angle': angle, 'job_id': current_job_id}
+			body = {'img': b64_image, 'angle': Config.imageRotationAngle, 'job_id': current_job_id}
 		JOB_TYPE.VERIFY:
 			endpoint = "verify"
-			body = {'img0': b64_image, 'img1': b64_reference_image, 'angle': angle, 'job_id': current_job_id}
+			body = {'img0': b64_image, 'img1': b64_reference_image, 'angle': Config.imageRotationAngle, 'job_id': current_job_id}
 		JOB_TYPE.REFERENCE_IMAGE:
 			reference_image = image
 			b64_reference_image = b64_image

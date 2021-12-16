@@ -55,16 +55,16 @@ position = Vector2( 1122.78, 25.3451 )
 z_index = 10
 
 [node name="ConfigMenu" parent="Overlays" instance=ExtResource( 12 )]
-position = Vector2( 2090.28, 448.604 )
+position = Vector2( 2036.54, 728.618 )
 
 [node name="GameMenu" parent="Overlays" instance=ExtResource( 11 )]
-position = Vector2( -1743.5, 1028.09 )
+position = Vector2( 2841.38, -652 )
 
 [node name="SmartphoneMenu" parent="Overlays" instance=ExtResource( 9 )]
 position = Vector2( -898.864, 1101.71 )
 
 [node name="StartMenu" parent="Overlays" instance=ExtResource( 10 )]
-position = Vector2( -1670.79, -467.669 )
+position = Vector2( 2040.11, -654.345 )
 
 [node name="TransparentOverlay" type="Node2D" parent="Overlays"]
 
