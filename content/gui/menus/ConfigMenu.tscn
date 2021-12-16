@@ -38,9 +38,9 @@ custom_constants/separation = 150
 alignment = 1
 
 [node name="AddressVBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
-margin_top = 242.0
+margin_top = 230.0
 margin_right = 728.0
-margin_bottom = 344.0
+margin_bottom = 332.0
 
 [node name="AddressLabel" type="Label" parent="Background/MarginContainer/VBoxContainer/AddressVBoxContainer"]
 margin_right = 728.0
@@ -58,9 +58,9 @@ text = "0.0.0.0"
 align = 1
 
 [node name="PortVBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
-margin_top = 494.0
+margin_top = 482.0
 margin_right = 728.0
-margin_bottom = 576.0
+margin_bottom = 564.0
 
 [node name="PortLabel" type="Label" parent="Background/MarginContainer/VBoxContainer/PortVBoxContainer"]
 margin_right = 728.0
@@ -71,15 +71,15 @@ text = "Server-Port:"
 [node name="PortLineEdit" type="LineEdit" parent="Background/MarginContainer/VBoxContainer/PortVBoxContainer"]
 margin_top = 38.0
 margin_right = 728.0
-margin_bottom = 102.0
+margin_bottom = 82.0
 custom_fonts/font = ExtResource( 1 )
 text = "80"
 align = 1
 
 [node name="AngleVBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
-margin_top = 726.0
+margin_top = 714.0
 margin_right = 728.0
-margin_bottom = 804.0
+margin_bottom = 816.0
 
 [node name="AngleLabel" type="Label" parent="Background/MarginContainer/VBoxContainer/AngleVBoxContainer"]
 margin_right = 728.0
@@ -90,21 +90,61 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AngleOptionButton" type="OptionButton" parent="Background/MarginContainer/VBoxContainer/AngleVBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer/AngleVBoxContainer"]
 margin_top = 38.0
 margin_right = 728.0
-margin_bottom = 78.0
+margin_bottom = 102.0
+alignment = 1
+
+[node name="CheckBox0" type="CheckBox" parent="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer"]
+margin_left = 102.0
+margin_right = 230.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
 custom_fonts/font = ExtResource( 1 )
-toggle_mode = false
-text = "0"
+text = "0 °"
 align = 1
-items = [ "0", null, false, 0, null, "90", null, false, 1, null, "180", null, false, 2, null, "270", null, false, 3, null ]
-selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox90" type="CheckBox" parent="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer"]
+margin_left = 234.0
+margin_right = 362.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "90 °"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox180" type="CheckBox" parent="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer"]
+margin_left = 366.0
+margin_right = 494.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "180 °"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox270" type="CheckBox" parent="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer"]
+margin_left = 498.0
+margin_right = 626.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "270 °"
+align = 1
 
 [node name="ButtonsHBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
-margin_top = 954.0
+margin_top = 966.0
 margin_right = 728.0
-margin_bottom = 1082.0
+margin_bottom = 1094.0
 
 [node name="OkButton" type="Button" parent="Background/MarginContainer/VBoxContainer/ButtonsHBoxContainer"]
 margin_right = 362.0
@@ -123,5 +163,9 @@ custom_fonts/font = ExtResource( 1 )
 text = "Abbrechen"
 
 [connection signal="text_changed" from="Background/MarginContainer/VBoxContainer/PortVBoxContainer/PortLineEdit" to="." method="_on_PortLineEdit_text_changed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox0" to="." method="_on_CheckBox0_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox90" to="." method="_on_CheckBox90_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox180" to="." method="_on_CheckBox180_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox270" to="." method="_on_CheckBox270_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/ButtonsHBoxContainer/OkButton" to="." method="_on_OkButton_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/ButtonsHBoxContainer/CancelButton" to="." method="_on_CancelButton_pressed"]
