@@ -39,6 +39,11 @@ kame=false
 kamera=false
 screen=false
 Collision=false
+touch=false
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 
