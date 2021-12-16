@@ -7,9 +7,6 @@ enum JOB_TYPE {
 	IDLE
 }
 
-# var base_url = "http://78.47.102.251:80/"
-# var base_url = "http://127.0.0.1:5000/"
-var base_url = "http://192.168.0.135:5000/"
 var http_request
 
 var angle: int
@@ -77,7 +74,8 @@ func _on_got_image(image, rawImage):
 			
 	if do_request:
 		image_dict[str(current_job_id)] = image
-		var error = http_request.request(base_url + endpoint, [], false, HTTPClient.METHOD_POST, JSON.print(body))
+		var url = "http://" + Config.serverAddress + ":" + Config.serverPort + "/" + endpoint
+		var error = http_request.request(url, [], false, HTTPClient.METHOD_POST, JSON.print(body))
 		if error != OK:
 			print("Request Error!")
 			EventBus.emit_signal("debug_error", error)

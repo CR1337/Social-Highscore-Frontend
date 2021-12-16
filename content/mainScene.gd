@@ -15,6 +15,7 @@ func _ready():
 	
 	ViewportManager.smartphoneMenu = $Overlays/SmartphoneMenu
 	ViewportManager.gameMenu = $Overlays/GameMenu
+	ViewportManager.configMenu = $Overlays/ConfigMenu
 	ViewportManager.transparentOverlay = $Overlays/TransparentOverlay
 
 	ViewportManager.currentOverlay = ViewportManager.transparentOverlay

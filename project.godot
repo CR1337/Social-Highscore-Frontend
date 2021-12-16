@@ -23,6 +23,7 @@ ImageProcessor="*res://content/singletons/ImageProcessor.gd"
 InputBus="*res://content/singletons/InputBus.gd"
 Debug="*res://content/singletons/Debug.gd"
 ViewportManager="*res://content/singletons/ViewportManager.gd"
+Config="*res://content/singletons/Config.gd"
 
 [display]
 
