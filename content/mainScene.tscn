@@ -58,7 +58,7 @@ z_index = 10
 position = Vector2( 2090.28, 448.604 )
 
 [node name="GameMenu" parent="Overlays" instance=ExtResource( 11 )]
-position = Vector2( -1666.08, 891.932 )
+position = Vector2( -1743.5, 1028.09 )
 
 [node name="SmartphoneMenu" parent="Overlays" instance=ExtResource( 9 )]
 position = Vector2( -898.864, 1101.71 )
