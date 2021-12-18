@@ -3,7 +3,7 @@ extends Node
 
 var player: Area2D
 var currentArea: Node2D
-var shaderRect: TextureRect
+var shaderRect: ColorRect
 var currentOverlay: Node2D
 var lastOverlay: Node2D
 
@@ -38,10 +38,9 @@ func change_to_config():
 func change_to_last():
 	change_overlay(lastOverlay)
 
-func change_area(targetAreaPath, newPlayerPosition):
+func change_area(targetArea, newPlayerPosition):
 	shaderRect.cover()
 
-	var targetArea = get_node(targetAreaPath)
 	var tmp_position = targetArea.position
 	targetArea.position = currentArea.position
 	currentArea.position = tmp_position
