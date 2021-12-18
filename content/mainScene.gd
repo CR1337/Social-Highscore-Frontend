@@ -10,7 +10,7 @@ extends Node2D
 func _ready():
 	ViewportManager.player = $player
 	ViewportManager.currentArea = $Areas/TestArea
-	ViewportManager.shaderRect = $ShaderRect
+	ViewportManager.shaderRect = $ShaderRectNode2D/ShaderRect
 	
 	
 	ViewportManager.smartphoneMenu = $Overlays/SmartphoneMenu

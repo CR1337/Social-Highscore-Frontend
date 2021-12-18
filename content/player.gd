@@ -2,7 +2,6 @@ extends Area2D
 
 
 export var speed = 3
-var tile_size = 64
 
 onready var movementRay = $RayCast2DMovement
 onready var triggerRay = $RayCast2DTrigger
@@ -19,6 +18,7 @@ var idle_frame_idxs = {
 var movement_frame_idxs = {
 	Vector2.DOWN: [0, 2],
 	Vector2.LEFT: [3, 5],
+	
 	Vector2.RIGHT: [6, 8],
 	Vector2.UP: [9, 11],
 }
@@ -27,8 +27,8 @@ var movement_frame_idx = 0
 export var animation_period = 0.25
 
 func _ready():
-	position = position.snapped(Vector2.ONE * tile_size)
-	position += Vector2.LEFT * tile_size/2
+	position = position.snapped(Vector2.ONE * Globals.tile_size)
+	position += Vector2.LEFT * Globals.tile_size / 2
 	
 	looking_direction = Vector2.DOWN
 	
@@ -48,12 +48,12 @@ func _process(delta):
 	
 func move_tween():
 	tween.interpolate_property(self, "position",
-		position, position + looking_direction * tile_size,
+		position, position + looking_direction * Globals.tile_size,
 		1.0 / speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 
 func move():
-	triggerRay.cast_to = looking_direction * tile_size
+	triggerRay.cast_to = looking_direction * Globals.tile_size
 	triggerRay.force_raycast_update()		
 	if triggerRay.is_colliding():
 		var collider = triggerRay.get_collider()
@@ -63,11 +63,11 @@ func move():
 			if collider.walkable:
 				move_tween()
 	else:
-		movementRay.cast_to = looking_direction * tile_size
+		movementRay.cast_to = looking_direction * Globals.tile_size
 		movementRay.force_raycast_update()		
 		if not movementRay.is_colliding():
 			move_tween()
 	
-			
-func get_tilesize():
-	return tile_size
+#
+#func get_tilesize():
+#	return Globals.tile_size

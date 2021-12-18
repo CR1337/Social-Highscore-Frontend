@@ -1,6 +1,6 @@
 extends Node
 
-var targetArea: NodePath
+var targetArea: Node2D
 var newPlayerPosition: Vector2
 
 

@@ -73,12 +73,14 @@ position = Vector2( -4.26776, -141.773 )
 speed = 4
 animation_period = 0.15
 
-[node name="ShaderRect" type="ColorRect" parent="."]
+[node name="ShaderRectNode2D" type="Node2D" parent="."]
+position = Vector2( -386, -686 )
+z_index = 5
+
+[node name="ShaderRect" type="ColorRect" parent="ShaderRectNode2D"]
 material = SubResource( 2 )
-margin_left = -386.0
-margin_top = -686.0
-margin_right = 382.0
-margin_bottom = 338.0
+margin_right = 768.0
+margin_bottom = 1024.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 7 )
