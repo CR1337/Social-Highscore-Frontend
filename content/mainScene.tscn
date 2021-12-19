@@ -29,27 +29,22 @@ shader_param/opacity = 0.0
 [node name="mainScene" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -2, -2 )
-current = true
-
 [node name="InputUI" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
 
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="TestArea2" parent="Areas" instance=ExtResource( 6 )]
-position = Vector2( -1179.73, -685.778 )
+position = Vector2( -795.064, 10.0151 )
 leaveRightAreaPath = NodePath("../TestArea")
-leaveRightPlayerPosition = Vector2( -5.5, -3 )
+leaveRightPlayerPosition = Vector2( 0, 7 )
 
 [node name="TestArea" parent="Areas" instance=ExtResource( 4 )]
-position = Vector2( -385.536, -682.877 )
 leaveLeftAreaPath = NodePath("../TestArea2")
-leaveLeftPlayerPosition = Vector2( 5.5, -3 )
+leaveLeftPlayerPosition = Vector2( 11, 7 )
 
 [node name="DemoFaceScene" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1122.78, 25.3451 )
+position = Vector2( 1396.42, -58.7498 )
 
 [node name="Overlays" type="Node2D" parent="."]
 z_index = 10
@@ -69,12 +64,11 @@ position = Vector2( 2040.11, -654.345 )
 [node name="TransparentOverlay" type="Node2D" parent="Overlays"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -4.26776, -141.773 )
+position = Vector2( 415.311, 548.884 )
 speed = 4
 animation_period = 0.15
 
 [node name="ShaderRectNode2D" type="Node2D" parent="."]
-position = Vector2( -386, -686 )
 z_index = 5
 
 [node name="ShaderRect" type="ColorRect" parent="ShaderRectNode2D"]

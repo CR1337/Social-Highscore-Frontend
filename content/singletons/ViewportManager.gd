@@ -1,7 +1,7 @@
 extends Node
 
 
-var player: Area2D
+var player: Node2D
 var currentArea: Node2D
 var shaderRect: ColorRect
 var currentOverlay: Node2D
@@ -46,7 +46,7 @@ func change_area(targetArea, newPlayerPosition):
 	currentArea.position = tmp_position
 	currentArea = targetArea
 	
-	player.position = newPlayerPosition * Globals.tile_size
+	player.position = (newPlayerPosition + Vector2.ONE / 2) * Globals.tile_size
 	
 	shaderRect.area_change()
 	

@@ -14,47 +14,46 @@
 [ext_resource path="res://assets/gui/action_button_normal.png" type="Texture" id=12]
 [ext_resource path="res://assets/gui/arrow_button_normal_right.png" type="Texture" id=13]
 
-
 [node name="InputUI" type="Node2D"]
 position = Vector2( -4.30763, 0.561867 )
 script = ExtResource( 4 )
 
 [node name="up_button" type="TouchScreenButton" parent="."]
-position = Vector2( -233.113, 358.019 )
+position = Vector2( 165.887, 1058.56 )
 scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 9 )
 pressed = ExtResource( 6 )
 
 [node name="down_button" type="TouchScreenButton" parent="."]
-position = Vector2( -232.51, 560.993 )
+position = Vector2( 166.49, 1261.53 )
 scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 11 )
 pressed = ExtResource( 8 )
 
 [node name="left_button" type="TouchScreenButton" parent="."]
-position = Vector2( -334.286, 459.495 )
+position = Vector2( 64.714, 1160.03 )
 scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 1 )
 pressed = ExtResource( 10 )
 
 [node name="right_button" type="TouchScreenButton" parent="."]
-position = Vector2( -131.597, 459.796 )
+position = Vector2( 267.403, 1160.33 )
 scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 13 )
 pressed = ExtResource( 2 )
 
 [node name="action_button" type="TouchScreenButton" parent="."]
-position = Vector2( 204.908, 508.13 )
+position = Vector2( 603.908, 1208.67 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 7 )
 
 [node name="phone_button" type="TouchScreenButton" parent="."]
-position = Vector2( 74.176, 376.299 )
+position = Vector2( 473.176, 1076.84 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 3 )
 
 [node name="menu_button" type="TouchScreenButton" parent="."]
-position = Vector2( -369.297, 363.299 )
+position = Vector2( 29.703, 1063.84 )
 scale = Vector2( 0.498869, 0.498869 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 5 )

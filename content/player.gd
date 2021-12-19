@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 
 export var speed = 3
@@ -28,7 +28,7 @@ export var animation_period = 0.25
 
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.tile_size)
-	position += Vector2.LEFT * Globals.tile_size / 2
+	position += Vector2.ONE * Globals.tile_size / 2
 	
 	looking_direction = Vector2.DOWN
 	
