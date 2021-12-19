@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://content/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://content/gui/menus/StartMenu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://content/gui/menus/GameMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/gui/menus/ConfigMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://content/areas/LivingHomestreetArea/LivingHomestreetArea.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -42,6 +43,8 @@ leaveRightPlayerPosition = Vector2( 0, 7 )
 [node name="TestArea" parent="Areas" instance=ExtResource( 4 )]
 leaveLeftAreaPath = NodePath("../TestArea2")
 leaveLeftPlayerPosition = Vector2( 11, 7 )
+
+[node name="LivingHomestreetArea" parent="Areas" instance=ExtResource( 13 )]
 
 [node name="DemoFaceScene" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1396.42, -58.7498 )
