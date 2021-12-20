@@ -1,8 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://content/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://content/areas/Living/LivingPharmacystreetArea/LivingPharmacystreetArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://content/areas/Living/LivingFriendstreetArea/LivingFriendstreetArea.gd" type="Script" id=4]
 [ext_resource path="res://content/mainScene.gd" type="Script" id=5]
+[ext_resource path="res://content/areas/Living/LivingBusstreetArea/LivingBusStreetArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://content/gfx/ShaderRect.gd" type="Script" id=7]
 [ext_resource path="res://content/gui/DebugLabel.gd" type="Script" id=8]
 [ext_resource path="res://content/gui/menus/SmartphoneMenu.tscn" type="PackedScene" id=9]
@@ -10,7 +13,7 @@
 [ext_resource path="res://content/gui/menus/GameMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/gui/menus/ConfigMenu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://content/areas/Living/LivingHomestreetArea/LivingHomestreetArea.tscn" type="PackedScene" id=13]
-[ext_resource path="res://content/areas/Living/LivingPharmacystreetArea/LivingPharmacystreetArea.tscn" type="PackedScene" id=14]
+[ext_resource path="res://content/areas/Living/LivingFriendstreetArea/LivingFriendstreetArea.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -37,12 +40,31 @@ position = Vector2( 0, 0 )
 leaveLeftAreaPath = NodePath("../LivingPharmacystreetArea")
 leaveLeftUpperPlayerPosition = Vector2( 11, 7 )
 leaveLeftLowerPlayerPosition = Vector2( 11, 8 )
+leaveRightAreaPath = NodePath("../LivingFriendstreetArea")
+leaveRightUpperPlayerPosition = Vector2( 0, 7 )
+leaveRightLowerPlayerPosition = Vector2( 0, 8 )
+leaveTopAreaPath = NodePath("../LivingBusstreetArea")
+leaveTopLeftPlayerPosition = Vector2( 5, 15 )
+leaveTopRightPlayerPosition = Vector2( 6, 15 )
 
-[node name="LivingPharmacystreetArea" parent="Areas" instance=ExtResource( 14 )]
-position = Vector2( -945.476, 2.8396 )
+[node name="LivingFriendstreetArea" parent="Areas" instance=ExtResource( 14 )]
+position = Vector2( 930.834, 2.8396 )
+script = ExtResource( 4 )
+leaveLeftAreaPath = NodePath("../LivingHomestreetArea")
+leaveLeftUpperPlayerPosition = Vector2( 11, 7 )
+leaveLeftLowerPlayerPosition = Vector2( 11, 8 )
+
+[node name="LivingPharmacystreetArea" parent="Areas" instance=ExtResource( 3 )]
+position = Vector2( -965.81, -4.62109 )
 leaveRightAreaPath = NodePath("../LivingHomestreetArea")
 leaveRightUpperPlayerPosition = Vector2( 0, 7 )
 leaveRightLowerPlayerPosition = Vector2( 0, 8 )
+
+[node name="LivingBusstreetArea" parent="Areas" instance=ExtResource( 6 )]
+position = Vector2( -2.0116, -1184.6 )
+leaveBottomAreaPath = NodePath("../LivingHomestreetArea")
+leaveBottomLeftPlayerPosition = Vector2( 5, 0 )
+leaveBottomRightPlayerPosition = Vector2( 6, 0 )
 
 [node name="Overlays" type="Node2D" parent="."]
 z_index = 10
