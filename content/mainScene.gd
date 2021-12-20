@@ -9,7 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ViewportManager.player = $player
-	ViewportManager.currentArea = $Areas/TestArea
+	ViewportManager.currentArea = $Areas/LivingHomestreetArea
 	ViewportManager.shaderRect = $ShaderRectNode2D/ShaderRect
 	
 	
