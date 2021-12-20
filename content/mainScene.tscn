@@ -41,6 +41,7 @@ leaveRightAreaPath = NodePath("../TestArea")
 leaveRightPlayerPosition = Vector2( 0, 7 )
 
 [node name="TestArea" parent="Areas" instance=ExtResource( 4 )]
+position = Vector2( 981.672, 736.708 )
 leaveLeftAreaPath = NodePath("../TestArea2")
 leaveLeftPlayerPosition = Vector2( 11, 7 )
 
