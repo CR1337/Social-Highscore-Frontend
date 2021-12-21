@@ -1,34 +1,22 @@
 extends Node2D
 
 export (NodePath) var leaveLeftAreaPath
-export (Vector2) var leaveLeftUpperPlayerPosition
-export (Vector2) var leaveLeftLowerPlayerPosition
+export (Vector2) var leaveLeftPlayerPosition
 
 export (NodePath) var leaveRightAreaPath
-export (Vector2) var leaveRightUpperPlayerPosition
-export (Vector2) var leaveRightLowerPlayerPosition
+export (Vector2) var leaveRightPlayerPosition
 
 export (NodePath) var leaveTopAreaPath
-export (Vector2) var leaveTopLeftPlayerPosition
-export (Vector2) var leaveTopRightPlayerPosition
+export (Vector2) var leaveTopPlayerPosition
 
 
 func _ready():
-	$LeaveLeftUpperTrigger.targetArea = get_node(leaveLeftAreaPath)
-	$LeaveLeftUpperTrigger.newPlayerPosition = leaveLeftUpperPlayerPosition
+	$LeaveLeftTrigger.targetArea = get_node(leaveLeftAreaPath)
+	$LeaveLeftTrigger.newPlayerPosition = leaveLeftPlayerPosition
 	
-	$LeaveLeftLowerTrigger.targetArea = get_node(leaveLeftAreaPath)
-	$LeaveLeftLowerTrigger.newPlayerPosition = leaveLeftLowerPlayerPosition
+	$LeaveRightTrigger.targetArea = get_node(leaveRightAreaPath)
+	$LeaveRightTrigger.newPlayerPosition = leaveRightPlayerPosition
 	
-	$LeaveRightUpperTrigger.targetArea = get_node(leaveRightAreaPath)
-	$LeaveRightUpperTrigger.newPlayerPosition = leaveRightUpperPlayerPosition
-	
-	$LeaveRightLowerTrigger.targetArea = get_node(leaveRightAreaPath)
-	$LeaveRightLowerTrigger.newPlayerPosition = leaveRightLowerPlayerPosition
-	
-	$LeaveTopLeftTrigger.targetArea = get_node(leaveTopAreaPath)
-	$LeaveTopLeftTrigger.newPlayerPosition = leaveTopLeftPlayerPosition
-	
-	$LeaveTopRightTrigger.targetArea = get_node(leaveTopAreaPath)
-	$LeaveTopRightTrigger.newPlayerPosition = leaveTopRightPlayerPosition
+	$LeaveTopTrigger.targetArea = get_node(leaveTopAreaPath)
+	$LeaveTopTrigger.newPlayerPosition = leaveTopPlayerPosition
 	

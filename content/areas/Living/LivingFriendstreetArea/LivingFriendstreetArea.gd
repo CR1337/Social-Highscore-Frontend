@@ -1,13 +1,10 @@
 extends Node2D
 
 export (NodePath) var leaveLeftAreaPath
-export (Vector2) var leaveLeftUpperPlayerPosition
-export (Vector2) var leaveLeftLowerPlayerPosition
+export (Vector2) var leaveLeftPlayerPosition
 
 
 func _ready():
-	$LeaveLeftUpperTrigger.targetArea = get_node(leaveLeftAreaPath)
-	$LeaveLeftUpperTrigger.newPlayerPosition = leaveLeftUpperPlayerPosition
+	$LeaveLeftTrigger.targetArea = get_node(leaveLeftAreaPath)
+	$LeaveLeftTrigger.newPlayerPosition = leaveLeftPlayerPosition
 	
-	$LeaveLeftLowerTrigger.targetArea = get_node(leaveLeftAreaPath)
-	$LeaveLeftLowerTrigger.newPlayerPosition = leaveLeftLowerPlayerPosition

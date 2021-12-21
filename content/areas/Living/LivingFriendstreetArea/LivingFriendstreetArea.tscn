@@ -23,22 +23,14 @@ tile_data = PoolIntArray( 65537, 24, 0, 65538, 24, 1, 65539, 24, 2, 131073, 24, 
 tile_set = ExtResource( 1 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( -1, 29, 0, -65536, 29, 0, -65535, 29, 0, -65534, 29, 0, -65533, 29, 0, -65532, 29, 0, -65531, 29, 0, -65530, 29, 0, -65529, 29, 0, -65528, 29, 0, -65527, 29, 0, -65526, 29, 0, -65525, 29, 0, -65524, 29, 0, 65535, 29, 0, 12, 29, 0, 131071, 29, 0, 65548, 29, 0, 196607, 29, 0, 131084, 29, 0, 262143, 29, 0, 196620, 29, 0, 327679, 29, 0, 262156, 29, 0, 393215, 29, 0, 327692, 29, 0, 458751, 29, 0, 393228, 29, 0, 524287, 29, 0, 458763, 27, 0, 458764, 29, 0, 589823, 29, 0, 524299, 27, 0, 524300, 29, 0, 655359, 29, 0, 589836, 29, 0, 720895, 29, 0, 655372, 29, 0, 786431, 29, 0, 720908, 29, 0, 851967, 29, 0, 786444, 29, 0, 917503, 29, 0, 851980, 29, 0, 983039, 29, 0, 917516, 29, 0, 1048575, 29, 0, 983052, 29, 0, 1114111, 29, 0, 1048576, 29, 0, 1048577, 29, 0, 1048578, 29, 0, 1048579, 29, 0, 1048580, 29, 0, 1048581, 29, 0, 1048582, 29, 0, 1048583, 29, 0, 1048584, 29, 0, 1048585, 29, 0, 1048586, 29, 0, 1048587, 29, 0, 1048588, 29, 0 )
+tile_data = PoolIntArray( -1, 29, 0, -65536, 29, 0, -65535, 29, 0, -65534, 29, 0, -65533, 29, 0, -65532, 29, 0, -65531, 29, 0, -65530, 29, 0, -65529, 29, 0, -65528, 29, 0, -65527, 29, 0, -65526, 29, 0, -65525, 29, 0, -65524, 29, 0, 12, 29, 0, 65548, 29, 0, 131084, 29, 0, 196620, 29, 0, 262156, 29, 0, 327692, 29, 0, 393228, 29, 0, 458763, 27, 0, 458764, 29, 0, 524299, 27, 0, 524300, 29, 0, 589836, 29, 0, 655372, 29, 0, 720908, 29, 0, 786444, 29, 0, 851980, 29, 0, 917516, 29, 0, 983052, 29, 0, 1114111, 29, 0, 1048576, 29, 0, 1048577, 29, 0, 1048578, 29, 0, 1048579, 29, 0, 1048580, 29, 0, 1048581, 29, 0, 1048582, 29, 0, 1048583, 29, 0, 1048584, 29, 0, 1048585, 29, 0, 1048586, 29, 0, 1048587, 29, 0, 1048588, 29, 0 )
 
-[node name="LeaveLeftUpperTriggerArea" parent="." instance=ExtResource( 2 )]
-position = Vector2( 32.1096, 480.256 )
+[node name="LeaveLeftTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( -31.8053, 509.688 )
+scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveLeftUpperTrigger")
+collisionTriggerPath = NodePath("../LeaveLeftTrigger")
 
-[node name="LeaveLeftLowerTriggerArea" parent="." instance=ExtResource( 2 )]
-position = Vector2( 31.8695, 543.876 )
-is_activated_by_collision = true
-walkable = true
-collisionTriggerPath = NodePath("../LeaveLeftLowerTrigger")
-
-[node name="LeaveLeftUpperTrigger" type="Node" parent="."]
-script = ExtResource( 3 )
-
-[node name="LeaveLeftLowerTrigger" type="Node" parent="."]
+[node name="LeaveLeftTrigger" type="Node" parent="."]
 script = ExtResource( 3 )

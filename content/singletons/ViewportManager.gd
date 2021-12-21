@@ -45,9 +45,13 @@ func change_area(targetArea, newPlayerPosition):
 	targetArea.position = currentArea.position
 	currentArea.position = tmp_position
 	currentArea = targetArea
-	
-	player.position = (newPlayerPosition + Vector2.ONE / 2) * Globals.tile_size
-	
+	if newPlayerPosition.y >= 0: 
+		print(newPlayerPosition.y)
+		player.position.y = (newPlayerPosition.y - 0.5) * Globals.tile_size
+	if newPlayerPosition.x >= 0: 
+		print(newPlayerPosition.x)
+		player.position.x = (newPlayerPosition.x - 0.5) * Globals.tile_size
+	print(player.position)
 	shaderRect.area_change()
 	
 func change_overlay(targetOverlay):
