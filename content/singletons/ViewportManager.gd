@@ -46,10 +46,8 @@ func change_area(targetArea, newPlayerPosition):
 	currentArea.position = tmp_position
 	currentArea = targetArea
 	if newPlayerPosition.y >= 0: 
-		print(newPlayerPosition.y)
 		player.position.y = (newPlayerPosition.y - 0.5) * Globals.tile_size
 	if newPlayerPosition.x >= 0: 
-		print(newPlayerPosition.x)
 		player.position.x = (newPlayerPosition.x - 0.5) * Globals.tile_size
 	print(player.position)
 	shaderRect.area_change()
