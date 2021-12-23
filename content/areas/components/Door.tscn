@@ -5,7 +5,7 @@
 [ext_resource path="res://content/areas/components/DoorTrigger.gd" type="Script" id=3]
 [ext_resource path="res://content/areas/LeaveHomeTriggerArea.tscn" type="PackedScene" id=4]
 
-[node name="LeftDoor" type="Node2D"]
+[node name="AnimatedDoor" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
