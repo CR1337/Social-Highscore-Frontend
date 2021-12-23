@@ -74,8 +74,8 @@ func _on_action_pressed():
 	triggerRay.force_raycast_update()		
 	if triggerRay.is_colliding():
 		var collider = triggerRay.get_collider()
-		if collider.has_method("trigger"):
-			collider.trigger()
+		if collider.has_method("trigger_action"):
+			collider.trigger_action()
 
 #
 #func get_tilesize():
