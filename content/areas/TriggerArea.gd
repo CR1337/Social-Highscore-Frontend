@@ -7,7 +7,9 @@ export (NodePath) var collisionTriggerPath
 export (NodePath) var actionTriggerPath
 	
 func trigger_collision():
-	get_node(collisionTriggerPath).trigger()
+	if is_activated_by_collision:
+		get_node(collisionTriggerPath).trigger()
 
 func trigger_action():
-	get_node(actionTriggerPath).trigger()
+	if is_activated_by_action:
+		get_node(actionTriggerPath).trigger()
