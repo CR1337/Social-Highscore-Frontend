@@ -53,6 +53,22 @@ func move_tween():
 		position, position + looking_direction * Globals.tile_size,
 		1.0 / speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
+	
+func _can_move():
+	movementRay.cast_to = looking_direction * Globals.tile_size
+	movementRay.force_raycast_update()		
+	if not movementRay.is_colliding():
+		return true
+	var collider = movementRay.get_collider()
+	if not (typeof(collider) == TYPE_OBJECT and collider.is_class("TileMap")):
+		return false
+	var tile_coords = collider.world_to_map(movementRay.position + movementRay.cast_to)
+	var tile_id = collider.get_cell(tile_coords.x, tile_coords.y)
+	var tileset = collider.get_tileset()
+	var tile_name = tileset.tile_get_name(tile_id)
+	# TODO: check tilename for special collider names
+	# then return true or false depending on wether the collider
+	# can be entered from the rays looking direction
 
 func move():
 	triggerRay.cast_to = looking_direction * Globals.tile_size
