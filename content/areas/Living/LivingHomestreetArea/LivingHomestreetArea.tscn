@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://content/areas/LeaveHomeTriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=3]
 [ext_resource path="res://content/areas/Living/LivingHomestreetArea/LivingHomestreetArea.gd" type="Script" id=4]
 
@@ -53,4 +53,13 @@ walkable = true
 collisionTriggerPath = NodePath("../LeaveTopTrigger")
 
 [node name="LeaveTopTrigger" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="LeaveHomeTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 608.114, 863.028 )
+is_activated_by_collision = true
+walkable = true
+collisionTriggerPath = NodePath("../LeaveHomeTrigger")
+
+[node name="LeaveHomeTrigger" type="Node" parent="."]
 script = ExtResource( 3 )

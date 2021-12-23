@@ -14,6 +14,7 @@ vframes = 4
 frame = 5
 
 [node name="RayCast2DMovement" type="RayCast2D" parent="."]
+collide_with_areas = true
 
 [node name="Tween" type="Tween" parent="."]
 
