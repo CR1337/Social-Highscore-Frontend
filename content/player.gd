@@ -67,7 +67,7 @@ func move():
 		movementRay.force_raycast_update()		
 		if not movementRay.is_colliding():
 			move_tween()
-	
+
 #
 #func get_tilesize():
 #	return Globals.tile_size

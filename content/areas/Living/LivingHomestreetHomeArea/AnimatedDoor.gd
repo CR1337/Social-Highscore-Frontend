@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 export var frames: SpriteFrames
 export var opened: bool
@@ -11,12 +11,14 @@ func _ready():
 		close()
 
 func close():
+	opened = false
 	$AnimatedSprite.animation = "close"
-	$CollisionShape2D.disabled = false
+	$TriggerArea.walkable = false
 
 func open():
+	opened = true
 	$AnimatedSprite.animation = "open"
-	$CollisionShape2D.disabled = true
+	$TriggerArea.walkable = true
 
 func trigger():
 	if opened:

@@ -1590,7 +1590,6 @@ tile_data = PoolIntArray( 0, 1, 131073, 1, 1, 131073, 2, 1, 131073, 3, 1, 131073
 [node name="LeftDoor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 6.10352e-05, 113.353 )
 frames = ExtResource( 8 )
-opened = true
 
 [node name="Walls" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
