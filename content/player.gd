@@ -32,6 +32,8 @@ func _ready():
 	
 	looking_direction = Vector2.DOWN
 	
+	InputBus.connect("action_pressed", self, "_on_action_pressed")
+	
 	
 func _process(delta):
 	if not tween.is_active():
@@ -67,6 +69,13 @@ func move():
 		movementRay.force_raycast_update()		
 		if not movementRay.is_colliding():
 			move_tween()
+			
+func _on_action_pressed():
+	triggerRay.force_raycast_update()		
+	if triggerRay.is_colliding():
+		var collider = triggerRay.get_collider()
+		if collider.has_method("trigger"):
+			collider.trigger()
 
 #
 #func get_tilesize():
