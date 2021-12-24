@@ -55,6 +55,8 @@ func move_tween():
 	tween.start()
 	
 func _can_move():
+	# TODO: more complicatde than I thought
+	
 	# cast Ray into looking direction
 	movementRay.cast_to = looking_direction * Globals.tile_size
 	movementRay.force_raycast_update()
@@ -69,17 +71,29 @@ func _can_move():
 		return false
 		
 	# if collider is TileMap, get name of the colliding tile
-	var tile_coords = collider.world_to_map(movementRay.position + movementRay.cast_to)
+	var ray_tip_coords = position + movementRay.cast_to
+	print(ray_tip_coords)
+	var tile_coords = collider.world_to_map(ray_tip_coords)
+	print(tile_coords)
 	var tile_id = collider.get_cell(tile_coords.x, tile_coords.y)
+	if tile_id == -1:
+		return true
+	print(tile_id)
 	var tileset = collider.get_tileset()
+	print(tileset)
 	var tile_name = tileset.tile_get_name(tile_id)
+	print(tile_name)
 	
 	# there are special tiles that should only collide when
 	# entered from a specific direction
 	# eg: a tile that cannot be entered in direction left or down:
 	# ld_collider
-	if tile_name.split("_")[1] == "collider":
-		var directions = tile_name.split("_")[0]
+	var splitted_tile_name = tile_name.split("_")
+	if splitted_tile_name.size() != 2:
+		return false
+	
+	if splitted_tile_name[1] == "collider":
+		var directions = splitted_tile_name[0]
 		match looking_direction:
 			Vector2.LEFT:
 				return not "l" in directions
@@ -102,7 +116,7 @@ func move():
 		if collider.get("is_activated_by_collision") != null:
 			if collider.is_activated_by_collision:
 				collider.trigger_collision()
-			if collider.walkable and _can_move():
+			if collider.walkable:
 				move_tween()
 	elif _can_move():
 			move_tween()
