@@ -76,20 +76,23 @@ func _can_move():
 	
 	# there are special tiles that should only collide when
 	# entered from a specific direction
-	# eg: a tile that cannot be entered from left and below:
-	# collider_ld
-	var directions = tile_name.split("_")[1]
-	match looking_direction:
-		Vector2.LEFT:
-			return not "l" in directions
-		Vector2.RIGHT:
-			return not "r" in directions
-		Vector2.UP:
-			return not "u" in directions
-		Vector2.DOWN:
-			return not "d" in directions
-		_:
-			return false
+	# eg: a tile that cannot be entered in direction left or down:
+	# ld_collider
+	if tile_name.split("_")[1] == "collider":
+		var directions = tile_name.split("_")[0]
+		match looking_direction:
+			Vector2.LEFT:
+				return not "l" in directions
+			Vector2.RIGHT:
+				return not "r" in directions
+			Vector2.UP:
+				return not "u" in directions
+			Vector2.DOWN:
+				return not "d" in directions
+			_:
+				return false
+	else:
+		return false
 
 func move():
 	triggerRay.cast_to = looking_direction * Globals.tile_size
@@ -110,7 +113,3 @@ func _on_action_pressed():
 		var collider = triggerRay.get_collider()
 		if collider.has_method("trigger_action"):
 			collider.trigger_action()
-
-#
-#func get_tilesize():
-#	return Globals.tile_size
