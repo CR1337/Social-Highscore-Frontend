@@ -69,10 +69,10 @@ func move():
 		var collider = triggerRay.get_collider()
 		if collider.get("is_activated_by_collision"):
 			collider.trigger_collision()
-			if not collider.walkable:
-				return
+		if collider.get("walkable") != null and not collider.get("walkable"):
+			return
 	if not movementRay_colliding:
-			move_tween()
+		move_tween()
 			
 func _on_action_pressed():
 	triggerRay.force_raycast_update()		
