@@ -60,6 +60,8 @@ func _is_ray_colliding(ray):
 	return ray.is_colliding()
 
 func move():
+	# _is_ray_colliding has side effects 
+	# so both calls must be done at the beginning
 	var movementRay_colliding = _is_ray_colliding(movementRay)
 	var triggerRay_colliding = _is_ray_colliding(triggerRay)
 	
@@ -67,8 +69,8 @@ func move():
 		var collider = triggerRay.get_collider()
 		if collider.get("is_activated_by_collision"):
 			collider.trigger_collision()
-		if not collider.walkable:
-			return
+			if not collider.walkable:
+				return
 	if not movementRay_colliding:
 			move_tween()
 			
