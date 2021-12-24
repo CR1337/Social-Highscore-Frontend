@@ -42,3 +42,12 @@ collisionTriggerPath = NodePath("../LeaveBottomTrigger")
 
 [node name="LeaveBottomTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
+
+[node name="BusTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512.951, 351.608 )
+scale = Vector2( 2, 1 )
+is_activated_by_action = true
+actionTriggerPath = NodePath("../BusTrigger")
+
+[node name="BusTrigger" type="Node" parent="."]
+script = ExtResource( 4 )
