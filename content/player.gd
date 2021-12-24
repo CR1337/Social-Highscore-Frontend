@@ -55,35 +55,53 @@ func move_tween():
 	tween.start()
 	
 func _can_move():
+	# cast Ray into looking direction
 	movementRay.cast_to = looking_direction * Globals.tile_size
-	movementRay.force_raycast_update()		
+	movementRay.force_raycast_update()
+	
+	# if not colliding, player can move
 	if not movementRay.is_colliding():
 		return true
+		
+	# if collider is not TileMap, player cannot move
 	var collider = movementRay.get_collider()
 	if not (typeof(collider) == TYPE_OBJECT and collider.is_class("TileMap")):
 		return false
+		
+	# if collider is TileMap, get name of the colliding tile
 	var tile_coords = collider.world_to_map(movementRay.position + movementRay.cast_to)
 	var tile_id = collider.get_cell(tile_coords.x, tile_coords.y)
 	var tileset = collider.get_tileset()
 	var tile_name = tileset.tile_get_name(tile_id)
-	# TODO: check tilename for special collider names
-	# then return true or false depending on wether the collider
-	# can be entered from the rays looking direction
+	
+	# there are special tiles that should only collide when
+	# entered from a specific direction
+	# eg: a tile that cannot be entered from left and below:
+	# collider_ld
+	var directions = tile_name.split("_")[1]
+	match looking_direction:
+		Vector2.LEFT:
+			return not "l" in directions
+		Vector2.RIGHT:
+			return not "r" in directions
+		Vector2.UP:
+			return not "u" in directions
+		Vector2.DOWN:
+			return not "d" in directions
+		_:
+			return false
 
 func move():
 	triggerRay.cast_to = looking_direction * Globals.tile_size
-	triggerRay.force_raycast_update()		
+	triggerRay.force_raycast_update()
 	if triggerRay.is_colliding():
 		var collider = triggerRay.get_collider()
 		if collider.get("is_activated_by_collision") != null:
 			if collider.is_activated_by_collision:
 				collider.trigger_collision()
-			if collider.walkable:
+			if collider.walkable and _can_move():
 				move_tween()
-	else:
-		movementRay.cast_to = looking_direction * Globals.tile_size
-		movementRay.force_raycast_update()		
-		if not movementRay.is_colliding():
+	elif _can_move():
 			move_tween()
 			
 func _on_action_pressed():
