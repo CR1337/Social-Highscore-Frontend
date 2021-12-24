@@ -54,71 +54,22 @@ func move_tween():
 		1.0 / speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 	
-func _can_move():
-	# TODO: more complicatde than I thought
-	
-	# cast Ray into looking direction
-	movementRay.cast_to = looking_direction * Globals.tile_size
-	movementRay.force_raycast_update()
-	
-	# if not colliding, player can move
-	if not movementRay.is_colliding():
-		return true
-		
-	# if collider is not TileMap, player cannot move
-	var collider = movementRay.get_collider()
-	if not (typeof(collider) == TYPE_OBJECT and collider.is_class("TileMap")):
-		return false
-		
-	# if collider is TileMap, get name of the colliding tile
-	var ray_tip_coords = position + movementRay.cast_to
-	print(ray_tip_coords)
-	var tile_coords = collider.world_to_map(ray_tip_coords)
-	print(tile_coords)
-	var tile_id = collider.get_cell(tile_coords.x, tile_coords.y)
-	if tile_id == -1:
-		return true
-	print(tile_id)
-	var tileset = collider.get_tileset()
-	print(tileset)
-	var tile_name = tileset.tile_get_name(tile_id)
-	print(tile_name)
-	
-	# there are special tiles that should only collide when
-	# entered from a specific direction
-	# eg: a tile that cannot be entered in direction left or down:
-	# ld_collider
-	var splitted_tile_name = tile_name.split("_")
-	if splitted_tile_name.size() != 2:
-		return false
-	
-	if splitted_tile_name[1] == "collider":
-		var directions = splitted_tile_name[0]
-		match looking_direction:
-			Vector2.LEFT:
-				return not "l" in directions
-			Vector2.RIGHT:
-				return not "r" in directions
-			Vector2.UP:
-				return not "u" in directions
-			Vector2.DOWN:
-				return not "d" in directions
-			_:
-				return false
-	else:
-		return false
+func _is_ray_colliding(ray):
+	ray.cast_to = looking_direction * Globals.tile_size
+	ray.force_raycast_update()
+	return ray.is_colliding()
 
 func move():
-	triggerRay.cast_to = looking_direction * Globals.tile_size
-	triggerRay.force_raycast_update()
-	if triggerRay.is_colliding():
+	var movementRay_colliding = _is_ray_colliding(movementRay)
+	var triggerRay_colliding = _is_ray_colliding(triggerRay)
+	
+	if triggerRay_colliding:
 		var collider = triggerRay.get_collider()
-		if collider.get("is_activated_by_collision") != null:
-			if collider.is_activated_by_collision:
-				collider.trigger_collision()
-			if collider.walkable:
-				move_tween()
-	elif _can_move():
+		if collider.get("is_activated_by_collision"):
+			collider.trigger_collision()
+		if not collider.walkable:
+			return
+	if not movementRay_colliding:
 			move_tween()
 			
 func _on_action_pressed():
