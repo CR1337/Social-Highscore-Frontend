@@ -41,6 +41,7 @@ kamera=false
 screen=false
 Collision=false
 touch=false
+window=false
 
 [input_devices]
 
