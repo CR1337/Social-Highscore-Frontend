@@ -18,8 +18,16 @@ func _getIsOn():
 export var walkable_when_on: bool
 export var walkable_when_off: bool
 
-export var on_animation_name: String
-export var off_animation_name: String
+export var on_animation_name: String setget _set_on_animation_name, _get_on_animation_name
+func _set_on_animation_name(value):
+	on_animation_name = value
+func _get_on_animation_name():
+	return on_animation_name
+export var off_animation_name: String setget _set_off_animation_name, _get_off_animation_name
+func _set_off_animation_name(value):
+	off_animation_name = value
+func _get_off_animation_name():
+	return off_animation_name
 
 export var triggerAreaOffset: Vector2 setget _setTriggerAreaOffset, _getTriggerAreaOffset
 func _setTriggerAreaOffset(value):
