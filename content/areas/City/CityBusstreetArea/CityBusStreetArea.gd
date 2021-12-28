@@ -6,8 +6,7 @@ export (Vector2) var leaveBottomPlayerPosition
 export (NodePath) var leaveRightAreaPath
 export (Vector2) var leaveRightPlayerPosition
 
-export (NodePath) var leaveBusAreaPath
-export (Vector2) var leaveBusPlayerPosition
+export (NodePath) var BusOverlayPath
 
 func _ready():
 	$LeaveBottomTrigger.targetArea = get_node(leaveBottomAreaPath)
@@ -16,5 +15,4 @@ func _ready():
 	$LeaveRightTrigger.targetArea = get_node(leaveRightAreaPath)
 	$LeaveRightTrigger.newPlayerPosition = leaveRightPlayerPosition
 	
-	$BusTrigger.targetArea = get_node(leaveBusAreaPath)
-	$BusTrigger.newPlayerPosition = leaveBusPlayerPosition
+	$BusTrigger.targetOverlay = get_node(BusOverlayPath)
