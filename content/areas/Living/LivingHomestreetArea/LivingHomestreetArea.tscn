@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/areas/LeaveHomeTriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=3]
 [ext_resource path="res://content/areas/Living/LivingHomestreetArea/LivingHomestreetArea.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://content/movables/car.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/animated_sprites/cars/green_car.png" type="Texture" id=7]
 
 [node name="LivingHomestreetArea" type="Node2D"]
 script = ExtResource( 4 )
@@ -70,3 +72,12 @@ collisionTriggerPath = NodePath("../LeaveHomeTrigger")
 
 [node name="LeaveHomeTrigger" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="car_red" parent="." instance=ExtResource( 6 )]
+position = Vector2( -112.218, 453.668 )
+path = [ [ "right", 8 ], [ "up", 10 ], [ "left", 8 ], [ "down", 10 ] ]
+
+[node name="car_green" parent="." instance=ExtResource( 6 )]
+position = Vector2( 367.355, -169.65 )
+path = [ [ "right", 7 ], [ "down", 10 ], [ "left", 7 ], [ "up", 10 ] ]
+texture = ExtResource( 7 )

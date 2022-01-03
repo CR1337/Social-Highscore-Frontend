@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://content/movables/car.gd" type="Script" id=1]
+[ext_resource path="res://assets/animated_sprites/cars/red_car.png" type="Texture" id=2]
+
+[node name="car" type="Node2D"]
+script = ExtResource( 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
