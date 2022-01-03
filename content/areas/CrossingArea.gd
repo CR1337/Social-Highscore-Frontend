@@ -1,11 +1,14 @@
 extends Area2D
 
-export var slow_down: bool
+export var slow_down: float
 export var driveThroughable: bool
+export var crosswalk: bool
 
 func _on_CrosswalkArea_body_entered(body):
-	driveThroughable = false
+	if crosswalk:
+		driveThroughable = false
 
 
 func _on_CrosswalkArea_body_exited(body):
-	driveThroughable = true
+	if crosswalk:
+		driveThroughable = true

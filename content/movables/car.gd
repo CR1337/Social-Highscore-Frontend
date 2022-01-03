@@ -10,7 +10,7 @@ export var texture: Texture
 
 onready var movementRay = $RayCast2DMovement
 onready var crosswalkRay = $RayCast2DCrosswalks
-
+var driveThroughable = true
 var waiting = false
 onready var tween = $Tween
 
@@ -78,7 +78,7 @@ func move():
 	if crosswalkRay_colliding:
 		var collider = crosswalkRay.get_collider()
 		if collider.get("slow_down"):
-			speed = max(min_speed, speed - 1)
+			speed = max(min_speed, speed - collider.get("slow_down"))
 	else:
 		speed = min(max_speed, speed + 1)
 	if movementRay_colliding:
