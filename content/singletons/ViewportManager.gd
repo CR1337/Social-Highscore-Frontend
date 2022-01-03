@@ -40,11 +40,15 @@ func change_to_last():
 
 func change_area(targetArea, newPlayerPosition):
 	shaderRect.cover()
-
+	if currentArea.get('active') != null:
+		currentArea.active = false
+	if targetArea.get('active') != null:
+		targetArea.active = true
 	var tmp_position = targetArea.position
 	targetArea.position = currentArea.position
 	currentArea.position = tmp_position
 	currentArea = targetArea
+	
 	if newPlayerPosition.y >= 0: 
 		player.position.y = (newPlayerPosition.y - 0.5) * Globals.tile_size
 	if newPlayerPosition.x >= 0: 

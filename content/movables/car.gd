@@ -33,7 +33,7 @@ var directions = {
 
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.tile_size)
-	position += Vector2.ONE * Globals.tile_size / 2
+	position += Vector2.RIGHT * Globals.tile_size / 2
 	current_segment = 0
 	current_segment_idx = 0
 	looking_direction = Vector2.DOWN
@@ -42,13 +42,15 @@ func _ready():
 	
 	
 func _process(delta):
-	if not tween.is_active():
-		if path[current_segment][0] == 'waiting':
-			increment_segment(delta)
-		else:
-			looking_direction = directions[path[current_segment][0]]
-			move()
-		$Sprite.frame = frame_idxs[looking_direction]
+	print(get_parent().get('active'))
+	if get_parent().get('active'):
+		if not tween.is_active():
+			if path[current_segment][0] == 'waiting':
+				increment_segment(delta)
+			else:
+				looking_direction = directions[path[current_segment][0]]
+				move()
+			$Sprite.frame = frame_idxs[looking_direction]
 	
 func move_tween():
 	tween.interpolate_property(self, "position",
@@ -76,9 +78,9 @@ func move():
 	if crosswalkRay_colliding:
 		var collider = crosswalkRay.get_collider()
 		if collider.get("slow_down"):
-			speed = max(min_speed, 0.6*speed)
+			speed = max(min_speed, speed - 1)
 	else:
-		speed = min(max_speed, 1.4*speed)
+		speed = min(max_speed, speed + 1)
 	if movementRay_colliding:
 		var collider = movementRay.get_collider()
 		if collider.get("driveThroughable") != null and not collider.get("driveThroughable"):

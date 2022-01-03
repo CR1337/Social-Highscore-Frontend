@@ -12,6 +12,8 @@ export (Vector2) var leaveTopPlayerPosition
 export (NodePath) var leaveHomeAreaPath
 export (Vector2) var leaveHomePlayerPosition
 
+var active = true
+
 func _ready():
 	$LeaveLeftTrigger.targetArea = get_node(leaveLeftAreaPath)
 	$LeaveLeftTrigger.newPlayerPosition = leaveLeftPlayerPosition
