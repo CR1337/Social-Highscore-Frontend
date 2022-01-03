@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://content/movables/car.gd" type="Script" id=1]
 [ext_resource path="res://assets/animated_sprites/cars/red_car.png" type="Texture" id=2]
 
-[node name="car" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 44.5, 45.5 )
+
+[node name="car" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
@@ -13,4 +18,16 @@ hframes = 4
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCast2DMovement" type="RayCast2D" parent="."]
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2DCrosswalks" type="RayCast2D" parent="."]
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 19 )
+shape = SubResource( 1 )
