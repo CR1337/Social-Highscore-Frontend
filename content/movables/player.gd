@@ -5,7 +5,6 @@ export var speed = 3
 
 onready var movementRay = $RayCast2DMovement
 onready var triggerRay = $RayCast2DTrigger
-
 onready var tween = $Tween
 
 var looking_direction: Vector2
@@ -26,6 +25,8 @@ var animation_counter = 0
 var movement_frame_idx = 0
 export var animation_period = 0.25
 
+
+var driveThroughable = false
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.tile_size)
 	position += Vector2.ONE * Globals.tile_size / 2

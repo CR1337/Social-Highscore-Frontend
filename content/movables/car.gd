@@ -11,12 +11,12 @@ export var texture: Texture
 onready var movementRay = $RayCast2DMovement
 onready var crosswalkRay = $RayCast2DCrosswalks
 
-
+var waiting = false
 onready var tween = $Tween
 
 var looking_direction: Vector2
 var current_segment: int
-var current_segment_idx: int
+var current_segment_idx: float
 var frame_idxs = {
 	Vector2.DOWN: 1,
 	Vector2.LEFT: 2,
@@ -28,7 +28,7 @@ var directions = {
 	'down': Vector2.DOWN,
 	'left': Vector2.LEFT,
 	'right': Vector2.RIGHT,
-	'up': Vector2.UP
+	'up': Vector2.UP,
 }
 
 func _ready():
@@ -43,8 +43,11 @@ func _ready():
 	
 func _process(delta):
 	if not tween.is_active():
-		looking_direction = directions[path[current_segment][0]]
-		move()
+		if path[current_segment][0] == 'waiting':
+			increment_segment(delta)
+		else:
+			looking_direction = directions[path[current_segment][0]]
+			move()
 		$Sprite.frame = frame_idxs[looking_direction]
 	
 func move_tween():
@@ -58,6 +61,12 @@ func _is_ray_colliding(ray, factor = 1):
 	ray.force_raycast_update()
 	return ray.is_colliding()
 
+func increment_segment(delta):
+	current_segment_idx = current_segment_idx + delta
+	if current_segment_idx >= path[current_segment][1]:
+		current_segment = (current_segment + 1) % len(path)
+		current_segment_idx = 0
+	
 func move():
 	# _is_ray_colliding has side effects 
 	# so call must be done at the beginning
@@ -72,11 +81,7 @@ func move():
 		speed = min(max_speed, 1.4*speed)
 	if movementRay_colliding:
 		var collider = movementRay.get_collider()
-		if collider.get("walkable") != null and not collider.get("walkable"):
+		if collider.get("driveThroughable") != null and not collider.get("driveThroughable"):
 			return
 	move_tween()
-	current_segment_idx = current_segment_idx + 1
-	if current_segment_idx == path[current_segment][1]:
-		current_segment = (current_segment + 1) % len(path)
-		current_segment_idx = 0
-	
+	increment_segment(1)

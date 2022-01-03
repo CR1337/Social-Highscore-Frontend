@@ -21,12 +21,10 @@ hframes = 4
 [node name="RayCast2DMovement" type="RayCast2D" parent="."]
 collision_mask = 4
 collide_with_areas = true
-collide_with_bodies = false
 
 [node name="RayCast2DCrosswalks" type="RayCast2D" parent="."]
 collision_mask = 4
 collide_with_areas = true
-collide_with_bodies = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 19 )
