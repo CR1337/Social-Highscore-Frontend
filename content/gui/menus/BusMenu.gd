@@ -1,9 +1,9 @@
 extends Node2D
 
 
-onready var addressLineEdit = $Background/MarginContainer/VBoxContainer/AddressVBoxContainer/AddressLineEdit
-onready var portLineEdit = $Background/MarginContainer/VBoxContainer/PortVBoxContainer/PortLineEdit
-onready var okButton = $Background/MarginContainer/VBoxContainer/ButtonsHBoxContainer/OkButton
+#onready var addressLineEdit = $Background/MarginContainer/VBoxContainer/AddressVBoxContainer/AddressLineEdit
+#onready var portLineEdit = $Background/MarginContainer/VBoxContainer/PortVBoxContainer/PortLineEdit
+#onready var okButton = $Background/MarginContainer/VBoxContainer/ButtonsHBoxContainer/OkButton
 
 export (NodePath) var leaveCityAreaPath
 export (Vector2) var leaveCityPlayerPosition
