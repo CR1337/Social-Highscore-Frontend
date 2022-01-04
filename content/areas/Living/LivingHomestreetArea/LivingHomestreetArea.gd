@@ -12,6 +12,9 @@ export (Vector2) var leaveTopPlayerPosition
 export (NodePath) var leaveHomeAreaPath
 export (Vector2) var leaveHomePlayerPosition
 
+export (NodePath) var leaveMomAreaPath
+export (Vector2) var leaveMomPlayerPosition
+
 var active = true
 
 func _ready():
@@ -26,3 +29,6 @@ func _ready():
 
 	$LeaveHomeTrigger.targetArea = get_node(leaveHomeAreaPath)
 	$LeaveHomeTrigger.newPlayerPosition = leaveHomePlayerPosition	
+	
+	$LeaveMomTrigger.targetArea = get_node(leaveMomAreaPath)
+	$LeaveMomTrigger.newPlayerPosition = leaveMomPlayerPosition	

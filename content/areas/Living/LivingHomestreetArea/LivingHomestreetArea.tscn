@@ -80,6 +80,15 @@ collisionTriggerPath = NodePath("../LeaveHomeTrigger")
 [node name="LeaveHomeTrigger" type="Node" parent="."]
 script = ExtResource( 3 )
 
+[node name="LeaveMomTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160.04, 862.449 )
+is_activated_by_collision = true
+walkable = true
+collisionTriggerPath = NodePath("../LeaveMomTrigger")
+
+[node name="LeaveMomTrigger" type="Node" parent="."]
+script = ExtResource( 3 )
+
 [node name="car_red" parent="." instance=ExtResource( 6 )]
 position = Vector2( -110.72, 516.597 )
 path = [ [ "right", 8 ], [ "up", 10 ], [ "left", 8 ], [ "down", 10 ] ]

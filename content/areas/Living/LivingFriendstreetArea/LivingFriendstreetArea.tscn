@@ -3,12 +3,12 @@
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=3]
-[ext_resource path="res://content/areas/Living/LivingPharmacystreetArea/LivingPharmacystreetArea.gd" type="Script" id=4]
+[ext_resource path="res://content/areas/Living/LivingFriendstreetArea/LivingFriendstreetArea.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/movables/car.tscn" type="PackedScene" id=6]
 [ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=7]
 
-[node name="LivingFriendystreetArea" type="Node2D"]
+[node name="LivingFriendstreetArea" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Background" type="TileMap" parent="."]
@@ -55,3 +55,21 @@ position = Vector2( 414.676, 510.675 )
 scale = Vector2( 1, 2 )
 slow_down = 1.0
 crosswalk = true
+
+[node name="LeaveFriendTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 608.114, 863.028 )
+is_activated_by_collision = true
+walkable = true
+collisionTriggerPath = NodePath("../LeaveFriendTrigger")
+
+[node name="LeaveFriendTrigger" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="LeavePartnerTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 158.21, 352.543 )
+is_activated_by_collision = true
+walkable = true
+collisionTriggerPath = NodePath("../LeavePartnerTrigger")
+
+[node name="LeavePartnerTrigger" type="Node" parent="."]
+script = ExtResource( 3 )
