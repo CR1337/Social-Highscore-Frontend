@@ -15,7 +15,6 @@ func _init():
 
 func _process(delta):
 	if active:
-		print(_time)
 		_time = _time + delta
 		while _currentSize > 0 && _timerList[1][0] <= _time:
 			var item = delMin()
