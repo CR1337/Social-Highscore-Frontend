@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/City/CityStorestreetArea/CityStoreStreetArea.gd" type="Script" id=3]
 [ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://content/areas/components/trafficLight.tscn" type="PackedScene" id=6]
 
 [node name="CityStorestreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -25,7 +26,7 @@ z_index = 1
 tile_set = ExtResource( 1 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 262146, 33, 0, 524288, 35, 0, 786438, 33, 0, 851975, 49, 0, 851976, 50, 0, 851977, 50, 0, 851978, 48, 0, 917506, 35, 0 )
+tile_data = PoolIntArray( 524288, 35, 0, 851975, 49, 0, 851976, 50, 0, 851977, 50, 0, 851978, 48, 0, 917506, 35, 0 )
 
 [node name="Collsion" type="TileMap" parent="."]
 tile_set = ExtResource( 5 )
@@ -52,3 +53,10 @@ collisionTriggerPath = NodePath("../LeaveTopTrigger")
 
 [node name="LeaveTopTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
+
+[node name="trafficLight" parent="." instance=ExtResource( 6 )]
+position = Vector2( 158.974, 321.654 )
+is_on = true
+
+[node name="trafficLight2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 416.683, 831.079 )

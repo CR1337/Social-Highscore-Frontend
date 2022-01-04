@@ -42,7 +42,6 @@ func _ready():
 	
 	
 func _process(delta):
-	print(get_parent().get('active'))
 	if get_parent().get('active'):
 		if not tween.is_active():
 			if path[current_segment][0] == 'waiting':

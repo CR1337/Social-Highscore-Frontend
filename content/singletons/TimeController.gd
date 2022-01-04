@@ -1,17 +1,28 @@
 extends Node
 
+signal change_traffic_lights
+
 var _time = 0
 var _timerList
 var _currentSize
+var active = true
 
 func _init():
 	_timerList = [[0]]
 	_currentSize = 0
+	# I dont know if the time controller should care about the traffic lights... 
+	setTimer(10, "traffic_toggle")
 
 func _process(delta):
-	_time = _time + delta
-	while _currentSize > 0 && _timerList[1][0] <= _time:
-		print(delMin())
+	if active:
+		print(_time)
+		_time = _time + delta
+		while _currentSize > 0 && _timerList[1][0] <= _time:
+			var item = delMin()
+			print(item)
+			if item[1] == "traffic_toggle":
+				setTimer(10, "traffic_toggle")
+				emit_signal("change_traffic_lights")
 		
 
 func setTimer(seconds, handle):
