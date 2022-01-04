@@ -1,7 +1,5 @@
 tool
 extends Node2D
-
-
 export var is_on: bool setget _setIsOn, _getIsOn
 func _setIsOn(value):
 	is_on = value
