@@ -191,6 +191,3 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="debugCamera" type="Camera2D" parent="."]
-position = Vector2( 695.676, 664.336 )
