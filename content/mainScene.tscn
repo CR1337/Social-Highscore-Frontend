@@ -157,7 +157,7 @@ position = Vector2( 2040.11, -654.345 )
 [node name="BusMenu" parent="Overlays" instance=ExtResource( 24 )]
 position = Vector2( 2049.05, 2118.92 )
 leaveCityAreaPath = NodePath("../../Areas/CityBusstreetArea")
-leaveCityPlayerPosition = Vector2( 8, 7 )
+leaveCityPlayerPosition = Vector2( 9, 7 )
 leaveLivingAreaPath = NodePath("../../Areas/LivingBusstreetArea")
 leaveLivingPlayerPosition = Vector2( 8, 7 )
 leaveUtilityAreaPath = NodePath("../../Areas/UtilityBusstreetArea")
