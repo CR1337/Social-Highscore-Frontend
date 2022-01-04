@@ -43,6 +43,15 @@ collisionTriggerPath = NodePath("../LeaveRightTrigger")
 [node name="LeaveRightTrigger" type="Node" parent="."]
 script = ExtResource( 3 )
 
+[node name="LeavePharmacyTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160.504, 861.696 )
+is_activated_by_collision = true
+walkable = true
+collisionTriggerPath = NodePath("../LeavePharmacyTrigger")
+
+[node name="LeavePharmacyTrigger" type="Node" parent="."]
+script = ExtResource( 3 )
+
 [node name="CrossingArea" parent="." instance=ExtResource( 6 )]
 position = Vector2( 352.234, 511.632 )
 scale = Vector2( 1, 2 )
