@@ -53,6 +53,7 @@ z_index = 2
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="LivingHomestreetArea" parent="Areas" instance=ExtResource( 13 )]
+position = Vector2( 0, -3.4538 )
 leaveLeftAreaPath = NodePath("../LivingPharmacystreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
 leaveRightAreaPath = NodePath("../LivingFriendstreetArea")
@@ -86,7 +87,7 @@ leaveAreaPath = NodePath("../LivingPharmacystreetArea")
 leavePlayerPosition = Vector2( 3, 14 )
 
 [node name="LivingBusstreetArea" parent="Areas" instance=ExtResource( 6 )]
-position = Vector2( 3.98156, -1531.95 )
+position = Vector2( 3.98156, -1534.07 )
 leaveBottomAreaPath = NodePath("../LivingHomestreetArea")
 leaveBottomPlayerPosition = Vector2( -1, 0 )
 BusOverlayPath = NodePath("../../Overlays/BusMenu")

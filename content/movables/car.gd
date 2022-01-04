@@ -1,3 +1,4 @@
+tool
 extends Node2D
 
 
@@ -6,7 +7,11 @@ export var min_speed = 1
 var speed: float
 # path constist of tuples containing a direction and the number of tiles for that direction (e.g ('right', 8))
 export var path: Array
-export var texture: Texture
+export var texture: Texture setget _set_texture
+
+func _set_texture(value):
+	texture = value
+	$Sprite.texture = texture
 
 onready var movementRay = $RayCast2DMovement
 onready var crosswalkRay = $RayCast2DCrosswalks
@@ -37,12 +42,11 @@ func _ready():
 	current_segment = 0
 	current_segment_idx = 0
 	looking_direction = Vector2.DOWN
-	$Sprite.texture = texture
 	speed = max_speed
+	$Sprite.texture = texture
 	
 	
 func _process(delta):
-	print(get_parent().get('active'))
 	if get_parent().get('active'):
 		if not tween.is_active():
 			if path[current_segment][0] == 'waiting':
