@@ -69,3 +69,7 @@ func delMin():
 
 func empty():
 	return _currentSize < 1
+	
+func get_gametime():
+	return 0
+	

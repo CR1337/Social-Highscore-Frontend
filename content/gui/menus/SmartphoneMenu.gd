@@ -1,23 +1,21 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func _on_BackButton_released():
+	ViewportManager.change_to_transparent()
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func _on_CitizenAppButton_released():
 	pass # Replace with function body.
 
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
-		ViewportManager.change_to_transparent()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_BankingAppButton_released():
+	pass # Replace with function body.
 
 
-func _on_QuitButton_pressed():
-	get_tree().quit()
+func _on_NewsAppButton_released():
+	pass # Replace with function body.
+
+
+func _on_MessengerAppButton_released():
+	pass # Replace with function body.
