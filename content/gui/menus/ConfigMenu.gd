@@ -35,8 +35,11 @@ func _get_selected_angle():
 	elif CheckBoxes[3].pressed:
 		return 270
 
-func refresh():
+func load_and_refresh():
 	Config.load_from_file()
+	refresh()
+	
+func refresh():
 	addressLineEdit.text = Config.serverAddress
 	portLineEdit.text = Config.serverPort
 	_set_selected_angle(Config.imageRotationAngle)
@@ -88,3 +91,7 @@ func _on_CheckBox180_pressed():
 
 func _on_CheckBox270_pressed():
 	_set_selected_angle(270)
+
+
+func _on_TakeReferenceImageButton_pressed():
+	ViewportManager.change_to_refenreceImage()

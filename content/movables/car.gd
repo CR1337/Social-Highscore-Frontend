@@ -89,7 +89,7 @@ func move():
 	
 	if safetyDistanceRay_colliding:
 		var collider = safetydistanceRay.get_collider()
-		print(self.name, " ", safetydistanceRay.get_collider().get_parent().name, " ", path[current_segment][0])
+#		print(self.name, " ", safetydistanceRay.get_collider().get_parent().name, " ", path[current_segment][0])
 		if path[current_segment][0] == "up" or path[current_segment][0] == "down":
 			return
 	if slowdownRay_colliding:

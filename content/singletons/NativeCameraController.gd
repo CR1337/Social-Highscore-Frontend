@@ -8,6 +8,8 @@ var imagePlugin
 signal got_image(image, rawImage)
 
 func _ready():
+	OS.request_permissions()
+	
 	if Engine.has_singleton("GodotGetImage"):
 		imagePlugin = Engine.get_singleton("GodotGetImage")
 		imagePlugin.connect("image_request_completed", self, "_received_image") 
@@ -33,5 +35,4 @@ func take_image():
 		imagePlugin.getCameraImage()
 	else:
 		EventBus.emit_signal("debug_error", "plugin not loaded")
-		print(raw_debug_image.size())
-		emit_signal("got_image", debug_image, raw_debug_image)
+		call_deferred("emit_signal", "got_image", debug_image, raw_debug_image)

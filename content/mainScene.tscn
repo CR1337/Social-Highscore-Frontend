@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://content/movables/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
@@ -29,6 +29,8 @@
 [ext_resource path="res://content/areas/Living/LivingPharmacyStreetPharmacyArea/LivingPharmacyStreetPharmacy.tscn" type="PackedScene" id=27]
 [ext_resource path="res://content/areas/Utility/UtilityPrisonstreetPrisonArea/UtilityPrisonstreetPrison.tscn" type="PackedScene" id=28]
 [ext_resource path="res://content/areas/Utility/UtilityBusstreetHospitalArea/UtilityBusstreetHospital.tscn" type="PackedScene" id=29]
+[ext_resource path="res://content/gui/menus/ReferenceImageMenu.tscn" type="PackedScene" id=30]
+[ext_resource path="res://content/gui/menus/AuthenticationOverlay.tscn" type="PackedScene" id=31]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -190,6 +192,9 @@ z_index = 10
 [node name="ConfigMenu" parent="Overlays" instance=ExtResource( 12 )]
 position = Vector2( 2036.54, 728.618 )
 
+[node name="ReferenceImageMenu" parent="Overlays" instance=ExtResource( 30 )]
+position = Vector2( 3001.48, 1946.69 )
+
 [node name="GameMenu" parent="Overlays" instance=ExtResource( 11 )]
 position = Vector2( 2841.38, -652 )
 
@@ -200,6 +205,9 @@ position = Vector2( 3193.46, 1314.42 )
 position = Vector2( 2040.11, -654.345 )
 
 [node name="TransparentOverlay" type="Node2D" parent="Overlays"]
+
+[node name="AutheticationOverlay" parent="Overlays" instance=ExtResource( 31 )]
+position = Vector2( 3633.01, -651.034 )
 
 [node name="BusMenu" parent="Overlays" instance=ExtResource( 24 )]
 position = Vector2( 2049.05, 2118.92 )
@@ -241,4 +249,3 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 338.542, 616.502 )
-current = true

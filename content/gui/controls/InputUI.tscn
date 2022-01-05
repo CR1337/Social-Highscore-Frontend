@@ -62,7 +62,7 @@ normal = ExtResource( 3 )
 pressed = ExtResource( 3 )
 
 [node name="menu_button" type="TouchScreenButton" parent="."]
-position = Vector2( 29.703, 1063.84 )
+position = Vector2( 28.5138, 1308.82 )
 scale = Vector2( 0.498869, 0.498869 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 5 )

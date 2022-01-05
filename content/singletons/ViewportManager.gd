@@ -11,12 +11,14 @@ var smartphoneMenu: Node2D
 var startMenu: Node2D
 var gameMenu: Node2D
 var configMenu: Node2D
+var referenceImageMenu: Node2D
 var dialogOverlay: Node2D
 var transparentOverlay: Node2D
 var newsApp: Node2D
 var messengerApp: Node2D
 var bankingApp: Node2D
 var citizenApp: Node2D
+var authenticationOverlay: Node2D
 
 func _ready():
 	InputBus.connect("phone_pressed", self, "_on_phone_pressed")
@@ -35,8 +37,15 @@ func change_to_transparent():
 func change_to_config():
 	change_overlay(configMenu)
 	
+func change_to_refenreceImage():
+	change_overlay(referenceImageMenu)
+	
 func change_to_last():
 	change_overlay(lastOverlay)
+	
+func change_to_authentication(post_authentication_trigger):
+	authenticationOverlay.post_authentication_trigger = post_authentication_trigger
+	change_overlay(authenticationOverlay)
 
 func change_area(targetArea, newPlayerPosition):
 	shaderRect.cover()

@@ -11,13 +11,14 @@ var http_request
 
 var busy = false
 var current_job_type = JOB_TYPE.IDLE
-var current_job_id = null
-var next_job_id = 1
+var current_job_id: int = 0
+var next_job_id: int = 1
 
 var image_dict: Dictionary
 
 signal image_processing_done(response, job_id, image)
 signal image_processing_error(response_code)
+signal reference_image_taken(image, job_id)
 
 var b64_reference_image: String
 var reference_image: Image
@@ -33,6 +34,16 @@ func take_reference_image():
 	
 func analyze():
 	return _do_job(JOB_TYPE.ANALYZE)
+	
+func analyze_image(image):
+	if busy:
+		return null
+	busy = true
+	current_job_type = JOB_TYPE.ANALYZE
+	current_job_id = next_job_id
+	next_job_id += 1
+	call_deferred("_on_got_image", image, image.get_data())
+	return current_job_id
 	
 func verify():
 	return _do_job(JOB_TYPE.VERIFY)
@@ -50,7 +61,6 @@ func _do_job(job_type):
 	return current_job_id
 
 func _on_got_image(image, rawImage):
-	print(rawImage.size())
 	busy = false
 	var b64_image = "data:image/jpeg;base64," + Marshalls.raw_to_base64(rawImage)
 	var endpoint
@@ -67,6 +77,7 @@ func _on_got_image(image, rawImage):
 		JOB_TYPE.REFERENCE_IMAGE:
 			reference_image = image
 			b64_reference_image = b64_image
+			emit_signal("reference_image_taken", image, current_job_id)
 			do_request = false
 			
 	if do_request:
@@ -81,13 +92,11 @@ func _on_got_image(image, rawImage):
 			EventBus.emit_signal("debug_error", "Request OK")
 			
 	current_job_type = JOB_TYPE.IDLE
-	current_job_id = null
+	current_job_id = -1
 	
 func _handle_response(response, body):
 	var parsed_response = JSON.parse(body.get_string_from_utf8()).result
 	var job_id = parsed_response['job_id']
-	print(job_id)
-	print(image_dict)
 	var image = image_dict[str(job_id)]
 	emit_signal("image_processing_done", parsed_response, job_id, image)
 	image_dict.erase(job_id)

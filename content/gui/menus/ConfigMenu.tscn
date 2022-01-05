@@ -36,9 +36,9 @@ custom_constants/separation = 150
 alignment = 1
 
 [node name="AddressVBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
-margin_top = 230.0
+margin_top = 91.0
 margin_right = 728.0
-margin_bottom = 332.0
+margin_bottom = 193.0
 
 [node name="AddressLabel" type="Label" parent="Background/MarginContainer/VBoxContainer/AddressVBoxContainer"]
 margin_right = 728.0
@@ -56,9 +56,9 @@ text = "0.0.0.0"
 align = 1
 
 [node name="PortVBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
-margin_top = 482.0
+margin_top = 343.0
 margin_right = 728.0
-margin_bottom = 564.0
+margin_bottom = 425.0
 
 [node name="PortLabel" type="Label" parent="Background/MarginContainer/VBoxContainer/PortVBoxContainer"]
 margin_right = 728.0
@@ -75,9 +75,9 @@ text = "80"
 align = 1
 
 [node name="AngleVBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
-margin_top = 714.0
+margin_top = 575.0
 margin_right = 728.0
-margin_bottom = 816.0
+margin_bottom = 677.0
 
 [node name="AngleLabel" type="Label" parent="Background/MarginContainer/VBoxContainer/AngleVBoxContainer"]
 margin_right = 728.0
@@ -139,10 +139,18 @@ custom_fonts/font = ExtResource( 1 )
 text = "270 °"
 align = 1
 
-[node name="ButtonsHBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
-margin_top = 966.0
+[node name="TakeReferenceImageButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+margin_top = 827.0
 margin_right = 728.0
-margin_bottom = 1094.0
+margin_bottom = 955.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 1 )
+text = "Take reference image"
+
+[node name="ButtonsHBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+margin_top = 1105.0
+margin_right = 728.0
+margin_bottom = 1233.0
 
 [node name="OkButton" type="Button" parent="Background/MarginContainer/VBoxContainer/ButtonsHBoxContainer"]
 margin_right = 362.0
@@ -165,5 +173,6 @@ text = "Abbrechen"
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox90" to="." method="_on_CheckBox90_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox180" to="." method="_on_CheckBox180_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox270" to="." method="_on_CheckBox270_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/TakeReferenceImageButton" to="." method="_on_TakeReferenceImageButton_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/ButtonsHBoxContainer/OkButton" to="." method="_on_OkButton_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/ButtonsHBoxContainer/CancelButton" to="." method="_on_CancelButton_pressed"]

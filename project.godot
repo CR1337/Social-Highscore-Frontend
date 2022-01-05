@@ -26,11 +26,12 @@ ViewportManager="*res://content/singletons/ViewportManager.gd"
 Config="*res://content/singletons/Config.gd"
 Globals="*res://content/singletons/Globals.gd"
 TimeController="*res://content/singletons/TimeController.gd"
+CitizenRecord="*res://content/singletons/CitizenRecord.gd"
 
 [display]
 
-window/size/width=1526
-window/size/height=1944
+window/size/width=768
+window/size/height=1408
 window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
