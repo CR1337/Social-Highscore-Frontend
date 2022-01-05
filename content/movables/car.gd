@@ -8,15 +8,20 @@ var speed: float
 # path constist of tuples containing a direction and the number of tiles for that direction (e.g ('right', 8))
 export var path: Array
 export var texture: Texture setget _set_texture
+var driveThrougable = false
+var slowDown = 0.2
 
 func _set_texture(value):
 	texture = value
 	$Sprite.texture = texture
 
 onready var movementRay = $RayCast2DMovement
-onready var crosswalkRay = $RayCast2DCrosswalks
-var driveThroughable = true
+onready var slowdownRay = $RayCast2DSlowDown
+onready var safetydistanceRay = $RayCast2DSafetyDistance#
+
+var driveThroughable = false
 var waiting = false
+
 onready var tween = $Tween
 
 var looking_direction: Vector2
@@ -77,10 +82,18 @@ func move():
 	# _is_ray_colliding has side effects 
 	# so call must be done at the beginning
 	var movementRay_colliding = _is_ray_colliding(movementRay)
-	var crosswalkRay_colliding = _is_ray_colliding(crosswalkRay, 3)
+	var slowdownRay_colliding = _is_ray_colliding(slowdownRay, 2)
+	var safetyDistanceRay_colliding = _is_ray_colliding(safetydistanceRay, 3) and safetydistanceRay.get_collider().get_parent() != self
+	
 
-	if crosswalkRay_colliding:
-		var collider = crosswalkRay.get_collider()
+	
+	if safetyDistanceRay_colliding:
+		var collider = safetydistanceRay.get_collider()
+		print(self.name, " ", safetydistanceRay.get_collider().get_parent().name, " ", path[current_segment][0])
+		if path[current_segment][0] == "up" or path[current_segment][0] == "down":
+			return
+	if slowdownRay_colliding:
+		var collider = slowdownRay.get_collider()
 		if collider.get("slow_down"):
 			speed = max(min_speed, speed - collider.get("slow_down"))
 	else:
@@ -89,5 +102,6 @@ func move():
 		var collider = movementRay.get_collider()
 		if collider.get("driveThroughable") != null and not collider.get("driveThroughable"):
 			return
+
 	move_tween()
 	increment_segment(1)

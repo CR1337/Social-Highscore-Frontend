@@ -7,6 +7,7 @@ export (NodePath) var leaveRightAreaPath
 export (Vector2) var leaveRightPlayerPosition
 
 export (NodePath) var BusOverlayPath
+var active = false
 
 func _ready():
 	$LeaveBottomTrigger.targetArea = get_node(leaveBottomAreaPath)

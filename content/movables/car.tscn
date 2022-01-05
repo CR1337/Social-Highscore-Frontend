@@ -3,7 +3,7 @@
 [ext_resource path="res://content/movables/car.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44.5, 45.5 )
+extents = Vector2( 41.7967, 43.3066 )
 
 [node name="car" type="Area2D"]
 collision_layer = 4
@@ -19,10 +19,23 @@ hframes = 4
 collision_mask = 4
 collide_with_areas = true
 
-[node name="RayCast2DCrosswalks" type="RayCast2D" parent="."]
+[node name="RayCast2DSlowDown" type="RayCast2D" parent="."]
 collision_mask = 4
+collide_with_areas = true
+
+[node name="RayCast2DSafetyDistance" type="RayCast2D" parent="."]
+collision_mask = 8
 collide_with_areas = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 19 )
+shape = SubResource( 1 )
+
+[node name="SafetyDistance" type="Area2D" parent="."]
+position = Vector2( 1, 19 )
+scale = Vector2( 3, 3 )
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D_Safety_Distance" type="CollisionShape2D" parent="SafetyDistance"]
 shape = SubResource( 1 )

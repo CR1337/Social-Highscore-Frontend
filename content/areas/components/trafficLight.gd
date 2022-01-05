@@ -1,11 +1,18 @@
 tool
 extends Node2D
+
 export var is_on: bool setget _setIsOn, _getIsOn
+export var has_crosswalk: bool
+export (NodePath) var crosswalk
 func _setIsOn(value):
 	is_on = value
 	if value:
+		if has_crosswalk:
+			get_node(crosswalk).setDriveThrougable(false)
 		$Sprite.frame = 1
 	else:
+		if has_crosswalk:
+			get_node(crosswalk).setDriveThrougable(true)
 		$Sprite.frame = 0
 func _getIsOn():
 	return is_on

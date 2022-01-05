@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/animated_sprites/cars/green_car.png" type="Texture" id=9]
 [ext_resource path="res://assets/animated_sprites/cars/red_car.png" type="Texture" id=10]
 [ext_resource path="res://content/movables/car.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/animated_sprites/cars/light_green_car.png" type="Texture" id=12]
+[ext_resource path="res://assets/animated_sprites/cars/blue_car.png" type="Texture" id=13]
 
 [node name="CityBusstreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -63,20 +65,38 @@ actionTriggerPath = NodePath("../BusTrigger")
 script = ExtResource( 6 )
 
 [node name="trafficLight" parent="." instance=ExtResource( 7 )]
-position = Vector2( 542.965, 519.974 )
-crosswalk = NodePath("../CrossingArea")
+position = Vector2( 546.965, 519.974 )
 is_on = true
-
-[node name="car2" parent="." instance=ExtResource( 11 )]
-position = Vector2( -111.603, 201.118 )
-path = [ [ "waiting", 6 ], [ "right", 15 ], [ "up", 5 ], [ "left", 15 ], [ "down", 5 ] ]
-texture = ExtResource( 9 )
-
-[node name="car3" parent="." instance=ExtResource( 11 )]
-position = Vector2( -108.607, 89.1342 )
-path = [ [ "waiting", 3 ], [ "right", 15 ], [ "up", 3 ], [ "left", 15 ], [ "down", 3 ] ]
-texture = ExtResource( 10 )
+has_crosswalk = true
+crosswalk = NodePath("../CrossingArea")
 
 [node name="CrossingArea" parent="." instance=ExtResource( 8 )]
 position = Vector2( 479.861, 672.254 )
 scale = Vector2( 1, 3 )
+slow_down = 0.3
+crosswalk = true
+
+[node name="car2" parent="." instance=ExtResource( 11 )]
+position = Vector2( -111.603, 199.336 )
+path = [ [ "waiting", 1 ], [ "right", 15 ], [ "up", 5 ], [ "left", 15 ], [ "down", 5 ] ]
+texture = ExtResource( 9 )
+
+[node name="car3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -113.952, 83.7888 )
+path = [ [ "waiting", 0 ], [ "right", 15 ], [ "up", 3 ], [ "left", 15 ], [ "down", 3 ] ]
+texture = ExtResource( 10 )
+
+[node name="car" parent="." instance=ExtResource( 11 )]
+position = Vector2( 272.254, 1125.97 )
+path = [ [ "waiting", 10 ], [ "up", 7 ], [ "right", 9 ], [ "down", 7 ], [ "left", 9 ], [ "waiting", 2 ], [ "up", 13 ], [ "right", 9 ], [ "down", 13 ], [ "left", 9 ] ]
+texture = ExtResource( 12 )
+
+[node name="car4" parent="." instance=ExtResource( 11 )]
+position = Vector2( -116.396, 313.469 )
+path = [ [ "waiting", 5 ], [ "right", 4 ], [ "down", 6 ], [ "right", 11 ], [ "down", 6 ], [ "left", 15 ], [ "up", 12 ] ]
+texture = ExtResource( 13 )
+
+[node name="CrossingArea2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 229.401, 672.397 )
+scale = Vector2( 3, 3 )
+slow_down = 0.2
