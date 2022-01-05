@@ -18,7 +18,6 @@ func _process(delta):
 		_time = _time + delta
 		while _currentSize > 0 && _timerList[1][0] <= _time:
 			var item = delMin()
-			print(item)
 			if item[1] == "traffic_toggle":
 				setTimer(10, "traffic_toggle")
 				emit_signal("change_traffic_lights")
