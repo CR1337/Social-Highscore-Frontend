@@ -27,6 +27,7 @@ Config="*res://content/singletons/Config.gd"
 Globals="*res://content/singletons/Globals.gd"
 TimeController="*res://content/singletons/TimeController.gd"
 CitizenRecord="*res://content/singletons/CitizenRecord.gd"
+TrafficController="*res://content/singletons/TrafficController.gd"
 
 [display]
 

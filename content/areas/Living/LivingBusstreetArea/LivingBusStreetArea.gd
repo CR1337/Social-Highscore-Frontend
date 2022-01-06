@@ -1,15 +1,26 @@
-extends Node2D
+extends "res://content/areas/Street.gd"
 
 export (NodePath) var leaveBottomAreaPath
 export (Vector2) var leaveBottomPlayerPosition
 
 export (NodePath) var BusOverlayPath
 
-var active = false
-
 func _ready():
 	$LeaveBottomTrigger.targetArea = get_node(leaveBottomAreaPath)
 	$LeaveBottomTrigger.newPlayerPosition = leaveBottomPlayerPosition
 	
 	$BusTrigger.targetOverlay = get_node(BusOverlayPath)
+	
+	cars = {
+		0: $car_0,
+		4: $car_4,
+		5: $car_5,
+		9: $car_9,
+		10: $car_10,
+		12: $car_12,
+		13: $car_13,
+		14: $car_14
+	}
+	start_car(0)
+	start_car(12)
 	

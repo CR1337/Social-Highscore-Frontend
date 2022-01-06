@@ -1,15 +1,20 @@
 tool
 extends Node2D
 
-
 export var max_speed = 4.0
 export var min_speed = 2.0
+export var start_position: Vector2
 var speed: float
 # path constist of tuples containing a direction and the number of tiles for that direction (e.g ('right', 8))
 export var path: Array
+
 export var texture: Texture setget _set_texture
-var driveThrougable = false
+export var next_area: String
+export var next_car_id: int
+
 var slowDown = 0.2
+var _starting_offset: float
+var active = false
 
 func _set_texture(value):
 	texture = value
@@ -20,6 +25,7 @@ onready var slowdownRay = $RayCast2DSlowDown
 
 var driveThroughable = false
 
+var tile_size: int
 
 onready var tween = $Tween
 
@@ -41,17 +47,20 @@ var directions = {
 }
 
 func _ready():
-	position = position.snapped(Vector2.ONE * Globals.tile_size)
-	position += Vector2.RIGHT * Globals.tile_size / 2
+	tile_size = Globals.tile_size
+	$Sprite.texture = texture
+	looking_direction = Vector2.DOWN
+
+func start():
+	active = true
+	driveThroughable = false
 	current_segment = 0
 	current_segment_idx = 0
-	looking_direction = Vector2.DOWN
 	speed = max_speed
-	$Sprite.texture = texture
-	
-	
+	position = start_position * tile_size + Vector2.RIGHT * tile_size/2
+
 func _process(delta):
-	if get_parent().get('active'):
+	if active:
 		if not tween.is_active():
 			if path[current_segment][0] == 'waiting':
 				increment_segment(delta)
@@ -62,20 +71,24 @@ func _process(delta):
 	
 func move_tween():
 	tween.interpolate_property(self, "position",
-		position, position + looking_direction * Globals.tile_size,
+		position, position + looking_direction * tile_size,
 		1.0 / speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 	
 func _is_ray_colliding(ray, factor = 1):
-	ray.cast_to = looking_direction * Globals.tile_size * factor
+	ray.cast_to = looking_direction * tile_size * factor
 	ray.force_raycast_update()
 	return ray.is_colliding()
 
 func increment_segment(delta):
 	current_segment_idx = current_segment_idx + delta
 	if current_segment_idx >= path[current_segment][1]:
-		current_segment = (current_segment + 1) % len(path)
+		current_segment = (current_segment + 1)
 		current_segment_idx = 0
+	if current_segment >= len(path):
+		active = false
+		driveThroughable = true
+		TrafficController.start_next_car(next_area, next_car_id)
 	
 func move():
 	# _is_ray_colliding has side effects 

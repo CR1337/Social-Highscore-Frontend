@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://content/areas/Street.gd"
 
 export (NodePath) var leaveLeftAreaPath
 export (Vector2) var leaveLeftPlayerPosition
@@ -9,7 +9,6 @@ export (Vector2) var leaveFriendPlayerPosition
 export (NodePath) var leavePartnerAreaPath
 export (Vector2) var leavePartnerPlayerPosition
 
-var active = false
 func _ready():
 	$LeaveLeftTrigger.targetArea = get_node(leaveLeftAreaPath)
 	$LeaveLeftTrigger.newPlayerPosition = leaveLeftPlayerPosition
@@ -20,3 +19,6 @@ func _ready():
 	$LeavePartnerTrigger.targetArea = get_node(leavePartnerAreaPath)
 	$LeavePartnerTrigger.newPlayerPosition = leavePartnerPlayerPosition
 	
+	cars = {
+		2: $car_2
+	}
