@@ -116,7 +116,7 @@ scale = Vector2( 1, 2 )
 slow_down = 0.5
 
 [node name="car_1" parent="." instance=ExtResource( 6 )]
-position = Vector2( 369.231, -200.125 )
+position = Vector2( -64, -64 )
 min_speed = 2.0
 start_position = Vector2( 5, -1 )
 path = [ [ "down", 9 ], [ "right", 8 ] ]
@@ -125,7 +125,7 @@ next_area = "livingfriendstreet"
 next_car_id = 2
 
 [node name="car_3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 928.15, 253.26 )
+position = Vector2( -64, -64 )
 start_position = Vector2( 13, 7 )
 path = [ [ "left", 7 ], [ "up", 8 ] ]
 texture = ExtResource( 9 )
@@ -133,7 +133,7 @@ next_area = "livingbusstreet"
 next_car_id = 4
 
 [node name="car_6" parent="." instance=ExtResource( 6 )]
-position = Vector2( -115.74, 327.343 )
+position = Vector2( -64, -64 )
 start_position = Vector2( 5, -1 )
 path = [ [ "down", 8 ], [ "left", 7 ] ]
 texture = ExtResource( 7 )
@@ -141,7 +141,7 @@ next_area = "livingpharmacystreet"
 next_car_id = 7
 
 [node name="car_8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 539.778, -141.846 )
+position = Vector2( -64, -64 )
 start_position = Vector2( -1, 8 )
 path = [ [ "right", 7 ], [ "up", 9 ] ]
 texture = ExtResource( 7 )
@@ -149,7 +149,7 @@ next_area = "livingbusstreet"
 next_car_id = 9
 
 [node name="car_11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 647.535, -141.847 )
+position = Vector2( -64, -64 )
 start_position = Vector2( 5, -1 )
 path = [ [ "down", 15 ], [ "right", 1 ], [ "up", 15 ] ]
 texture = ExtResource( 10 )

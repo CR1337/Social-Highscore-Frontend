@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/areas/components/trafficLight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/animated_sprites/cars/magenta_car.png" type="Texture" id=7]
+[ext_resource path="res://content/movables/car.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/animated_sprites/cars/green_car.png" type="Texture" id=9]
+[ext_resource path="res://assets/animated_sprites/cars/blue_car.png" type="Texture" id=10]
+[ext_resource path="res://assets/animated_sprites/cars/grey_car.png" type="Texture" id=11]
+[ext_resource path="res://assets/animated_sprites/cars/taxi.png" type="Texture" id=12]
 
 [node name="CityStorestreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -60,3 +66,51 @@ is_on = true
 
 [node name="trafficLight2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 416.683, 831.079 )
+
+[node name="car_28" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( 3, -1 )
+path = [ [ "down", 7 ], [ "left", 5 ] ]
+texture = ExtResource( 7 )
+next_area = "citybankstreet"
+next_car_id = 29
+
+[node name="car_30" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( 5, 16 )
+path = [ [ "up", 18 ] ]
+texture = ExtResource( 9 )
+next_area = "citypolicestreet"
+next_car_id = 31
+
+[node name="car_36" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( 3, -1 )
+path = [ [ "down", 18 ] ]
+texture = ExtResource( 9 )
+next_area = "citystorestreet"
+next_car_id = 30
+
+[node name="car_38" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( -1, 8 )
+path = [ [ "right", 4 ], [ "down", 9 ] ]
+texture = ExtResource( 10 )
+next_area = "citybankstreet"
+next_car_id = 37
+
+[node name="car_39" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( 5, 16 )
+path = [ [ "up", 18 ] ]
+texture = ExtResource( 11 )
+next_area = "citypolicestreet"
+next_car_id = 40
+
+[node name="car_44" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( 5, 17 )
+path = [ [ "up", 11 ], [ "left", 7 ] ]
+texture = ExtResource( 12 )
+next_area = "citybankstreet"
+next_car_id = 45

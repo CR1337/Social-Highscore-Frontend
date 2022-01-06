@@ -8,11 +8,11 @@ func _setIsOn(value):
 	is_on = value
 	if value:
 		if has_crosswalk:
-			get_node(crosswalk).setDriveThrougable(false)
+			get_node(crosswalk).block()
 		$Sprite.frame = 1
 	else:
 		if has_crosswalk:
-			get_node(crosswalk).setDriveThrougable(true)
+			get_node(crosswalk).release()
 		$Sprite.frame = 0
 func _getIsOn():
 	return is_on

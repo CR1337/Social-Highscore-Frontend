@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/areas/components/trafficLight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/animated_sprites/cars/magenta_car.png" type="Texture" id=7]
+[ext_resource path="res://content/movables/car.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/animated_sprites/cars/blue_car.png" type="Texture" id=9]
+[ext_resource path="res://assets/animated_sprites/cars/taxi.png" type="Texture" id=10]
 
 [node name="CityBankstreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -26,13 +30,13 @@ z_index = 1
 tile_set = ExtResource( 1 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 262149, 35, 0, 393216, 27, 0, 458752, 27, 0, 524288, 27, 0, 524290, 35, 0, 524296, 35, 0 )
+tile_data = PoolIntArray( 262149, 35, 0, 524290, 35, 0, 524296, 35, 0 )
 
 [node name="Collsion" type="TileMap" parent="."]
 tile_set = ExtResource( 5 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 65535, 0, 0, 131071, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 196607, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 262143, 0, 0, 196609, 0, 0, 196611, 0, 0, 196616, 0, 0, 327679, 0, 0, 393215, 0, 0, 327684, 0, 0, 327685, 0, 0, 327690, 0, 0, 458751, 0, 0, 393216, 0, 0, 524287, 0, 0, 458752, 0, 0, 589823, 0, 0, 524288, 0, 0, 655359, 0, 0, 589826, 0, 0, 589832, 0, 0, 720895, 0, 0, 786431, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 851967, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 917503, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 983039, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 1048575, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0 )
+tile_data = PoolIntArray( 65535, 0, 0, 131071, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 196607, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 262143, 0, 0, 196609, 0, 0, 196611, 0, 0, 196616, 0, 0, 327679, 0, 0, 393215, 0, 0, 327684, 0, 0, 327685, 0, 0, 327690, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 589826, 0, 0, 589832, 0, 0, 720895, 0, 0, 786431, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 851967, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 917503, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 983039, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 1048575, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0 )
 
 [node name="LeaveRightTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 799.871, 516.282 )
@@ -64,3 +68,27 @@ position = Vector2( 546.521, 194.22 )
 [node name="trafficLight3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 672.513, 322.732 )
 is_on = true
+
+[node name="car_29" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( 12, 6 )
+path = [ [ "left", 14 ] ]
+texture = ExtResource( 7 )
+next_area = "citybusstreet"
+next_car_id = 25
+
+[node name="car_37" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( -1, 8 )
+path = [ [ "right", 14 ] ]
+texture = ExtResource( 9 )
+next_area = "citystorestreet"
+next_car_id = 38
+
+[node name="car_45" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( 12, 6 )
+path = [ [ "left", 14 ] ]
+texture = ExtResource( 10 )
+next_area = "citystorestreet"
+next_car_id = 44

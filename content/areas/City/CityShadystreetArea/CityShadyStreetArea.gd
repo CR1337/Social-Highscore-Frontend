@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://content/areas/Street.gd"
 
 export (NodePath) var leaveBottomAreaPath
 export (Vector2) var leaveBottomPlayerPosition
@@ -19,3 +19,7 @@ func _ready():
 	$LeaveTopTrigger.targetArea = get_node(leaveTopAreaPath)
 	$LeaveTopTrigger.newPlayerPosition = leaveTopPlayerPosition
 
+	cars = {
+		22: $car_22
+	}
+	start_car(22)
