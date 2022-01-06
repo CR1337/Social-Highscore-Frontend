@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://content/movables/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://content/areas/Utility/UtilityBusstreetHospitalArea/UtilityBusstreetHospital.tscn" type="PackedScene" id=29]
 [ext_resource path="res://content/gui/menus/ReferenceImageMenu.tscn" type="PackedScene" id=30]
 [ext_resource path="res://content/gui/menus/AuthenticationOverlay.tscn" type="PackedScene" id=31]
+[ext_resource path="res://content/areas/Utility/UtilityBusstreetMallArea/UtilityBusstreetMall.tscn" type="PackedScene" id=32]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -167,12 +168,19 @@ leaveLeftAreaPath = NodePath("../UtilityPrisonstreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
 leaveHospitalAreaPath = NodePath("../UtilityBusstreetHospitalArea")
 leaveHospitalPlayerPosition = Vector2( 7, 17 )
+leaveMallAreaPath = NodePath("../UtilityBusstreetMallArea")
+leaveMallPlayerPosition = Vector2( 7, 17 )
 BusOverlayPath = NodePath("../../Overlays/BusMenu")
 
 [node name="UtilityBusstreetHospitalArea" parent="Areas" instance=ExtResource( 29 )]
-position = Vector2( -1722.03, -5233.76 )
+position = Vector2( -1718.47, -5233.76 )
 leaveAreaPath = NodePath("../UtilityBusstreetArea")
 leavePlayerPosition = Vector2( 4, 6 )
+
+[node name="UtilityBusstreetMallArea" parent="Areas" instance=ExtResource( 32 )]
+position = Vector2( -709.602, -5241.74 )
+leaveAreaPath = NodePath("../UtilityBusstreetArea")
+leavePlayerPosition = Vector2( 10, 6 )
 
 [node name="UtilityPrisonstreetArea" parent="Areas" instance=ExtResource( 23 )]
 position = Vector2( -2010.63, -3960.8 )
