@@ -33,7 +33,7 @@ func _on_TurnClockwiseButton_pressed():
 
 func _on_TurnCounterclockwiseButton_pressed():
 	Config.imageRotationAngle += 90
-	if Config.imageRotationAngle > 360:
+	if Config.imageRotationAngle >= 360:
 		Config.imageRotationAngle -= 360
 	_display_image()
 
