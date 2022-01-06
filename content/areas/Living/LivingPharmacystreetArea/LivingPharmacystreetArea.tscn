@@ -61,7 +61,7 @@ slow_down = 1.0
 crosswalk = true
 
 [node name="car_7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 902.942, 469.858 )
+position = Vector2( -64, -64 )
 start_position = Vector2( 12, 7 )
 path = [ [ "left", 11 ], [ "down", 1 ], [ "right", 12 ] ]
 texture = ExtResource( 8 )

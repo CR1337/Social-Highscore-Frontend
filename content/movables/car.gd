@@ -23,7 +23,7 @@ func _set_texture(value):
 onready var movementRay = $RayCast2DMovement
 onready var slowdownRay = $RayCast2DSlowDown
 
-var driveThroughable = false
+var driveThroughable = true
 
 var tile_size: int
 

@@ -69,7 +69,7 @@ leaveMomAreaPath = NodePath("../LivingHomestreetMomArea")
 leaveMomPlayerPosition = Vector2( 7, 17 )
 
 [node name="LivingFriendstreetArea" parent="Areas" instance=ExtResource( 14 )]
-position = Vector2( 1210.22, -3.31433 )
+position = Vector2( 1174.22, -15.3143 )
 leaveLeftAreaPath = NodePath("../LivingHomestreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
 leaveFriendAreaPath = NodePath("../LivingFriendstreetFriendArea")
