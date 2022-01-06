@@ -8,7 +8,7 @@ script = ExtResource( 1 )
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 768.0
-margin_bottom = 1365.0
+margin_bottom = 1408.0
 mouse_filter = 2
 color = Color( 0.258824, 0.258824, 0.258824, 0.27451 )
 __meta__ = {

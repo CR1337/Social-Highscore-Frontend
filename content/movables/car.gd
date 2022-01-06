@@ -2,8 +2,8 @@ tool
 extends Node2D
 
 
-export var max_speed = 4
-export var min_speed = 1
+export var max_speed = 4.0
+export var min_speed = 2.0
 var speed: float
 # path constist of tuples containing a direction and the number of tiles for that direction (e.g ('right', 8))
 export var path: Array
@@ -17,10 +17,9 @@ func _set_texture(value):
 
 onready var movementRay = $RayCast2DMovement
 onready var slowdownRay = $RayCast2DSlowDown
-onready var safetydistanceRay = $RayCast2DSafetyDistance#
 
 var driveThroughable = false
-var waiting = false
+
 
 onready var tween = $Tween
 
@@ -83,15 +82,7 @@ func move():
 	# so call must be done at the beginning
 	var movementRay_colliding = _is_ray_colliding(movementRay)
 	var slowdownRay_colliding = _is_ray_colliding(slowdownRay, 2)
-	var safetyDistanceRay_colliding = _is_ray_colliding(safetydistanceRay, 3) and safetydistanceRay.get_collider().get_parent() != self
 	
-
-	
-	if safetyDistanceRay_colliding:
-		var collider = safetydistanceRay.get_collider()
-#		print(self.name, " ", safetydistanceRay.get_collider().get_parent().name, " ", path[current_segment][0])
-		if path[current_segment][0] == "up" or path[current_segment][0] == "down":
-			return
 	if slowdownRay_colliding:
 		var collider = slowdownRay.get_collider()
 		if collider.get("slow_down"):
@@ -100,6 +91,11 @@ func move():
 		speed = min(max_speed, speed + 1)
 	if movementRay_colliding:
 		var collider = movementRay.get_collider()
+		if collider.get("occupied")!= null:
+			if collider.get("occupied") and collider.get("occupier") != self:
+				return
+			else:
+				collider.occupy(self)
 		if collider.get("driveThroughable") != null and not collider.get("driveThroughable"):
 			return
 

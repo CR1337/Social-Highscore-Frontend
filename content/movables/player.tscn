@@ -4,7 +4,8 @@
 [ext_resource path="res://content/movables/player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 12.7218
+radius = 27.5709
+height = 23.4926
 
 [node name="player" type="KinematicBody2D"]
 collision_layer = 4
@@ -26,9 +27,9 @@ frame = 5
 enabled = true
 collide_with_areas = true
 
-[node name="Tween" type="Tween" parent="."]
-
 [node name="RayCast2DTrigger" type="RayCast2D" parent="."]
 enabled = true
 collision_mask = 2
 collide_with_areas = true
+
+[node name="Tween" type="Tween" parent="."]
