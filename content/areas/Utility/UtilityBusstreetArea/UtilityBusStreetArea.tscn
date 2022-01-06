@@ -54,7 +54,7 @@ collisionTriggerPath = NodePath("../LeaveHospitalTrigger")
 script = ExtResource( 4 )
 
 [node name="LeaveMallTriggerArea" parent="." instance=ExtResource( 2 )]
-position = Vector2( 224.335, 350.968 )
+position = Vector2( 608.102, 349.633 )
 is_activated_by_collision = true
 walkable = true
 collisionTriggerPath = NodePath("../LeaveMallTrigger")
