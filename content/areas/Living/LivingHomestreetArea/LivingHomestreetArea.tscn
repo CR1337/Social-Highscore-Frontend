@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://content/areas/Living/LivingHomestreetArea/LivingHomestreetArea.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/movables/car.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/animated_sprites/cars/green_car.png" type="Texture" id=7]
+[ext_resource path="res://assets/animated_sprites/cars/orange_car.png" type="Texture" id=7]
 [ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/animated_sprites/cars/red_car.png" type="Texture" id=9]
+[ext_resource path="res://assets/animated_sprites/cars/light_green_car.png" type="Texture" id=10]
 
 [node name="LivingHomestreetArea" type="Node2D"]
 position = Vector2( 0, -1.33484 )
@@ -85,16 +86,6 @@ collisionTriggerPath = NodePath("../LeaveMomTrigger")
 [node name="LeaveMomTrigger" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[node name="car_red" parent="." instance=ExtResource( 6 )]
-position = Vector2( -110.72, 514.815 )
-path = [ [ "right", 8 ], [ "up", 10 ], [ "left", 8 ], [ "down", 10 ] ]
-texture = ExtResource( 9 )
-
-[node name="car_green" parent="." instance=ExtResource( 6 )]
-position = Vector2( 413.682, -128.669 )
-path = [ [ "right", 7 ], [ "down", 9 ], [ "left", 7 ], [ "up", 9 ], [ "waiting", 5 ] ]
-texture = ExtResource( 7 )
-
 [node name="CrosswalkArea" parent="." instance=ExtResource( 8 )]
 position = Vector2( 608.922, 509.855 )
 scale = Vector2( 1, 2 )
@@ -123,3 +114,44 @@ crosswalk = true
 position = Vector2( 159.843, 511.632 )
 scale = Vector2( 1, 2 )
 slow_down = 0.5
+
+[node name="car_1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 369.231, -200.125 )
+min_speed = 2.0
+start_position = Vector2( 5, -1 )
+path = [ [ "down", 9 ], [ "right", 8 ] ]
+texture = ExtResource( 9 )
+next_area = "livingfriendstreet"
+next_car_id = 2
+
+[node name="car_3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 928.15, 253.26 )
+start_position = Vector2( 13, 7 )
+path = [ [ "left", 7 ], [ "up", 8 ] ]
+texture = ExtResource( 9 )
+next_area = "livingbusstreet"
+next_car_id = 4
+
+[node name="car_6" parent="." instance=ExtResource( 6 )]
+position = Vector2( -115.74, 327.343 )
+start_position = Vector2( 5, -1 )
+path = [ [ "down", 8 ], [ "left", 7 ] ]
+texture = ExtResource( 7 )
+next_area = "livingpharmacystreet"
+next_car_id = 7
+
+[node name="car_8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 539.778, -141.846 )
+start_position = Vector2( -1, 8 )
+path = [ [ "right", 7 ], [ "up", 9 ] ]
+texture = ExtResource( 7 )
+next_area = "livingbusstreet"
+next_car_id = 9
+
+[node name="car_11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 647.535, -141.847 )
+start_position = Vector2( 5, -1 )
+path = [ [ "down", 15 ], [ "right", 1 ], [ "up", 15 ] ]
+texture = ExtResource( 10 )
+next_area = "livingbusstreet"
+next_car_id = 12

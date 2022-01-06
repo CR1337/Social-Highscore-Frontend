@@ -21,7 +21,18 @@ func _ready():
 	ViewportManager.authenticationOverlay = $Overlays/AutheticationOverlay
 
 	ViewportManager.currentOverlay = ViewportManager.transparentOverlay
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	
+	TrafficController.Area_idxs = {
+		'livinghomestreet': $Areas/LivingHomestreetArea,
+		'livingfriendstreet': $Areas/LivingFriendstreetArea,
+		'livingpharmacystreet': $Areas/LivingPharmacystreetArea,
+		'livingbusstreet': $Areas/LivingBusstreetArea,
+		'citybusstreet': $Areas/CityBusstreetArea,
+		'cityshadystreet': $Areas/CityShadystreetArea,
+		'cityjobcenterstreet': $Areas/CityJobcenterstreetArea,
+		'citypolicestreet': $Areas/CityPolicestreetArea,
+		'citybankstreet': $Areas/CityBankstreetArea,
+		'citystorestreet': $Areas/CityStorestreetArea,
+		'utilitybusstreet': $Areas/UtilityBusstreetArea,
+		'utilityprisonstreet': $Areas/UtilityPrisonstreetArea
+	}

@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://content/areas/Street.gd"
 
 export (NodePath) var leaveLeftAreaPath
 export (Vector2) var leaveLeftPlayerPosition
@@ -15,7 +15,7 @@ export (Vector2) var leaveHomePlayerPosition
 export (NodePath) var leaveMomAreaPath
 export (Vector2) var leaveMomPlayerPosition
 
-var active = true
+
 
 func _ready():
 	$LeaveLeftTrigger.targetArea = get_node(leaveLeftAreaPath)
@@ -31,4 +31,13 @@ func _ready():
 	$LeaveHomeTrigger.newPlayerPosition = leaveHomePlayerPosition	
 	
 	$LeaveMomTrigger.targetArea = get_node(leaveMomAreaPath)
-	$LeaveMomTrigger.newPlayerPosition = leaveMomPlayerPosition	
+	$LeaveMomTrigger.newPlayerPosition = leaveMomPlayerPosition
+	
+	cars = {
+		1: $car_1,
+		3: $car_3, 
+		6: $car_6,
+		8: $car_8,
+		11: $car_11
+	}
+	start_car(6)

@@ -77,7 +77,7 @@ leavePartnerAreaPath = NodePath("../LivingFriendstreetPartnerArea")
 leavePartnerPlayerPosition = Vector2( 7, 17 )
 
 [node name="LivingPharmacystreetArea" parent="Areas" instance=ExtResource( 3 )]
-position = Vector2( -1501.93, -15.9476 )
+position = Vector2( -1499.55, -15.9476 )
 leaveRightAreaPath = NodePath("../LivingHomestreetArea")
 leaveRightPlayerPosition = Vector2( 0, -1 )
 leavePharmacyAreaPath = NodePath("../LivingPharmacystreetPharmacyArea")
@@ -248,4 +248,4 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 338.542, 616.502 )
+position = Vector2( 359.948, 621.259 )
