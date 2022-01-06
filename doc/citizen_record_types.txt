@@ -15,7 +15,7 @@ EmotionalReactionAtAuthentication (+15, -25)
 	emotion
 	preferred_emotion
 TrafficViolation (-25)
-	type
+	violation_type
 	place
 	screenshot
 BloodDonation (+50)
@@ -40,18 +40,18 @@ UnhealthyFoodAtHome (-15)
 	food
 Debt (x * dept)
 	amount
-SkippingWork (-180)
+SkippedWork (-180)
 TooLateToWork (-150 * (amountOfTime / workDuration))
 	amountOfTime
 TooEarlyLeftWork (-150 * (amountOfTime / workDuration))
 	amountOfTime
-DontVisitMom (-30 - 20 * howLong)
-	howLong
-ConatctToDissidents (-80)
+DidntVisitMom (-30 - 20 * amountOfTime)
+	amountOfTime
+ConatctToDissident (-80)
 	person
 	place
 	screenshot
-ReportDissident (+20)
+ReportedDissident (+20)
 	person
 	reason
 LiedToBoss (-500, lose job)
