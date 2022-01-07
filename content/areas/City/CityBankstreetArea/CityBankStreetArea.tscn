@@ -59,6 +59,24 @@ collisionTriggerPath = NodePath("../LeaveTopTrigger")
 [node name="LeaveTopTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
 
+[node name="LeaveOfficeTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 159.852, 222.008 )
+is_activated_by_collision = true
+walkable = true
+collisionTriggerPath = NodePath("../LeaveOfficeTrigger")
+
+[node name="LeaveOfficeTrigger" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="LeaveBankTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 350.515, 925.194 )
+is_activated_by_collision = true
+walkable = true
+collisionTriggerPath = NodePath("../LeaveBankTrigger")
+
+[node name="LeaveBankTrigger" type="Node" parent="."]
+script = ExtResource( 4 )
+
 [node name="trafficLight" parent="." instance=ExtResource( 6 )]
 position = Vector2( 285.718, 326.512 )
 is_on = true
