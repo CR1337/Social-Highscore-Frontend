@@ -20,7 +20,7 @@ func _getIsOn():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	TimeController.connect("change_traffic_lights", self, "_toggle_trafic_light")
+	TrafficController.connect("change_traffic_lights", self, "_toggle_trafic_light")
 
 func _toggle_trafic_light():
 	_setIsOn(not is_on)

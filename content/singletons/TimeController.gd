@@ -1,30 +1,30 @@
 extends Node
 
-signal change_traffic_lights
-
 var _time = 0
 var _timerList
 var _currentSize
 var active = true
 
+var current_handle = -1
+var next_handle = 0
+
 func _init():
 	_timerList = [[0]]
 	_currentSize = 0
-	# I dont know if the time controller should care about the traffic lights... 
-	setTimer(10, "traffic_toggle")
 
 func _process(delta):
 	if active:
 		_time = _time + delta
 		while _currentSize > 0 && _timerList[1][0] <= _time:
 			var item = delMin()
-			if item[1] == "traffic_toggle":
-				setTimer(10, "traffic_toggle")
-				emit_signal("change_traffic_lights")
+			item[2].time(item[1])
 		
 
-func setTimer(seconds, handle):
-	insert([_time + seconds, handle])
+func setTimer(seconds, sender):
+	current_handle = next_handle
+	next_handle += 1
+	insert([_time + seconds, current_handle, sender])
+	return current_handle
 
 # Priority Queue implementation with binary heap
 func percUp(i):

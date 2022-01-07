@@ -2,9 +2,12 @@ extends Node
 
 var Area_idxs: Dictionary
 
+var traffic_toggle_handle: int
+signal change_traffic_lights
 
+func _ready():
+	traffic_toggle_handle = TimeController.setTimer(10, self)
 func start_next_car(area_id, car_id):
-	print("next_car ", car_id)
 	Area_idxs[area_id].start_car(car_id)
 
 func start_cars():
@@ -21,3 +24,8 @@ func start_cars():
 	start_next_car('citybankstreet', 37)
 	start_next_car('cityjobcenterstreet', 41)
 	start_next_car('citystorestreet', 44)
+
+func time(handle):
+	if handle == traffic_toggle_handle:
+		traffic_toggle_handle = TimeController.setTimer(10, self)
+		emit_signal("change_traffic_lights")
