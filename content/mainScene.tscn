@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://content/movables/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://content/areas/City/CityPolicestreetPoliceArea/CityPolicestreetPolice.tscn" type="PackedScene" id=33]
 [ext_resource path="res://content/areas/City/CityStoreStreetStoreArea/CityStoreStreetStore.tscn" type="PackedScene" id=34]
 [ext_resource path="res://content/areas/City/CityJobcenterstreetJobcenterArea/CityJobcenterstreetJobcenter.tscn" type="PackedScene" id=35]
+[ext_resource path="res://content/areas/City/CityBankstreetOfficeArea/CityBankstreetOffice.tscn" type="PackedScene" id=36]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -171,6 +172,13 @@ leaveRightAreaPath = NodePath("../CityStorestreetArea")
 leaveRightPlayerPosition = Vector2( 0, -1 )
 leaveTopAreaPath = NodePath("../CityShadystreetArea")
 leaveTopPlayerPosition = Vector2( -1, 17 )
+leaveOfficeAreaPath = NodePath("../CityBankstreetOfficeArea")
+leaveOfficePlayerPosition = Vector2( 7, 17 )
+
+[node name="CityBankstreetOfficeArea" parent="Areas" instance=ExtResource( 36 )]
+position = Vector2( 131.818, -3724.35 )
+leaveAreaPath = NodePath("../CityBankstreetArea")
+leavePlayerPosition = Vector2( 3, 3 )
 
 [node name="CityStorestreetArea" parent="Areas" instance=ExtResource( 21 )]
 position = Vector2( 2135.09, -2519.79 )
