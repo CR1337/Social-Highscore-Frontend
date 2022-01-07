@@ -1,19 +1,30 @@
 extends Area2D
 
 export var slow_down: float
-
 export var crosswalk: bool
 
 var player_crossing = false
 var current_car: Node
 var occupied = false
-var occupier: Area2D
+var occupier: Node2D
 var driveThroughable: bool
 var blocked = false
 
 func occupy(node):
 	occupied = true
 	occupier = node
+	driveThroughable = false
+	if self.name.begins_with("problem"):
+		print(self.name, " is occupied by ", node.name)
+	
+func release(node):
+	if node == occupier:
+		occupied = false
+		occupier = null
+		if not player_crossing: 
+			driveThroughable = true
+	if self.name.begins_with("problem"):
+		print(self.name, " is released by ", node.name)
 
 func _on_CrosswalkArea_body_entered(body):
 	if crosswalk and body.name == "player":
@@ -24,18 +35,10 @@ func _on_CrosswalkArea_body_entered(body):
 func _on_CrosswalkArea_body_exited(body):
 	if crosswalk and body.name == "player":
 		player_crossing = false
-		if not blocked: 
+		if not occupied: 
 			driveThroughable = true
 
 func _on_CrossingArea_area_exited(area):
-	if area == occupier:
-		occupied = false
-		occupier = null
+	release(area)
 		
-func block():
-	blocked = true
-	driveThroughable = false
-func release():
-	blocked = false
-	if not player_crossing:
-		driveThroughable = true
+

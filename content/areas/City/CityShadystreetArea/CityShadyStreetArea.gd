@@ -22,4 +22,3 @@ func _ready():
 	cars = {
 		22: $car_22
 	}
-	start_car(22)

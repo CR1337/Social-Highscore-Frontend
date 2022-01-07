@@ -36,3 +36,4 @@ func _ready():
 		'utilitybusstreet': $Areas/UtilityBusstreetArea,
 		'utilityprisonstreet': $Areas/UtilityPrisonstreetArea
 	}
+	TrafficController.start_cars()

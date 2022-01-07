@@ -98,19 +98,26 @@ func move():
 	
 	if slowdownRay_colliding:
 		var collider = slowdownRay.get_collider()
+		print(collider.name)
 		if collider.get("slow_down"):
 			speed = max(min_speed, speed - collider.get("slow_down"))
 	else:
 		speed = min(max_speed, speed + 1)
+		
 	if movementRay_colliding:
 		var collider = movementRay.get_collider()
+		
+		if collider.get("player_crossing"):
+			return
 		if collider.get("occupied")!= null:
-			if collider.get("occupied") and collider.get("occupier") != self:
-				return
+			if collider.get("occupied"):
+				if collider.get("occupier") != self:
+					return
 			else:
 				collider.occupy(self)
 		if collider.get("driveThroughable") != null and not collider.get("driveThroughable"):
-			return
+			if collider.get("occupier") != self:
+				return
 
 	move_tween()
 	increment_segment(1)
