@@ -4,6 +4,7 @@
 [ext_resource path="res://content/areas/components/trafficLight.gd" type="Script" id=2]
 
 [node name="trafficLight" type="Node2D"]
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

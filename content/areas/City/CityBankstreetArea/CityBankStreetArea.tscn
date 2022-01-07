@@ -66,10 +66,10 @@ has_crosswalk = true
 crosswalk = NodePath("../CrossingArea")
 
 [node name="trafficLight2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 672.513, 322.732 )
+position = Vector2( 672.513, 320.844 )
 is_on = true
 has_crosswalk = true
-crosswalk = NodePath("../problem_bank_CrossingArea2")
+crosswalk = NodePath("../CrossingArea2")
 
 [node name="trafficLight3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 546.521, 194.22 )
@@ -109,8 +109,8 @@ scale = Vector2( 1, 3 )
 slow_down = 0.2
 crosswalk = true
 
-[node name="problem_bank_CrossingArea2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 609.055, 480.337 )
+[node name="CrossingArea2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 609.287, 485.682 )
 scale = Vector2( 1, 3 )
 slow_down = 0.2
 crosswalk = true

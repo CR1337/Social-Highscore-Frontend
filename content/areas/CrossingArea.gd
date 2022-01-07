@@ -14,8 +14,6 @@ func occupy(node):
 	occupied = true
 	occupier = node
 	driveThroughable = false
-	if self.name.begins_with("problem"):
-		print(self.name, " is occupied by ", node.name)
 	
 func release(node):
 	if node == occupier:
@@ -23,8 +21,6 @@ func release(node):
 		occupier = null
 		if not player_crossing: 
 			driveThroughable = true
-	if self.name.begins_with("problem"):
-		print(self.name, " is released by ", node.name)
 
 func _on_CrosswalkArea_body_entered(body):
 	if crosswalk and body.name == "player":

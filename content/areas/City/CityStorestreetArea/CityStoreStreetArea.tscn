@@ -71,34 +71,6 @@ collisionTriggerPath = NodePath("../LeaveStoreTrigger")
 [node name="LeaveStoreTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="CrossingArea3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 292.02, 477.294 )
-scale = Vector2( 3, 3 )
-slow_down = 0.1
-
-[node name="problem_store_CrossingArea2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 96.5431, 478.431 )
-scale = Vector2( 1, 3 )
-slow_down = 0.2
-crosswalk = true
-
-[node name="CrossingArea" parent="." instance=ExtResource( 13 )]
-position = Vector2( 287.361, 926.702 )
-scale = Vector2( 3, 1 )
-slow_down = 0.2
-crosswalk = true
-
-[node name="trafficLight" parent="." instance=ExtResource( 6 )]
-position = Vector2( 158.974, 321.654 )
-is_on = true
-has_crosswalk = true
-crosswalk = NodePath("../problem_store_CrossingArea2")
-
-[node name="trafficLight2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 416.683, 831.079 )
-has_crosswalk = true
-crosswalk = NodePath("../CrossingArea")
-
 [node name="car_28" parent="." instance=ExtResource( 8 )]
 position = Vector2( -64, -64 )
 min_speed = 2.0
@@ -152,3 +124,31 @@ path = [ [ "up", 11 ], [ "left", 7 ] ]
 texture = ExtResource( 12 )
 next_area = "citybankstreet"
 next_car_id = 45
+
+[node name="trafficLight" parent="." instance=ExtResource( 6 )]
+position = Vector2( 158.974, 321.654 )
+is_on = true
+has_crosswalk = true
+crosswalk = NodePath("../CrossingArea2")
+
+[node name="trafficLight2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 416.683, 831.079 )
+has_crosswalk = true
+crosswalk = NodePath("../CrossingArea")
+
+[node name="CrossingArea3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 292.02, 477.294 )
+scale = Vector2( 3, 3 )
+slow_down = 0.1
+
+[node name="CrossingArea2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 96.5431, 478.431 )
+scale = Vector2( 1, 3 )
+slow_down = 0.2
+crosswalk = true
+
+[node name="CrossingArea" parent="." instance=ExtResource( 13 )]
+position = Vector2( 287.361, 926.702 )
+scale = Vector2( 3, 1 )
+slow_down = 0.2
+crosswalk = true
