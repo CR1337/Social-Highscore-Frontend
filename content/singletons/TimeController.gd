@@ -17,7 +17,7 @@ func _process(delta):
 		_time = _time + delta
 		while _currentSize > 0 && _timerList[1][0] <= _time:
 			var item = delMin()
-			item[2].time(item[1])
+			item[2].timer(item[1])
 		
 
 func setTimer(seconds, sender):

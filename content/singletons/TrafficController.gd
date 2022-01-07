@@ -25,7 +25,7 @@ func start_cars():
 	start_next_car('cityjobcenterstreet', 41)
 	start_next_car('citystorestreet', 44)
 
-func time(handle):
+func timer(handle):
 	if handle == traffic_toggle_handle:
 		traffic_toggle_handle = TimeController.setTimer(10, self)
 		emit_signal("change_traffic_lights")
