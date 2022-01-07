@@ -9,6 +9,9 @@ export (Vector2) var leaveLeftPlayerPosition
 export (NodePath) var leaveTopAreaPath
 export (Vector2) var leaveTopPlayerPosition
 
+export (NodePath) var leavePoliceAreaPath
+export (Vector2) var leavePolicePlayerPosition
+
 func _ready():
 	$LeaveBottomTrigger.targetArea = get_node(leaveBottomAreaPath)
 	$LeaveBottomTrigger.newPlayerPosition = leaveBottomPlayerPosition
@@ -18,6 +21,9 @@ func _ready():
 	
 	$LeaveTopTrigger.targetArea = get_node(leaveTopAreaPath)
 	$LeaveTopTrigger.newPlayerPosition = leaveTopPlayerPosition
+
+	$LeavePoliceTrigger.targetArea = get_node(leavePoliceAreaPath)
+	$LeavePoliceTrigger.newPlayerPosition = leavePolicePlayerPosition
 
 	cars = {
 		27: $car_27,
