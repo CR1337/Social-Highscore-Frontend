@@ -60,6 +60,16 @@ collisionTriggerPath = NodePath("../LeaveLeftTrigger")
 [node name="LeaveLeftTrigger" type="Node" parent="."]
 script = ExtResource( 5 )
 
+[node name="LeaveJobcenterTriggerArea" parent="." instance=ExtResource( 1 )]
+position = Vector2( 574.989, 478.22 )
+scale = Vector2( 2, 1 )
+is_activated_by_collision = true
+walkable = true
+collisionTriggerPath = NodePath("../LeaveJobcenterTrigger")
+
+[node name="LeaveJobcenterTrigger" type="Node" parent="."]
+script = ExtResource( 5 )
+
 [node name="car_16" parent="." instance=ExtResource( 7 )]
 position = Vector2( -64, -64 )
 min_speed = 2.0
