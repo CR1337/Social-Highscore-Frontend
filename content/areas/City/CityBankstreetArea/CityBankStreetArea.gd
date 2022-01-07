@@ -19,4 +19,3 @@ func _ready():
 		37: $car_37,
 		45: $car_45
 	}
-	start_car(37)

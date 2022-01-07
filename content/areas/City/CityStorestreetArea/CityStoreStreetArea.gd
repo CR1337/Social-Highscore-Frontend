@@ -22,5 +22,3 @@ func _ready():
 		39: $car_39, 
 		44: $car_44
 	}
-	start_car(30)
-	start_car(44)
