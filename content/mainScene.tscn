@@ -198,7 +198,7 @@ leaveStoreAreaPath = NodePath("../CityStoreStreetStoreArea")
 leaveStorePlayerPosition = Vector2( 7, 17 )
 
 [node name="CityStoreStreetStoreArea" parent="Areas" instance=ExtResource( 34 )]
-position = Vector2( 3106.17, -2542.14 )
+position = Vector2( 3110.41, -2542.14 )
 leaveAreaPath = NodePath("../CityStorestreetArea")
 leavePlayerPosition = Vector2( 10, 14 )
 
