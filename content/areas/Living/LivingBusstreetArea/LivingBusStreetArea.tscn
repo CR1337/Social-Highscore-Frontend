@@ -55,6 +55,7 @@ script = ExtResource( 4 )
 position = Vector2( 544.449, 383.054 )
 scale = Vector2( 1, 2 )
 is_activated_by_action = true
+walkable = true
 actionTriggerPath = NodePath("../AuthenticationTrigger")
 
 [node name="BusTrigger" type="Node" parent="."]
@@ -126,7 +127,7 @@ next_area = "livingbusstreet"
 [node name="CrossingArea" parent="." instance=ExtResource( 10 )]
 position = Vector2( 383.593, 287.371 )
 scale = Vector2( 2, 3 )
-slow_down = 0.5
+slow_down = 0.1
 
 [node name="AuthenticationTrigger" type="Node" parent="."]
 script = ExtResource( 12 )
