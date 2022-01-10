@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/areas/BusTrigger.gd" type="Script" id=6]
+[ext_resource path="res://assets/animated_sprites/cars/grey_car.png" type="Texture" id=7]
+[ext_resource path="res://assets/animated_sprites/cars/yellow_car.png" type="Texture" id=8]
+[ext_resource path="res://content/movables/car.tscn" type="PackedScene" id=9]
 
 [node name="UtilityBusstreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -70,3 +73,19 @@ actionTriggerPath = NodePath("../BusTrigger")
 
 [node name="BusTrigger" type="Node" parent="."]
 script = ExtResource( 6 )
+
+[node name="car_46" parent="." instance=ExtResource( 9 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( 12, 11 )
+path = [ [ "left", 12 ], [ "down", 2 ], [ "right", 13 ] ]
+texture = ExtResource( 8 )
+next_area = "utilitybusstreet"
+next_car_id = 47
+
+[node name="car_47" parent="." instance=ExtResource( 9 )]
+position = Vector2( -64, -64 )
+start_position = Vector2( 12, 11 )
+path = [ [ "left", 12 ], [ "down", 2 ], [ "right", 13 ] ]
+texture = ExtResource( 7 )
+next_area = "utilitybusstreet"
+next_car_id = 46

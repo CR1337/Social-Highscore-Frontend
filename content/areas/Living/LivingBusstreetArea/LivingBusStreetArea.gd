@@ -1,14 +1,9 @@
 extends "res://content/areas/Street.gd"
 
-export (NodePath) var leaveBottomAreaPath
-export (Vector2) var leaveBottomPlayerPosition
-
 export (NodePath) var BusOverlayPath
 
 func _ready():
-	$LeaveBottomTrigger.targetArea = get_node(leaveBottomAreaPath)
-	$LeaveBottomTrigger.newPlayerPosition = leaveBottomPlayerPosition
-	
+
 	$BusTrigger.targetOverlay = get_node(BusOverlayPath)
 	
 	cars = {

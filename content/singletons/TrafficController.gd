@@ -24,6 +24,7 @@ func start_cars():
 	start_next_car('citybankstreet', 37)
 	start_next_car('cityjobcenterstreet', 41)
 	start_next_car('citystorestreet', 44)
+	start_next_car('utilitybusstreet', 46)
 
 func timer(handle):
 	if handle == traffic_toggle_handle:
