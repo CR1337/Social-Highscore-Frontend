@@ -137,7 +137,7 @@ has_crosswalk = true
 crosswalk = NodePath("../CrossingArea")
 
 [node name="CrossingArea3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 292.02, 477.294 )
+position = Vector2( 292.02, 475.175 )
 scale = Vector2( 3, 3 )
 slow_down = 0.1
 

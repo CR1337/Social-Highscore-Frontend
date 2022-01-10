@@ -57,7 +57,7 @@ func start():
 	current_segment = 0
 	current_segment_idx = 0
 	speed = max_speed
-	position = start_position * tile_size + Vector2.RIGHT * tile_size/2
+	position = start_position * tile_size + Vector2.ONE * tile_size/2
 
 func _process(delta):
 	if active:
