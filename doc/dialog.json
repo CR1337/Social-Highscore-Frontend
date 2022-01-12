@@ -1,40 +1,41 @@
 {
     "texts": {
         "0": "Hi",
-        "1": "Wie gehts?",
-        "2": "Tschüss!"
-    },
-    "answers": {
-        "0": "Auch Hi",
-        "1": "Hallo",
-        "2": "Ganz gut",
-        "3": "Schrecklich"
+        "1": "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "2": "Tschüss!",
+        "3": "Auch Hi",
+        "4": "Hallo",
+        "5": "Ganz gut",
+        "6": "Schrecklich",
+        "7": "END"
     },
     "graphs": {
         "state0": {
+            "initial_nid": "node0",
             "node0": {
-                "text": "0",
+                "tid": "0",
                 "answers": [
-                    {"aid": "0", "nid": "node1"},
-                    {"aid": "1", "nid": "node1"}
+                    {"tid": "3", "nid": "node1"},
+                    {"tid": "4", "nid": "node1"}
                 ],
-                "trigger_id": null,
-                "end": false
+                "trigger_id": null
             },
             "node1": {
-                "text": "1",
+                "tid": "1",
                 "answers": [
-                    {"aid": "2", "nid": "node2"},
-                    {"aid": "3", "nid": "node2"}
+                    {"tid": "5", "nid": "node2"},
+                    {"tid": "6", "nid": "node2"},
+                    {"tid": "5", "nid": "node2"},
+                    {"tid": "6", "nid": "node2"}
                 ],
-                "trigger_id": null,
-                "end": false
+                "trigger_id": null
             },
             "node2": {
-                "text": "2",
-                "answers": [],
-                "trigger_id": null,
-                "end": true
+                "tid": "2",
+                "answers": [
+                    {"tid": "7", "nid": null}
+                ],
+                "trigger_id": "debug_toilet_trigger"
             }
         }
     }

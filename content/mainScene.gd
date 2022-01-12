@@ -19,8 +19,11 @@ func _ready():
 	ViewportManager.referenceImageMenu = $Overlays/ReferenceImageMenu
 	ViewportManager.transparentOverlay = $Overlays/TransparentOverlay
 	ViewportManager.authenticationOverlay = $Overlays/AutheticationOverlay
+	ViewportManager.dialogOverlay = $Overlays/DialogOverlay
 
 	ViewportManager.currentOverlay = ViewportManager.transparentOverlay
+	
+	
 	
 	TrafficController.Area_idxs = {
 		'livinghomestreet': $Areas/LivingHomestreetArea,

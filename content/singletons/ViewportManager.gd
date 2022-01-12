@@ -43,6 +43,10 @@ func change_to_refenreceImage():
 func change_to_last():
 	change_overlay(lastOverlay)
 	
+func change_to_dialog(json_filename, state):
+	dialogOverlay.initialize(json_filename, state)
+	change_overlay(dialogOverlay)
+	
 func change_to_authentication(post_authentication_trigger):
 	authenticationOverlay.post_authentication_trigger = post_authentication_trigger
 	change_overlay(authenticationOverlay)
