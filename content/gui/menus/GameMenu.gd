@@ -13,9 +13,10 @@ func _on_ConfigButton_pressed():
 	ViewportManager.change_to_config()
 
 
-func _on_StartmenuButton_pressed():
-	pass # Replace with function body.
-
-
 func _on_QuitButton_pressed():
 	get_tree().quit()
+
+
+func _on_NewGameButton_pressed():
+	SaveGameController.delete_game()
+	SaveGameController.load_game()

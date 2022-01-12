@@ -78,7 +78,9 @@ collisionTriggerPath = NodePath("../LeavePoliceTrigger")
 [node name="LeavePoliceTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="trafficLight" parent="." instance=ExtResource( 6 )]
+[node name="trafficLight" parent="." groups=[
+"persistent",
+] instance=ExtResource( 6 )]
 position = Vector2( 418.714, 70.0627 )
 has_crosswalk = true
 crosswalk = NodePath("../CrossingArea")

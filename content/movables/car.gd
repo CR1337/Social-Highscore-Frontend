@@ -25,7 +25,7 @@ onready var slowdownRay = $RayCast2DSlowDown
 
 var driveThroughable = true
 
-var tile_size: int
+onready var tile_size = Globals.tile_size
 
 onready var tween = $Tween
 
@@ -47,7 +47,6 @@ var directions = {
 }
 
 func _ready():
-	tile_size = Globals.tile_size
 	$Sprite.texture = texture
 	looking_direction = Vector2.DOWN
 

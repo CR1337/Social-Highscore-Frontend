@@ -125,13 +125,17 @@ texture = ExtResource( 12 )
 next_area = "citybankstreet"
 next_car_id = 45
 
-[node name="trafficLight" parent="." instance=ExtResource( 6 )]
+[node name="trafficLight" parent="." groups=[
+"persistent",
+] instance=ExtResource( 6 )]
 position = Vector2( 158.974, 321.654 )
 is_on = true
 has_crosswalk = true
 crosswalk = NodePath("../CrossingArea2")
 
-[node name="trafficLight2" parent="." instance=ExtResource( 6 )]
+[node name="trafficLight2" parent="." groups=[
+"persistent",
+] instance=ExtResource( 6 )]
 position = Vector2( 416.683, 831.079 )
 has_crosswalk = true
 crosswalk = NodePath("../CrossingArea")

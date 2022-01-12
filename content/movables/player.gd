@@ -26,7 +26,7 @@ var movement_frame_idx = 0
 export var animation_period = 0.25
 
 
-var driveThroughable = false
+const driveThroughable = false
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.tile_size)
 	position += Vector2.ONE * Globals.tile_size / 2
@@ -81,3 +81,22 @@ func _on_action_pressed():
 		var collider = triggerRay.get_collider()
 		if collider.has_method("trigger_action"):
 			collider.trigger_action()
+
+func persistent_state():
+	return {
+		'position_x': position.x,
+		'position_y': position.y,
+		'looking_direction_x': looking_direction.x,
+		'looking_direction_y': looking_direction.y
+	}
+	
+func restore_state(state):
+	position = Vector2(
+		state['position_x'],
+		state['position_y']
+	)
+	looking_direction = Vector2(
+		state['looking_direction_x'],
+		state['looking_direction_y']
+	)
+	$Sprite.frame = idle_frame_idxs[looking_direction]

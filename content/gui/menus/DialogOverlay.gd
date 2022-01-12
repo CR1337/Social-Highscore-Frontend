@@ -28,7 +28,7 @@ func _load_json(filename):
 	).result
 	file.close()
 	
-func _display():
+func _display_current():
 	current_node = dialog_dict['graphs'][current_state][current_node_id]
 	_arrange_buttons(len(current_node['answers']))
 	
@@ -39,6 +39,8 @@ func _display():
 		text_id = current_node['answers'][i]['tid']
 		buttons[i].text = dialog_dict['texts'][text_id]
 		
+func _display():
+	_display_current()
 	var trigger_id = current_node['trigger_id']
 	if trigger_id != null:
 		EventBus.emit_signal("trigger", trigger_id)
@@ -80,3 +82,19 @@ func _on_Answer1Button_pressed():
 
 func _on_Answer0Button_pressed():
 	_process_answer(0)
+
+func persistent_state():
+	return {
+		"dialog_dict": dialog_dict,
+		"current_state": current_state,
+		"current_node_id": current_node_id,
+		"current_node": current_node
+	}
+	
+func restore_state(state):
+	dialog_dict = state['dialog_dict']
+	current_state = state['current_state']
+	current_node_id = state['current_node_id']
+	current_node = state['current_node']
+	if not dialog_dict.empty():
+		_display_current()

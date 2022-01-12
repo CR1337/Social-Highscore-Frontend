@@ -5,6 +5,7 @@ var records: Array
 
 func _ready():
 	ImageProcessor.connect("image_processing_done", self, "_on_image_processing_done")
+	print("PATH: ", self.get_path())
 
 func await_analyze_response(job_id):
 	analyze_job_ids.append(job_id)
@@ -220,3 +221,11 @@ func add_rescued_friend(score, screenshot):
 		'screenshot': screenshot
 	}
 	_add_record(params)
+
+func persistent_state():
+	return {
+		'records': records
+	}
+	
+func restore_state(state):
+	records = state['records']

@@ -11,6 +11,28 @@ onready var days_without_mom = 0
 onready var fridge_filling = []
 onready var current_day = 0
 
+func persistent_state():
+	return {
+		'score': score,
+		'money': money,
+		'hunger': hunger,
+		'sleep': sleep,
+		'days_without_mom': days_without_mom,
+		'fridge_filling': fridge_filling,
+		'current_day': current_day
+	}
+
+func restore_state(state):
+	score = state['score']
+	money = state["money"]
+	hunger = state["hunger"]
+	sleep = state["sleep"]
+	days_without_mom = state["days_without_mom"]
+	fridge_filling = state["fridge_filling"]
+	current_day = state["current_day"]
+	emit_signal("sleep_changed", sleep)
+	emit_signal("hunger_changed", hunger)
+
 var next_day_handle
 var next_status_update_handle
 
@@ -20,7 +42,7 @@ signal hunger_changed(new_value)
 func _ready():
 	next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
 	next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
-	
+
 func next_day():
 	current_day += 1
 	days_without_mom += 1
@@ -32,7 +54,7 @@ func status_update():
 	emit_signal("hunger_changed", hunger)
 	print("Hunger: ", hunger)
 	print("Sleep: ", sleep)
-	
+
 func timer(handle):
 	if handle == next_day_handle:
 		next_day()
@@ -43,19 +65,19 @@ func timer(handle):
 
 func change_score(amount):
 	score += amount
-	
+
 func change_money(amount):
 	money += amount
-	
+
 func eat(amount):
 	hunger = max(hunger - amount, 0)
-	
+
 func sleep():
 	sleep = 0
 
 func visited_mom():
 	days_without_mom = 0
-	
+
 func add_to_fridge(item):
 	fridge_filling.append(item)
 

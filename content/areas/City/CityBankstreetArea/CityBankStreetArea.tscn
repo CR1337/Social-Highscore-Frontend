@@ -77,19 +77,25 @@ collisionTriggerPath = NodePath("../LeaveBankTrigger")
 [node name="LeaveBankTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="trafficLight" parent="." instance=ExtResource( 6 )]
+[node name="trafficLight" parent="." groups=[
+"persistent",
+] instance=ExtResource( 6 )]
 position = Vector2( 285.718, 326.512 )
 is_on = true
 has_crosswalk = true
 crosswalk = NodePath("../CrossingArea")
 
-[node name="trafficLight2" parent="." instance=ExtResource( 6 )]
+[node name="trafficLight2" parent="." groups=[
+"persistent",
+] instance=ExtResource( 6 )]
 position = Vector2( 672.513, 320.844 )
 is_on = true
 has_crosswalk = true
 crosswalk = NodePath("../CrossingArea2")
 
-[node name="trafficLight3" parent="." instance=ExtResource( 6 )]
+[node name="trafficLight3" parent="." groups=[
+"persistent",
+] instance=ExtResource( 6 )]
 position = Vector2( 546.521, 194.22 )
 has_crosswalk = true
 crosswalk = NodePath("../CrossingArea3")

@@ -9,7 +9,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ViewportManager.player = $player
-	ViewportManager.currentArea = $Areas/LivingHomestreetArea
 	ViewportManager.shaderRect = $ShaderRectNode2D/ShaderRect
 	
 	
@@ -17,14 +16,9 @@ func _ready():
 	ViewportManager.gameMenu = $Overlays/GameMenu
 	ViewportManager.configMenu = $Overlays/ConfigMenu
 	ViewportManager.referenceImageMenu = $Overlays/ReferenceImageMenu
-	ViewportManager.transparentOverlay = $Overlays/TransparentOverlay
 	ViewportManager.authenticationOverlay = $Overlays/AutheticationOverlay
 	ViewportManager.dialogOverlay = $Overlays/DialogOverlay
 
-	ViewportManager.currentOverlay = ViewportManager.transparentOverlay
-	
-	
-	
 	TrafficController.Area_idxs = {
 		'livinghomestreet': $Areas/LivingHomestreetArea,
 		'livingfriendstreet': $Areas/LivingFriendstreetArea,

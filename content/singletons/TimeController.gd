@@ -8,6 +8,38 @@ var active = true
 var current_handle = -1
 var next_handle = 0
 
+func persistent_state():
+	var persistent_timer_list = []
+	for element in _timerList:
+		if len(element) != 3:
+			persistent_timer_list.append([0])
+		else:
+			persistent_timer_list.append([
+				element[0],
+				element[1],
+				element[2].get_path()
+			])
+	return {
+		'time': _time,
+		'timer_list': persistent_timer_list,
+		'current_size': _currentSize,
+		'active': active
+	}
+	
+func restore_state(state):
+	_time = state['time']
+	_currentSize = state['current_size']
+	active = state['active']
+	for element in state['timer_list']:
+		if len(element) != 3:
+			_timerList.append([0])
+		else:
+			_timerList.append([
+				element[0],
+				element[1],
+				get_node(element[2])
+			])
+
 func _init():
 	_timerList = [[0]]
 	_currentSize = 0

@@ -24,6 +24,11 @@ func _ready():
 
 func _toggle_trafic_light():
 	_setIsOn(not is_on)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+func persistent_state():
+	return {
+		'is_on': is_on
+	}
+	
+func restore_state(state):
+	_setIsOn(state['is_on'])

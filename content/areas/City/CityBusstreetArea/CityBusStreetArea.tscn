@@ -68,7 +68,9 @@ actionTriggerPath = NodePath("../AuthenticationTrigger")
 [node name="BusTrigger" type="Node" parent="."]
 script = ExtResource( 6 )
 
-[node name="trafficLight" parent="." instance=ExtResource( 7 )]
+[node name="trafficLight" parent="." groups=[
+"persistent",
+] instance=ExtResource( 7 )]
 position = Vector2( 546.965, 519.974 )
 is_on = true
 has_crosswalk = true
