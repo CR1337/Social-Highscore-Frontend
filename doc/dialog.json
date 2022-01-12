@@ -15,25 +15,25 @@
             "node0": {
                 "tid": "0",
                 "answers": [
-                    {"tid": "3", "nid": "node1"},
-                    {"tid": "4", "nid": "node1"}
+                    {"tid": "3", "nid": "node1", "trigger_id": null},
+                    {"tid": "4", "nid": "node1", "trigger_id": null}
                 ],
                 "trigger_id": null
             },
             "node1": {
                 "tid": "1",
                 "answers": [
-                    {"tid": "5", "nid": "node2"},
-                    {"tid": "6", "nid": "node2"},
-                    {"tid": "5", "nid": "node2"},
-                    {"tid": "6", "nid": "node2"}
+                    {"tid": "5", "nid": "node2", "trigger_id": null},
+                    {"tid": "6", "nid": "node2", "trigger_id": null},
+                    {"tid": "5", "nid": "node2", "trigger_id": null},
+                    {"tid": "6", "nid": "node2", "trigger_id": null}
                 ],
                 "trigger_id": null
             },
             "node2": {
                 "tid": "2",
                 "answers": [
-                    {"tid": "7", "nid": null}
+                    {"tid": "7", "nid": null, "trigger_id": "debug_toilet_trigger"}
                 ],
                 "trigger_id": "debug_toilet_trigger"
             }

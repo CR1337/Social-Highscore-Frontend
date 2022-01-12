@@ -54,6 +54,10 @@ func _arrange_buttons(answer_count):
 		buttons[i].visible = not ((i + 1) > answer_count)
 
 func _process_answer(answer_index):
+	var trigger_id = current_node['answers'][answer_index]['trigger_id']
+	if trigger_id != null:
+		EventBus.emit_signal("trigger", trigger_id)
+		
 	var next_node_id = current_node['answers'][answer_index]['nid']
 	if next_node_id == null:
 		ViewportManager.change_to_transparent()
