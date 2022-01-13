@@ -237,7 +237,7 @@ position = Vector2( 3001.48, 1946.69 )
 position = Vector2( 2841.38, -652 )
 
 [node name="SmartphoneMenu" parent="Overlays" instance=ExtResource( 9 )]
-position = Vector2( 3193.46, 1314.42 )
+position = Vector2( 4469.58, -618.635 )
 
 [node name="TransparentOverlay" type="Node2D" parent="Overlays"]
 
