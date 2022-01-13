@@ -261,7 +261,7 @@ position = Vector2( 4093.63, 1297.72 )
 [node name="player" parent="." groups=[
 "persistent",
 ] instance=ExtResource( 1 )]
-position = Vector2( 607.644, 893.952 )
+position = Vector2( 610.022, 964.115 )
 speed = 4
 animation_period = 0.15
 

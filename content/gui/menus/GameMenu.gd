@@ -14,6 +14,8 @@ func _on_ConfigButton_pressed():
 
 
 func _on_QuitButton_pressed():
+	ViewportManager.change_to_transparent()
+	SaveGameController.save_game()
 	get_tree().quit()
 
 

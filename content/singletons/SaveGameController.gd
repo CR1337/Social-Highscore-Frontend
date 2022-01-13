@@ -7,7 +7,6 @@ const default_save_filename = "user://default_savegame.json"
 
 func _persistent_nodes():
 	var result = get_tree().get_nodes_in_group("persistent")
-	print(result)
 	return result
 	
 func _singletons():
@@ -63,7 +62,7 @@ func delete_game():
 	file.close()
 		
 func _notification(what):
-	if what ==  MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST or what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
 		save_game()
 		get_tree().quit()
 	

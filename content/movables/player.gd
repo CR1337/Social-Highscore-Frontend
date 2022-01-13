@@ -29,7 +29,7 @@ export var animation_period = 0.25
 const driveThroughable = false
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.tile_size)
-	position += Vector2.ONE * Globals.tile_size / 2
+	position -= Vector2.ONE * Globals.tile_size / 2
 	
 	looking_direction = Vector2.DOWN
 	

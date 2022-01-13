@@ -5,7 +5,6 @@ var records: Array
 
 func _ready():
 	ImageProcessor.connect("image_processing_done", self, "_on_image_processing_done")
-	print("PATH: ", self.get_path())
 
 func await_analyze_response(job_id):
 	analyze_job_ids.append(job_id)
