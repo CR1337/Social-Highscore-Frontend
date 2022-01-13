@@ -12,7 +12,7 @@ export (Vector2) var leaveTopPlayerPosition
 export (NodePath) var leaveBottomAreaPath
 export (Vector2) var leaveBottomPlayerPosition
 
-var cars = {}
+onready var cars: Dictionary
 
 func _ready():
 	if leaveLeftAreaPath != "":

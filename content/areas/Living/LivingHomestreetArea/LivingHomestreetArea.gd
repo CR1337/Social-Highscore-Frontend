@@ -6,7 +6,6 @@ export (Vector2) var leaveHomePlayerPosition
 export (NodePath) var leaveMomAreaPath
 export (Vector2) var leaveMomPlayerPosition
 
-
 func _ready():
 
 	$LeaveHomeTrigger.targetArea = get_node(leaveHomeAreaPath)

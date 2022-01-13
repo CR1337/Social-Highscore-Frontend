@@ -1,24 +1,24 @@
 extends Node
 
-onready var transparentOverlay = get_node("/root/mainScene/Overlays/TransparentOverlay")
+onready var player = get_node("/root/mainScene/player")
+onready var shaderRect = get_node("/root/mainScene/ShaderRectNode2D/ShaderRect")
 
-var player: Node2D
+onready var transparentOverlay = get_node("/root/mainScene/Overlays/TransparentOverlay")
+onready var smartphoneMenu = get_node("/root/mainScene/Overlays/SmartphoneMenu")
+onready var gameMenu = get_node("/root/mainScene/Overlays/GameMenu")
+onready var configMenu = get_node("/root/mainScene/Overlays/ConfigMenu")
+onready var referenceImageMenu = get_node("/root/mainScene/Overlays/ReferenceImageMenu")
+onready var dialogOverlay = get_node("/root/mainScene/Overlays/DialogOverlay")
+onready var authenticationOverlay = get_node("/root/mainScene/Overlays/AuthenticationOverlay")
+
+onready var newsApp: Node2D
+onready var messengerApp: Node2D
+onready var bankingApp: Node2D
+onready var citizenApp: Node2D
+
 onready var currentArea = get_node("/root/mainScene/Areas/LivingHomestreetArea")
-var shaderRect: ColorRect
 onready var currentOverlay = transparentOverlay
 onready var lastOverlay = transparentOverlay
-
-var smartphoneMenu: Node2D
-var gameMenu: Node2D
-var configMenu: Node2D
-var referenceImageMenu: Node2D
-var dialogOverlay: Node2D
-
-var newsApp: Node2D
-var messengerApp: Node2D
-var bankingApp: Node2D
-var citizenApp: Node2D
-var authenticationOverlay: Node2D
 
 func persistent_state():
 	return {

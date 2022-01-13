@@ -1,14 +1,28 @@
 extends Node
 
-var Area_idxs: Dictionary
-
+onready var Area_idxs = {
+	'livinghomestreet': "/root/mainScene/Areas/LivingHomestreetArea",
+	'livingfriendstreet': "/root/mainScene/Areas/LivingFriendstreetArea",
+	'livingpharmacystreet': "/root/mainScene/Areas/LivingPharmacystreetArea",
+	'livingbusstreet': "/root/mainScene/Areas/LivingBusstreetArea",
+	'citybusstreet': "/root/mainScene/Areas/CityBusstreetArea",
+	'cityshadystreet': "/root/mainScene/Areas/CityShadystreetArea",
+	'cityjobcenterstreet': "/root/mainScene/Areas/CityJobcenterstreetArea",
+	'citypolicestreet': "/root/mainScene/Areas/CityPolicestreetArea",
+	'citybankstreet': "/root/mainScene/Areas/CityBankstreetArea",
+	'citystorestreet': "/root/mainScene/Areas/CityStorestreetArea",
+	'utilitybusstreet': "/root/mainScene/Areas/UtilityBusstreetArea",
+	'utilityprisonstreet': "/root/mainScene/Areas/UtilityPrisonstreetArea"
+}
 var traffic_toggle_handle: int
 signal change_traffic_lights
 
 func _ready():
 	traffic_toggle_handle = TimeController.setTimer(10, self)
+	call_deferred("start_cars")
+
 func start_next_car(area_id, car_id):
-	Area_idxs[area_id].start_car(car_id)
+	get_node(Area_idxs[area_id]).start_car(car_id)
 
 func start_cars():
 	start_next_car('livingbusstreet', 0)

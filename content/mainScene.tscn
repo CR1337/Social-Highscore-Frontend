@@ -1,10 +1,9 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://content/movables/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/Living/LivingPharmacystreetArea/LivingPharmacystreetArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://content/areas/Living/LivingFriendstreetPartnerArea/LivingFriendstreetPartnerArea.tscn" type="PackedScene" id=4]
-[ext_resource path="res://content/mainScene.gd" type="Script" id=5]
 [ext_resource path="res://content/areas/Living/LivingBusstreetArea/LivingBusStreetArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://content/gfx/ShaderRect.gd" type="Script" id=7]
 [ext_resource path="res://content/gui/DebugLabel.gd" type="Script" id=8]
@@ -52,10 +51,8 @@ shader = SubResource( 1 )
 shader_param/opacity = 0.0
 
 [node name="mainScene" type="Node2D"]
-script = ExtResource( 5 )
 
 [node name="InputUI" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 0 )
 z_index = 2
 
 [node name="Areas" type="Node2D" parent="."]
@@ -237,7 +234,7 @@ position = Vector2( 3001.48, 1946.69 )
 position = Vector2( 2841.38, -652 )
 
 [node name="SmartphoneMenu" parent="Overlays" instance=ExtResource( 9 )]
-position = Vector2( 4469.58, -618.635 )
+position = Vector2( 3193.46, 1314.42 )
 
 [node name="TransparentOverlay" type="Node2D" parent="Overlays"]
 
