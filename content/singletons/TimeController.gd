@@ -17,6 +17,12 @@ func persistent_state():
 			element[1],
 			element[2].get_path()
 			])
+	for element in persistent_timer_list:
+		insert([
+			element[0], 
+			element[1],
+			get_node(element[2])
+		])
 	return {
 		'time': _time,
 		'timer_list': persistent_timer_list,
@@ -46,6 +52,7 @@ func _process(delta):
 		_time = _time + delta
 		while _currentSize > 0 && _timerList[1][0] <= _time:
 			var item = delMin()
+			print(item[2].get_path())
 			item[2].timer(item[1])
 		
 
