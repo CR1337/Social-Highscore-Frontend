@@ -1,0 +1,87 @@
+{
+    "empty": false,
+    "/root/mainScene/Areas/CityBusstreetArea/trafficLight": {
+        "is_on": true
+    },
+    "/root/mainScene/Areas/CityPolicestreetArea/trafficLight": {
+        "is_on": false
+    },
+    "/root/mainScene/Areas/CityBankstreetArea/trafficLight": {
+        "is_on": true
+    },
+    "/root/mainScene/Areas/CityBankstreetArea/trafficLight2": {
+        "is_on": true
+    },
+    "/root/mainScene/Areas/CityBankstreetArea/trafficLight3": {
+        "is_on": false
+    },
+    "/root/mainScene/Areas/CityStorestreetArea/trafficLight": {
+        "is_on": true
+    },
+    "/root/mainScene/Areas/CityStorestreetArea/trafficLight2": {
+        "is_on": false
+    },
+    "/root/mainScene/Overlays/DialogOverlay": {
+        "dialog_dict": {
+
+        },
+        "current_state": "",
+        "current_node_id": "",
+        "current_node": {
+
+        }
+    },
+    "/root/mainScene/player": {
+        "position_x": 608,
+        "position_y": 928,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1
+    },
+    "/root/CitizenRecord": {
+        "records": [
+
+        ]
+    },
+    "/root/GameStateController": {
+        "score": 1000,
+        "money": 1000,
+        "hunger": 100,
+        "sleep": 100,
+        "days_without_mom": 0,
+        "fridge_filling": [
+
+        ],
+        "current_day": 0
+    },
+    "/root/TimeController": {
+        "time": 0,
+        "timer_list": [
+            [
+                10,
+                0,
+                "/root/TrafficController"
+            ],
+            [
+                60,
+                3,
+                "/root/SaveGameController"
+            ],
+            [
+                720,
+                1,
+                "/root/GameStateController"
+            ],
+            [
+                30,
+                2,
+                "/root/GameStateController"
+            ]
+        ],
+        "active": true
+    },
+    "/root/ViewportManager": {
+        "current_area": "/root/mainScene/Areas/LivingHomestreetArea",
+        "current_overlay": "/root/mainScene/Overlays/TransparentOverlay",
+        "last_overlay": "/root/mainScene/Overlays/TransparentOverlay"
+    }
+}

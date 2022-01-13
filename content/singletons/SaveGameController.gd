@@ -1,6 +1,6 @@
 extends Node
 
-var autosave_handle: int
+var autosave_handle = 3 # Stated in default_savegame
 var empty: bool
 const save_filename = "user://savegame.json"
 const default_save_filename = "user://default_savegame.json"
@@ -13,7 +13,7 @@ func _singletons():
 	return [
 		CitizenRecord,
 		GameStateController,
-		# TimeController,
+		TimeController,
 		ViewportManager
 	]
 	
@@ -75,7 +75,7 @@ func _ready():
 	if not file.file_exists(save_filename):
 		_create_file()
 	call_deferred("load_game")
-	autosave_handle = TimeController.setTimer(60, self)
+	# autosave_handle = TimeController.setTimer(60, self)
 	
 func timer(handle):
 	if handle == autosave_handle:

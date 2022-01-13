@@ -14,11 +14,10 @@ onready var Area_idxs = {
 	'utilitybusstreet': "/root/mainScene/Areas/UtilityBusstreetArea",
 	'utilityprisonstreet': "/root/mainScene/Areas/UtilityPrisonstreetArea"
 }
-var traffic_toggle_handle: int
+var traffic_toggle_handle = 0 # Stated in default_savegame
 signal change_traffic_lights
 
 func _ready():
-	traffic_toggle_handle = TimeController.setTimer(10, self)
 	call_deferred("start_cars")
 
 func start_next_car(area_id, car_id):

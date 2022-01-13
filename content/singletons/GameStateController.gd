@@ -33,15 +33,16 @@ func restore_state(state):
 	emit_signal("sleep_changed", sleep)
 	emit_signal("hunger_changed", hunger)
 
-var next_day_handle
-var next_status_update_handle
+var next_day_handle = 1 # Stated in default_savegame
+var next_status_update_handle = 2 # Stated in default_savegame
 
 signal sleep_changed(new_value)
 signal hunger_changed(new_value)
 
 func _ready():
-	next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
-	next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
+	pass
+#	next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
+#	next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
 
 func next_day():
 	current_day += 1
