@@ -10,8 +10,9 @@
 [ext_resource path="res://assets/tilesets/interior/1_Generic_32x32.png" type="Texture" id=8]
 [ext_resource path="res://assets/tilesets/interior/2_LivingRoom_32x32.png" type="Texture" id=9]
 [ext_resource path="res://assets/tilesets/interior/3_Bathroom_32x32.png" type="Texture" id=10]
-[ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=11]
-[ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=12]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=11]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=12]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )

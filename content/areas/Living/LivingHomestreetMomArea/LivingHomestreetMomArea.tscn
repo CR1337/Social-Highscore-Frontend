@@ -4,9 +4,9 @@
 [ext_resource path="res://assets/tilesets/interior/2_LivingRoom_32x32.png" type="Texture" id=2]
 [ext_resource path="res://assets/tilesets/interior/17_Visibile_Upstairs_System_32x32.png" type="Texture" id=3]
 [ext_resource path="res://content/areas/components/AnimatedOnOff.tscn" type="PackedScene" id=4]
-[ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=5]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=5]
 [ext_resource path="res://content/areas/Living/LivingHomestreetMomArea/LivingHomestreetMomArea.gd" type="Script" id=6]
-[ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/animated_sprites/tres/bathroom_sink.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://assets/tilesets/interior/3_Bathroom_32x32.png" type="Texture" id=9]
 [ext_resource path="res://assets/tilesets/interior/12_Kitchen_32x32.png" type="Texture" id=10]
@@ -1814,16 +1814,12 @@ tile_data = PoolIntArray( 4, 59, 327690, 5, 59, 327691, 6, 59, 327691, 7, 59, 32
 [node name="BedroomDoor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 608, 356 )
 walkable_when_on = true
-on_animation_name = "open"
-off_animation_name = "close"
 triggerAreaOffset = Vector2( 0, 64 )
 triggerAreaScale = Vector2( 1, 1 )
 
 [node name="BathrommDoor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 224, 676 )
 walkable_when_on = true
-on_animation_name = "open"
-off_animation_name = "close"
 triggerAreaOffset = Vector2( 0, 64 )
 triggerAreaScale = Vector2( 1, 1 )
 
@@ -1870,8 +1866,6 @@ tile_data = PoolIntArray( 65536, 97, 0, 65537, 97, 0, 65538, 97, 0, 65539, 97, 0
 position = Vector2( 443.176, 735.929 )
 z_index = 5
 frames = ExtResource( 11 )
-on_animation_name = "open"
-off_animation_name = "close"
 triggerAreaOffset = Vector2( -32, 32 )
 triggerAreaScale = Vector2( 1, 1 )
 
@@ -1880,7 +1874,8 @@ position = Vector2( 377.568, 1058.04 )
 scale = Vector2( 2, 1 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveTrigger")
+collision_trigger_id = "livinghomestreetmomleave"
 
 [node name="LeaveTrigger" type="Node" parent="."]
 script = ExtResource( 5 )
+id = "livinghomestreetmomleave"

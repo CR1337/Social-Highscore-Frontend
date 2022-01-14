@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/Utility/UtilityPrisonstreetArea/UtilityPrisonStreetArea.gd" type="Script" id=3]
-[ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=4]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 
 [node name="UtilityPrisonstreetArea" type="Node2D"]
@@ -37,17 +37,19 @@ position = Vector2( 802.868, 511.793 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveRightTrigger")
+collision_trigger_id = "utilityprisonstreetleaveright"
 
 [node name="LeaveRightTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
+id = "utilityprisonstreetleaveright"
 
 [node name="LeavePrisonTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 193.918, 928.243 )
 scale = Vector2( 4, 1 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeavePrisonTrigger")
+collision_trigger_id = "utilityprisonstreetleaveprison"
 
 [node name="LeavePrisonTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
+id = "utilityprisonstreetleaveprison"

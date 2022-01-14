@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/City/CityStorestreetArea/CityStoreStreetArea.gd" type="Script" id=3]
-[ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=4]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/areas/components/trafficLight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/animated_sprites/cars/magenta_car.png" type="Texture" id=7]
@@ -46,30 +46,33 @@ position = Vector2( -30.4464, 514.5 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveLeftTrigger")
+collision_trigger_id = "citystorestreetleaveleft"
 
 [node name="LeaveLeftTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
+id = "citystorestreetleaveleft"
 
 [node name="LeaveTopTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 384.494, -30.9504 )
 scale = Vector2( 12, 1 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveTopTrigger")
+collision_trigger_id = "citystorestreetleavetop"
 
 [node name="LeaveTopTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
+id = "citystorestreetleavetop"
 
 [node name="LeaveStoreTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 576.928, 861.73 )
 scale = Vector2( 2, 1 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveStoreTrigger")
+collision_trigger_id = "citystorestreetleavestore"
 
 [node name="LeaveStoreTrigger" type="Node" parent="."]
 script = ExtResource( 4 )
+id = "citystorestreetleavestore"
 
 [node name="car_28" parent="." instance=ExtResource( 8 )]
 position = Vector2( -64, -64 )

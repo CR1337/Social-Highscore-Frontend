@@ -9,8 +9,8 @@
 [ext_resource path="res://assets/tilesets/interior/1_Generic_32x32.png" type="Texture" id=7]
 [ext_resource path="res://assets/tilesets/interior/2_LivingRoom_32x32.png" type="Texture" id=8]
 [ext_resource path="res://assets/tilesets/interior/3_Bathroom_32x32.png" type="Texture" id=9]
-[ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=10]
-[ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=11]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -1922,7 +1922,8 @@ position = Vector2( 377.568, 1058.04 )
 scale = Vector2( 2, 1 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveTrigger")
+collision_trigger_id = "livingpharmacystreetpharmacyleave"
 
 [node name="LeaveTrigger" type="Node" parent="."]
 script = ExtResource( 11 )
+id = "livingpharmacystreetpharmacyleave"

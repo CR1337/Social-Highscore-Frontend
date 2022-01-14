@@ -9,9 +9,9 @@
 [ext_resource path="res://assets/tilesets/interior/1_Generic_32x32.png" type="Texture" id=7]
 [ext_resource path="res://assets/tilesets/interior/12_Kitchen_32x32.png" type="Texture" id=8]
 [ext_resource path="res://assets/tilesets/interior/16_Grocery_store_32x32.png" type="Texture" id=9]
-[ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/tilesets/interior/2_LivingRoom_32x32.png" type="Texture" id=11]
-[ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=12]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=12]
 [ext_resource path="res://content/areas/City/CityBankstreetOfficeArea/CityBankstreetOffice.gd" type="Script" id=13]
 [ext_resource path="res://assets/tilesets/interior/5_Classroom_and_library_32x32.png" type="Texture" id=15]
 
@@ -2577,7 +2577,8 @@ position = Vector2( 377.568, 1058.04 )
 scale = Vector2( 2, 1 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveTrigger")
+collision_trigger_id = "citybankstreetofficeleave"
 
 [node name="LeaveTrigger" type="Node" parent="."]
 script = ExtResource( 12 )
+id = "citybankstreetofficeleave"

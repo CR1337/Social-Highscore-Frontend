@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=2]
-[ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=3]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=3]
 [ext_resource path="res://content/areas/Living/LivingPharmacystreetArea/LivingPharmacystreetArea.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=6]
@@ -40,19 +40,21 @@ position = Vector2( 800.544, 511.438 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveRightTrigger")
+collision_trigger_id = "livingpharmacystreetleaveright"
 
 [node name="LeaveRightTrigger" type="Node" parent="."]
 script = ExtResource( 3 )
+id = "livingpharmacystreetleaveright"
 
 [node name="LeavePharmacyTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 160.504, 861.696 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeavePharmacyTrigger")
+collision_trigger_id = "livingpharmacystreetleavepharmacy"
 
 [node name="LeavePharmacyTrigger" type="Node" parent="."]
 script = ExtResource( 3 )
+id = "livingpharmacystreetleavepharmacy"
 
 [node name="CrossingArea" parent="." instance=ExtResource( 6 )]
 position = Vector2( 352.234, 511.632 )

@@ -9,9 +9,9 @@
 [ext_resource path="res://assets/tilesets/interior/1_Generic_32x32.png" type="Texture" id=7]
 [ext_resource path="res://assets/tilesets/interior/12_Kitchen_32x32.png" type="Texture" id=8]
 [ext_resource path="res://assets/tilesets/interior/16_Grocery_store_32x32.png" type="Texture" id=9]
-[ext_resource path="res://content/areas/TriggerArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/tilesets/interior/2_LivingRoom_32x32.png" type="Texture" id=11]
-[ext_resource path="res://content/areas/AreaChangeTrigger.gd" type="Script" id=12]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=12]
 [ext_resource path="res://content/areas/City/CityBankstreetBankArea/CityBankstreetBank.gd" type="Script" id=13]
 [ext_resource path="res://assets/tilesets/interior/22_Museum_32x32.png" type="Texture" id=14]
 [ext_resource path="res://assets/tilesets/interior/5_Classroom_and_library_32x32.png" type="Texture" id=15]
@@ -2615,8 +2615,6 @@ tile_data = PoolIntArray( 196617, 123, 131075 )
 [node name="BackDoor" parent="." instance=ExtResource( 16 )]
 position = Vector2( 608, 548 )
 walkable_when_on = true
-on_animation_name = "open"
-off_animation_name = "close"
 triggerAreaOffset = Vector2( 0, 64 )
 triggerAreaScale = Vector2( 1, 1 )
 
@@ -2624,8 +2622,6 @@ triggerAreaScale = Vector2( 1, 1 )
 position = Vector2( 672, 356 )
 is_on = true
 walkable_when_on = true
-on_animation_name = "open"
-off_animation_name = "close"
 triggerAreaOffset = Vector2( 0, 64 )
 triggerAreaScale = Vector2( 1, 1 )
 
@@ -2664,7 +2660,8 @@ position = Vector2( 377.568, 1058.04 )
 scale = Vector2( 2, 1 )
 is_activated_by_collision = true
 walkable = true
-collisionTriggerPath = NodePath("../LeaveTrigger")
+collision_trigger_id = "citybankstreetbankleave"
 
 [node name="LeaveTrigger" type="Node" parent="."]
 script = ExtResource( 12 )
+id = "citybankstreetbankleave"

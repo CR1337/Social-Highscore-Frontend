@@ -1,4 +1,4 @@
-extends "res://content/Trigger.gd"
+extends "res://content/trigger/Trigger.gd"
 
 func trigger():
 	.trigger()

@@ -1,7 +1,7 @@
 extends Node2D
 
 var image_processor_job_id
-var post_authentication_trigger: Node
+var post_authentication_trigger_id: String
 
 
 func _ready():
@@ -20,7 +20,7 @@ func _on_image_processing_done(parsed_response, job_id, image):
 	$Background/MarginContainer/VBoxContainer/HBoxContainer/TakeImageButton.disabled = false
 	if parsed_response['verified']:
 		ViewportManager.change_to_transparent()
-		post_authentication_trigger.trigger()
+		EventBus.emit_signal("trigger", post_authentication_trigger_id)
 		$Background/MarginContainer/VBoxContainer/Label.text = "Please take a picture of your face."
 		CitizenRecord.await_analyze_response(
 			ImageProcessor.analyze_image(image)
