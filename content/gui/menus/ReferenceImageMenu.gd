@@ -3,26 +3,28 @@ extends Node2D
 var image_processor_job_id: int
 var reference_image: Image
 
+onready var ok_button = $Background/MarginContainer/VBoxContainer/OkButton
+onready var take_image_button = $Background/MarginContainer/VBoxContainer/TakeImageButton
+onready var image_texture_rect = $Background/MarginContainer/VBoxContainer/ImageTextureRect
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	ImageProcessor.connect("reference_image_taken", self, "_on_reference_image_taken")
-	$Background/MarginContainer/VBoxContainer/OkButton.disabled = true
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	ok_button.disabled = true
+	
+func set_reference_image(image):
+	reference_image = image
+	ok_button.disabled = false
+	_display_image()
 
 func _display_image():
 	var tmp_texture = ImageTexture.new()
 	tmp_texture.create_from_image(reference_image, 0)
-	$Background/MarginContainer/VBoxContainer/ImageTextureRect.texture = tmp_texture
-	$Background/MarginContainer/VBoxContainer/ImageTextureRect.rect_rotation = Config.imageRotationAngle
+	image_texture_rect.texture = tmp_texture
+	image_texture_rect.rect_rotation = Config.imageRotationAngle
 
 func _on_TakeImageButton_pressed():
 	image_processor_job_id = ImageProcessor.take_reference_image()
-	$Background/MarginContainer/VBoxContainer/TakeImageButton.disabled = true
-
+	take_image_button.disabled = true
 
 func _on_TurnClockwiseButton_pressed():
 	Config.imageRotationAngle -= 90
@@ -40,12 +42,13 @@ func _on_TurnCounterclockwiseButton_pressed():
 
 func _on_OkButton_pressed():
 	ViewportManager.configMenu.refresh()
+	Config.store_to_file()
 	ViewportManager.change_to_transparent()
 	
 func _on_reference_image_taken(image, job_id):
 	if job_id != image_processor_job_id:
 		return
-	$Background/MarginContainer/VBoxContainer/TakeImageButton.disabled = false
+	take_image_button.disabled = false
 	reference_image = image 
 	_display_image()
-	$Background/MarginContainer/VBoxContainer/OkButton.disabled = false
+	ok_button.disabled = false

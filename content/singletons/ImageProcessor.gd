@@ -131,3 +131,4 @@ func restore_state(state):
 	var raw_reference_image = Marshalls.base64_to_raw(b64_reference_image.split(",")[1])
 	reference_image = Image.new()
 	reference_image.load_jpg_from_buffer(raw_reference_image)
+	ViewportManager.referenceImageMenu.set_reference_image(reference_image)
