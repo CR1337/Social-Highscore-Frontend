@@ -15,6 +15,7 @@ var current_job_id: int = 0
 var next_job_id: int = 1
 
 var image_dict: Dictionary
+var raw_image_dict: Dictionary
 
 signal image_processing_done(response, job_id, image)
 signal image_processing_error(response_code)
@@ -35,14 +36,14 @@ func take_reference_image():
 func analyze():
 	return _do_job(JOB_TYPE.ANALYZE)
 	
-func analyze_image(image):
+func analyze_image(image, rawImage):
 	if busy:
 		return null
 	busy = true
 	current_job_type = JOB_TYPE.ANALYZE
 	current_job_id = next_job_id
 	next_job_id += 1
-	call_deferred("_on_got_image", image, image.get_data())
+	call_deferred("_on_got_image", image, rawImage)
 	return current_job_id
 	
 func verify():
@@ -82,6 +83,7 @@ func _on_got_image(image, rawImage):
 			
 	if do_request:
 		image_dict[str(current_job_id)] = image
+		raw_image_dict[str(current_job_id)] = rawImage
 		var url = "http://" + Config.serverAddress + ":" + Config.serverPort + "/" + endpoint
 		var error = http_request.request(url, [], false, HTTPClient.METHOD_POST, JSON.print(body))
 		if error != OK:
@@ -98,8 +100,10 @@ func _handle_response(response, body):
 	var parsed_response = JSON.parse(body.get_string_from_utf8()).result
 	var job_id = parsed_response['job_id']
 	var image = image_dict[str(job_id)]
-	emit_signal("image_processing_done", parsed_response, job_id, image)
-	image_dict.erase(job_id)
+	var raw_image = raw_image_dict[str(job_id)]
+	emit_signal("image_processing_done", parsed_response, job_id, image, raw_image)
+	image_dict.erase(str(job_id))
+	raw_image_dict.erase(str(job_id))
 	return parsed_response
 	
 func _on_request_completed(result, response_code, headers, body):

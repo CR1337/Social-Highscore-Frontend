@@ -66,8 +66,8 @@ func change_to_dialog(json_filename, state):
 	dialogOverlay.initialize(json_filename, state)
 	change_overlay(dialogOverlay)
 	
-func change_to_authentication(post_authentication_trigger):
-	authenticationOverlay.post_authentication_trigger = post_authentication_trigger
+func change_to_authentication(post_authentication_trigger_id):
+	authenticationOverlay.post_authentication_trigger_id = post_authentication_trigger_id
 	change_overlay(authenticationOverlay)
 
 func change_area(targetArea, newPlayerPosition):

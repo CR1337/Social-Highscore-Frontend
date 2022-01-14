@@ -13,7 +13,7 @@ func _singletons():
 	return [
 		CitizenRecord,
 		GameStateController,
-		TimeController,
+		# TimeController,
 		ViewportManager
 	]
 	

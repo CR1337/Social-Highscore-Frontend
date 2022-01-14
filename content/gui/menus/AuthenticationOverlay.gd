@@ -13,7 +13,7 @@ func _on_TakeImageButton_pressed():
 	$Background/MarginContainer/VBoxContainer/Label.text = "Verifying face. Please wait..."
 	image_processor_job_id = ImageProcessor.verify()
 	
-func _on_image_processing_done(parsed_response, job_id, image):
+func _on_image_processing_done(parsed_response, job_id, image, rawImage):
 	if image_processor_job_id != job_id:
 		return
 	$Background/MarginContainer/VBoxContainer/HBoxContainer/CancelButton.disabled = false
@@ -23,7 +23,7 @@ func _on_image_processing_done(parsed_response, job_id, image):
 		EventBus.emit_signal("trigger", post_authentication_trigger_id)
 		$Background/MarginContainer/VBoxContainer/Label.text = "Please take a picture of your face."
 		CitizenRecord.await_analyze_response(
-			ImageProcessor.analyze_image(image)
+			ImageProcessor.analyze_image(image, rawImage)
 		)
 	else:
 		$Background/MarginContainer/VBoxContainer/Label.text = "Verfication failed. Please try again."

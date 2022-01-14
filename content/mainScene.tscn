@@ -242,7 +242,7 @@ position = Vector2( 3193.46, 1314.42 )
 
 [node name="TransparentOverlay" type="Node2D" parent="Overlays"]
 
-[node name="AutheticationOverlay" parent="Overlays" instance=ExtResource( 31 )]
+[node name="AuthenticationOverlay" parent="Overlays" instance=ExtResource( 31 )]
 position = Vector2( 3633.01, -651.034 )
 
 [node name="BusMenu" parent="Overlays" instance=ExtResource( 24 )]
