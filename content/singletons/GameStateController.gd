@@ -40,9 +40,9 @@ signal sleep_changed(new_value)
 signal hunger_changed(new_value)
 
 func _ready():
-	pass
-#	next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
-#	next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
+	#pass
+	next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
+	next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
 
 func next_day():
 	current_day += 1

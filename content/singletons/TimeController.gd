@@ -32,7 +32,10 @@ func persistent_state():
 func restore_state(state):
 	_time = state['time']
 	active = state['active']
+	if len(state['timer_list']) == 0:
+		return
 	_timerList = [[0]]
+	_currentSize = 0
 	for element in state['timer_list']:
 		insert([
 			element[0], 

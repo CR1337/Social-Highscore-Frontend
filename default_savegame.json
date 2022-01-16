@@ -56,26 +56,7 @@
     "/root/TimeController": {
         "time": 0,
         "timer_list": [
-            [
-                10,
-                0,
-                "/root/TrafficController"
-            ],
-            [
-                60,
-                3,
-                "/root/SaveGameController"
-            ],
-            [
-                720,
-                1,
-                "/root/GameStateController"
-            ],
-            [
-                30,
-                2,
-                "/root/GameStateController"
-            ]
+           
         ],
         "active": true
     },
@@ -83,5 +64,8 @@
         "current_area": "/root/mainScene/Areas/LivingHomestreetArea",
         "current_overlay": "/root/mainScene/Overlays/TransparentOverlay",
         "last_overlay": "/root/mainScene/Overlays/TransparentOverlay"
+    },
+    "/root/ImageProcessor": {
+        "b64_reference_image": ""
     }
 }
