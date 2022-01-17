@@ -100,7 +100,7 @@ func minChild(i):
 func delMin():
 	var retval = _timerList[1]
 	_timerList[1] = _timerList[_currentSize]
-	_timerList.remove(_currentSize - 1)
+	_timerList.remove(_currentSize)
 	_currentSize -= 1
 	percDown(1)
 	return retval
