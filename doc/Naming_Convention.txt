@@ -1,0 +1,35 @@
+PUBLIC
+	VARIABLES
+		<variable_name>
+		snake_case
+
+	METHODS
+		<method_name>
+		snake_case
+
+	SIGNALS
+		sig_<signal_name>
+		snake_case
+
+PRIVATE
+	VARIABLES
+		_<variable_name>
+		snake_case
+
+	METHODS
+		_<method_name>
+		snake_case
+
+	SIGNAL_HANDLERS
+		_on_<signal_name>
+		snake_case
+
+NODES
+	CamelCase
+
+SCRIPTS
+	CamelCase
+
+TRIGGER_IDS
+	tid_<area>_<description>
+	snake_case

@@ -10,7 +10,7 @@ func _on_BankingAppButton_pressed():
 
 
 func _on_MessengerAppButton_pressed():
-	pass # Replace with function body.
+	ViewportManager.change_to_messenger_contacts()
 
 
 func _on_CitizenAppButton_pressed():

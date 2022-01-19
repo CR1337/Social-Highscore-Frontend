@@ -11,6 +11,10 @@ onready var referenceImageMenu = get_node("/root/mainScene/Overlays/ReferenceIma
 onready var dialogOverlay = get_node("/root/mainScene/Overlays/DialogOverlay")
 onready var authenticationOverlay = get_node("/root/mainScene/Overlays/AuthenticationOverlay")
 
+onready var messenger_contacts_overlay = get_node("/root/mainScene/Overlays/MessengerAppContacts")
+onready var messenger_messages_overlay = get_node("/root/mainScene/Overlays/MessengerAppMessages")
+
+
 onready var newsApp: Node2D
 onready var messengerApp: Node2D
 onready var bankingApp: Node2D
@@ -45,7 +49,7 @@ func _ready():
 	# lastOverlay = transparentOverlay
 	
 func _on_phone_pressed():
-	change_overlay(smartphoneMenu)
+	change_to_smartphone()
 	
 func _on_menu_pressed():
 	change_overlay(gameMenu)
@@ -58,6 +62,16 @@ func change_to_config():
 	
 func change_to_refenreceImage():
 	change_overlay(referenceImageMenu)
+
+func change_to_messenger_contacts():
+	change_overlay(messenger_contacts_overlay)
+
+func change_to_smartphone():
+	change_overlay(smartphoneMenu)
+	
+func change_to_messenger_messages(contact):
+	messenger_messages_overlay.set_current_contact(contact)
+	change_overlay(messenger_messages_overlay)
 	
 func change_to_last():
 	change_overlay(lastOverlay)

@@ -1,13 +1,15 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://content/movables/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/Living/LivingPharmacystreetArea/LivingPharmacystreetArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://content/areas/Living/LivingFriendstreetPartnerArea/LivingFriendstreetPartnerArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://content/gui/menus/MessengerAppMessages.tscn" type="PackedScene" id=5]
 [ext_resource path="res://content/areas/Living/LivingBusstreetArea/LivingBusStreetArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://content/gfx/ShaderRect.gd" type="Script" id=7]
 [ext_resource path="res://content/gui/DebugLabel.gd" type="Script" id=8]
 [ext_resource path="res://content/gui/menus/SmartphoneMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://content/gui/menus/MessengerAppContacts.tscn" type="PackedScene" id=10]
 [ext_resource path="res://content/gui/menus/GameMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/gui/menus/ConfigMenu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://content/areas/Living/LivingHomestreetArea/LivingHomestreetArea.tscn" type="PackedScene" id=13]
@@ -264,6 +266,12 @@ leaveUtilityPlayerPosition = Vector2( 9, 11 )
 "persistent",
 ] instance=ExtResource( 38 )]
 position = Vector2( 4093.63, 1297.72 )
+
+[node name="MessengerAppContacts" parent="Overlays" instance=ExtResource( 10 )]
+position = Vector2( 4816.45, -561.626 )
+
+[node name="MessengerAppMessages" parent="Overlays" instance=ExtResource( 5 )]
+position = Vector2( 4981.78, 1105.24 )
 
 [node name="player" parent="." groups=[
 "persistent",
