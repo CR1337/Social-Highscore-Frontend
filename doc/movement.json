@@ -1,21 +1,35 @@
 {
     "state0": {
         "sequence": [
-            {"direction": "left", "trigger_id": null},
-            {"direction": "right", "trigger_id": null},
-            {"direction": "up", "trigger_id": null},
-            {"direction": "down", "trigger_id": null},
-            {"direction": "wait", "trigger_id": "trigger0"}
+            {"direction": "left", "repeats": 1, "trigger_id": null},
+            {"direction": "right", "repeats": 1, "trigger_id": null},
+            {"direction": "up", "repeats": 1, "trigger_id": null},
+            {"direction": "down", "repeats": 1, "trigger_id": null},
+            {"direction": "wait", "seconds": 1, "trigger_id": "trigger0"}
         ],
         "repeats": 3
     },
     "state1": {
         "sequence": [
-            {"direction": "left", "trigger_id": null},
-            {"direction": "right", "trigger_id": null},
-            {"direction": "up", "trigger_id": null},
-            {"direction": "down", "trigger_id": null},
-            {"direction": "wait", "trigger_id": "trigger1"}
+            {"direction": "left", "repeats": 1, "trigger_id": null},
+            {"direction": "right", "repeats": 1, "trigger_id": null},
+            {"direction": "up", "repeats": 1, "trigger_id": null},
+            {"direction": "down", "repeats": 1, "trigger_id": null},
+            {"direction": "wait", "seconds": 1, "trigger_id": "trigger1"}
+        ],
+        "repeats": "infinity"
+    },
+    "horizontal": {
+        "sequence": [
+            {"direction": "left", "repeats": 3, "trigger_id": null},
+            {"direction": "right", "repeats": 3, "trigger_id": null}
+        ],
+        "repeats": "infinity"
+    },
+    "vertical": {
+        "sequence": [
+            {"direction": "up", "repeats": 4, "trigger_id": null},
+            {"direction": "down", "repeats": 4, "trigger_id": null}
         ],
         "repeats": "infinity"
     }
