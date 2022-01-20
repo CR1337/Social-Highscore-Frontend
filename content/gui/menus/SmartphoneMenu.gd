@@ -1,5 +1,7 @@
 extends Node2D
 
+func _process(delta):
+	$Background/Label.text = TimeController.get_daytime()
 
 func _on_NewsAppButton_pressed():
 	pass # Replace with function body.
