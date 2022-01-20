@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var _messages = {
 	'friend': [],
@@ -22,8 +22,14 @@ var current_node_ids = {
 
 onready var name_label = $Background/MarginContainer/VBoxContainer/NameLabel
 onready var messages_label = $Background/MarginContainer/VBoxContainer/MessagesLabel
-onready var message_button = $MessageButton
-onready var send_button = $Background/MarginContainer/VBoxContainer/SendButton
+onready var message_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/MessageButton
+onready var send_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/SendButton
+
+var position: Vector2 setget set_position_, get_position_
+func set_position_(value):
+	rect_position = value
+func get_position_():
+	return rect_position
 
 var current_contact: String
 var dialog_dicts = {
@@ -44,7 +50,6 @@ func _dialog_node(contact):
 
 func _ready():
 	EventBus.connect("sig_got_phone_message", self, "_on_got_phone_message")
-	$MessageButton.connect("item_selected", self, "_on_answer_selected")
 	send_button.disabled = true
 	for contact in dialog_dicts.keys():
 		var file = File.new()
@@ -126,3 +131,14 @@ func timer(handle):
 
 func _on_MessageButton_about_to_show():
 	print(message_button.get_item_count())
+
+
+
+
+func _on_MessageButton_pressed():
+	message_button.get_popup().set("z_index", 100)
+
+
+func _on_MessageButton_toggled(button_pressed):
+	message_button.get_popup().set("z_index", 100)
+	
