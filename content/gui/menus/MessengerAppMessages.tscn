@@ -5,20 +5,23 @@
 [ext_resource path="res://assets/gui/back_button.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=4]
 
-[node name="MessengerAppMessages" type="Control"]
+[node name="MessengerAppMessages" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="DebugMessengerIdleTrigger" type="Node" parent="."]
+script = ExtResource( 2 )
+id = "tid_debug_idle_messenger"
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+margin_right = 768.0
+margin_bottom = 1408.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
-margin_right = 768.0
-margin_bottom = 1408.0
-mouse_filter = 2
-color = Color( 1, 1, 1, 0.627451 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Background" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="Background"]
 margin_right = 768.0
@@ -68,7 +71,6 @@ margin_right = 644.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 644, 64 )
 custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Element 0"
 selected = 0
 __meta__ = {
@@ -92,12 +94,6 @@ rect_min_size = Vector2( 0, 128 )
 icon = ExtResource( 3 )
 expand_icon = true
 
-[node name="DebugMessengerIdleTrigger" type="Node" parent="."]
-script = ExtResource( 2 )
-id = "tid_debug_idle_messenger"
-
 [connection signal="item_selected" from="Background/MarginContainer/VBoxContainer/HBoxContainer/MessageButton" to="." method="_on_answer_selected"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/MessageButton" to="." method="_on_MessageButton_pressed"]
-[connection signal="toggled" from="Background/MarginContainer/VBoxContainer/HBoxContainer/MessageButton" to="." method="_on_MessageButton_toggled"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/SendButton" to="." method="_on_SendButton_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

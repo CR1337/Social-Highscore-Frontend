@@ -71,6 +71,7 @@ func change_to_smartphone():
 	
 func change_to_messenger_messages(contact):
 	messenger_messages_overlay.set_current_contact(contact)
+	messenger_messages_overlay.show()
 	change_overlay(messenger_messages_overlay)
 	
 func change_to_last():

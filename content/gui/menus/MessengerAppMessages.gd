@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 var _messages = {
 	'friend': [],
@@ -24,12 +24,7 @@ onready var name_label = $Background/MarginContainer/VBoxContainer/NameLabel
 onready var messages_label = $Background/MarginContainer/VBoxContainer/MessagesLabel
 onready var message_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/MessageButton
 onready var send_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/SendButton
-
-var position: Vector2 setget set_position_, get_position_
-func set_position_(value):
-	rect_position = value
-func get_position_():
-	return rect_position
+onready var margin_container = $Background/MarginContainer
 
 var current_contact: String
 var dialog_dicts = {
@@ -50,6 +45,7 @@ func _dialog_node(contact):
 
 func _ready():
 	EventBus.connect("sig_got_phone_message", self, "_on_got_phone_message")
+	_hide()
 	send_button.disabled = true
 	for contact in dialog_dicts.keys():
 		var file = File.new()
@@ -67,7 +63,12 @@ func _ready():
 
 func _on_got_phone_message(contact, message):
 	_messages[contact].append([false, message])
-
+	
+func show():
+	margin_container.visible = true
+	
+func _hide():
+	margin_container.visible = false
 
 func update_answers():
 	message_button.clear()
@@ -96,6 +97,7 @@ func _display_messages():
 
 func _on_BackButton_pressed():
 	ViewportManager.change_to_messenger_contacts()
+	_hide()
 	send_button.disabled = true
 	_selected_answer_id = -1
 
@@ -128,17 +130,5 @@ func timer(handle):
 		_display_messages()
 		update_answers()
 
-
 func _on_MessageButton_about_to_show():
 	print(message_button.get_item_count())
-
-
-
-
-func _on_MessageButton_pressed():
-	message_button.get_popup().set("z_index", 100)
-
-
-func _on_MessageButton_toggled(button_pressed):
-	message_button.get_popup().set("z_index", 100)
-	
