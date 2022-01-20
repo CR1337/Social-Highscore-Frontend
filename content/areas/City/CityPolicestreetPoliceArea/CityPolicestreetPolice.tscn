@@ -2543,8 +2543,8 @@ position = Vector2( 377.568, 1058.04 )
 scale = Vector2( 2, 1 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "citypolicestreetpoliceleave"
+collision_trigger_id = "tid_city_policestreet_police_leave"
 
-[node name="LeaveTrigger" type="Node" parent="."]
+[node name="LeaveTrigger" type="Node" parent="TriggerArea"]
 script = ExtResource( 12 )
-id = "citypolicestreetpoliceleave"
+id = "tid_city_policestreet_police_leave"

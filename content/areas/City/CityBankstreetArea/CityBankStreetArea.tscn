@@ -44,42 +44,42 @@ position = Vector2( 799.871, 516.282 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "citybankstreetleaveright"
+collision_trigger_id = "tid_city_bankstreet_leave_right"
 
-[node name="LeaveRightTrigger" type="Node" parent="."]
+[node name="LeaveRightTrigger" type="Node" parent="LeaveRightTriggerArea"]
 script = ExtResource( 4 )
-id = "citybankstreetleaveright"
+id = "tid_city_bankstreet_leave_right"
 
 [node name="LeaveTopTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 384.494, -30.9504 )
 scale = Vector2( 12, 1 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "citybankstreetleavetop"
+collision_trigger_id = "tid_city_bankstreet_leave_top"
 
-[node name="LeaveTopTrigger" type="Node" parent="."]
+[node name="LeaveTopTrigger" type="Node" parent="LeaveTopTriggerArea"]
 script = ExtResource( 4 )
-id = "citybankstreetleavetop"
+id = "tid_city_bankstreet_leave_top"
 
 [node name="LeaveOfficeTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 159.852, 222.008 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "citybankstreetleaveoffice"
+collision_trigger_id = "tid_city_bankstreet_leave_office"
 
-[node name="LeaveOfficeTrigger" type="Node" parent="."]
+[node name="LeaveOfficeTrigger" type="Node" parent="LeaveOfficeTriggerArea"]
 script = ExtResource( 4 )
-id = "citybankstreetleaveoffice"
+id = "tid_city_bankstreet_leave_office"
 
 [node name="LeaveBankTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 350.515, 925.194 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "citybankstreetleavebank"
+collision_trigger_id = "tid_city_bankstreet_leave_bank"
 
-[node name="LeaveBankTrigger" type="Node" parent="."]
+[node name="LeaveBankTrigger" type="Node" parent="LeaveBankTriggerArea"]
 script = ExtResource( 4 )
-id = "citybankstreetleavebank"
+id = "tid_city_bankstreet_leave_bank"
 
 [node name="trafficLight" parent="." groups=[
 "persistent",

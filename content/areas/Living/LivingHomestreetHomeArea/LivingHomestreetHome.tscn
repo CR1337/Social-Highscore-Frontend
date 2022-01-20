@@ -1876,21 +1876,21 @@ position = Vector2( 377.568, 1058.04 )
 scale = Vector2( 2, 1 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livinghomestreethomeleave"
+collision_trigger_id = "tid_living_homestreet_home_leave"
 
-[node name="LeaveTrigger" type="Node" parent="."]
+[node name="LeaveTrigger" type="Node" parent="TriggerArea"]
 script = ExtResource( 5 )
-id = "livinghomestreethomeleave"
+id = "tid_living_homestreet_home_leave"
 
 [node name="DebugDialogTriggerArea" parent="." instance=ExtResource( 7 )]
 position = Vector2( 350.216, 542.519 )
 is_activated_by_action = true
-action_trigger_id = "livinghomestreethomedialog"
+action_trigger_id = "tid_living_homestreet_home_dialog"
 
-[node name="DebugDialogTrigger" type="Node" parent="."]
+[node name="DebugDialogTrigger" type="Node" parent="DebugDialogTriggerArea"]
 script = ExtResource( 12 )
-id = "livinghomestreethomedialog"
+id = "tid_living_homestreet_home_dialog"
 
-[node name="DebugToiletTrigger" type="Node" parent="."]
+[node name="DebugToiletTrigger" type="Node" parent="DebugDialogTriggerArea"]
 script = ExtResource( 13 )
 id = "debug_toilet_trigger"

@@ -40,21 +40,21 @@ position = Vector2( 800.544, 511.438 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livingpharmacystreetleaveright"
+collision_trigger_id = "tid_living_pharmacystreet_leave_right"
 
-[node name="LeaveRightTrigger" type="Node" parent="."]
+[node name="LeaveRightTrigger" type="Node" parent="LeaveRightTriggerArea"]
 script = ExtResource( 3 )
-id = "livingpharmacystreetleaveright"
+id = "tid_living_pharmacystreet_leave_right"
 
 [node name="LeavePharmacyTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 160.504, 861.696 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livingpharmacystreetleavepharmacy"
+collision_trigger_id = "tid_living_pharmacystreet_leave_pharmacy"
 
-[node name="LeavePharmacyTrigger" type="Node" parent="."]
+[node name="LeavePharmacyTrigger" type="Node" parent="LeavePharmacyTriggerArea"]
 script = ExtResource( 3 )
-id = "livingpharmacystreetleavepharmacy"
+id = "tid_living_pharmacystreet_leave_pharmacy"
 
 [node name="CrossingArea" parent="." instance=ExtResource( 6 )]
 position = Vector2( 352.234, 511.632 )

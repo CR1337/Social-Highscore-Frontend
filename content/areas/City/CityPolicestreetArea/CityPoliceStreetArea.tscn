@@ -44,43 +44,43 @@ position = Vector2( 384.697, 1056.56 )
 scale = Vector2( 12, 1 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "citypolicestreetleavebottom"
+collision_trigger_id = "tid_city_policestreet_leave_bottom"
 
-[node name="LeaveBottomTrigger" type="Node" parent="."]
+[node name="LeaveBottomTrigger" type="Node" parent="LeaveBottomTriggerArea"]
 script = ExtResource( 4 )
-id = "citypolicestreetleavebottom"
+id = "tid_city_policestreet_leave_bottom"
 
 [node name="LeaveLeftTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( -30.4464, 514.5 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "citypolicestreetleaveleft"
+collision_trigger_id = "tid_city_policestreet_leave_left"
 
-[node name="LeaveLeftTrigger" type="Node" parent="."]
+[node name="LeaveLeftTrigger" type="Node" parent="LeaveLeftTriggerArea"]
 script = ExtResource( 4 )
-id = "citypolicestreetleaveleft"
+id = "tid_city_policestreet_leave_left"
 
 [node name="LeaveTopTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 384.494, -30.9504 )
 scale = Vector2( 12, 1 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "citypolicestreetleavetop"
+collision_trigger_id = "tid_city_policestreet_leave_top"
 
-[node name="LeaveTopTrigger" type="Node" parent="."]
+[node name="LeaveTopTrigger" type="Node" parent="LeaveTopTriggerArea"]
 script = ExtResource( 4 )
-id = "citypolicestreetleavetop"
+id = "tid_city_policestreet_leave_top"
 
 [node name="LeavePoliceTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 607.331, 672.88 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "citypolicestreetleavepolice"
+collision_trigger_id = "tid_city_policestreet_leave_police"
 
-[node name="LeavePoliceTrigger" type="Node" parent="."]
+[node name="LeavePoliceTrigger" type="Node" parent="LeavePoliceTriggerArea"]
 script = ExtResource( 4 )
-id = "citypolicestreetleavepolice"
+id = "tid_city_policestreet_leave_police"
 
 [node name="trafficLight" parent="." groups=[
 "persistent",

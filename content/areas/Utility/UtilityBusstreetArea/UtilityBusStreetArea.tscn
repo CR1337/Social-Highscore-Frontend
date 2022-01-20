@@ -43,47 +43,47 @@ position = Vector2( -32.2436, 509.548 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "utilitybusstreetleaveleft"
+collision_trigger_id = "tid_utility_busstreet_leave_left"
 
-[node name="LeaveLeftTrigger" type="Node" parent="."]
+[node name="LeaveLeftTrigger" type="Node" parent="LeaveLeftTriggerArea"]
 script = ExtResource( 4 )
-id = "utilitybusstreetleaveleft"
+id = "tid_utility_busstreet_leave_left"
 
 [node name="LeaveHospitalTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 224.335, 350.968 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "utilitybusstreetleavehospital"
+collision_trigger_id = "tid_utility_busstreet_leave_hospital"
 
-[node name="LeaveHospitalTrigger" type="Node" parent="."]
+[node name="LeaveHospitalTrigger" type="Node" parent="LeaveHospitalTriggerArea"]
 script = ExtResource( 4 )
-id = "utilitybusstreetleavehospital"
+id = "tid_utility_busstreet_leave_hospital"
 
 [node name="LeaveMallTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 608.102, 349.633 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "utilitybusstreetleavemall"
+collision_trigger_id = "tid_utility_busstreet_leave_mall"
 
-[node name="LeaveMallTrigger" type="Node" parent="."]
+[node name="LeaveMallTrigger" type="Node" parent="LeaveMallTriggerArea"]
 script = ExtResource( 4 )
-id = "utilitybusstreetleavemall"
+id = "tid_utility_busstreet_leave_mall"
 
 [node name="BusTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 479.856, 634.792 )
 scale = Vector2( 1, 2 )
 is_activated_by_action = true
 walkable = true
-action_trigger_id = "utilitybusstreetauthentication"
+action_trigger_id = "tid_utility_busstreet_authentication"
 
-[node name="BusTrigger" type="Node" parent="."]
-script = ExtResource( 6 )
-id = "utilitybusstreetbus"
-
-[node name="AuthenticationTrigger" type="Node" parent="."]
+[node name="AuthenticationTrigger" type="Node" parent="BusTriggerArea"]
 script = ExtResource( 10 )
-id = "utilitybusstreetauthentication"
-post_authentication_trigger_id = "utilitybusstreetbus"
+id = "tid_utility_busstreet_authentication"
+post_authentication_trigger_id = "tid_utility_busstreet_bus"
+
+[node name="BusTrigger" type="Node" parent="BusTriggerArea"]
+script = ExtResource( 6 )
+id = "tid_utility_busstreet_bus"
 
 [node name="car_46" parent="." instance=ExtResource( 9 )]
 position = Vector2( -64, -64 )

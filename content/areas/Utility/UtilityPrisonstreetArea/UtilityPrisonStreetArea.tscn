@@ -37,19 +37,19 @@ position = Vector2( 802.868, 511.793 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "utilityprisonstreetleaveright"
+collision_trigger_id = "tid_utility_prisonstreet_leave_right"
 
-[node name="LeaveRightTrigger" type="Node" parent="."]
+[node name="LeaveRightTrigger" type="Node" parent="LeaveRightTriggerArea"]
 script = ExtResource( 4 )
-id = "utilityprisonstreetleaveright"
+id = "tid_utility_prisonstreet_leave_right"
 
 [node name="LeavePrisonTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 193.918, 928.243 )
 scale = Vector2( 4, 1 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "utilityprisonstreetleaveprison"
+collision_trigger_id = "tid_utility_prisonstreet_leave_prison"
 
-[node name="LeavePrisonTrigger" type="Node" parent="."]
+[node name="LeavePrisonTrigger" type="Node" parent="LeavePrisonTriggerArea"]
 script = ExtResource( 4 )
-id = "utilityprisonstreetleaveprison"
+id = "tid_utility_prisonstreet_leave_prison"

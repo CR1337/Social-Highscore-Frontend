@@ -41,31 +41,31 @@ position = Vector2( -31.8053, 509.688 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livingfriendstreetleaveleft"
+collision_trigger_id = "tid_living_friendstreet_leave_left"
 
-[node name="LeaveLeftTrigger" type="Node" parent="."]
+[node name="LeaveLeftTrigger" type="Node" parent="LeaveLeftTriggerArea"]
 script = ExtResource( 3 )
-id = "livingfriendstreetleaveleft"
+id = "tid_living_friendstreet_leave_left"
 
 [node name="LeaveFriendTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 608.114, 863.028 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livingfriendstreetleavefriend"
+collision_trigger_id = "tid_living_friendstreet_leave_friend"
 
-[node name="LeaveFriendTrigger" type="Node" parent="."]
+[node name="LeaveFriendTrigger" type="Node" parent="LeaveFriendTriggerArea"]
 script = ExtResource( 3 )
-id = "livingfriendstreetleavefriend"
+id = "tid_living_friendstreet_leave_friend"
 
 [node name="LeavePartnerTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 158.21, 352.543 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livingfriendstreetleavepartner"
+collision_trigger_id = "tid_living_friendstreet_leave_partner"
 
-[node name="LeavePartnerTrigger" type="Node" parent="."]
+[node name="LeavePartnerTrigger" type="Node" parent="LeavePartnerTriggerArea"]
 script = ExtResource( 3 )
-id = "livingfriendstreetleavepartner"
+id = "tid_living_friendstreet_leave_partner"
 
 [node name="CrossingArea" parent="." instance=ExtResource( 7 )]
 position = Vector2( 414.676, 510.675 )

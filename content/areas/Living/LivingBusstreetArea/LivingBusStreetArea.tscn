@@ -46,27 +46,27 @@ position = Vector2( 384.697, 1056.56 )
 scale = Vector2( 12, 1 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livingbusstreetleavebottom"
+collision_trigger_id = "tid_living_busstreet_leave_bottom"
 
-[node name="LeaveBottomTrigger" type="Node" parent="."]
+[node name="LeaveBottomTrigger" type="Node" parent="LeaveBottomTriggerArea"]
 script = ExtResource( 4 )
-id = "livingbusstreetleavebottom"
+id = "tid_living_busstreet_leave_bottom"
 
 [node name="BusTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 544.449, 383.054 )
 scale = Vector2( 1, 2 )
 is_activated_by_action = true
 walkable = true
-action_trigger_id = "livingbusstreetauthentication"
+action_trigger_id = "tid_living_busstreet_authentication"
 
-[node name="BusTrigger" type="Node" parent="."]
+[node name="BusTrigger" type="Node" parent="BusTriggerArea"]
 script = ExtResource( 6 )
-id = "livingbusstreetbus"
+id = "tid_living_busstreet_bus"
 
-[node name="AuthenticationTrigger" type="Node" parent="."]
+[node name="AuthenticationTrigger" type="Node" parent="BusTriggerArea"]
 script = ExtResource( 12 )
-id = "livingbusstreetauthentication"
-post_authentication_trigger_id = "livingbusstreetbus"
+id = "tid_living_busstreet_authentication"
+post_authentication_trigger_id = "tid_living_busstreet_bus"
 
 [node name="car_0" parent="." instance=ExtResource( 9 )]
 position = Vector2( -64, -64 )

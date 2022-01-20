@@ -47,53 +47,53 @@ position = Vector2( -32.4155, 513.336 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livinghomestreetleaveleft"
+collision_trigger_id = "tid_living_home_street_leave_left"
 
-[node name="LeaveLeftTrigger" type="Node" parent="."]
+[node name="LeaveLeftTrigger" type="Node" parent="LeaveLeftTriggerArea"]
 script = ExtResource( 3 )
-id = "livinghomestreetleaveleft"
+id = "tid_living_home_street_leave_left"
 
 [node name="LeaveRightTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 802.034, 510.74 )
 scale = Vector2( 1, 16 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livinghomestreetleaveright"
+collision_trigger_id = "tid_living_home_street_leave_right"
 
-[node name="LeaveRightTrigger" type="Node" parent="."]
+[node name="LeaveRightTrigger" type="Node" parent="LeaveRightTriggerArea"]
 script = ExtResource( 3 )
-id = "livinghomestreetleaveright"
+id = "tid_living_home_street_leave_right"
 
 [node name="LeaveTopTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 381.93, -30.6513 )
 scale = Vector2( 12, 1 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livinghomestreetleavetop"
+collision_trigger_id = "tid_living_home_street_leave_top"
 
-[node name="LeaveTopTrigger" type="Node" parent="."]
+[node name="LeaveTopTrigger" type="Node" parent="LeaveTopTriggerArea"]
 script = ExtResource( 3 )
-id = "livinghomestreetleavetop"
+id = "tid_living_home_street_leave_top"
 
 [node name="LeaveHomeTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 608.114, 863.028 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livinghomestreetleavehome"
+collision_trigger_id = "tid_living_home_street_leave_home"
 
-[node name="LeaveHomeTrigger" type="Node" parent="."]
+[node name="LeaveHomeTrigger" type="Node" parent="LeaveHomeTriggerArea"]
 script = ExtResource( 3 )
-id = "livinghomestreetleavehome"
+id = "tid_living_home_street_leave_home"
 
 [node name="LeaveMomTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 160.04, 862.449 )
 is_activated_by_collision = true
 walkable = true
-collision_trigger_id = "livinghomestreetleavemom"
+collision_trigger_id = "tid_living_home_street_leave_mom"
 
-[node name="LeaveMomTrigger" type="Node" parent="."]
+[node name="LeaveMomTrigger" type="Node" parent="LeaveMomTriggerArea"]
 script = ExtResource( 3 )
-id = "livinghomestreetleavemom"
+id = "tid_living_home_street_leave_mom"
 
 [node name="CrosswalkArea" parent="." instance=ExtResource( 8 )]
 position = Vector2( 608.922, 509.855 )
@@ -170,7 +170,7 @@ next_car_id = 12
 ] instance=ExtResource( 11 )]
 position = Vector2( 537.324, 521.08 )
 is_activated_by_action = true
-action_trigger_id = "debug_npc_trigger"
+action_trigger_id = "tid_debug_npc_movement"
 movement_filename = "res://doc/movement.json"
 dialog_filename = "res://doc/dialog.json"
 speed = 1.0
@@ -180,7 +180,7 @@ current_position = Vector2( 8, 7 )
 
 [node name="NPCTrigger" type="Node" parent="NPCh"]
 script = ExtResource( 13 )
-id = "debug_npc_trigger"
+id = "tid_debug_npc_movement"
 target_npc_h = NodePath("..")
 target_npc_v = NodePath("../../NPCv")
 
@@ -189,7 +189,7 @@ target_npc_v = NodePath("../../NPCv")
 ] instance=ExtResource( 11 )]
 position = Vector2( 396.054, 660.669 )
 is_activated_by_action = true
-action_trigger_id = "npc_start_dialog_trigger"
+action_trigger_id = "tid_debug_npc_dialog"
 movement_filename = "res://doc/movement.json"
 dialog_filename = "res://doc/dialog.json"
 speed = 1.0
@@ -199,4 +199,4 @@ current_position = Vector2( 6, 9 )
 
 [node name="NPCDialogTrigger" type="Node" parent="NPCv"]
 script = ExtResource( 14 )
-id = "npc_start_dialog_trigger"
+id = "tid_debug_npc_dialog"
