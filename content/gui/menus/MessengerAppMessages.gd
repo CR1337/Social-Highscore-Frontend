@@ -37,6 +37,23 @@ var dialog_dicts = {
 var response_timer_handle: int
 var _selected_answer_id = -1
 
+func persistent_state():
+	return {
+		'messages': _messages,
+		'current_node_ids': current_node_ids,
+		'current_contact': current_contact,
+		'response_timer_handle': response_timer_handle,
+		'hidden': not margin_container.visible
+	}
+	
+func restore_state(state):
+	_messages = state['messages']
+	current_node_ids = state['current_node_ids']
+	response_timer_handle = state['response_timer_handle']
+	if not state['hidden']:
+		set_current_contact(state['current_contact'])
+		show()
+
 func _current_node():
 	return _dialog_node(current_contact)
 
@@ -90,7 +107,7 @@ func _display_messages():
 		if message_tuple[0]:
 			messages_label.append_bbcode("\n\n[color=green][right]" + message_tuple[1] + "[/right][/color]")
 		else:
-			messages_label.append_bbcode("\n\n[color=white][left]" + message_tuple[1] + "[/left][/color]")
+			messages_label.append_bbcode("\n\n[color=white]" + message_tuple[1] + "[/color]")
 	messages_label.scroll_to_line(messages_label.get_line_count()-1)
 	
 
@@ -122,7 +139,7 @@ func _process_answer(answer_index):
 	send_button.disabled = true
 	_selected_answer_id = -1
 	response_timer_handle = TimeController.setTimer(1, self)
-
+	
 func timer(handle):
 	if response_timer_handle == handle:
 		var text_id = _current_node()['tid']

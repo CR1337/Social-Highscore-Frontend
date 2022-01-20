@@ -25,8 +25,8 @@
             "node1": {
                 "tid": "1",
                 "answers": [
-                    {"tid": "5", "nid": "node2", "trigger_id": null},
-                    {"tid": "6", "nid": "node2", "trigger_id": null}
+                    {"tid": "5", "nid": "node0", "trigger_id": null},
+                    {"tid": "6", "nid": "node0", "trigger_id": null}
                 ],
                 "trigger_id": "tid_debug_idle_messenger"
             }
