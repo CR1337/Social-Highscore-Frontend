@@ -28,7 +28,16 @@ func persistent_state():
 		'timer_list': persistent_timer_list,
 		'active': active
 	}
-	
+
+func get_daytime():
+	var time = int(_time * 2)
+	time = time % (Globals.seconds_per_day * 2)
+	var hours = floor(time/60)
+	var minutes = time % 60
+	var hour_string = str(hours) if hours > 9 else "0" + str(hours)
+	var minute_string = str(minutes) if minutes > 9 else "0" + str(minutes)
+	return hour_string + ":" + minute_string
+
 func restore_state(state):
 	_time = state['time']
 	active = state['active']

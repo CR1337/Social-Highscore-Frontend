@@ -1,5 +1,9 @@
 extends Node2D
 
+
+func _process(delta):
+	$Label.text = TimeController.get_daytime()
+
 func _on_menu_button_pressed():
 	InputBus.emit_signal("menu_pressed")
 
