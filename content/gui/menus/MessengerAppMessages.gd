@@ -63,7 +63,6 @@ func _dialog_node(contact):
 func _ready():
 	EventBus.connect("sig_got_phone_message", self, "_on_got_phone_message")
 	_hide()
-	send_button.disabled = true
 	for contact in dialog_dicts.keys():
 		var file = File.new()
 		file.open(_filenames[contact], File.READ)
@@ -93,7 +92,8 @@ func update_answers():
 	for i in len(_current_node()['answers']):
 		print(dialog_dicts[current_contact]['texts'][_current_node()['answers'][i]['tid']])
 		message_button.add_item(dialog_dicts[current_contact]['texts'][_current_node()['answers'][i]['tid']])
-
+	send_button.disabled = false
+	
 func set_current_contact(contact):
 	name_label.text = contact
 	current_contact = contact
@@ -115,7 +115,6 @@ func _display_messages():
 func _on_BackButton_pressed():
 	ViewportManager.change_to_messenger_contacts()
 	_hide()
-	send_button.disabled = true
 	_selected_answer_id = -1
 
 
@@ -123,7 +122,6 @@ func _on_SendButton_pressed():
 	_process_answer(_selected_answer_id)
 
 func _on_answer_selected(id):
-	send_button.disabled = false
 	_selected_answer_id = id
 	
 func _process_answer(answer_index):
