@@ -13,12 +13,9 @@ onready var authenticationOverlay = get_node("/root/mainScene/Overlays/Authentic
 
 onready var messenger_contacts_overlay = get_node("/root/mainScene/Overlays/MessengerAppContacts")
 onready var messenger_messages_overlay = get_node("/root/mainScene/Overlays/MessengerAppMessages")
+onready var banking_app_overlay = get_node("/root/mainScene/Overlays/BankingApp")
 
 
-onready var newsApp: Node2D
-onready var messengerApp: Node2D
-onready var bankingApp: Node2D
-onready var citizenApp: Node2D
 
 onready var currentArea = get_node("/root/mainScene/Areas/LivingHomestreetArea")
 onready var currentOverlay = transparentOverlay
@@ -65,6 +62,9 @@ func change_to_refenreceImage():
 
 func change_to_messenger_contacts():
 	change_overlay(messenger_contacts_overlay)
+	
+func change_to_banking_app():
+	change_overlay(banking_app_overlay)
 
 func change_to_smartphone():
 	change_overlay(smartphoneMenu)
