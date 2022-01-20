@@ -81,7 +81,7 @@
     },
     "/root/GameStateController": {
         "score": 1000,
-        "money": 1000,
+        "money": 1400,
         "hunger": 100,
         "sleep": 100,
         "days_without_mom": 0,
@@ -99,7 +99,21 @@
     "/root/TimeController": {
         "time": 0,
         "timer_list": [
-
+            [
+                10,
+                0,
+                "/root/TrafficController"
+            ],
+            [
+                30,
+                2,
+                "/root/GameStateController"
+            ],
+            [
+                720,
+                1,
+                "/root/GameStateController"
+            ]
         ],
         "active": true
     },
