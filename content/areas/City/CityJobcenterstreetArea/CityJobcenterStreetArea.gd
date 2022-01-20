@@ -6,8 +6,8 @@ export (Vector2) var leaveJobcenterPlayerPosition
 
 func _ready():
 
-	$LeaveJobcenterTrigger.targetArea = get_node(leaveJobcenterAreaPath)
-	$LeaveJobcenterTrigger.newPlayerPosition = leaveJobcenterPlayerPosition
+	$LeaveJobcenterTriggerArea/LeaveJobcenterTrigger.targetArea = get_node(leaveJobcenterAreaPath)
+	$LeaveJobcenterTriggerArea/LeaveJobcenterTrigger.newPlayerPosition = leaveJobcenterPlayerPosition
 	
 	cars = {
 		16: $car_16,

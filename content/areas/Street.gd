@@ -16,17 +16,17 @@ onready var cars: Dictionary
 
 func _ready():
 	if leaveLeftAreaPath != "":
-		$LeaveLeftTrigger.targetArea = get_node(leaveLeftAreaPath)
-		$LeaveLeftTrigger.newPlayerPosition = leaveLeftPlayerPosition
+		$LeaveLeftTriggerArea/LeaveLeftTrigger.targetArea = get_node(leaveLeftAreaPath)
+		$LeaveLeftTriggerArea/LeaveLeftTrigger.newPlayerPosition = leaveLeftPlayerPosition
 	if leaveRightAreaPath != "":
-		$LeaveRightTrigger.targetArea = get_node(leaveRightAreaPath)
-		$LeaveRightTrigger.newPlayerPosition = leaveRightPlayerPosition
+		$LeaveRightTriggerArea/LeaveRightTrigger.targetArea = get_node(leaveRightAreaPath)
+		$LeaveRightTriggerArea/LeaveRightTrigger.newPlayerPosition = leaveRightPlayerPosition
 	if leaveTopAreaPath != "":
-		$LeaveTopTrigger.targetArea = get_node(leaveTopAreaPath)
-		$LeaveTopTrigger.newPlayerPosition = leaveTopPlayerPosition
+		$LeaveTopTriggerArea/LeaveTopTrigger.targetArea = get_node(leaveTopAreaPath)
+		$LeaveTopTriggerArea/LeaveTopTrigger.newPlayerPosition = leaveTopPlayerPosition
 	if leaveBottomAreaPath != "":
-		$LeaveBottomTrigger.targetArea = get_node(leaveBottomAreaPath)
-		$LeaveBottomTrigger.newPlayerPosition = leaveBottomPlayerPosition
+		$LeaveBottomTriggerArea/LeaveBottomTrigger.targetArea = get_node(leaveBottomAreaPath)
+		$LeaveBottomTriggerArea/LeaveBottomTrigger.newPlayerPosition = leaveBottomPlayerPosition
 
 func start_car(car_id):
 	cars[car_id].start()

@@ -10,13 +10,13 @@ export (NodePath) var BusOverlayPath
 
 func _ready():
 
-	$LeaveHospitalTrigger.targetArea = get_node(leaveHospitalAreaPath)
-	$LeaveHospitalTrigger.newPlayerPosition = leaveHospitalPlayerPosition
+	$LeaveHospitalTriggerArea/LeaveHospitalTrigger.targetArea = get_node(leaveHospitalAreaPath)
+	$LeaveHospitalTriggerArea/LeaveHospitalTrigger.newPlayerPosition = leaveHospitalPlayerPosition
 
-	$LeaveMallTrigger.targetArea = get_node(leaveMallAreaPath)
-	$LeaveMallTrigger.newPlayerPosition = leaveMallPlayerPosition
+	$LeaveMallTriggerArea/LeaveMallTrigger.targetArea = get_node(leaveMallAreaPath)
+	$LeaveMallTriggerArea/LeaveMallTrigger.newPlayerPosition = leaveMallPlayerPosition
 	
-	$BusTrigger.targetOverlay = get_node(BusOverlayPath)
+	$BusTriggerArea/BusTrigger.targetOverlay = get_node(BusOverlayPath)
 	
 	cars = {
 		46: $car_46,

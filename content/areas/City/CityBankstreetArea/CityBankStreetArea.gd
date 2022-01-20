@@ -8,11 +8,11 @@ export (Vector2) var leaveBankPlayerPosition
 
 func _ready():
 
-	$LeaveOfficeTrigger.targetArea = get_node(leaveOfficeAreaPath)
-	$LeaveOfficeTrigger.newPlayerPosition = leaveOfficePlayerPosition
+	$LeaveOfficeTriggerArea/LeaveOfficeTrigger.targetArea = get_node(leaveOfficeAreaPath)
+	$LeaveOfficeTriggerArea/LeaveOfficeTrigger.newPlayerPosition = leaveOfficePlayerPosition
 	
-	$LeaveBankTrigger.targetArea = get_node(leaveBankAreaPath)
-	$LeaveBankTrigger.newPlayerPosition = leaveBankPlayerPosition
+	$LeaveBankTriggerArea/LeaveBankTrigger.targetArea = get_node(leaveBankAreaPath)
+	$LeaveBankTriggerArea/LeaveBankTrigger.newPlayerPosition = leaveBankPlayerPosition
 
 	cars = {
 		29: $car_29,

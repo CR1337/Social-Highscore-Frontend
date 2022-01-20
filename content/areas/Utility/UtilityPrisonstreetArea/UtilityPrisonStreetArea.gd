@@ -5,5 +5,5 @@ export (Vector2) var leavePrisonPlayerPosition
 
 func _ready():
 
-	$LeavePrisonTrigger.targetArea = get_node(leavePrisonAreaPath)
-	$LeavePrisonTrigger.newPlayerPosition = leavePrisonPlayerPosition
+	$LeavePrisonTriggerArea/LeavePrisonTrigger.targetArea = get_node(leavePrisonAreaPath)
+	$LeavePrisonTriggerArea/LeavePrisonTrigger.newPlayerPosition = leavePrisonPlayerPosition

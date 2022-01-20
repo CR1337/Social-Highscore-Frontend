@@ -6,6 +6,6 @@ export (Vector2) var leavePlayerPosition
 
 func _ready():
 	if leaveAreaPath != "":
-		$LeaveTrigger.targetArea = get_node(leaveAreaPath)
-		$LeaveTrigger.newPlayerPosition = leavePlayerPosition
+		$TriggerArea/LeaveTrigger.targetArea = get_node(leaveAreaPath)
+		$TriggerArea/LeaveTrigger.newPlayerPosition = leavePlayerPosition
 

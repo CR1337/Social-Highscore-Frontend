@@ -6,8 +6,8 @@ export (Vector2) var leavePolicePlayerPosition
 
 func _ready():
 
-	$LeavePoliceTrigger.targetArea = get_node(leavePoliceAreaPath)
-	$LeavePoliceTrigger.newPlayerPosition = leavePolicePlayerPosition
+	$LeavePoliceTriggerArea/LeavePoliceTrigger.targetArea = get_node(leavePoliceAreaPath)
+	$LeavePoliceTriggerArea/LeavePoliceTrigger.newPlayerPosition = leavePolicePlayerPosition
 
 	cars = {
 		27: $car_27,

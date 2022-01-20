@@ -8,11 +8,11 @@ export (Vector2) var leavePartnerPlayerPosition
 
 func _ready():
 	
-	$LeaveFriendTrigger.targetArea = get_node(leaveFriendAreaPath)
-	$LeaveFriendTrigger.newPlayerPosition = leaveFriendPlayerPosition
+	$LeaveFriendTriggerArea/LeaveFriendTrigger.targetArea = get_node(leaveFriendAreaPath)
+	$LeaveFriendTriggerArea/LeaveFriendTrigger.newPlayerPosition = leaveFriendPlayerPosition
 
-	$LeavePartnerTrigger.targetArea = get_node(leavePartnerAreaPath)
-	$LeavePartnerTrigger.newPlayerPosition = leavePartnerPlayerPosition
+	$LeavePartnerTriggerArea/LeavePartnerTrigger.targetArea = get_node(leavePartnerAreaPath)
+	$LeavePartnerTriggerArea/LeavePartnerTrigger.newPlayerPosition = leavePartnerPlayerPosition
 	
 	cars = {
 		2: $car_2

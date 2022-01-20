@@ -5,8 +5,8 @@ export (Vector2) var leaveStorePlayerPosition
 
 func _ready():
 
-	$LeaveStoreTrigger.targetArea = get_node(leaveStoreAreaPath)
-	$LeaveStoreTrigger.newPlayerPosition = leaveStorePlayerPosition
+	$LeaveStoreTriggerArea/LeaveStoreTrigger.targetArea = get_node(leaveStoreAreaPath)
+	$LeaveStoreTriggerArea/LeaveStoreTrigger.newPlayerPosition = leaveStorePlayerPosition
 
 	cars = {
 		28: $car_28,

@@ -8,11 +8,11 @@ export (Vector2) var leaveMomPlayerPosition
 
 func _ready():
 
-	$LeaveHomeTrigger.targetArea = get_node(leaveHomeAreaPath)
-	$LeaveHomeTrigger.newPlayerPosition = leaveHomePlayerPosition	
+	$LeaveHomeTriggerArea/LeaveHomeTrigger.targetArea = get_node(leaveHomeAreaPath)
+	$LeaveHomeTriggerArea/LeaveHomeTrigger.newPlayerPosition = leaveHomePlayerPosition	
 	
-	$LeaveMomTrigger.targetArea = get_node(leaveMomAreaPath)
-	$LeaveMomTrigger.newPlayerPosition = leaveMomPlayerPosition
+	$LeaveMomTriggerArea/LeaveMomTrigger.targetArea = get_node(leaveMomAreaPath)
+	$LeaveMomTriggerArea/LeaveMomTrigger.newPlayerPosition = leaveMomPlayerPosition
 	
 	cars = {
 		1: $car_1,

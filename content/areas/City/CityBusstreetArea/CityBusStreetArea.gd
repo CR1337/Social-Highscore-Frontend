@@ -5,7 +5,7 @@ export (NodePath) var BusOverlayPath
 
 func _ready():
 
-	$BusTrigger.targetOverlay = get_node(BusOverlayPath)
+	$BusTriggerArea/BusTrigger.targetOverlay = get_node(BusOverlayPath)
 	
 	cars = {
 		15: $car_15,
