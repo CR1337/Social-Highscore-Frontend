@@ -78,7 +78,6 @@ rect_min_size = Vector2( 644, 64 )
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "Element 0"
-selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,17 +92,13 @@ __meta__ = {
 }
 
 [node name="BackButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
-anchor_left = 0.8
-anchor_right = 0.8
-margin_left = 17.6
 margin_top = 1206.0
-margin_right = 145.6
+margin_right = 728.0
 margin_bottom = 1334.0
 grow_horizontal = 0
 rect_min_size = Vector2( 128, 128 )
 icon = ExtResource( 3 )
 expand_icon = true
 
-[connection signal="item_selected" from="Background/MarginContainer/VBoxContainer/HBoxContainer/MessageButton" to="." method="_on_answer_selected"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/SendButton" to="." method="_on_SendButton_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

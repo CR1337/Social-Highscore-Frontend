@@ -4,6 +4,7 @@ signal take_face_and_analyze()
 signal debug_error(error)
 
 signal trigger(trigger_id)
+signal sig_dialog_trigger_completed()
 
 signal sig_got_phone_message(contact, message)
 

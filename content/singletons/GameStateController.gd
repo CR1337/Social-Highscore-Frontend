@@ -64,8 +64,6 @@ func status_update():
 	sleep -= 5
 	emit_signal("sleep_changed", sleep)
 	emit_signal("hunger_changed", hunger)
-	print("Hunger: ", hunger)
-	print("Sleep: ", sleep)
 
 func timer(handle):
 	if handle == next_day_handle:

@@ -1,6 +1,7 @@
-extends "res://content/trigger/Trigger.gd"
+extends "res://content/trigger/DialogTrigger.gd"
 
 
 func trigger():
 	.trigger()
+	print("state to idle")
 	GameStateController.contact_state['friend'] = 'idle'

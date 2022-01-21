@@ -90,7 +90,6 @@ func update_answers():
 	message_button.clear()
 	print(len(_current_node()['answers']))
 	for i in len(_current_node()['answers']):
-		print(dialog_dicts[current_contact]['texts'][_current_node()['answers'][i]['tid']])
 		message_button.add_item(dialog_dicts[current_contact]['texts'][_current_node()['answers'][i]['tid']])
 	send_button.disabled = false
 	
@@ -119,17 +118,21 @@ func _on_BackButton_pressed():
 
 
 func _on_SendButton_pressed():
-	_process_answer(_selected_answer_id)
-
-func _on_answer_selected(id):
-	_selected_answer_id = id
+	var index = message_button.selected
+	_process_answer(index)
 	
 func _process_answer(answer_index):
 	var trigger_id = _current_node()['answers'][answer_index]['trigger_id']
 	if trigger_id != null:
-		EventBus.emit_signal("trigger", trigger_id)
+		EventBus.call_deferred("emit_signal", "trigger", trigger_id)
+		yield(EventBus, "sig_dialog_trigger_completed") # wait until the trigger has completed
 	_messages[current_contact].append([true, dialog_dicts[current_contact]['texts'][_current_node()['answers'][answer_index]['tid']]])
 	current_node_ids[current_contact] = _current_node()['answers'][answer_index]['nid']
+	
+	trigger_id = _current_node()['trigger_id']
+	if trigger_id != null:
+		EventBus.call_deferred("emit_signal", "trigger", trigger_id)
+		yield(EventBus, "sig_dialog_trigger_completed") # wait until the trigger has completed
 
 	_display_messages()
 	
@@ -144,6 +147,3 @@ func timer(handle):
 		_messages[current_contact].append([false, dialog_dicts[current_contact]['texts'][text_id]])
 		_display_messages()
 		update_answers()
-
-func _on_MessageButton_about_to_show():
-	print(message_button.get_item_count())
