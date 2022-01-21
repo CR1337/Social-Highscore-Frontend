@@ -43,3 +43,9 @@ func _on_PhoneButton_button_down():
 
 func _on_PhoneButton_button_up():
 	InputBus.emit_signal("phone_released")
+
+
+
+func _on_DebugNewGameButton_pressed():
+	SaveGameController.delete_game()
+	SaveGameController.load_game()
