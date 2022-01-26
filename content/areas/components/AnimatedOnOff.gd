@@ -41,11 +41,12 @@ func _setTriggerAreaScale(value):
 	$TriggerArea.scale = value
 	triggerAreaScale = value
 func _getTriggerAreaScale():
-	return triggerAreaScale
-	
+	return triggerAreaScale	
 	
 func _ready():
 	$AnimatedSprite.frames = frames
+	$ActionTrigger.id = "tid_" + str(get_path()) + "_action_trigger"
+	$TriggerArea.action_trigger_id = $ActionTrigger.id
 	_setIsOn(is_on)
 
 func trigger():
