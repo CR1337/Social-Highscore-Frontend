@@ -6,9 +6,9 @@ onready var _info_button = $Background/MarginContainer/VBoxContainer/InfoButton
 onready var _back_button = $Background/MarginContainer/VBoxContainer/BackButton
 
 const _info_text = """
-⇨ Behave resonsibly in public.
+⇨ Behave responsibly in public.
 ⇨ Live a healthy life.
-⇨ Reflect the our peoples values with your emotions, words and deeds.
+⇨ Reflect our peoples values with your emotions, words and deeds.
 ⇨ Visit your parents frequently.
 ⇨ Work hard and honest.
 ⇨ Donate your blood frequently.

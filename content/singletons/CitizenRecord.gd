@@ -225,6 +225,7 @@ func add_rescued_friend(score, screenshot):
 	
 func record_display_string_for_app(record):
 	# returns a string describing the record that will be shown to the user in the citizen app
+	# maybe put this into file?
 	var result = ""
 	match record['type']:
 		'emotional_reaction_on_news':
