@@ -76,7 +76,6 @@ func timer(handle):
 		next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
 
 func change_score(amount):
-	print("Changed score: " + str(score))
 	score += amount
 	emit_signal("sig_score_changed", score)
 

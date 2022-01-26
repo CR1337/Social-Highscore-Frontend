@@ -39,7 +39,6 @@ func _show_info():
 	OS.alert(_info_text, "Good Citizen Guide")
 	
 func _on_score_changed(new_value):
-	print("_on_score_changed: ", new_value)
 	_display_score()
 	_display_records()
 	
@@ -50,15 +49,7 @@ func _on_BackButton_pressed():
 	ViewportManager.change_to_smartphone()
 	
 func _DEBUG_add_records():
-	print("_DEBUG_add_records: add_unhealthy_food_at_home(-15, 'ice cream')")
 	CitizenRecord.add_unhealthy_food_at_home(-15, 'ice cream')
-	GameStateController.change_score(-15)
-	
-	print("_DEBUG_add_records: add_blood_donation(50)")
 	CitizenRecord.add_blood_donation(50)
-	GameStateController.change_score(50)
-	
-	print("_DEBUG_add_records: aadd_refused_reaction_on_news(-15, 'The economy is good', 'happy')")
 	CitizenRecord.add_refused_reaction_on_news(-40, 'The economy is good', 'happy')
-	GameStateController.change_score(-40)
 	

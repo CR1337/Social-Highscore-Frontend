@@ -16,6 +16,7 @@ var next_job_id: int = 1
 
 var image_dict: Dictionary
 var raw_image_dict: Dictionary
+var b64_image_dict: Dictionary
 
 signal image_processing_done(response, job_id, image)
 signal image_processing_error(response_code)
@@ -83,6 +84,7 @@ func _on_got_image(image, rawImage):
 			
 	if do_request:
 		image_dict[str(current_job_id)] = image
+		b64_image_dict[str(current_job_id)] = b64_image
 		raw_image_dict[str(current_job_id)] = rawImage
 		var url = "http://" + Config.serverAddress + ":" + Config.serverPort + "/" + endpoint
 		var error = http_request.request(url, [], false, HTTPClient.METHOD_POST, JSON.print(body))
@@ -101,9 +103,11 @@ func _handle_response(response, body):
 	var job_id = parsed_response['job_id']
 	var image = image_dict[str(job_id)]
 	var raw_image = raw_image_dict[str(job_id)]
-	emit_signal("image_processing_done", parsed_response, job_id, image, raw_image)
+	var b64_image = b64_image_dict[str(job_id)]
+	emit_signal("image_processing_done", parsed_response, job_id, image, raw_image, b64_image)
 	image_dict.erase(str(job_id))
 	raw_image_dict.erase(str(job_id))
+	b64_image_dict.erase(str(job_id))
 	return parsed_response
 	
 func _on_request_completed(result, response_code, headers, body):

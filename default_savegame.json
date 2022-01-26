@@ -1423,6 +1423,9 @@
         "response_timer_handle": 0,
         "hidden": true
     },
+    "/root/mainScene/Overlays/NewsAppNewspage": {
+        "news_index": -1
+    },
     "/root/mainScene/player": {
         "position_x": 608,
         "position_y": 928,
@@ -1479,5 +1482,10 @@
     },
     "/root/ImageProcessor": {
         "b64_reference_image": ""
+    },
+    "/root/NewsController": {
+        "news": [
+
+        ]
     }
 }

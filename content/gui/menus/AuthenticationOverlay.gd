@@ -17,7 +17,7 @@ func _on_TakeImageButton_pressed():
 	label.text = "Verifying face. Please wait..."
 	image_processor_job_id = ImageProcessor.verify()
 	
-func _on_image_processing_done(parsed_response, job_id, image, rawImage):
+func _on_image_processing_done(parsed_response, job_id, image, rawImage, b64_image):
 	if image_processor_job_id != job_id:
 		return
 	cancel_button.disabled = false
