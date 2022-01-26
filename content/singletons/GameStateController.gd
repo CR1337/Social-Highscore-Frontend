@@ -40,7 +40,8 @@ func restore_state(state):
 	# contact_state = state["contact_state"]
 	emit_signal("sleep_changed", sleep)
 	emit_signal("hunger_changed", hunger)
-	emit_signal("sig_money_chaned", money)
+	emit_signal("sig_money_changed", money)
+	emit_signal("sig_score_changed", score)
 
 var next_day_handle = 1 # Stated in default_savegame
 var next_status_update_handle = 2 # Stated in default_savegame
@@ -48,6 +49,7 @@ var next_status_update_handle = 2 # Stated in default_savegame
 signal sleep_changed(new_value)
 signal hunger_changed(new_value)
 signal sig_money_changed(new_value)
+signal sig_score_changed(new_value)
 
 func _ready():
 	EventBus.connect("sig_add_money", self, "_on_add_money")
@@ -74,7 +76,9 @@ func timer(handle):
 		next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
 
 func change_score(amount):
+	print("Changed score: " + str(score))
 	score += amount
+	emit_signal("sig_score_changed", score)
 
 func change_money(amount):
 	money += amount

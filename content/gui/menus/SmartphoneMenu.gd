@@ -16,7 +16,7 @@ func _on_MessengerAppButton_pressed():
 
 
 func _on_CitizenAppButton_pressed():
-	pass # Replace with function body.
+	ViewportManager.change_to_citizen_app()
 
 
 func _on_BackButton_pressed():
