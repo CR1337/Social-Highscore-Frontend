@@ -15,6 +15,8 @@ onready var messenger_contacts_overlay = get_node("/root/mainScene/Overlays/Mess
 onready var messenger_messages_overlay = get_node("/root/mainScene/Overlays/MessengerAppMessages")
 onready var banking_app_overlay = get_node("/root/mainScene/Overlays/BankingApp")
 onready var citizen_app_overlay = get_node("/root/mainScene/Overlays/CitizenApp")
+onready var news_app_mainpage_overlay = get_node("/root/mainScene/Overlays/NewsAppMainpage")
+onready var news_app_newspage_overlay = get_node("/root/mainScene/Overlays/NewsAppNewspage")
 
 
 
@@ -69,6 +71,14 @@ func change_to_banking_app():
 	
 func change_to_citizen_app():
 	change_overlay(citizen_app_overlay)
+	
+func change_to_news_app_mainpage():
+	news_app_mainpage_overlay.update_mainpage()
+	change_overlay(news_app_mainpage_overlay)
+
+func change_to_news_app_newspage(news_index):
+	news_app_newspage_overlay.update_newspage(news_index)
+	change_overlay(news_app_newspage_overlay)
 
 func change_to_smartphone():
 	change_overlay(smartphoneMenu)

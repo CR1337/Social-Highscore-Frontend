@@ -19,9 +19,9 @@ func _on_image_processing_done(parsed_response, job_id, image):
 	# TODO
 
 func _add_record(params):
-	print("Added record")
 	params['time'] = TimeController.get_gametime()
 	records.append(params)
+	GameStateController.change_score(params['score'])
 
 func add_emotional_reaction_on_news(score, news, emotion, preferred_emotion):
 	var params = {

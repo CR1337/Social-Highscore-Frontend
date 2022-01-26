@@ -15,7 +15,8 @@ func _singletons():
 		GameStateController,
 		TimeController,
 		ViewportManager,
-		ImageProcessor
+		ImageProcessor,
+		NewsController
 	]
 	
 func _create_file():

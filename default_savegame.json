@@ -68,6 +68,9 @@
         "response_timer_handle": 0,
         "hidden": true
     },
+    "/root/mainScene/Overlays/NewsAppNewspage": {
+        "news_index": -1
+    },
     "/root/mainScene/player": {
         "position_x": 608,
         "position_y": 928,
@@ -81,7 +84,7 @@
     },
     "/root/GameStateController": {
         "score": 1000,
-        "money": 1400,
+        "money": 1000,
         "hunger": 100,
         "sleep": 100,
         "days_without_mom": 0,
@@ -124,5 +127,10 @@
     },
     "/root/ImageProcessor": {
         "b64_reference_image": ""
+    },
+    "/root/NewsController": {
+        "news": [
+
+        ]
     }
 }
