@@ -14,6 +14,7 @@ onready var authenticationOverlay = get_node("/root/mainScene/Overlays/Authentic
 onready var messenger_contacts_overlay = get_node("/root/mainScene/Overlays/MessengerAppContacts")
 onready var messenger_messages_overlay = get_node("/root/mainScene/Overlays/MessengerAppMessages")
 onready var banking_app_overlay = get_node("/root/mainScene/Overlays/BankingApp")
+onready var citizen_app_overlay = get_node("/root/mainScene/Overlays/CitizenApp")
 
 
 
@@ -65,6 +66,9 @@ func change_to_messenger_contacts():
 	
 func change_to_banking_app():
 	change_overlay(banking_app_overlay)
+	
+func change_to_citizen_app():
+	change_overlay(citizen_app_overlay)
 
 func change_to_smartphone():
 	change_overlay(smartphoneMenu)
