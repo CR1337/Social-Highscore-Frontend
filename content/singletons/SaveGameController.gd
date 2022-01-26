@@ -52,6 +52,9 @@ func save_default_game():
 	file.store_string(JSON.print(json_state, "    "))
 	file.close()
 
+func start_new_game():
+	TrafficController.start_cars()
+
 func load_game():
 	var file = File.new()
 	file.open(save_filename, File.READ)
@@ -60,6 +63,7 @@ func load_game():
 	if json_state['empty']:
 		print("savegame empty")
 		file.open(default_save_filename, File.READ)
+		call_deferred("start_new_game")
 		json_state = JSON.parse(file.get_as_text()).result
 		file.close()
 		

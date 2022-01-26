@@ -19,7 +19,6 @@ signal change_traffic_lights
 
 func _ready():
 	traffic_toggle_handle = TimeController.setTimer(10, self)
-	call_deferred("start_cars")
 
 func start_next_car(area_id, car_id):
 	get_node(Area_idxs[area_id]).start_car(car_id)
@@ -37,6 +36,7 @@ func start_cars():
 	EventBus.emit_signal("trigger", 'tid_city_bankstreet_car_10_0_start')
 	EventBus.emit_signal("trigger", 'tid_city_jobcenterstreet_car_11_4_start')
 	EventBus.emit_signal("trigger", 'tid_city_storestreet_car_12_0_start')
+	EventBus.emit_signal("trigger", 'tid_utility_busstreet_car_14_0_start')
 	
 func timer(handle):
 	if handle == traffic_toggle_handle:

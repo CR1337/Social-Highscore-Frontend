@@ -79,6 +79,7 @@ speed = 4.0
 active_on_start = true
 animation = ExtResource( 10 )
 current_position = Vector2( 2, -1 )
+is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car7_1"]
 script = ExtResource( 9 )

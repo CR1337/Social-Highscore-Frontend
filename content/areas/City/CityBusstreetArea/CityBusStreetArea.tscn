@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://content/trigger/BusTrigger.gd" type="Script" id=6]
 [ext_resource path="res://content/areas/components/trafficLight.tscn" type="PackedScene" id=7]
 [ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_taxi_car.tres" type="SpriteFrames" id=10]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_white_car.tres" type="SpriteFrames" id=14]
+[ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=11]
 [ext_resource path="res://content/trigger/AuthenticationTrigger.gd" type="Script" id=16]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=17]
 [ext_resource path="res://content/trigger/StartCarTrigger.gd" type="Script" id=18]
@@ -110,6 +111,7 @@ speed = 3.0
 active_on_start = true
 animation = ExtResource( 19 )
 current_position = Vector2( -1, 5 )
+is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car4_0"]
 script = ExtResource( 18 )
@@ -125,6 +127,7 @@ speed = 4.0
 active_on_start = true
 animation = ExtResource( 20 )
 current_position = Vector2( -1, 3 )
+is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car5_0"]
 script = ExtResource( 18 )
@@ -140,6 +143,7 @@ speed = 4.0
 active_on_start = true
 animation = ExtResource( 21 )
 current_position = Vector2( -1, 1 )
+is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car6_0"]
 script = ExtResource( 18 )
@@ -155,6 +159,7 @@ speed = 4.0
 active_on_start = true
 animation = ExtResource( 10 )
 current_position = Vector2( -1, 5 )
+is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car7_0"]
 script = ExtResource( 18 )
@@ -170,6 +175,7 @@ speed = 4.0
 active_on_start = true
 animation = ExtResource( 10 )
 current_position = Vector2( 4, 17 )
+is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car7_2"]
 script = ExtResource( 18 )
@@ -183,8 +189,9 @@ ignores_crosswalks = false
 movement_filename = "res://doc/city_busstreet/car_8_0_movement.json"
 speed = 4.0
 active_on_start = true
-animation = ExtResource( 14 )
+animation = ExtResource( 19 )
 current_position = Vector2( -1, 5 )
+is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car8_0"]
 script = ExtResource( 18 )
@@ -198,8 +205,9 @@ ignores_crosswalks = false
 movement_filename = "res://doc/city_busstreet/car_9_3_movement.json"
 speed = 4.0
 active_on_start = true
-animation = ExtResource( 14 )
+animation = ExtResource( 11 )
 current_position = Vector2( 12, 9 )
+is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car9_3"]
 script = ExtResource( 18 )
@@ -213,8 +221,9 @@ ignores_crosswalks = false
 movement_filename = "res://doc/city_busstreet/car_11_3_movement.json"
 speed = 4.0
 active_on_start = true
-animation = ExtResource( 14 )
+animation = ExtResource( 9 )
 current_position = Vector2( 12, 9 )
+is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car11_3"]
 script = ExtResource( 18 )
