@@ -1,0 +1,11 @@
+{
+    "state0": {
+        "new_start_position_x": -1,
+        "new_start_position_y": 5,
+        "sequence": [
+            {"direction": "right", "repeats": 6, "trigger_id": null},
+            {"direction": "down", "repeats": 12, "trigger_id": "tid_living_homestreet_car_1_1_start"}
+        ],
+        "repeats": 1
+    }
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://assets/animated_sprites/tres/debug_character.tres" type="SpriteFrames" id=12]
 [ext_resource path="res://content/areas/Living/LivingHomestreetArea/NPCTrigger.gd" type="Script" id=13]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=14]
+[ext_resource path="res://assets/animated_sprites/tres/animated_car.tres" type="SpriteFrames" id=16]
+[ext_resource path="res://content/trigger/StartCarTrigger.gd" type="Script" id=17]
 
 [node name="LivingHomestreetArea" type="Node2D"]
 position = Vector2( 0, -1.33484 )
@@ -113,12 +115,6 @@ scale = Vector2( 2, 1 )
 slow_down = 0.5
 crosswalk = true
 
-[node name="CrossingArea" parent="." instance=ExtResource( 8 )]
-position = Vector2( 386.596, 506.307 )
-scale = Vector2( 2, 2 )
-slow_down = 0.2
-crosswalk = true
-
 [node name="CrossingArea2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 159.843, 511.632 )
 scale = Vector2( 1, 2 )
@@ -165,18 +161,44 @@ texture = ExtResource( 10 )
 next_area = "livingbusstreet"
 next_car_id = 12
 
+[node name="Car1_1" parent="." instance=ExtResource( 11 )]
+position = Vector2( 352, -32 )
+ignores_crosswalks = false
+movement_filename = "res://doc/living_homestreet/car_1_1_movement.json"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 16 )
+current_position = Vector2( 5, -1 )
+
+[node name="CarStartTrigger" type="Node" parent="Car1_1"]
+script = ExtResource( 17 )
+id = "tid_living_homestreet_car_1_1_start"
+
+[node name="Car1_3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 864, 480 )
+ignores_crosswalks = false
+movement_filename = "res://doc/living_homestreet/car_1_3_movement.json"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 16 )
+current_position = Vector2( 13, 7 )
+
+[node name="CarStartTrigger" type="Node" parent="Car1_3"]
+script = ExtResource( 17 )
+id = "tid_living_homestreet_car_1_3_start"
+
 [node name="NPCh" parent="." groups=[
 "npcs",
 ] instance=ExtResource( 11 )]
-position = Vector2( 537.324, 521.08 )
+position = Vector2( 480, 416 )
 is_activated_by_action = true
 action_trigger_id = "tid_debug_npc_movement"
 movement_filename = "res://doc/movement.json"
 dialog_filename = "res://doc/dialog.json"
 speed = 1.0
-active = true
+active_on_start = true
 animation = ExtResource( 12 )
-current_position = Vector2( 8, 7 )
+current_position = Vector2( 7, 6 )
 
 [node name="NPCTrigger" type="Node" parent="NPCh"]
 script = ExtResource( 13 )
@@ -187,15 +209,15 @@ target_npc_v = NodePath("../../NPCv")
 [node name="NPCv" parent="." groups=[
 "npcs",
 ] instance=ExtResource( 11 )]
-position = Vector2( 396.054, 660.669 )
+position = Vector2( 480, 608 )
 is_activated_by_action = true
 action_trigger_id = "tid_debug_npc_dialog"
 movement_filename = "res://doc/movement.json"
 dialog_filename = "res://doc/dialog.json"
 speed = 1.0
-active = true
+active_on_start = true
 animation = ExtResource( 12 )
-current_position = Vector2( 6, 9 )
+current_position = Vector2( 7, 9 )
 
 [node name="NPCDialogTrigger" type="Node" parent="NPCv"]
 script = ExtResource( 14 )

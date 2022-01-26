@@ -1,5 +1,7 @@
 {
     "state0": {
+        "new_start_position_x": null,
+        "new_start_position_y": null,
         "sequence": [
             {"direction": "left", "repeats": 1, "trigger_id": null},
             {"direction": "right", "repeats": 1, "trigger_id": null},
@@ -10,6 +12,8 @@
         "repeats": 3
     },
     "state1": {
+        "new_start_position_x": null,
+        "new_start_position_y": null,
         "sequence": [
             {"direction": "left", "repeats": 1, "trigger_id": null},
             {"direction": "right", "repeats": 1, "trigger_id": null},
@@ -20,6 +24,8 @@
         "repeats": "infinity"
     },
     "horizontal": {
+        "new_start_position_x": null,
+        "new_start_position_y": null,
         "sequence": [
             {"direction": "left", "repeats": 3, "trigger_id": null},
             {"direction": "right", "repeats": 3, "trigger_id": null}
@@ -27,6 +33,8 @@
         "repeats": "infinity"
     },
     "vertical": {
+        "new_start_position_x": null,
+        "new_start_position_y": null,
         "sequence": [
             {"direction": "up", "repeats": 4, "trigger_id": null},
             {"direction": "down", "repeats": 4, "trigger_id": null}
