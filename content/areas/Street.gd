@@ -12,8 +12,6 @@ export (Vector2) var leaveTopPlayerPosition
 export (NodePath) var leaveBottomAreaPath
 export (Vector2) var leaveBottomPlayerPosition
 
-onready var cars: Dictionary
-
 func _ready():
 	if leaveLeftAreaPath != "":
 		$LeaveLeftTriggerArea/LeaveLeftTrigger.targetArea = get_node(leaveLeftAreaPath)
@@ -27,6 +25,3 @@ func _ready():
 	if leaveBottomAreaPath != "":
 		$LeaveBottomTriggerArea/LeaveBottomTrigger.targetArea = get_node(leaveBottomAreaPath)
 		$LeaveBottomTriggerArea/LeaveBottomTrigger.newPlayerPosition = leaveBottomPlayerPosition
-
-func start_car(car_id):
-	cars[car_id].start()

@@ -6,7 +6,7 @@
 [ext_resource path="res://content/areas/Living/LivingFriendstreetArea/LivingFriendstreetArea.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/animated_sprites/tres/animated_car.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=10]
 [ext_resource path="res://content/trigger/StartCarTrigger.gd" type="Script" id=11]
 
@@ -74,7 +74,9 @@ scale = Vector2( 1, 2 )
 slow_down = 1.0
 crosswalk = true
 
-[node name="NPC_car" parent="." instance=ExtResource( 10 )]
+[node name="Car1_2" parent="." groups=[
+"persistent",
+] instance=ExtResource( 10 )]
 position = Vector2( -32, 544 )
 movement_filename = "res://doc/living_friendstreet/car_1_2_movement.json"
 speed = 2.0
@@ -82,6 +84,6 @@ active_on_start = true
 animation = ExtResource( 9 )
 current_position = Vector2( -1, 8 )
 
-[node name="CarStartTrigger" type="Node" parent="NPC_car"]
+[node name="CarStartTrigger" type="Node" parent="Car1_2"]
 script = ExtResource( 11 )
 id = "tid_living_friendstreet_car_1_2_start"

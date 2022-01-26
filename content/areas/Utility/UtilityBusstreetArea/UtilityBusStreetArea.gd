@@ -17,8 +17,3 @@ func _ready():
 	$LeaveMallTriggerArea/LeaveMallTrigger.newPlayerPosition = leaveMallPlayerPosition
 	
 	$BusTriggerArea/BusTrigger.targetOverlay = get_node(BusOverlayPath)
-	
-	cars = {
-		46: $car_46,
-		47: $car_47
-	}

@@ -153,7 +153,6 @@ func _process(delta):
 	if is_new_state_requested:
 		set_state(requested_state)
 		is_new_state_requested = false
-		print('state changed: ', state)
 	if active and not movement_waiting and state != 'idle':
 		move()
 		
@@ -253,3 +252,36 @@ func timer(handle):
 
 func start_dialog():
 	ViewportManager.change_to_dialog(dialog_filename, state)
+	
+func persistent_state():
+	return {
+		"current_position_x": current_position.x,
+		"current_position_y": current_position.y,
+		"active": active,
+		"announced_position_x": announced_position.x,
+		"announced_position_y": announced_position.y,
+		"looking_direction_x": looking_direction.x,
+		"looking_direction_y": looking_direction.y,
+		"state": state,
+		"is_new_state_requested": is_new_state_requested,
+		"requested_state": requested_state,
+		"movement_dict": movement_dict,
+		"movement_step_index": movement_step_index,
+		"movement_step_repeat_counter": movement_step_repeat_counter,
+		"movement_waiting": movement_waiting,
+		"movement_waiting_handle": movement_waiting_handle
+	}
+
+func restore_state(jsonstate):
+	set_current_position(Vector2(jsonstate['current_position_x'], jsonstate['current_position_y']))
+	active =  jsonstate['active']
+	announced_position = (Vector2(jsonstate['announced_position_x'], jsonstate['announced_position_y']))
+	looking_direction = (Vector2(jsonstate['looking_direction_x'], jsonstate['looking_direction_y']))
+	state = jsonstate['state']
+	is_new_state_requested = jsonstate['is_new_state_requested']
+	requested_state = jsonstate['requested_state']
+	movement_dict = jsonstate['movement_dict']
+	movement_step_index = jsonstate['movement_step_index']
+	movement_step_repeat_counter = jsonstate['movement_step_repeat_counter']
+	movement_waiting = jsonstate['movement_waiting']
+	movement_waiting_handle = jsonstate['movement_waiting_handle']

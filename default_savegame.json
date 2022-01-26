@@ -1,10 +1,1080 @@
 {
     "empty": false,
+    "/root/mainScene/Areas/LivingHomestreetArea/Car1_1": {
+        "current_position_x": 5,
+        "current_position_y": -1,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "down",
+                        "repeats": 9,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 8,
+                        "trigger_id": "tid_living_friendstreet_car_1_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingFriendstreetArea/Car1_2": {
+        "current_position_x": -1,
+        "current_position_y": 8,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 8,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 8,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 11,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "left",
+                        "repeats": 12,
+                        "trigger_id": "tid_living_homestreet_car_1_3_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingPharmacystreetArea/Car2_2": {
+        "current_position_x": 12,
+        "current_position_y": 7,
+        "active": true,
+        "announced_position_x": 12,
+        "announced_position_y": 7,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 12,
+                "new_start_position_y": 7,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 11,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 12,
+                        "trigger_id": "tid_living_homestreet_car_2_3_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingBusstreetArea/Car1_0": {
+        "current_position_x": -1,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 5,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 6,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 12,
+                        "trigger_id": "tid_living_homestreet_car_1_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingBusstreetArea/Car1_4": {
+        "current_position_x": 6,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 6,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 6,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 12,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 8,
+                        "trigger_id": "tid_living_busstreet_car_1_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingBusstreetArea/Car2_0": {
+        "current_position_x": 13,
+        "current_position_y": 3,
+        "active": true,
+        "announced_position_x": 13,
+        "announced_position_y": 3,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 13,
+                "new_start_position_y": 3,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 8,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 14,
+                        "trigger_id": "tid_living_homestreet_car_2_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingBusstreetArea/Car2_4": {
+        "current_position_x": 6,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 6,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 6,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 12,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 8,
+                        "trigger_id": "tid_living_busstreet_car_2_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingBusstreetArea/Car3_0": {
+        "current_position_x": -1,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 5,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 6,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 12,
+                        "trigger_id": "tid_living_homestreet_car_3_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingBusstreetArea/Car3_2": {
+        "current_position_x": 6,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 6,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 6,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 14,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "left",
+                        "repeats": 9,
+                        "trigger_id": "tid_living_busstreet_car_3_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityShadystreetArea/Car7_1": {
+        "current_position_x": 2,
+        "current_position_y": -1,
+        "active": true,
+        "announced_position_x": 2,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 2,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "down",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 2,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": "tid_city_busstreet_car_7_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
     "/root/mainScene/Areas/CityBusstreetArea/trafficLight": {
         "is_on": true
     },
+    "/root/mainScene/Areas/CityBusstreetArea/Car4_0": {
+        "current_position_x": -1,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 5,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 14,
+                        "trigger_id": "tid_city_jobcenterstreet_car_4_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityBusstreetArea/Car5_0": {
+        "current_position_x": -1,
+        "current_position_y": 3,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 3,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 3,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 14,
+                        "trigger_id": "tid_city_jobcenterstreet_car_5_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityBusstreetArea/Car6_0": {
+        "current_position_x": -1,
+        "current_position_y": 1,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 1,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 14,
+                        "trigger_id": "tid_city_jobcenterstreet_car_6_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityBusstreetArea/Car7_0": {
+        "current_position_x": -1,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 5,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 12,
+                        "trigger_id": "tid_city_shadystreet_car_7_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityBusstreetArea/Car7_2": {
+        "current_position_x": 4,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 4,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 5,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 12,
+                        "trigger_id": "tid_city_shadystreet_car_7_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityBusstreetArea/Car8_0": {
+        "current_position_x": -1,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 5,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 6,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 11,
+                        "trigger_id": "tid_city_jobcenterstreet_car_8_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityBusstreetArea/Car9_3": {
+        "current_position_x": 12,
+        "current_position_y": 9,
+        "active": true,
+        "announced_position_x": 12,
+        "announced_position_y": 9,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 8,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "left",
+                        "repeats": 7,
+                        "trigger_id": "tid_city_busstreet_car_9_3_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityBusstreetArea/Car11_3": {
+        "current_position_x": 12,
+        "current_position_y": 9,
+        "active": true,
+        "announced_position_x": 12,
+        "announced_position_y": 9,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 18,
+                        "trigger_id": "tid_city_jobcenterstreet_car_11_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityJobcenterstreetArea/Car4_1": {
+        "current_position_x": -1,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 5,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 5,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 6,
+                        "trigger_id": "tid_city_busstreet_car_4_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityJobcenterstreetArea/Car5_1": {
+        "current_position_x": -1,
+        "current_position_y": 3,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 3,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 3,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": "tid_city_busstreet_car_5_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityJobcenterstreetArea/Car6_1": {
+        "current_position_x": -1,
+        "current_position_y": 1,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 1,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 2,
+                        "trigger_id": "tid_city_busstreet_car_6_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityJobcenterstreetArea/Car8_1": {
+        "current_position_x": -1,
+        "current_position_y": 11,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 11,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 11,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 6,
+                        "trigger_id": "tid_city_policestreet_car_8_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityJobcenterstreetArea/Car9_2": {
+        "current_position_x": 5,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 8,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "left",
+                        "repeats": 7,
+                        "trigger_id": "tid_city_busstreet_car_9_3_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityJobcenterstreetArea/Car9_4": {
+        "current_position_x": -1,
+        "current_position_y": 11,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 11,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 8,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "left",
+                        "repeats": 7,
+                        "trigger_id": "tid_city_busstreet_car_9_3_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityJobcenterstreetArea/Car11_2": {
+        "current_position_x": 5,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 18,
+                        "trigger_id": "tid_city_jobcenterstreet_car_11_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityJobcenterstreetArea/Car11_4": {
+        "current_position_x": -1,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 5,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 6,
+                        "trigger_id": "tid_city_storestreet_car_11_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
     "/root/mainScene/Areas/CityPolicestreetArea/trafficLight": {
         "is_on": false
+    },
+    "/root/mainScene/Areas/CityPolicestreetArea/Car8_2": {
+        "current_position_x": 3,
+        "current_position_y": -1,
+        "active": true,
+        "announced_position_x": 3,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 3,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "down",
+                        "repeats": 18,
+                        "trigger_id": "tid_city_storestreet_car_8_3_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityPolicestreetArea/Car9_1": {
+        "current_position_x": 5,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 18,
+                        "trigger_id": "tid_city_jobcenterstreet_car_9_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityPolicestreetArea/Car9_5": {
+        "current_position_x": 5,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "down",
+                        "repeats": 18,
+                        "trigger_id": "tid_city_storestreet_car_9_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityPolicestreetArea/Car11_1": {
+        "current_position_x": 5,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 18,
+                        "trigger_id": "tid_city_jobcenterstreet_car_11_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBankstreetArea/trafficLight": {
         "is_on": true
@@ -15,11 +1085,296 @@
     "/root/mainScene/Areas/CityBankstreetArea/trafficLight3": {
         "is_on": false
     },
+    "/root/mainScene/Areas/CityBankstreetArea/Car8_4": {
+        "current_position_x": 12,
+        "current_position_y": 6,
+        "active": true,
+        "announced_position_x": 12,
+        "announced_position_y": 6,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 3,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 14,
+                        "trigger_id": "tid_city_busstreet_car_8_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityBankstreetArea/Car10_0": {
+        "current_position_x": -1,
+        "current_position_y": 8,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 8,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 8,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 14,
+                        "trigger_id": "tid_city_storestreet_car_10_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityBankstreetArea/Car12_1": {
+        "current_position_x": 12,
+        "current_position_y": 6,
+        "active": true,
+        "announced_position_x": 12,
+        "announced_position_y": 6,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 12,
+                "new_start_position_y": 6,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 14,
+                        "trigger_id": "tid_city_storestreet_car_12_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
     "/root/mainScene/Areas/CityStorestreetArea/trafficLight": {
         "is_on": true
     },
     "/root/mainScene/Areas/CityStorestreetArea/trafficLight2": {
         "is_on": false
+    },
+    "/root/mainScene/Areas/CityStorestreetArea/Car8_3": {
+        "current_position_x": 3,
+        "current_position_y": -1,
+        "active": true,
+        "announced_position_x": 3,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 3,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "down",
+                        "repeats": 7,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "left",
+                        "repeats": 5,
+                        "trigger_id": "tid_city_bankstreet_car_8_4_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityStorestreetArea/Car9_0": {
+        "current_position_x": 5,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 18,
+                        "trigger_id": "tid_city_policestreet_car_9_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityStorestreetArea/Car9_6": {
+        "current_position_x": 3,
+        "current_position_y": -1,
+        "active": true,
+        "announced_position_x": 3,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 3,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "down",
+                        "repeats": 18,
+                        "trigger_id": "tid_city_storestreet_car_9_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityStorestreetArea/Car10_1": {
+        "current_position_x": -1,
+        "current_position_y": 8,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 8,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 8,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 9,
+                        "trigger_id": "tid_city_bankstreet_car_10_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityStorestreetArea/Car11_0": {
+        "current_position_x": 5,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 18,
+                        "trigger_id": "tid_city_policestreet_car_11_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/CityStorestreetArea/Car12_0": {
+        "current_position_x": 5,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": true,
+        "requested_state": "state0",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 11,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "left",
+                        "repeats": 7,
+                        "trigger_id": "tid_city_bankstreet_car_12_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Overlays/DialogOverlay": {
         "dialog_dict": {
@@ -81,7 +1436,7 @@
     },
     "/root/GameStateController": {
         "score": 1000,
-        "money": 1400,
+        "money": 1000,
         "hunger": 100,
         "sleep": 100,
         "days_without_mom": 0,

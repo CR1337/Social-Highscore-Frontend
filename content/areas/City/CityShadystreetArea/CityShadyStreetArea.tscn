@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/City/CityShadystreetArea/CityShadyStreetArea.gd" type="Script" id=3]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/animated_sprites/cars/yellow_car.png" type="Texture" id=6]
-[ext_resource path="res://content/movables/car.tscn" type="PackedScene" id=7]
+[ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=8]
+[ext_resource path="res://content/trigger/StartCarTrigger.gd" type="Script" id=9]
+[ext_resource path="res://assets/animated_sprites/tres/cars/animated_taxi_car.tres" type="SpriteFrames" id=10]
 
 [node name="CityShadystreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -68,11 +69,17 @@ collision_trigger_id = "tid_city_shadystreet_leave_top"
 script = ExtResource( 4 )
 id = "tid_city_shadystreet_leave_top"
 
-[node name="car_22" parent="." instance=ExtResource( 7 )]
-position = Vector2( -64, -64 )
-min_speed = 2.0
-start_position = Vector2( 2, -1 )
-path = [ [ "down", 3 ], [ "waiting", 3 ], [ "right", 2 ], [ "up", 4 ] ]
-texture = ExtResource( 6 )
-next_area = "citybusstreet"
-next_car_id = 23
+[node name="Car7_1" parent="." groups=[
+"persistent",
+] instance=ExtResource( 8 )]
+position = Vector2( 160, -32 )
+ignores_crosswalks = false
+movement_filename = "res://doc/city_shadystreet/car_7_1_movement.json"
+speed = 4.0
+active_on_start = true
+animation = ExtResource( 10 )
+current_position = Vector2( 2, -1 )
+
+[node name="CarStartTrigger" type="Node" parent="Car7_1"]
+script = ExtResource( 9 )
+id = "tid_city_shadystreet_car_7_1_start"

@@ -13,11 +13,3 @@ func _ready():
 	
 	$LeaveMomTriggerArea/LeaveMomTrigger.targetArea = get_node(leaveMomAreaPath)
 	$LeaveMomTriggerArea/LeaveMomTrigger.newPlayerPosition = leaveMomPlayerPosition
-	
-	cars = {
-		1: $car_1,
-		3: $car_3, 
-		6: $car_6,
-		8: $car_8,
-		11: $car_11
-	}

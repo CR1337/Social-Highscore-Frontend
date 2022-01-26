@@ -13,7 +13,3 @@ func _ready():
 
 	$LeavePartnerTriggerArea/LeavePartnerTrigger.targetArea = get_node(leavePartnerAreaPath)
 	$LeavePartnerTriggerArea/LeavePartnerTrigger.newPlayerPosition = leavePartnerPlayerPosition
-	
-	cars = {
-		2: $car_2
-	}

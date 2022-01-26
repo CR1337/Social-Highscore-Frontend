@@ -13,9 +13,3 @@ func _ready():
 	
 	$LeaveBankTriggerArea/LeaveBankTrigger.targetArea = get_node(leaveBankAreaPath)
 	$LeaveBankTriggerArea/LeaveBankTrigger.newPlayerPosition = leaveBankPlayerPosition
-
-	cars = {
-		29: $car_29,
-		37: $car_37,
-		45: $car_45
-	}
