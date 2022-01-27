@@ -25,6 +25,9 @@ func _ready():
 func _on_add_money(amount, description):
 	_transactions.append([amount, description])
 	_display_transactions()
+	var notification_text = "Bank transfer: " + str(amount)
+	EventBus.emit_signal("sig_notification", 'bank', notification_text)
+	
 	
 func _on_money_changed(amount):
 	_display_balance()

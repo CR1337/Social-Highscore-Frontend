@@ -22,6 +22,7 @@ func clear_news():
 	
 func publish_news(title, text, preferred_emotion):
 	emit_signal("sig_publish_news", title, text, preferred_emotion)
+	EventBus.emit_signal("sig_notification", 'news', title)
 
 func _on_publish_news(title, text, preferred_emotion):
 	news.append({

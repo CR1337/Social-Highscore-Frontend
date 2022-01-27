@@ -41,6 +41,7 @@ func _show_info():
 func _on_score_changed(new_value):
 	_display_score()
 	_display_records()
+	EventBus.emit_signal("sig_notification", 'score', "Your score has changed")
 	
 func _on_InfoButton_pressed():
 	_show_info()

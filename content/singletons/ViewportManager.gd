@@ -18,11 +18,13 @@ onready var citizen_app_overlay = get_node("/root/mainScene/Overlays/CitizenApp"
 onready var news_app_mainpage_overlay = get_node("/root/mainScene/Overlays/NewsAppMainpage")
 onready var news_app_newspage_overlay = get_node("/root/mainScene/Overlays/NewsAppNewspage")
 
-
+onready var transparentNotificationOverlay = get_node("/root/mainScene/Overlays/TransparentNotificationOverlay")
+onready var notificationOverlay = get_node("/root/mainScene/Overlays/NotificationOverlay")
 
 onready var currentArea = get_node("/root/mainScene/Areas/LivingHomestreetArea")
 onready var currentOverlay = transparentOverlay
 onready var lastOverlay = transparentOverlay
+onready var currentNotificationOverlay = transparentNotificationOverlay
 
 func persistent_state():
 	return {
@@ -53,6 +55,12 @@ func _on_phone_pressed():
 	
 func _on_menu_pressed():
 	change_overlay(gameMenu)
+
+func change_to_notification():
+	change_notification_overlay(notificationOverlay)
+	
+func change_to_transparent_notification():
+	change_notification_overlay(transparentNotificationOverlay)
 	
 func change_to_transparent():
 	change_overlay(transparentOverlay)
@@ -122,3 +130,9 @@ func change_overlay(targetOverlay):
 	currentOverlay.position = tmp_position
 	lastOverlay = currentOverlay
 	currentOverlay = targetOverlay
+	
+func change_notification_overlay(targetOverlay):
+	var tmp_position = targetOverlay.position
+	targetOverlay.position = currentNotificationOverlay.position
+	currentNotificationOverlay.position = tmp_position
+	currentNotificationOverlay = targetOverlay
