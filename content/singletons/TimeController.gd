@@ -8,6 +8,9 @@ var active = true
 var current_handle = -1
 var next_handle = 0
 
+# TODO: this needs to be emitted on every new days beginning
+signal sig_new_day()
+
 func persistent_state():
 	var persistent_timer_list = []
 	while _currentSize > 0:

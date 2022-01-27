@@ -21,11 +21,12 @@ func _add_record(params):
 	records.append(params)
 	GameStateController.change_score(params['score'])
 
-func add_emotional_reaction_on_news(score, news, emotion, preferred_emotion):
+func add_emotional_reaction_on_news(score, news, face, emotion, preferred_emotion):
 	var params = {
 		'type': 'emotional_reaction_on_news',
 		'score': score,
 		'news': news,
+		'face': face,
 		'emotion': emotion,
 		'preferred_emotion': preferred_emotion
 	}

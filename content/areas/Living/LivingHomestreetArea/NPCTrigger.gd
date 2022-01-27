@@ -10,5 +10,6 @@ func trigger():
 	NewsController.publish_news(
 		'Breaking News: The notification Overlay works',
 		'We now have push messages in our Game', 
-		'happy'
+		'happy',
+		3
 	)

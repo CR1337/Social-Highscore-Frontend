@@ -40,10 +40,12 @@ func _DEBUG_add_news():
 	NewsController.publish_news(
 		"BREAKING NEWS: We are happy", 
 		"The people are happy", 
-		'happy'
+		'happy',
+		1
 	);
 	NewsController.publish_news(
 		"BREAKING NEWS: We are angry", 
 		"The people are angry", 
-		'angry'
+		'angry',
+		2
 	);
