@@ -17,6 +17,7 @@ script = ExtResource( 2 )
 position = Vector2( 0, -32 )
 frames = ExtResource( 3 )
 animation = "idle_down"
+frame = 2
 playing = true
 
 [node name="MovementRay" type="RayCast2D" parent="."]

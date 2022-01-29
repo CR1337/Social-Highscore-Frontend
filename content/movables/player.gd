@@ -1,6 +1,5 @@
 extends Node2D
 
-
 export var speed = 3
 
 onready var movementRay = $RayCast2DMovement
@@ -8,25 +7,13 @@ onready var triggerRay = $RayCast2DTrigger
 onready var tween = $Tween
 
 var looking_direction: Vector2
-var idle_frame_idxs = {
-	Vector2.DOWN: 1,
-	Vector2.LEFT: 4,
-	Vector2.RIGHT: 7,
-	Vector2.UP: 10,
+var directions = {
+	Vector2.DOWN: 'down',
+	Vector2.LEFT: 'left',
+	Vector2.RIGHT: 'right',
+	Vector2.UP: 'up',
 }
-var movement_frame_idxs = {
-	Vector2.DOWN: [0, 2],
-	Vector2.LEFT: [3, 5],
-	
-	Vector2.RIGHT: [6, 8],
-	Vector2.UP: [9, 11],
-}
-var animation_counter = 0
-var movement_frame_idx = 0
-export var animation_period = 0.25
 
-
-const driveThroughable = false
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.tile_size)
 	position -= Vector2.ONE * Globals.tile_size / 2
@@ -41,13 +28,8 @@ func _process(delta):
 		if InputBus.direction != Vector2.ZERO:
 			looking_direction = InputBus.direction
 			move()
-		$Sprite.frame = idle_frame_idxs[looking_direction]
-	else:
-		animation_counter += delta
-		if animation_counter > animation_period:
-			animation_counter = 0
-			movement_frame_idx = (movement_frame_idx + 1) % len(movement_frame_idxs[looking_direction])
-			$Sprite.frame = movement_frame_idxs[looking_direction][movement_frame_idx]
+		else:
+			$AnimatedSprite.animation = 'idle_' + directions[looking_direction]			
 	
 func move_tween():
 	tween.interpolate_property(self, "position",
@@ -74,6 +56,7 @@ func move():
 			return
 	if not movementRay_colliding:
 		move_tween()
+		$AnimatedSprite.animation = 'walk_' + directions[looking_direction]
 			
 func _on_action_pressed():
 	triggerRay.force_raycast_update()		
@@ -99,4 +82,4 @@ func restore_state(state):
 		state['looking_direction_x'],
 		state['looking_direction_y']
 	)
-	$Sprite.frame = idle_frame_idxs[looking_direction]
+	$AnimatedSprite.animation = 'idle_' + directions[looking_direction]
