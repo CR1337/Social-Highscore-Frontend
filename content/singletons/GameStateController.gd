@@ -17,6 +17,7 @@ var contact_state = {
 	'mom': "state0",
 	'boss': "state0"
 }
+
 func persistent_state():
 	return {
 		'score': score,

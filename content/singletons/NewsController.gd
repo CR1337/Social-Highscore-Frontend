@@ -93,3 +93,17 @@ func _on_new_day():
 			to_erase.append(n)
 	for n in to_erase:
 		_erase_news(n)
+
+func _DEBUG_add_news():
+	NewsController.publish_news(
+		"BREAKING NEWS: We are happy", 
+		"The people are happy", 
+		'happy',
+		1
+	);
+	NewsController.publish_news(
+		"BREAKING NEWS: We are angry", 
+		"The people are angry", 
+		'angry',
+		2
+	);

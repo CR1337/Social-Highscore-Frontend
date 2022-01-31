@@ -51,6 +51,5 @@ func _DEBUG_add_transactions():
 	EventBus.emit_signal("sig_add_money", -500, "Rent")
 	EventBus.emit_signal("sig_add_money", -100, "Groceries")
 
-
 func _on_BackButton_pressed():
 	ViewportManager.change_to_smartphone()

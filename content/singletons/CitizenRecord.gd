@@ -342,3 +342,8 @@ func persistent_state():
 	
 func restore_state(state):
 	records = state['records']
+	
+func _DEBUG_add_records():
+	CitizenRecord.add_unhealthy_food_at_home(-15, 'ice cream')
+	CitizenRecord.add_blood_donation(50)
+	CitizenRecord.add_refused_reaction_on_news(-40, 'The economy is good', 'happy')

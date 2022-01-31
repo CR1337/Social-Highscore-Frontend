@@ -36,16 +36,4 @@ func _on_News2Button_pressed():
 func _on_publish_news(title, text, preferred_emotion):
 	call_deferred("update_mainpage")
 	
-func _DEBUG_add_news():
-	NewsController.publish_news(
-		"BREAKING NEWS: We are happy", 
-		"The people are happy", 
-		'happy',
-		1
-	);
-	NewsController.publish_news(
-		"BREAKING NEWS: We are angry", 
-		"The people are angry", 
-		'angry',
-		2
-	);
+
