@@ -118,10 +118,7 @@ position = Vector2( 159.843, 511.632 )
 scale = Vector2( 1, 2 )
 slow_down = 0.5
 
-[node name="Car1_1" parent="." groups=[
-"persistent",
-] instance=ExtResource( 11 )]
-visible = false
+[node name="Car1_1" parent="." instance=ExtResource( 11 )]
 position = Vector2( 352, -32 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_homestreet/car_1_1_movement.json"
@@ -129,16 +126,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 16 )
 current_position = Vector2( 5, -1 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car1_1"]
 script = ExtResource( 17 )
 id = "tid_living_homestreet_car_1_1_start"
 
-[node name="Car1_3" parent="." groups=[
-"npcs",
-] instance=ExtResource( 11 )]
-visible = false
+[node name="Car1_3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 864, 480 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_homestreet/car_1_3_movement.json"
@@ -146,16 +139,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 16 )
 current_position = Vector2( 13, 7 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car1_3"]
 script = ExtResource( 17 )
 id = "tid_living_homestreet_car_1_3_start"
 
-[node name="Car2_1" parent="." groups=[
-"npcs",
-] instance=ExtResource( 11 )]
-visible = false
+[node name="Car2_1" parent="." instance=ExtResource( 11 )]
 position = Vector2( 352, -32 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_homestreet/car_2_1_movement.json"
@@ -163,16 +152,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 15 )
 current_position = Vector2( 5, -1 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car2_1"]
 script = ExtResource( 17 )
 id = "tid_living_homestreet_car_2_1_start"
 
-[node name="Car2_3" parent="." groups=[
-"npcs",
-] instance=ExtResource( 11 )]
-visible = false
+[node name="Car2_3" parent="." instance=ExtResource( 11 )]
 position = Vector2( -32, 544 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_homestreet/car_2_3_movement.json"
@@ -180,16 +165,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 15 )
 current_position = Vector2( -1, 8 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car2_3"]
 script = ExtResource( 17 )
 id = "tid_living_homestreet_car_2_3_start"
 
-[node name="Car3_1" parent="." groups=[
-"npcs",
-] instance=ExtResource( 11 )]
-visible = false
+[node name="Car3_1" parent="." instance=ExtResource( 11 )]
 position = Vector2( 352, -32 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_homestreet/car_3_1_movement.json"
@@ -197,15 +178,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 18 )
 current_position = Vector2( 5, -1 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car3_1"]
 script = ExtResource( 17 )
 id = "tid_living_homestreet_car_3_1_start"
 
-[node name="NPCh" parent="." groups=[
-"npcs",
-] instance=ExtResource( 11 )]
+[node name="NPCh" parent="." instance=ExtResource( 11 )]
 position = Vector2( 480, 416 )
 is_activated_by_action = true
 action_trigger_id = "tid_debug_npc_movement"
@@ -222,9 +200,7 @@ id = "tid_debug_npc_movement"
 target_npc_h = NodePath("..")
 target_npc_v = NodePath("../../NPCv")
 
-[node name="NPCv" parent="." groups=[
-"npcs",
-] instance=ExtResource( 11 )]
+[node name="NPCv" parent="." instance=ExtResource( 11 )]
 position = Vector2( 480, 608 )
 is_activated_by_action = true
 action_trigger_id = "tid_debug_npc_dialog"

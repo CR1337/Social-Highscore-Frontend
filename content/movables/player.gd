@@ -42,6 +42,20 @@ func _is_ray_colliding(ray):
 	ray.force_raycast_update()
 	return ray.is_colliding()
 
+func colliding_with_npc():
+	for npc in get_tree().get_nodes_in_group("npcs"):
+		if npc.get_parent() != self.get_parent():
+			continue
+		if npc.state == 'idle':
+			return true
+		if npc.get("announced_position") == null or npc.get("current_position") == null :
+			continue
+		if (
+			npc.announced_position == position / Globals.tile_size + looking_direction 
+			or npc.current_position == position / Globals.tile_size + looking_direction 
+		):
+				return true
+	return false
 func move():
 	# _is_ray_colliding has side effects 
 	# so both calls must be done at the beginning
@@ -54,7 +68,7 @@ func move():
 			collider.trigger_collision()
 		if collider.get("walkable") != null and not collider.get("walkable"):
 			return
-	if not movementRay_colliding:
+	if not movementRay_colliding and not colliding_with_npc():
 		move_tween()
 		$AnimatedSprite.animation = 'walk_' + directions[looking_direction]
 			

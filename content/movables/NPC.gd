@@ -81,13 +81,6 @@ func set_current_position(value):
 func get_current_position():
 	return current_position
 
-
-export var is_invisible_on_idle: bool setget set_is_invisible_on_idle, get_is_invisible_on_idle
-func set_is_invisible_on_idle(value):
-	is_invisible_on_idle = value
-func get_is_invisible_on_idle():
-	return is_invisible_on_idle
-
 var announced_position: Vector2
 
 
@@ -119,7 +112,6 @@ func set_raster_position(new_position):
 func set_state(value):
 	state = value
 	if state != 'idle':
-		visible = true
 		if movement_dict[state]['new_start_position_x'] != null and movement_dict[state]['new_start_position_y'] != null:
 			set_current_position(
 				Vector2(
@@ -127,9 +119,6 @@ func set_state(value):
 					movement_dict[state]['new_start_position_y']
 					)
 				)
-	else:
-		if is_invisible_on_idle:
-			visible = false
 	update_animation()
 	movement_step_index = 0
 	movement_step_repeat_counter = 0
@@ -161,6 +150,7 @@ func _ready():
 	announced_position = current_position
 
 func _process(delta):
+	visible = true
 	if is_new_state_requested:
 		set_state(requested_state)
 		is_new_state_requested = false
@@ -178,7 +168,11 @@ func can_move():
 	for npc in get_tree().get_nodes_in_group("npcs"):
 		if npc == self:
 			continue
-		if npc.get("announced_position") == null or npc.get("current_position") == null:
+		if npc.state == 'idle':
+			continue
+		if npc.get_parent() != self.get_parent():
+			continue
+		if npc.get("announced_position") == null or npc.get("current_position") == null :
 			continue
 		if (
 			npc.announced_position == announced_position 
@@ -281,7 +275,6 @@ func persistent_state():
 		"movement_step_repeat_counter": movement_step_repeat_counter,
 		"movement_waiting": movement_waiting,
 		"movement_waiting_handle": movement_waiting_handle,
-		"visible": visible
 	}
 
 func restore_state(jsonstate):
@@ -297,4 +290,3 @@ func restore_state(jsonstate):
 	movement_step_repeat_counter = jsonstate['movement_step_repeat_counter']
 	movement_waiting = jsonstate['movement_waiting']
 	movement_waiting_handle = jsonstate['movement_waiting_handle']
-	visible = jsonstate['visible']

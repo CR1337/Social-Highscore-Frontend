@@ -88,6 +88,7 @@ func _notification(what):
 	
 func _debug_save_default_game():
 	call_deferred("save_default_game")
+	call_deferred("start_new_game")
 
 func _ready():
 #	_debug_save_default_game()

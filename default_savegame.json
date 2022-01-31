@@ -33,8 +33,384 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingHomestreetArea/Car1_3": {
+        "current_position_x": 13,
+        "current_position_y": 7,
+        "active": true,
+        "announced_position_x": 13,
+        "announced_position_y": 7,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 13,
+                "new_start_position_y": 7,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 7,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 8,
+                        "trigger_id": "tid_living_busstreet_car_1_4_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingHomestreetArea/Car2_1": {
+        "current_position_x": 5,
+        "current_position_y": -1,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "down",
+                        "repeats": 8,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "left",
+                        "repeats": 7,
+                        "trigger_id": "tid_living_pharmacystreet_car_2_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingHomestreetArea/Car2_3": {
+        "current_position_x": -1,
+        "current_position_y": 8,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 8,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": -1,
+                "new_start_position_y": 8,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 7,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 9,
+                        "trigger_id": "tid_living_busstreet_car_2_4_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingHomestreetArea/Car3_1": {
+        "current_position_x": 5,
+        "current_position_y": -1,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 5,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "down",
+                        "repeats": 15,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 15,
+                        "trigger_id": "tid_living_busstreet_car_3_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingHomestreetArea/NPCh": {
+        "current_position_x": 7,
+        "current_position_y": 6,
+        "active": true,
+        "announced_position_x": 7,
+        "announced_position_y": 6,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/mainScene/Areas/LivingHomestreetArea/NPCv": {
+        "current_position_x": 7,
+        "current_position_y": 9,
+        "active": true,
+        "announced_position_x": 7,
+        "announced_position_y": 9,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/LivingFriendstreetArea/Car1_2": {
         "current_position_x": -1,
@@ -74,8 +450,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/LivingPharmacystreetArea/Car2_2": {
         "current_position_x": 12,
@@ -115,8 +490,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/LivingBusstreetArea/Car1_0": {
         "current_position_x": -1,
@@ -151,8 +525,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/LivingBusstreetArea/Car1_4": {
         "current_position_x": 6,
@@ -187,8 +560,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/LivingBusstreetArea/Car2_0": {
         "current_position_x": 13,
@@ -223,8 +595,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/LivingBusstreetArea/Car2_4": {
         "current_position_x": 6,
@@ -259,8 +630,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/LivingBusstreetArea/Car3_0": {
         "current_position_x": -1,
@@ -295,8 +665,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/LivingBusstreetArea/Car3_2": {
         "current_position_x": 6,
@@ -331,8 +700,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityShadystreetArea/Car7_1": {
         "current_position_x": 2,
@@ -377,8 +745,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBusstreetArea/trafficLight": {
         "is_on": true
@@ -411,8 +778,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBusstreetArea/Car5_0": {
         "current_position_x": -1,
@@ -442,8 +808,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBusstreetArea/Car6_0": {
         "current_position_x": -1,
@@ -473,8 +838,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBusstreetArea/Car7_0": {
         "current_position_x": -1,
@@ -509,8 +873,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBusstreetArea/Car7_2": {
         "current_position_x": 4,
@@ -545,8 +908,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBusstreetArea/Car8_0": {
         "current_position_x": -1,
@@ -586,8 +948,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBusstreetArea/Car9_3": {
         "current_position_x": 12,
@@ -622,8 +983,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBusstreetArea/Car11_3": {
         "current_position_x": 12,
@@ -653,8 +1013,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityJobcenterstreetArea/Car4_1": {
         "current_position_x": -1,
@@ -699,8 +1058,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityJobcenterstreetArea/Car5_1": {
         "current_position_x": -1,
@@ -745,8 +1103,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityJobcenterstreetArea/Car6_1": {
         "current_position_x": -1,
@@ -791,8 +1148,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityJobcenterstreetArea/Car8_1": {
         "current_position_x": -1,
@@ -827,8 +1183,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityJobcenterstreetArea/Car9_2": {
         "current_position_x": 5,
@@ -863,8 +1218,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityJobcenterstreetArea/Car9_4": {
         "current_position_x": -1,
@@ -899,8 +1253,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityJobcenterstreetArea/Car11_2": {
         "current_position_x": 5,
@@ -930,8 +1283,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityJobcenterstreetArea/Car11_4": {
         "current_position_x": -1,
@@ -976,8 +1328,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityPolicestreetArea/trafficLight": {
         "is_on": false
@@ -1010,8 +1361,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityPolicestreetArea/Car9_1": {
         "current_position_x": 5,
@@ -1041,8 +1391,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityPolicestreetArea/Car9_5": {
         "current_position_x": 5,
@@ -1072,8 +1421,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityPolicestreetArea/Car11_1": {
         "current_position_x": 5,
@@ -1103,8 +1451,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBankstreetArea/trafficLight": {
         "is_on": true
@@ -1143,8 +1490,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBankstreetArea/Car10_0": {
         "current_position_x": -1,
@@ -1174,8 +1520,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityBankstreetArea/Car12_1": {
         "current_position_x": 12,
@@ -1205,8 +1550,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityStorestreetArea/trafficLight": {
         "is_on": true
@@ -1247,8 +1591,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityStorestreetArea/Car9_0": {
         "current_position_x": 5,
@@ -1278,8 +1621,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityStorestreetArea/Car9_6": {
         "current_position_x": 3,
@@ -1309,8 +1651,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityStorestreetArea/Car10_1": {
         "current_position_x": -1,
@@ -1345,8 +1686,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityStorestreetArea/Car11_0": {
         "current_position_x": 5,
@@ -1376,8 +1716,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/CityStorestreetArea/Car12_0": {
         "current_position_x": 5,
@@ -1412,8 +1751,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/UtilityBusstreetArea/Car13_0": {
         "current_position_x": 12,
@@ -1453,8 +1791,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Areas/UtilityBusstreetArea/Car14_0": {
         "current_position_x": 12,
@@ -1494,8 +1831,7 @@
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,
         "movement_waiting": false,
-        "movement_waiting_handle": 0,
-        "visible": false
+        "movement_waiting_handle": 0
     },
     "/root/mainScene/Overlays/DialogOverlay": {
         "dialog_dict": {

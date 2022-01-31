@@ -24,7 +24,7 @@ func _display_score():
 	_score_label.text = str(GameStateController.score)
 	
 func _display_records():
-	print("Records:\n" + str(CitizenRecord.records))
+	# print("Records:\n" + str(CitizenRecord.records))
 	_record_label.clear()
 	for record in CitizenRecord.records:
 		var record_string = CitizenRecord.record_display_string_for_app(record)

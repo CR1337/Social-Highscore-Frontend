@@ -63,9 +63,8 @@ scale = Vector2( 1, 2 )
 slow_down = 1.0
 crosswalk = true
 
-[node name="Car2_2" parent="." groups=[
-"persistent",
-] instance=ExtResource( 9 )]
+[node name="Car2_2" parent="." instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 800, 480 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_pharmacystreet/car_2_2_movement.json"
@@ -73,7 +72,6 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 11 )
 current_position = Vector2( 12, 7 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car2_2"]
 script = ExtResource( 10 )

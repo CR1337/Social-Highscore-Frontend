@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/movables/NPC.gd" type="Script" id=2]
-[ext_resource path="res://assets/animated_sprites/tres/debug_character.tres" type="SpriteFrames" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
-[node name="NPC" type="Area2D"]
+[node name="NPC" type="Area2D" groups=[
+"npcs",
+"persistent",
+]]
 position = Vector2( 32, 32 )
 script = ExtResource( 2 )
 
@@ -15,9 +17,6 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -32 )
-frames = ExtResource( 3 )
-animation = "idle_down"
-frame = 2
 playing = true
 
 [node name="MovementRay" type="RayCast2D" parent="."]

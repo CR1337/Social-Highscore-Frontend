@@ -78,7 +78,7 @@ leaveMomAreaPath = NodePath("../LivingHomestreetMomArea")
 leaveMomPlayerPosition = Vector2( 7, 17 )
 
 [node name="LivingFriendstreetArea" parent="Areas" instance=ExtResource( 14 )]
-position = Vector2( 1174.22, -15.3143 )
+position = Vector2( 1542.12, 19.9635 )
 leaveLeftAreaPath = NodePath("../LivingHomestreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
 leaveFriendAreaPath = NodePath("../LivingFriendstreetFriendArea")
@@ -99,7 +99,7 @@ leaveAreaPath = NodePath("../LivingPharmacystreetArea")
 leavePlayerPosition = Vector2( 3, 14 )
 
 [node name="LivingBusstreetArea" parent="Areas" instance=ExtResource( 6 )]
-position = Vector2( 65.8204, -1248.66 )
+position = Vector2( 27.6798, -1519.88 )
 leaveBottomAreaPath = NodePath("../LivingHomestreetArea")
 leaveBottomPlayerPosition = Vector2( -1, 0 )
 BusOverlayPath = NodePath("../../Overlays/BusMenu")
@@ -115,7 +115,7 @@ leaveAreaPath = NodePath("../LivingHomestreetArea")
 leavePlayerPosition = Vector2( 3, 14 )
 
 [node name="LivingFriendstreetPartnerArea" parent="Areas" instance=ExtResource( 4 )]
-position = Vector2( 1169.77, -1193.78 )
+position = Vector2( 1203.67, -1223.45 )
 leaveAreaPath = NodePath("../LivingFriendstreetArea")
 leavePlayerPosition = Vector2( 3, 6 )
 
@@ -299,6 +299,7 @@ position = Vector2( 4238.74, 2725.83 )
 "persistent",
 ] instance=ExtResource( 1 )]
 position = Vector2( 610.022, 964.115 )
+z_index = 1
 speed = 4
 
 [node name="ShaderRectNode2D" type="Node2D" parent="."]

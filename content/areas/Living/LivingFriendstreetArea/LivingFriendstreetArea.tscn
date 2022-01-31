@@ -75,15 +75,16 @@ slow_down = 1.0
 crosswalk = true
 
 [node name="Car1_2" parent="." groups=[
+"npcs",
 "persistent",
 ] instance=ExtResource( 10 )]
+visible = false
 position = Vector2( -32, 544 )
 movement_filename = "res://doc/living_friendstreet/car_1_2_movement.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 9 )
 current_position = Vector2( -1, 8 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car1_2"]
 script = ExtResource( 11 )

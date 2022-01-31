@@ -73,10 +73,7 @@ position = Vector2( 383.593, 287.371 )
 scale = Vector2( 2, 3 )
 slow_down = 0.1
 
-[node name="Car1_0" parent="." groups=[
-"persistent",
-] instance=ExtResource( 15 )]
-visible = false
+[node name="Car1_0" parent="." instance=ExtResource( 15 )]
 position = Vector2( -32, 352 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_busstreet/car_1_0_movement.json"
@@ -84,16 +81,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 14 )
 current_position = Vector2( -1, 5 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car1_0"]
 script = ExtResource( 16 )
 id = "tid_living_busstreet_car_1_0_start"
 
-[node name="Car1_4" parent="." groups=[
-"persistent",
-] instance=ExtResource( 15 )]
-visible = false
+[node name="Car1_4" parent="." instance=ExtResource( 15 )]
 position = Vector2( 416, 1120 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_busstreet/car_1_4_movement.json"
@@ -101,16 +94,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 14 )
 current_position = Vector2( 6, 17 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car1_4"]
 script = ExtResource( 16 )
 id = "tid_living_busstreet_car_1_4_start"
 
-[node name="Car2_0" parent="." groups=[
-"persistent",
-] instance=ExtResource( 15 )]
-visible = false
+[node name="Car2_0" parent="." instance=ExtResource( 15 )]
 position = Vector2( 864, 224 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_busstreet/car_2_0_movement.json"
@@ -118,16 +107,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 17 )
 current_position = Vector2( 13, 3 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car2_0"]
 script = ExtResource( 16 )
 id = "tid_living_busstreet_car_2_0_start"
 
-[node name="Car2_4" parent="." groups=[
-"persistent",
-] instance=ExtResource( 15 )]
-visible = false
+[node name="Car2_4" parent="." instance=ExtResource( 15 )]
 position = Vector2( 416, 1120 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_busstreet/car_2_4_movement.json"
@@ -135,16 +120,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 17 )
 current_position = Vector2( 6, 17 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car2_4"]
 script = ExtResource( 16 )
 id = "tid_living_busstreet_car_2_4_start"
 
-[node name="Car3_0" parent="." groups=[
-"persistent",
-] instance=ExtResource( 15 )]
-visible = false
+[node name="Car3_0" parent="." instance=ExtResource( 15 )]
 position = Vector2( -32, 352 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_busstreet/car_3_0_movement.json"
@@ -152,16 +133,12 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 18 )
 current_position = Vector2( -1, 5 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car3_0"]
 script = ExtResource( 16 )
 id = "tid_living_busstreet_car_3_0_start"
 
-[node name="Car3_2" parent="." groups=[
-"persistent",
-] instance=ExtResource( 15 )]
-visible = false
+[node name="Car3_2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 416, 1120 )
 ignores_crosswalks = false
 movement_filename = "res://doc/living_busstreet/car_3_2_movement.json"
@@ -169,7 +146,6 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 18 )
 current_position = Vector2( 6, 17 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car3_2"]
 script = ExtResource( 16 )
