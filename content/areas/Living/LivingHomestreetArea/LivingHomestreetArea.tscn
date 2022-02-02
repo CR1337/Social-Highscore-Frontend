@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -7,9 +7,6 @@
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=8]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/animated_sprites/tres/debug_character.tres" type="SpriteFrames" id=12]
-[ext_resource path="res://content/areas/Living/LivingHomestreetArea/NPCTrigger.gd" type="Script" id=13]
-[ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=14]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=15]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=16]
 [ext_resource path="res://content/trigger/StartCarTrigger.gd" type="Script" id=17]
@@ -182,35 +179,3 @@ current_position = Vector2( 5, -1 )
 [node name="CarStartTrigger" type="Node" parent="Car3_1"]
 script = ExtResource( 17 )
 id = "tid_living_homestreet_car_3_1_start"
-
-[node name="NPCh" parent="." instance=ExtResource( 11 )]
-position = Vector2( 480, 416 )
-is_activated_by_action = true
-action_trigger_id = "tid_debug_npc_movement"
-movement_filename = "res://doc/movement.json"
-dialog_filename = "res://doc/dialog.json"
-speed = 1.0
-active_on_start = true
-animation = ExtResource( 12 )
-current_position = Vector2( 7, 6 )
-
-[node name="NPCTrigger" type="Node" parent="NPCh"]
-script = ExtResource( 13 )
-id = "tid_debug_npc_movement"
-target_npc_h = NodePath("..")
-target_npc_v = NodePath("../../NPCv")
-
-[node name="NPCv" parent="." instance=ExtResource( 11 )]
-position = Vector2( 480, 608 )
-is_activated_by_action = true
-action_trigger_id = "tid_debug_npc_dialog"
-movement_filename = "res://doc/movement.json"
-dialog_filename = "res://doc/dialog.json"
-speed = 1.0
-active_on_start = true
-animation = ExtResource( 12 )
-current_position = Vector2( 7, 9 )
-
-[node name="NPCDialogTrigger" type="Node" parent="NPCv"]
-script = ExtResource( 14 )
-id = "tid_debug_npc_dialog"

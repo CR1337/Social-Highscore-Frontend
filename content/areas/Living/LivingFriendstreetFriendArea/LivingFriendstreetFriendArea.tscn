@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=1]
 [ext_resource path="res://assets/animated_sprites/tres/bathroom_sink.tres" type="SpriteFrames" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://content/areas/Living/LivingFriendstreetFriendArea/LivingFriendstreetFriendArea.gd" type="Script" id=9]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=10]
 [ext_resource path="res://content/areas/components/AnimatedOnOff.tscn" type="PackedScene" id=11]
+[ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/animated_sprites/tres/characters/friend.tres" type="SpriteFrames" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -1879,3 +1881,9 @@ collision_trigger_id = "tid_living_friendstreet_friend_leave"
 [node name="LeaveTrigger" type="Node" parent="TriggerArea"]
 script = ExtResource( 1 )
 id = "tid_living_friendstreet_friend_leave"
+
+[node name="NPC" parent="." instance=ExtResource( 12 )]
+position = Vector2( 544, 672 )
+movement_filename = "res://doc/movement.json"
+animation = ExtResource( 13 )
+current_position = Vector2( 8, 10 )
