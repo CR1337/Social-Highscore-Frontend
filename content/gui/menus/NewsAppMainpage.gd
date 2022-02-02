@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var _scroll_container = $Background/Margin/VBox/ScrollContainer
-onready var _button_container = $Background/Margin/VBox/ScrollContainer/Container
+onready var _button_container = $Background/Margin/VBox/ScrollContainer/VBox
 const _font_path = "res://assets/fonts/Consolas.tres"
 
 var _buttons = []

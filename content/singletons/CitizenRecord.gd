@@ -347,6 +347,7 @@ func _DEBUG_add_records():
 	CitizenRecord.add_blood_donation(50)
 	CitizenRecord.add_refused_reaction_on_news(-40, 'The economy is good', 'happy')
 	CitizenRecord.add_emotional_reaction_on_news(10, 'This is good', Debug.b64_debug_image, 'happy', 'happy')
+	CitizenRecord.add_emotional_reaction_at_authentication(10, 'Busstation', Debug.b64_debug_image, 'happy', 'Mourning Day', 'sad')
 	CitizenRecord.add_traffic_violation(-10, 'Disregarded traffic light', 'Living Homestreet', Debug.b64_debug_image)
 	CitizenRecord.add_organ_donation(100)
 	CitizenRecord.add_critical_speech_in_reallife(-10, 'Partner', 'I hate this', 'Home', Debug.b64_debug_image)

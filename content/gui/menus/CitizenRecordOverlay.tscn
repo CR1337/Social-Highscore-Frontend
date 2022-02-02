@@ -10,7 +10,7 @@ script = ExtResource( 1 )
 margin_right = 768.0
 margin_bottom = 1408.0
 mouse_filter = 2
-color = Color( 0.886275, 0.619608, 0.160784, 1 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,19 +33,9 @@ margin_top = 20.0
 margin_right = 748.0
 margin_bottom = 1392.0
 
-[node name="Button" type="Button" parent="Background/Margin/HBox"]
-margin_right = 728.0
-margin_bottom = 40.0
-custom_fonts/font = ExtResource( 4 )
-text = "Back"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ScrollContainer" type="ScrollContainer" parent="Background/Margin/HBox"]
-margin_top = 44.0
 margin_right = 728.0
-margin_bottom = 1372.0
+margin_bottom = 1328.0
 rect_min_size = Vector2( 728, 1328 )
 
 [node name="VBox" type="VBoxContainer" parent="Background/Margin/HBox/ScrollContainer"]
@@ -53,5 +43,15 @@ margin_right = 728.0
 margin_bottom = 1328.0
 rect_min_size = Vector2( 728, 1328 )
 custom_constants/separation = 20
+
+[node name="Button" type="Button" parent="Background/Margin/HBox"]
+margin_top = 1332.0
+margin_right = 728.0
+margin_bottom = 1372.0
+custom_fonts/font = ExtResource( 4 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Background/Margin/HBox/Button" to="." method="_on_Button_pressed"]

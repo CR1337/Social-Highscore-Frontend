@@ -1,6 +1,6 @@
 {
     "empty": false,
-    "/root/mainScene/Areas/LivingHomestreetArea/Car1_1": {
+    "/root/MainScene/Areas/LivingHomestreetArea/Car1_1": {
         "current_position_x": 5,
         "current_position_y": -1,
         "active": true,
@@ -35,7 +35,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingHomestreetArea/Car1_3": {
+    "/root/MainScene/Areas/LivingHomestreetArea/Car1_3": {
         "current_position_x": 13,
         "current_position_y": 7,
         "active": true,
@@ -70,7 +70,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingHomestreetArea/Car2_1": {
+    "/root/MainScene/Areas/LivingHomestreetArea/Car2_1": {
         "current_position_x": 5,
         "current_position_y": -1,
         "active": true,
@@ -105,7 +105,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingHomestreetArea/Car2_3": {
+    "/root/MainScene/Areas/LivingHomestreetArea/Car2_3": {
         "current_position_x": -1,
         "current_position_y": 8,
         "active": true,
@@ -140,7 +140,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingHomestreetArea/Car3_1": {
+    "/root/MainScene/Areas/LivingHomestreetArea/Car3_1": {
         "current_position_x": 5,
         "current_position_y": -1,
         "active": true,
@@ -180,7 +180,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingFriendstreetArea/Car1_2": {
+    "/root/MainScene/Areas/LivingFriendstreetArea/Car1_2": {
         "current_position_x": -1,
         "current_position_y": 8,
         "active": true,
@@ -220,7 +220,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingPharmacystreetArea/Car2_2": {
+    "/root/MainScene/Areas/LivingPharmacystreetArea/Car2_2": {
         "current_position_x": 12,
         "current_position_y": 7,
         "active": true,
@@ -260,7 +260,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingPharmacystreetPharmacyArea/NPC": {
+    "/root/MainScene/Areas/LivingPharmacystreetPharmacyArea/PharmacistNPC": {
         "current_position_x": 7,
         "current_position_y": 9,
         "active": false,
@@ -376,7 +376,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingBusstreetArea/Car1_0": {
+    "/root/MainScene/Areas/LivingBusstreetArea/Car1_0": {
         "current_position_x": -1,
         "current_position_y": 5,
         "active": true,
@@ -411,7 +411,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingBusstreetArea/Car1_4": {
+    "/root/MainScene/Areas/LivingBusstreetArea/Car1_4": {
         "current_position_x": 6,
         "current_position_y": 17,
         "active": true,
@@ -446,7 +446,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingBusstreetArea/Car2_0": {
+    "/root/MainScene/Areas/LivingBusstreetArea/Car2_0": {
         "current_position_x": 13,
         "current_position_y": 3,
         "active": true,
@@ -481,7 +481,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingBusstreetArea/Car2_4": {
+    "/root/MainScene/Areas/LivingBusstreetArea/Car2_4": {
         "current_position_x": 6,
         "current_position_y": 17,
         "active": true,
@@ -516,7 +516,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingBusstreetArea/Car3_0": {
+    "/root/MainScene/Areas/LivingBusstreetArea/Car3_0": {
         "current_position_x": -1,
         "current_position_y": 5,
         "active": true,
@@ -551,7 +551,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingBusstreetArea/Car3_2": {
+    "/root/MainScene/Areas/LivingBusstreetArea/Car3_2": {
         "current_position_x": 6,
         "current_position_y": 17,
         "active": true,
@@ -586,7 +586,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingHomestreetMomArea/NPC": {
+    "/root/MainScene/Areas/LivingHomestreetMomArea/MomNPC": {
         "current_position_x": 3,
         "current_position_y": 3,
         "active": false,
@@ -702,7 +702,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingFriendstreetPartnerArea/NPC": {
+    "/root/MainScene/Areas/LivingFriendstreetPartnerArea/PartnerNPC": {
         "current_position_x": 8,
         "current_position_y": 10,
         "active": false,
@@ -818,7 +818,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/LivingFriendstreetFriendArea/NPC": {
+    "/root/MainScene/Areas/LivingFriendstreetFriendArea/FriendNPC": {
         "current_position_x": 8,
         "current_position_y": 10,
         "active": false,
@@ -934,7 +934,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityShadystreetArea/Car7_1": {
+    "/root/MainScene/Areas/CityShadystreetArea/Car7_1": {
         "current_position_x": 2,
         "current_position_y": -1,
         "active": true,
@@ -979,10 +979,10 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBusstreetArea/trafficLight": {
+    "/root/MainScene/Areas/CityBusstreetArea/TrafficLight": {
         "is_on": true
     },
-    "/root/mainScene/Areas/CityBusstreetArea/Car4_0": {
+    "/root/MainScene/Areas/CityBusstreetArea/Car4_0": {
         "current_position_x": -1,
         "current_position_y": 5,
         "active": true,
@@ -1012,7 +1012,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBusstreetArea/Car5_0": {
+    "/root/MainScene/Areas/CityBusstreetArea/Car5_0": {
         "current_position_x": -1,
         "current_position_y": 3,
         "active": true,
@@ -1042,7 +1042,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBusstreetArea/Car6_0": {
+    "/root/MainScene/Areas/CityBusstreetArea/Car6_0": {
         "current_position_x": -1,
         "current_position_y": 1,
         "active": true,
@@ -1072,7 +1072,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBusstreetArea/Car7_0": {
+    "/root/MainScene/Areas/CityBusstreetArea/Car7_0": {
         "current_position_x": -1,
         "current_position_y": 5,
         "active": true,
@@ -1107,7 +1107,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBusstreetArea/Car7_2": {
+    "/root/MainScene/Areas/CityBusstreetArea/Car7_2": {
         "current_position_x": 4,
         "current_position_y": 17,
         "active": true,
@@ -1142,7 +1142,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBusstreetArea/Car8_0": {
+    "/root/MainScene/Areas/CityBusstreetArea/Car8_0": {
         "current_position_x": -1,
         "current_position_y": 5,
         "active": true,
@@ -1182,7 +1182,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBusstreetArea/Car9_3": {
+    "/root/MainScene/Areas/CityBusstreetArea/Car9_3": {
         "current_position_x": 12,
         "current_position_y": 9,
         "active": true,
@@ -1217,7 +1217,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBusstreetArea/Car11_3": {
+    "/root/MainScene/Areas/CityBusstreetArea/Car11_3": {
         "current_position_x": 12,
         "current_position_y": 9,
         "active": true,
@@ -1247,7 +1247,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityJobcenterstreetArea/Car4_1": {
+    "/root/MainScene/Areas/CityJobcenterstreetArea/Car4_1": {
         "current_position_x": -1,
         "current_position_y": 5,
         "active": true,
@@ -1292,7 +1292,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityJobcenterstreetArea/Car5_1": {
+    "/root/MainScene/Areas/CityJobcenterstreetArea/Car5_1": {
         "current_position_x": -1,
         "current_position_y": 3,
         "active": true,
@@ -1337,7 +1337,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityJobcenterstreetArea/Car6_1": {
+    "/root/MainScene/Areas/CityJobcenterstreetArea/Car6_1": {
         "current_position_x": -1,
         "current_position_y": 1,
         "active": true,
@@ -1382,7 +1382,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityJobcenterstreetArea/Car8_1": {
+    "/root/MainScene/Areas/CityJobcenterstreetArea/Car8_1": {
         "current_position_x": -1,
         "current_position_y": 11,
         "active": true,
@@ -1417,7 +1417,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityJobcenterstreetArea/Car9_2": {
+    "/root/MainScene/Areas/CityJobcenterstreetArea/Car9_2": {
         "current_position_x": 5,
         "current_position_y": 17,
         "active": true,
@@ -1452,7 +1452,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityJobcenterstreetArea/Car9_4": {
+    "/root/MainScene/Areas/CityJobcenterstreetArea/Car9_4": {
         "current_position_x": -1,
         "current_position_y": 11,
         "active": true,
@@ -1487,7 +1487,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityJobcenterstreetArea/Car11_2": {
+    "/root/MainScene/Areas/CityJobcenterstreetArea/Car11_2": {
         "current_position_x": 5,
         "current_position_y": 17,
         "active": true,
@@ -1517,7 +1517,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityJobcenterstreetArea/Car11_4": {
+    "/root/MainScene/Areas/CityJobcenterstreetArea/Car11_4": {
         "current_position_x": -1,
         "current_position_y": 5,
         "active": true,
@@ -1562,10 +1562,10 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityPolicestreetArea/trafficLight": {
+    "/root/MainScene/Areas/CityPolicestreetArea/TrafficLight": {
         "is_on": false
     },
-    "/root/mainScene/Areas/CityPolicestreetArea/Car8_2": {
+    "/root/MainScene/Areas/CityPolicestreetArea/Car8_2": {
         "current_position_x": 3,
         "current_position_y": -1,
         "active": true,
@@ -1595,7 +1595,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityPolicestreetArea/Car9_1": {
+    "/root/MainScene/Areas/CityPolicestreetArea/Car9_1": {
         "current_position_x": 5,
         "current_position_y": 17,
         "active": true,
@@ -1625,7 +1625,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityPolicestreetArea/Car9_5": {
+    "/root/MainScene/Areas/CityPolicestreetArea/Car9_5": {
         "current_position_x": 5,
         "current_position_y": 17,
         "active": true,
@@ -1655,7 +1655,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityPolicestreetArea/Car11_1": {
+    "/root/MainScene/Areas/CityPolicestreetArea/Car11_1": {
         "current_position_x": 5,
         "current_position_y": 17,
         "active": true,
@@ -1685,16 +1685,16 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBankstreetArea/trafficLight": {
+    "/root/MainScene/Areas/CityBankstreetArea/TrafficLight": {
         "is_on": true
     },
-    "/root/mainScene/Areas/CityBankstreetArea/trafficLight2": {
+    "/root/MainScene/Areas/CityBankstreetArea/TrafficLight2": {
         "is_on": true
     },
-    "/root/mainScene/Areas/CityBankstreetArea/trafficLight3": {
+    "/root/MainScene/Areas/CityBankstreetArea/TrafficLight3": {
         "is_on": false
     },
-    "/root/mainScene/Areas/CityBankstreetArea/Car8_4": {
+    "/root/MainScene/Areas/CityBankstreetArea/Car8_4": {
         "current_position_x": 12,
         "current_position_y": 6,
         "active": true,
@@ -1724,7 +1724,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBankstreetArea/Car10_0": {
+    "/root/MainScene/Areas/CityBankstreetArea/Car10_0": {
         "current_position_x": -1,
         "current_position_y": 8,
         "active": true,
@@ -1754,7 +1754,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityBankstreetArea/Car12_1": {
+    "/root/MainScene/Areas/CityBankstreetArea/Car12_1": {
         "current_position_x": 12,
         "current_position_y": 6,
         "active": true,
@@ -1784,13 +1784,13 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityStorestreetArea/trafficLight": {
+    "/root/MainScene/Areas/CityStorestreetArea/TrafficLight": {
         "is_on": true
     },
-    "/root/mainScene/Areas/CityStorestreetArea/trafficLight2": {
+    "/root/MainScene/Areas/CityStorestreetArea/TrafficLight2": {
         "is_on": false
     },
-    "/root/mainScene/Areas/CityStorestreetArea/Car8_3": {
+    "/root/MainScene/Areas/CityStorestreetArea/Car8_3": {
         "current_position_x": 3,
         "current_position_y": -1,
         "active": true,
@@ -1825,7 +1825,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityStorestreetArea/Car9_0": {
+    "/root/MainScene/Areas/CityStorestreetArea/Car9_0": {
         "current_position_x": 5,
         "current_position_y": 17,
         "active": true,
@@ -1855,7 +1855,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityStorestreetArea/Car9_6": {
+    "/root/MainScene/Areas/CityStorestreetArea/Car9_6": {
         "current_position_x": 3,
         "current_position_y": -1,
         "active": true,
@@ -1885,7 +1885,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityStorestreetArea/Car10_1": {
+    "/root/MainScene/Areas/CityStorestreetArea/Car10_1": {
         "current_position_x": -1,
         "current_position_y": 8,
         "active": true,
@@ -1920,7 +1920,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityStorestreetArea/Car11_0": {
+    "/root/MainScene/Areas/CityStorestreetArea/Car11_0": {
         "current_position_x": 5,
         "current_position_y": 17,
         "active": true,
@@ -1950,7 +1950,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/CityStorestreetArea/Car12_0": {
+    "/root/MainScene/Areas/CityStorestreetArea/Car12_0": {
         "current_position_x": 5,
         "current_position_y": 17,
         "active": true,
@@ -1985,7 +1985,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/UtilityBusstreetArea/Car13_0": {
+    "/root/MainScene/Areas/UtilityBusstreetArea/Car13_0": {
         "current_position_x": 12,
         "current_position_y": 11,
         "active": true,
@@ -2025,7 +2025,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Areas/UtilityBusstreetArea/Car14_0": {
+    "/root/MainScene/Areas/UtilityBusstreetArea/Car14_0": {
         "current_position_x": 12,
         "current_position_y": 11,
         "active": true,
@@ -2065,7 +2065,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/mainScene/Overlays/DialogOverlay": {
+    "/root/MainScene/Overlays/DialogOverlay": {
         "dialog_dict": {
 
         },
@@ -2075,7 +2075,7 @@
 
         }
     },
-    "/root/mainScene/Overlays/MessengerAppMessages": {
+    "/root/MainScene/Overlays/MessengerAppMessages": {
         "messages": {
             "friend": [
                 [
@@ -2112,10 +2112,10 @@
         "response_timer_handle": 0,
         "hidden": true
     },
-    "/root/mainScene/Overlays/NewsAppNewspage": {
+    "/root/MainScene/Overlays/NewsAppNewspage": {
         "news_index": -1
     },
-    "/root/mainScene/player": {
+    "/root/MainScene/Player": {
         "position_x": 608,
         "position_y": 928,
         "looking_direction_x": 0,
@@ -2160,9 +2160,9 @@
         "active": true
     },
     "/root/ViewportManager": {
-        "current_area": "/root/mainScene/Areas/LivingHomestreetArea",
-        "current_overlay": "/root/mainScene/Overlays/TransparentOverlay",
-        "last_overlay": "/root/mainScene/Overlays/TransparentOverlay"
+        "current_area": "/root/MainScene/Areas/LivingHomestreetArea",
+        "current_overlay": "/root/MainScene/Overlays/TransparentOverlay",
+        "last_overlay": "/root/MainScene/Overlays/TransparentOverlay"
     },
     "/root/ImageProcessor": {
         "b64_reference_image": ""
