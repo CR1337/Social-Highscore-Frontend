@@ -934,12 +934,12 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/MainScene/Areas/CityShadystreetArea/Car7_1": {
-        "current_position_x": 2,
-        "current_position_y": -1,
-        "active": true,
-        "announced_position_x": 2,
-        "announced_position_y": -1,
+    "/root/MainScene/Areas/CityShadystreetArea/NPC": {
+        "current_position_x": 1,
+        "current_position_y": 11,
+        "active": false,
+        "announced_position_x": 1,
+        "announced_position_y": 11,
         "looking_direction_x": 0,
         "looking_direction_y": 1,
         "state": "idle",
@@ -947,31 +947,218 @@
         "requested_state": "",
         "movement_dict": {
             "state0": {
-                "new_start_position_x": 2,
-                "new_start_position_y": -1,
+                "new_start_position_x": null,
+                "new_start_position_y": null,
                 "sequence": [
                     {
-                        "direction": "down",
-                        "repeats": 3,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "wait",
-                        "seconds": 3,
+                        "direction": "left",
+                        "repeats": 1,
                         "trigger_id": null
                     },
                     {
                         "direction": "right",
-                        "repeats": 2,
+                        "repeats": 1,
                         "trigger_id": null
                     },
                     {
                         "direction": "up",
-                        "repeats": 4,
-                        "trigger_id": "tid_city_busstreet_car_7_2_start"
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
                     }
                 ],
-                "repeats": 1
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/NPC2": {
+        "current_position_x": 9,
+        "current_position_y": 5,
+        "active": false,
+        "announced_position_x": 9,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
             }
         },
         "movement_step_index": 0,
@@ -1240,6 +1427,122 @@
                     }
                 ],
                 "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NPC": {
+        "current_position_x": 10,
+        "current_position_y": 14,
+        "active": false,
+        "announced_position_x": 10,
+        "announced_position_y": 14,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
             }
         },
         "movement_step_index": 0,
@@ -1562,6 +1865,122 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
+    "/root/MainScene/Areas/CityJobcenterstreetJobcenterArea/NPC": {
+        "current_position_x": 6.5,
+        "current_position_y": 12,
+        "active": false,
+        "announced_position_x": 6.5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
     "/root/MainScene/Areas/CityPolicestreetArea/TrafficLight": {
         "is_on": false
     },
@@ -1685,6 +2104,354 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NPC": {
+        "current_position_x": 1,
+        "current_position_y": 10,
+        "active": false,
+        "announced_position_x": 1,
+        "announced_position_y": 10,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NPC2": {
+        "current_position_x": 6,
+        "current_position_y": 11,
+        "active": false,
+        "announced_position_x": 6,
+        "announced_position_y": 11,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NPC3": {
+        "current_position_x": 10,
+        "current_position_y": 4,
+        "active": false,
+        "announced_position_x": 10,
+        "announced_position_y": 4,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
     "/root/MainScene/Areas/CityBankstreetArea/TrafficLight": {
         "is_on": true
     },
@@ -1777,6 +2544,354 @@
                     }
                 ],
                 "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NPC": {
+        "current_position_x": 2.5,
+        "current_position_y": 12,
+        "active": false,
+        "announced_position_x": 2.5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NPC2": {
+        "current_position_x": 8.5,
+        "current_position_y": 12,
+        "active": false,
+        "announced_position_x": 8.5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetOfficeArea/NPC": {
+        "current_position_x": 6.5,
+        "current_position_y": 12,
+        "active": false,
+        "announced_position_x": 6.5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger0"
+                    }
+                ],
+                "repeats": 3
+            },
+            "state1": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 1,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "wait",
+                        "seconds": 1,
+                        "trigger_id": "trigger1"
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "horizontal": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "left",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
+            },
+            "vertical": {
+                "new_start_position_x": null,
+                "new_start_position_y": null,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    }
+                ],
+                "repeats": "infinity"
             }
         },
         "movement_step_index": 0,

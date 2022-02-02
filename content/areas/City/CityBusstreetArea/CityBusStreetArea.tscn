@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_taxi_car.tres" type="SpriteFrames" id=10]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=11]
+[ext_resource path="res://assets/animated_sprites/tres/characters/citizen01.tres" type="SpriteFrames" id=12]
 [ext_resource path="res://content/trigger/AuthenticationTrigger.gd" type="Script" id=16]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=17]
 [ext_resource path="res://content/trigger/StartCarTrigger.gd" type="Script" id=18]
@@ -204,3 +205,10 @@ current_position = Vector2( 12, 9 )
 [node name="CarStartTrigger" type="Node" parent="Car11_3"]
 script = ExtResource( 18 )
 id = "tid_city_busstreet_car_11_3_start"
+
+[node name="NPC" parent="." instance=ExtResource( 17 )]
+position = Vector2( 672, 928 )
+z_index = 3
+movement_filename = "res://doc/movement.json"
+animation = ExtResource( 12 )
+current_position = Vector2( 10, 14 )

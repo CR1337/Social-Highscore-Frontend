@@ -1,7 +1,7 @@
 extends Node
 
-onready var player = get_node("/root/MainScene/player")
-onready var shaderRect = get_node("/root/MainScene/ShaderRectNode2D/ShaderRect")
+onready var player = get_node("/root/MainScene/Player")
+onready var shaderRect = get_node("/root/MainScene/ShaderRectNode/ShaderRect")
 
 onready var transparentOverlay = get_node("/root/MainScene/Overlays/TransparentOverlay")
 onready var smartphoneMenu = get_node("/root/MainScene/Overlays/SmartphoneMenu")
