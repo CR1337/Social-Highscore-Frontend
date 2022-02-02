@@ -1,39 +1,51 @@
 extends Node2D
 
-onready var _news_buttons = [
-	$Background/MarginContainer/VBoxContainer/News0Button,
-	$Background/MarginContainer/VBoxContainer/News1Button,
-	$Background/MarginContainer/VBoxContainer/News2Button
-]
+onready var _scroll_container = $Background/MarginContainer/VBoxContainer/ScrollContainer
+onready var _container = $Background/MarginContainer/VBoxContainer/ScrollContainer/Container
+const _font_path = "res://assets/fonts/Consolas.tres"
+
+var _buttons = []
+
+const _button_height = 400
 
 func _ready():
 	NewsController.connect("sig_publish_news", self, "_on_publish_news")
 	call_deferred("update_mainpage")
 	
 	call_deferred("_DEBUG_add_news")
+	
+func _add_button(title, news_index):
+	var button = Button.new()
+	button.text = title
+	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	button.rect_min_size = Vector2(0, _button_height)
+	button.mouse_filter = Control.MOUSE_FILTER_PASS
+	button.add_font_override("font", load(_font_path))
+	button.connect("pressed", self, "_on_news_button_pressed", [news_index])
+	_buttons.append(button)
+	_container.add_child(button)
+	button.update()
+	
+func _remove_all_buttons():
+	for button in _buttons:
+		_container.remove_child(button)
+		button.queue_free()
+	_buttons = []
 
 func update_mainpage():
-	for i in len(_news_buttons):
-		if (len(NewsController.news) - 1) < i:
-			_news_buttons[i].disabled = true
-			_news_buttons[i].text = ""
-		else:
-			_news_buttons[i].disabled = false
-			_news_buttons[i].text = NewsController.news[i]['title']
+	_remove_all_buttons()
+	for news_index in len(NewsController.news):
+		var news = NewsController.news[news_index]
+		if not news['expired']:
+			_add_button(news['title'], news_index)
+	_scroll_container.scroll_vertical = 0
+
+func _on_news_button_pressed(news_index):
+	ViewportManager.change_to_news_app_newspage(news_index)
 
 func _on_BackButton_pressed():
 	ViewportManager.change_to_smartphone()
-
-func _on_News0Button_pressed():
-	ViewportManager.change_to_news_app_newspage(0)
-
-func _on_News1Button_pressed():
-	ViewportManager.change_to_news_app_newspage(1)
-
-func _on_News2Button_pressed():
-	ViewportManager.change_to_news_app_newspage(2)
 	
 func _on_publish_news(title, text, preferred_emotion):
 	call_deferred("update_mainpage")
 	
-

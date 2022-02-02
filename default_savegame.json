@@ -2169,7 +2169,33 @@
     },
     "/root/NewsController": {
         "news": [
-
+            {
+                "title": "BREAKING NEWS: We are happy",
+                "text": "The people are happy",
+                "preferred_emotion": "happy",
+                "lifetime": 1,
+                "age": 0,
+                "reacted_on": false,
+                "expired": false
+            },
+            {
+                "title": "BREAKING NEWS: We are angry",
+                "text": "The people are angry",
+                "preferred_emotion": "angry",
+                "lifetime": 2,
+                "age": 0,
+                "reacted_on": false,
+                "expired": false
+            },
+            {
+                "title": "BREAKING NEWS: Some other news",
+                "text": "The people are",
+                "preferred_emotion": "happy",
+                "lifetime": 3,
+                "age": 0,
+                "reacted_on": false,
+                "expired": false
+            }
         ]
     },
     "/root/TrafficController": {
