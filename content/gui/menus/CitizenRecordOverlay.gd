@@ -18,20 +18,95 @@ func display_records():
 		print(record)
 
 func _create_label(text):
-	var label = Label.new()
+	var label = RichTextLabel.new()
+	label.rect_min_size = Vector2(728, 64)
 	label.text = text
 	var dynamic_font = DynamicFont.new()
 	dynamic_font = load("assets/fonts/Consolas.tres")
-	label.add_font_override("font", dynamic_font)
-	label.add_color_override("font_color", Color(1, 1, 1, 1))
+	label.set("custom_fonts/normal_font", dynamic_font)
+	label.set("custom_colors/default_color", Color(1, 1, 1, 1))
 	return label
+	
+func _create_header(record, header_container):
+	header_container.add_child(_create_label(record['type']))
+	header_container.add_child(_create_label('time: ' + str(record['time'])))
+	
+func _create_texture(b64image, textureRect):
+	var raw_image = Marshalls.base64_to_raw(b64image)
+	var image = Image.new()
+	image.load_jpg_from_buffer(raw_image)
+	
+	var tmp_texture = ImageTexture.new()
+	tmp_texture.create_from_image(image)
+	textureRect.texture = tmp_texture
+	
+func _create_info_list(record, parameter_list, label_list, list_container):
+	for i in len(parameter_list):
+		list_container.add_child(_create_label(
+			label_list[i] + ": " + 
+			str(record[parameter_list[i]])))
 		
 func _display_record(record):
 	match record['type']:
 		'emotional_reaction_on_news':
 			_display_emotional_reaction_on_news(record)
+		'refused_reaction_on_news':
+			_display_refused_reaction_on_news(record)
+		_: box_container.add_child(_create_label(record['type']))
 	
 func _display_emotional_reaction_on_news(record):
+	var new_record = VBoxContainer.new()
+	new_record.rect_min_size = Vector2(728, 128)
+	var header_container = HBoxContainer.new()
+	header_container.set("custom_constants/separation", 100)
+	var body_container = HBoxContainer.new()
+	body_container.set("custom_constants/separation", 0)
+	var info_list = VBoxContainer.new()
+	info_list.rect_min_size = Vector2(600, 128)
+	var image_texture_rect = TextureRect.new()
+	image_texture_rect.rect_min_size = Vector2(128, 128)
+	image_texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	image_texture_rect.expand = true
+
+	_create_header(record, header_container)
+	
+	_create_texture(record['face'], image_texture_rect)
+	
+	_create_info_list(record,
+		['score', 'news', 'preferred_emotion', 'emotion'],
+		['Score Difference', 'News', 'Expected emotion', 'Actual Emotion'],
+		info_list
+	)
+	
+	new_record.add_child(header_container)
+	body_container.add_child(info_list)
+	body_container.add_child(image_texture_rect)
+	new_record.add_child(body_container)
+	box_container.add_child(new_record)
+
+func _display_refused_reaction_on_news(record):
+	var new_record = VBoxContainer.new()
+	new_record.rect_min_size = Vector2(728, 128)
+	var header_container = HBoxContainer.new()
+	header_container.rect_min_size = Vector2(728, 32)
+	header_container.set("custom_constants/separation", 100)
+	var info_list = VBoxContainer.new()
+	info_list.rect_min_size = Vector2(728, 96)
+
+	_create_header(record, header_container)
+
+	_create_info_list(record,
+		['score', 'news', 'preferred_emotion'],
+		['Score Difference', 'News', 'Expected Emotion'],
+		info_list
+	)
+	
+	new_record.add_child(header_container)
+	new_record.add_child(info_list)
+	box_container.add_child(new_record)
+
+
+func _display_emotional_reaction_at_authentication(record):
 	var new_record = VBoxContainer.new()
 	new_record.rect_min_size = Vector2(728, 128)
 	var header_container = HBoxContainer.new()
@@ -40,48 +115,21 @@ func _display_emotional_reaction_on_news(record):
 	var info_list = VBoxContainer.new()
 	var image_texture_rect = TextureRect.new()
 
-	header_container.add_child(_create_label(record['type']))
-	header_container.add_child(_create_label('time: ' + str(record['time'])))
+	_create_header(record, header_container)
 	
-	var raw_image = Marshalls.base64_to_raw(record['face'])
-	var image = Image.new()
-	image.load_jpg_from_buffer(raw_image)
+	_create_texture(record['face'], image_texture_rect)
 	
-	var tmp_texture = ImageTexture.new()
-	tmp_texture.create_from_image(image)
-	TextureRect.texture = tmp_texture
-
-	info_list.add_child(_create_label(record['news']))
-	info_list.add_child(_create_label(record['emotion']))
-	info_list.add_child(_create_label(record['prefered_emotion']))
-	
+	_create_info_list(record,
+		['score', 'place', 'preferred_emotion', 'reason', 'emotion'],
+		['Score Difference', 'Place', 'Expected emotion', 'Reason', 'Actual Emotion'],
+		info_list
+	)
 	new_record.add_child(header_container)
 	body_container.add_child(info_list)
 	body_container.add_child()
 	new_record.add_child(body_container)
 	box_container.add_child(new_record)
-#
-#func _display_refused_reaction_on_news(record):
-#	var params = {
-#		'type': 'refused_reaction_on_news',
-#		'score': score,
-#		'news': news,
-#		'preferred_emotion': preferred_emotion
-#	}
-#	_add_record(params)
-#
-#func add_emotional_reaction_at_authentication(score, place, face, emotion, reason, preferred_emotion):
-#	var params = {
-#		'type': 'emotional_reaction_at_authentication',
-#		'score': score,
-#		'place': place,
-#		'face': face,
-#		'emotion': emotion,
-#		'reason': reason,
-#		'preferred_emotion': preferred_emotion
-#	}
-#	_add_record(params)
-#
+
 #func add_traffic_violation(score, violation_type, place, screenshot):
 #	var params = {
 #		'type': 'traffic_violation',

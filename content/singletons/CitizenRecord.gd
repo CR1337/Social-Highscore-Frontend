@@ -17,7 +17,7 @@ func _on_image_processing_done(parsed_response, job_id, image):
 	# TODO
 
 func _add_record(params):
-	params['time'] = TimeController.get_gametime()
+	params['time'] = TimeController.get_daytime()
 	records.append(params)
 	GameStateController.change_score(params['score'])
 
@@ -344,6 +344,25 @@ func restore_state(state):
 	records = state['records']
 	
 func _DEBUG_add_records():
-	CitizenRecord.add_unhealthy_food_at_home(-15, 'ice cream')
 	CitizenRecord.add_blood_donation(50)
 	CitizenRecord.add_refused_reaction_on_news(-40, 'The economy is good', 'happy')
+	CitizenRecord.add_emotional_reaction_on_news(10, 'This is good', Debug.b64_debug_image, 'happy', 'happy')
+	CitizenRecord.add_traffic_violation(-10, 'Disregarded traffic light', 'Living Homestreet', Debug.b64_debug_image)
+	CitizenRecord.add_organ_donation(100)
+	CitizenRecord.add_critical_speech_in_reallife(-10, 'Partner', 'I hate this', 'Home', Debug.b64_debug_image)
+	CitizenRecord.add_critical_speech_in_messenger(-10, 'Friend', 'I want to leave')
+	CitizenRecord.add_fitness_studio_visit(5)
+	CitizenRecord.add_fitness_studio_not_visited(-10)
+	CitizenRecord.add_healthy_food_in_restaurant(5, 'Vegetable Soup')
+	CitizenRecord.add_unhealthy_food_in_restaurant(-10, 'Burger')
+	CitizenRecord.add_healthy_food_at_home(5, 'Fresh Salad')
+	CitizenRecord.add_unhealthy_food_at_home(-15, 'ice cream')
+	CitizenRecord.add_dept(-100, 500)
+	CitizenRecord.add_skipped_work(-50)
+	CitizenRecord.add_too_late_to_work(-50, 30)
+	CitizenRecord.add_left_work_too_early(-50, 30)
+	CitizenRecord.add_didnt_visit_mom(-10, 3)
+	CitizenRecord.add_contact_to_dissident(-40, 'Friend', 'Shady Street', Debug.b64_debug_image)
+	CitizenRecord.add_reported_dissident(50, 'Friend', 'Critical Speach')
+	CitizenRecord.add_lied_to_boss(-20, Debug.b64_debug_image)
+	CitizenRecord.add_rescued_friend(-50, Debug.b64_debug_image)
