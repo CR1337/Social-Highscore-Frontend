@@ -20,11 +20,11 @@ var current_node_ids = {
 	'boss': ""
 }
 
-onready var name_label = $Background/MarginContainer/VBoxContainer/NameLabel
-onready var messages_label = $Background/MarginContainer/VBoxContainer/MessagesLabel
-onready var message_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/MessageButton
-onready var send_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/SendButton
-onready var margin_container = $Background/MarginContainer
+onready var name_label = $Background/Margin/VBox/NameLabel
+onready var messages_label = $Background/Margin/VBox/MessagesLabel
+onready var message_button = $Background/Margin/VBox/HBox/MessageButton
+onready var send_button = $Background/Margin/VBox/HBox/SendButton
+onready var margin_container = $Background/Margin
 
 var current_contact: String
 var dialog_dicts = {

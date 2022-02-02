@@ -1,49 +1,49 @@
 [gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://content/movables/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://content/areas/Living/LivingPharmacystreetArea/LivingPharmacystreetArea.tscn" type="PackedScene" id=3]
-[ext_resource path="res://content/areas/Living/LivingFriendstreetPartnerArea/LivingFriendstreetPartnerArea.tscn" type="PackedScene" id=4]
-[ext_resource path="res://content/gui/menus/MessengerAppMessages.tscn" type="PackedScene" id=5]
-[ext_resource path="res://content/areas/Living/LivingBusstreetArea/LivingBusStreetArea.tscn" type="PackedScene" id=6]
-[ext_resource path="res://content/gfx/ShaderRect.gd" type="Script" id=7]
-[ext_resource path="res://content/gui/DebugLabel.gd" type="Script" id=8]
-[ext_resource path="res://content/gui/menus/SmartphoneMenu.tscn" type="PackedScene" id=9]
-[ext_resource path="res://content/gui/menus/MessengerAppContacts.tscn" type="PackedScene" id=10]
-[ext_resource path="res://content/gui/menus/GameMenu.tscn" type="PackedScene" id=11]
-[ext_resource path="res://content/gui/menus/ConfigMenu.tscn" type="PackedScene" id=12]
-[ext_resource path="res://content/areas/Living/LivingHomestreetArea/LivingHomestreetArea.tscn" type="PackedScene" id=13]
-[ext_resource path="res://content/areas/Living/LivingFriendstreetArea/LivingFriendstreetArea.tscn" type="PackedScene" id=14]
-[ext_resource path="res://content/areas/Living/LivingHomestreetHomeArea/LivingHomestreetHome.tscn" type="PackedScene" id=15]
-[ext_resource path="res://content/areas/City/CityBusstreetArea/CityBusStreetArea.tscn" type="PackedScene" id=16]
-[ext_resource path="res://content/areas/City/CityJobcenterstreetArea/CityJobcenterStreetArea.tscn" type="PackedScene" id=17]
-[ext_resource path="res://content/areas/City/CityShadystreetArea/CityShadyStreetArea.tscn" type="PackedScene" id=18]
-[ext_resource path="res://content/areas/City/CityPolicestreetArea/CityPoliceStreetArea.tscn" type="PackedScene" id=19]
-[ext_resource path="res://content/areas/City/CityBankstreetArea/CityBankStreetArea.tscn" type="PackedScene" id=20]
-[ext_resource path="res://content/areas/City/CityStorestreetArea/CityStoreStreetArea.tscn" type="PackedScene" id=21]
-[ext_resource path="res://content/areas/Utility/UtilityBusstreetArea/UtilityBusStreetArea.tscn" type="PackedScene" id=22]
-[ext_resource path="res://content/areas/Utility/UtilityPrisonstreetArea/UtilityPrisonStreetArea.tscn" type="PackedScene" id=23]
-[ext_resource path="res://content/gui/menus/BusMenu.tscn" type="PackedScene" id=24]
-[ext_resource path="res://content/areas/Living/LivingHomestreetMomArea/LivingHomestreetMomArea.tscn" type="PackedScene" id=25]
-[ext_resource path="res://content/areas/Living/LivingFriendstreetFriendArea/LivingFriendstreetFriendArea.tscn" type="PackedScene" id=26]
-[ext_resource path="res://content/areas/Living/LivingPharmacyStreetPharmacyArea/LivingPharmacyStreetPharmacy.tscn" type="PackedScene" id=27]
-[ext_resource path="res://content/areas/Utility/UtilityPrisonstreetPrisonArea/UtilityPrisonstreetPrison.tscn" type="PackedScene" id=28]
-[ext_resource path="res://content/areas/Utility/UtilityBusstreetHospitalArea/UtilityBusstreetHospital.tscn" type="PackedScene" id=29]
-[ext_resource path="res://content/gui/menus/ReferenceImageMenu.tscn" type="PackedScene" id=30]
-[ext_resource path="res://content/gui/menus/AuthenticationOverlay.tscn" type="PackedScene" id=31]
-[ext_resource path="res://content/areas/Utility/UtilityBusstreetMallArea/UtilityBusstreetMall.tscn" type="PackedScene" id=32]
-[ext_resource path="res://content/areas/City/CityPolicestreetPoliceArea/CityPolicestreetPolice.tscn" type="PackedScene" id=33]
-[ext_resource path="res://content/areas/City/CityStoreStreetStoreArea/CityStoreStreetStore.tscn" type="PackedScene" id=34]
-[ext_resource path="res://content/areas/City/CityJobcenterstreetJobcenterArea/CityJobcenterstreetJobcenter.tscn" type="PackedScene" id=35]
-[ext_resource path="res://content/areas/City/CityBankstreetOfficeArea/CityBankstreetOffice.tscn" type="PackedScene" id=36]
-[ext_resource path="res://content/areas/City/CityBankstreetBankArea/CityBankstreetBank.tscn" type="PackedScene" id=37]
-[ext_resource path="res://content/gui/menus/DialogOverlay.tscn" type="PackedScene" id=38]
-[ext_resource path="res://content/gui/menus/BankingApp.tscn" type="PackedScene" id=39]
-[ext_resource path="res://content/gui/menus/CitizenApp.tscn" type="PackedScene" id=40]
-[ext_resource path="res://content/gui/menus/NewsAppMainpage.tscn" type="PackedScene" id=41]
-[ext_resource path="res://content/gui/menus/NewsAppNewspage.tscn" type="PackedScene" id=42]
-[ext_resource path="res://content/gui/menus/NotificationOverlay.tscn" type="PackedScene" id=43]
-[ext_resource path="res://content/gui/menus/CitizenRecordOverlay.tscn" type="PackedScene" id=44]
+[ext_resource path="res://content/gui/DebugLabel.gd" type="Script" id=1]
+[ext_resource path="res://content/gfx/ShaderRect.gd" type="Script" id=2]
+[ext_resource path="res://content/gui/menus/GameMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://content/areas/Utility/UtilityPrisonstreetArea/UtilityPrisonStreetArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://content/areas/Living/LivingPharmacyStreetPharmacyArea/LivingPharmacyStreetPharmacy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://content/areas/Living/LivingFriendstreetFriendArea/LivingFriendstreetFriendArea.tscn" type="PackedScene" id=6]
+[ext_resource path="res://content/areas/City/CityShadystreetArea/CityShadyStreetArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://content/areas/City/CityBusstreetArea/CityBusStreetArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://content/areas/City/CityJobcenterstreetArea/CityJobcenterStreetArea.tscn" type="PackedScene" id=9]
+[ext_resource path="res://content/areas/City/CityStoreStreetStoreArea/CityStoreStreetStore.tscn" type="PackedScene" id=10]
+[ext_resource path="res://content/gui/menus/ConfigMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://content/gui/menus/ReferenceImageMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://content/gui/menus/AuthenticationOverlay.tscn" type="PackedScene" id=13]
+[ext_resource path="res://content/gui/menus/DialogOverlay.tscn" type="PackedScene" id=14]
+[ext_resource path="res://content/gui/menus/MessengerAppContacts.tscn" type="PackedScene" id=15]
+[ext_resource path="res://content/areas/Utility/UtilityBusstreetMallArea/UtilityBusstreetMall.tscn" type="PackedScene" id=16]
+[ext_resource path="res://content/areas/City/CityPolicestreetArea/CityPoliceStreetArea.tscn" type="PackedScene" id=17]
+[ext_resource path="res://content/areas/City/CityPolicestreetPoliceArea/CityPolicestreetPolice.tscn" type="PackedScene" id=18]
+[ext_resource path="res://content/areas/City/CityStorestreetArea/CityStoreStreetArea.tscn" type="PackedScene" id=19]
+[ext_resource path="res://content/areas/Living/LivingHomestreetMomArea/LivingHomestreetMomArea.tscn" type="PackedScene" id=20]
+[ext_resource path="res://content/gui/menus/MessengerAppMessages.tscn" type="PackedScene" id=21]
+[ext_resource path="res://content/gui/menus/NewsAppNewspage.tscn" type="PackedScene" id=22]
+[ext_resource path="res://content/areas/Utility/UtilityBusstreetArea/UtilityBusStreetArea.tscn" type="PackedScene" id=23]
+[ext_resource path="res://content/movables/Player.tscn" type="PackedScene" id=24]
+[ext_resource path="res://content/areas/City/CityBankstreetBankArea/CityBankstreetBank.tscn" type="PackedScene" id=25]
+[ext_resource path="res://content/areas/Living/LivingFriendstreetPartnerArea/LivingFriendstreetPartnerArea.tscn" type="PackedScene" id=26]
+[ext_resource path="res://content/areas/City/CityBankstreetOfficeArea/CityBankstreetOffice.tscn" type="PackedScene" id=27]
+[ext_resource path="res://content/areas/Living/LivingPharmacystreetArea/LivingPharmacystreetArea.tscn" type="PackedScene" id=28]
+[ext_resource path="res://content/gui/menus/BankingApp.tscn" type="PackedScene" id=29]
+[ext_resource path="res://content/areas/Utility/UtilityPrisonstreetPrisonArea/UtilityPrisonstreetPrison.tscn" type="PackedScene" id=30]
+[ext_resource path="res://content/areas/Living/LivingBusstreetArea/LivingBusStreetArea.tscn" type="PackedScene" id=31]
+[ext_resource path="res://content/gui/menus/BusMenu.tscn" type="PackedScene" id=32]
+[ext_resource path="res://content/areas/City/CityJobcenterstreetJobcenterArea/CityJobcenterstreetJobcenter.tscn" type="PackedScene" id=33]
+[ext_resource path="res://content/gui/menus/CitizenRecordOverlay.tscn" type="PackedScene" id=34]
+[ext_resource path="res://content/areas/Living/LivingFriendstreetArea/LivingFriendstreetArea.tscn" type="PackedScene" id=35]
+[ext_resource path="res://content/areas/Utility/UtilityBusstreetHospitalArea/UtilityBusstreetHospital.tscn" type="PackedScene" id=36]
+[ext_resource path="res://content/gui/menus/NotificationOverlay.tscn" type="PackedScene" id=37]
+[ext_resource path="res://content/gui/menus/SmartphoneMenu.tscn" type="PackedScene" id=38]
+[ext_resource path="res://content/areas/Living/LivingHomestreetHomeArea/LivingHomestreetHome.tscn" type="PackedScene" id=39]
+[ext_resource path="res://content/areas/Living/LivingHomestreetArea/LivingHomestreetArea.tscn" type="PackedScene" id=40]
+[ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=41]
+[ext_resource path="res://content/areas/City/CityBankstreetArea/CityBankStreetArea.tscn" type="PackedScene" id=42]
+[ext_resource path="res://content/gui/menus/NewsAppMainpage.tscn" type="PackedScene" id=43]
+[ext_resource path="res://content/gui/menus/CitizenApp.tscn" type="PackedScene" id=44]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -58,14 +58,14 @@ void fragment() {
 shader = SubResource( 1 )
 shader_param/opacity = 0.0
 
-[node name="mainScene" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 
-[node name="InputUI" parent="." instance=ExtResource( 2 )]
+[node name="InputUI" parent="." instance=ExtResource( 41 )]
 z_index = 2
 
 [node name="Areas" type="Node2D" parent="."]
 
-[node name="LivingHomestreetArea" parent="Areas" instance=ExtResource( 13 )]
+[node name="LivingHomestreetArea" parent="Areas" instance=ExtResource( 40 )]
 position = Vector2( 0, 0 )
 leaveLeftAreaPath = NodePath("../LivingPharmacystreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
@@ -73,59 +73,59 @@ leaveRightAreaPath = NodePath("../LivingFriendstreetArea")
 leaveRightPlayerPosition = Vector2( 0, -1 )
 leaveTopAreaPath = NodePath("../LivingBusstreetArea")
 leaveTopPlayerPosition = Vector2( -1, 17 )
-leaveHomeAreaPath = NodePath("../LivingHomestreetHomeArea")
-leaveHomePlayerPosition = Vector2( 7, 17 )
-leaveMomAreaPath = NodePath("../LivingHomestreetMomArea")
-leaveMomPlayerPosition = Vector2( 7, 17 )
+leave_home_area_path = NodePath("../LivingHomestreetHomeArea")
+leave_home_player_position = Vector2( 7, 17 )
+leave_mom_area_path = NodePath("../LivingHomestreetMomArea")
+leave_mom_player_position = Vector2( 7, 17 )
 
-[node name="LivingFriendstreetArea" parent="Areas" instance=ExtResource( 14 )]
+[node name="LivingFriendstreetArea" parent="Areas" instance=ExtResource( 35 )]
 position = Vector2( 1542.12, 19.9635 )
 leaveLeftAreaPath = NodePath("../LivingHomestreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
-leaveFriendAreaPath = NodePath("../LivingFriendstreetFriendArea")
-leaveFriendPlayerPosition = Vector2( 7, 17 )
-leavePartnerAreaPath = NodePath("../LivingFriendstreetPartnerArea")
-leavePartnerPlayerPosition = Vector2( 7, 17 )
+leave_friend_area_path = NodePath("../LivingFriendstreetFriendArea")
+leave_friend_player_position = Vector2( 7, 17 )
+leave_partner_area_path = NodePath("../LivingFriendstreetPartnerArea")
+leave_partner_player_position = Vector2( 7, 17 )
 
-[node name="LivingPharmacystreetArea" parent="Areas" instance=ExtResource( 3 )]
+[node name="LivingPharmacystreetArea" parent="Areas" instance=ExtResource( 28 )]
 position = Vector2( -1499.55, -15.9476 )
 leaveRightAreaPath = NodePath("../LivingHomestreetArea")
 leaveRightPlayerPosition = Vector2( 0, -1 )
-leavePharmacyAreaPath = NodePath("../LivingPharmacystreetPharmacyArea")
-leavePharmacyPlayerPosition = Vector2( 7, 17 )
+leave_pharmacy_area_path = NodePath("../LivingPharmacystreetPharmacyArea")
+leave_pharmacy_player_position = Vector2( 7, 17 )
 
-[node name="LivingPharmacystreetPharmacyArea" parent="Areas" instance=ExtResource( 27 )]
+[node name="LivingPharmacystreetPharmacyArea" parent="Areas" instance=ExtResource( 5 )]
 position = Vector2( -2031.48, 1303.07 )
 leaveAreaPath = NodePath("../LivingPharmacystreetArea")
 leavePlayerPosition = Vector2( 3, 14 )
 
-[node name="LivingBusstreetArea" parent="Areas" instance=ExtResource( 6 )]
+[node name="LivingBusstreetArea" parent="Areas" instance=ExtResource( 31 )]
 position = Vector2( -58.3441, -1366.95 )
 leaveBottomAreaPath = NodePath("../LivingHomestreetArea")
 leaveBottomPlayerPosition = Vector2( -1, 0 )
-BusOverlayPath = NodePath("../../Overlays/BusMenu")
+bus_overlay_path = NodePath("../../Overlays/BusMenu")
 
-[node name="LivingHomestreetHomeArea" parent="Areas" instance=ExtResource( 15 )]
+[node name="LivingHomestreetHomeArea" parent="Areas" instance=ExtResource( 39 )]
 position = Vector2( 59.9939, 1898.6 )
 leaveAreaPath = NodePath("../LivingHomestreetArea")
 leavePlayerPosition = Vector2( 10, 14 )
 
-[node name="LivingHomestreetMomArea" parent="Areas" instance=ExtResource( 25 )]
+[node name="LivingHomestreetMomArea" parent="Areas" instance=ExtResource( 20 )]
 position = Vector2( -1074.55, 1915.41 )
 leaveAreaPath = NodePath("../LivingHomestreetArea")
 leavePlayerPosition = Vector2( 3, 14 )
 
-[node name="LivingFriendstreetPartnerArea" parent="Areas" instance=ExtResource( 4 )]
+[node name="LivingFriendstreetPartnerArea" parent="Areas" instance=ExtResource( 26 )]
 position = Vector2( 1203.67, -1223.45 )
 leaveAreaPath = NodePath("../LivingFriendstreetArea")
 leavePlayerPosition = Vector2( 3, 6 )
 
-[node name="LivingFriendstreetFriendArea" parent="Areas" instance=ExtResource( 26 )]
+[node name="LivingFriendstreetFriendArea" parent="Areas" instance=ExtResource( 6 )]
 position = Vector2( 1133.21, 1183.88 )
 leaveAreaPath = NodePath("../LivingFriendstreetArea")
 leavePlayerPosition = Vector2( 10, 14 )
 
-[node name="CityShadystreetArea" parent="Areas" instance=ExtResource( 18 )]
+[node name="CityShadystreetArea" parent="Areas" instance=ExtResource( 7 )]
 position = Vector2( 1230.11, -3683.07 )
 leaveRightAreaPath = NodePath("../CityPolicestreetArea")
 leaveRightPlayerPosition = Vector2( 0, -1 )
@@ -134,29 +134,29 @@ leaveTopPlayerPosition = Vector2( -1, 17 )
 leaveBottomAreaPath = NodePath("../CityBankstreetArea")
 leaveBottomPlayerPosition = Vector2( -1, 0 )
 
-[node name="CityBusstreetArea" parent="Areas" instance=ExtResource( 16 )]
+[node name="CityBusstreetArea" parent="Areas" instance=ExtResource( 8 )]
 position = Vector2( 1227.28, -4837.69 )
 leaveRightAreaPath = NodePath("../CityJobcenterstreetArea")
 leaveRightPlayerPosition = Vector2( 0, -1 )
 leaveBottomAreaPath = NodePath("../CityShadystreetArea")
 leaveBottomPlayerPosition = Vector2( -1, 0 )
-BusOverlayPath = NodePath("../../Overlays/BusMenu")
+bus_overlay_path = NodePath("../../Overlays/BusMenu")
 
-[node name="CityJobcenterstreetArea" parent="Areas" instance=ExtResource( 17 )]
+[node name="CityJobcenterstreetArea" parent="Areas" instance=ExtResource( 9 )]
 position = Vector2( 2146.52, -4837.59 )
 leaveLeftAreaPath = NodePath("../CityBusstreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
 leaveBottomAreaPath = NodePath("../CityPolicestreetArea")
 leaveBottomPlayerPosition = Vector2( -1, 0 )
-leaveJobcenterAreaPath = NodePath("../CityJobcenterstreetJobcenterArea")
-leaveJobcenterPlayerPosition = Vector2( 7, 17 )
+leave_jobcenter_area_path = NodePath("../CityJobcenterstreetJobcenterArea")
+leave_jobcenter_player_position = Vector2( 7, 17 )
 
-[node name="CityJobcenterstreetJobcenterArea" parent="Areas" instance=ExtResource( 35 )]
+[node name="CityJobcenterstreetJobcenterArea" parent="Areas" instance=ExtResource( 33 )]
 position = Vector2( 3068.92, -4891.02 )
 leaveAreaPath = NodePath("../CityJobcenterstreetArea")
 leavePlayerPosition = Vector2( 10, 9 )
 
-[node name="CityPolicestreetArea" parent="Areas" instance=ExtResource( 19 )]
+[node name="CityPolicestreetArea" parent="Areas" instance=ExtResource( 17 )]
 position = Vector2( 2138.09, -3683.07 )
 leaveLeftAreaPath = NodePath("../CityShadystreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
@@ -164,77 +164,77 @@ leaveTopAreaPath = NodePath("../CityJobcenterstreetArea")
 leaveTopPlayerPosition = Vector2( -1, 17 )
 leaveBottomAreaPath = NodePath("../CityStorestreetArea")
 leaveBottomPlayerPosition = Vector2( -1, 0 )
-leavePoliceAreaPath = NodePath("../CityPolicestreetPoliceArea")
-leavePolicePlayerPosition = Vector2( 7, 17 )
+leave_police_area_path = NodePath("../CityPolicestreetPoliceArea")
+leave_police_player_position = Vector2( 7, 17 )
 
-[node name="CityPolicestreetPoliceArea" parent="Areas" instance=ExtResource( 33 )]
+[node name="CityPolicestreetPoliceArea" parent="Areas" instance=ExtResource( 18 )]
 position = Vector2( 3077.56, -3721.91 )
 leaveAreaPath = NodePath("../CityPolicestreetArea")
 leavePlayerPosition = Vector2( 10, 11 )
 
-[node name="CityBankstreetArea" parent="Areas" instance=ExtResource( 20 )]
+[node name="CityBankstreetArea" parent="Areas" instance=ExtResource( 42 )]
 position = Vector2( 1234.11, -2516.79 )
 leaveRightAreaPath = NodePath("../CityStorestreetArea")
 leaveRightPlayerPosition = Vector2( 0, -1 )
 leaveTopAreaPath = NodePath("../CityShadystreetArea")
 leaveTopPlayerPosition = Vector2( -1, 17 )
-leaveOfficeAreaPath = NodePath("../CityBankstreetOfficeArea")
-leaveOfficePlayerPosition = Vector2( 7, 17 )
-leaveBankAreaPath = NodePath("../CityBankstreetBankArea")
-leaveBankPlayerPosition = Vector2( 7, 17 )
+leave_office_area_path = NodePath("../CityBankstreetOfficeArea")
+leave_office_player_position = Vector2( 7, 17 )
+leave_bank_area_path = NodePath("../CityBankstreetBankArea")
+leave_bank_player_position = Vector2( 7, 17 )
 
-[node name="CityBankstreetBankArea" parent="Areas" instance=ExtResource( 37 )]
+[node name="CityBankstreetBankArea" parent="Areas" instance=ExtResource( 25 )]
 position = Vector2( 279.298, -2530.93 )
 leaveAreaPath = NodePath("../CityBankstreetArea")
 leavePlayerPosition = Vector2( 6, 15 )
 
-[node name="CityBankstreetOfficeArea" parent="Areas" instance=ExtResource( 36 )]
+[node name="CityBankstreetOfficeArea" parent="Areas" instance=ExtResource( 27 )]
 position = Vector2( 136.858, -3729.39 )
 leaveAreaPath = NodePath("../CityBankstreetArea")
 leavePlayerPosition = Vector2( 3, 4 )
 
-[node name="CityStorestreetArea" parent="Areas" instance=ExtResource( 21 )]
+[node name="CityStorestreetArea" parent="Areas" instance=ExtResource( 19 )]
 position = Vector2( 2135.09, -2525.13 )
 leaveLeftAreaPath = NodePath("../CityBankstreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
 leaveTopAreaPath = NodePath("../CityPolicestreetArea")
 leaveTopPlayerPosition = Vector2( -1, 17 )
-leaveStoreAreaPath = NodePath("../CityStoreStreetStoreArea")
-leaveStorePlayerPosition = Vector2( 7, 17 )
+leave_store_area_path = NodePath("../CityStoreStreetStoreArea")
+leave_store_player_position = Vector2( 7, 17 )
 
-[node name="CityStoreStreetStoreArea" parent="Areas" instance=ExtResource( 34 )]
+[node name="CityStoreStreetStoreArea" parent="Areas" instance=ExtResource( 10 )]
 position = Vector2( 3118.45, -2547.48 )
 leaveAreaPath = NodePath("../CityStorestreetArea")
 leavePlayerPosition = Vector2( 10, 14 )
 
-[node name="UtilityBusstreetArea" parent="Areas" instance=ExtResource( 22 )]
+[node name="UtilityBusstreetArea" parent="Areas" instance=ExtResource( 23 )]
 position = Vector2( -1070.91, -3965.56 )
 leaveLeftAreaPath = NodePath("../UtilityPrisonstreetArea")
 leaveLeftPlayerPosition = Vector2( 13, -1 )
-leaveHospitalAreaPath = NodePath("../UtilityBusstreetHospitalArea")
-leaveHospitalPlayerPosition = Vector2( 7, 17 )
-leaveMallAreaPath = NodePath("../UtilityBusstreetMallArea")
-leaveMallPlayerPosition = Vector2( 7, 17 )
-BusOverlayPath = NodePath("../../Overlays/BusMenu")
+leave_hospital_area_path = NodePath("../UtilityBusstreetHospitalArea")
+leave_hospital_player_position = Vector2( 7, 17 )
+leave_mall_area_path = NodePath("../UtilityBusstreetMallArea")
+leave_mall_player_position = Vector2( 7, 17 )
+bus_overlay_path = NodePath("../../Overlays/BusMenu")
 
-[node name="UtilityBusstreetHospitalArea" parent="Areas" instance=ExtResource( 29 )]
+[node name="UtilityBusstreetHospitalArea" parent="Areas" instance=ExtResource( 36 )]
 position = Vector2( -1718.47, -5233.76 )
 leaveAreaPath = NodePath("../UtilityBusstreetArea")
 leavePlayerPosition = Vector2( 4, 6 )
 
-[node name="UtilityBusstreetMallArea" parent="Areas" instance=ExtResource( 32 )]
+[node name="UtilityBusstreetMallArea" parent="Areas" instance=ExtResource( 16 )]
 position = Vector2( -709.602, -5241.74 )
 leaveAreaPath = NodePath("../UtilityBusstreetArea")
 leavePlayerPosition = Vector2( 10, 6 )
 
-[node name="UtilityPrisonstreetArea" parent="Areas" instance=ExtResource( 23 )]
+[node name="UtilityPrisonstreetArea" parent="Areas" instance=ExtResource( 4 )]
 position = Vector2( -2010.63, -3960.8 )
 leaveRightAreaPath = NodePath("../UtilityBusstreetArea")
 leaveRightPlayerPosition = Vector2( 0, -1 )
-leavePrisonAreaPath = NodePath("../UtilityPrisonstreetPrisonArea")
-leavePrisonPlayerPosition = Vector2( 7, 17 )
+leave_prison_area_path = NodePath("../UtilityPrisonstreetPrisonArea")
+leave_prison_player_position = Vector2( 7, 17 )
 
-[node name="UtilityPrisonstreetPrisonArea" parent="Areas" instance=ExtResource( 28 )]
+[node name="UtilityPrisonstreetPrisonArea" parent="Areas" instance=ExtResource( 30 )]
 position = Vector2( -2988.37, -4878.47 )
 leaveAreaPath = NodePath("../UtilityPrisonstreetArea")
 leavePlayerPosition = Vector2( 5, 15 )
@@ -242,24 +242,24 @@ leavePlayerPosition = Vector2( 5, 15 )
 [node name="Overlays" type="Node2D" parent="."]
 z_index = 10
 
-[node name="ConfigMenu" parent="Overlays" instance=ExtResource( 12 )]
+[node name="ConfigMenu" parent="Overlays" instance=ExtResource( 11 )]
 position = Vector2( 2151.24, 1279.81 )
 
-[node name="ReferenceImageMenu" parent="Overlays" instance=ExtResource( 30 )]
+[node name="ReferenceImageMenu" parent="Overlays" instance=ExtResource( 12 )]
 position = Vector2( 2994.75, 1078.88 )
 
-[node name="GameMenu" parent="Overlays" instance=ExtResource( 11 )]
+[node name="GameMenu" parent="Overlays" instance=ExtResource( 3 )]
 position = Vector2( 2841.38, -652 )
 
-[node name="SmartphoneMenu" parent="Overlays" instance=ExtResource( 9 )]
+[node name="SmartphoneMenu" parent="Overlays" instance=ExtResource( 38 )]
 position = Vector2( 3018.55, 2666.58 )
 
 [node name="TransparentOverlay" type="Node2D" parent="Overlays"]
 
-[node name="AuthenticationOverlay" parent="Overlays" instance=ExtResource( 31 )]
+[node name="AuthenticationOverlay" parent="Overlays" instance=ExtResource( 13 )]
 position = Vector2( 3633.01, -651.034 )
 
-[node name="BusMenu" parent="Overlays" instance=ExtResource( 24 )]
+[node name="BusMenu" parent="Overlays" instance=ExtResource( 32 )]
 position = Vector2( 2049.05, 2118.92 )
 leaveCityAreaPath = NodePath("../../Areas/CityBusstreetArea")
 leaveCityPlayerPosition = Vector2( 9, 7 )
@@ -270,52 +270,52 @@ leaveUtilityPlayerPosition = Vector2( 9, 11 )
 
 [node name="DialogOverlay" parent="Overlays" groups=[
 "persistent",
-] instance=ExtResource( 38 )]
+] instance=ExtResource( 14 )]
 position = Vector2( 4086.9, 1102.63 )
 
-[node name="MessengerAppContacts" parent="Overlays" instance=ExtResource( 10 )]
+[node name="MessengerAppContacts" parent="Overlays" instance=ExtResource( 15 )]
 position = Vector2( 4816.45, -561.626 )
 
-[node name="MessengerAppMessages" parent="Overlays" instance=ExtResource( 5 )]
+[node name="MessengerAppMessages" parent="Overlays" instance=ExtResource( 21 )]
 position = Vector2( 4986.02, 1105.24 )
 
-[node name="BankingApp" parent="Overlays" instance=ExtResource( 39 )]
+[node name="BankingApp" parent="Overlays" instance=ExtResource( 29 )]
 position = Vector2( 5785.58, -627.315 )
 
-[node name="NewsAppMainpage" parent="Overlays" instance=ExtResource( 41 )]
+[node name="NewsAppMainpage" parent="Overlays" instance=ExtResource( 43 )]
 position = Vector2( 4921.06, -3670.1 )
 
-[node name="NewsAppNewspage" parent="Overlays" instance=ExtResource( 42 )]
+[node name="NewsAppNewspage" parent="Overlays" instance=ExtResource( 22 )]
 position = Vector2( 5803.65, -3701.84 )
 
-[node name="CitizenApp" parent="Overlays" instance=ExtResource( 40 )]
+[node name="CitizenApp" parent="Overlays" instance=ExtResource( 44 )]
 position = Vector2( 4887.99, -2086.34 )
 
 [node name="TransparentNotificationOverlay" type="Node2D" parent="Overlays"]
 
-[node name="NotificationOverlay" parent="Overlays" instance=ExtResource( 43 )]
+[node name="NotificationOverlay" parent="Overlays" instance=ExtResource( 37 )]
 position = Vector2( 4238.74, 2725.83 )
 
-[node name="CitizenRecordOverlay" parent="Overlays" instance=ExtResource( 44 )]
+[node name="CitizenRecordOverlay" parent="Overlays" instance=ExtResource( 34 )]
 position = Vector2( -2104, -2016 )
 
-[node name="player" parent="." groups=[
+[node name="Player" parent="." groups=[
 "persistent",
-] instance=ExtResource( 1 )]
+] instance=ExtResource( 24 )]
 position = Vector2( 610.022, 964.115 )
 z_index = 1
 speed = 4
 
-[node name="ShaderRectNode2D" type="Node2D" parent="."]
+[node name="ShaderRectNode" type="Node2D" parent="."]
 z_index = 5
 
-[node name="ShaderRect" type="ColorRect" parent="ShaderRectNode2D"]
+[node name="ShaderRect" type="ColorRect" parent="ShaderRectNode"]
 material = SubResource( 2 )
 margin_right = 768.0
 margin_bottom = 1024.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
-script = ExtResource( 7 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -325,7 +325,7 @@ margin_left = -125.0
 margin_top = 660.0
 margin_right = 375.0
 margin_bottom = 674.0
-script = ExtResource( 8 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var box_container = $Background/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer
+onready var box_container = $Background/Margin/HBox/ScrollContainer/VBox
 
 
 # Called when the node enters the scene tree for the first time.

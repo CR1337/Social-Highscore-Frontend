@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var _scroll_container = $Background/MarginContainer/VBoxContainer/ScrollContainer
-onready var _container = $Background/MarginContainer/VBoxContainer/ScrollContainer/Container
+onready var _scroll_container = $Background/Margin/VBox/ScrollContainer
+onready var _button_container = $Background/Margin/VBox/ScrollContainer/Container
 const _font_path = "res://assets/fonts/Consolas.tres"
 
 var _buttons = []
@@ -23,12 +23,12 @@ func _add_button(title, news_index):
 	button.add_font_override("font", load(_font_path))
 	button.connect("pressed", self, "_on_news_button_pressed", [news_index])
 	_buttons.append(button)
-	_container.add_child(button)
+	_button_container.add_child(button)
 	button.update()
 	
 func _remove_all_buttons():
 	for button in _buttons:
-		_container.remove_child(button)
+		_button_container.remove_child(button)
 		button.queue_free()
 	_buttons = []
 

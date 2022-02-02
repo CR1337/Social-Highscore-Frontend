@@ -48,7 +48,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="menu_button" type="Button" parent="."]
+[node name="MenuButton" type="Button" parent="."]
 margin_left = 16.0
 margin_top = 1040.0
 margin_right = 80.0
@@ -165,7 +165,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="menu_button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="button_down" from="UpButton" to="." method="_on_UpButton_button_down"]
 [connection signal="button_up" from="UpButton" to="." method="_on_UpButton_button_up"]
 [connection signal="button_down" from="DownButton" to="." method="_on_DownButton_button_down"]

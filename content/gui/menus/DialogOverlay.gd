@@ -1,13 +1,13 @@
 extends Node2D
 
-onready var label = $Background/MarginContainer/VBoxContainer/TextLabel
+onready var label = $Background/Margin/VBox/TextLabel
 onready var buttons = [
-	$Background/MarginContainer/VBoxContainer/LowerHBoxContainer/Answer0Button,
-	$Background/MarginContainer/VBoxContainer/LowerHBoxContainer/Answer1Button,
-	$Background/MarginContainer/VBoxContainer/UpperHBoxContainer/Answer2Button,
-	$Background/MarginContainer/VBoxContainer/UpperHBoxContainer/Answer3Button,
+	$Background/Margin/VBox/LowerHBox/Answer0Button,
+	$Background/Margin/VBox/LowerHBox/Answer1Button,
+	$Background/Margin/VBox/LowerHBox/Answer2Button,
+	$Background/Margin/VBox/LowerHBox/Answer3Button,
 ]
-onready var upper_h_box = $Background/MarginContainer/VBoxContainer/UpperHBoxContainer
+onready var upper_h_box = $Background/Margin/VBox/UpperHBox
 #
 var dialog_dict = {}
 var current_state: String

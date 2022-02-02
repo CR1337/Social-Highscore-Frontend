@@ -17,7 +17,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="Background"]
+[node name="Margin" type="MarginContainer" parent="Background"]
 margin_right = 768.0
 margin_bottom = 1365.0
 mouse_filter = 2
@@ -29,7 +29,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 748.0
@@ -37,38 +37,38 @@ margin_bottom = 1345.0
 custom_constants/separation = 20
 alignment = 1
 
-[node name="TitleHBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+[node name="TitleHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
 margin_right = 728.0
 margin_bottom = 34.0
 
-[node name="TitleLabel" type="Label" parent="Background/MarginContainer/VBoxContainer/TitleHBoxContainer"]
+[node name="TitleLabel" type="Label" parent="Background/Margin/VBox/TitleHBox"]
 margin_right = 90.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 4 )
 text = "Title"
 
-[node name="TextLabel" type="RichTextLabel" parent="Background/MarginContainer/VBoxContainer"]
+[node name="TextLabel" type="RichTextLabel" parent="Background/Margin/VBox"]
 margin_top = 54.0
 margin_right = 728.0
 margin_bottom = 1177.0
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 4 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+[node name="ButtonHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
 margin_top = 1197.0
 margin_right = 728.0
 margin_bottom = 1325.0
 rect_min_size = Vector2( 0, 128 )
 custom_constants/separation = 8
 
-[node name="DontReactButton" type="Button" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="DontReactButton" type="Button" parent="Background/Margin/VBox/ButtonHBox"]
 margin_right = 360.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 text = "Don't react"
 
-[node name="ReactButton" type="Button" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ReactButton" type="Button" parent="Background/Margin/VBox/ButtonHBox"]
 margin_left = 368.0
 margin_right = 728.0
 margin_bottom = 128.0
@@ -76,5 +76,5 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 text = "React"
 
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/DontReactButton" to="." method="_on_DontReactButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/ReactButton" to="." method="_on_ReactButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ButtonHBox/DontReactButton" to="." method="_on_DontReactButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ButtonHBox/ReactButton" to="." method="_on_ReactButton_pressed"]

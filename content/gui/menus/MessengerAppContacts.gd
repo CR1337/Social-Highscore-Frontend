@@ -3,10 +3,10 @@ extends Node2D
 export var new_message_texture: Texture
 export var no_message_texture: Texture
 
-onready var partner_button = $Background/MarginContainer/VBoxContainer/VBoxContainer/PartnerButton
-onready var friend_button = $Background/MarginContainer/VBoxContainer/VBoxContainer/FriendButton
-onready var mom_button = $Background/MarginContainer/VBoxContainer/VBoxContainer/MomButton
-onready var boss_button = $Background/MarginContainer/VBoxContainer/VBoxContainer/BossButton
+onready var partner_button = $Background/Margin/VBox/VBox/PartnerButton
+onready var friend_button = $Background/Margin/VBox/VBox/FriendButton
+onready var mom_button = $Background/Margin/VBox/VBox/MomButton
+onready var boss_button = $Background/Margin/VBox/VBox/BossButton
 
 var boss_in_contacts = false
 

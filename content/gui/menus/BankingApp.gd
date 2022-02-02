@@ -2,8 +2,8 @@ extends Node2D
 
 var _transactions = []
 
-onready var balance_label = $Background/MarginContainer/VBoxContainer/HBoxContainer/BalanceLabel
-onready var transaction_history_label = $Background/MarginContainer/VBoxContainer/TransactionHistoryLabel
+onready var balance_label = $Background/Margin/VBox/HBox/BalanceLabel
+onready var transaction_history_label = $Background/Margin/VBox/TransactionHistoryLabel
 
 func persistent_state():
 	return {

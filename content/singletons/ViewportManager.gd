@@ -1,29 +1,29 @@
 extends Node
 
-onready var player = get_node("/root/mainScene/player")
-onready var shaderRect = get_node("/root/mainScene/ShaderRectNode2D/ShaderRect")
+onready var player = get_node("/root/MainScene/player")
+onready var shaderRect = get_node("/root/MainScene/ShaderRectNode2D/ShaderRect")
 
-onready var transparentOverlay = get_node("/root/mainScene/Overlays/TransparentOverlay")
-onready var smartphoneMenu = get_node("/root/mainScene/Overlays/SmartphoneMenu")
-onready var gameMenu = get_node("/root/mainScene/Overlays/GameMenu")
-onready var configMenu = get_node("/root/mainScene/Overlays/ConfigMenu")
-onready var referenceImageMenu = get_node("/root/mainScene/Overlays/ReferenceImageMenu")
-onready var dialogOverlay = get_node("/root/mainScene/Overlays/DialogOverlay")
-onready var authenticationOverlay = get_node("/root/mainScene/Overlays/AuthenticationOverlay")
+onready var transparentOverlay = get_node("/root/MainScene/Overlays/TransparentOverlay")
+onready var smartphoneMenu = get_node("/root/MainScene/Overlays/SmartphoneMenu")
+onready var gameMenu = get_node("/root/MainScene/Overlays/GameMenu")
+onready var configMenu = get_node("/root/MainScene/Overlays/ConfigMenu")
+onready var referenceImageMenu = get_node("/root/MainScene/Overlays/ReferenceImageMenu")
+onready var dialogOverlay = get_node("/root/MainScene/Overlays/DialogOverlay")
+onready var authenticationOverlay = get_node("/root/MainScene/Overlays/AuthenticationOverlay")
 
-onready var messenger_contacts_overlay = get_node("/root/mainScene/Overlays/MessengerAppContacts")
-onready var messenger_messages_overlay = get_node("/root/mainScene/Overlays/MessengerAppMessages")
-onready var banking_app_overlay = get_node("/root/mainScene/Overlays/BankingApp")
-onready var citizen_app_overlay = get_node("/root/mainScene/Overlays/CitizenApp")
-onready var news_app_mainpage_overlay = get_node("/root/mainScene/Overlays/NewsAppMainpage")
-onready var news_app_newspage_overlay = get_node("/root/mainScene/Overlays/NewsAppNewspage")
+onready var messenger_contacts_overlay = get_node("/root/MainScene/Overlays/MessengerAppContacts")
+onready var messenger_messages_overlay = get_node("/root/MainScene/Overlays/MessengerAppMessages")
+onready var banking_app_overlay = get_node("/root/MainScene/Overlays/BankingApp")
+onready var citizen_app_overlay = get_node("/root/MainScene/Overlays/CitizenApp")
+onready var news_app_mainpage_overlay = get_node("/root/MainScene/Overlays/NewsAppMainpage")
+onready var news_app_newspage_overlay = get_node("/root/MainScene/Overlays/NewsAppNewspage")
 
-onready var citizen_record_overlay = get_node("/root/mainScene/Overlays/CitizenRecordOverlay")
+onready var citizen_record_overlay = get_node("/root/MainScene/Overlays/CitizenRecordOverlay")
 
-onready var transparentNotificationOverlay = get_node("/root/mainScene/Overlays/TransparentNotificationOverlay")
-onready var notificationOverlay = get_node("/root/mainScene/Overlays/NotificationOverlay")
+onready var transparentNotificationOverlay = get_node("/root/MainScene/Overlays/TransparentNotificationOverlay")
+onready var notificationOverlay = get_node("/root/MainScene/Overlays/NotificationOverlay")
 
-onready var currentArea = get_node("/root/mainScene/Areas/LivingHomestreetArea")
+onready var currentArea = get_node("/root/MainScene/Areas/LivingHomestreetArea")
 onready var currentOverlay = transparentOverlay
 onready var lastOverlay = transparentOverlay
 onready var currentNotificationOverlay = transparentNotificationOverlay
@@ -34,16 +34,16 @@ func persistent_state():
 		'current_overlay': currentOverlay.get_path(),
 		'last_overlay': lastOverlay.get_path()
 	}
-	
+
 func restore_state(state):
 	var new_current_area = get_node(state['current_area'])
-	
+
 	var tmp_position = new_current_area.position
 	new_current_area.position = currentArea.position
 	currentArea.position = tmp_position
-	
+
 	currentArea = new_current_area
-	
+
 	change_overlay(get_node(state['current_overlay']))
 	lastOverlay = get_node(state['last_overlay'])
 
@@ -51,41 +51,41 @@ func _ready():
 	InputBus.connect("phone_pressed", self, "_on_phone_pressed")
 	InputBus.connect("menu_pressed", self, "_on_menu_pressed")
 	# lastOverlay = transparentOverlay
-	
+
 func _on_phone_pressed():
 	change_to_smartphone()
-	
+
 func _on_menu_pressed():
 	change_overlay(gameMenu)
 
 func change_to_notification():
 	change_notification_overlay(notificationOverlay)
-	
+
 func change_to_transparent_notification():
 	change_notification_overlay(transparentNotificationOverlay)
-	
+
 func change_to_transparent():
 	change_overlay(transparentOverlay)
-	
+
 func change_to_config():
 	change_overlay(configMenu)
-	
+
 func change_to_refenreceImage():
 	change_overlay(referenceImageMenu)
 
 func change_to_messenger_contacts():
 	change_overlay(messenger_contacts_overlay)
-	
+
 func change_to_banking_app():
 	change_overlay(banking_app_overlay)
-	
+
 func change_to_citizen_app():
 	change_overlay(citizen_app_overlay)
-	
+
 func change_to_citizen_record_overlay():
 	change_overlay(citizen_record_overlay)
 	citizen_record_overlay.display_records()
-	
+
 func change_to_news_app_mainpage():
 	news_app_mainpage_overlay.update_mainpage()
 	change_overlay(news_app_mainpage_overlay)
@@ -96,19 +96,19 @@ func change_to_news_app_newspage(news_index):
 
 func change_to_smartphone():
 	change_overlay(smartphoneMenu)
-	
+
 func change_to_messenger_messages(contact):
 	messenger_messages_overlay.set_current_contact(contact)
 	messenger_messages_overlay.show()
 	change_overlay(messenger_messages_overlay)
-	
+
 func change_to_last():
 	change_overlay(lastOverlay)
-	
+
 func change_to_dialog(json_filename, state):
 	dialogOverlay.initialize(json_filename, state)
 	change_overlay(dialogOverlay)
-	
+
 func change_to_authentication(post_authentication_trigger_id):
 	authenticationOverlay.post_authentication_trigger_id = post_authentication_trigger_id
 	change_overlay(authenticationOverlay)
@@ -123,20 +123,20 @@ func change_area(targetArea, newPlayerPosition):
 	targetArea.position = currentArea.position
 	currentArea.position = tmp_position
 	currentArea = targetArea
-	
-	if newPlayerPosition.y >= 0: 
+
+	if newPlayerPosition.y >= 0:
 		player.position.y = (newPlayerPosition.y - 0.5) * Globals.tile_size
-	if newPlayerPosition.x >= 0: 
+	if newPlayerPosition.x >= 0:
 		player.position.x = (newPlayerPosition.x - 0.5) * Globals.tile_size
 	shaderRect.area_change()
-	
+
 func change_overlay(targetOverlay):
 	var tmp_position = targetOverlay.position
 	targetOverlay.position = currentOverlay.position
 	currentOverlay.position = tmp_position
 	lastOverlay = currentOverlay
 	currentOverlay = targetOverlay
-	
+
 func change_notification_overlay(targetOverlay):
 	var tmp_position = targetOverlay.position
 	targetOverlay.position = currentNotificationOverlay.position

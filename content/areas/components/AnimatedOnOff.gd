@@ -3,8 +3,8 @@ extends Node2D
 
 export var frames: SpriteFrames
 
-export var is_on: bool setget _setIsOn, _getIsOn
-func _setIsOn(value):
+export var is_on: bool setget _set_is_on, _get_is_on
+func _set_is_on(value):
 	is_on = value
 	if value:
 		$AnimatedSprite.animation = on_animation_name
@@ -12,7 +12,7 @@ func _setIsOn(value):
 	else:
 		$AnimatedSprite.animation = off_animation_name
 		$TriggerArea.walkable = walkable_when_off
-func _getIsOn():
+func _get_is_on():
 	return is_on
 
 export var walkable_when_on: bool
@@ -29,25 +29,25 @@ func _set_off_animation_name(value):
 func _get_off_animation_name():
 	return off_animation_name
 
-export var triggerAreaOffset: Vector2 setget _setTriggerAreaOffset, _getTriggerAreaOffset
-func _setTriggerAreaOffset(value):
+export var trigger_area_offset: Vector2 setget _set_trigger_area_offset, _get_trigger_area_offset
+func _set_trigger_area_offset(value):
 	$TriggerArea.position = value
-	triggerAreaOffset = value
-func _getTriggerAreaOffset():
-	return triggerAreaOffset
-	
-export var triggerAreaScale: Vector2 setget _setTriggerAreaScale, _getTriggerAreaScale
-func _setTriggerAreaScale(value):
+	trigger_area_offset = value
+func _get_trigger_area_offset():
+	return trigger_area_offset
+
+export var trigger_area_scale: Vector2 setget _set_trigger_area_scale, _get_trigger_area_scale
+func _set_trigger_area_scale(value):
 	$TriggerArea.scale = value
-	triggerAreaScale = value
-func _getTriggerAreaScale():
-	return triggerAreaScale	
-	
+	trigger_area_scale = value
+func _get_trigger_area_scale():
+	return trigger_area_scale
+
 func _ready():
 	$AnimatedSprite.frames = frames
 	$ActionTrigger.id = "tid_" + str(get_path()) + "_action_trigger"
 	$TriggerArea.action_trigger_id = $ActionTrigger.id
-	_setIsOn(is_on)
+	_set_is_on(is_on)
 
 func trigger():
-	_setIsOn(not is_on)
+	_set_is_on(not is_on)

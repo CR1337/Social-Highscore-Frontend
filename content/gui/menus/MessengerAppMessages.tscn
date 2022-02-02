@@ -28,7 +28,7 @@ __meta__ = {
 
 [node name="Background" type="CanvasLayer" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="Background"]
+[node name="Margin" type="MarginContainer" parent="Background"]
 margin_right = 768.0
 margin_bottom = 1365.0
 mouse_filter = 2
@@ -40,20 +40,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 748.0
 margin_bottom = 1354.0
 custom_constants/separation = 20
 
-[node name="NameLabel" type="Label" parent="Background/MarginContainer/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="Background/Margin/VBox"]
 margin_right = 728.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 4 )
 text = "Contacts"
 
-[node name="MessagesLabel" type="RichTextLabel" parent="Background/MarginContainer/VBoxContainer"]
+[node name="MessagesLabel" type="RichTextLabel" parent="Background/Margin/VBox"]
 margin_top = 54.0
 margin_right = 728.0
 margin_bottom = 1102.0
@@ -65,13 +65,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+[node name="HBox" type="HBoxContainer" parent="Background/Margin/VBox"]
 margin_top = 1122.0
 margin_right = 728.0
 margin_bottom = 1186.0
 custom_constants/separation = 20
 
-[node name="MessageButton" type="OptionButton" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="MessageButton" type="OptionButton" parent="Background/Margin/VBox/HBox"]
 margin_right = 644.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 644, 64 )
@@ -82,7 +82,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SendButton" type="Button" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="SendButton" type="Button" parent="Background/Margin/VBox/HBox"]
 margin_left = 664.0
 margin_right = 728.0
 margin_bottom = 64.0
@@ -91,7 +91,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+[node name="BackButton" type="Button" parent="Background/Margin/VBox"]
 margin_top = 1206.0
 margin_right = 728.0
 margin_bottom = 1334.0
@@ -100,5 +100,5 @@ rect_min_size = Vector2( 128, 128 )
 icon = ExtResource( 3 )
 expand_icon = true
 
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/SendButton" to="." method="_on_SendButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/HBox/SendButton" to="." method="_on_SendButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/BackButton" to="." method="_on_BackButton_pressed"]

@@ -1882,7 +1882,7 @@ collision_trigger_id = "tid_living_friendstreet_friend_leave"
 script = ExtResource( 1 )
 id = "tid_living_friendstreet_friend_leave"
 
-[node name="NPC" parent="." instance=ExtResource( 12 )]
+[node name="FriendNPC" parent="." instance=ExtResource( 12 )]
 position = Vector2( 544, 672 )
 movement_filename = "res://doc/movement.json"
 animation = ExtResource( 13 )

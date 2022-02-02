@@ -1930,7 +1930,7 @@ collision_trigger_id = "tid_living_pharmacystreet_pharmacy_leave"
 script = ExtResource( 11 )
 id = "tid_living_pharmacystreet_pharmacy_leave"
 
-[node name="NPC" parent="." instance=ExtResource( 12 )]
+[node name="PharmacistNPC" parent="." instance=ExtResource( 12 )]
 position = Vector2( 480, 608 )
 movement_filename = "res://doc/movement.json"
 animation = ExtResource( 13 )

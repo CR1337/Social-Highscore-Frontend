@@ -1882,7 +1882,7 @@ collision_trigger_id = "tid_living_homestreet_mom_leave"
 script = ExtResource( 5 )
 id = "tid_living_homestreet_mom_leave"
 
-[node name="NPC" parent="." instance=ExtResource( 12 )]
+[node name="MomNPC" parent="." instance=ExtResource( 12 )]
 position = Vector2( 224, 224 )
 movement_filename = "res://doc/movement.json"
 animation = ExtResource( 13 )

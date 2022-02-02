@@ -5,7 +5,7 @@
 [ext_resource path="res://content/areas/City/CityStorestreetArea/CityStoreStreetArea.gd" type="Script" id=3]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
-[ext_resource path="res://content/areas/components/trafficLight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://content/areas/components/TrafficLight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_yellow_car.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=9]
@@ -74,7 +74,7 @@ collision_trigger_id = "tid_city_storestreet_leave_store"
 script = ExtResource( 4 )
 id = "tid_city_storestreet_leave_store"
 
-[node name="trafficLight" parent="." groups=[
+[node name="TrafficLight" parent="." groups=[
 "persistent",
 ] instance=ExtResource( 6 )]
 position = Vector2( 158.974, 321.654 )
@@ -82,7 +82,7 @@ is_on = true
 has_crosswalk = true
 crosswalk = NodePath("../CrossingArea2")
 
-[node name="trafficLight2" parent="." groups=[
+[node name="TrafficLight2" parent="." groups=[
 "persistent",
 ] instance=ExtResource( 6 )]
 position = Vector2( 416.683, 831.079 )

@@ -26,12 +26,12 @@ func occupy(node):
 	occupied = true
 	occupier = node
 	set_driveThroughable(false)
-	
+
 func release(node):
 	if node == occupier:
 		occupied = false
 		occupier = null
-		if not player_crossing: 
+		if not player_crossing:
 			set_driveThroughable(true)
 
 func _on_CrosswalkArea_body_entered(body):
@@ -43,10 +43,10 @@ func _on_CrosswalkArea_body_entered(body):
 func _on_CrosswalkArea_body_exited(body):
 	if crosswalk and body.name == "player":
 		player_crossing = false
-		if not occupied: 
+		if not occupied:
 			set_driveThroughable(true)
 
 func _on_CrossingArea_area_exited(area):
 	release(area)
-		
+
 

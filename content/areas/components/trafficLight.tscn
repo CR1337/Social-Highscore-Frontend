@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/sprites/traffic_lights.png" type="Texture" id=1]
-[ext_resource path="res://content/areas/components/trafficLight.gd" type="Script" id=2]
+[ext_resource path="res://content/areas/components/TrafficLight.gd" type="Script" id=2]
 
-[node name="trafficLight" type="Node2D"]
+[node name="TrafficLight" type="Node2D"]
 z_index = 2
 script = ExtResource( 2 )
 

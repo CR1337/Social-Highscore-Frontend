@@ -3,9 +3,9 @@ extends Node2D
 var image_processor_job_id
 var post_authentication_trigger_id: String
 
-onready var cancel_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
-onready var take_image_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/TakeImageButton
-onready var label = $Background/MarginContainer/VBoxContainer/Label
+onready var cancel_button = $Background/Margin/VBox/HBox/CancelButton
+onready var take_image_button = $Background/Margin/VBox/HBox/TakeImageButton
+onready var label = $Background/Margin/VBox/Label
 
 
 func _ready():

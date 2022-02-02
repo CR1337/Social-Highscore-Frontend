@@ -15,7 +15,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="Background"]
+[node name="Margin" type="MarginContainer" parent="Background"]
 margin_right = 768.0
 margin_bottom = 1365.0
 mouse_filter = 2
@@ -27,7 +27,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 748.0
@@ -35,7 +35,7 @@ margin_bottom = 1345.0
 custom_constants/separation = 150
 alignment = 1
 
-[node name="ContinueButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="Background/Margin/VBox"]
 margin_top = 42.0
 margin_right = 728.0
 margin_bottom = 170.0
@@ -47,7 +47,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ConfigButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+[node name="ConfigButton" type="Button" parent="Background/Margin/VBox"]
 margin_top = 320.0
 margin_right = 728.0
 margin_bottom = 448.0
@@ -59,7 +59,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DebugCitizenRecordButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+[node name="DebugCitizenRecordButton" type="Button" parent="Background/Margin/VBox"]
 margin_top = 598.0
 margin_right = 728.0
 margin_bottom = 726.0
@@ -71,7 +71,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewGameButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="Background/Margin/VBox"]
 margin_top = 876.0
 margin_right = 728.0
 margin_bottom = 1004.0
@@ -83,7 +83,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuitButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Background/Margin/VBox"]
 margin_top = 1154.0
 margin_right = 728.0
 margin_bottom = 1282.0
@@ -95,8 +95,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/ConfigButton" to="." method="_on_ConfigButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/DebugCitizenRecordButton" to="." method="_on_DebugCitizenRecordButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ConfigButton" to="." method="_on_ConfigButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/DebugCitizenRecordButton" to="." method="_on_DebugCitizenRecordButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/QuitButton" to="." method="_on_QuitButton_pressed"]

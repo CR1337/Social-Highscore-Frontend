@@ -1,19 +1,19 @@
 extends "res://content/areas/Street.gd"
 
-export (NodePath) var leaveHospitalAreaPath
-export (Vector2) var leaveHospitalPlayerPosition
+export (NodePath) var leave_hospital_area_path
+export (Vector2) var leave_hospital_player_position
 
-export (NodePath) var leaveMallAreaPath
-export (Vector2) var leaveMallPlayerPosition
+export (NodePath) var leave_mall_area_path
+export (Vector2) var leave_mall_player_position
 
-export (NodePath) var BusOverlayPath
+export (NodePath) var bus_overlay_path
 
 func _ready():
 
-	$LeaveHospitalTriggerArea/LeaveHospitalTrigger.targetArea = get_node(leaveHospitalAreaPath)
-	$LeaveHospitalTriggerArea/LeaveHospitalTrigger.newPlayerPosition = leaveHospitalPlayerPosition
+	$LeaveHospitalTriggerArea/LeaveHospitalTrigger.targetArea = get_node(leave_hospital_area_path)
+	$LeaveHospitalTriggerArea/LeaveHospitalTrigger.newPlayerPosition = leave_hospital_player_position
 
-	$LeaveMallTriggerArea/LeaveMallTrigger.targetArea = get_node(leaveMallAreaPath)
-	$LeaveMallTriggerArea/LeaveMallTrigger.newPlayerPosition = leaveMallPlayerPosition
-	
-	$BusTriggerArea/BusTrigger.targetOverlay = get_node(BusOverlayPath)
+	$LeaveMallTriggerArea/LeaveMallTrigger.targetArea = get_node(leave_mall_area_path)
+	$LeaveMallTriggerArea/LeaveMallTrigger.newPlayerPosition = leave_mall_player_position
+
+	$BusTriggerArea/BusTrigger.targetOverlay = get_node(bus_overlay_path)

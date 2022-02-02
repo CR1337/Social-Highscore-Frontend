@@ -1,10 +1,10 @@
 extends Node2D
 
 
-onready var _title_label = $Background/MarginContainer/VBoxContainer/TitleHBoxContainer/TitleLabel
-onready var _text_label = $Background/MarginContainer/VBoxContainer/TextLabel
-onready var _react_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/ReactButton
-onready var _dont_react_button = $Background/MarginContainer/VBoxContainer/HBoxContainer/DontReactButton
+onready var _title_label = $Background/Margin/VBox/TitleHBox/TitleLabel
+onready var _text_label = $Background/Margin/VBox/TextLabel
+onready var _react_button = $Background/Margin/VBox/ButtonHBox/ReactButton
+onready var _dont_react_button = $Background/Margin/VBox/ButtonHBox/DontReactButton
 
 var _image_processor_job_id = -1
 var _news_index = -1

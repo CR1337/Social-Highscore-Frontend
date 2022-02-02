@@ -3,9 +3,9 @@ extends Node2D
 var image_processor_job_id: int
 var reference_image: Image
 
-onready var ok_button = $Background/MarginContainer/VBoxContainer/OkButton
-onready var take_image_button = $Background/MarginContainer/VBoxContainer/TakeImageButton
-onready var image_texture_rect = $Background/MarginContainer/VBoxContainer/ImageTextureRect
+onready var ok_button = $Background/Margin/VBox/OkButton
+onready var take_image_button = $Background/Margin/VBox/TakeImageButton
+onready var image_texture_rect = $Background/Margin/VBox/ImageTextureRect
 
 func _ready():
 	ImageProcessor.connect("reference_image_taken", self, "_on_reference_image_taken")

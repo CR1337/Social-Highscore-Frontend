@@ -1,19 +1,19 @@
 extends Node2D
 
-onready var addressLineEdit = $Background/MarginContainer/VBoxContainer/AddressVBoxContainer/AddressLineEdit
-onready var portLineEdit = $Background/MarginContainer/VBoxContainer/PortVBoxContainer/PortLineEdit
-onready var okButton = $Background/MarginContainer/VBoxContainer/ButtonsHBoxContainer/OkButton
+onready var addressLineEdit = $Background/Margin/VBox/AddressVBox/AddressLineEdit
+onready var portLineEdit = $Background/Margin/VBox/PortVBox/PortLineEdit
+onready var okButton = $Background/Margin/VBox/ButtonsHBox/OkButton
 
-onready var CheckBox0 = $Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox0
-onready var CheckBox90 = $Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox90
-onready var CheckBox180 = $Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox180
-onready var CheckBox270 = $Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox270
+onready var CheckBox0 = $Background/Margin/VBox/AngleVBox/HBox/CheckBox0
+onready var CheckBox90 = $Background/Margin/VBox/AngleVBox/HBox/CheckBox90
+onready var CheckBox180 = $Background/Margin/VBox/AngleVBox/HBox/CheckBox180
+onready var CheckBox270 = $Background/Margin/VBox/AngleVBox/HBox/CheckBox270
 
 onready var CheckBoxes = [
-	$Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox0,
-	$Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox90,
-	$Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox180,
-	$Background/MarginContainer/VBoxContainer/AngleVBoxContainer/HBoxContainer/CheckBox270
+	$Background/Margin/VBox/AngleVBox/HBox/CheckBox0,
+	$Background/Margin/VBox/AngleVBox/HBox/CheckBox90,
+	$Background/Margin/VBox/AngleVBox/HBox/CheckBox180,
+	$Background/Margin/VBox/AngleVBox/HBox/CheckBox270
 ]
 
 func _ready():

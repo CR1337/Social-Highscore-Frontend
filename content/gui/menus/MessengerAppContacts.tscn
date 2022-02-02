@@ -18,7 +18,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="Background"]
+[node name="Margin" type="MarginContainer" parent="Background"]
 margin_right = 768.0
 margin_bottom = 1365.0
 mouse_filter = 2
@@ -30,7 +30,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 748.0
@@ -38,20 +38,20 @@ margin_bottom = 1345.0
 custom_constants/separation = 150
 alignment = 1
 
-[node name="Label" type="Label" parent="Background/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Background/Margin/VBox"]
 margin_top = 145.0
 margin_right = 728.0
 margin_bottom = 179.0
 custom_fonts/font = ExtResource( 4 )
 text = "Contacts"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+[node name="VBox" type="VBoxContainer" parent="Background/Margin/VBox"]
 margin_top = 329.0
 margin_right = 728.0
 margin_bottom = 901.0
 custom_constants/separation = 16
 
-[node name="PartnerButton" type="Button" parent="Background/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="PartnerButton" type="Button" parent="Background/Margin/VBox/VBox"]
 margin_right = 728.0
 margin_bottom = 134.0
 rect_min_size = Vector2( 0, 128 )
@@ -63,7 +63,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MomButton" type="Button" parent="Background/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="MomButton" type="Button" parent="Background/Margin/VBox/VBox"]
 margin_top = 150.0
 margin_right = 728.0
 margin_bottom = 284.0
@@ -76,7 +76,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FriendButton" type="Button" parent="Background/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="FriendButton" type="Button" parent="Background/Margin/VBox/VBox"]
 margin_top = 300.0
 margin_right = 728.0
 margin_bottom = 428.0
@@ -88,7 +88,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BossButton" type="Button" parent="Background/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="BossButton" type="Button" parent="Background/Margin/VBox/VBox"]
 margin_top = 444.0
 margin_right = 728.0
 margin_bottom = 572.0
@@ -100,7 +100,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackButton" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+[node name="BackButton" type="Button" parent="Background/Margin/VBox"]
 margin_top = 1051.0
 margin_right = 728.0
 margin_bottom = 1179.0
@@ -108,8 +108,8 @@ rect_min_size = Vector2( 0, 128 )
 icon = ExtResource( 3 )
 expand_icon = true
 
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/VBoxContainer/PartnerButton" to="." method="_on_PartnerButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/VBoxContainer/MomButton" to="." method="_on_MomButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/VBoxContainer/FriendButton" to="." method="_on_FriendButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/VBoxContainer/BossButton" to="." method="_on_BossButton_pressed"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/VBox/PartnerButton" to="." method="_on_PartnerButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/VBox/MomButton" to="." method="_on_MomButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/VBox/FriendButton" to="." method="_on_FriendButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/VBox/BossButton" to="." method="_on_BossButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/BackButton" to="." method="_on_BackButton_pressed"]

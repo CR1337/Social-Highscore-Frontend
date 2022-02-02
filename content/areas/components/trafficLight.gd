@@ -1,10 +1,10 @@
 tool
 extends Node2D
 
-export var is_on: bool setget _setIsOn, _getIsOn
+export var is_on: bool setget _set_is_on, _get_is_on
 export var has_crosswalk: bool
 export (NodePath) var crosswalk
-func _setIsOn(value):
+func _set_is_on(value):
 	is_on = value
 	if value:
 		if has_crosswalk:
@@ -14,7 +14,7 @@ func _setIsOn(value):
 		if has_crosswalk:
 			get_node(crosswalk).release(self)
 		$Sprite.frame = 0
-func _getIsOn():
+func _get_is_on():
 	return is_on
 
 
@@ -23,12 +23,12 @@ func _ready():
 	TrafficController.connect("change_traffic_lights", self, "_toggle_trafic_light")
 
 func _toggle_trafic_light():
-	_setIsOn(not is_on)
+	_set_is_on(not is_on)
 
 func persistent_state():
 	return {
 		'is_on': is_on
 	}
-	
+
 func restore_state(state):
-	_setIsOn(state['is_on'])
+	_set_is_on(state['is_on'])

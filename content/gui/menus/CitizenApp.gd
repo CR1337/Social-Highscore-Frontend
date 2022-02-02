@@ -1,9 +1,9 @@
 extends Node2D
 
-onready var _score_label = $Background/MarginContainer/VBoxContainer/HBoxContainer/ScoreLabel
-onready var _record_label = $Background/MarginContainer/VBoxContainer/RecordLabel
-onready var _info_button = $Background/MarginContainer/VBoxContainer/InfoButton
-onready var _back_button = $Background/MarginContainer/VBoxContainer/BackButton
+onready var _score_label = $Background/Margin/VBox/HBox/ScoreLabel
+onready var _record_label = $Background/Margin/VBox/RecordLabel
+onready var _info_button = $Background/Margin/VBox/InfoButton
+onready var _back_button = $Background/Margin/VBox/BackButton
 
 const _info_text = """
 ⇨ Behave responsibly in public.

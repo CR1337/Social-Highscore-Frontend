@@ -6,7 +6,7 @@
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/trigger/BusTrigger.gd" type="Script" id=6]
-[ext_resource path="res://content/areas/components/trafficLight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://content/areas/components/TrafficLight.tscn" type="PackedScene" id=7]
 [ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_taxi_car.tres" type="SpriteFrames" id=10]
@@ -77,7 +77,7 @@ script = ExtResource( 16 )
 id = "tid_city_busstreet_authentication"
 post_authentication_trigger_id = "tid_city_busstreet_bus"
 
-[node name="trafficLight" parent="." groups=[
+[node name="TrafficLight" parent="." groups=[
 "persistent",
 ] instance=ExtResource( 7 )]
 position = Vector2( 546.965, 519.974 )

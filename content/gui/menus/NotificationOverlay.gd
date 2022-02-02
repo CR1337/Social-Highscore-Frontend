@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var text_label = $Background/MarginContainer/HBoxContainer/NotificationLabel
-onready var icon_texture = $Background/MarginContainer/HBoxContainer/IconTexture
+onready var text_label = $Background/Margin/HBox/NotificationLabel
+onready var icon_texture = $Background/Margin/HBox/IconTexture
 
 export var news_icon: Texture
 export var bank_icon: Texture
