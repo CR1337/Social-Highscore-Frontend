@@ -18,12 +18,13 @@ var traffic_toggle_handle = 0
 signal change_traffic_lights
 
 func _ready():
-	traffic_toggle_handle = TimeController.setTimer(10, self)
+	pass
 
 func start_next_car(area_id, car_id):
 	get_node(Area_idxs[area_id]).start_car(car_id)
 
 func start_cars():
+	traffic_toggle_handle = TimeController.setTimer(10, self)
 	EventBus.emit_signal("trigger", 'tid_living_busstreet_car_1_0_start')
 	EventBus.emit_signal("trigger", 'tid_living_pharmacystreet_car_2_2_start')
 	EventBus.emit_signal("trigger", 'tid_living_homestreet_car_3_1_start')
@@ -42,3 +43,11 @@ func timer(handle):
 	if handle == traffic_toggle_handle:
 		traffic_toggle_handle = TimeController.setTimer(10, self)
 		emit_signal("change_traffic_lights")
+
+func persistent_state():
+	return {
+		'traffic_toggle_handle': traffic_toggle_handle
+	}
+	
+func restore_state(jsonstate):
+	traffic_toggle_handle = jsonstate['traffic_toggle_handle']

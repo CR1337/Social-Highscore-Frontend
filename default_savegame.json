@@ -1915,18 +1915,13 @@
         "time": 0,
         "timer_list": [
             [
-                10,
-                0,
-                "/root/TrafficController"
-            ],
-            [
                 30,
-                2,
+                1,
                 "/root/GameStateController"
             ],
             [
                 720,
-                1,
+                0,
                 "/root/GameStateController"
             ]
         ],
@@ -1944,5 +1939,8 @@
         "news": [
 
         ]
+    },
+    "/root/TrafficController": {
+        "traffic_toggle_handle": 0
     }
 }

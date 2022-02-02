@@ -16,7 +16,8 @@ func _singletons():
 		TimeController,
 		ViewportManager,
 		ImageProcessor,
-		NewsController
+		NewsController,
+		TrafficController
 	]
 	
 func _create_file():
@@ -56,7 +57,6 @@ func start_new_game():
 	TrafficController.start_cars()
 	NewsController._DEBUG_add_news()
 	CitizenRecord._DEBUG_add_records()
-	GameStateController._DEBUG_add_transactions()
 
 func load_game():
 	var file = File.new()
