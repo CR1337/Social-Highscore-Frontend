@@ -21,4 +21,8 @@ func _on_QuitButton_pressed():
 
 func _on_NewGameButton_pressed():
 	SaveGameController.delete_game()
-	SaveGameController.load_game()
+	get_tree().quit()
+
+
+func _on_DebugCitizenRecordButton_pressed():
+	ViewportManager.change_to_citizen_record_overlay()

@@ -20,7 +20,7 @@ func _ready():
 	_display_transactions()
 	_display_balance()
 	
-	call_deferred("_DEBUG_add_transactions")
+	# call_deferred("_DEBUG_add_transactions")
 
 func _on_add_money(amount, description):
 	_transactions.append([amount, description])

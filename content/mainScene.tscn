@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://content/movables/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gui/controls/InputUI.tscn" type="PackedScene" id=2]
@@ -43,6 +43,7 @@
 [ext_resource path="res://content/gui/menus/NewsAppMainpage.tscn" type="PackedScene" id=41]
 [ext_resource path="res://content/gui/menus/NewsAppNewspage.tscn" type="PackedScene" id=42]
 [ext_resource path="res://content/gui/menus/NotificationOverlay.tscn" type="PackedScene" id=43]
+[ext_resource path="res://content/gui/menus/CitizenRecordOverlay.tscn" type="PackedScene" id=44]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -99,7 +100,7 @@ leaveAreaPath = NodePath("../LivingPharmacystreetArea")
 leavePlayerPosition = Vector2( 3, 14 )
 
 [node name="LivingBusstreetArea" parent="Areas" instance=ExtResource( 6 )]
-position = Vector2( 27.6798, -1519.88 )
+position = Vector2( -58.3441, -1366.95 )
 leaveBottomAreaPath = NodePath("../LivingHomestreetArea")
 leaveBottomPlayerPosition = Vector2( -1, 0 )
 BusOverlayPath = NodePath("../../Overlays/BusMenu")
@@ -242,7 +243,7 @@ leavePlayerPosition = Vector2( 5, 15 )
 z_index = 10
 
 [node name="ConfigMenu" parent="Overlays" instance=ExtResource( 12 )]
-position = Vector2( 2036.54, 728.618 )
+position = Vector2( 2151.24, 1279.81 )
 
 [node name="ReferenceImageMenu" parent="Overlays" instance=ExtResource( 30 )]
 position = Vector2( 2994.75, 1078.88 )
@@ -276,7 +277,7 @@ position = Vector2( 4086.9, 1102.63 )
 position = Vector2( 4816.45, -561.626 )
 
 [node name="MessengerAppMessages" parent="Overlays" instance=ExtResource( 5 )]
-position = Vector2( 4981.78, 1105.24 )
+position = Vector2( 4986.02, 1105.24 )
 
 [node name="BankingApp" parent="Overlays" instance=ExtResource( 39 )]
 position = Vector2( 5785.58, -627.315 )
@@ -294,6 +295,9 @@ position = Vector2( 4887.99, -2086.34 )
 
 [node name="NotificationOverlay" parent="Overlays" instance=ExtResource( 43 )]
 position = Vector2( 4238.74, 2725.83 )
+
+[node name="CitizenRecordOverlay" parent="Overlays" instance=ExtResource( 44 )]
+position = Vector2( -2104, -2016 )
 
 [node name="player" parent="." groups=[
 "persistent",

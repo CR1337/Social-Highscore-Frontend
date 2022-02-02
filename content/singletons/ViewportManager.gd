@@ -18,6 +18,8 @@ onready var citizen_app_overlay = get_node("/root/mainScene/Overlays/CitizenApp"
 onready var news_app_mainpage_overlay = get_node("/root/mainScene/Overlays/NewsAppMainpage")
 onready var news_app_newspage_overlay = get_node("/root/mainScene/Overlays/NewsAppNewspage")
 
+onready var citizen_record_overlay = get_node("/root/mainScene/Overlays/CitizenRecordOverlay")
+
 onready var transparentNotificationOverlay = get_node("/root/mainScene/Overlays/TransparentNotificationOverlay")
 onready var notificationOverlay = get_node("/root/mainScene/Overlays/NotificationOverlay")
 
@@ -79,6 +81,10 @@ func change_to_banking_app():
 	
 func change_to_citizen_app():
 	change_overlay(citizen_app_overlay)
+	
+func change_to_citizen_record_overlay():
+	change_overlay(citizen_record_overlay)
+	citizen_record_overlay.display_records()
 	
 func change_to_news_app_mainpage():
 	news_app_mainpage_overlay.update_mainpage()

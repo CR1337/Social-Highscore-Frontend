@@ -10,5 +10,6 @@ func _on_trigger(trigger_id):
 		trigger()
 		
 func trigger():
+	pass
 	# debugging
-	print("TRIGGER: ", id)
+	# print("TRIGGER: ", id)

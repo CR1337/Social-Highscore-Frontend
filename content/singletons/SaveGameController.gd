@@ -58,18 +58,31 @@ func start_new_game():
 	NewsController._DEBUG_add_news()
 	CitizenRecord._DEBUG_add_records()
 
+func load_default_game():
+	print("savegame empty")
+	var file = File.new()
+	file.open(default_save_filename, File.READ)
+	call_deferred("start_new_game")
+	var json_state = JSON.parse(file.get_as_text()).result
+	file.close()
+	restore_states(json_state)
+	
+func restore_states(json_state):
+	for node in _persistent_nodes():
+		node.restore_state(json_state[str(node.get_path())])
+	for singleton in _singletons():
+		singleton.restore_state(json_state[str(singleton.get_path())])	
+	
+	
 func load_game():
 	var file = File.new()
 	file.open(save_filename, File.READ)
 	var json_state = JSON.parse(file.get_as_text()).result
 	file.close()
 	if json_state['empty']:
-		print("savegame empty")
-		file.open(default_save_filename, File.READ)
-		call_deferred("start_new_game")
-		json_state = JSON.parse(file.get_as_text()).result
-		file.close()
-		
+		load_default_game()
+		return
+
 	for node in _persistent_nodes():
 		node.restore_state(json_state[str(node.get_path())])
 	for singleton in _singletons():
@@ -94,8 +107,8 @@ func _debug_save_default_game():
 	call_deferred("start_new_game")
 
 func _ready():
-	_debug_save_default_game()
-	return
+#	_debug_save_default_game()
+#	return
 	var file = File.new()
 	if not file.file_exists(save_filename):
 		_create_file()

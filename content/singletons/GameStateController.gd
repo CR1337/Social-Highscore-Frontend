@@ -39,10 +39,10 @@ func restore_state(state):
 	fridge_filling = state["fridge_filling"]
 	current_day = state["current_day"]
 	# contact_state = state["contact_state"]
-	emit_signal("sleep_changed", sleep)
-	emit_signal("hunger_changed", hunger)
-	emit_signal("sig_money_changed", money)
-	emit_signal("sig_score_changed", score)
+#	emit_signal("sleep_changed", sleep)
+#	emit_signal("hunger_changed", hunger)
+#	emit_signal("sig_money_changed", money)
+#	emit_signal("sig_score_changed", score)
 
 var next_day_handle = 1 # Stated in default_savegame
 var next_status_update_handle = 2 # Stated in default_savegame
