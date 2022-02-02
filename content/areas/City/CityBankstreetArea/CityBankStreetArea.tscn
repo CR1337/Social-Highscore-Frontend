@@ -25,7 +25,7 @@ tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 1, -65535, 1, 1, -65534, 1, 1, -6
 z_index = 1
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 1, 37, 1, 2, 37, 2, 3, 37, 4, 65537, 36, 0, 65538, 36, 1, 65539, 36, 2, 65540, 26, 65536, 131073, 36, 131072, 131074, 36, 131073, 131075, 36, 131074, 131076, 26, 131072, 196609, 36, 131072, 196610, 36, 196609, 196611, 36, 131074, 196612, 26, 131072, 655361, 37, 1, 655362, 37, 2, 655363, 37, 2, 655364, 37, 2, 655365, 37, 2, 655366, 37, 2, 655367, 37, 2, 655368, 37, 2, 655369, 37, 4, 720897, 36, 0, 720898, 36, 1, 720899, 36, 1, 720900, 36, 1, 720901, 36, 1, 720902, 36, 1, 720903, 36, 1, 720904, 36, 1, 720905, 36, 2, 720906, 26, 65536, 786433, 36, 196611, 786434, 36, 196612, 786435, 36, 196612, 786436, 36, 196612, 786437, 36, 196612, 786438, 36, 196612, 786439, 36, 196612, 786440, 36, 196612, 786441, 36, 196613, 786442, 26, 131072, 851969, 36, 196611, 851970, 36, 196612, 851971, 36, 196612, 851972, 36, 196612, 851973, 36, 196612, 851974, 36, 196612, 851975, 36, 196612, 851976, 36, 196612, 851977, 36, 196613, 851978, 26, 131072, 917505, 36, 196611, 917506, 36, 196612, 917507, 36, 196612, 917508, 36, 196612, 917509, 36, 196609, 917510, 36, 196612, 917511, 36, 196612, 917512, 36, 196612, 917513, 36, 196613, 917514, 26, 131072 )
+tile_data = PoolIntArray( 1, 38, 65540, 2, 38, 65542, 3, 38, 65543, 65537, 36, 0, 65538, 36, 1, 65539, 36, 2, 65540, 26, 65536, 131073, 36, 131072, 131074, 36, 131073, 131075, 36, 131074, 131076, 26, 131072, 196609, 36, 131072, 196610, 36, 196609, 196611, 36, 131074, 196612, 26, 131072, 655361, 38, 65540, 655362, 38, 65542, 655363, 38, 65542, 655364, 38, 65542, 655365, 38, 65542, 655366, 38, 65542, 655367, 38, 65542, 655368, 38, 65542, 655369, 38, 65543, 720897, 36, 0, 720898, 36, 1, 720899, 36, 1, 720900, 36, 1, 720901, 36, 1, 720902, 36, 1, 720903, 36, 1, 720904, 36, 1, 720905, 36, 2, 720906, 26, 65536, 786433, 36, 196611, 786434, 36, 196612, 786435, 36, 196612, 786436, 36, 196612, 786437, 36, 196612, 786438, 36, 196612, 786439, 36, 196612, 786440, 36, 196612, 786441, 36, 196613, 786442, 26, 131072, 851969, 36, 196611, 851970, 36, 196612, 851971, 36, 196612, 851972, 36, 196612, 851973, 36, 196612, 851974, 36, 196612, 851975, 36, 196612, 851976, 36, 196612, 851977, 36, 196613, 851978, 26, 131072, 917505, 36, 196611, 917506, 36, 196612, 917507, 36, 196612, 917508, 36, 196612, 917509, 36, 196609, 917510, 36, 196612, 917511, 36, 196612, 917512, 36, 196612, 917513, 36, 196613, 917514, 26, 131072 )
 
 [node name="Details" type="TileMap" parent="."]
 z_index = 1
@@ -123,9 +123,7 @@ scale = Vector2( 2, 1 )
 slow_down = 0.2
 crosswalk = true
 
-[node name="Car8_4" parent="." groups=[
-"persistent",
-] instance=ExtResource( 12 )]
+[node name="Car8_4" parent="." instance=ExtResource( 12 )]
 position = Vector2( 800, 416 )
 ignores_crosswalks = false
 movement_filename = "res://doc/city_bankstreet/car_8_4_movement.json"
@@ -133,15 +131,12 @@ speed = 3.0
 active_on_start = true
 animation = ExtResource( 7 )
 current_position = Vector2( 12, 6 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car8_4"]
 script = ExtResource( 13 )
 id = "tid_city_bankstreet_car_8_4_start"
 
-[node name="Car10_0" parent="." groups=[
-"persistent",
-] instance=ExtResource( 12 )]
+[node name="Car10_0" parent="." instance=ExtResource( 12 )]
 position = Vector2( -32, 544 )
 ignores_crosswalks = false
 movement_filename = "res://doc/city_bankstreet/car_10_0_movement.json"
@@ -149,15 +144,12 @@ speed = 3.0
 active_on_start = true
 animation = ExtResource( 14 )
 current_position = Vector2( -1, 8 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car10_0"]
 script = ExtResource( 13 )
 id = "tid_city_bankstreet_car_10_0_start"
 
-[node name="Car12_1" parent="." groups=[
-"persistent",
-] instance=ExtResource( 12 )]
+[node name="Car12_1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 800, 416 )
 ignores_crosswalks = false
 movement_filename = "res://doc/city_bankstreet/car_12_1_movement.json"
@@ -165,7 +157,6 @@ speed = 3.0
 active_on_start = true
 animation = ExtResource( 8 )
 current_position = Vector2( 12, 6 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car12_1"]
 script = ExtResource( 13 )
