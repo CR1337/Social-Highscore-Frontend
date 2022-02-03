@@ -88,7 +88,6 @@ func _hide():
 
 func _update_answers():
 	_message_button.clear()
-	print(len(_current_node()['answers']))
 	for i in len(_current_node()['answers']):
 		_message_button.add_item(_dialog_dicts[_current_contact]['texts'][_current_node()['answers'][i]['tid']])
 	_send_button.disabled = false

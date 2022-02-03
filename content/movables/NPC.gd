@@ -210,7 +210,6 @@ func _update_animation():
 	if state != 'idle':
 		if _get_movement_step()['direction'] != 'wait':
 			animation_name_suffix = _get_movement_step()['direction']
-	# print(animation_name_prefix + "_" + animation_name_suffix)
 	_sprite.animation = animation_name_prefix + "_" + animation_name_suffix
 
 func _move():

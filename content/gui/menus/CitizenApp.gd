@@ -19,12 +19,11 @@ const _info_text = """
 func _ready():
 	GameStateController.connect("sig_score_changed", self, "_on_score_changed")
 	call_deferred("_DEBUG_add_records")
-	
+
 func _display_score():
 	_score_label.text = str(GameStateController.score)
-	
+
 func _display_records():
-	# print("Records:\n" + str(CitizenRecord.records))
 	_record_label.clear()
 	for record in CitizenRecord.records:
 		var record_string = CitizenRecord.record_display_string_for_app(record)
@@ -34,19 +33,19 @@ func _display_records():
 			color = 'red'
 		_record_label.append_bbcode("\n[color=" + color + "]" + str(record['score']) + "[/color]")
 	_record_label.scroll_to_line(_record_label.get_line_count() - 1)
-	
+
 func _show_info():
 	OS.alert(_info_text, "Good Citizen Guide")
-	
+
 func _on_score_changed(new_value):
 	_display_score()
 	_display_records()
 	EventBus.emit_signal("sig_notification", 'score', "Your score has changed")
-	
+
 func _on_InfoButton_pressed():
 	_show_info()
 
 func _on_BackButton_pressed():
 	ViewportManager.change_to_smartphone()
-	
-	
+
+

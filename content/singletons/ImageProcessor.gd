@@ -131,7 +131,6 @@ func restore_state(state):
 	if len(saved__b64_reference_image) == 0:
 		return
 	_b64_reference_image = saved__b64_reference_image
-	# print(_b64_reference_image)
 	var raw_reference_image = Marshalls.base64_to_raw(_b64_reference_image.split(",")[1])
 	_reference_image = Image.new()
 	_reference_image.load_jpg_from_buffer(raw_reference_image)

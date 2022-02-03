@@ -25,7 +25,6 @@ func _received_image(dict):
 		EventBus.emit_signal("sig_debug_error", "Received Image")
 		var currentImage = Image.new()
 		currentImage.load_jpg_from_buffer(image)
-		print("Loading Image")
 		yield(get_tree(), "idle_frame")
 		emit_signal("sig_got_image", currentImage, image)
 
