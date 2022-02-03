@@ -127,10 +127,10 @@ func persistent_state():
 	}
 
 func restore_state(state):
-	var saved__b64_reference_image = state["b64_reference_image"]
-	if len(saved__b64_reference_image) == 0:
+	var saved_b64_reference_image = state["b64_reference_image"]
+	if len(saved_b64_reference_image) == 0:
 		return
-	_b64_reference_image = saved__b64_reference_image
+	_b64_reference_image = saved_b64_reference_image
 	var raw_reference_image = Marshalls.base64_to_raw(_b64_reference_image.split(",")[1])
 	_reference_image = Image.new()
 	_reference_image.load_jpg_from_buffer(raw_reference_image)

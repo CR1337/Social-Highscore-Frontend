@@ -23,10 +23,10 @@ func _received_image(dict):
 	EventBus.emit_signal("sig_debug_error", dict)
 	for image in dict.values():
 		EventBus.emit_signal("sig_debug_error", "Received Image")
-		var currentImage = Image.new()
-		currentImage.load_jpg_from_buffer(image)
+		var current_image = Image.new()
+		current_image.load_jpg_from_buffer(image)
 		yield(get_tree(), "idle_frame")
-		emit_signal("sig_got_image", currentImage, image)
+		emit_signal("sig_got_image", current_image, image)
 
 func take_image():
 	if _image_plugin:
