@@ -5,44 +5,44 @@ func _process(delta):
 	$Label.text = TimeController.get_daytime()
 
 func _on_menu_button_pressed():
-	InputBus.emit_signal("menu_pressed")
+	InputBus.emit_signal("sig_menu_pressed")
 
 func _on_UpButton_button_down():
-	InputBus.emit_signal("up_pressed")
+	InputBus.emit_signal("sig_up_pressed")
 
 func _on_UpButton_button_up():
-	InputBus.emit_signal("up_released")
+	InputBus.emit_signal("sig_up_released")
 
 func _on_DownButton_button_down():
-	InputBus.emit_signal("down_pressed")
+	InputBus.emit_signal("sig_down_pressed")
 
 func _on_DownButton_button_up():
-	InputBus.emit_signal("down_released")
-	
+	InputBus.emit_signal("sig_down_released")
+
 func _on_LeftButton_button_down():
-	InputBus.emit_signal("left_pressed")
+	InputBus.emit_signal("sig_left_pressed")
 
 func _on_LeftButton_button_up():
-	InputBus.emit_signal("left_released")
+	InputBus.emit_signal("sig_left_released")
 
 func _on_RightButton_button_down():
-	InputBus.emit_signal("right_pressed")
+	InputBus.emit_signal("sig_right_pressed")
 
 func _on_RightButton_button_up():
-	InputBus.emit_signal("right_released")
+	InputBus.emit_signal("sig_right_released")
 
 func _on_ActionButton_button_down():
-	InputBus.emit_signal("action_pressed")
+	InputBus.emit_signal("sig_action_pressed")
 
 func _on_ActionButton_button_up():
-	InputBus.emit_signal("action_released")
+	InputBus.emit_signal("sig_action_released")
 
 func _on_PhoneButton_button_down():
-	InputBus.emit_signal("phone_pressed")
+	InputBus.emit_signal("sig_phone_pressed")
 
 
 func _on_PhoneButton_button_up():
-	InputBus.emit_signal("phone_released")
+	InputBus.emit_signal("sig_phone_released")
 
 
 

@@ -1,9 +1,9 @@
 extends "res://content/trigger/Trigger.gd"
 
-var targetArea: Node2D
-var newPlayerPosition: Vector2
+var target_area: Node2D
+var new_player_position: Vector2
 
 
 func trigger():
 	.trigger()
-	ViewportManager.change_area(targetArea, newPlayerPosition)
+	ViewportManager.change_area(target_area, new_player_position)

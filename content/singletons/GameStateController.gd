@@ -39,42 +39,42 @@ func restore_state(state):
 	fridge_filling = state["fridge_filling"]
 	current_day = state["current_day"]
 	# contact_state = state["contact_state"]
-#	emit_signal("sleep_changed", sleep)
-#	emit_signal("hunger_changed", hunger)
+#	emit_signal("sig_sleep_changed", sleep)
+#	emit_signal("sig_hunger_changed", hunger)
 #	emit_signal("sig_money_changed", money)
 #	emit_signal("sig_score_changed", score)
 
-var next_day_handle = 1 # Stated in default_savegame
-var next_status_update_handle = 2 # Stated in default_savegame
+var _next_day_handle = 1 # Stated in default_savegame
+var _next_status_update_handle = 2 # Stated in default_savegame
 
-signal sleep_changed(new_value)
-signal hunger_changed(new_value)
+signal sig_sleep_changed(new_value)
+signal sig_hunger_changed(new_value)
 signal sig_money_changed(new_value)
 signal sig_score_changed(new_value)
 
 func _ready():
 	EventBus.connect("sig_add_money", self, "_on_add_money")
 	#pass
-	next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
-	next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
+	_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
+	_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
 
-func next_day():
+func _next_day():
 	current_day += 1
 	days_without_mom += 1
 
-func status_update():
+func _status_update():
 	hunger -= 4
 	sleep -= 5
-	emit_signal("sleep_changed", sleep)
-	emit_signal("hunger_changed", hunger)
+	emit_signal("sig_sleep_changed", sleep)
+	emit_signal("sig_hunger_changed", hunger)
 
 func timer(handle):
-	if handle == next_day_handle:
-		next_day()
-		next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
-	if handle == next_status_update_handle:
-		status_update()
-		next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
+	if handle == _next_day_handle:
+		_next_day()
+		_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
+	if handle == _next_status_update_handle:
+		_status_update()
+		_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
 
 func change_score(amount):
 	score += amount

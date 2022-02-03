@@ -23,6 +23,16 @@ PRIVATE
 	SIGNAL_HANDLERS
 		_on_<signal_name>
 		snake_case
+		EXCEPTION:
+			When handles signal of Node then the node's name is in CamelCase inside the handler's name snake_case
+
+SETTER
+	set_<variable_name_without_underscore>
+	snake_case
+
+GETTER
+	get_<variable_name_without_underscore>
+	snake_case
 
 NODES
 	CamelCase

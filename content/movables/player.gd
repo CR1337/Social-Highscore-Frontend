@@ -2,12 +2,12 @@ extends Node2D
 
 export var speed = 3
 
-onready var movementRay = $RayCast2DMovement
-onready var triggerRay = $RayCast2DTrigger
-onready var tween = $Tween
+onready var _movement_ray = $RayCast2DMovement
+onready var _trigger_ray = $RayCast2DTrigger
+onready var _tween = $Tween
 
-var looking_direction: Vector2
-var directions = {
+var _looking_direction: Vector2
+var _directions = {
 	Vector2.DOWN: 'down',
 	Vector2.LEFT: 'left',
 	Vector2.RIGHT: 'right',
@@ -17,32 +17,32 @@ var directions = {
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.tile_size)
 	position -= Vector2.ONE * Globals.tile_size / 2
-	
-	looking_direction = Vector2.DOWN
-	
+
+	_looking_direction = Vector2.DOWN
+
 	InputBus.connect("action_pressed", self, "_on_action_pressed")
-	
-	
+
+
 func _process(delta):
-	if not tween.is_active():
+	if not _tween.is_active():
 		if InputBus.direction != Vector2.ZERO:
-			looking_direction = InputBus.direction
-			move()
+			_looking_direction = InputBus.direction
+			_move()
 		else:
-			$AnimatedSprite.animation = 'idle_' + directions[looking_direction]			
-	
+			$AnimatedSprite.animation = 'idle_' + _directions[_looking_direction]
+
 func move_tween():
-	tween.interpolate_property(self, "position",
-		position, position + looking_direction * Globals.tile_size,
+	_tween.interpolate_property(self, "position",
+		position, position + _looking_direction * Globals.tile_size,
 		1.0 / speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	tween.start()
-	
+	_tween.start()
+
 func _is_ray_colliding(ray):
-	ray.cast_to = looking_direction * Globals.tile_size
+	ray.cast_to = _looking_direction * Globals.tile_size
 	ray.force_raycast_update()
 	return ray.is_colliding()
 
-func colliding_with_npc():
+func _colliding_with_npc():
 	for npc in get_tree().get_nodes_in_group("npcs"):
 		if npc.get_parent() != self.get_parent():
 			continue
@@ -51,31 +51,32 @@ func colliding_with_npc():
 		if npc.get("announced_position") == null or npc.get("current_position") == null :
 			continue
 		if (
-			npc.announced_position == position / Globals.tile_size + looking_direction 
-			or npc.current_position == position / Globals.tile_size + looking_direction 
+			npc.announced_position == position / Globals.tile_size + _looking_direction
+			or npc.current_position == position / Globals.tile_size + _looking_direction
 		):
 				return true
 	return false
-func move():
-	# _is_ray_colliding has side effects 
+
+func _move():
+	# _is_ray_colliding has side effects
 	# so both calls must be done at the beginning
-	var movementRay_colliding = _is_ray_colliding(movementRay)
-	var triggerRay_colliding = _is_ray_colliding(triggerRay)
-	
-	if triggerRay_colliding:
-		var collider = triggerRay.get_collider()
+	var _movement_ray_colliding = _is_ray_colliding(_movement_ray)
+	var _trigger_ray_colliding = _is_ray_colliding(_trigger_ray)
+
+	if _trigger_ray_colliding:
+		var collider = _trigger_ray.get_collider()
 		if collider.get("is_activated_by_collision"):
 			collider.trigger_collision()
 		if collider.get("walkable") != null and not collider.get("walkable"):
 			return
-	if not movementRay_colliding and not colliding_with_npc():
+	if not _movement_ray_colliding and not _colliding_with_npc():
 		move_tween()
-		$AnimatedSprite.animation = 'walk_' + directions[looking_direction]
-			
+		$AnimatedSprite.animation = 'walk_' + _directions[_looking_direction]
+
 func _on_action_pressed():
-	triggerRay.force_raycast_update()		
-	if triggerRay.is_colliding():
-		var collider = triggerRay.get_collider()
+	_trigger_ray.force_raycast_update()
+	if _trigger_ray.is_colliding():
+		var collider = _trigger_ray.get_collider()
 		if collider.has_method("trigger_action"):
 			collider.trigger_action()
 
@@ -83,17 +84,17 @@ func persistent_state():
 	return {
 		'position_x': position.x,
 		'position_y': position.y,
-		'looking_direction_x': looking_direction.x,
-		'looking_direction_y': looking_direction.y
+		'looking_direction_x': _looking_direction.x,
+		'looking_direction_y': _looking_direction.y
 	}
-	
+
 func restore_state(state):
 	position = Vector2(
 		state['position_x'],
 		state['position_y']
 	)
-	looking_direction = Vector2(
+	_looking_direction = Vector2(
 		state['looking_direction_x'],
 		state['looking_direction_y']
 	)
-	$AnimatedSprite.animation = 'idle_' + directions[looking_direction]
+	$AnimatedSprite.animation = 'idle_' + _directions[_looking_direction]

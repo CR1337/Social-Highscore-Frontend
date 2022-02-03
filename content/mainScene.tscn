@@ -67,12 +67,12 @@ z_index = 2
 
 [node name="LivingHomestreetArea" parent="Areas" instance=ExtResource( 40 )]
 position = Vector2( 0, 0 )
-leaveLeftAreaPath = NodePath("../LivingPharmacystreetArea")
-leaveLeftPlayerPosition = Vector2( 13, -1 )
-leaveRightAreaPath = NodePath("../LivingFriendstreetArea")
-leaveRightPlayerPosition = Vector2( 0, -1 )
-leaveTopAreaPath = NodePath("../LivingBusstreetArea")
-leaveTopPlayerPosition = Vector2( -1, 17 )
+leave_left_area_path = NodePath("../LivingPharmacystreetArea")
+leave_left_player_position = Vector2( 13, -1 )
+leave_right_area_path = NodePath("../LivingFriendstreetArea")
+leave_right_player_position = Vector2( 0, -1 )
+leave_top_area_path = NodePath("../LivingBusstreetArea")
+leave_top_player_position = Vector2( -1, 17 )
 leave_home_area_path = NodePath("../LivingHomestreetHomeArea")
 leave_home_player_position = Vector2( 7, 17 )
 leave_mom_area_path = NodePath("../LivingHomestreetMomArea")
@@ -80,8 +80,8 @@ leave_mom_player_position = Vector2( 7, 17 )
 
 [node name="LivingFriendstreetArea" parent="Areas" instance=ExtResource( 35 )]
 position = Vector2( 1542.12, 19.9635 )
-leaveLeftAreaPath = NodePath("../LivingHomestreetArea")
-leaveLeftPlayerPosition = Vector2( 13, -1 )
+leave_left_area_path = NodePath("../LivingHomestreetArea")
+leave_left_player_position = Vector2( 13, -1 )
 leave_friend_area_path = NodePath("../LivingFriendstreetFriendArea")
 leave_friend_player_position = Vector2( 7, 17 )
 leave_partner_area_path = NodePath("../LivingFriendstreetPartnerArea")
@@ -89,95 +89,95 @@ leave_partner_player_position = Vector2( 7, 17 )
 
 [node name="LivingPharmacystreetArea" parent="Areas" instance=ExtResource( 28 )]
 position = Vector2( -1499.55, -15.9476 )
-leaveRightAreaPath = NodePath("../LivingHomestreetArea")
-leaveRightPlayerPosition = Vector2( 0, -1 )
+leave_right_area_path = NodePath("../LivingHomestreetArea")
+leave_right_player_position = Vector2( 0, -1 )
 leave_pharmacy_area_path = NodePath("../LivingPharmacystreetPharmacyArea")
 leave_pharmacy_player_position = Vector2( 7, 17 )
 
 [node name="LivingPharmacystreetPharmacyArea" parent="Areas" instance=ExtResource( 5 )]
 position = Vector2( -2031.48, 1303.07 )
-leaveAreaPath = NodePath("../LivingPharmacystreetArea")
-leavePlayerPosition = Vector2( 3, 14 )
+leave_area_path = NodePath("../LivingPharmacystreetArea")
+leave_player_position = Vector2( 3, 14 )
 
 [node name="LivingBusstreetArea" parent="Areas" instance=ExtResource( 31 )]
 position = Vector2( -58.3441, -1366.95 )
-leaveBottomAreaPath = NodePath("../LivingHomestreetArea")
-leaveBottomPlayerPosition = Vector2( -1, 0 )
+leave_bottom_area_path = NodePath("../LivingHomestreetArea")
+leave_bottom_player_position = Vector2( -1, 0 )
 bus_overlay_path = NodePath("../../Overlays/BusMenu")
 
 [node name="LivingHomestreetHomeArea" parent="Areas" instance=ExtResource( 39 )]
 position = Vector2( 59.9939, 1898.6 )
-leaveAreaPath = NodePath("../LivingHomestreetArea")
-leavePlayerPosition = Vector2( 10, 14 )
+leave_area_path = NodePath("../LivingHomestreetArea")
+leave_player_position = Vector2( 10, 14 )
 
 [node name="LivingHomestreetMomArea" parent="Areas" instance=ExtResource( 20 )]
 position = Vector2( -1074.55, 1915.41 )
-leaveAreaPath = NodePath("../LivingHomestreetArea")
-leavePlayerPosition = Vector2( 3, 14 )
+leave_area_path = NodePath("../LivingHomestreetArea")
+leave_player_position = Vector2( 3, 14 )
 
 [node name="LivingFriendstreetPartnerArea" parent="Areas" instance=ExtResource( 26 )]
 position = Vector2( 1203.67, -1223.45 )
-leaveAreaPath = NodePath("../LivingFriendstreetArea")
-leavePlayerPosition = Vector2( 3, 6 )
+leave_area_path = NodePath("../LivingFriendstreetArea")
+leave_player_position = Vector2( 3, 6 )
 
 [node name="LivingFriendstreetFriendArea" parent="Areas" instance=ExtResource( 6 )]
 position = Vector2( 1133.21, 1183.88 )
-leaveAreaPath = NodePath("../LivingFriendstreetArea")
-leavePlayerPosition = Vector2( 10, 14 )
+leave_area_path = NodePath("../LivingFriendstreetArea")
+leave_player_position = Vector2( 10, 14 )
 
 [node name="CityShadystreetArea" parent="Areas" instance=ExtResource( 7 )]
 position = Vector2( 1230.11, -3683.07 )
-leaveRightAreaPath = NodePath("../CityPolicestreetArea")
-leaveRightPlayerPosition = Vector2( 0, -1 )
-leaveTopAreaPath = NodePath("../CityBusstreetArea")
-leaveTopPlayerPosition = Vector2( -1, 17 )
-leaveBottomAreaPath = NodePath("../CityBankstreetArea")
-leaveBottomPlayerPosition = Vector2( -1, 0 )
+leave_right_area_path = NodePath("../CityPolicestreetArea")
+leave_right_player_position = Vector2( 0, -1 )
+leave_top_area_path = NodePath("../CityBusstreetArea")
+leave_top_player_position = Vector2( -1, 17 )
+leave_bottom_area_path = NodePath("../CityBankstreetArea")
+leave_bottom_player_position = Vector2( -1, 0 )
 
 [node name="CityBusstreetArea" parent="Areas" instance=ExtResource( 8 )]
 position = Vector2( 1227.28, -4837.69 )
-leaveRightAreaPath = NodePath("../CityJobcenterstreetArea")
-leaveRightPlayerPosition = Vector2( 0, -1 )
-leaveBottomAreaPath = NodePath("../CityShadystreetArea")
-leaveBottomPlayerPosition = Vector2( -1, 0 )
+leave_right_area_path = NodePath("../CityJobcenterstreetArea")
+leave_right_player_position = Vector2( 0, -1 )
+leave_bottom_area_path = NodePath("../CityShadystreetArea")
+leave_bottom_player_position = Vector2( -1, 0 )
 bus_overlay_path = NodePath("../../Overlays/BusMenu")
 
 [node name="CityJobcenterstreetArea" parent="Areas" instance=ExtResource( 9 )]
 position = Vector2( 2146.52, -4837.59 )
-leaveLeftAreaPath = NodePath("../CityBusstreetArea")
-leaveLeftPlayerPosition = Vector2( 13, -1 )
-leaveBottomAreaPath = NodePath("../CityPolicestreetArea")
-leaveBottomPlayerPosition = Vector2( -1, 0 )
+leave_left_area_path = NodePath("../CityBusstreetArea")
+leave_left_player_position = Vector2( 13, -1 )
+leave_bottom_area_path = NodePath("../CityPolicestreetArea")
+leave_bottom_player_position = Vector2( -1, 0 )
 leave_jobcenter_area_path = NodePath("../CityJobcenterstreetJobcenterArea")
 leave_jobcenter_player_position = Vector2( 7, 17 )
 
 [node name="CityJobcenterstreetJobcenterArea" parent="Areas" instance=ExtResource( 33 )]
 position = Vector2( 3068.92, -4891.02 )
-leaveAreaPath = NodePath("../CityJobcenterstreetArea")
-leavePlayerPosition = Vector2( 10, 9 )
+leave_area_path = NodePath("../CityJobcenterstreetArea")
+leave_player_position = Vector2( 10, 9 )
 
 [node name="CityPolicestreetArea" parent="Areas" instance=ExtResource( 17 )]
 position = Vector2( 2138.09, -3683.07 )
-leaveLeftAreaPath = NodePath("../CityShadystreetArea")
-leaveLeftPlayerPosition = Vector2( 13, -1 )
-leaveTopAreaPath = NodePath("../CityJobcenterstreetArea")
-leaveTopPlayerPosition = Vector2( -1, 17 )
-leaveBottomAreaPath = NodePath("../CityStorestreetArea")
-leaveBottomPlayerPosition = Vector2( -1, 0 )
+leave_left_area_path = NodePath("../CityShadystreetArea")
+leave_left_player_position = Vector2( 13, -1 )
+leave_top_area_path = NodePath("../CityJobcenterstreetArea")
+leave_top_player_position = Vector2( -1, 17 )
+leave_bottom_area_path = NodePath("../CityStorestreetArea")
+leave_bottom_player_position = Vector2( -1, 0 )
 leave_police_area_path = NodePath("../CityPolicestreetPoliceArea")
 leave_police_player_position = Vector2( 7, 17 )
 
 [node name="CityPolicestreetPoliceArea" parent="Areas" instance=ExtResource( 18 )]
 position = Vector2( 3077.56, -3721.91 )
-leaveAreaPath = NodePath("../CityPolicestreetArea")
-leavePlayerPosition = Vector2( 10, 11 )
+leave_area_path = NodePath("../CityPolicestreetArea")
+leave_player_position = Vector2( 10, 11 )
 
 [node name="CityBankstreetArea" parent="Areas" instance=ExtResource( 42 )]
 position = Vector2( 1234.11, -2516.79 )
-leaveRightAreaPath = NodePath("../CityStorestreetArea")
-leaveRightPlayerPosition = Vector2( 0, -1 )
-leaveTopAreaPath = NodePath("../CityShadystreetArea")
-leaveTopPlayerPosition = Vector2( -1, 17 )
+leave_right_area_path = NodePath("../CityStorestreetArea")
+leave_right_player_position = Vector2( 0, -1 )
+leave_top_area_path = NodePath("../CityShadystreetArea")
+leave_top_player_position = Vector2( -1, 17 )
 leave_office_area_path = NodePath("../CityBankstreetOfficeArea")
 leave_office_player_position = Vector2( 7, 17 )
 leave_bank_area_path = NodePath("../CityBankstreetBankArea")
@@ -185,32 +185,32 @@ leave_bank_player_position = Vector2( 7, 17 )
 
 [node name="CityBankstreetBankArea" parent="Areas" instance=ExtResource( 25 )]
 position = Vector2( 279.298, -2530.93 )
-leaveAreaPath = NodePath("../CityBankstreetArea")
-leavePlayerPosition = Vector2( 6, 15 )
+leave_area_path = NodePath("../CityBankstreetArea")
+leave_player_position = Vector2( 6, 15 )
 
 [node name="CityBankstreetOfficeArea" parent="Areas" instance=ExtResource( 27 )]
 position = Vector2( 136.858, -3729.39 )
-leaveAreaPath = NodePath("../CityBankstreetArea")
-leavePlayerPosition = Vector2( 3, 4 )
+leave_area_path = NodePath("../CityBankstreetArea")
+leave_player_position = Vector2( 3, 4 )
 
 [node name="CityStorestreetArea" parent="Areas" instance=ExtResource( 19 )]
 position = Vector2( 2135.09, -2525.13 )
-leaveLeftAreaPath = NodePath("../CityBankstreetArea")
-leaveLeftPlayerPosition = Vector2( 13, -1 )
-leaveTopAreaPath = NodePath("../CityPolicestreetArea")
-leaveTopPlayerPosition = Vector2( -1, 17 )
+leave_left_area_path = NodePath("../CityBankstreetArea")
+leave_left_player_position = Vector2( 13, -1 )
+leave_top_area_path = NodePath("../CityPolicestreetArea")
+leave_top_player_position = Vector2( -1, 17 )
 leave_store_area_path = NodePath("../CityStoreStreetStoreArea")
 leave_store_player_position = Vector2( 7, 17 )
 
 [node name="CityStoreStreetStoreArea" parent="Areas" instance=ExtResource( 10 )]
 position = Vector2( 3118.45, -2547.48 )
-leaveAreaPath = NodePath("../CityStorestreetArea")
-leavePlayerPosition = Vector2( 10, 14 )
+leave_area_path = NodePath("../CityStorestreetArea")
+leave_player_position = Vector2( 10, 14 )
 
 [node name="UtilityBusstreetArea" parent="Areas" instance=ExtResource( 23 )]
 position = Vector2( -1070.91, -3965.56 )
-leaveLeftAreaPath = NodePath("../UtilityPrisonstreetArea")
-leaveLeftPlayerPosition = Vector2( 13, -1 )
+leave_left_area_path = NodePath("../UtilityPrisonstreetArea")
+leave_left_player_position = Vector2( 13, -1 )
 leave_hospital_area_path = NodePath("../UtilityBusstreetHospitalArea")
 leave_hospital_player_position = Vector2( 7, 17 )
 leave_mall_area_path = NodePath("../UtilityBusstreetMallArea")
@@ -219,25 +219,25 @@ bus_overlay_path = NodePath("../../Overlays/BusMenu")
 
 [node name="UtilityBusstreetHospitalArea" parent="Areas" instance=ExtResource( 36 )]
 position = Vector2( -1718.47, -5233.76 )
-leaveAreaPath = NodePath("../UtilityBusstreetArea")
-leavePlayerPosition = Vector2( 4, 6 )
+leave_area_path = NodePath("../UtilityBusstreetArea")
+leave_player_position = Vector2( 4, 6 )
 
 [node name="UtilityBusstreetMallArea" parent="Areas" instance=ExtResource( 16 )]
 position = Vector2( -709.602, -5241.74 )
-leaveAreaPath = NodePath("../UtilityBusstreetArea")
-leavePlayerPosition = Vector2( 10, 6 )
+leave_area_path = NodePath("../UtilityBusstreetArea")
+leave_player_position = Vector2( 10, 6 )
 
 [node name="UtilityPrisonstreetArea" parent="Areas" instance=ExtResource( 4 )]
 position = Vector2( -2010.63, -3960.8 )
-leaveRightAreaPath = NodePath("../UtilityBusstreetArea")
-leaveRightPlayerPosition = Vector2( 0, -1 )
+leave_right_area_path = NodePath("../UtilityBusstreetArea")
+leave_right_player_position = Vector2( 0, -1 )
 leave_prison_area_path = NodePath("../UtilityPrisonstreetPrisonArea")
 leave_prison_player_position = Vector2( 7, 17 )
 
 [node name="UtilityPrisonstreetPrisonArea" parent="Areas" instance=ExtResource( 30 )]
 position = Vector2( -2988.37, -4878.47 )
-leaveAreaPath = NodePath("../UtilityPrisonstreetArea")
-leavePlayerPosition = Vector2( 5, 15 )
+leave_area_path = NodePath("../UtilityPrisonstreetArea")
+leave_player_position = Vector2( 5, 15 )
 
 [node name="Overlays" type="Node2D" parent="."]
 z_index = 10
@@ -261,12 +261,12 @@ position = Vector2( 3633.01, -651.034 )
 
 [node name="BusMenu" parent="Overlays" instance=ExtResource( 32 )]
 position = Vector2( 2049.05, 2118.92 )
-leaveCityAreaPath = NodePath("../../Areas/CityBusstreetArea")
-leaveCityPlayerPosition = Vector2( 9, 7 )
-leaveLivingAreaPath = NodePath("../../Areas/LivingBusstreetArea")
-leaveLivingPlayerPosition = Vector2( 8, 7 )
-leaveUtilityAreaPath = NodePath("../../Areas/UtilityBusstreetArea")
-leaveUtilityPlayerPosition = Vector2( 9, 11 )
+leave_city_area_path = NodePath("../../Areas/CityBusstreetArea")
+leave_city_player_position = Vector2( 9, 7 )
+leave_living_area_path = NodePath("../../Areas/LivingBusstreetArea")
+leave_living_player_position = Vector2( 8, 7 )
+leave_utility_area_path = NodePath("../../Areas/UtilityBusstreetArea")
+leave_utility_player_position = Vector2( 9, 11 )
 
 [node name="DialogOverlay" parent="Overlays" groups=[
 "persistent",

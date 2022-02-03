@@ -13,12 +13,12 @@ func persistent_state():
 	return {
 		'news_index': _news_index
 	}
-	
+
 func restore_state(state):
 	call_deferred("update_newspage", state['news_index'])
 
 func _ready():
-	ImageProcessor.connect("image_processing_done", self, "_on_image_processing_done")
+	ImageProcessor.connect("sig_image_processing_done", self, "_on_image_processing_done")
 
 func _news():
 	return NewsController.news[_news_index]
@@ -30,7 +30,7 @@ func update_newspage(news_index):
 	_title_label.text = _news()['title']
 	_text_label.clear()
 	_text_label.append_bbcode(_news()['text'])
-	
+
 	if _news()['reacted_on']:
 		_react_button.disabled = true
 		_react_button.text = ""

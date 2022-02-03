@@ -8,8 +8,8 @@ export (Vector2) var leave_bank_player_position
 
 func _ready():
 
-	$LeaveOfficeTriggerArea/LeaveOfficeTrigger.targetArea = get_node(leave_office_area_path)
-	$LeaveOfficeTriggerArea/LeaveOfficeTrigger.newPlayerPosition = leave_office_player_position
+	$LeaveOfficeTriggerArea/LeaveOfficeTrigger.target_area = get_node(leave_office_area_path)
+	$LeaveOfficeTriggerArea/LeaveOfficeTrigger.new_player_position = leave_office_player_position
 
-	$LeaveBankTriggerArea/LeaveBankTrigger.targetArea = get_node(leave_bank_area_path)
-	$LeaveBankTriggerArea/LeaveBankTrigger.newPlayerPosition = leave_bank_player_position
+	$LeaveBankTriggerArea/LeaveBankTrigger.target_area = get_node(leave_bank_area_path)
+	$LeaveBankTriggerArea/LeaveBankTrigger.new_player_position = leave_bank_player_position

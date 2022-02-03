@@ -1,7 +1,7 @@
 extends "res://content/trigger/Trigger.gd"
 
-var targetOverlay: Node2D
+var target_overlay: Node2D
 
 func trigger():
 	.trigger()
-	ViewportManager.change_overlay(targetOverlay)
+	ViewportManager.change_overlay(target_overlay)

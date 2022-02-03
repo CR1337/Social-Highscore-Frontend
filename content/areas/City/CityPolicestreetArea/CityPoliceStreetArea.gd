@@ -6,5 +6,5 @@ export (Vector2) var leave_police_player_position
 
 func _ready():
 
-	$LeavePoliceTriggerArea/LeavePoliceTrigger.targetArea = get_node(leave_police_area_path)
-	$LeavePoliceTriggerArea/LeavePoliceTrigger.newPlayerPosition = leave_police_player_position
+	$LeavePoliceTriggerArea/LeavePoliceTrigger.target_area = get_node(leave_police_area_path)
+	$LeavePoliceTriggerArea/LeavePoliceTrigger.new_player_position = leave_police_player_position

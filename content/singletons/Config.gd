@@ -1,43 +1,43 @@
 extends Node
 
-var serverAddress: String
-var serverPort: String
-var imageRotationAngle: int
+var server_address: String
+var server_port: String
+var image_rotation_angle: int
 
-var configFilename = "user://config.json"
-var file: File
+const _config_filename = "user://config.json"
+var _file: File
 
-var defaultValues = {
-	'serverAddress': "78.47.102.251",
-	'serverPort': "80",
-	'imageRotationAngle': 0
+var _default_values = {
+	'server_address': "78.47.102.251",
+	'server_port': "80",
+	'image_rotation_angle': 0
 }
 
 func _create_file():
-	file.open(configFilename, File.WRITE)
-	file.store_string(JSON.print(defaultValues))
-	file.close()
+	_file.open(_config_filename, File.WRITE)
+	_file.store_string(JSON.print(_default_values))
+	_file.close()
 
 func _ready():
-	file = File.new()
-	if not file.file_exists(configFilename):
+	_file = File.new()
+	if not _file.file_exists(_config_filename):
 		_create_file()
 	load_from_file()
 
 func store_to_file():
-	file.open(configFilename, File.WRITE)
-	file.store_string(JSON.print({
-		'serverAddress': serverAddress,
-		'serverPort': serverPort,
-		'imageRotationAngle': imageRotationAngle
+	_file.open(_config_filename, File.WRITE)
+	_file.store_string(JSON.print({
+		'server_address': server_address,
+		'server_port': server_port,
+		'image_rotation_angle': image_rotation_angle
 	}))
-	file.close()
-	
+	_file.close()
+
 func load_from_file():
-	file.open(configFilename, File.READ)
-	var content = file.get_as_text()
-	file.close()
+	_file.open(_config_filename, File.READ)
+	var content = _file.get_as_text()
+	_file.close()
 	var json_content = JSON.parse(content).result
-	serverAddress = json_content['serverAddress']
-	serverPort = json_content['serverPort']
-	imageRotationAngle = json_content['imageRotationAngle']
+	server_address = json_content['server_address']
+	server_port = json_content['server_port']
+	image_rotation_angle = json_content['image_rotation_angle']

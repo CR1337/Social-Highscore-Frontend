@@ -9,7 +9,7 @@ func _on_ContinueButton_pressed():
 
 
 func _on_ConfigButton_pressed():
-	ViewportManager.configMenu.load_and_refresh()
+	ViewportManager.config_menu.load_and_refresh()
 	ViewportManager.change_to_config()
 
 
