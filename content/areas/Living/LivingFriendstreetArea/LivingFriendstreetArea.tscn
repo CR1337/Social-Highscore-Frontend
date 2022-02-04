@@ -106,4 +106,4 @@ current_position = Vector2( -1, 5 )
 
 [node name="NPCStartTrigger" type="Node" parent="Citizen1_1"]
 script = ExtResource( 11 )
-id = "tid_living_friendstreet_citizen_1_0_start"
+id = "tid_living_friendstreet_citizen_1_1_start"

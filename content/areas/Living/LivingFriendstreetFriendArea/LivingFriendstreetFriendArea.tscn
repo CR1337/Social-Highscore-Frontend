@@ -1797,6 +1797,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="LivingFriendstreetFriendArea" type="Node2D"]
 script = ExtResource( 9 )
+leave_area_pat = null
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
