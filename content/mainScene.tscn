@@ -224,6 +224,7 @@ leave_prison_player_position = Vector2( 7, 17 )
 
 [node name="UtilityPrisonstreetPrisonArea" parent="Areas" instance=ExtResource( 30 )]
 position = Vector2( -2988.37, -4878.47 )
+leave_area_path = NodePath("../UtilityPrisonstreetArea")
 leave_player_position = Vector2( 3, 15 )
 
 [node name="Overlays" type="Node2D" parent="."]

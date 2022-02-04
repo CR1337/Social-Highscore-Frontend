@@ -280,6 +280,46 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
+    "/root/MainScene/Areas/LivingHomestreetArea/Citizen2_1": {
+        "current_position_x": 4,
+        "current_position_y": -1,
+        "active": true,
+        "announced_position_x": 4,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 4,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "down",
+                        "repeats": 4,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 3,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "up",
+                        "repeats": 4,
+                        "trigger_id": "tid_living_busstreet_citizen_2_2_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
     "/root/MainScene/Areas/LivingFriendstreetArea/Car1_2": {
         "current_position_x": -1,
         "current_position_y": 8,
@@ -776,6 +816,76 @@
                         "direction": "left",
                         "repeats": 9,
                         "trigger_id": "tid_living_busstreet_car_3_0_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingBusstreetArea/Citizen2_0": {
+        "current_position_x": -1,
+        "current_position_y": 8,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": 8,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 4,
+                "new_start_position_y": -1,
+                "sequence": [
+                    {
+                        "direction": "right",
+                        "repeats": 5,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "down",
+                        "repeats": 6,
+                        "trigger_id": "tid_living_homestreet_citizen_2_1_start"
+                    }
+                ],
+                "repeats": 1
+            }
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingBusstreetArea/Citizen2_2": {
+        "current_position_x": 7,
+        "current_position_y": 17,
+        "active": true,
+        "announced_position_x": 7,
+        "announced_position_y": 17,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+            "state0": {
+                "new_start_position_x": 7,
+                "new_start_position_y": 17,
+                "sequence": [
+                    {
+                        "direction": "up",
+                        "repeats": 9,
+                        "trigger_id": null
+                    },
+                    {
+                        "direction": "right",
+                        "repeats": 5,
+                        "trigger_id": "tid_living_busstreet_citizen_2_0_start"
                     }
                 ],
                 "repeats": 1

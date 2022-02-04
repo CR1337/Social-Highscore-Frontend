@@ -38,6 +38,7 @@ func start_cars():
 	
 	# NPCs
 	EventBus.emit_signal("sig_trigger", 'tid_living_homestreet_citizen_1_0_start')
+	EventBus.emit_signal("sig_trigger", 'tid_living_busstreet_citizen_2_0_start')
 	
 func timer(handle):
 	if handle == _traffic_toggle_handle:
