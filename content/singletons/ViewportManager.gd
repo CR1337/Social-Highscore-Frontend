@@ -49,8 +49,8 @@ func restore_state(state):
 	_last_overlay = get_node(state['last_overlay'])
 
 func _ready():
-	InputBus.connect("phone_pressed", self, "_on_phone_pressed")
-	InputBus.connect("menu_pressed", self, "_on_menu_pressed")
+	InputBus.connect("sig_phone_pressed", self, "_on_phone_pressed")
+	InputBus.connect("sig_menu_pressed", self, "_on_menu_pressed")
 	# _last_overlay = _transparent_overlay
 
 func _on_phone_pressed():

@@ -1816,22 +1816,16 @@ tile_data = PoolIntArray( 4, 59, 327690, 5, 59, 327691, 6, 59, 327691, 7, 59, 32
 [node name="BedroomDoor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 608, 356 )
 walkable_when_on = true
-triggerAreaOffset = Vector2( 0, 64 )
-triggerAreaScale = Vector2( 1, 1 )
 
 [node name="BathrommDoor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 224, 676 )
 walkable_when_on = true
-triggerAreaOffset = Vector2( 0, 64 )
-triggerAreaScale = Vector2( 1, 1 )
 
 [node name="BathroomSink" parent="." instance=ExtResource( 4 )]
 position = Vector2( 206, 460 )
 frames = ExtResource( 8 )
 on_animation_name = "on"
 off_animation_name = "off"
-triggerAreaOffset = Vector2( 0, -32 )
-triggerAreaScale = Vector2( 2, 0.2 )
 
 [node name="WallsFore" type="TileMap" parent="."]
 z_index = 5
@@ -1868,8 +1862,6 @@ tile_data = PoolIntArray( 65536, 97, 0, 65537, 97, 0, 65538, 97, 0, 65539, 97, 0
 position = Vector2( 443.176, 735.929 )
 z_index = 5
 frames = ExtResource( 11 )
-triggerAreaOffset = Vector2( -32, 32 )
-triggerAreaScale = Vector2( 1, 1 )
 
 [node name="TriggerArea" parent="." instance=ExtResource( 7 )]
 position = Vector2( 377.568, 1058.04 )

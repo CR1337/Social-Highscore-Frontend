@@ -35,7 +35,10 @@ func start_cars():
 	EventBus.emit_signal("sig_trigger", 'tid_city_jobcenterstreet_car_11_4_start')
 	EventBus.emit_signal("sig_trigger", 'tid_city_storestreet_car_12_0_start')
 	EventBus.emit_signal("sig_trigger", 'tid_utility_busstreet_car_14_0_start')
-
+	
+	# NPCs
+	EventBus.emit_signal("sig_trigger", 'tid_living_homestreet_citizen_1_0_start')
+	
 func timer(handle):
 	if handle == _traffic_toggle_handle:
 		_traffic_toggle_handle = TimeController.setTimer(10, self)
