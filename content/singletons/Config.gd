@@ -38,6 +38,6 @@ func load_from_file():
 	var content = _file.get_as_text()
 	_file.close()
 	var json_content = JSON.parse(content).result
-	server_address = json_content['server_address']
-	server_port = json_content['server_port']
-	image_rotation_angle = json_content['image_rotation_angle']
+	server_address = json_content['serverAddress']
+	server_port = json_content['serverPort']
+	image_rotation_angle = json_content['imageRotationAngle']

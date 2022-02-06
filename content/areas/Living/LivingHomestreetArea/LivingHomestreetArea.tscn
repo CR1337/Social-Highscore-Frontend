@@ -1,20 +1,30 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=3]
 [ext_resource path="res://content/areas/Living/LivingHomestreetArea/LivingHomestreetArea.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://assets/animated_sprites/tres/characters/male_citizen1.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=8]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=15]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=16]
-[ext_resource path="res://content/trigger/StartCarTrigger.gd" type="Script" id=17]
+[ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=17]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_green_car.tres" type="SpriteFrames" id=18]
 
 [node name="LivingHomestreetArea" type="Node2D"]
 position = Vector2( 0, -1.33484 )
 script = ExtResource( 4 )
+leaveLeftAreaPath = null
+leaveLeftPlayerPosition = null
+leaveRightAreaPath = null
+leaveRightPlayerPosition = null
+leaveTopAreaPath = null
+leaveTopPlayerPosition = null
+leaveBottomAreaPath = null
+leaveBottomPlayerPosition = null
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -179,3 +189,42 @@ current_position = Vector2( 5, -1 )
 [node name="CarStartTrigger" type="Node" parent="Car3_1"]
 script = ExtResource( 17 )
 id = "tid_living_homestreet_car_3_1_start"
+
+[node name="Citizen1_0" parent="." instance=ExtResource( 11 )]
+position = Vector2( -32, 352 )
+z_index = 1
+movement_filename = "res://doc/living_homestreet/citizen_1_0_movement.json"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 6 )
+current_position = Vector2( -1, 5 )
+
+[node name="NPCStartTrigger" type="Node" parent="Citizen1_0"]
+script = ExtResource( 17 )
+id = "tid_living_homestreet_citizen_1_0_start"
+
+[node name="Citizen1_2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 800, 608 )
+z_index = 1
+movement_filename = "res://doc/living_homestreet/citizen_1_2_movement.json"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 6 )
+current_position = Vector2( 12, 9 )
+
+[node name="NPCStartTrigger" type="Node" parent="Citizen1_2"]
+script = ExtResource( 17 )
+id = "tid_living_homestreet_citizen_1_2_start"
+
+[node name="Citizen2_1" parent="." instance=ExtResource( 11 )]
+position = Vector2( 288, -32 )
+z_index = 1
+movement_filename = "res://doc/living_homestreet/citizen_2_1_movement.json"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 7 )
+current_position = Vector2( 4, -1 )
+
+[node name="NPCStartTrigger" type="Node" parent="Citizen2_1"]
+script = ExtResource( 17 )
+id = "tid_living_homestreet_citizen_2_1_start"

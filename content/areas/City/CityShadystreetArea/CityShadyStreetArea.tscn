@@ -5,7 +5,7 @@
 [ext_resource path="res://content/areas/City/CityShadystreetArea/CityShadyStreetArea.gd" type="Script" id=3]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/animated_sprites/tres/characters/citizen01.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=6]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=8]
 
 [node name="CityShadystreetArea" type="Node2D"]

@@ -1818,8 +1818,6 @@ position = Vector2( 206, 460 )
 frames = ExtResource( 8 )
 on_animation_name = "on"
 off_animation_name = "off"
-triggerAreaOffset = Vector2( 0, -32 )
-triggerAreaScale = Vector2( 2, 0.2 )
 
 [node name="WallsFore" type="TileMap" parent="."]
 z_index = 3
@@ -1856,8 +1854,6 @@ tile_data = PoolIntArray( 65536, 97, 0, 65537, 97, 0, 65538, 97, 0, 65539, 97, 0
 position = Vector2( 449, 736 )
 z_index = 1
 frames = ExtResource( 11 )
-triggerAreaOffset = Vector2( -32, 32 )
-triggerAreaScale = Vector2( 1, 1 )
 
 [node name="TriggerArea" parent="." instance=ExtResource( 7 )]
 position = Vector2( 377.568, 1058.04 )
