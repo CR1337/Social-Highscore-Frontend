@@ -16,6 +16,12 @@ onready var _trigger_area = $TriggerArea
 
 export var ignores_crosswalks = true
 
+export var is_sitting = false setget set_is_sitting, get_is_sitting
+func set_is_sitting(value):
+	is_sitting = value
+func get_is_sitting():
+	return is_sitting
+
 export var is_activated_by_collison: bool setget set_is_activated_by_collison, get_is_activated_by_collison
 func set_is_activated_by_collison(value):
 	is_activated_by_collison = value
@@ -86,9 +92,14 @@ var _active = false
 var announced_position: Vector2
 
 
-var _looking_direction = Vector2.DOWN
+export var looking_direction = Vector2.DOWN setget set_looking_direction, get_looking_direction
+func set_looking_direction(value):
+	looking_direction = value
+	_update_animation()
+func get_looking_direction():
+	return looking_direction
 
-var state: String
+var state =  "idle"
 
 var _is_new_state_requested = false
 var _requested_state: String
@@ -161,7 +172,7 @@ func _process(delta):
 		_move()
 
 func _is_ray_colliding(_ray, factor = 1):
-	_ray.cast_to = _looking_direction * Globals.tile_size * factor
+	_ray.cast_to = looking_direction * Globals.tile_size * factor
 	_ray.force_raycast_update()
 	return _ray.is_colliding()
 
@@ -187,18 +198,21 @@ func _can_move():
 
 func _move_tween():
 	_tween.interpolate_property(self, "position",
-		position, position + _looking_direction * Globals.tile_size,
+		position, position + looking_direction * Globals.tile_size,
 		1.0 / speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	_tween.start()
 
 func _update_animation():
 	var animation_name_prefix = ""
 	var animation_name_suffix = ""
-	if _tween.is_active():
+	if _tween != null && _tween.is_active():
 		animation_name_prefix = "walk"
+	elif is_sitting:
+		animation_name_prefix = "sitting"
 	else:
 		animation_name_prefix = "idle"
-	match _looking_direction:
+
+	match looking_direction:
 		Vector2.LEFT:
 			animation_name_suffix = "left"
 		Vector2.RIGHT:
@@ -207,11 +221,11 @@ func _update_animation():
 			animation_name_suffix = "up"
 		Vector2.DOWN:
 			animation_name_suffix = "down"
-
+			
 	if state != 'idle':
 		if _get_movement_step()['direction'] != 'wait':
 			animation_name_suffix = _get_movement_step()['direction']
-	_sprite.animation = animation_name_prefix + "_" + animation_name_suffix
+	$AnimatedSprite.animation = animation_name_prefix + "_" + animation_name_suffix
 
 func _move():
 	if not _tween.is_active():
@@ -220,7 +234,7 @@ func _move():
 			_movement_waiting = true
 			_movement_waiting_handle = TimeController.setTimer(_get_movement_step()['seconds'], self)
 		else:
-			_looking_direction = _directions[_get_movement_step()['direction']]
+			looking_direction = _directions[_get_movement_step()['direction']]
 			if _can_move():
 				_move_tween()
 				_next_movement_step_repeat()
@@ -267,8 +281,8 @@ func persistent_state():
 		"active": _active,
 		"announced_position_x": announced_position.x,
 		"announced_position_y": announced_position.y,
-		"looking_direction_x": _looking_direction.x,
-		"looking_direction_y": _looking_direction.y,
+		"looking_direction_x": looking_direction.x,
+		"looking_direction_y": looking_direction.y,
 		"state": state,
 		"is_new_state_requested": _is_new_state_requested,
 		"requested_state": _requested_state,
@@ -285,7 +299,7 @@ func restore_state(jsonstate):
 	set_current_position(Vector2(jsonstate['current_position_x'], jsonstate['current_position_y']))
 	_active =  jsonstate['active']
 	announced_position = (Vector2(jsonstate['announced_position_x'], jsonstate['announced_position_y']))
-	_looking_direction = (Vector2(jsonstate['looking_direction_x'], jsonstate['looking_direction_y']))
+	looking_direction = (Vector2(jsonstate['looking_direction_x'], jsonstate['looking_direction_y']))
 	state = jsonstate['state']
 	_is_new_state_requested = jsonstate['is_new_state_requested']
 	_requested_state = jsonstate['requested_state']

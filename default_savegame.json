@@ -239,56 +239,6 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/MainScene/Areas/LivingFriendstreetArea/Citizen1_1": {
-        "current_position_x": -1,
-        "current_position_y": 5,
-        "active": true,
-        "announced_position_x": -1,
-        "announced_position_y": 5,
-        "looking_direction_x": 0,
-        "looking_direction_y": 1,
-        "state": "idle",
-        "is_new_state_requested": false,
-        "requested_state": "",
-        "movement_dict": {
-            "state0": {
-                "new_start_position_x": -1,
-                "new_start_position_y": 5,
-                "sequence": [
-                    {
-                        "direction": "right",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "down",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "right",
-                        "repeats": 6,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "down",
-                        "repeats": 3,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "left",
-                        "repeats": 7,
-                        "trigger_id": "tid_living_homestreet_citizen_1_2_start"
-                    }
-                ],
-                "repeats": 1
-            }
-        },
-        "movement_step_index": 0,
-        "movement_step_repeat_counter": 0,
-        "movement_waiting": false,
-        "movement_waiting_handle": 0
-    },
     "/root/MainScene/Areas/LivingPharmacystreetArea/Car2_2": {
         "current_position_x": 12,
         "current_position_y": 7,
@@ -2799,13 +2749,13 @@
         "movement_waiting_handle": 0
     },
     "/root/MainScene/Areas/UtilityBusstreetMallArea/NPC": {
-        "current_position_x": 0,
+        "current_position_x": 0.2,
         "current_position_y": 14,
         "active": true,
-        "announced_position_x": 0,
+        "announced_position_x": 0.2,
         "announced_position_y": 14,
-        "looking_direction_x": 0,
-        "looking_direction_y": 1,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
         "state": "idle",
         "is_new_state_requested": false,
         "requested_state": "",
