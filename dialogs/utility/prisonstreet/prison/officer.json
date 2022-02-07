@@ -1,0 +1,18 @@
+{
+    "texts": {
+        "0": "I'm keeping track here.", 
+        "1": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {"tid": "1", "nid": null, "trigger_id": null}     
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

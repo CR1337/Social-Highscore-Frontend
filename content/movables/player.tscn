@@ -18,7 +18,6 @@ shape = SubResource( 1 )
 position = Vector2( 0.353546, -32 )
 frames = ExtResource( 1 )
 animation = "idle_down"
-frame = 4
 playing = true
 
 [node name="RayCast2DMovement" type="RayCast2D" parent="."]

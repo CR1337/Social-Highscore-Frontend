@@ -1,0 +1,158 @@
+{
+    "texts": {
+        "0": "Hello, how can I help you? ",
+        "1": "I would like to take out a loan for 500  ",
+        "2": "I would like to take out a loan for 100 ",
+        "3": "Nothing, thank you ",
+        "4": "Sorry, your credit rating does not allow that at the moment ",
+        "5": "You will receive the amount immediately credited to your account. You must repay this amount, plus 10% interest within the next 10 days in installments. Do you agree with this? ",
+        "6": "Yes",
+        "7": "No",
+        "8": "You cannot take out consumer loans at this time. Improve your Citizen Score first ",
+        "9": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "5",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_loan_500"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "5",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_loan_100"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "Class C": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "4",
+                "answers": [
+                    {
+                        "tid": "9",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "5",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_loan_100"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "Class D": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "8",
+                "answers": [
+                    {
+                        "tid": "9",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

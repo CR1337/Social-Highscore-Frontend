@@ -4,8 +4,8 @@ onready var _label = $Background/Margin/VBox/TextLabel
 onready var _buttons = [
 	$Background/Margin/VBox/LowerHBox/Answer0Button,
 	$Background/Margin/VBox/LowerHBox/Answer1Button,
-	$Background/Margin/VBox/LowerHBox/Answer2Button,
-	$Background/Margin/VBox/LowerHBox/Answer3Button,
+	$Background/Margin/VBox/UpperHBox/Answer2Button,
+	$Background/Margin/VBox/UpperHBox/Answer3Button,
 ]
 onready var _upper_h_box = $Background/Margin/VBox/UpperHBox
 

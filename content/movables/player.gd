@@ -20,7 +20,7 @@ func _ready():
 
 	_looking_direction = Vector2.DOWN
 
-	InputBus.connect("action_pressed", self, "_on_action_pressed")
+	InputBus.connect("sig_action_pressed", self, "_on_action_pressed")
 
 
 func _process(delta):

@@ -1,0 +1,62 @@
+{
+    "texts": {
+        "0": "My son has a chronic illness. The last medical bill was once again astronomical. How am I supposed to pay for this in the long run? ", 
+        "1": "I have now had to take out another loan. This scoring system is starting to worry me. I got a bunch of points deducted for all the debt. What will the others think of me? They're bound to think that I'm not behaving in an exemplary manner.",
+        "2": "I have now donated a kidney to boost my points account. Somehow I am not feeling so well right now. I feel dizzy and so weak. I should actually see a doctor, but I can't afford it at the moment.",
+        "3": "After I fainted at work, I had to have dialysis treatment. It was really expensive. Now I've lost my job and have even more debts. I won't be able to pay the next medical bill for my son.  ",
+        "4": "My son died yesterday and my wife and I lost our apartment privileges. I don't know what to do anymore. ",
+        "5": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {"tid": "5", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        },
+        "state1": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "1",
+                "answers": [
+                    {"tid": "5", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        },
+        "state2": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "2",
+                "answers": [
+                    {"tid": "5", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        },
+        "state3": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "3",
+                "answers": [
+                    {"tid": "5", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        },
+        "state4": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "4",
+                "answers": [
+                    {"tid": "5", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

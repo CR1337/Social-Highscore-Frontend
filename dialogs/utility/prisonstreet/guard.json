@@ -1,0 +1,20 @@
+{
+    "texts": {
+        "0": "Welcome to the municipal reformatory. Here we help people who have problems with integration into society. We show you how they can become better people. Do you have an appointment? ", 
+        "1": "No, have a nice day",
+        "2": "Yes"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {"tid": "1", "nid": null, "trigger_id": null},
+                    {"tid": "2", "nid": null, "trigger_id": null}      
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

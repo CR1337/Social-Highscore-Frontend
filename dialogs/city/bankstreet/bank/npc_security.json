@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "0": "Welcome to the Peoples Bank, the best bank in the country. When I bought my new flat-screen TV the other day, I was able to take out a loan for it very easily here. ",
+        "1": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

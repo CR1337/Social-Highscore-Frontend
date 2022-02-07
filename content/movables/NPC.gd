@@ -1,4 +1,4 @@
-# tool
+tool
 extends Area2D
 
 var _directions = {
@@ -141,12 +141,13 @@ func request_state_change(new_state):
 func _ready():
 	initialize_trigger_area()
 	_active = active_on_start
-	var file = File.new()
-	file.open(movement_filename, file.READ)
-	_movement_dict = JSON.parse(
-		file.get_as_text()
-	).result
-	file.close()
+	if movement_filename != "":
+		var file = File.new()
+		file.open(movement_filename, file.READ)
+		_movement_dict = JSON.parse(
+			file.get_as_text()
+		).result
+		file.close()
 	set_state('idle')
 	_set_raster_position(current_position)
 	announced_position = current_position

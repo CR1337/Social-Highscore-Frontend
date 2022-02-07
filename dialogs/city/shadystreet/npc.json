@@ -1,0 +1,73 @@
+{
+    "texts": {
+        "0": "I don't like this new system. I don't even know what I'm allowed to say and what I'm not allowed to say. The other day, when I complained to my girlfriend about the new law, I got points deducted directly.  ", 
+        "1": "This system really sucks. I pay higher prices everywhere now. What's supposed to be social about that? ",
+        "2": "I hate this state. Just because I express justified criticism, I am ostracized. I bet I lose points just by saying that. That is not fair. ",
+        "3": "How is this going to continue. I pay almost double for every purchase and can't even take out a loan anymore. I have to feed my family! ",
+        "4": "I lost my job today. Now I can't provide for my family at all. My daughter is already getting looks at school because she is related to me and my wife worries every day where we can get the money for our next purchase. Maybe I should leave them to give them a better life. ",
+        "5": "Meine Frau wurde vor die Wahl gestellt, mich rauszuwerfen oder selbst obdachlos zu werden. Jetzt kann ich nirgendwo mehr hin.",
+        "6": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {"tid": "6", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        },
+        "state1": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "1",
+                "answers": [
+                    {"tid": "6", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        },
+        "state2": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "2",
+                "answers": [
+                    {"tid": "6", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        },
+        "state3": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "3",
+                "answers": [
+                    {"tid": "6", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        },
+        "state4": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "4",
+                "answers": [
+                    {"tid": "6", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        },
+        "state5": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "5",
+                "answers": [
+                    {"tid": "6", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

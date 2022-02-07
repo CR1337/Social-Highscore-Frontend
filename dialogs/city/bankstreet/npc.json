@@ -1,0 +1,59 @@
+{
+    "texts": {
+        "0": "You look like you're searching something. Can I help you? ",
+        "1": "I am looking for the bank ",
+        "2": "The bank is the large building directly across the street.",
+        "3": "I am looking for the Office ",
+        "4": "The office is the small building there on the left.  ",
+        "5": "Thanks, I can already find my way around ",
+        "6": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "5",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "2",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": "node2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "4",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

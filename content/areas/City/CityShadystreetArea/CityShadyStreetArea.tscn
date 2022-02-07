@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=7]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=8]
 
 [node name="CityShadystreetArea" type="Node2D"]
@@ -69,15 +70,31 @@ script = ExtResource( 4 )
 id = "tid_city_shadystreet_leave_top"
 
 [node name="NPC" parent="." instance=ExtResource( 8 )]
-position = Vector2( 96, 736 )
-z_index = 3
-movement_filename = "res://doc/movement.json"
-animation = ExtResource( 6 )
-current_position = Vector2( 1, 11 )
-
-[node name="NPC2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 608, 352 )
-z_index = 3
-movement_filename = "res://doc/movement.json"
+z_index = 1
+is_activated_by_action = true
+action_trigger_id = "tid_city_shadystreet_npc_start_dialog"
+dialog_filename = "res://dialogs/city/shadystreet/npc.json"
+speed = 2.0
+active_on_start = true
 animation = ExtResource( 6 )
 current_position = Vector2( 9, 5 )
+
+[node name="DialogStartTrigger" type="Node" parent="NPC"]
+script = ExtResource( 7 )
+id = "tid_city_shadystreet_npc_start_dialog"
+
+[node name="NPC2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 160, 736 )
+z_index = 1
+is_activated_by_action = true
+action_trigger_id = "tid_city_shadystreet_npc2_start_dialog"
+dialog_filename = "res://dialogs/city/shadystreet/npc2.json"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 6 )
+current_position = Vector2( 2, 11 )
+
+[node name="DialogStartTrigger" type="Node" parent="NPC2"]
+script = ExtResource( 7 )
+id = "tid_city_shadystreet_npc2_start_dialog"

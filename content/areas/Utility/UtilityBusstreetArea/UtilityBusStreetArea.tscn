@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -7,10 +7,13 @@
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/trigger/BusTrigger.gd" type="Script" id=6]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_grey_car.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://assets/animated_sprites/tres/characters/male_citizen1.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://content/trigger/AuthenticationTrigger.gd" type="Script" id=10]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_white_car.tres" type="SpriteFrames" id=12]
 [ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=13]
+[ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=14]
 
 [node name="UtilityBusstreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -86,10 +89,7 @@ post_authentication_trigger_id = "tid_utility_busstreet_bus"
 script = ExtResource( 6 )
 id = "tid_utility_busstreet_bus"
 
-[node name="Car13_0" parent="." groups=[
-"persistent",
-] instance=ExtResource( 11 )]
-visible = false
+[node name="Car13_0" parent="." instance=ExtResource( 11 )]
 position = Vector2( 800, 736 )
 ignores_crosswalks = false
 movement_filename = "res://doc/utility_busstreet/car_13_0_movement.json"
@@ -97,16 +97,12 @@ speed = 3.0
 active_on_start = true
 animation = ExtResource( 7 )
 current_position = Vector2( 12, 11 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car13_0"]
 script = ExtResource( 13 )
 id = "tid_utility_busstreet_car_13_0_start"
 
-[node name="Car14_0" parent="." groups=[
-"persistent",
-] instance=ExtResource( 11 )]
-visible = false
+[node name="Car14_0" parent="." instance=ExtResource( 11 )]
 position = Vector2( 800, 736 )
 ignores_crosswalks = false
 movement_filename = "res://doc/utility_busstreet/car_14_0_movement.json"
@@ -114,8 +110,37 @@ speed = 3.0
 active_on_start = true
 animation = ExtResource( 12 )
 current_position = Vector2( 12, 11 )
-is_invisible_on_idle = true
 
 [node name="CarStartTrigger" type="Node" parent="Car14_0"]
 script = ExtResource( 13 )
 id = "tid_utility_busstreet_car_14_0_start"
+
+[node name="NPC" parent="." instance=ExtResource( 11 )]
+position = Vector2( 352, 608 )
+z_index = 1
+is_activated_by_action = true
+action_trigger_id = "tid_utility_busstreet_npc_start_dialog"
+dialog_filename = "res://dialogs/utility/busstreet/npc.json"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 8 )
+current_position = Vector2( 5, 9 )
+
+[node name="DialogStartTrigger" type="Node" parent="NPC"]
+script = ExtResource( 14 )
+id = "tid_utility_busstreet_npc_start_dialog"
+
+[node name="NPC2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 288, 544 )
+z_index = 1
+is_activated_by_action = true
+action_trigger_id = "tid_utility_busstreet_npc2_start_dialog"
+dialog_filename = "res://dialogs/utility/busstreet/npc2.json"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 9 )
+current_position = Vector2( 4, 8 )
+
+[node name="DialogStartTrigger" type="Node" parent="NPC2"]
+script = ExtResource( 14 )
+id = "tid_utility_busstreet_npc2_start_dialog"

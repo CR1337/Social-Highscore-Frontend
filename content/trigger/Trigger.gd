@@ -10,4 +10,5 @@ func _on_trigger(trigger_id):
 		trigger()
 
 func trigger():
-	pass
+	print(id)
+

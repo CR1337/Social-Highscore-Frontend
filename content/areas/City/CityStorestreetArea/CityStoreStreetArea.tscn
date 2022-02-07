@@ -14,7 +14,6 @@
 [ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=15]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_white_car.tres" type="SpriteFrames" id=16]
 
-
 [node name="CityStorestreetArea" type="Node2D"]
 script = ExtResource( 3 )
 

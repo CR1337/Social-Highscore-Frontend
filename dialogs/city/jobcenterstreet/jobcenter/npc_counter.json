@@ -1,0 +1,44 @@
+{
+    "texts": {
+        "0": "I hope you are happy with your new job. ",
+        "1": "Yes I am totally happy ",
+        "2": "Could be better ",
+        "3": "I'm sorry, we currently have no openings for anyone with your profile",
+        "4": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": null,
+                        "trigger_id": "tid_critical_speach_about_job"
+                    }
+                ],
+                "trigger_id": null
+            },
+            "unemployed": {
+                "initial_nid": "node0",
+                "node0": {
+                    "tid": "3",
+                    "answers": [
+                        {
+                            "tid": "4",
+                            "nid": null,
+                            "trigger_id": null
+                        }
+                    ],
+                    "trigger_id": null
+                }
+            }
+        }
+    }
+}

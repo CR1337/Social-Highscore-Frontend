@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://content/areas/components/TrafficLight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_yellow_car.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=10]
 [ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=12]
 [ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=13]
@@ -161,3 +163,18 @@ current_position = Vector2( 12, 6 )
 [node name="CarStartTrigger" type="Node" parent="Car12_1"]
 script = ExtResource( 13 )
 id = "tid_city_bankstreet_car_12_1_start"
+
+[node name="NPC" parent="." instance=ExtResource( 12 )]
+position = Vector2( 672, 96 )
+z_index = 1
+is_activated_by_action = true
+action_trigger_id = "tid_city_bankstreet_npc_start_dialog"
+dialog_filename = "res://dialogs/city/bankstreet/npc.json"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 9 )
+current_position = Vector2( 10, 1 )
+
+[node name="DialogStartTrigger" type="Node" parent="NPC"]
+script = ExtResource( 10 )
+id = "tid_city_bankstreet_npc_start_dialog"
