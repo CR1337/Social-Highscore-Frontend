@@ -51,7 +51,7 @@ func restore_state(state):
 	_current_node_ids = state['current_node_ids']
 	_response_timer_handle = state['response_timer_handle']
 	if not state['hidden']:
-		set__current_contact(state['current_contact'])
+		set_current_contact(state['current_contact'])
 		show()
 
 func _current_node():
@@ -92,7 +92,7 @@ func _update_answers():
 		_message_button.add_item(_dialog_dicts[_current_contact]['texts'][_current_node()['answers'][i]['tid']])
 	_send_button.disabled = false
 
-func set__current_contact(contact):
+func set_current_contact(contact):
 	_name_label.text = contact
 	_current_contact = contact
 

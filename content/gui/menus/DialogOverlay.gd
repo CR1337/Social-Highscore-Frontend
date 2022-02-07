@@ -2,12 +2,11 @@ extends Node2D
 
 onready var _label = $Background/Margin/VBox/TextLabel
 onready var _buttons = [
-	$Background/Margin/VBox/LowerHBox/Answer0Button,
-	$Background/Margin/VBox/LowerHBox/Answer1Button,
-	$Background/Margin/VBox/UpperHBox/Answer2Button,
-	$Background/Margin/VBox/UpperHBox/Answer3Button,
+	$Background/Margin/VBox/Answer0Button,
+	$Background/Margin/VBox/Answer1Button,
+	$Background/Margin/VBox/Answer2Button,
+	$Background/Margin/VBox/Answer3Button,
 ]
-onready var _upper_h_box = $Background/Margin/VBox/UpperHBox
 
 var _dialog_dict = {}
 var _current_state: String
@@ -46,20 +45,24 @@ func _display():
 		EventBus.emit_signal("sig_trigger", trigger_id)
 
 func _arrange_buttons(answer_count):
-	if answer_count < 3:
-		_label.rect_min_size.y = 288
-		_upper_h_box.visible = false
-	else:
-		_label.rect_min_size.y = 232
-		_upper_h_box.visible = true
+	_label.rect_min_size.y = 104
 	for i in 4:
-		_buttons[i].visible = not ((i + 1) > answer_count)
+		_buttons[i].visible = true
+	if answer_count < 4:
+		_label.rect_min_size.y = 160
+		_buttons[3].visible = false
+	if answer_count < 3:
+		_label.rect_min_size.y = 216
+		_buttons[2].visible = false
+	if answer_count < 2:
+		_label.rect_min_size.y = 272
+		_buttons[1].visible = false
 
 func _process_answer(answer_index):
 	var trigger_id = _current_node['answers'][answer_index]['trigger_id']
 	if trigger_id != null:
 		EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id)
-		yield(EventBus, "sig_dialog_trigger_completed")
+		# yield(EventBus, "sig_dialog_trigger_completed")
 
 	var next_node_id = _current_node['answers'][answer_index]['nid']
 	if next_node_id == null:

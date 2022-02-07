@@ -37,22 +37,17 @@ custom_constants/separation = 8
 alignment = 1
 
 [node name="TextLabel" type="RichTextLabel" parent="Background/Margin/VBox"]
+margin_top = 10.0
 margin_right = 728.0
-margin_bottom = 232.0
-rect_min_size = Vector2( 0, 232 )
+margin_bottom = 110.0
+rect_min_size = Vector2( 0, 100 )
 custom_fonts/normal_font = ExtResource( 4 )
 text = "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-[node name="UpperHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
-margin_top = 240.0
+[node name="Answer3Button" type="Button" parent="Background/Margin/VBox"]
+margin_top = 118.0
 margin_right = 728.0
-margin_bottom = 288.0
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Answer3Button" type="Button" parent="Background/Margin/VBox/UpperHBox"]
-margin_right = 360.0
-margin_bottom = 48.0
+margin_bottom = 166.0
 rect_min_size = Vector2( 360, 48 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
@@ -61,10 +56,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Answer2Button" type="Button" parent="Background/Margin/VBox/UpperHBox"]
-margin_left = 368.0
+[node name="Answer2Button" type="Button" parent="Background/Margin/VBox"]
+margin_top = 174.0
 margin_right = 728.0
-margin_bottom = 48.0
+margin_bottom = 222.0
 rect_min_size = Vector2( 360, 48 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
@@ -73,28 +68,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LowerHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
-margin_top = 296.0
+[node name="Answer1Button" type="Button" parent="Background/Margin/VBox"]
+margin_top = 230.0
 margin_right = 728.0
-margin_bottom = 344.0
-custom_constants/separation = 8
-alignment = 1
-
-[node name="Answer1Button" type="Button" parent="Background/Margin/VBox/LowerHBox"]
-margin_right = 360.0
-margin_bottom = 48.0
+margin_bottom = 278.0
 rect_min_size = Vector2( 360, 48 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
 text = "Answer 1"
+clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Answer0Button" type="Button" parent="Background/Margin/VBox/LowerHBox"]
-margin_left = 368.0
+[node name="Answer0Button" type="Button" parent="Background/Margin/VBox"]
+margin_top = 286.0
 margin_right = 728.0
-margin_bottom = 48.0
+margin_bottom = 334.0
 rect_min_size = Vector2( 360, 48 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
@@ -103,7 +93,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Background/Margin/VBox/UpperHBox/Answer3Button" to="." method="_on_Answer3Button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/UpperHBox/Answer2Button" to="." method="_on_Answer2Button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/LowerHBox/Answer1Button" to="." method="_on_Answer1Button_pressed"]
-[connection signal="pressed" from="Background/Margin/VBox/LowerHBox/Answer0Button" to="." method="_on_Answer0Button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/Answer3Button" to="." method="_on_Answer3Button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/Answer2Button" to="." method="_on_Answer2Button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/Answer1Button" to="." method="_on_Answer1Button_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/Answer0Button" to="." method="_on_Answer0Button_pressed"]
