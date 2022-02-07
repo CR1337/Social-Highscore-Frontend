@@ -16,9 +16,9 @@
 [ext_resource path="res://content/areas/components/AnimatedOnOff.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/tilesets/interior/5_Classroom_and_library_32x32.png" type="Texture" id=15]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/animated_sprites/tres/characters/police_person01.tres" type="SpriteFrames" id=17]
-[ext_resource path="res://assets/animated_sprites/tres/characters/police_person02.tres" type="SpriteFrames" id=18]
-[ext_resource path="res://assets/animated_sprites/tres/characters/police_boss.tres" type="SpriteFrames" id=19]
+[ext_resource path="res://assets/animated_sprites/tres/characters/city/policestreet/police/npc3.tres" type="SpriteFrames" id=17]
+[ext_resource path="res://assets/animated_sprites/tres/characters/city/policestreet/police/npc4.tres" type="SpriteFrames" id=18]
+[ext_resource path="res://assets/animated_sprites/tres/characters/city/policestreet/police/npc_boss.tres" type="SpriteFrames" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -2541,7 +2541,7 @@ format = 1
 tile_data = PoolIntArray( 65536, 97, 0, 65537, 97, 0, 65538, 97, 0, 65539, 97, 0, 65540, 97, 0, 65541, 97, 0, 65542, 97, 0, 65543, 97, 0, 65544, 97, 0, 65545, 97, 0, 65546, 97, 0, 65547, 97, 0, 196607, 97, 0, 131075, 97, 0, 131076, 97, 0, 131077, 97, 0, 131083, 97, 0, 131084, 97, 0, 262143, 97, 0, 196611, 97, 0, 196614, 97, 0, 196615, 97, 0, 196616, 97, 0, 196617, 97, 0, 196620, 97, 0, 262144, 97, 0, 262145, 97, 0, 262146, 97, 0, 262147, 97, 0, 262150, 97, 0, 262151, 97, 0, 262152, 97, 0, 262153, 97, 0, 262156, 97, 0, 393215, 97, 0, 327683, 97, 0, 327692, 97, 0, 458751, 97, 0, 393219, 97, 0, 393228, 97, 0, 524287, 97, 0, 458755, 97, 0, 458764, 97, 0, 589823, 97, 0, 524291, 97, 0, 524292, 97, 0, 524293, 97, 0, 524294, 97, 0, 524295, 97, 0, 524297, 97, 0, 524298, 97, 0, 524299, 97, 0, 655359, 97, 0, 589836, 97, 0, 720895, 97, 0, 655372, 97, 0, 786431, 97, 0, 720908, 97, 0, 851967, 97, 0, 786432, 97, 0, 786433, 97, 0, 786435, 97, 0, 786436, 97, 0, 786439, 97, 0, 786440, 97, 0, 786442, 97, 0, 786443, 97, 0, 786444, 97, 0, 917503, 97, 0, 851980, 97, 0, 983039, 97, 0, 917504, 97, 0, 917505, 97, 0, 917514, 97, 0, 917515, 97, 0, 917516, 97, 0, 1048575, 97, 0, 983052, 97, 0, 1048576, 97, 0, 1048577, 97, 0, 1048578, 97, 0, 1048579, 97, 0, 1048580, 97, 0, 1048583, 97, 0, 1048584, 97, 0, 1048585, 97, 0, 1048586, 97, 0, 1048587, 97, 0 )
 
 [node name="TriggerArea" parent="." instance=ExtResource( 10 )]
-position = Vector2( 377.568, 1058.04 )
+position = Vector2( 384, 1056 )
 scale = Vector2( 2, 1 )
 is_activated_by_collision = true
 walkable = true
@@ -2551,19 +2551,19 @@ collision_trigger_id = "tid_city_policestreet_police_leave"
 script = ExtResource( 12 )
 id = "tid_city_policestreet_police_leave"
 
-[node name="NPC" parent="." instance=ExtResource( 16 )]
+[node name="NPC3" parent="." instance=ExtResource( 16 )]
 position = Vector2( 96, 672 )
 movement_filename = "res://doc/movement.json"
 animation = ExtResource( 17 )
 current_position = Vector2( 1, 10 )
 
-[node name="NPC2" parent="." instance=ExtResource( 16 )]
+[node name="NPC4" parent="." instance=ExtResource( 16 )]
 position = Vector2( 416, 736 )
 movement_filename = "res://doc/movement.json"
 animation = ExtResource( 18 )
 current_position = Vector2( 6, 11 )
 
-[node name="NPC3" parent="." instance=ExtResource( 16 )]
+[node name="NPCBoss" parent="." instance=ExtResource( 16 )]
 position = Vector2( 672, 288 )
 movement_filename = "res://doc/movement.json"
 animation = ExtResource( 19 )

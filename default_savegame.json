@@ -298,10 +298,10 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/MainScene/Areas/LivingPharmacystreetPharmacyArea/PharmacistNPC": {
+    "/root/MainScene/Areas/LivingPharmacystreetPharmacyArea/NPCCounter": {
         "current_position_x": 7,
         "current_position_y": 9,
-        "active": false,
+        "active": true,
         "announced_position_x": 7,
         "announced_position_y": 9,
         "looking_direction_x": 0,
@@ -310,104 +310,7 @@
         "is_new_state_requested": false,
         "requested_state": "",
         "movement_dict": {
-            "state0": {
-                "new_start_position_x": null,
-                "new_start_position_y": null,
-                "sequence": [
-                    {
-                        "direction": "left",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "right",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "up",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "down",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "wait",
-                        "seconds": 1,
-                        "trigger_id": "trigger0"
-                    }
-                ],
-                "repeats": 3
-            },
-            "state1": {
-                "new_start_position_x": null,
-                "new_start_position_y": null,
-                "sequence": [
-                    {
-                        "direction": "left",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "right",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "up",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "down",
-                        "repeats": 1,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "wait",
-                        "seconds": 1,
-                        "trigger_id": "trigger1"
-                    }
-                ],
-                "repeats": "infinity"
-            },
-            "horizontal": {
-                "new_start_position_x": null,
-                "new_start_position_y": null,
-                "sequence": [
-                    {
-                        "direction": "left",
-                        "repeats": 3,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "right",
-                        "repeats": 3,
-                        "trigger_id": null
-                    }
-                ],
-                "repeats": "infinity"
-            },
-            "vertical": {
-                "new_start_position_x": null,
-                "new_start_position_y": null,
-                "sequence": [
-                    {
-                        "direction": "up",
-                        "repeats": 4,
-                        "trigger_id": null
-                    },
-                    {
-                        "direction": "down",
-                        "repeats": 4,
-                        "trigger_id": null
-                    }
-                ],
-                "repeats": "infinity"
-            }
+
         },
         "movement_step_index": 0,
         "movement_step_repeat_counter": 0,

@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "0": "Good day, what can I do for you? ",
+        "1": "Nothing, thank you"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

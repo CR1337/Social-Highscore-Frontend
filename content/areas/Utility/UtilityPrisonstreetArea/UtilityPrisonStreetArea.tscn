@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/Utility/UtilityPrisonstreetArea/UtilityPrisonStreetArea.gd" type="Script" id=3]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/npc2.tres" type="SpriteFrames" id=6]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=7]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=8]
+[ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/npc1.tres" type="SpriteFrames" id=9]
 
 [node name="UtilityPrisonstreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -65,7 +66,7 @@ action_trigger_id = "tid_utility_prisonstreet_npc_start_dialog"
 dialog_filename = "res://dialogs/utility/prisonstreet/guard.json"
 speed = 2.0
 active_on_start = true
-animation = ExtResource( 6 )
+animation = ExtResource( 9 )
 current_position = Vector2( 0, 15 )
 
 [node name="DialogStartTrigger" type="Node" parent="NPC"]

@@ -15,7 +15,7 @@
 [ext_resource path="res://content/areas/City/CityJobcenterstreetJobcenterArea/CityJobcenterstreetJobcenter.gd" type="Script" id=13]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/tilesets/interior/5_Classroom_and_library_32x32.png" type="Texture" id=15]
-[ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=16]
+[ext_resource path="res://assets/animated_sprites/tres/characters/city/jobcenterstreet/jobcenter/npc_counter.tres" type="SpriteFrames" id=16]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]

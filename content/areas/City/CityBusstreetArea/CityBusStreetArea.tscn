@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -11,8 +11,9 @@
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_taxi_car.tres" type="SpriteFrames" id=10]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=11]
-[ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=12]
+[ext_resource path="res://assets/animated_sprites/tres/characters/city/busstreet/npc2.tres" type="SpriteFrames" id=12]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=13]
+[ext_resource path="res://assets/animated_sprites/tres/characters/city/busstreet/npc.tres" type="SpriteFrames" id=14]
 [ext_resource path="res://content/trigger/AuthenticationTrigger.gd" type="Script" id=16]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=17]
 [ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=18]
@@ -215,7 +216,7 @@ action_trigger_id = "tid_city_busstreet_npc_start_dialog"
 dialog_filename = "res://dialogs/city/busstreet/npc.json"
 speed = 2.0
 active_on_start = true
-animation = ExtResource( 12 )
+animation = ExtResource( 14 )
 current_position = Vector2( 8, 6 )
 
 [node name="DialogStartTrigger" type="Node" parent="NPC"]
