@@ -12,7 +12,7 @@
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=10]
 [ext_resource path="res://content/areas/components/AnimatedOnOff.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/animated_sprites/tres/characters/friend.tres" type="SpriteFrames" id=13]
+[ext_resource path="res://assets/animated_sprites/tres/characters/living/friendstreet/friend.tres" type="SpriteFrames" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )

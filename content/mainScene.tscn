@@ -109,15 +109,19 @@ leave_area_path = NodePath("../LivingHomestreetArea")
 leave_player_position = Vector2( 10, 14 )
 
 [node name="LivingHomestreetMomArea" parent="Areas" instance=ExtResource( 20 )]
-position = Vector2( -1074.55, 1915.41 )
+position = Vector2( -1079.89, 1915.41 )
 leave_area_path = NodePath("../LivingHomestreetArea")
 leave_player_position = Vector2( 3, 14 )
 
 [node name="LivingFriendstreetPartnerArea" parent="Areas" instance=ExtResource( 26 )]
 position = Vector2( 1203.67, -1223.45 )
+leave_area_path = NodePath("../LivingFriendstreetArea")
+leave_player_position = Vector2( 3, 6 )
 
 [node name="LivingFriendstreetFriendArea" parent="Areas" instance=ExtResource( 6 )]
 position = Vector2( 1133.21, 1183.88 )
+leave_area_path = NodePath("../LivingFriendstreetArea")
+leave_player_position = Vector2( 10, 14 )
 
 [node name="CityShadystreetArea" parent="Areas" instance=ExtResource( 7 )]
 position = Vector2( 1230.11, -3683.07 )
@@ -256,7 +260,7 @@ position = Vector2( 3633.01, -651.034 )
 [node name="BusMenu" parent="Overlays" instance=ExtResource( 32 )]
 position = Vector2( 2049.05, 2118.92 )
 leave_city_area_path = NodePath("../../Areas/CityBusstreetArea")
-leave_city_player_position = Vector2( 10, 6 )
+leave_city_player_position = Vector2( 8, 8 )
 leave_living_area_path = NodePath("../../Areas/LivingBusstreetArea")
 leave_living_player_position = Vector2( 8, 7 )
 leave_utility_area_path = NodePath("../../Areas/UtilityBusstreetArea")
