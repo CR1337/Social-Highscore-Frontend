@@ -1,6 +1,6 @@
 {
     "texts": {
-        "0": "Welcome to the <HOSPITALNAME> Clinic. What can I do for you? ", 
+        "0": "Welcome to the <HOSPITALNAME> Clinic. What can I do for you? ",
         "1": "I would like to donate blood",
         "2": "I would like to donate a kidney",
         "3": "Have a nice day",
@@ -9,7 +9,6 @@
         "6": "(I have changed my mind)",
         "7": "Good day. You have been admitted to our clinic because of a fainting spell. Please make sure you eat and sleep enough in the future. We will debit the invoice amount from your account.",
         "8": "(end dialog)"
-
     },
     "graphs": {
         "idle": {
@@ -17,25 +16,53 @@
             "node0": {
                 "tid": "0",
                 "answers": [
-                    {"tid": "1", "nid": "node1", "trigger_id": null},
-                    {"tid": "2", "nid": "node2", "trigger_id": null},
-                    {"tid": "3", "nid": null, "trigger_id": null}
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": null,
+                        "trigger_id": null
+                    }
                 ],
                 "trigger_id": null
             },
             "node1": {
                 "tid": "4",
                 "answers": [
-                    {"tid": "5", "nid": "node1", "trigger_id": "tid_blood_donated"},
-                    {"tid": "6", "nid": "node2", "trigger_id": null}
+                    {
+                        "tid": "5",
+                        "nid": null,
+                        "trigger_id": "tid_blood_donated"
+                    },
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": null
+                    }
                 ],
                 "trigger_id": null
             },
             "node2": {
                 "tid": "4",
                 "answers": [
-                    {"tid": "5", "nid": "node1", "trigger_id": "tid_kidney_donated"},
-                    {"tid": "6", "nid": "node2", "trigger_id": null}
+                    {
+                        "tid": "5",
+                        "nid": null,
+                        "trigger_id": "tid_kidney_donated"
+                    },
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": null
+                    }
                 ],
                 "trigger_id": null
             }
@@ -46,16 +73,32 @@
         "node0": {
             "tid": "0",
             "answers": [
-                {"tid": "1", "nid": "node1", "trigger_id": null},
-                {"tid": "3", "nid": null, "trigger_id": null}
+                {
+                    "tid": "1",
+                    "nid": "node1",
+                    "trigger_id": null
+                },
+                {
+                    "tid": "3",
+                    "nid": null,
+                    "trigger_id": null
+                }
             ],
             "trigger_id": null
         },
         "node1": {
             "tid": "4",
             "answers": [
-                {"tid": "5", "nid": "node1", "trigger_id": "tid_blood_donated"},
-                {"tid": "6", "nid": "node2", "trigger_id": null}
+                {
+                    "tid": "5",
+                    "nid": null,
+                    "trigger_id": "tid_blood_donated"
+                },
+                {
+                    "tid": "6",
+                    "nid": null,
+                    "trigger_id": null
+                }
             ],
             "trigger_id": null
         }
@@ -65,15 +108,27 @@
         "node0": {
             "tid": "7",
             "answers": [
-                {"tid": "8", "nid": "node1", "trigger_id": null},
-                {"tid": "3", "nid": null, "trigger_id": null}
+                {
+                    "tid": "8",
+                    "nid": "node1",
+                    "trigger_id": null
+                },
+                {
+                    "tid": "3",
+                    "nid": null,
+                    "trigger_id": null
+                }
             ],
             "trigger_id": null
         },
         "node1": {
             "tid": "4",
             "answers": [
-                {"tid": "8", "nid": null, "trigger_id": "tid_state_hospital_reset"}
+                {
+                    "tid": "8",
+                    "nid": null,
+                    "trigger_id": "tid_state_hospital_reset"
+                }
             ],
             "trigger_id": null
         }

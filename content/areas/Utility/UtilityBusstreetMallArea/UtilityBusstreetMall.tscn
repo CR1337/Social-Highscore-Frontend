@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/tilesets/interior/black.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/16_Grocery_store_32x32.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=12]
 [ext_resource path="res://assets/tilesets/interior/24_Ice_Cream_Shop_32x32.png" type="Texture" id=13]
 [ext_resource path="res://content/areas/Utility/UtilityBusstreetMallArea/UtilityBusstreetMall.gd" type="Script" id=14]
-[ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=15]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=16]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=17]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/mall/npc1.tres" type="SpriteFrames" id=18]
@@ -3049,7 +3048,7 @@ z_index = 1
 dialog_filename = "res://dialogs/utility/busstreet/mall/npc_counter.json"
 speed = 2.0
 active_on_start = true
-animation = ExtResource( 15 )
+animation = ExtResource( 21 )
 current_position = Vector2( 10.5, 3 )
 
 [node name="TriggerArea2" parent="NPCCounter" instance=ExtResource( 11 )]
