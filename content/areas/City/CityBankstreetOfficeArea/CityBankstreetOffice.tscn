@@ -2591,7 +2591,6 @@ id = "tid_city_bankstreet_office_leave"
 [node name="NPCCounter" parent="." instance=ExtResource( 14 )]
 position = Vector2( 448, 800 )
 z_index = 1
-dialog_filename = "res://dialogs/city/bankstreet/office/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 19 )
@@ -2610,7 +2609,6 @@ id = "tid_city_bankstreet_office_npc_counter_start_dialog"
 [node name="NPC1" parent="." instance=ExtResource( 14 )]
 position = Vector2( 224, 672 )
 z_index = 1
-dialog_filename = "res://dialogs/city/bankstreet/office/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 18 )
@@ -2619,7 +2617,6 @@ current_position = Vector2( 3, 10 )
 [node name="NPC2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 224, 544 )
 z_index = 1
-dialog_filename = "res://dialogs/city/bankstreet/office/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 16 )

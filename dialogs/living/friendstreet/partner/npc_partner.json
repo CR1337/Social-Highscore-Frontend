@@ -1,0 +1,37 @@
+{
+    "texts": {
+        "day01_hello": "Hello darling. I have no time for you right now. Come by again tomorrow.",
+        "day01_you_look_tired": "Hello darling. I have no time for you right now. Come by again tomorrow. But you look tired. Go to bed early tonight.",
+        "x": "(end dialog)"
+    },
+    "graphs": {
+        "day01_idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day01_hello",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day01_react_to_tiredness": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day01_you_look_tired",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

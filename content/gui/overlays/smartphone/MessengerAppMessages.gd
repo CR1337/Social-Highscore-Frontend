@@ -98,6 +98,8 @@ func set_current_contact(contact):
 
 	_display_messages()
 	_update_answers()
+	
+	EventBus.emit_signal("sig_opened_message", contact)
 
 func _display_messages():
 	_messages_label.bbcode_text = ""
@@ -138,7 +140,7 @@ func _process_answer(answer_index):
 	_message_button.clear()
 	_send_button.disabled = true
 	_selected_answer_id = -1
-	_response_timer_handle = TimeController.setTimer(1, self)
+	_response_timer_handle = TimeController.setTimer(1, self, "timer")
 
 func timer(handle):
 	if _response_timer_handle == handle:

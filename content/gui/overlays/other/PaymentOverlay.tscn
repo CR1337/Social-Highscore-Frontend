@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=1]
+[ext_resource path="res://content/gui/overlays/other/PaymentOverlay.gd" type="Script" id=2]
+
+[node name="PaymentOverlay" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 768.0
+margin_bottom = 1408.0
+mouse_filter = 2
+color = Color( 0.257813, 0.257813, 0.257813, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+margin_right = 768.0
+margin_bottom = 1365.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 748.0
+margin_bottom = 1345.0
+custom_constants/separation = 32
+alignment = 1
+
+[node name="RecipientLabel" type="Label" parent="Background/Margin/VBox"]
+margin_top = 452.0
+margin_right = 728.0
+margin_bottom = 486.0
+custom_fonts/font = ExtResource( 1 )
+text = "dfdfd"
+
+[node name="AmountLabel" type="Label" parent="Background/Margin/VBox"]
+margin_top = 518.0
+margin_right = 728.0
+margin_bottom = 552.0
+custom_fonts/font = ExtResource( 1 )
+text = "dfdf"
+
+[node name="OkButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 584.0
+margin_right = 728.0
+margin_bottom = 712.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 1 )
+text = "Ok"
+
+[node name="NotOkButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 744.0
+margin_right = 728.0
+margin_bottom = 872.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 1 )
+text = "Not Ok"
+
+[connection signal="pressed" from="Background/Margin/VBox/OkButton" to="." method="_on_OkButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/NotOkButton" to="." method="_on_NotOkButton_pressed"]

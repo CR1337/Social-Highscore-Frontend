@@ -11,6 +11,8 @@ onready var days_without_mom = 0
 onready var fridge_filling = []
 onready var current_day = 0
 
+var price_factor = 1
+
 var contact_state = {
 	'friend': "state0",
 	'partner': "state0",
@@ -55,8 +57,8 @@ signal sig_score_changed(new_value)
 func _ready():
 	EventBus.connect("sig_add_money", self, "_on_add_money")
 	#pass
-	_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
-	_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
+	_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self, "timer")
+	_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self, "timer")
 
 func _next_day():
 	current_day += 1
@@ -71,10 +73,10 @@ func _status_update():
 func timer(handle):
 	if handle == _next_day_handle:
 		_next_day()
-		_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self)
+		_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self, "timer")
 	if handle == _next_status_update_handle:
 		_status_update()
-		_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self)
+		_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self, "timer")
 
 func change_score(amount):
 	score += amount

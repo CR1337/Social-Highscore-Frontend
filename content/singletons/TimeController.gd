@@ -18,13 +18,15 @@ func persistent_state():
 		persistent_timer_list.append([
 			element[0],
 			element[1],
-			element[2].get_path()
+			element[2].get_path(), 
+			element[3]
 			])
 	for element in persistent_timer_list:
 		_insert([
 			element[0],
 			element[1],
-			get_node(element[2])
+			get_node(element[2]),
+			element[3]
 		])
 	return {
 		'time': _time,
@@ -52,9 +54,21 @@ func restore_state(state):
 		_insert([
 			element[0],
 			element[1],
-			get_node(element[2])
+			get_node(element[2]),
+			element[3]
 		])
-
+	
+func is_before(hours, minutes): 
+	var seconds = _hours_minutes_to_seconds(hours, minutes)
+	var mod_seconds = int(_time) % Globals.seconds_per_day
+	return seconds < mod_seconds
+	
+func is_after(hours, minutes):
+	return not is_before(hours, minutes)
+		
+func next_day(hours, minutes):
+	_time = ceil(int(_time) / Globals.seconds_per_day) + _hours_minutes_to_seconds(hours, minutes)
+	
 func _init():
 	_timerList = [[0]]
 	_currentSize = 0
@@ -67,15 +81,23 @@ func _process(delta):
 		_time = _time + delta
 		while _currentSize > 0 && _timerList[1][0] <= _time:
 			var item = _del_min()
-			item[2].timer(item[1])
+			item[2].call(item[3], item[1])
+func _hours_minutes_to_seconds(hours, minutes):
+	return hours * (Globals.seconds_per_day / 24) + minutes * (Globals.seconds_per_day / (24 * 60))
 
+func set_alarm(hours, minutes, sender, callback):
+	var seconds = floor(int(_time) / Globals.seconds_per_day) + _hours_minutes_to_seconds(hours, minutes)
+	return setTimer(seconds - _time, sender, callback)
 
-func setTimer(seconds, sender):
+func setTimer(seconds, sender, callback):
 	_current_handle = _next_handle
 	_next_handle += 1
-	_insert([_time + seconds, _current_handle, sender])
+	_insert([_time + seconds, _current_handle, sender, callback])
 	return _current_handle
-
+	
+func fast_forward_to(hours, minutes):
+	_time = floor(int(_time) / Globals.seconds_per_day) + _hours_minutes_to_seconds(hours, minutes)
+	
 # Priority Queue implementation with binary heap
 func _perc_up(i):
 	while floor(i / 2) > 0:

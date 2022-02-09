@@ -57,6 +57,8 @@ func start_new_game():
 	TrafficController.start_cars()
 	NewsController._DEBUG_add_news()
 	CitizenRecord._DEBUG_add_records()
+	StoryController.day01_start()
+	
 
 func load_default_game():
 	print("savegame empty")
@@ -108,11 +110,11 @@ func _ready():
 	var file = File.new()
 	if not file.file_exists(_save_filename):
 		_create_file()
-	_autosave_handle = TimeController.setTimer(60, self)
+	_autosave_handle = TimeController.setTimer(60, self, "timer")
 	call_deferred("load_game")
 
 
 func timer(handle):
 	if handle == _autosave_handle:
-		_autosave_handle = TimeController.setTimer(60, self)
+		_autosave_handle = TimeController.setTimer(60, self, "timer")
 		save_game()

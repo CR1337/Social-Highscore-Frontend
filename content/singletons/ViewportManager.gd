@@ -11,6 +11,7 @@ onready var _smartphone_menu = get_node("/root/MainScene/Overlays/SmartphoneMenu
 onready var _game_menu = get_node("/root/MainScene/Overlays/GameMenu")
 onready var _dialog_overlay = get_node("/root/MainScene/Overlays/DialogOverlay")
 onready var _authentication_overlay = get_node("/root/MainScene/Overlays/AuthenticationOverlay")
+onready var _payment_overlay = get_node("/root/MainScene/Overlays/PaymentOverlay")
 
 onready var _messenger_contacts_overlay = get_node("/root/MainScene/Overlays/MessengerAppContacts")
 onready var _messenger_messages_overlay = get_node("/root/MainScene/Overlays/MessengerAppMessages")
@@ -83,7 +84,7 @@ func change_to_banking_app():
 func change_to_citizen_app():
 	change_overlay(_citizen_app_overlay)
 
-func change_to__citizen_record_overlay():
+func change_to_citizen_record_overlay():
 	change_overlay(_citizen_record_overlay)
 	_citizen_record_overlay.display_records()
 
@@ -113,6 +114,10 @@ func change_to_dialog(json_filename, state):
 func change_to_authentication(post_authentication_trigger_id):
 	_authentication_overlay.post_authentication_trigger_id = post_authentication_trigger_id
 	change_overlay(_authentication_overlay)
+
+func change_to_payment(recipient, amount, payment_handle):
+	_payment_overlay.update_payment(recipient, amount, payment_handle)
+	change_overlay(_payment_overlay)
 
 func change_area(target_area, new_player_position):
 	_shader_rect.cover()

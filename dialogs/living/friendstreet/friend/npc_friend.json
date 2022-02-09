@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "day01_hello": "Hi buddy. Nice to see you again. Let's do something together again in the next few days.",
+        "x": "(end dialog)"
+    },
+    "graphs": {
+        "day01_idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day01_hello",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

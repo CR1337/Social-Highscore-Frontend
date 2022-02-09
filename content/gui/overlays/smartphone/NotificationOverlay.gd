@@ -18,7 +18,7 @@ func _ready():
 
 func _on_notification(type, text):
 	_current_type = type
-	_hide_overlay_handle = TimeController.setTimer(10, self)
+	_hide_overlay_handle = TimeController.setTimer(10, self, "timer")
 	match type:
 		'news':
 			_icon_texture.texture = news_icon

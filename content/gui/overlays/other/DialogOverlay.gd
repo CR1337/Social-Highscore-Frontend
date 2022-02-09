@@ -42,7 +42,7 @@ func _display():
 	_display_current()
 	var trigger_id = _current_node['trigger_id']
 	if trigger_id != null:
-		EventBus.emit_signal("sig_trigger", trigger_id)
+		EventBus.emit_signal("sig_trigger", trigger_id, _current_node.get('trigger_kwargs', {}))
 
 func _arrange_buttons(answer_count):
 	_label.rect_min_size.y = 104
@@ -61,7 +61,7 @@ func _arrange_buttons(answer_count):
 func _process_answer(answer_index):
 	var trigger_id = _current_node['answers'][answer_index]['trigger_id']
 	if trigger_id != null:
-		EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id)
+		EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id, _current_node['answers'][answer_index].get('trigger_kwargs', {}))
 		# yield(EventBus, "sig_dialog_trigger_completed")
 
 	var next_node_id = _current_node['answers'][answer_index]['nid']
@@ -71,8 +71,8 @@ func _process_answer(answer_index):
 		_current_node_id = next_node_id
 		trigger_id = _current_node['answers'][answer_index]['trigger_id']
 		if trigger_id != null:
-			EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id)
-			yield(EventBus, "sig_dialog_trigger_completed")
+			EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id, _current_node['answers'][answer_index].get('trigger_kwargs', {}))
+			# yield(EventBus, "sig_dialog_trigger_completed")
 		_display()
 
 

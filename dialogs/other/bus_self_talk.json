@@ -1,0 +1,139 @@
+{
+    "texts": {
+        "0": "This is the bus stop. I don't want to go into town right now.",
+        "1": "What should I do instead?",
+        "2": "I should visit mom.",
+        "3": "I should read the message from mom.",
+        "4": "I should go to the pharmacy.",
+        "5": "I should bring mom her medication.",
+        "6": "Maybe I could go to bed early today.",
+        "7": "(end monolog)"
+    },
+    "graphs": {
+        "read_moms_message": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "3",
+                "answers": [
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "goto_mom": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "2",
+                "answers": [
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "goto_pharmacy": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "4",
+                "answers": [
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "bring_meds": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "5",
+                "answers": [
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "6",
+                "answers": [
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

@@ -1878,3 +1878,9 @@ id = "tid_living_homestreet_home_dialog"
 [node name="DebugToiletTrigger" type="Node" parent="DebugDialogTriggerArea"]
 script = ExtResource( 13 )
 id = "debug_toilet_trigger"
+
+[node name="BedTriggerArea" parent="." instance=ExtResource( 7 )]
+position = Vector2( 126.275, 152.672 )
+scale = Vector2( 2, 2 )
+is_activated_by_action = true
+action_trigger_id = "tid_bed"

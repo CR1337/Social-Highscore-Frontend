@@ -19,6 +19,7 @@ const _dialog_json_path = "res://dialogs"
 const _upper_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 export var ignores_crosswalks = true
+export var initial_state = 'idle'
 
 export var is_sitting = false setget set_is_sitting, get_is_sitting
 func set_is_sitting(value):
@@ -128,7 +129,7 @@ func _set_raster_position(new_position):
 
 func set_state(value):
 	state = value
-	if state != 'idle':
+	if not _movement_dict.empty():
 		if _movement_dict[state]['new_start_position_x'] != null and _movement_dict[state]['new_start_position_y'] != null:
 			set_current_position(
 				Vector2(
@@ -144,7 +145,7 @@ func set_state(value):
 
 
 func _update_announced_position():
-	if state == 'idle':
+	if _movement_dict.empty() || state == 'idle':
 		announced_position = current_position
 	else:
 		announced_position = current_position + _directions[_get_movement_step()['direction']]
@@ -164,7 +165,7 @@ func _ready():
 			file.get_as_text()
 		).result
 		file.close()
-	set_state('idle')
+	set_state(initial_state)
 	_set_raster_position(current_position)
 	announced_position = current_position
 
@@ -173,7 +174,7 @@ func _process(delta):
 	if _is_new_state_requested:
 		set_state(_requested_state)
 		_is_new_state_requested = false
-	if _active and not _movement_waiting and state != 'idle':
+	if _active and not _movement_waiting and not _movement_dict.empty():
 		_move()
 
 func _is_ray_colliding(_ray, factor = 1):
@@ -227,7 +228,7 @@ func _update_animation():
 		Vector2.DOWN:
 			animation_name_suffix = "down"
 			
-	if state != 'idle':
+	if not _movement_dict.empty():
 		if _get_movement_step()['direction'] != 'wait':
 			animation_name_suffix = _get_movement_step()['direction']
 	$AnimatedSprite.animation = animation_name_prefix + "_" + animation_name_suffix
@@ -237,7 +238,7 @@ func _move():
 		if _get_movement_step()['direction'] == 'wait':
 			_update_animation()
 			_movement_waiting = true
-			_movement_waiting_handle = TimeController.setTimer(_get_movement_step()['seconds'], self)
+			_movement_waiting_handle = TimeController.setTimer(_get_movement_step()['seconds'], self, "timer")
 		else:
 			looking_direction = _directions[_get_movement_step()['direction']]
 			if _can_move():
@@ -254,7 +255,7 @@ func _get_movement_step():
 func _next_movement_step():
 
 	if _get_movement_step()['trigger_id'] != null:
-		EventBus.emit_signal("sig_trigger", _get_movement_step()['trigger_id'])
+		EventBus.emit_signal("sig_trigger", _get_movement_step()['trigger_id'], {})
 	_movement_step_index += 1
 	if _movement_step_index >= len(_movement_dict[state]['sequence']):
 		if str(_movement_dict[state]['repeats']) != 'infinity':
@@ -277,6 +278,9 @@ func timer(handle):
 		_next_movement_step()
 
 func start_dialog():
+	if _is_new_state_requested:
+		set_state(_requested_state)
+		_is_new_state_requested = false
 	ViewportManager.change_to_dialog(_get_dialog_json_filename(), state)
 	
 func _split_by_capitals(string):

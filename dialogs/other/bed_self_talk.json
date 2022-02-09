@@ -1,0 +1,37 @@
+{
+    "texts": {
+        "something_todo": "I think there is still something to do before going to bed.",
+        "too_early": "I think it's too early for going to bed.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "todo": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "something_todo",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "early": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "too_early",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

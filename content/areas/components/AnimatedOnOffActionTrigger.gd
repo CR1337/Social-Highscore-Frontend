@@ -1,5 +1,5 @@
 extends "res://content/trigger/Trigger.gd"
 
-func trigger():
-	.trigger()
+func trigger(kwargs):
+	.trigger(kwargs)
 	get_parent().trigger()

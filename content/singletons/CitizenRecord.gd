@@ -221,6 +221,13 @@ func add_rescued_friend(score, screenshot):
 		'screenshot': screenshot
 	}
 	_add_record(params)
+	
+func add_no_job(score):
+	var params = {
+		'type': 'no_job',
+		'score': score
+	}
+	_add_record(params)
 
 func record_display_string_for_app(record):
 	# returns a string describing the record that will be shown to the user in the citizen app
@@ -332,6 +339,9 @@ func record_display_string_for_app(record):
 
 		'rescued_friend':
 			result += "You helped an enemy of the people escape from prison."
+			
+		'no_job':
+			result += "You don't have a job. That is considered unsocial behavior. Please get in touch with your local jobcenter consultant tomorrow between 9 and 12 am."
 
 	return result
 

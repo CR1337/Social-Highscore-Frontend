@@ -26,7 +26,7 @@ func _on_image_processing_done(parsed_response, job_id, image, rawImage, b64_ima
 		_label.text = "Verfication failed. Please try again."
 	elif parsed_response['verified']:
 		_exit_overlay()
-		EventBus.emit_signal("sig_trigger", post_authentication_trigger_id)
+		EventBus.emit_signal("sig_trigger", post_authentication_trigger_id, {})
 		CitizenRecord.await_analyze_response(
 			ImageProcessor.analyze_image(image, rawImage)
 		)

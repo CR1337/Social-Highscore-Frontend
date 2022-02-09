@@ -76,7 +76,6 @@ crosswalk = true
 
 [node name="Car1_2" parent="." instance=ExtResource( 10 )]
 position = Vector2( -32, 544 )
-movement_filename = "res://doc/living_friendstreet/car_1_2_movement.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 9 )

@@ -1,5 +1,6 @@
 extends "res://content/trigger/Trigger.gd"
 
+
 func trigger(kwargs):
 	.trigger(kwargs)
-	ViewportManager.change_to_dialog("res://doc/dialog.json", "state0")
+	get_parent().request_state_change(kwargs['new_state'])
