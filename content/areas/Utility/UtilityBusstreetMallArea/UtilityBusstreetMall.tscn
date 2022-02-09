@@ -2975,89 +2975,84 @@ collision_trigger_id = "tid_utility_busstreet_mall_leave"
 script = ExtResource( 12 )
 id = "tid_utility_busstreet_mall_leave"
 
-[node name="NPC" parent="." instance=ExtResource( 16 )]
+[node name="Npc" parent="." instance=ExtResource( 16 )]
 position = Vector2( 44.8, 928 )
 z_index = 1
 is_sitting = true
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_mall_npc_start_dialog"
-dialog_filename = "res://dialogs/utility/busstreet/mall/npc.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 18 )
 current_position = Vector2( 0.2, 14 )
 looking_direction = Vector2( 1, 0 )
 
-[node name="DialogStartTrigger" type="Node" parent="NPC"]
+[node name="DialogStartTrigger" type="Node" parent="Npc"]
 script = ExtResource( 17 )
 id = "tid_utility_busstreet_mall_npc_start_dialog"
 
-[node name="NPC4" parent="." instance=ExtResource( 16 )]
-position = Vector2( 256, 172.8 )
-z_index = 5
-is_activated_by_action = true
-action_trigger_id = "tid_utility_busstreet_mall_npc_start_dialog"
-dialog_filename = "res://dialogs/utility/busstreet/mall/npc.json"
-speed = 2.0
-active_on_start = true
-animation = ExtResource( 21 )
-current_position = Vector2( 3.5, 2.2 )
-looking_direction = Vector2( 0, -1 )
-
-[node name="DialogStartTrigger" type="Node" parent="NPC4"]
-script = ExtResource( 17 )
-id = "tid_utility_busstreet_mall_npc_start_dialog"
-
-[node name="NPC2" parent="." instance=ExtResource( 16 )]
+[node name="Npc2" parent="." instance=ExtResource( 16 )]
 position = Vector2( 723.2, 800 )
 z_index = 1
 is_sitting = true
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_mall_npc2_start_dialog"
-dialog_filename = "res://dialogs/utility/busstreet/mall/npc2.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 20 )
 current_position = Vector2( 10.8, 12 )
 looking_direction = Vector2( -1, 0 )
 
-[node name="DialogStartTrigger" type="Node" parent="NPC2"]
+[node name="DialogStartTrigger" type="Node" parent="Npc2"]
 script = ExtResource( 17 )
 id = "tid_utility_busstreet_mall_npc2_start_dialog"
 
-[node name="NPC3" parent="." instance=ExtResource( 16 )]
+[node name="Npc3" parent="." instance=ExtResource( 16 )]
 position = Vector2( 620.8, 736 )
 z_index = 1
 is_sitting = true
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_mall_npc3_start_dialog"
-dialog_filename = "res://dialogs/utility/busstreet/mall/npc3.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 19 )
 current_position = Vector2( 9.2, 11 )
 looking_direction = Vector2( 1, 0 )
 
-[node name="DialogStartTrigger" type="Node" parent="NPC3"]
+[node name="DialogStartTrigger" type="Node" parent="Npc3"]
 script = ExtResource( 17 )
 id = "tid_utility_busstreet_mall_npc3_start_dialog"
 
-[node name="NPCCounter" parent="." instance=ExtResource( 16 )]
+[node name="Npc4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 256, 172.8 )
+z_index = 5
+is_activated_by_action = true
+action_trigger_id = "tid_utility_busstreet_mall_npc_start_dialog"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 21 )
+current_position = Vector2( 3.5, 2.2 )
+looking_direction = Vector2( 0, -1 )
+
+[node name="DialogStartTrigger" type="Node" parent="Npc4"]
+script = ExtResource( 17 )
+id = "tid_utility_busstreet_mall_npc_start_dialog"
+
+[node name="NpcCounter" parent="." instance=ExtResource( 16 )]
 position = Vector2( 704, 224 )
 z_index = 1
-dialog_filename = "res://dialogs/utility/busstreet/mall/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 21 )
 current_position = Vector2( 10.5, 3 )
 
-[node name="TriggerArea2" parent="NPCCounter" instance=ExtResource( 11 )]
+[node name="TriggerArea2" parent="NpcCounter" instance=ExtResource( 11 )]
 position = Vector2( 0, 32 )
 scale = Vector2( 4, 2 )
 is_activated_by_action = true
 walkable = true
 action_trigger_id = "tid_utility_busstreet_mall_npc_counter_start_dialog"
 
-[node name="DialogStartTrigger" type="Node" parent="NPCCounter"]
+[node name="DialogStartTrigger" type="Node" parent="NpcCounter"]
 script = ExtResource( 17 )
 id = "tid_utility_busstreet_mall_npc_counter_start_dialog"

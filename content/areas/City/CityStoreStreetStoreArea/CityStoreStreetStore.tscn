@@ -3056,44 +3056,42 @@ collision_trigger_id = "tid_city_storestreet_store_leave"
 script = ExtResource( 12 )
 id = "tid_city_storestreet_store_leave"
 
-[node name="NPCCounter" parent="." instance=ExtResource( 16 )]
+[node name="NpcCounter" parent="." instance=ExtResource( 16 )]
 position = Vector2( 32, 723.2 )
 z_index = 1
 is_sitting = true
-dialog_filename = "res://dialogs/city/storestreet/store/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 18 )
 current_position = Vector2( 0, 10.8 )
 looking_direction = Vector2( 1, 0 )
 
-[node name="TriggerArea2" parent="NPCCounter" instance=ExtResource( 11 )]
+[node name="TriggerArea2" parent="NpcCounter" instance=ExtResource( 11 )]
 position = Vector2( 32, 0 )
 scale = Vector2( 2, 3 )
 is_activated_by_action = true
 action_trigger_id = "tid_city_storestreet_store_npc_counter_start_dialog"
 
-[node name="DialogStartTrigger" type="Node" parent="NPCCounter"]
+[node name="DialogStartTrigger" type="Node" parent="NpcCounter"]
 script = ExtResource( 17 )
 id = "tid_city_storestreet_store_npc_counter_start_dialog"
 
-[node name="NPCCounter2" parent="." instance=ExtResource( 16 )]
+[node name="NpcCounter2" parent="." instance=ExtResource( 16 )]
 position = Vector2( 736, 723.2 )
 z_index = 1
 is_sitting = true
-dialog_filename = "res://dialogs/city/storestreet/store/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 15 )
 current_position = Vector2( 11, 10.8 )
 looking_direction = Vector2( -1, 0 )
 
-[node name="TriggerArea2" parent="NPCCounter2" instance=ExtResource( 11 )]
+[node name="TriggerArea2" parent="NpcCounter2" instance=ExtResource( 11 )]
 position = Vector2( -32, 0 )
 scale = Vector2( 2, 3 )
 is_activated_by_action = true
 action_trigger_id = "tid_city_storestreet_store_npc_counter2_start_dialog"
 
-[node name="DialogStartTrigger" type="Node" parent="NPCCounter2"]
+[node name="DialogStartTrigger" type="Node" parent="NpcCounter2"]
 script = ExtResource( 17 )
 id = "tid_city_storestreet_store_npc_counter2_start_dialog"

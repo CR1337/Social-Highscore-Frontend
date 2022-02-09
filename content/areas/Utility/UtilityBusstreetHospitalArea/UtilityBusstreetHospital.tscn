@@ -2505,90 +2505,84 @@ collision_trigger_id = "tid_utility_busstreet_hospital_leave"
 script = ExtResource( 12 )
 id = "tid_utility_busstreet_hospital_leave"
 
-[node name="NPC" parent="." instance=ExtResource( 14 )]
+[node name="Npc" parent="." instance=ExtResource( 14 )]
 position = Vector2( 32, 793.6 )
 z_index = 1
 is_sitting = true
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_hospital_npc_start_dialog"
-dialog_filename = "res://dialogs/utility/busstreet/hospital/npc.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 16 )
 current_position = Vector2( 0, 11.9 )
 looking_direction = Vector2( 1, 0 )
 
-[node name="DialogStartTrigger" type="Node" parent="NPC"]
+[node name="DialogStartTrigger" type="Node" parent="Npc"]
 script = ExtResource( 15 )
 id = "tid_utility_busstreet_hospital_npc_start_dialog"
 
-[node name="NPC2" parent="." instance=ExtResource( 14 )]
+[node name="Npc2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 32, 921.6 )
 z_index = 1
 is_sitting = true
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_hospital_npc2_start_dialog"
-dialog_filename = "res://dialogs/utility/busstreet/hospital/npc2.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 17 )
 current_position = Vector2( 0, 13.9 )
 looking_direction = Vector2( 1, 0 )
 
-[node name="DialogStartTrigger" type="Node" parent="NPC2"]
+[node name="DialogStartTrigger" type="Node" parent="Npc2"]
 script = ExtResource( 15 )
 id = "tid_utility_busstreet_hospital_npc2_start_dialog"
 
-[node name="NPCDoctor1" parent="." instance=ExtResource( 14 )]
+[node name="NpcDoctor1" parent="." instance=ExtResource( 14 )]
 position = Vector2( 608, 288 )
 z_index = 1
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_hospital_npc_start_dialog"
-dialog_filename = "res://dialogs/utility/busstreet/hospital/npc.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 18 )
 current_position = Vector2( 9, 4 )
 
-[node name="NPCDoctor2" parent="." instance=ExtResource( 14 )]
+[node name="NpcDoctor2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 96, 288 )
 z_index = 1
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_hospital_npc_start_dialog"
-dialog_filename = "res://dialogs/utility/busstreet/hospital/npc.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 19 )
 current_position = Vector2( 1, 4 )
 looking_direction = Vector2( 0, -1 )
 
-[node name="NPCDoctor3" parent="." instance=ExtResource( 14 )]
+[node name="NpcDoctor3" parent="." instance=ExtResource( 14 )]
 position = Vector2( 224, 544 )
 z_index = 1
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_hospital_npc_start_dialog"
-dialog_filename = "res://dialogs/utility/busstreet/hospital/npc.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 20 )
 current_position = Vector2( 3, 8 )
 looking_direction = Vector2( -1, 0 )
 
-[node name="NPCCounter" parent="." instance=ExtResource( 14 )]
+[node name="NpcCounter" parent="." instance=ExtResource( 14 )]
 position = Vector2( 384, 800 )
 z_index = 1
-dialog_filename = "res://dialogs/utility/busstreet/hospital/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 13 )
 current_position = Vector2( 5.5, 12 )
 
-[node name="TriggerArea2" parent="NPCCounter" instance=ExtResource( 11 )]
+[node name="TriggerArea2" parent="NpcCounter" instance=ExtResource( 11 )]
 position = Vector2( 0, 32 )
 scale = Vector2( 4, 2 )
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_hospital_npc_counter_start_dialog"
 
-[node name="DialogStartTrigger" type="Node" parent="NPCCounter"]
+[node name="DialogStartTrigger" type="Node" parent="NpcCounter"]
 script = ExtResource( 15 )
 id = "tid_utility_busstreet_hospital_npc_counter_start_dialog"

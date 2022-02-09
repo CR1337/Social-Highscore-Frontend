@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/characters/cropped/player/normal.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://assets/animated_sprites/pngs/characters/cropped/player/normal.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://content/movables/Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]

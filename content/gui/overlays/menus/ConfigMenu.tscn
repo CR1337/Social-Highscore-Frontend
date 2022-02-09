@@ -1,0 +1,179 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=1]
+[ext_resource path="res://content/gui/overlays/menus/ConfigMenu.gd" type="Script" id=2]
+
+
+[node name="ConfigMenu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 768.0
+margin_bottom = 1408.0
+mouse_filter = 2
+color = Color( 0.257813, 0.257813, 0.257813, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+margin_right = 768.0
+margin_bottom = 1365.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 748.0
+margin_bottom = 1345.0
+custom_constants/separation = 150
+alignment = 1
+
+[node name="AddressVBox" type="VBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 91.0
+margin_right = 728.0
+margin_bottom = 193.0
+
+[node name="AddressLabel" type="Label" parent="Background/Margin/VBox/AddressVBox"]
+margin_right = 728.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "Server-Adresse:"
+
+[node name="AddressLineEdit" type="LineEdit" parent="Background/Margin/VBox/AddressVBox"]
+margin_top = 38.0
+margin_right = 728.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "0.0.0.0"
+align = 1
+
+[node name="PortVBox" type="VBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 343.0
+margin_right = 728.0
+margin_bottom = 425.0
+
+[node name="PortLabel" type="Label" parent="Background/Margin/VBox/PortVBox"]
+margin_right = 728.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "Server-Port:"
+
+[node name="PortLineEdit" type="LineEdit" parent="Background/Margin/VBox/PortVBox"]
+margin_top = 38.0
+margin_right = 728.0
+margin_bottom = 82.0
+custom_fonts/font = ExtResource( 1 )
+text = "80"
+align = 1
+
+[node name="AngleVBox" type="VBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 575.0
+margin_right = 728.0
+margin_bottom = 677.0
+
+[node name="AngleLabel" type="Label" parent="Background/Margin/VBox/AngleVBox"]
+margin_right = 728.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "Bildrotationswinkel:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Background/Margin/VBox/AngleVBox"]
+margin_top = 38.0
+margin_right = 728.0
+margin_bottom = 102.0
+alignment = 1
+
+[node name="CheckBox0" type="CheckBox" parent="Background/Margin/VBox/AngleVBox/HBox"]
+margin_left = 102.0
+margin_right = 230.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "0 °"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox90" type="CheckBox" parent="Background/Margin/VBox/AngleVBox/HBox"]
+margin_left = 234.0
+margin_right = 362.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "90 °"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox180" type="CheckBox" parent="Background/Margin/VBox/AngleVBox/HBox"]
+margin_left = 366.0
+margin_right = 494.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "180 °"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox270" type="CheckBox" parent="Background/Margin/VBox/AngleVBox/HBox"]
+margin_left = 498.0
+margin_right = 626.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "270 °"
+align = 1
+
+[node name="TakeReferenceImageButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 827.0
+margin_right = 728.0
+margin_bottom = 955.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 1 )
+text = "Take reference image"
+
+[node name="ButtonsHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 1105.0
+margin_right = 728.0
+margin_bottom = 1233.0
+
+[node name="OkButton" type="Button" parent="Background/Margin/VBox/ButtonsHBox"]
+margin_right = 362.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 128 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Ok"
+
+[node name="CancelButton" type="Button" parent="Background/Margin/VBox/ButtonsHBox"]
+margin_left = 366.0
+margin_right = 728.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Abbrechen"
+
+[connection signal="text_changed" from="Background/Margin/VBox/PortVBox/PortLineEdit" to="." method="_on_PortLineEdit_text_changed"]
+[connection signal="pressed" from="Background/Margin/VBox/AngleVBox/HBox/CheckBox0" to="." method="_on_CheckBox0_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/AngleVBox/HBox/CheckBox90" to="." method="_on_CheckBox90_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/AngleVBox/HBox/CheckBox180" to="." method="_on_CheckBox180_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/AngleVBox/HBox/CheckBox270" to="." method="_on_CheckBox270_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/TakeReferenceImageButton" to="." method="_on_TakeReferenceImageButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ButtonsHBox/OkButton" to="." method="_on_OkButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ButtonsHBox/CancelButton" to="." method="_on_CancelButton_pressed"]

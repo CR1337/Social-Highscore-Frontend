@@ -14,6 +14,10 @@ onready var _tween = $Tween
 onready var _sprite = $AnimatedSprite
 onready var _trigger_area = $TriggerArea
 
+const _movement_json_path = "res://movements"
+const _dialog_json_path = "res://dialogs"
+const _upper_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
 export var ignores_crosswalks = true
 
 export var is_sitting = false setget set_is_sitting, get_is_sitting
@@ -52,17 +56,17 @@ func set_action_trigger_id(value):
 func get_action_trigger_id():
 	return action_trigger_id
 
-export var movement_filename: String setget set_movement_filename, get_movement_filename
-func set_movement_filename(value):
-	movement_filename = value
-func get_movement_filename():
-	return movement_filename
+#export var movement_filename: String setget set_movement_filename, get_movement_filename
+#func set_movement_filename(value):
+#	movement_filename = value
+#func get_movement_filename():
+#	return movement_filename
 
-export var dialog_filename: String setget set_dialog_filename, get_dialog_filename
-func set_dialog_filename(value):
-	dialog_filename = value
-func get_dialog_filename():
-	return dialog_filename
+#export var dialog_filename: String setget set_dialog_filename, get_dialog_filename
+#func set_dialog_filename(value):
+#	dialog_filename = value
+#func get_dialog_filename():
+#	return dialog_filename
 
 export var speed: float setget set_speed, get_speed
 func set_speed(value):
@@ -152,8 +156,9 @@ func request_state_change(new_state):
 func _ready():
 	initialize_trigger_area()
 	_active = active_on_start
-	if movement_filename != "":
-		var file = File.new()
+	var movement_filename = _get_movement_json_filename()
+	var file = File.new()
+	if file.file_exists(movement_filename):
 		file.open(movement_filename, file.READ)
 		_movement_dict = JSON.parse(
 			file.get_as_text()
@@ -272,7 +277,42 @@ func timer(handle):
 		_next_movement_step()
 
 func start_dialog():
-	ViewportManager.change_to_dialog(dialog_filename, state)
+	ViewportManager.change_to_dialog(_get_dialog_json_filename(), state)
+	
+func _split_by_capitals(string):
+	var splits = []
+	var current_split = ""
+	for c in string:
+		if c in _upper_chars:
+			splits.append(current_split)
+			current_split = ""
+		current_split += c
+	splits.append(current_split)
+	return splits
+	
+func _get_json_filename():
+	var parent_splits = _split_by_capitals(get_parent().name)
+	parent_splits = parent_splits.slice(1, len(parent_splits) - 2)
+	var result = ""
+	for split in parent_splits:
+		result += "/" + split.to_lower()
+		
+	result += "/"
+		
+	var self_splits = _split_by_capitals(name)
+	self_splits = self_splits.slice(1, len(self_splits) - 1)
+	for split in self_splits:
+		result += split + "_"
+	
+	result = result.trim_suffix("_")
+	result += ".json"
+	return result
+	
+func _get_movement_json_filename():
+	return "res://movements" + _get_json_filename()
+	
+func _get_dialog_json_filename():
+	return "res://dialogs" + _get_json_filename()
 
 func persistent_state():
 	return {

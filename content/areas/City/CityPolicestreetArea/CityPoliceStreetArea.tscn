@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/tilesets/city_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/areas/City/CityPolicestreetArea/CityPoliceStreetArea.gd" type="Script" id=3]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
-[ext_resource path="res://assets/tilesets/collision_tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/tilesets/outdoor/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/areas/components/TrafficLight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_yellow_car.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/policestreet/npc1.tres" type="SpriteFrames" id=10]
-[ext_resource path="res://content/areas/CrossingArea.tscn" type="PackedScene" id=11]
+[ext_resource path="res://content/areas/components/CrossingArea.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=12]
 [ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=13]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_white_car.tres" type="SpriteFrames" id=14]
@@ -100,7 +100,6 @@ scale = Vector2( 3, 1 )
 [node name="Car8_2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 224, -32 )
 ignores_crosswalks = false
-movement_filename = "res://doc/city_policestreet/car_8_2_movement.json"
 speed = 3.0
 active_on_start = true
 animation = ExtResource( 7 )
@@ -113,7 +112,6 @@ id = "tid_city_policestreet_car_8_2_start"
 [node name="Car9_1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 352, 1120 )
 ignores_crosswalks = false
-movement_filename = "res://doc/city_policestreet/car_9_1_movement.json"
 speed = 3.0
 active_on_start = true
 animation = ExtResource( 9 )
@@ -126,7 +124,6 @@ id = "tid_city_policestreet_car_9_1_start"
 [node name="Car9_5" parent="." instance=ExtResource( 12 )]
 position = Vector2( 352, 1120 )
 ignores_crosswalks = false
-movement_filename = "res://doc/city_policestreet/car_9_5_movement.json"
 speed = 3.0
 active_on_start = true
 animation = ExtResource( 14 )
@@ -139,7 +136,6 @@ id = "tid_city_policestreet_car_9_5_start"
 [node name="Car11_1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 352, 1120 )
 ignores_crosswalks = false
-movement_filename = "res://doc/city_policestreet/car_11_1_movement.json"
 speed = 3.0
 active_on_start = true
 animation = ExtResource( 8 )
@@ -149,14 +145,12 @@ current_position = Vector2( 5, 17 )
 script = ExtResource( 13 )
 id = "tid_city_policestreet_car_11_1_start"
 
-[node name="NPC1" parent="." instance=ExtResource( 12 )]
+[node name="Npc" parent="." instance=ExtResource( 12 )]
 position = Vector2( 544, 736 )
-movement_filename = "res://doc/movement.json"
 animation = ExtResource( 10 )
 current_position = Vector2( 8, 11 )
 
-[node name="NPC2" parent="." instance=ExtResource( 12 )]
+[node name="Npc2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 672, 736 )
-movement_filename = "res://doc/movement.json"
 animation = ExtResource( 15 )
 current_position = Vector2( 10, 11 )

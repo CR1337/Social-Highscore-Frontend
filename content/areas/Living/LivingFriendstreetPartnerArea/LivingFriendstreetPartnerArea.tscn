@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=1]
-[ext_resource path="res://assets/animated_sprites/tres/bathroom_sink.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://assets/animated_sprites/tres/fridge.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://assets/animated_sprites/tres/interior/bathroom_sink.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://assets/animated_sprites/tres/interior/fridge.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://assets/tilesets/interior/2_LivingRoom_32x32.png" type="Texture" id=4]
 [ext_resource path="res://assets/tilesets/interior/3_Bathroom_32x32.png" type="Texture" id=5]
 [ext_resource path="res://assets/tilesets/interior/12_Kitchen_32x32.png" type="Texture" id=6]
@@ -1874,8 +1874,7 @@ collision_trigger_id = "tid_living_friendstreet_partner_leave"
 script = ExtResource( 1 )
 id = "tid_living_friendstreet_partner_leave"
 
-[node name="PartnerNPC" parent="." instance=ExtResource( 12 )]
+[node name="NpcPartner" parent="." instance=ExtResource( 12 )]
 position = Vector2( 544, 672 )
-movement_filename = "res://doc/movement.json"
 animation = ExtResource( 13 )
 current_position = Vector2( 8, 10 )

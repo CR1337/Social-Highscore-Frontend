@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://assets/tilesets/Modern_Office_Black_Shadow_32x32.png" type="Texture" id=1]
+[ext_resource path="res://assets/tilesets/interior/Modern_Office_Black_Shadow_32x32.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/19_Hospital_32x32.png" type="Texture" id=2]
 [ext_resource path="res://assets/tilesets/interior/18_Jail_32x32.png" type="Texture" id=3]
 [ext_resource path="res://assets/tilesets/interior/3_Bathroom_32x32.png" type="Texture" id=4]
@@ -2669,78 +2669,73 @@ collision_trigger_id = "tid_city_bankstreet_bank_leave"
 script = ExtResource( 12 )
 id = "tid_city_bankstreet_bank_leave"
 
-[node name="NPCCounter" parent="." instance=ExtResource( 17 )]
+[node name="NpcCounter" parent="." instance=ExtResource( 17 )]
 position = Vector2( 192, 800 )
 z_index = 1
-dialog_filename = "res://dialogs/city/bankstreet/bank/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 20 )
 current_position = Vector2( 2.5, 12 )
 
-[node name="TriggerArea2" parent="NPCCounter" instance=ExtResource( 10 )]
+[node name="TriggerArea2" parent="NpcCounter" instance=ExtResource( 10 )]
 position = Vector2( 0, 32 )
 scale = Vector2( 4, 2 )
 is_activated_by_action = true
 action_trigger_id = "tid_city_bankstreet_bank_npc_counter_start_dialog"
 
-[node name="DialogStartTrigger" type="Node" parent="NPCCounter"]
+[node name="DialogStartTrigger" type="Node" parent="NpcCounter"]
 script = ExtResource( 19 )
 id = "tid_city_bankstreet_bank_npc_counter_start_dialog"
 
-[node name="NPCCounter2" parent="." instance=ExtResource( 17 )]
+[node name="NpcCounter2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 576, 800 )
 z_index = 1
-dialog_filename = "res://dialogs/city/bankstreet/bank/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 21 )
 current_position = Vector2( 8.5, 12 )
 
-[node name="TriggerArea2" parent="NPCCounter2" instance=ExtResource( 10 )]
+[node name="TriggerArea2" parent="NpcCounter2" instance=ExtResource( 10 )]
 position = Vector2( 0, 32 )
 scale = Vector2( 4, 2 )
 is_activated_by_action = true
 action_trigger_id = "tid_city_bankstreet_bank_npc_counter2_start_dialog"
 
-[node name="DialogStartTrigger" type="Node" parent="NPCCounter2"]
+[node name="DialogStartTrigger" type="Node" parent="NpcCounter2"]
 script = ExtResource( 19 )
 id = "tid_city_bankstreet_bank_npc_counter2_start_dialog"
 
-[node name="NPCSecurity" parent="." instance=ExtResource( 17 )]
-position = Vector2( 96, 990.498 )
+[node name="NpcSecurity" parent="." instance=ExtResource( 17 )]
+position = Vector2( 96, 992 )
 z_index = 1
 is_activated_by_action = true
 action_trigger_id = "tid_city_bankstreet_bank_npc_security_start_dialog"
-dialog_filename = "res://dialogs/city/bankstreet/bank/npc_security.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 18 )
 current_position = Vector2( 1, 15 )
 looking_direction = Vector2( 1, 0 )
 
-[node name="DialogStartTrigger" type="Node" parent="NPCSecurity"]
+[node name="DialogStartTrigger" type="Node" parent="NpcSecurity"]
 script = ExtResource( 19 )
 id = "tid_city_bankstreet_bank_npc_security_start_dialog"
 
-[node name="NPCSecurity2" parent="." instance=ExtResource( 17 )]
+[node name="NpcSecurity2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 96, 480 )
 z_index = 1
 is_activated_by_action = true
 action_trigger_id = "tid_city_bankstreet_bank_npc_security_start_dialog"
-dialog_filename = "res://dialogs/city/bankstreet/bank/npc_security.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 22 )
 current_position = Vector2( 1, 7 )
 looking_direction = Vector2( 1, 0 )
 
-[node name="NPCOfficer" parent="." instance=ExtResource( 17 )]
+[node name="NpcOfficer" parent="." instance=ExtResource( 17 )]
 position = Vector2( 608, 288 )
 z_index = 1
 is_activated_by_action = true
 action_trigger_id = "tid_city_bankstreet_bank_npc_security_start_dialog"
-dialog_filename = "res://dialogs/city/bankstreet/bank/npc_security.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 23 )

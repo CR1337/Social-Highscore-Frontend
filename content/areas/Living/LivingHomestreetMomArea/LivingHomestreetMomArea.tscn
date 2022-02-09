@@ -7,10 +7,10 @@
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=5]
 [ext_resource path="res://content/areas/Living/LivingHomestreetMomArea/LivingHomestreetMomArea.gd" type="Script" id=6]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/animated_sprites/tres/bathroom_sink.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://assets/animated_sprites/tres/interior/bathroom_sink.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://assets/tilesets/interior/3_Bathroom_32x32.png" type="Texture" id=9]
 [ext_resource path="res://assets/tilesets/interior/12_Kitchen_32x32.png" type="Texture" id=10]
-[ext_resource path="res://assets/animated_sprites/tres/fridge.tres" type="SpriteFrames" id=11]
+[ext_resource path="res://assets/animated_sprites/tres/interior/fridge.tres" type="SpriteFrames" id=11]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/animated_sprites/tres/characters/living/homestreet/mom/mom.tres" type="SpriteFrames" id=13]
 
@@ -1874,8 +1874,7 @@ collision_trigger_id = "tid_living_homestreet_mom_leave"
 script = ExtResource( 5 )
 id = "tid_living_homestreet_mom_leave"
 
-[node name="MomNPC" parent="." instance=ExtResource( 12 )]
+[node name="NpcMom" parent="." instance=ExtResource( 12 )]
 position = Vector2( 224, 224 )
-movement_filename = "res://doc/movement.json"
 animation = ExtResource( 13 )
 current_position = Vector2( 3, 3 )

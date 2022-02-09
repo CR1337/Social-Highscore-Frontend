@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=10 format=2]
 
-[ext_resource path="res://assets/animated_sprites/cars/magenta_car.png" type="Texture" id=1]
+[ext_resource path="res://assets/animated_sprites/pngs/cars/magenta_car.png" type="Texture" id=1]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4

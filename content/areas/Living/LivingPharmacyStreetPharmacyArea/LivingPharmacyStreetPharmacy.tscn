@@ -1931,21 +1931,20 @@ collision_trigger_id = "tid_living_pharmacystreet_pharmacy_leave"
 script = ExtResource( 11 )
 id = "tid_living_pharmacystreet_pharmacy_leave"
 
-[node name="NPCCounter" parent="." instance=ExtResource( 12 )]
+[node name="NpcCounter" parent="." instance=ExtResource( 12 )]
 position = Vector2( 480, 608 )
 z_index = 1
-dialog_filename = "res://dialogs/living/pharmacystreet/pharmacy/npc_counter.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 14 )
 current_position = Vector2( 7, 9 )
 
-[node name="TriggerArea2" parent="NPCCounter" instance=ExtResource( 10 )]
+[node name="TriggerArea2" parent="NpcCounter" instance=ExtResource( 10 )]
 position = Vector2( 0, 32 )
 scale = Vector2( 3, 2 )
 is_activated_by_action = true
 action_trigger_id = "tid_living_pharmacystreet_pharmacy_npc_counter_start_dialog"
 
-[node name="DialogStartTrigger" type="Node" parent="NPCCounter"]
+[node name="DialogStartTrigger" type="Node" parent="NpcCounter"]
 script = ExtResource( 13 )
 id = "tid_living_pharmacystreet_pharmacy_npc_counter_start_dialog"

@@ -2212,38 +2212,36 @@ collision_trigger_id = "tid_utility_prisonstreet_prison_leave"
 script = ExtResource( 12 )
 id = "tid_utility_prisonstreet_prison_leave"
 
-[node name="NPCOfficer" parent="." instance=ExtResource( 14 )]
+[node name="NpcOfficer" parent="." instance=ExtResource( 14 )]
 position = Vector2( 160, 672 )
 z_index = 1
 is_activated_by_action = true
 action_trigger_id = "tid_utility_prisonstreet_prison_npc_officer_start_dialog"
-dialog_filename = "res://dialogs/utility/prisonstreet/prison/officer.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 16 )
 current_position = Vector2( 2, 10 )
 
-[node name="DialogStartTrigger" type="Node" parent="NPCOfficer"]
+[node name="DialogStartTrigger" type="Node" parent="NpcOfficer"]
 script = ExtResource( 15 )
 id = "tid_utility_prisonstreet_prison_npc_officer_start_dialog"
 
-[node name="NPCGuard" parent="." instance=ExtResource( 14 )]
+[node name="NpcGuard" parent="." instance=ExtResource( 14 )]
 position = Vector2( 480, 736 )
 z_index = 1
 is_activated_by_action = true
 action_trigger_id = "tid_utility_prisonstreet_prison_npc_guard_start_dialog"
-dialog_filename = "res://dialogs/utility/prisonstreet/prison/guard.json"
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 17 )
 current_position = Vector2( 7, 11 )
 looking_direction = Vector2( -1, 0 )
 
-[node name="DialogStartTrigger" type="Node" parent="NPCGuard"]
+[node name="DialogStartTrigger" type="Node" parent="NpcGuard"]
 script = ExtResource( 15 )
 id = "tid_utility_prisonstreet_prison_npc_guard_start_dialog"
 
-[node name="NPC" parent="." instance=ExtResource( 14 )]
+[node name="Npc" parent="." instance=ExtResource( 14 )]
 position = Vector2( 672, 672 )
 z_index = 1
 speed = 2.0
@@ -2251,7 +2249,7 @@ active_on_start = true
 animation = ExtResource( 13 )
 current_position = Vector2( 10, 10 )
 
-[node name="NPC2" parent="." instance=ExtResource( 14 )]
+[node name="Npc2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 672, 800 )
 z_index = 1
 speed = 2.0
@@ -2260,7 +2258,7 @@ animation = ExtResource( 13 )
 current_position = Vector2( 10, 12 )
 looking_direction = Vector2( 0, -1 )
 
-[node name="NPCPrisoner1" parent="." instance=ExtResource( 14 )]
+[node name="NpcPrisoner1" parent="." instance=ExtResource( 14 )]
 position = Vector2( 160, 160 )
 z_index = 1
 speed = 2.0
@@ -2268,7 +2266,7 @@ active_on_start = true
 animation = ExtResource( 18 )
 current_position = Vector2( 2, 2 )
 
-[node name="NPCPrisoner2" parent="." instance=ExtResource( 14 )]
+[node name="NpcPrisoner2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 352, 160 )
 z_index = 1
 speed = 2.0
@@ -2277,7 +2275,7 @@ animation = ExtResource( 19 )
 current_position = Vector2( 5, 2 )
 looking_direction = Vector2( -1, 0 )
 
-[node name="NPCPrisoner3" parent="." instance=ExtResource( 14 )]
+[node name="NpcPrisoner3" parent="." instance=ExtResource( 14 )]
 position = Vector2( 672, 224 )
 z_index = 3
 speed = 2.0
