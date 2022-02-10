@@ -31,6 +31,7 @@ onready var _last_overlay = _transparent_overlay
 onready var _current_notification_overlay = _transparent_notification_overlay
 
 onready var _prolog_overlay = get_node("/root/MainScene/Overlays/PrologOverlay")
+onready var _gameover_overlay = get_node("/root/MainScene/Overlays/GameoverOverlay")
 
 func persistent_state():
 	return {
@@ -64,7 +65,11 @@ func _on_menu_pressed():
 	
 func change_to_prolog():
 	change_overlay(_prolog_overlay)
-
+	
+func change_to_gameover(reason):
+	_gameover_overlay.prepare_gameover_overlay(reason)
+	change_overlay(_gameover_overlay)
+	
 func change_to_notification():
 	change_notification_overlay(_notification_overlay)
 

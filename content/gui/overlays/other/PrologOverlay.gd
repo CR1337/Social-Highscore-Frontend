@@ -100,3 +100,6 @@ func _on_YesButton_pressed():
 
 func _on_NoButton_pressed():
 	_state = _states.find('start_game')
+	_yes_button.text = "Start Game"
+	_tutorial_texture_rect.visible = false
+	_no_button.visible = false

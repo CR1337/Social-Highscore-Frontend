@@ -44,7 +44,7 @@ func day01_second_mom_message(handle):
 
 func day01_mom_dies(handle):
 	if day01_progress < day01_states.find('goto_bed'):
-		pass  # TODO: show GameOverOverlay
+		ViewportManager.change_to_gameover('mom_died')
 		
 func day01_get_your_job(handle):
 	CitizenRecord.add_no_job(-5)
