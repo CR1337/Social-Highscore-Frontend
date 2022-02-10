@@ -12,6 +12,8 @@ Friend
 03-22/02-03/02
 Mom
 02-08/01-07/05
+Pharmacist
+03-04/01-16/03
 
 UTILITY
 Busstreet-NPC1

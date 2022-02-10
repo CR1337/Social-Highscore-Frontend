@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=50 format=2]
 
-[ext_resource path="res://assets/animated_sprites/pngs/characters/cropped/city_bankstreet/bank/npc_security2.png" type="Texture" id=1]
+[ext_resource path="res://assets/animated_sprites/pngs/characters/cropped/city/city_bankstreet/bank/npc_security2.png" type="Texture" id=1]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4

@@ -1644,7 +1644,7 @@
         "announced_position_y": 2.2,
         "looking_direction_x": 0,
         "looking_direction_y": -1,
-        "state": "idle",
+        "state": "idle_walking",
         "is_new_state_requested": false,
         "requested_state": "",
         "movement_dict": {

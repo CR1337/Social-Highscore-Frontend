@@ -2508,7 +2508,7 @@ id = "tid_utility_busstreet_hospital_leave"
 [node name="Npc" parent="." instance=ExtResource( 14 )]
 position = Vector2( 32, 793.6 )
 z_index = 1
-is_sitting = true
+idle_animation = "sitting"
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_hospital_npc_start_dialog"
 speed = 2.0
@@ -2524,7 +2524,7 @@ id = "tid_utility_busstreet_hospital_npc_start_dialog"
 [node name="Npc2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 32, 921.6 )
 z_index = 1
-is_sitting = true
+idle_animation = "sitting"
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_hospital_npc2_start_dialog"
 speed = 2.0

@@ -20,12 +20,7 @@ const _upper_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 export var ignores_crosswalks = true
 export var initial_state = 'idle'
-
-export var is_sitting = false setget set_is_sitting, get_is_sitting
-func set_is_sitting(value):
-	is_sitting = value
-func get_is_sitting():
-	return is_sitting
+export var idle_animation = 'idle'
 
 export var is_activated_by_collison: bool setget set_is_activated_by_collison, get_is_activated_by_collison
 func set_is_activated_by_collison(value):
@@ -213,10 +208,8 @@ func _update_animation():
 	var animation_name_suffix = ""
 	if _tween != null && _tween.is_active():
 		animation_name_prefix = "walk"
-	elif is_sitting:
-		animation_name_prefix = "sitting"
 	else:
-		animation_name_prefix = "idle"
+		animation_name_prefix = idle_animation
 
 	match looking_direction:
 		Vector2.LEFT:

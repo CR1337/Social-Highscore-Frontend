@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/tilesets/interior/black.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/16_Grocery_store_32x32.png" type="Texture" id=2]
@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/tilesets/interior/3_Bathroom_32x32.png" type="Texture" id=10]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=12]
-[ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/mall/npc_gym.tres" type="SpriteFrames" id=13]
+[ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_suspect.tres" type="SpriteFrames" id=13]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=14]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=15]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_officer.tres" type="SpriteFrames" id=16]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_prisoner1.tres" type="SpriteFrames" id=18]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_prisoner2.tres" type="SpriteFrames" id=19]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_prisoner3.tres" type="SpriteFrames" id=20]
+[ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_interrogator.tres" type="SpriteFrames" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -2246,7 +2247,7 @@ position = Vector2( 672, 672 )
 z_index = 1
 speed = 2.0
 active_on_start = true
-animation = ExtResource( 13 )
+animation = ExtResource( 21 )
 current_position = Vector2( 10, 10 )
 
 [node name="Npc2" parent="." instance=ExtResource( 14 )]
