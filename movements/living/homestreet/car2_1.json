@@ -1,0 +1,19 @@
+{
+    "state0": {
+        "new_start_position_x": 5,
+        "new_start_position_y": -1,
+        "sequence": [
+            {
+                "direction": "down",
+                "repeats": 8,
+                "trigger_id": null
+            },
+            {
+                "direction": "left",
+                "repeats": 10,
+                "trigger_id": "tid_living_pharmacystreet_car_2_2_start"
+            }
+        ],
+        "repeats": 1
+    }
+}

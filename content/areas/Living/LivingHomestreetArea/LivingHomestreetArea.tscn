@@ -136,6 +136,7 @@ speed = 2.0
 active_on_start = true
 animation = ExtResource( 16 )
 current_position = Vector2( 13, 7 )
+looking_direction = Vector2( -1, 0 )
 
 [node name="CarStartTrigger" type="Node" parent="Car1_3"]
 script = ExtResource( 17 )
@@ -154,12 +155,13 @@ script = ExtResource( 17 )
 id = "tid_living_homestreet_car_2_1_start"
 
 [node name="Car2_3" parent="." instance=ExtResource( 11 )]
-position = Vector2( -32, 544 )
+position = Vector2( -96, 544 )
 ignores_crosswalks = false
 speed = 2.0
 active_on_start = true
 animation = ExtResource( 15 )
-current_position = Vector2( -1, 8 )
+current_position = Vector2( -2, 8 )
+looking_direction = Vector2( 1, 0 )
 
 [node name="CarStartTrigger" type="Node" parent="Car2_3"]
 script = ExtResource( 17 )

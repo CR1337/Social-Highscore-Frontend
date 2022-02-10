@@ -124,7 +124,7 @@ func _set_raster_position(new_position):
 
 func set_state(value):
 	state = value
-	if not _movement_dict.empty():
+	if not _movement_dict.empty() and _movement_dict.get(state) != null:
 		if _movement_dict[state]['new_start_position_x'] != null and _movement_dict[state]['new_start_position_y'] != null:
 			set_current_position(
 				Vector2(
@@ -169,7 +169,7 @@ func _process(delta):
 	if _is_new_state_requested:
 		set_state(_requested_state)
 		_is_new_state_requested = false
-	if _active and not _movement_waiting and not _movement_dict.empty():
+	if _active and not _movement_waiting and not _movement_dict.empty() and _movement_dict.get(state) != null:
 		_move()
 
 func _is_ray_colliding(_ray, factor = 1):
@@ -221,7 +221,7 @@ func _update_animation():
 		Vector2.DOWN:
 			animation_name_suffix = "down"
 			
-	if not _movement_dict.empty():
+	if not _movement_dict.empty() and _movement_dict.get(state) != null:
 		if _get_movement_step()['direction'] != 'wait':
 			animation_name_suffix = _get_movement_step()['direction']
 	$AnimatedSprite.animation = animation_name_prefix + "_" + animation_name_suffix
@@ -299,7 +299,7 @@ func _get_json_filename():
 	var self_splits = _split_by_capitals(name)
 	self_splits = self_splits.slice(1, len(self_splits) - 1)
 	for split in self_splits:
-		result += split + "_"
+		result += split.to_lower() + "_"
 	
 	result = result.trim_suffix("_")
 	result += ".json"
@@ -312,6 +312,8 @@ func _get_dialog_json_filename():
 	return "res://dialogs" + _get_json_filename()
 
 func persistent_state():
+	if str(get_path()) == "/root/MainScene/Areas/LivingHomestreetArea/Car2_3":
+		pass
 	return {
 		"current_position_x": current_position.x,
 		"current_position_y": current_position.y,
@@ -331,7 +333,7 @@ func persistent_state():
 	}
 
 func restore_state(jsonstate):
-	if str(get_path()) == "/root/mainScene/Areas/LivingHomestreetArea/Car1_1":
+	if str(get_path()) == "/root/MainScene/Areas/LivingHomestreetArea/Car2_3":
 		pass
 	set_current_position(Vector2(jsonstate['current_position_x'], jsonstate['current_position_y']))
 	_active =  jsonstate['active']
@@ -345,3 +347,4 @@ func restore_state(jsonstate):
 	_movement_step_repeat_counter = jsonstate['movement_step_repeat_counter']
 	_movement_waiting = jsonstate['movement_waiting']
 	_movement_waiting_handle = jsonstate['movement_waiting_handle']
+	_update_animation()

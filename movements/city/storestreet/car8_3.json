@@ -1,0 +1,19 @@
+{
+    "state0": {
+        "new_start_position_x": 3,
+        "new_start_position_y": -1,
+        "sequence": [
+            {
+                "direction": "down",
+                "repeats": 7,
+                "trigger_id": null
+            },
+            {
+                "direction": "left",
+                "repeats": 6,
+                "trigger_id": "tid_city_bankstreet_car_8_4_start"
+            }
+        ],
+        "repeats": 1
+    }
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=7]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/shadystreet/npc2.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=10]
+[ext_resource path="res://assets/animated_sprites/tres/cars/animated_taxi_car.tres" type="SpriteFrames" id=11]
 
 [node name="CityShadystreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -97,3 +99,15 @@ current_position = Vector2( 2, 11 )
 [node name="DialogStartTrigger" type="Node" parent="Npc2"]
 script = ExtResource( 7 )
 id = "tid_city_shadystreet_npc2_start_dialog"
+
+[node name="Car7_1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 160, -32 )
+ignores_crosswalks = false
+speed = 4.0
+active_on_start = true
+animation = ExtResource( 11 )
+current_position = Vector2( 2, -1 )
+
+[node name="CarStartTrigger" type="Node" parent="Car7_1"]
+script = ExtResource( 10 )
+id = "tid_city_shadystreet_car_7_1_start"

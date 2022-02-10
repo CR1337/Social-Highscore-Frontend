@@ -1,0 +1,19 @@
+{
+    "state0": {
+        "new_start_position_x": 4,
+        "new_start_position_y": 17,
+        "sequence": [
+            {
+                "direction": "up",
+                "repeats": 12,
+                "trigger_id": null
+            },
+            {
+                "direction": "right",
+                "repeats": 9,
+                "trigger_id": "tid_city_jobcenterstreet_car_7_3_start"
+            }
+        ],
+        "repeats": 1
+    }
+}

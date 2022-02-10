@@ -1,6 +1,6 @@
 extends Node
 
-var day01_bus_enabled = true
+var day01_bus_enabled = false
 var day01_progress = 0
 
 
