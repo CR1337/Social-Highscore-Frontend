@@ -54,12 +54,8 @@ func _save_default_game():
 	file.close()
 
 func start_new_game():
-	TrafficController.start_cars()
-	NewsController._DEBUG_add_news()
-	CitizenRecord._DEBUG_add_records()
-	StoryController.day01_start()
+	ViewportManager.change_to_prolog()
 	
-
 func load_default_game():
 	print("savegame empty")
 	var file = File.new()

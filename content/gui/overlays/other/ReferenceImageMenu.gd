@@ -23,7 +23,7 @@ func _display_image():
 	_image_texture_rect.rect_rotation = Config.image_rotation_angle
 
 func _on_TakeImageButton_pressed():
-	_image_processor_job_id = ImageProcessor.take__reference_image()
+	_image_processor_job_id = ImageProcessor.take_reference_image()
 	_take_image_button.disabled = true
 
 func _on_TurnClockwiseButton_pressed():
@@ -43,7 +43,8 @@ func _on_TurnCounterclockwiseButton_pressed():
 func _on_OkButton_pressed():
 	ViewportManager.config_menu.refresh()
 	Config.store_to_file()
-	ViewportManager.change_to_transparent()
+	ViewportManager.change_to_last()
+	# ViewportManager.change_to_transparent()
 
 func _on_reference_image_taken(image, job_id):
 	if job_id != _image_processor_job_id:

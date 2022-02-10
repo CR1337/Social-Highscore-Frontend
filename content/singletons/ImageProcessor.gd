@@ -20,7 +20,7 @@ var _b64_image_dict: Dictionary
 
 signal sig_image_processing_done(response, job_id, image)
 signal sig_image_processing_error(response_code)
-signal sig__reference_image_taken(image, job_id)
+signal sig_reference_image_taken(image, job_id)
 
 var _b64_reference_image: String
 var _reference_image: Image
@@ -79,7 +79,7 @@ func _on_got_image(image, rawImage):
 		JOB_TYPE.REFERENCE_IMAGE:
 			_reference_image = image
 			_b64_reference_image = b64_image
-			emit_signal("sig__reference_image_taken", image, _current_job_id)
+			emit_signal("sig_reference_image_taken", image, _current_job_id)
 			do_request = false
 
 	if do_request:

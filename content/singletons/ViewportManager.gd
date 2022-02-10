@@ -30,6 +30,8 @@ onready var _current_overlay = _transparent_overlay
 onready var _last_overlay = _transparent_overlay
 onready var _current_notification_overlay = _transparent_notification_overlay
 
+onready var _prolog_overlay = get_node("/root/MainScene/Overlays/PrologOverlay")
+
 func persistent_state():
 	return {
 		'current_area': _current_area.get_path(),
@@ -59,6 +61,9 @@ func _on_phone_pressed():
 
 func _on_menu_pressed():
 	change_overlay(_game_menu)
+	
+func change_to_prolog():
+	change_overlay(_prolog_overlay)
 
 func change_to_notification():
 	change_notification_overlay(_notification_overlay)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://content/gui/overlays/other/PaymentOverlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gfx/ShaderRect.gd" type="Script" id=2]
@@ -44,6 +44,7 @@
 [ext_resource path="res://content/areas/City/CityBankstreetArea/CityBankStreetArea.tscn" type="PackedScene" id=42]
 [ext_resource path="res://content/gui/overlays/smartphone/NewsAppMainpage.tscn" type="PackedScene" id=43]
 [ext_resource path="res://content/gui/overlays/smartphone/CitizenApp.tscn" type="PackedScene" id=44]
+[ext_resource path="res://content/gui/overlays/other/PrologOverlay.tscn" type="PackedScene" id=45]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -256,6 +257,9 @@ position = Vector2( 2841.38, -652 )
 
 [node name="SmartphoneMenu" parent="Overlays" instance=ExtResource( 38 )]
 position = Vector2( 3018.55, 2666.58 )
+
+[node name="PrologOverlay" parent="Overlays" instance=ExtResource( 45 )]
+position = Vector2( 4087.35, -6659.93 )
 
 [node name="TransparentOverlay" type="Node2D" parent="Overlays"]
 
