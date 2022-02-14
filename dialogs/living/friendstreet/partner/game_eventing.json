@@ -1,0 +1,291 @@
+{
+    "texts": {
+        "game_evening_hello": "It's nice that you're both here. The three of us haven't done anything for ages. I was really looking forward to game night. Let me deal the cards for a round of Mau Mau. Do you want me to explain the rules again? ",
+        "yes": "Yes please",
+        "no": "No thanks",
+        "rules": "We play with normal playing cards. So each card has a suit and a number. There is a pile of cards in the middle. The players now place one of their hand cards on the pile in turn. Either the color or the number must match. If you cannot place a card, you must draw a new card. The first player to run out of cards wins. An ace makes the next player sit out and a seven makes him draw two cards. If you lay a Jack, you can choose the next suit. Now, let us begin",
+        "no_rules": "Ok, let us begin",
+        "ok": "Ok",
+        "game_start": "(<partner> deals the cards. You have the following cards in your hand:
+        10 of spades, ace of diamonds,
+        7 of diamonds, king of hearts,
+        3 of hearts.
+        The Queen of Clubs is on the table. <friend> lays the Queen of Spades.
+        It's your turn. You can only lay the 10 of spades.)",
+        "lay_01": "(Lay 10 of spades)",
+        "dialog_partner_01": "(<partner> puts the cross 10.)
+        <Partner>: Have you noticed that people have become much friendlier since the introduction of Communityscore. I now walk the streets much more relaxed and feel safer doing so.",
+        "keep_quiet": "(keep quiet)",
+        "nod": "(nod)",
+        "dialog_friend_01": "(<friend> puts the king of cross)
+        <Friend>: Yes, I have that feeling, too. But I think it's just because people no longer dare to speak their minds. The other day I overheard a woman complaining about the high prices of baby food and she immediately lost points. Harmony and friendliness are all well and good. But one is still allowed to speak one's mind.",
+        "dialog_01_answer_01": "I think it's nice that people are friendlier.",
+        "dialog_01_answer_02": "Something like that has also happened to me.",
+        "your_turn_01": "(It's your turn. You have the following cards in your hand:
+        ace of diamonds,
+        7 of diamonds, king of hearts,
+        3 of hearts.
+        You can only lay the king of heards.",
+        "lay_02": "(Lay the king of heards)",
+        "dialog_partner_02": "(<partner> puts the 9 of heards)
+        <Partner>: I admit, a few finer points still need some minor adjustments. But I am convinced that in the end everyone will be much happier than before the introduction of the community score.",
+        "dialog_friend_02": "(<friend> puts the queen of heards)
+        <Friend>: I disagree with you on that. No one will change their real views through fear of punishment. I don't think the community score is a good idea.",
+        "dialog_02_answer_01": "I agree",
+        "dialog_02_answer_02": "I think the community score is a good idea ",
+        "your_turn_02": "(It's your turn. You have the following cards in your hand:
+        ace of diamonds,
+        7 of diamonds,
+        3 of hearts.
+        You can only lay the 3 of heards.",
+        "lay_03": "(Lay the 3 of heards.",
+        "dialog_03_partner": "(<partner> puts the 3 of diamonds)
+        <Partner>: It does not depend on the real views. As far as I'm concerned, everyone can think what he wants, but he must abide by the rules in society. This is the only way it can work. The latest statistics already show that the crime rate has dropped drastically in recent days, and that's only thanks to the community score.",
+        "dialog_03_friend": "(<friend> puts the king of diamonds, he says mau, because he has only one card left)
+        <Friend>: I'm pretty sure that this constant pressure of being watched and evaluated is not good for your mental health. I have heard of some people who are afraid for their own existence, because they could lose their job at the slightest mistake.",
+        "dialog_03_answer_01": "I have also met such people",
+        "your_turn_03": "(It's your turn. You have the following cards in your hand:
+        ace of diamonds,
+        7 of diamonds",
+        "lay_04_01": "(Lay the ace of diamonds",
+        "lay_04_02": "(Lay the 7 of diamonds)",
+        "dialog_04_partner_01": "(<partner> must miss this round)
+        <Partner>: If people really do have such a low score, they will have brought it on themselves. As a result, they do not deserve the support of society, since they have not contributed themselves. There must always be give and take. It must not be the case that there are people who only take. That would not be fair to others.",
+        "dialog_04_partner_02": "(<partner> must draw two cards)
+        <Partner>: If people really do have such a low score, they will have brought it on themselves. As a result, they do not deserve the support of society, since they have not contributed themselves. There must always be give and take. It must not be the case that there are people who only take. That would not be fair to others.",
+        "dialog_04_friend": "(<friend> puts the 6 of diamonds and says mau mau. He wins)
+        <Friend>: I can see we can't come to a common denominator. I hope we can still be friends. It's getting late and I have to get up early tomorrow. I'll be on my way then.",
+        "bye": "Ok, bye"
+    },
+    "graphs": {
+        "game_evening": {
+            "initial_nid": "game_evening_start",
+            "game_evening_start": {
+                "tid": "game_evening_hello",
+                "answers": [
+                    {
+                        "tid": "yes",
+                        "nid": "game_rules",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "no",
+                        "nid": "game_no_rules",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "game_rules": {
+                "tid": "rules",
+                "answers": [
+                    {
+                        "tid": "ok",
+                        "nid": "game_start",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "game_no_rules": {
+                "tid": "no_rules",
+                "answers": [
+                    {
+                        "tid": "ok",
+                        "nid": "game_start",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "game_start": {
+                "tid": "game_start",
+                "answers": [
+                    {
+                        "tid": "lay_01",
+                        "nid": "dialog_01_p",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "dialog_01_p": {
+                "tid": "dialog_partner_01",
+                "answers": [
+                    {
+                        "tid": "keep_quiet",
+                        "nid": "dialog_01_f",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "nod",
+                        "nid": "dialog_01_f",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "dialog_01_f": {
+                "tid": "dialog_friend_01",
+                "answers": [
+                    {
+                        "tid": "dialog_01_answer_01",
+                        "nid": "turn_01",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "dialog_01_answer_02",
+                        "nid": "turn_01",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "turn_01": {
+                "tid": "your_turn_01",
+                "answers": [
+                    {
+                        "tid": "lay_02",
+                        "nid": "dialog_02_p",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "dialog_02_p": {
+                "tid": "dialog_partner_02",
+                "answers": [
+                    {
+                        "tid": "keep_quiet",
+                        "nid": "dialog_02_f",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "nod",
+                        "nid": "dialog_02_f",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "dialog_02_f": {
+                "tid": "dialog_friend_02",
+                "answers": [
+                    {
+                        "tid": "dialog_02_answer_01",
+                        "nid": "turn_02",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "dialog_02_answer_02",
+                        "nid": "turn_02",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "turn_02": {
+                "tid": "your_turn_02",
+                "answers": [
+                    {
+                        "tid": "lay_03",
+                        "nid": "dialog_03_p",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "dialog_03_p": {
+                "tid": "dialog_partner_03",
+                "answers": [
+                    {
+                        "tid": "keep_quiet",
+                        "nid": "dialog_03_f",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "nod",
+                        "nid": "dialog_03_f",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "dialog_03_f": {
+                "tid": "dialog_friend_03",
+                "answers": [
+                    {
+                        "tid": "dialog_02_answer_01",
+                        "nid": "turn_03",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "dialog_02_answer_02",
+                        "nid": "turn_03",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "turn_03": {
+                "tid": "your_turn_03",
+                "answers": [
+                    {
+                        "tid": "lay_04_01",
+                        "nid": "dialog_04_p_01",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "lay_04_02",
+                        "nid": "dialog_04_p_02",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "dialog_04_p_01": {
+                "tid": "dialog_04_partner_01",
+                "answers": [
+                    {
+                        "tid": "keep_quiet",
+                        "nid": "dialog_04_f",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "nod",
+                        "nid": "dialog_04_f",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "dialog_04_p_02": {
+                "tid": "dialog_04_partner_02",
+                "answers": [
+                    {
+                        "tid": "keep_quiet",
+                        "nid": "dialog_04_f",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "nod",
+                        "nid": "dialog_04_f",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "dialog_04_f": {
+                "tid": "dialog_04_friend",
+                "answers": [
+                    {
+                        "tid": "bye",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

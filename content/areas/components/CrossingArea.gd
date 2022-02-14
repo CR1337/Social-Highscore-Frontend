@@ -16,6 +16,7 @@ func set_driveThroughable(value):
 	else:
 		collision_layer += 8
 		_drive_throughable = value
+
 func get_driveThroughable():
 	return _drive_throughable
 
