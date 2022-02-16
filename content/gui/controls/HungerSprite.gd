@@ -1,8 +1,6 @@
 extends AnimatedSprite
 
 func _ready():
-	GameStateController.increase_hunger()
-	GameStateController.increase_hunger()
 	visible = false
 	GameStateController.connect("sig_hunger_changed", self, "_on_hunger_changed")
 	call_deferred("_handle_hunger", GameStateController.hunger)

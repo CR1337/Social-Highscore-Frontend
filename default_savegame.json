@@ -2724,39 +2724,19 @@
     "/root/MainScene/Overlays/MessengerAppMessages": {
         "messages": {
             "friend": [
-                [
-                    false,
-                    "Hallo"
-                ]
+
             ],
             "partner": [
-                [
-                    false,
-                    "Hallo"
-                ]
+
             ],
             "mom": [
-                [
-                    false,
-                    "Hallo"
-                ]
+
             ],
             "boss": [
-                [
-                    false,
-                    "Hallo"
-                ]
+
             ]
         },
-        "current_node_ids": {
-            "friend": "node0",
-            "partner": "node0",
-            "mom": "node0",
-            "boss": "node0"
-        },
-        "current_contact": "",
-        "response_timer_handle": 0,
-        "hidden": true
+        "current_contact": ""
     },
     "/root/MainScene/Overlays/NewsAppNewspage": {
         "news_index": -1
