@@ -4,7 +4,7 @@ onready var score = 1000
 onready var money = 1000
 
 # hunger and sleep in percent
-onready var hunger = 100
+onready var hunger = 0
 onready var sleep = 100
 
 onready var days_without_mom = 0
@@ -72,10 +72,9 @@ func _next_day():
 	days_without_mom += 1
 
 func _status_update():
-	hunger -= 4
 	sleep -= 5
 	emit_signal("sig_sleep_changed", sleep)
-	emit_signal("sig_hunger_changed", hunger)
+	
 
 func timer(handle):
 	if handle == _next_day_handle:
@@ -93,8 +92,7 @@ func change_money(amount):
 	money += amount
 	emit_signal("sig_money_changed", money)
 
-func eat(amount):
-	hunger = max(hunger - amount, 0)
+
 
 func sleep():
 	sleep = 0
@@ -111,3 +109,29 @@ func remove_from_fridge(item):
 
 func _on_add_money(amount, description):
 	change_money(amount)
+	
+	
+	
+	
+func increase_hunger():
+	hunger += 1
+	_handle_hunger()
+	
+func _eat(amount):
+	hunger -= max(amount, hunger + 1)
+	_handle_hunger()
+	
+func eat_small():
+	_eat(1)
+			
+func eat_big():
+	_eat(2)
+		
+func _handle_hunger():
+	# the signal enables the input ui to display the hunger indicator
+	emit_signal("sig_hunger_changed", hunger)
+	if hunger < 2:
+		pass  # TODO: disable hunger timer if it is enabled
+	else:
+		pass  # TODO: enable hunger timer
+		
