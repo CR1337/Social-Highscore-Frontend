@@ -10,5 +10,7 @@ func _on_trigger(trigger_id, kwargs):
 		trigger(kwargs)
 
 func trigger(kwargs):
-	print(id)
+	pass
+	# for debugging
+	# print(id)
 
