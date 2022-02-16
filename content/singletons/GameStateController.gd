@@ -107,7 +107,7 @@ func _on_add_money(amount, description):
 	
 	
 func increase_hunger():
-	hunger += 1
+	hunger = min(2, hunger + 1)
 	_handle_hunger()
 	
 func _eat(amount):
