@@ -10,7 +10,7 @@ var _messages = {
 onready var _name_label = $Background/Margin/VBox/NameLabel
 onready var _messages_label = $Background/Margin/VBox/MessagesLabel
 
-var _current_contact: String
+var _current_contact = 'mom'  # default value for creating default savegame
 
 func persistent_state():
 	return {

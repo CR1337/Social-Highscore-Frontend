@@ -1,15 +1,15 @@
 extends Node
 
-onready var score = 1000
-onready var money = 1000
+var score = 1000
+var money = 1000
 
-# hunger and sleep in percent
-onready var hunger = 0
-onready var sleep = 100
+var hunger = 0
+var _hunger_timer_handle = -1
+const hunger_timer_start_value = 60 * 1
 
-onready var days_without_mom = 0
-onready var fridge_filling = []
-onready var current_day = 0
+var days_without_mom = 0
+var fridge_filling = []
+var current_day = 0
 
 
 
@@ -28,7 +28,7 @@ func persistent_state():
 		'score': score,
 		'money': money,
 		'hunger': hunger,
-		'sleep': sleep,
+		'hunger_timer_handle': _hunger_timer_handle,
 		'days_without_mom': days_without_mom,
 		'fridge_filling': fridge_filling,
 		'current_day': current_day,
@@ -41,7 +41,7 @@ func restore_state(state):
 	score = state['score']
 	money = state["money"]
 	hunger = state["hunger"]
-	sleep = state["sleep"]
+	_hunger_timer_handle = state['hunger_timer_handle']
 	days_without_mom = state["days_without_mom"]
 	fridge_filling = state["fridge_filling"]
 	current_day = state["current_day"]
@@ -56,7 +56,6 @@ func restore_state(state):
 var _next_day_handle = 1 # Stated in default_savegame
 var _next_status_update_handle = 2 # Stated in default_savegame
 
-signal sig_sleep_changed(new_value)
 signal sig_hunger_changed(new_value)
 signal sig_money_changed(new_value)
 signal sig_score_changed(new_value)
@@ -67,13 +66,13 @@ func _ready():
 	_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self, "timer")
 	_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self, "timer")
 
+	# DEBUG:
+	increase_hunger()
+	increase_hunger()
+
 func _next_day():
 	current_day += 1
 	days_without_mom += 1
-
-func _status_update():
-	sleep -= 5
-	emit_signal("sig_sleep_changed", sleep)
 	
 
 func timer(handle):
@@ -81,7 +80,6 @@ func timer(handle):
 		_next_day()
 		_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self, "timer")
 	if handle == _next_status_update_handle:
-		_status_update()
 		_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self, "timer")
 
 func change_score(amount):
@@ -91,11 +89,6 @@ func change_score(amount):
 func change_money(amount):
 	money += amount
 	emit_signal("sig_money_changed", money)
-
-
-
-func sleep():
-	sleep = 0
 
 func visited_mom():
 	days_without_mom = 0
@@ -131,7 +124,18 @@ func _handle_hunger():
 	# the signal enables the input ui to display the hunger indicator
 	emit_signal("sig_hunger_changed", hunger)
 	if hunger < 2:
-		pass  # TODO: disable hunger timer if it is enabled
+		# disable hunger timer by forgetting handle
+		_hunger_timer_handle = -1
 	else:
-		pass  # TODO: enable hunger timer
+		# start hunger timer
+		_hunger_timer_handle = TimeController.setTimer(
+			hunger_timer_start_value, self, "_hunger_timer"
+		)
+
+func _hunger_timer(handle):
+	if handle == _hunger_timer_handle:
+		_starve()
 		
+func _starve():
+	print("STARVING")
+	pass  # TODO

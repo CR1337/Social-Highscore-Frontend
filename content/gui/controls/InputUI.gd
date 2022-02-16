@@ -1,9 +1,5 @@
 extends Node2D
 
-
-func _process(delta):
-	$Label.text = TimeController.get_daytime()
-
 func _on_menu_button_pressed():
 	InputBus.emit_signal("sig_menu_pressed")
 
@@ -40,12 +36,5 @@ func _on_ActionButton_button_up():
 func _on_PhoneButton_button_down():
 	InputBus.emit_signal("sig_phone_pressed")
 
-
 func _on_PhoneButton_button_up():
 	InputBus.emit_signal("sig_phone_released")
-
-
-
-func _on_DebugNewGameButton_pressed():
-	SaveGameController.delete_game()
-	SaveGameController.load_game()

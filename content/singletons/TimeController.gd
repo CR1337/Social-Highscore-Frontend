@@ -95,8 +95,8 @@ func setTimer(seconds, sender, callback):
 	_insert([_time + seconds, _current_handle, sender, callback])
 	return _current_handle
 	
-func fast_forward_to(hours, minutes):
-	_time = floor(int(_time) / Globals.seconds_per_day) + _hours_minutes_to_seconds(hours, minutes)
+#func fast_forward_to(hours, minutes):
+#	_time = floor(int(_time) / Globals.seconds_per_day) + _hours_minutes_to_seconds(hours, minutes)
 	
 # Priority Queue implementation with binary heap
 func _perc_up(i):

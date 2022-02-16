@@ -2736,7 +2736,7 @@
 
             ]
         },
-        "current_contact": ""
+        "current_contact": "mom"
     },
     "/root/MainScene/Overlays/NewsAppNewspage": {
         "news_index": -1
@@ -2755,8 +2755,8 @@
     "/root/GameStateController": {
         "score": 1000,
         "money": 1000,
-        "hunger": 2,
-        "sleep": 100,
+        "hunger": 0,
+        "hunger_timer_handle": -1,
         "days_without_mom": 0,
         "fridge_filling": [
 

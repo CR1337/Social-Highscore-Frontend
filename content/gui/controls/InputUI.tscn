@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/gui/arrow_button_normal_left.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=2]
@@ -6,23 +6,11 @@
 [ext_resource path="res://content/gui/controls/InputUI.gd" type="Script" id=4]
 [ext_resource path="res://assets/animated_sprites/tres/ui/stomach.tres" type="SpriteFrames" id=5]
 [ext_resource path="res://content/gui/controls/HungerSprite.gd" type="Script" id=6]
+[ext_resource path="res://content/gui/controls/TimerLabel.gd" type="Script" id=7]
 [ext_resource path="res://assets/gui/arrow_button_normal_up.png" type="Texture" id=9]
 [ext_resource path="res://assets/gui/arrow_button_normal_down.png" type="Texture" id=11]
 [ext_resource path="res://assets/gui/action_button_normal.png" type="Texture" id=12]
 [ext_resource path="res://assets/gui/arrow_button_normal_right.png" type="Texture" id=13]
-[ext_resource path="res://content/gui/controls/SleepBar.gd" type="Script" id=14]
-[ext_resource path="res://assets/gui/sleep_foreground.png" type="Texture" id=16]
-[ext_resource path="res://assets/gui/sleep_background.png" type="Texture" id=19]
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 16 )
-region_rect = Rect2( 0, 0, 200, 30 )
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 19 )
-region_rect = Rect2( 0, 0, 200, 30 )
 
 [node name="InputUI" type="Node2D"]
 script = ExtResource( 4 )
@@ -43,20 +31,6 @@ margin_top = 1040.0
 margin_right = 80.0
 margin_bottom = 1104.0
 text = "Menu"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SleepBar" type="ProgressBar" parent="."]
-margin_left = 332.0
-margin_top = 1040.0
-margin_right = 532.0
-margin_bottom = 1072.0
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
-value = 100.0
-percent_visible = false
-script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -127,7 +101,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="TimerLabel" type="Label" parent="."]
 margin_left = 571.281
 margin_top = 1045.02
 margin_right = 661.281
@@ -136,12 +110,13 @@ rect_scale = Vector2( 2, 2 )
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "00:00"
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HungerSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 500, 1120 )
+position = Vector2( 536.887, 1070 )
 frames = ExtResource( 5 )
 animation = "hungry"
 playing = true
