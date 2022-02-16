@@ -26,7 +26,7 @@ func _on_notification(type, text):
 			_icon_texture.texture = bank_icon
 		'score':
 			_icon_texture.texture = score_icon
-		'message':
+		'message', 'message_partner', 'message_friend', 'message_mom', 'message_boss':
 			_icon_texture.texture = message_icon
 		_: # unknown type
 			_icon_texture.texture = default_icon
@@ -50,6 +50,14 @@ func _on_Button_pressed():
 			ViewportManager.change_to_citizen_app()
 		'message':
 			ViewportManager.change_to_messenger_contacts()
+		'message_partner':
+			ViewportManager.change_to_messenger_messages('partner')
+		'message_friend':
+			ViewportManager.change_to_messenger_messages('friend')
+		'message_mom':
+			ViewportManager.change_to_messenger_messages('mom')
+		'message_boss':
+			ViewportManager.change_to_messenger_messages('boss')
 
 	ViewportManager.change_to_transparent_notification()
 	_current_type = 'None'
