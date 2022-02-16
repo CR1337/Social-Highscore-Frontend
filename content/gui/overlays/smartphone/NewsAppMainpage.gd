@@ -11,9 +11,9 @@ const _button_height = 400
 func _ready():
 	NewsController.connect("sig_publish_news", self, "_on_publish_news")
 	call_deferred("update_mainpage")
-	
+
 	call_deferred("_DEBUG_add_news")
-	
+
 func _add_button(title, news_index):
 	var button = Button.new()
 	button.text = title
@@ -25,7 +25,7 @@ func _add_button(title, news_index):
 	_buttons.append(button)
 	_button_container.add_child(button)
 	button.update()
-	
+
 func _remove_all_buttons():
 	for button in _buttons:
 		_button_container.remove_child(button)
@@ -45,7 +45,7 @@ func _on_news_button_pressed(news_index):
 
 func _on_BackButton_pressed():
 	ViewportManager.change_to_smartphone()
-	
+
 func _on_publish_news(title, text, preferred_emotion):
 	call_deferred("update_mainpage")
-	
+

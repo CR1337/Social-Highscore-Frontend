@@ -1,7 +1,7 @@
 extends Node
 
 
-signal sig_publish_news(title, text, preferred_emotion, lifetime)
+signal sig_publish_news(title, text, preferred_emotions, lifetime)
 
 var news = []
 var _ongoing_reactions = {}
@@ -20,20 +20,19 @@ func _ready():
 	ImageProcessor.connect("sig_image_processing_done", self, "_on_image_processing_done")
 	_DEBUG_add_news()
 
-
 func clear_news():
 	# Called when the node enters the scene tree for the first time.
-	news = {}
+	news = []
 
-func publish_news(title, text, preferred_emotion, lifetime):
-	emit_signal("sig_publish_news", title, text, preferred_emotion, lifetime)
+func publish_news(title, text, preferred_emotions, lifetime):
+	emit_signal("sig_publish_news", title, text, preferred_emotions, lifetime)
 	EventBus.emit_signal("sig_notification", 'news', title)
 
-func _on_publish_news(title, text, preferred_emotion, lifetime):
+func _on_publish_news(title, text, preferred_emotions, lifetime):
 	news.append({
 		'title': title,
 		'text': text,
-		'preferred_emotion': preferred_emotion,
+		'preferred_emotions': preferred_emotions,
 		'lifetime': lifetime,
 		'age': 0,
 		'reacted_on': false,
@@ -48,7 +47,7 @@ func react_on(news_index, want_to_react):
 		var news_reacting_on = news[news_index]
 		news_reacting_on['reacted_on'] = true
 		CitizenRecord.add_refused_reaction_on_news(
-			-40, news_reacting_on['title'], news_reacting_on['preferred_emotion']
+			-40, news_reacting_on['title'], news_reacting_on['preferred_emotions']
 		)
 
 func _on_image_processing_done(parsed_response, job_id, image, raw_image, b64_image):
@@ -60,13 +59,13 @@ func _handle_reaction(b64_image, emotion, news_id_reacting_on):
 	var delta_score
 	var news_reacting_on = news[news_id_reacting_on]
 	news_reacting_on['reacted_on'] = true
-	if emotion != news_reacting_on['preferred_emotion']:
+	if not (emotion in news_reacting_on['preferred_emotions']):
 		delta_score = -30
 	else:
 		delta_score = 20
 	CitizenRecord.add_emotional_reaction_on_news(
 		delta_score, news_reacting_on['title'], b64_image,
-		emotion, news_reacting_on['preferred_emotion']
+		emotion, news_reacting_on['preferred_emotions']
 	)
 
 #func _oldest_news(skip_running_reactions):
@@ -92,7 +91,7 @@ func _on_new_day():
 			n['expired'] = true
 			if not n['reacted_on']:
 				CitizenRecord.add_refused_reaction_on_news(
-					-40, n['title'], n['preferred_emotion']
+					-40, n['title'], n['preferred_emotions']
 				)
 #		to_erase.append(n)
 #	for n in to_erase:
@@ -102,18 +101,18 @@ func _DEBUG_add_news():
 	NewsController.publish_news(
 		"BREAKING NEWS: We are happy",
 		"The people are happy",
-		'happy',
+		['happy'],
 		1
 	);
 	NewsController.publish_news(
 		"BREAKING NEWS: We are angry",
 		"The people are angry",
-		'angry',
+		['angry', 'sad'],
 		2
 	);
 	NewsController.publish_news(
 		"BREAKING NEWS: Some other news",
 		"The people are",
-		'happy',
+		['happy', 'angry', 'disgusted'],
 		3
 	);

@@ -21,27 +21,27 @@ func _add_record(params):
 	records.append(params)
 	GameStateController.change_score(params['score'])
 
-func add_emotional_reaction_on_news(score, news, face, emotion, preferred_emotion):
+func add_emotional_reaction_on_news(score, news, face, emotion, preferred_emotions):
 	var params = {
 		'type': 'emotional_reaction_on_news',
 		'score': score,
 		'news': news,
 		'face': face,
 		'emotion': emotion,
-		'preferred_emotion': preferred_emotion
+		'preferred_emotions': preferred_emotions
 	}
 	_add_record(params)
 
-func add_refused_reaction_on_news(score, news, preferred_emotion):
+func add_refused_reaction_on_news(score, news, preferred_emotions):
 	var params = {
 		'type': 'refused_reaction_on_news',
 		'score': score,
 		'news': news,
-		'preferred_emotion': preferred_emotion
+		'preferred_emotions': preferred_emotions
 	}
 	_add_record(params)
 
-func add_emotional_reaction_at_authentication(score, place, face, emotion, reason, preferred_emotion):
+func add_emotional_reaction_at_authentication(score, place, face, emotion, reason, preferred_emotions):
 	var params = {
 		'type': 'emotional_reaction_at_authentication',
 		'score': score,
@@ -49,7 +49,7 @@ func add_emotional_reaction_at_authentication(score, place, face, emotion, reaso
 		'face': face,
 		'emotion': emotion,
 		'reason': reason,
-		'preferred_emotion': preferred_emotion
+		'preferred_emotions': preferred_emotions
 	}
 	_add_record(params)
 
@@ -228,6 +228,16 @@ func add_no_job(score):
 		'score': score
 	}
 	_add_record(params)
+	
+func _preferred_emotion_string(preferred_emotions):
+	if len(preferred_emotions) == 1:
+		return preferred_emotions[0]
+	elif len(preferred_emotions) == 2:
+		return preferred_emotions[0] + " and " + preferred_emotions[1]
+	else:
+		return preferred_emotions[0] + ", " + _preferred_emotion_string(
+			preferred_emotions.slice(1, len(preferred_emotions) - 1)
+		)
 
 func record_display_string_for_app(record):
 	# returns a string describing the record that will be shown to the user in the citizen app
@@ -238,7 +248,7 @@ func record_display_string_for_app(record):
 			result += "The news was:\n"
 			result += record['news'] + "\n"
 			result += "Our people were {pref_emo} but you were {emo}.".format({
-				'pref_emo': record['preferred_emotion'],
+				'pref_emo': _preferred_emotion_string(record['preferred_emotions']),
 				'emo': record['emotion']
 			})
 
@@ -246,13 +256,13 @@ func record_display_string_for_app(record):
 			result += "The news was:\n"
 			result += record['news'] + "\n"
 			result += "You refused to share your emotion while our people were {pref_emo}.".format({
-				'pref_emo': record['preferred_emotion']
+				'pref_emo': _preferred_emotion_string(record['preferred_emotions'])
 			})
 
 		'emotional_reaction_at_authentication':
 			result += "You were authenticated at {place} and were {emo} while our people were {pref_emo}\n".format({
 				'place': record['place'],
-				'pref_emo': record['preferred_emotion'],
+				'pref_emo': _preferred_emotion_string(record['preferred_emotions']),
 				'emo': record['emotion']
 			})
 			result += "Reason: {reason}".format({

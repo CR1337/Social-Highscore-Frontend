@@ -11,7 +11,10 @@ onready var days_without_mom = 0
 onready var fridge_filling = []
 onready var current_day = 0
 
+
+
 var price_factor = 1
+var current_preferred_emotions = []
 
 var contact_state = {
 	'friend': "state0",
@@ -29,7 +32,9 @@ func persistent_state():
 		'days_without_mom': days_without_mom,
 		'fridge_filling': fridge_filling,
 		'current_day': current_day,
-		'contact_state': contact_state
+		'contact_state': contact_state,
+		'price_factor': price_factor,
+		'current_preferred_emotions': current_preferred_emotions
 	}
 
 func restore_state(state):
@@ -40,6 +45,8 @@ func restore_state(state):
 	days_without_mom = state["days_without_mom"]
 	fridge_filling = state["fridge_filling"]
 	current_day = state["current_day"]
+	price_factor = state['price_factor']
+	current_preferred_emotions = state['current_preferred_emotions']
 	# contact_state = state["contact_state"]
 #	emit_signal("sig_sleep_changed", sleep)
 #	emit_signal("sig_hunger_changed", hunger)

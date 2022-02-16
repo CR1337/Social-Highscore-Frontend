@@ -2787,7 +2787,11 @@
             "partner": "state0",
             "mom": "state0",
             "boss": "state0"
-        }
+        },
+        "price_factor": 1,
+        "current_preferred_emotions": [
+
+        ]
     },
     "/root/TimeController": {
         "time": 0,
@@ -2820,7 +2824,9 @@
             {
                 "title": "BREAKING NEWS: We are happy",
                 "text": "The people are happy",
-                "preferred_emotion": "happy",
+                "preferred_emotions": [
+                    "happy"
+                ],
                 "lifetime": 1,
                 "age": 0,
                 "reacted_on": false,
@@ -2829,7 +2835,10 @@
             {
                 "title": "BREAKING NEWS: We are angry",
                 "text": "The people are angry",
-                "preferred_emotion": "angry",
+                "preferred_emotions": [
+                    "angry",
+                    "sad"
+                ],
                 "lifetime": 2,
                 "age": 0,
                 "reacted_on": false,
@@ -2838,7 +2847,11 @@
             {
                 "title": "BREAKING NEWS: Some other news",
                 "text": "The people are",
-                "preferred_emotion": "happy",
+                "preferred_emotions": [
+                    "happy",
+                    "angry",
+                    "disgusted"
+                ],
                 "lifetime": 3,
                 "age": 0,
                 "reacted_on": false,
