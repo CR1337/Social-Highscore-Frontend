@@ -1,0 +1,10 @@
+{
+    "state0": {
+        "new_start_position_x": 3,
+        "new_start_position_y": -1,
+        "sequence": [
+            {"direction": "down", "repeats": 18, "trigger_id": "tid_city_storestreet_car_8_3_start"}               
+        ],
+        "repeats": 1
+    }
+}

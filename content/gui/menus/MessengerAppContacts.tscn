@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/gui/action_button_normal.png" type="Texture" id=1]
+[ext_resource path="res://assets/gui/action_button_pressed.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/back_button.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=4]
+[ext_resource path="res://content/gui/menus/MessengerAppContacts.gd" type="Script" id=5]
+
+[node name="MessengerAppContacts" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 768.0
+margin_bottom = 1408.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+margin_right = 768.0
+margin_bottom = 1365.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 748.0
+margin_bottom = 1345.0
+custom_constants/separation = 150
+alignment = 1
+
+[node name="Label" type="Label" parent="Background/Margin/VBox"]
+margin_top = 145.0
+margin_right = 728.0
+margin_bottom = 179.0
+custom_fonts/font = ExtResource( 4 )
+text = "Contacts"
+
+[node name="VBox" type="VBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 329.0
+margin_right = 728.0
+margin_bottom = 901.0
+custom_constants/separation = 16
+
+[node name="PartnerButton" type="Button" parent="Background/Margin/VBox/VBox"]
+margin_right = 728.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 4 )
+action_mode = 0
+text = "Partner"
+icon = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MomButton" type="Button" parent="Background/Margin/VBox/VBox"]
+margin_top = 150.0
+margin_right = 728.0
+margin_bottom = 284.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 4 )
+action_mode = 0
+text = "Mom"
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FriendButton" type="Button" parent="Background/Margin/VBox/VBox"]
+margin_top = 300.0
+margin_right = 728.0
+margin_bottom = 428.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 4 )
+action_mode = 0
+text = "Friend"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BossButton" type="Button" parent="Background/Margin/VBox/VBox"]
+margin_top = 444.0
+margin_right = 728.0
+margin_bottom = 572.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 4 )
+action_mode = 0
+text = "Boss"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 1051.0
+margin_right = 728.0
+margin_bottom = 1179.0
+rect_min_size = Vector2( 0, 128 )
+icon = ExtResource( 3 )
+expand_icon = true
+
+[connection signal="pressed" from="Background/Margin/VBox/VBox/PartnerButton" to="." method="_on_PartnerButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/VBox/MomButton" to="." method="_on_MomButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/VBox/FriendButton" to="." method="_on_FriendButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/VBox/BossButton" to="." method="_on_BossButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/BackButton" to="." method="_on_BackButton_pressed"]

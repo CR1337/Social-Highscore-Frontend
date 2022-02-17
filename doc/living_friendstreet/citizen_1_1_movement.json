@@ -1,0 +1,14 @@
+{
+    "state0": {
+        "new_start_position_x": -1,
+        "new_start_position_y": 5,
+        "sequence": [
+            {"direction": "right", "repeats": 1, "trigger_id": null},
+            {"direction": "down", "repeats": 1, "trigger_id": null},
+            {"direction": "right", "repeats": 6, "trigger_id": null},       
+            {"direction": "down", "repeats": 3, "trigger_id": null},
+            {"direction": "left", "repeats": 7, "trigger_id": "tid_living_homestreet_citizen_1_2_start"}
+        ],
+        "repeats": 1
+    }
+}

@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://content/gui/menus/NewsAppNewspage.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=4]
+
+[node name="NewAppNewspage" type="Node2D" groups=[
+"persistent",
+]]
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 768.0
+margin_bottom = 1408.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+margin_right = 768.0
+margin_bottom = 1365.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 748.0
+margin_bottom = 1345.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="TitleHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
+margin_right = 728.0
+margin_bottom = 34.0
+
+[node name="TitleLabel" type="Label" parent="Background/Margin/VBox/TitleHBox"]
+margin_right = 90.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 4 )
+text = "Title"
+
+[node name="TextLabel" type="RichTextLabel" parent="Background/Margin/VBox"]
+margin_top = 54.0
+margin_right = 728.0
+margin_bottom = 1177.0
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
+
+[node name="ButtonHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 1197.0
+margin_right = 728.0
+margin_bottom = 1325.0
+rect_min_size = Vector2( 0, 128 )
+custom_constants/separation = 8
+
+[node name="DontReactButton" type="Button" parent="Background/Margin/VBox/ButtonHBox"]
+margin_right = 360.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 4 )
+text = "Don't react"
+
+[node name="ReactButton" type="Button" parent="Background/Margin/VBox/ButtonHBox"]
+margin_left = 368.0
+margin_right = 728.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 4 )
+text = "React"
+
+[connection signal="pressed" from="Background/Margin/VBox/ButtonHBox/DontReactButton" to="." method="_on_DontReactButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ButtonHBox/ReactButton" to="." method="_on_ReactButton_pressed"]
