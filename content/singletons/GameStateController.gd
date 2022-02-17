@@ -63,8 +63,6 @@ signal sig_score_changed(new_value)
 func _ready():
 	EventBus.connect("sig_add_money", self, "_on_add_money")
 	#pass
-	_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self, "timer")
-	_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self, "timer")
 
 	# DEBUG:
 	increase_hunger()
@@ -104,7 +102,9 @@ func _on_add_money(amount, description):
 	change_money(amount)
 	
 	
-	
+func reset_hunger():
+	hunger = 0
+	_handle_hunger()
 	
 func increase_hunger():
 	hunger = min(2, hunger + 1)
@@ -138,4 +138,8 @@ func _hunger_timer(handle):
 		
 func _starve():
 	print("STARVING")
-	pass  # TODO
+	ViewportManager.change_to_hospital()
+	EventBus.emit_signal("sig_trigger",
+	"tid_utility_busstreet_hospital_npc_counter_state_change",
+	{'new_state': "hospitalized"})
+	reset_hunger()

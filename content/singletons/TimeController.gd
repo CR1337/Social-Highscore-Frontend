@@ -23,6 +23,12 @@ func persistent_state():
 		'active': _active
 	}
 
+func delete_timer(handle):
+	for element in _timer_list:
+		if element[1] == handle:
+			_timer_list.erase(element)
+			return
+
 func restore_state(state):
 	_active = state['active']
 	if len(state['timer_list']) == 0:

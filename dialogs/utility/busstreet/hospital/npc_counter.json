@@ -66,71 +66,55 @@
                 ],
                 "trigger_id": null
             }
-        }
-    },
-    "kindey donated": {
-        "initial_nid": "node0",
-        "node0": {
-            "tid": "0",
-            "answers": [
-                {
-                    "tid": "1",
-                    "nid": "node1",
-                    "trigger_id": null
-                },
-                {
-                    "tid": "3",
-                    "nid": null,
-                    "trigger_id": null
-                }
-            ],
-            "trigger_id": null
         },
-        "node1": {
-            "tid": "4",
-            "answers": [
-                {
-                    "tid": "5",
-                    "nid": null,
-                    "trigger_id": "tid_blood_donated"
-                },
-                {
-                    "tid": "6",
-                    "nid": null,
-                    "trigger_id": null
-                }
-            ],
-            "trigger_id": null
-        }
-    },
-    "hospitalized": {
-        "initial_nid": "node0",
-        "node0": {
-            "tid": "7",
-            "answers": [
-                {
-                    "tid": "8",
-                    "nid": "node1",
-                    "trigger_id": null
-                },
-                {
-                    "tid": "3",
-                    "nid": null,
-                    "trigger_id": null
-                }
-            ],
-            "trigger_id": null
+        "kindey donated": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "4",
+                "answers": [
+                    {
+                        "tid": "5",
+                        "nid": null,
+                        "trigger_id": "tid_blood_donated"
+                    },
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
         },
-        "node1": {
-            "tid": "4",
-            "answers": [
-                {
-                    "tid": "8",
-                    "nid": null,
-                    "trigger_id": "tid_state_hospital_reset"
-                }
-            ],
-            "trigger_id": null
+        "hospitalized": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "7",
+                "answers": [
+                    {
+                        "tid": "8",
+                        "nid": null,
+                        "trigger_id": "tid_hospital_reset"
+                    }
+                ],
+                "trigger_id": null
+            }
         }
     }
 }

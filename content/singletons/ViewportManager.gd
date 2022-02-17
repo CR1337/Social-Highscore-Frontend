@@ -6,6 +6,8 @@ onready var reference_image_menu = get_node("/root/MainScene/Overlays/ReferenceI
 onready var _player = get_node("/root/MainScene/Player")
 onready var _shader_rect = get_node("/root/MainScene/ShaderRectNode/ShaderRect")
 
+onready var _hospital_area = get_node("/root/MainScene/Areas/UtilityBusstreetHospitalArea")
+
 onready var _transparent_overlay = get_node("/root/MainScene/Overlays/TransparentOverlay")
 onready var _smartphone_menu = get_node("/root/MainScene/Overlays/SmartphoneMenu")
 onready var _game_menu = get_node("/root/MainScene/Overlays/GameMenu")
@@ -138,6 +140,9 @@ func change_to_payment(recipient, amount, payment_handle):
 
 func change_to_bus():
 	change_overlay(_bus_menu)
+	
+func change_to_hospital():
+	change_area(_hospital_area, Vector2(11, 12))
 
 func change_area(target_area, new_player_position):
 	_shader_rect.cover()

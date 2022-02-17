@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/tilesets/interior/black.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/16_Grocery_store_32x32.png" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/hospital/npc_doctor1.tres" type="SpriteFrames" id=18]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/hospital/npc_doctor2.tres" type="SpriteFrames" id=19]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/hospital/npc_doctor3.tres" type="SpriteFrames" id=20]
+[ext_resource path="res://content/trigger/StateChangeTrigger.gd" type="Script" id=21]
+[ext_resource path="res://content/areas/Utility/UtilityBusstreetHospitalArea/HospitalResetTrigger.gd" type="Script" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -2586,3 +2588,11 @@ action_trigger_id = "tid_utility_busstreet_hospital_npc_counter_start_dialog"
 [node name="DialogStartTrigger" type="Node" parent="NpcCounter"]
 script = ExtResource( 15 )
 id = "tid_utility_busstreet_hospital_npc_counter_start_dialog"
+
+[node name="StateChangeTrigger" type="Node" parent="NpcCounter"]
+script = ExtResource( 21 )
+id = "tid_utility_busstreet_hospital_npc_counter_state_change"
+
+[node name="HospitalResetTrigger" type="Node" parent="NpcCounter"]
+script = ExtResource( 22 )
+id = "tid_hospital_reset"
