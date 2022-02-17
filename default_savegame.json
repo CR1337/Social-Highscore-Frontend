@@ -1,5 +1,9 @@
 {
     "empty": false,
+    "/root/MainScene/InputUI/TimerLabel": {
+        "timer_value": 0,
+        "timer_running": false
+    },
     "/root/MainScene/Areas/LivingHomestreetArea/Car1_1": {
         "current_position_x": 5,
         "current_position_y": -1,
@@ -2756,9 +2760,9 @@
         "score": 1000,
         "money": 1000,
         "hunger": 2,
-        "hunger_timer_handle": 2,
+        "hunger_timer_handle": 0,
         "days_without_mom": 0,
-        "fridge_filling": [
+        "fridge_content": [
 
         ],
         "current_day": 0,
@@ -2768,31 +2772,17 @@
             "mom": "state0",
             "boss": "state0"
         },
-        "price_factor": 1,
         "current_preferred_emotions": [
 
         ]
     },
     "/root/TimeController": {
-        "time": 0,
         "timer_list": [
             [
-                30,
-                1,
-                "/root/GameStateController",
-                "timer"
-            ],
-            [
                 60,
-                2,
-                "/root/GameStateController",
-                "_hunger_timer"
-            ],
-            [
-                720,
                 0,
                 "/root/GameStateController",
-                "timer"
+                "_hunger_timer"
             ]
         ],
         "active": true

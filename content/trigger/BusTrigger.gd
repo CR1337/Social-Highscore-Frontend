@@ -35,6 +35,6 @@ func trigger(kwargs):
 			StoryController.day01_states[StoryController.day01_progress]
 		)
 	elif payment_needed():
-		ViewportManager.change_to_payment(_recipient, _base_amount * GameStateController.price_factor, _payment_handle)
+		ViewportManager.change_to_payment(_recipient, _base_amount * GameStateController.price_factor(), _payment_handle)
 	else:
 		ViewportManager.change_to_bus()

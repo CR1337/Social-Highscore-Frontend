@@ -12,6 +12,8 @@ func persistent_state():
 func restore_state(state):
 	_timer_value = state['timer_value']
 	_timer_running = state['timer_running']
+	if _timer_running:
+		visible = true
 
 func _ready():
 	visible = false

@@ -31,7 +31,6 @@ func persistent_state():
 		'fridge_content': fridge_content,
 		'current_day': current_day,
 		'contact_state': contact_state,
-		'price_factor': price_factor,
 		'current_preferred_emotions': current_preferred_emotions
 	}
 
@@ -41,13 +40,15 @@ func restore_state(state):
 	hunger = state["hunger"]
 	_hunger_timer_handle = state['hunger_timer_handle']
 	days_without_mom = state["days_without_mom"]
-	fridge_filling = state["fridge_filling"]
+	fridge_content = state["fridge_content"]
 	current_day = state["current_day"]
-	price_factor = state['price_factor']
 	current_preferred_emotions = state['current_preferred_emotions']
+	
+	emit_signal("sig_hunger_changed", hunger)
+	
 	# contact_state = state["contact_state"]
 #	emit_signal("sig_sleep_changed", sleep)
-#	emit_signal("sig_hunger_changed", hunger)
+	
 #	emit_signal("sig_money_changed", money)
 #	emit_signal("sig_score_changed", score)
 
@@ -70,7 +71,9 @@ func _ready():
 	
 func _on_trigger(trigger_id, kwargs):
 	if trigger_id.begins_with('tid_shopping_'):
-		
+		_shopping_event(trigger_id, kwargs)
+	else:
+		pass  # TODO
 	
 enum SCORE_CLASS {
 	AAA, AA, A, B, C, D, E, X, Z	
@@ -170,7 +173,7 @@ const _food_item_prototypes = {
 	}
 }
 
-const price_factors = {
+const _price_factors = {
 	SCORE_CLASS.AAA: 0.7,
 	SCORE_CLASS.AA: 0.8,
 	SCORE_CLASS.A: 1,
@@ -182,13 +185,16 @@ const price_factors = {
 	SCORE_CLASS.Z: 3.0,
 }
 
+func price_factor():
+	return _price_factors[_score_class()]
+
 const _shopping_payment_handle = 'ph_shopping_success'
 const fridge_capacity = 3
 var fridge_content = []
 var shopping_cart = []
 
 func _shopping_event(trigger_id, kwargs):
-	const add_to_cart_prefix = "tid_shopping_add_to_cart_"
+	var add_to_cart_prefix = "tid_shopping_add_to_cart_"
 	if trigger_id.begins_with(add_to_cart_prefix):
 		var tid_suffix = trigger_id.trim_prefix(add_to_cart_prefix)
 		_add_to_shopping_cart(_food_item_prototypes[tid_suffix])
@@ -211,7 +217,7 @@ func _clear_shopping_cart():
 func _shopping_total_price():
 	var total_price = 0
 	for food_item in shopping_cart:
-		total_price += food_item['base_price'] * price_factors[_score_class()]
+		total_price += food_item['base_price'] * _price_factors[_score_class()]
 	return total_price
 
 func _shopping_pay():
@@ -224,7 +230,7 @@ func _on_payment_successfull(payment_handle):
 	for food_item in shopping_cart:
 		fridge_content.append(food_item)
 		_food_scoring(food_item)
-	clear_shopping_cart()
+	_clear_shopping_cart()
 	
 func _on_payment_failure(payment_handle):
 	if payment_handle != _shopping_payment_handle:
