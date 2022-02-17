@@ -66,7 +66,7 @@ func _process_answer(answer_index):
 
 	var next_node_id = _current_node['answers'][answer_index]['nid']
 	if next_node_id == null:
-		ViewportManager.change_to_transparent()
+		ViewportManager.change_to_transparent_dialog()
 	else:
 		_current_node_id = next_node_id
 		trigger_id = _current_node['answers'][answer_index]['trigger_id']

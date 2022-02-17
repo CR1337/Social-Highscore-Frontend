@@ -11,7 +11,7 @@ var days_without_mom = 0
 var fridge_filling = []
 var current_day = 0
 
-
+var ticket_bought = false
 
 var price_factor = 1
 var current_preferred_emotions = []

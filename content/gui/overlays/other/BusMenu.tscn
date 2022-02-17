@@ -3,7 +3,6 @@
 [ext_resource path="res://content/gui/overlays/other/BusMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=4]
 
-
 [node name="BusMenu" type="Node2D"]
 script = ExtResource( 1 )
 

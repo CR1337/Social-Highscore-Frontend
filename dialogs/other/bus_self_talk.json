@@ -7,7 +7,8 @@
         "4": "I should go to the pharmacy.",
         "5": "I should bring mom her medication.",
         "6": "Maybe I could go to bed early today.",
-        "7": "(end monolog)"
+        "payment_message": "It seems like the payment didn't work.",
+        "x": "(end monolog)"
     },
     "graphs": {
         "read_moms_message": {
@@ -27,7 +28,7 @@
                 "tid": "3",
                 "answers": [
                     {
-                        "tid": "7",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -52,7 +53,7 @@
                 "tid": "2",
                 "answers": [
                     {
-                        "tid": "7",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -77,7 +78,7 @@
                 "tid": "4",
                 "answers": [
                     {
-                        "tid": "7",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -102,7 +103,7 @@
                 "tid": "5",
                 "answers": [
                     {
-                        "tid": "7",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -127,7 +128,21 @@
                 "tid": "6",
                 "answers": [
                     {
-                        "tid": "7",
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "payment_failed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "payment_message",
+                "answers": [
+                    {
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }

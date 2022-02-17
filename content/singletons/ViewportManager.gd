@@ -9,9 +9,10 @@ onready var _shader_rect = get_node("/root/MainScene/ShaderRectNode/ShaderRect")
 onready var _transparent_overlay = get_node("/root/MainScene/Overlays/TransparentOverlay")
 onready var _smartphone_menu = get_node("/root/MainScene/Overlays/SmartphoneMenu")
 onready var _game_menu = get_node("/root/MainScene/Overlays/GameMenu")
-onready var _dialog_overlay = get_node("/root/MainScene/Overlays/DialogOverlay")
 onready var _authentication_overlay = get_node("/root/MainScene/Overlays/AuthenticationOverlay")
 onready var _payment_overlay = get_node("/root/MainScene/Overlays/PaymentOverlay")
+
+onready var _bus_menu = get_node("/root/MainScene/Overlays/BusMenu")
 
 onready var _messenger_contacts_overlay = get_node("/root/MainScene/Overlays/MessengerAppContacts")
 onready var _messenger_messages_overlay = get_node("/root/MainScene/Overlays/MessengerAppMessages")
@@ -19,6 +20,9 @@ onready var _banking_app_overlay = get_node("/root/MainScene/Overlays/BankingApp
 onready var _citizen_app_overlay = get_node("/root/MainScene/Overlays/CitizenApp")
 onready var _news_app_mainpage_overlay = get_node("/root/MainScene/Overlays/NewsAppMainpage")
 onready var _news_app_newspage_overlay = get_node("/root/MainScene/Overlays/NewsAppNewspage")
+
+onready var _transparent_dialog_overlag = get_node("/root/MainScene/Overlays/TransparentDialog")
+onready var _dialog_overlay = get_node("/root/MainScene/Overlays/DialogOverlay")
 
 onready var _citizen_record_overlay = get_node("/root/MainScene/Overlays/CitizenRecordOverlay")
 
@@ -29,6 +33,7 @@ onready var _current_area = get_node("/root/MainScene/Areas/LivingHomestreetArea
 onready var _current_overlay = _transparent_overlay
 onready var _last_overlay = _transparent_overlay
 onready var _current_notification_overlay = _transparent_notification_overlay
+onready var _current_dialog_overlay = _transparent_dialog_overlag
 
 onready var _prolog_overlay = get_node("/root/MainScene/Overlays/PrologOverlay")
 onready var _gameover_overlay = get_node("/root/MainScene/Overlays/GameoverOverlay")
@@ -118,7 +123,10 @@ func change_to_last():
 
 func change_to_dialog(json_filename, state):
 	_dialog_overlay.initialize(json_filename, state)
-	change_overlay(_dialog_overlay)
+	change_dialog_overlay(_dialog_overlay)
+	
+func change_to_transparent_dialog():
+	change_dialog_overlay(_transparent_dialog_overlag)
 
 func change_to_authentication(post_authentication_trigger_id):
 	_authentication_overlay.post_authentication_trigger_id = post_authentication_trigger_id
@@ -127,6 +135,9 @@ func change_to_authentication(post_authentication_trigger_id):
 func change_to_payment(recipient, amount, payment_handle):
 	_payment_overlay.update_payment(recipient, amount, payment_handle)
 	change_overlay(_payment_overlay)
+
+func change_to_bus():
+	change_overlay(_bus_menu)
 
 func change_area(target_area, new_player_position):
 	_shader_rect.cover()
@@ -157,3 +168,9 @@ func change_notification_overlay(target_overlay):
 	target_overlay.position = _current_notification_overlay.position
 	_current_notification_overlay.position = tmp_position
 	_current_notification_overlay = target_overlay
+
+func change_dialog_overlay(target_overlay):
+	var tmp_position = target_overlay.position
+	target_overlay.position = _current_dialog_overlay.position
+	_current_dialog_overlay.position = tmp_position
+	_current_dialog_overlay = target_overlay

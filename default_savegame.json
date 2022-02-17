@@ -2755,8 +2755,8 @@
     "/root/GameStateController": {
         "score": 1000,
         "money": 1000,
-        "hunger": 0,
-        "hunger_timer_handle": -1,
+        "hunger": 2,
+        "hunger_timer_handle": 2,
         "days_without_mom": 0,
         "fridge_filling": [
 
@@ -2781,6 +2781,12 @@
                 1,
                 "/root/GameStateController",
                 "timer"
+            ],
+            [
+                60,
+                2,
+                "/root/GameStateController",
+                "_hunger_timer"
             ],
             [
                 720,
