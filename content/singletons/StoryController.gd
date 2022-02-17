@@ -1,6 +1,6 @@
 extends Node
 
-var day01_bus_enabled = false
+var day01_bus_enabled = true
 var day01_progress = 0
 
 
@@ -30,9 +30,9 @@ func day01_update_progress(new_state):
 func day01_start():
 	#TimeController.fast_forward_to(10, 00)
 	EventBus.emit_signal("sig_got_phone_message", 'mom', "I hope you had a good night's sleep. Could you stop by for a moment. You don't have far to go, you just have to cross the street. I'm not feeling so well again today. My illness is making itself felt.")
-	TimeController.set_alarm(14, 00, self, "day01_second_mom_message")
-	TimeController.set_alarm(20, 00, self, "day01_mom_dies")
-	TimeController.set_alarm(13, 00, self, "day01_get_your_job")
+#	TimeController.set_alarm(14, 00, self, "day01_second_mom_message")
+#	TimeController.set_alarm(20, 00, self, "day01_mom_dies")
+#	TimeController.set_alarm(13, 00, self, "day01_get_your_job")
 	day01_update_progress('read_moms_message')
 	EventBus.connect("sig_opened_message", self, "day01_on_opened_moms_message")
 	EventBus.connect("sig_trigger", self, "day01_on_trigger")
