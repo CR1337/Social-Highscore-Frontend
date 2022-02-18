@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/tilesets/interior/black.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/16_Grocery_store_32x32.png" type="Texture" id=2]
@@ -21,6 +21,9 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/storestreet/store/npc2.tres" type="SpriteFrames" id=19]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/storestreet/store/npc1.tres" type="SpriteFrames" id=20]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/storestreet/store/npc3.tres" type="SpriteFrames" id=21]
+[ext_resource path="res://content/trigger/StateChangeTrigger.gd" type="Script" id=22]
+[ext_resource path="res://content/areas/City/CityStoreStreetStoreArea/ShelfBuyDialogTrigger.gd" type="Script" id=23]
+[ext_resource path="res://content/areas/City/CityStoreStreetStoreArea/StorePaymentTrigger.gd" type="Script" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -3049,7 +3052,7 @@ format = 1
 tile_data = PoolIntArray( 65536, 97, 0, 65537, 97, 0, 65538, 97, 0, 65539, 97, 0, 65540, 97, 0, 65541, 97, 0, 65542, 97, 0, 65543, 97, 0, 65544, 97, 0, 65545, 97, 0, 65546, 97, 0, 65547, 97, 0, 196607, 97, 0, 131084, 97, 0, 262143, 97, 0, 196620, 97, 0, 262144, 97, 0, 262147, 97, 0, 262148, 97, 0, 262151, 97, 0, 262152, 97, 0, 262155, 97, 0, 327680, 97, 0, 327683, 97, 0, 327684, 97, 0, 327687, 97, 0, 327688, 97, 0, 327691, 97, 0, 393216, 97, 0, 393219, 97, 0, 393220, 97, 0, 393223, 97, 0, 393224, 97, 0, 393227, 97, 0, 458752, 97, 0, 458755, 97, 0, 458756, 97, 0, 458759, 97, 0, 458760, 97, 0, 458763, 97, 0, 589823, 97, 0, 524300, 97, 0, 655359, 97, 0, 589828, 97, 0, 589831, 97, 0, 589836, 97, 0, 720895, 97, 0, 655361, 97, 0, 655370, 97, 0, 655372, 97, 0, 786431, 97, 0, 720897, 97, 0, 720900, 97, 0, 720903, 97, 0, 720906, 97, 0, 720908, 97, 0, 851967, 97, 0, 786432, 97, 0, 786433, 97, 0, 786442, 97, 0, 786443, 97, 0, 786444, 97, 0, 917503, 97, 0, 851980, 97, 0, 917504, 97, 0, 917505, 97, 0, 917506, 97, 0, 917507, 97, 0, 917513, 97, 0, 917514, 97, 0, 917516, 97, 0, 983040, 97, 0, 983041, 97, 0, 983042, 97, 0, 983043, 97, 0, 983044, 97, 0, 983047, 97, 0, 983049, 97, 0, 983050, 97, 0, 983052, 97, 0, 1048580, 97, 0, 1048583, 97, 0, 1048584, 97, 0, 1048585, 97, 0, 1048586, 97, 0, 1048587, 97, 0 )
 
 [node name="TriggerArea" parent="." instance=ExtResource( 11 )]
-position = Vector2( 377.568, 1058.04 )
+position = Vector2( 383.561, 1058.04 )
 scale = Vector2( 2, 1 )
 is_activated_by_collision = true
 walkable = true
@@ -3058,6 +3061,7 @@ collision_trigger_id = "tid_city_storestreet_store_leave"
 [node name="LeaveTrigger" type="Node" parent="TriggerArea"]
 script = ExtResource( 12 )
 id = "tid_city_storestreet_store_leave"
+blocked_dialog_filename = "res://dialogs/city/storestreet/store/store_exit_self_talk.json"
 
 [node name="NpcCounter" parent="." instance=ExtResource( 16 )]
 position = Vector2( 32, 723.2 )
@@ -3079,6 +3083,14 @@ action_trigger_id = "tid_city_storestreet_store_npc_counter_start_dialog"
 script = ExtResource( 17 )
 id = "tid_city_storestreet_store_npc_counter_start_dialog"
 
+[node name="StateChangeTrigger" type="Node" parent="NpcCounter"]
+script = ExtResource( 22 )
+id = "tid_city_storestreet_store_npc_counter_state_change"
+
+[node name="PaymentTrigger" type="Node" parent="NpcCounter"]
+script = ExtResource( 24 )
+id = "tid_shopping_pay"
+
 [node name="NpcCounter2" parent="." instance=ExtResource( 16 )]
 position = Vector2( 736, 723.2 )
 z_index = 1
@@ -3098,6 +3110,10 @@ action_trigger_id = "tid_city_storestreet_store_npc_counter2_start_dialog"
 [node name="DialogStartTrigger" type="Node" parent="NpcCounter2"]
 script = ExtResource( 17 )
 id = "tid_city_storestreet_store_npc_counter2_start_dialog"
+
+[node name="StateChangeTrigger" type="Node" parent="NpcCounter2"]
+script = ExtResource( 22 )
+id = "tid_city_storestreet_store_npc_counter2_state_change"
 
 [node name="Npc1" parent="." instance=ExtResource( 16 )]
 position = Vector2( 96, 160 )
@@ -3125,3 +3141,73 @@ active_on_start = true
 animation = ExtResource( 21 )
 current_position = Vector2( 5, 9 )
 looking_direction = Vector2( -1, 0 )
+
+[node name="Shelf1TriggerArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 32, 384 )
+scale = Vector2( 1, 4 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_storestreet_store_shelf1_buy"
+
+[node name="DialogTrigger" type="Node" parent="Shelf1TriggerArea"]
+script = ExtResource( 23 )
+id = "tid_city_storestreet_store_shelf1_buy"
+
+[node name="Shelf2TriggerArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 224.765, 384.205 )
+scale = Vector2( 1, 4 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_storestreet_store_shelf2_buy"
+
+[node name="DialogTrigger" type="Node" parent="Shelf2TriggerArea"]
+script = ExtResource( 23 )
+id = "tid_city_storestreet_store_shelf2_buy"
+
+[node name="Shelf3TriggerArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 287.01, 384.205 )
+scale = Vector2( 1, 4 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_storestreet_store_shelf3_buy"
+
+[node name="DialogTrigger" type="Node" parent="Shelf3TriggerArea"]
+script = ExtResource( 23 )
+id = "tid_city_storestreet_store_shelf3_buy"
+
+[node name="Shelf4TriggerArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 481.04, 384.205 )
+scale = Vector2( 1, 4 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_storestreet_store_shelf4_buy"
+
+[node name="DialogTrigger" type="Node" parent="Shelf4TriggerArea"]
+script = ExtResource( 23 )
+id = "tid_city_storestreet_store_shelf4_buy"
+
+[node name="Shelf5TriggerArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 544.068, 384.205 )
+scale = Vector2( 1, 4 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_storestreet_store_shelf5_buy"
+
+[node name="DialogTrigger" type="Node" parent="Shelf5TriggerArea"]
+script = ExtResource( 23 )
+id = "tid_city_storestreet_store_shelf5_buy"
+
+[node name="Shelf6TriggerArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 735.388, 383.903 )
+scale = Vector2( 1, 4 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_storestreet_store_shelf6_buy"
+
+[node name="DialogTrigger" type="Node" parent="Shelf6TriggerArea"]
+script = ExtResource( 23 )
+id = "tid_city_storestreet_store_shelf6_buy"
+
+[node name="Shelf7TriggerArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 416.32, 95.7897 )
+scale = Vector2( 9, 1 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_storestreet_store_shelf7_buy"
+
+[node name="DialogTrigger" type="Node" parent="Shelf7TriggerArea"]
+script = ExtResource( 23 )
+id = "tid_city_storestreet_store_shelf7_buy"

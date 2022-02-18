@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "0": "I should not leave the store. I have items in my bag which I should pay before.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "blocked": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

@@ -17,7 +17,6 @@ func _on_image_processing_done(parsed_response, job_id, image):
 	# TODO
 
 func _add_record(params):
-	params['time'] = TimeController.get_daytime()
 	records.append(params)
 	GameStateController.change_score(params['score'])
 

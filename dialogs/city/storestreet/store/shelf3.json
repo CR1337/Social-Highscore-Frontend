@@ -1,0 +1,44 @@
+{
+    "texts": {
+        "buy": "Do you want to buy vegetable lasagna?",
+        "yes": "Yes",
+        "no": "No",
+        "full": "This would not fit in my fridge",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "buy": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "buy",
+                "answers": [
+                    {
+                        "tid": "yes",
+                        "nid": null,
+                        "trigger_id": "tid_shopping_add_to_cart_healthy_big"
+                    },
+                    {
+                        "tid": "no",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "full": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "full",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

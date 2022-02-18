@@ -15,6 +15,7 @@ onready var _authentication_overlay = get_node("/root/MainScene/Overlays/Authent
 onready var _payment_overlay = get_node("/root/MainScene/Overlays/PaymentOverlay")
 
 onready var _bus_menu = get_node("/root/MainScene/Overlays/BusMenu")
+onready var _fridge_overlay = get_node("/root/MainScene/Overlays/FridgeOverlay")
 
 onready var _messenger_contacts_overlay = get_node("/root/MainScene/Overlays/MessengerAppContacts")
 onready var _messenger_messages_overlay = get_node("/root/MainScene/Overlays/MessengerAppMessages")
@@ -91,6 +92,9 @@ func change_to_config():
 
 func change_to_refenreceImage():
 	change_overlay(reference_image_menu)
+	
+func change_to_fridge():
+	change_overlay(_fridge_overlay)
 
 func change_to_messenger_contacts():
 	change_overlay(_messenger_contacts_overlay)

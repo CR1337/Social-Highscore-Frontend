@@ -2759,8 +2759,8 @@
     "/root/GameStateController": {
         "score": 1000,
         "money": 1000,
-        "hunger": 2,
-        "hunger_timer_handle": 0,
+        "hunger": 0,
+        "hunger_timer_handle": -1,
         "days_without_mom": 0,
         "fridge_content": [
 
@@ -2774,16 +2774,12 @@
         },
         "current_preferred_emotions": [
 
-        ]
+        ],
+        "ticket_bought": false
     },
     "/root/TimeController": {
         "timer_list": [
-            [
-                60,
-                0,
-                "/root/GameStateController",
-                "_hunger_timer"
-            ]
+
         ],
         "active": true
     },

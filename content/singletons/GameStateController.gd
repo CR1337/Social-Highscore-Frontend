@@ -3,14 +3,11 @@ extends Node
 var score = 1000
 var money = 1000
 
-
-
 var days_without_mom = 0
 
 var current_day = 0
 
 var ticket_bought = false
-
 
 var current_preferred_emotions = []
 
@@ -31,7 +28,8 @@ func persistent_state():
 		'fridge_content': fridge_content,
 		'current_day': current_day,
 		'contact_state': contact_state,
-		'current_preferred_emotions': current_preferred_emotions
+		'current_preferred_emotions': current_preferred_emotions,
+		'ticket_bought': ticket_bought
 	}
 
 func restore_state(state):
@@ -43,18 +41,13 @@ func restore_state(state):
 	fridge_content = state["fridge_content"]
 	current_day = state["current_day"]
 	current_preferred_emotions = state['current_preferred_emotions']
+	ticket_bought = state['ticket_bought']
 	
 	emit_signal("sig_hunger_changed", hunger)
-	
-	# contact_state = state["contact_state"]
-#	emit_signal("sig_sleep_changed", sleep)
-	
-#	emit_signal("sig_money_changed", money)
-#	emit_signal("sig_score_changed", score)
+	EventBus.emit_signal("sig_fridge_content_changed")
 
 var _next_day_handle = 1 # Stated in default_savegame
 var _next_status_update_handle = 2 # Stated in default_savegame
-
 
 signal sig_money_changed(new_value)
 signal sig_score_changed(new_value)
@@ -66,8 +59,8 @@ func _ready():
 	EventBus.connect("sig_trigger", self, "_on_trigger")
 
 	# DEBUG:
-	increase_hunger()
-	increase_hunger()
+#	increase_hunger()
+#	increase_hunger()
 	
 func _on_trigger(trigger_id, kwargs):
 	if trigger_id.begins_with('tid_shopping_'):
@@ -103,7 +96,6 @@ func _next_day():
 	current_day += 1
 	days_without_mom += 1
 	
-
 func timer(handle):
 	if handle == _next_day_handle:
 		_next_day()
@@ -121,9 +113,6 @@ func change_money(amount):
 
 func visited_mom():
 	days_without_mom = 0
-
-
-
 
 func _on_add_money(amount, description):
 	change_money(amount)
@@ -200,42 +189,37 @@ func _shopping_event(trigger_id, kwargs):
 		_add_to_shopping_cart(_food_item_prototypes[tid_suffix])
 	else:
 		match trigger_id:
-			"tid_shopping_pay":
-				_shopping_pay()
 			"tid_shopping_reset":
 				_clear_shopping_cart()
 
+func remaining_shopping_capacity():
+	return fridge_capacity - (len(shopping_cart) + len(fridge_content))
+
 func _add_to_shopping_cart(food_item):
-	if fridge_capacity - (len(shopping_cart) + len(fridge_content)) > 0:
-		shopping_cart.append(food_item)
-	# TODO: close store doors, store counter state change
-		
+	shopping_cart.append(food_item)
+	if len(shopping_cart) == 1:
+		EventBus.emit_signal("sig_trigger", "tid_city_storestreet_store_leave", {'action': 'block'})
+		EventBus.emit_signal("sig_trigger", "tid_city_storestreet_store_npc_counter_state_change", {'new_state': 'filled bag'})
+		EventBus.emit_signal("sig_trigger", "tid_city_storestreet_store_npc_counter2_state_change", {'new_state': 'filled bag'})
+
 func _clear_shopping_cart():
 	shopping_cart = []
-	# TODO: open store doors, store counter state change
-	
-func _shopping_total_price():
+	EventBus.emit_signal("sig_trigger", "tid_city_storestreet_store_leave", {'action': 'unblock'})
+	EventBus.call_deferred("emit_signal","sig_trigger", "tid_city_storestreet_store_npc_counter_state_change", {'new_state': 'idle'})
+	EventBus.call_deferred("emit_signal","sig_trigger", "tid_city_storestreet_store_npc_counter2_state_change", {'new_state': 'idle'})
+
+func shopping_total_price():
 	var total_price = 0
 	for food_item in shopping_cart:
 		total_price += food_item['base_price'] * _price_factors[_score_class()]
 	return total_price
 
-func _shopping_pay():
-	ViewportManager.change_to_payment("Groceries", _shopping_total_price(), _shopping_payment_handle)
-	
-# handler for successful payment
-func _on_payment_successfull(payment_handle):
-	if payment_handle != _shopping_payment_handle:
-		return
+func buy_shopping_cart_content():
 	for food_item in shopping_cart:
 		fridge_content.append(food_item)
 		_food_scoring(food_item)
 	_clear_shopping_cart()
-	
-func _on_payment_failure(payment_handle):
-	if payment_handle != _shopping_payment_handle:
-		return
-	# TODO
+	EventBus.emit_signal("sig_fridge_content_changed")
 	
 func _food_scoring(food_item):
 	match food_item['healthieness']:
@@ -245,10 +229,14 @@ func _food_scoring(food_item):
 			CitizenRecord.add_unhealthy_food_at_home(-15, food_item['name'])
 		HEALTHIENESS.neutral:
 			pass  # TODO?
-	
 
+func eat_fridge_content(index):
+	var food_item = fridge_content[index]
+	eat(food_item['hunger_decrease'])
+	fridge_content.remove(index)
+	EventBus.emit_signal("sig_fridge_content_changed")
 # END shopping + fridge
-	
+
 # BEGIN hunger
 
 signal sig_hunger_changed(new_value)
