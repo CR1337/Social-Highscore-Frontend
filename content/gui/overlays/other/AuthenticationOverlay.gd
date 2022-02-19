@@ -24,14 +24,16 @@ func _on_image_processing_done(parsed_response, job_id, image, rawImage, b64_ima
 	_take_image_button.disabled = false
 	if parsed_response.get('error', 'none') == 'no face':
 		_label.text = "Verfication failed. Please try again."
+		EventBus.emit_signal("sig_trigger", post_authentication_trigger_id, {'success': false})
 	elif parsed_response['verified']:
 		_exit_overlay()
-		EventBus.emit_signal("sig_trigger", post_authentication_trigger_id, {})
+		EventBus.emit_signal("sig_trigger", post_authentication_trigger_id, {'success': true})
 		CitizenRecord.await_analyze_response(
 			ImageProcessor.analyze_image(image, rawImage)
 		)
 	else:
 		_label.text = "Verfication failed. Please try again."
+		EventBus.emit_signal("sig_trigger", post_authentication_trigger_id, {'success': false})
 
 func _on_CancelButton_pressed():
 	_exit_overlay()
@@ -39,3 +41,4 @@ func _on_CancelButton_pressed():
 func _exit_overlay():
 	ViewportManager.change_to_transparent()
 	_label.text = "Please take a picture of your face."
+	EventBus.emit_signal("sig_trigger", post_authentication_trigger_id, {'success': false})
