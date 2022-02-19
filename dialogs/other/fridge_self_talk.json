@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "not_hungry": "I am currently not hungry. I don't want to eat now.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "not_hungry": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "not_hungry",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

@@ -36,9 +36,10 @@ func _on_image_processing_done(parsed_response, job_id, image, rawImage, b64_ima
 		EventBus.emit_signal("sig_trigger", post_authentication_trigger_id, {'success': false})
 
 func _on_CancelButton_pressed():
+	EventBus.emit_signal("sig_trigger", post_authentication_trigger_id, {'success': false})
 	_exit_overlay()
 
 func _exit_overlay():
 	ViewportManager.change_to_transparent()
 	_label.text = "Please take a picture of your face."
-	EventBus.emit_signal("sig_trigger", post_authentication_trigger_id, {'success': false})
+

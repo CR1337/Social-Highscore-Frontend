@@ -147,6 +147,9 @@ func change_to_bus():
 	
 func change_to_hospital():
 	change_area(_hospital_area, Vector2(11, 12))
+	
+func blend_with_black():
+	_shader_rect.area_change()
 
 func change_area(target_area, new_player_position):
 	_shader_rect.cover()
@@ -163,7 +166,7 @@ func change_area(target_area, new_player_position):
 		_player.position.y = (new_player_position.y - 0.5) * Globals.tile_size
 	if new_player_position.x >= 0:
 		_player.position.x = (new_player_position.x - 0.5) * Globals.tile_size
-	_shader_rect.area_change()
+	blend_with_black()
 
 func change_overlay(target_overlay):
 	var tmp_position = target_overlay.position

@@ -58,9 +58,6 @@ func _ready():
 	EventBus.connect("sig_payment_failed", self, "_on_payment_failure")
 	EventBus.connect("sig_trigger", self, "_on_trigger")
 
-	# DEBUG:
-#	increase_hunger()
-#	increase_hunger()
 	
 func _on_trigger(trigger_id, kwargs):
 	if trigger_id.begins_with('tid_shopping_'):
@@ -179,7 +176,12 @@ func price_factor():
 
 const _shopping_payment_handle = 'ph_shopping_success'
 const fridge_capacity = 3
-var fridge_content = []
+var fridge_content = [{
+		'base_price': 15,
+		'hunger_decrease': 1,
+		'healthieness': HEALTHIENESS.neutral,
+		'name': "yogurt"	
+}]
 var shopping_cart = []
 
 func _shopping_event(trigger_id, kwargs):

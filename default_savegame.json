@@ -2763,7 +2763,12 @@
         "hunger_timer_handle": -1,
         "days_without_mom": 0,
         "fridge_content": [
-
+            {
+                "base_price": 15,
+                "hunger_decrease": 1,
+                "healthieness": 1,
+                "name": "yogurt"
+            }
         ],
         "current_day": 0,
         "contact_state": {

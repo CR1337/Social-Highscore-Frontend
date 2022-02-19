@@ -8,7 +8,7 @@ signal sig_dialog_trigger_completed()
 signal sig_got_phone_message(contact, message)
 signal sig_opened_message(contact)
 
-signal sig_add_money(amount, description)
+signal sig_add_money(amount, recipient)
 
 signal sig_notification(type, text)
 
