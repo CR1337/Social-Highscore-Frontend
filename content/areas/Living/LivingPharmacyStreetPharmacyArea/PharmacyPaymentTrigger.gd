@@ -20,5 +20,5 @@ func _on_payment_successfull(handle):
 		get_parent().call_deferred("start_dialog")
 
 func trigger(kwargs):
-	var amount = _base_amount * GameStateController.price_factor
+	var amount = _base_amount * GameStateController.price_factor()
 	ViewportManager.change_to_payment(_recipient, amount, _payment_handle)

@@ -246,7 +246,7 @@ z_index = 10
 position = Vector2( 5511.95, 3058.51 )
 
 [node name="PaymentOverlay" parent="Overlays" instance=ExtResource( 1 )]
-position = Vector2( 6242.94, 1227.63 )
+position = Vector2( 6248.28, 1227.63 )
 
 [node name="ConfigMenu" parent="Overlays" instance=ExtResource( 11 )]
 position = Vector2( 2151.24, 1279.81 )
@@ -267,6 +267,7 @@ position = Vector2( 4087.35, -6659.93 )
 
 [node name="AuthenticationOverlay" parent="Overlays" instance=ExtResource( 13 )]
 position = Vector2( 3633.01, -651.034 )
+z_index = 3
 
 [node name="BusMenu" parent="Overlays" instance=ExtResource( 32 )]
 position = Vector2( 2049.05, 2118.92 )
