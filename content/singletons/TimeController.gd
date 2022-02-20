@@ -35,15 +35,15 @@ func delete_timer(handle):
 	_timer_list.erase(_get_element_by_handle(handle))
 	
 func pause_timer(handle):
-	if _get_element_by_handle(handle) == null:
-		return
-	if not handle in _paused_timer_handles:
+	if has_timer(handle) and not handle in _paused_timer_handles:
 		_paused_timer_handles.append(handle)
 
 func continue_timer(handle):
 	if handle in _paused_timer_handles:
 		_paused_timer_handles.erase(handle)
 	
+func has_timer(handle):
+	return _get_element_by_handle(handle) != null
 			
 func get_remaining_seconds(handle):
 	return _get_element_by_handle(handle)[0]

@@ -122,13 +122,14 @@ const _work_timer_start_value = 60 * 5
 
 func _start_work():
 	# TODO: npc state changes, change player sprite, ...
+	_pause_hunger_timer()
 	at_work = true
 	work_timer_handle = TimeController.setTimer(
 		_work_timer_start_value, self, "_work_timer"
 	)
 	
 func _end_work():
-	pass
+	_continue_hunger_timer()
 	# TODO: reverse all work related stuff, payment, debriefing,...
 	
 func _work_timer(handle):
