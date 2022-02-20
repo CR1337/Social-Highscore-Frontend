@@ -3,7 +3,6 @@
 [ext_resource path="res://content/gui/overlays/menus/GameMenu.gd" type="Script" id=3]
 [ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=4]
 
-
 [node name="GameMenu" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -79,7 +78,7 @@ margin_bottom = 1004.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
-text = "Delete Savegame & Exit"
+text = "New Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -96,8 +95,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="CanvasLayer"]
+margin_right = 498.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 400, 140 )
+popup_exclusive = true
+window_title = "Sure...?"
+dialog_text = "Do you really want to start a new game? Your current savegame will be lost."
+
 [connection signal="pressed" from="Background/Margin/VBox/ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="Background/Margin/VBox/ConfigButton" to="." method="_on_ConfigButton_pressed"]
 [connection signal="pressed" from="Background/Margin/VBox/DebugCitizenRecordButton" to="." method="_on_DebugCitizenRecordButton_pressed"]
 [connection signal="pressed" from="Background/Margin/VBox/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="Background/Margin/VBox/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="confirmed" from="CanvasLayer/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]

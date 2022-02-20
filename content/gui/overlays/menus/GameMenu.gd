@@ -1,8 +1,6 @@
 extends Node2D
 
-func _ready():
-	pass # Replace with function body.
-
+onready var dialog = $CanvasLayer/ConfirmationDialog
 
 func _on_ContinueButton_pressed():
 	ViewportManager.change_to_transparent()
@@ -20,9 +18,17 @@ func _on_QuitButton_pressed():
 
 
 func _on_NewGameButton_pressed():
+	dialog.popup_centered_clamped()
+	
+func _on_ConfirmationDialog_confirmed():
 	SaveGameController.delete_game()
-	get_tree().quit()
+	SaveGameController.load_default_game()
+	SaveGameController.start_new_game()
 
 
 func _on_DebugCitizenRecordButton_pressed():
 	ViewportManager.change_to_citizen_record_overlay()
+
+
+
+

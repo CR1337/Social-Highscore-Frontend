@@ -5,9 +5,9 @@
 [ext_resource path="res://assets/gui/phone_button.png" type="Texture" id=3]
 [ext_resource path="res://content/gui/controls/InputUI.gd" type="Script" id=4]
 [ext_resource path="res://assets/animated_sprites/tres/ui/stomach.tres" type="SpriteFrames" id=5]
-[ext_resource path="res://content/gui/controls/HungerSprite.gd" type="Script" id=6]
-[ext_resource path="res://content/gui/controls/TimerLabel.gd" type="Script" id=7]
+[ext_resource path="res://assets/animated_sprites/pngs/ui/shopping_cart.png" type="Texture" id=8]
 [ext_resource path="res://assets/gui/arrow_button_normal_up.png" type="Texture" id=9]
+[ext_resource path="res://content/gui/controls/StatusUi.gd" type="Script" id=10]
 [ext_resource path="res://assets/gui/arrow_button_normal_down.png" type="Texture" id=11]
 [ext_resource path="res://assets/gui/action_button_normal.png" type="Texture" id=12]
 [ext_resource path="res://assets/gui/arrow_button_normal_right.png" type="Texture" id=13]
@@ -101,28 +101,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TimerLabel" type="Label" parent="." groups=[
-"persistent",
-]]
-margin_left = 571.281
-margin_top = 1045.02
-margin_right = 661.281
-margin_bottom = 1079.02
+[node name="StatusUi" type="Node2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="ShoppingSprite" type="Sprite" parent="StatusUi"]
+position = Vector2( 541, 1141 )
+texture = ExtResource( 8 )
+
+[node name="TimerLabel" type="Label" parent="StatusUi"]
+margin_left = 506.243
+margin_top = 1033.0
+margin_right = 596.243
+margin_bottom = 1067.0
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "00:00"
-script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HungerSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 536.887, 1070 )
+[node name="StatusSprite" type="AnimatedSprite" parent="StatusUi"]
+position = Vector2( 720, 1064 )
 frames = ExtResource( 5 )
 animation = "hungry"
 playing = true
-script = ExtResource( 6 )
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="button_down" from="UpButton" to="." method="_on_UpButton_button_down"]

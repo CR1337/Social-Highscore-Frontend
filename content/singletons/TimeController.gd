@@ -1,6 +1,7 @@
 extends Node
 
 var _timer_list: Array
+var _paused_timer_handles: Array
 var _active = true
 
 var _current_handle = -1
@@ -20,17 +21,36 @@ func persistent_state():
 			])
 	return {
 		'timer_list': persistent_timer_list,
+		'paused_timer_handles': _paused_timer_handles,
 		'active': _active
 	}
-
-func delete_timer(handle):
+	
+func _get_element_by_handle(handle):
 	for element in _timer_list:
 		if element[1] == handle:
-			_timer_list.erase(element)
-			return
+			return element
+	return null
+
+func delete_timer(handle):
+	_timer_list.erase(_get_element_by_handle(handle))
+	
+func pause_timer(handle):
+	if _get_element_by_handle(handle) == null:
+		return
+	if not handle in _paused_timer_handles:
+		_paused_timer_handles.append(handle)
+
+func continue_timer(handle):
+	if handle in _paused_timer_handles:
+		_paused_timer_handles.erase(handle)
+	
+			
+func get_remaining_seconds(handle):
+	return _get_element_by_handle(handle)[0]
 
 func restore_state(state):
 	_active = state['active']
+	_paused_timer_handles = state['paused_timer_handles']
 	if len(state['timer_list']) == 0:
 		return
 	_timer_list = []
@@ -49,6 +69,8 @@ func _process(delta):
 	if _active:
 		var _to_remove = []
 		for element in _timer_list:
+			if element[1] in _paused_timer_handles:
+				continue
 			element[0] -= delta
 			if element[0] <= 0:
 				element[2].call(element[3], element[1]) 

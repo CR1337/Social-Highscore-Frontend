@@ -23,7 +23,7 @@ func persistent_state():
 		'score': score,
 		'money': money,
 		'hunger': hunger,
-		'hunger_timer_handle': _hunger_timer_handle,
+		'hunger_timer_handle': hunger_timer_handle,
 		'days_without_mom': days_without_mom,
 		'fridge_content': fridge_content,
 		'current_day': current_day,
@@ -36,7 +36,7 @@ func restore_state(state):
 	score = state['score']
 	money = state["money"]
 	hunger = state["hunger"]
-	_hunger_timer_handle = state['hunger_timer_handle']
+	hunger_timer_handle = state['hunger_timer_handle']
 	days_without_mom = state["days_without_mom"]
 	fridge_content = state["fridge_content"]
 	current_day = state["current_day"]
@@ -113,6 +113,30 @@ func visited_mom():
 
 func _on_add_money(amount, description):
 	change_money(amount)
+	
+# BEGIN work
+
+var at_work = false
+var work_timer_handle = -1
+const _work_timer_start_value = 60 * 5
+
+func _start_work():
+	# TODO: npc state changes, change player sprite, ...
+	at_work = true
+	work_timer_handle = TimeController.setTimer(
+		_work_timer_start_value, self, "_work_timer"
+	)
+	
+func _end_work():
+	pass
+	# TODO: reverse all work related stuff, payment, debriefing,...
+	
+func _work_timer(handle):
+	if handle == work_timer_handle:
+		_end_work()
+		
+
+# END work
 	
 # BEGIN shopping + fridge
 
@@ -244,8 +268,8 @@ func eat_fridge_content(index):
 signal sig_hunger_changed(new_value)
 
 var hunger = 0
-var _hunger_timer_handle = -1
-const hunger_timer_start_value = 60 * 1
+var hunger_timer_handle = -1
+const _hunger_timer_start_value = 60 * 1
 	
 func reset_hunger():
 	hunger = 0
@@ -263,16 +287,22 @@ func _handle_hunger():
 	# the signal enables the input ui to display the hunger indicator
 	emit_signal("sig_hunger_changed", hunger)
 	if hunger < 2:
-		# disable hunger timer by forgetting handle
-		_hunger_timer_handle = -1
+		TimeController.delete_timer(hunger_timer_handle)
+		hunger_timer_handle = -1
 	else:
 		# start hunger timer
-		_hunger_timer_handle = TimeController.setTimer(
-			hunger_timer_start_value, self, "_hunger_timer"
+		hunger_timer_handle = TimeController.setTimer(
+			_hunger_timer_start_value, self, "_hunger_timer"
 		)
+		
+func _pause_hunger_timer():
+	TimeController.pause_timer(hunger_timer_handle)
+	
+func _continue_hunger_timer():
+	TimeController.continue_timer(hunger_timer_handle)
 
 func _hunger_timer(handle):
-	if handle == _hunger_timer_handle:
+	if handle == hunger_timer_handle:
 		_starve()
 		
 func _starve():
