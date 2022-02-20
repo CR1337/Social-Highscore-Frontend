@@ -2755,7 +2755,9 @@
     "/root/GameStateController": {
         "score": 1000,
         "money": 1000,
-        "hunger": 1,
+        "hunger": 0,
+        "work_timer_handle": -1,
+        "at_work": false,
         "hunger_timer_handle": -1,
         "days_without_mom": 0,
         "fridge_content": [

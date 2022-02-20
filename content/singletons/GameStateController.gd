@@ -23,6 +23,8 @@ func persistent_state():
 		'score': score,
 		'money': money,
 		'hunger': hunger,
+		'work_timer_handle': work_timer_handle,
+		'at_work': at_work,
 		'hunger_timer_handle': hunger_timer_handle,
 		'days_without_mom': days_without_mom,
 		'fridge_content': fridge_content,
@@ -36,6 +38,8 @@ func restore_state(state):
 	score = state['score']
 	money = state["money"]
 	hunger = state["hunger"]
+	work_timer_handle = state['work_timer_handle']
+	at_work = state['at_work']
 	hunger_timer_handle = state['hunger_timer_handle']
 	days_without_mom = state["days_without_mom"]
 	fridge_content = state["fridge_content"]
