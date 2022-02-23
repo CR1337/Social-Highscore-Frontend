@@ -20,7 +20,9 @@ func _display_work():
 	timer_label.visible = true
 	
 func _display_hunger():
-	match GameStateController.hunger:
+	var hunger = GameStateController.hunger
+	print(typeof(hunger) == TYPE_INT)
+	match hunger:
 		-1:
 			status_sprite.visible = false
 			timer_label.visible = false

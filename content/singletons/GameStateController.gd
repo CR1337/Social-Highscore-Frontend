@@ -37,7 +37,7 @@ func persistent_state():
 func restore_state(state):
 	score = state['score']
 	money = state["money"]
-	hunger = state["hunger"]
+	hunger = int(state["hunger"])
 	work_timer_handle = state['work_timer_handle']
 	at_work = state['at_work']
 	hunger_timer_handle = state['hunger_timer_handle']
@@ -281,11 +281,11 @@ func reset_hunger():
 	_handle_hunger()
 	
 func increase_hunger():
-	hunger = min(2, hunger + 1)
+	hunger = int(min(2, hunger + 1))
 	_handle_hunger()
 	
 func eat(amount):
-	hunger -= max(amount, hunger + 1)
+	hunger -= int(max(amount, hunger + 1))
 	_handle_hunger()
 		
 func _handle_hunger():

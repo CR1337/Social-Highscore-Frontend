@@ -1,16 +1,13 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/tilesets/interior/1_Generic_32x32.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/2_LivingRoom_32x32.png" type="Texture" id=2]
 [ext_resource path="res://assets/tilesets/interior/17_Visibile_Upstairs_System_32x32.png" type="Texture" id=3]
-[ext_resource path="res://content/areas/components/AnimatedOnOff.tscn" type="PackedScene" id=4]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=5]
 [ext_resource path="res://content/areas/Living/LivingHomestreetMomArea/LivingHomestreetMomArea.gd" type="Script" id=6]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/animated_sprites/tres/interior/bathroom_sink.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://assets/tilesets/interior/3_Bathroom_32x32.png" type="Texture" id=9]
 [ext_resource path="res://assets/tilesets/interior/12_Kitchen_32x32.png" type="Texture" id=10]
-[ext_resource path="res://assets/animated_sprites/tres/interior/fridge.tres" type="SpriteFrames" id=11]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/animated_sprites/tres/characters/living/homestreet/mom/mom.tres" type="SpriteFrames" id=13]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=14]
@@ -1796,6 +1793,27 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 103/shape_one_way_margin = 0.0
 103/shapes = [  ]
 103/z_index = 0
+104/name = "kitchen_fridge"
+104/texture = ExtResource( 10 )
+104/tex_offset = Vector2( 0, 0 )
+104/modulate = Color( 1, 1, 1, 1 )
+104/region = Rect2( 576, 1472, 64, 192 )
+104/tile_mode = 2
+104/autotile/icon_coordinate = Vector2( 0, 0 )
+104/autotile/tile_size = Vector2( 64, 64 )
+104/autotile/spacing = 0
+104/autotile/occluder_map = [  ]
+104/autotile/navpoly_map = [  ]
+104/autotile/priority_map = [  ]
+104/autotile/z_index_map = [  ]
+104/occluder_offset = Vector2( 0, 0 )
+104/navigation_offset = Vector2( 0, 0 )
+104/shape_offset = Vector2( 0, 0 )
+104/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+104/shape_one_way = false
+104/shape_one_way_margin = 0.0
+104/shapes = [  ]
+104/z_index = 0
 
 [node name="LivingHomestreetMomArea" type="Node2D"]
 script = ExtResource( 6 )
@@ -1813,21 +1831,7 @@ tile_data = PoolIntArray( 0, 1, 1, 1, 1, 3, 2, 1, 3, 3, 1, 3, 4, 1, 3, 5, 1, 3, 
 [node name="InteriorBack" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
 format = 1
-tile_data = PoolIntArray( 4, 59, 327690, 5, 59, 327691, 6, 59, 327691, 7, 59, 327692, 8, 3, 0, 9, 3, 393218, 10, 3, 2, 65537, 59, 196612, 65538, 59, 196613, 65539, 59, 262151, 65540, 59, 393226, 65541, 59, 393227, 65542, 59, 393227, 65543, 59, 393228, 65544, 3, 458753, 65545, 3, 458752, 65546, 3, 458755, 65547, 53, 0, 131073, 59, 196608, 131074, 59, 196609, 131075, 59, 327688, 131076, 2, 327683, 131077, 2, 327685, 131078, 2, 327685, 131079, 2, 327684, 131080, 3, 524289, 131081, 3, 524288, 131082, 3, 524291, 196609, 59, 196610, 196610, 59, 196611, 196612, 2, 393217, 196613, 2, 393216, 196614, 2, 393216, 196615, 2, 393218, 196619, 53, 0, 262148, 2, 393219, 262149, 2, 393221, 262150, 2, 393221, 262151, 2, 393220, 393216, 98, 65538, 393217, 98, 65539, 393219, 99, 65536, 393221, 81, 4, 393223, 73, 65538, 393224, 73, 65539, 393226, 73, 65540, 393227, 73, 65541, 458752, 98, 131074, 458753, 98, 131075, 458757, 81, 65540, 458759, 73, 131074, 458760, 73, 131075, 458762, 73, 131076, 458763, 73, 131077, 524293, 81, 131076, 720896, 102, 5, 720897, 103, 0, 720898, 102, 5, 720900, 102, 5, 720901, 102, 5, 786432, 102, 458758, 786433, 103, 65536, 786434, 102, 655368, 786436, 102, 458757, 786437, 102, 655368, 917504, 101, 65540, 917505, 100, 3, 917506, 100, 4, 917507, 100, 4, 917508, 100, 5, 983040, 101, 65540, 983041, 100, 131075, 983042, 100, 131076, 983043, 100, 131076, 983044, 100, 131077, 983045, 60, 393217, 983046, 60, 393218 )
-
-[node name="BedroomDoor" parent="." instance=ExtResource( 4 )]
-position = Vector2( 608, 356 )
-walkable_when_on = true
-
-[node name="BathrommDoor" parent="." instance=ExtResource( 4 )]
-position = Vector2( 224, 676 )
-walkable_when_on = true
-
-[node name="BathroomSink" parent="." instance=ExtResource( 4 )]
-position = Vector2( 206, 460 )
-frames = ExtResource( 8 )
-on_animation_name = "on"
-off_animation_name = "off"
+tile_data = PoolIntArray( 4, 59, 327690, 5, 59, 327691, 6, 59, 327691, 7, 59, 327692, 8, 3, 0, 9, 3, 393218, 10, 3, 2, 65537, 59, 196612, 65538, 59, 196613, 65539, 59, 262151, 65540, 59, 393226, 65541, 59, 393227, 65542, 59, 393227, 65543, 59, 393228, 65544, 3, 458753, 65545, 3, 458752, 65546, 3, 458755, 65547, 53, 0, 131073, 59, 196608, 131074, 59, 196609, 131075, 59, 327688, 131076, 2, 327683, 131077, 2, 327685, 131078, 2, 327685, 131079, 2, 327684, 131080, 3, 524289, 131081, 3, 524288, 131082, 3, 524291, 196609, 59, 196610, 196610, 59, 196611, 196612, 2, 393217, 196613, 2, 393216, 196614, 2, 393216, 196615, 2, 393218, 196619, 53, 0, 262148, 2, 393219, 262149, 2, 393221, 262150, 2, 393221, 262151, 2, 393220, 393216, 98, 65538, 393217, 98, 65539, 393219, 99, 65536, 393221, 81, 4, 393223, 73, 65538, 393224, 73, 65539, 393226, 73, 65540, 393227, 73, 65541, 458752, 98, 131074, 458753, 98, 131075, 458757, 81, 65540, 458759, 73, 131074, 458760, 73, 131075, 458762, 73, 131076, 458763, 73, 131077, 524293, 81, 131076, 655366, 104, 0, 720896, 102, 5, 720897, 103, 0, 720898, 102, 5, 720900, 102, 5, 720901, 102, 5, 720902, 104, 65536, 786432, 102, 458758, 786433, 103, 65536, 786434, 102, 655368, 786436, 102, 458757, 786437, 102, 655368, 786438, 104, 131072, 917504, 101, 65540, 917505, 100, 3, 917506, 100, 4, 917507, 100, 4, 917508, 100, 5, 983040, 101, 65540, 983041, 100, 131075, 983042, 100, 131076, 983043, 100, 131076, 983044, 100, 131077, 983045, 60, 393217, 983046, 60, 393218 )
 
 [node name="WallsFore" type="TileMap" parent="."]
 z_index = 5
@@ -1845,7 +1849,7 @@ tile_data = PoolIntArray( 327686, 1, 0, 327689, 1, 131079, 393222, 1, 65536, 458
 z_index = 5
 tile_set = SubResource( 4 )
 format = 1
-tile_data = PoolIntArray( 65540, 53, 0, 65543, 53, 0, 327680, 98, 2, 327681, 98, 3, 327683, 99, 0, 327687, 73, 4, 327688, 73, 5, 327690, 73, 4, 327691, 73, 5, 851968, 101, 4, 851969, 100, 3, 851970, 100, 4, 851971, 100, 4, 851972, 100, 5, 917504, 101, 4 )
+tile_data = PoolIntArray( 65540, 53, 0, 65543, 53, 0, 327680, 98, 2, 327681, 98, 3, 327683, 99, 0, 327687, 73, 4, 327688, 73, 5, 327690, 73, 4, 327691, 73, 5, 655366, 104, 0, 720902, 104, 65536, 851968, 101, 4, 851969, 100, 3, 851970, 100, 4, 851971, 100, 4, 851972, 100, 5, 917504, 101, 4 )
 
 [node name="Details" type="TileMap" parent="."]
 z_index = 5
@@ -1859,11 +1863,6 @@ tile_set = SubResource( 4 )
 show_collision = true
 format = 1
 tile_data = PoolIntArray( 65536, 97, 0, 65537, 97, 0, 65538, 97, 0, 65539, 97, 0, 65540, 97, 0, 65541, 97, 0, 65542, 97, 0, 65543, 97, 0, 65544, 97, 0, 65545, 97, 0, 65546, 97, 0, 65547, 97, 0, 196607, 97, 0, 131073, 97, 0, 131074, 97, 0, 131080, 97, 0, 131081, 97, 0, 131082, 97, 0, 131084, 97, 0, 262143, 97, 0, 196620, 97, 0, 327679, 97, 0, 262156, 97, 0, 393215, 97, 0, 327692, 97, 0, 393216, 97, 0, 393217, 97, 0, 393218, 97, 0, 393219, 97, 0, 393220, 97, 0, 393221, 97, 0, 393222, 97, 0, 393223, 97, 0, 393224, 97, 0, 393226, 97, 0, 393227, 97, 0, 524287, 97, 0, 458758, 97, 0, 458764, 97, 0, 589823, 97, 0, 524294, 97, 0, 524300, 97, 0, 655359, 97, 0, 589830, 97, 0, 589836, 97, 0, 720895, 97, 0, 655366, 97, 0, 655372, 97, 0, 720896, 97, 0, 720897, 97, 0, 720898, 97, 0, 720900, 97, 0, 720901, 97, 0, 720902, 97, 0, 720908, 97, 0, 851967, 97, 0, 786444, 97, 0, 917503, 97, 0, 851980, 97, 0, 983039, 97, 0, 917516, 97, 0, 1048575, 97, 0, 983052, 97, 0, 1048576, 97, 0, 1048577, 97, 0, 1048578, 97, 0, 1048579, 97, 0, 1048580, 97, 0, 1048583, 97, 0, 1048584, 97, 0, 1048585, 97, 0, 1048586, 97, 0, 1048587, 97, 0 )
-
-[node name="Fridge" parent="." instance=ExtResource( 4 )]
-position = Vector2( 443.176, 735.929 )
-z_index = 5
-frames = ExtResource( 11 )
 
 [node name="TriggerArea" parent="." instance=ExtResource( 7 )]
 position = Vector2( 377.568, 1058.04 )

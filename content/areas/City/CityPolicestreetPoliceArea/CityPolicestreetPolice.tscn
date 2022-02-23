@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/tilesets/interior/Modern_Office_Black_Shadow_32x32.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/19_Hospital_32x32.png" type="Texture" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://assets/tilesets/interior/2_LivingRoom_32x32.png" type="Texture" id=11]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=12]
 [ext_resource path="res://content/areas/City/CityPolicestreetPoliceArea/CityPolicestreetPolice.gd" type="Script" id=13]
-[ext_resource path="res://content/areas/components/AnimatedOnOff.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/tilesets/interior/5_Classroom_and_library_32x32.png" type="Texture" id=15]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/policestreet/police/npc3.tres" type="SpriteFrames" id=17]
@@ -2504,10 +2503,6 @@ tile_data = PoolIntArray( 0, 108, 0, 1, 108, 0, 2, 108, 0, 3, 108, 0, 4, 1, 1, 5
 tile_set = SubResource( 4 )
 format = 1
 tile_data = PoolIntArray( 1, 111, 0, 2, 115, 2, 3, 115, 1, 65536, 113, 0, 65537, 111, 65536, 65539, 110, 393216, 65540, 135, 4, 65541, 135, 5, 131072, 113, 65536, 131073, 111, 131072, 131075, 110, 65536, 131076, 135, 65540, 131077, 135, 65541, 131080, 123, 196611, 196612, 135, 131076, 196613, 135, 131077, 196614, 121, 65537, 196615, 121, 65538, 196616, 121, 65538, 196617, 121, 65539, 262144, 129, 1, 262150, 121, 131073, 262151, 121, 131074, 262152, 121, 131074, 262153, 121, 131075, 327680, 129, 65537, 524292, 127, 196608, 524293, 127, 196609, 524294, 127, 327680, 524295, 127, 327681, 524297, 129, 1, 524298, 131, 65538, 524299, 131, 65539, 589833, 129, 65537, 589834, 131, 131074, 589835, 131, 131075, 786432, 121, 393222, 786433, 121, 393224, 786435, 121, 393222, 786436, 121, 393224, 786439, 121, 393222, 786440, 121, 393224, 786442, 136, 65536, 786443, 136, 65536, 917504, 121, 393222, 917505, 121, 393224, 917514, 136, 65536, 917515, 136, 65536, 983045, 60, 524291, 983046, 60, 524292 )
-
-[node name="AnimatedOnOff" parent="." instance=ExtResource( 14 )]
-position = Vector2( 544, 484 )
-walkable_when_on = true
 
 [node name="WallsFore" type="TileMap" parent="."]
 z_index = 5
