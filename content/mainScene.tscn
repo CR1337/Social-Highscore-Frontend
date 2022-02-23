@@ -319,7 +319,7 @@ position = Vector2( 5466.73, -6245.27 )
 ] instance=ExtResource( 24 )]
 position = Vector2( 610.022, 964.115 )
 z_index = 1
-speed = 4
+speed = 6
 
 [node name="ShaderRectNode" type="Node2D" parent="."]
 z_index = 5

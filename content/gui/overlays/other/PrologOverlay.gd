@@ -27,6 +27,9 @@ var _states = [
 
 func _ready():
 	_load_text_dict()
+
+func reset():
+	_state = -1
 	_next_state()
 
 func _load_text_dict():
@@ -77,6 +80,7 @@ func _next_state():
 			_no_button.visible = false
 		"finished":
 			_start_game()
+			_state = 0
 
 
 func _load_tutorial_picture():
@@ -90,9 +94,7 @@ func _load_tutorial_picture():
 	
 func _start_game():
 	TrafficController.start_cars()
-#	NewsController._DEBUG_add_news()
-#	CitizenRecord._DEBUG_add_records()
-	StoryController.day01_start()
+	StoryController05.start_day()  # DEBUG!
 	ViewportManager.change_to_transparent()
 
 func _on_YesButton_pressed():

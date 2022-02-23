@@ -72,6 +72,7 @@ func _on_menu_pressed():
 	change_overlay(_game_menu)
 	
 func change_to_prolog():
+	_prolog_overlay.reset()
 	change_overlay(_prolog_overlay)
 	
 func change_to_gameover(reason):

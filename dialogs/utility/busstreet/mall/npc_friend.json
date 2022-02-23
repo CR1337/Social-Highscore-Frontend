@@ -1,60 +1,48 @@
 {
     "texts": {
-        "day01_hello": "Hi buddy. Nice to see you again. Let's do something together again in the next few days.",
+        "day03_DEBUG": "DEBUG DEBUG DEBUG",
+		"day03_DEBUG_again": "DEBUG DEBUG DEBUG again",
+		"day03_DEBUG_again_ff": "DEBUG DEBUG DEBUG again fast food",
         "x": "(end dialog)"
     },
     "graphs": {
-        "day01_initial": {
+        "day03_talk_to_friend": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day01_hello",
+                "tid": "day03_DEBUG",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_day03_talked_to_friend"
                     }
                 ],
                 "trigger_id": null
             }
         },
-		"day02_initial": {
+		"day03_ate_fast_food": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day01_hello",
+                "tid": "day03_DEBUG_again_ff",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_day03_talked_to_friend_again"
                     }
                 ],
                 "trigger_id": null
             }
         },
-		"day03_initial": {
+		"day03_not_ate_fast_food": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day01_hello",
+                "tid": "day03_DEBUG_again",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            }
-        },
-		"day03_post_meeting": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "day01_hello",
-                "answers": [
-                    {
-                        "tid": "x",
-                        "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_day03_talked_to_friend_again"
                     }
                 ],
                 "trigger_id": null

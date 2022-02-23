@@ -21,7 +21,6 @@ func _display_work():
 	
 func _display_hunger():
 	var hunger = GameStateController.hunger
-	print(typeof(hunger) == TYPE_INT)
 	match hunger:
 		-1:
 			status_sprite.visible = false

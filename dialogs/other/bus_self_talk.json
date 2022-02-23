@@ -7,11 +7,13 @@
         "4": "I should go to the pharmacy.",
         "5": "I should bring mom her medication.",
         "6": "Maybe I could go to bed early today.",
+		"7": "I can't buy a ticket because my bank account is blocked. Maybe <partner> can help me.",
+		"8": "I should really go to work now. I'm already late.",
         "payment_message": "It seems like the payment didn't work.",
         "x": "(end monolog)"
     },
     "graphs": {
-        "read_moms_message": {
+        "day01_read_moms_message": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "0",
@@ -36,7 +38,7 @@
                 "trigger_id": null
             }
         },
-        "goto_mom": {
+        "day01_goto_mom": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "0",
@@ -61,7 +63,7 @@
                 "trigger_id": null
             }
         },
-        "goto_pharmacy": {
+        "day01_goto_pharmacy": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "0",
@@ -86,7 +88,7 @@
                 "trigger_id": null
             }
         },
-        "bring_meds": {
+        "day01_bring_meds": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "0",
@@ -111,7 +113,7 @@
                 "trigger_id": null
             }
         },
-        "goto_bed": {
+        "day01_goto_bed": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "0",
@@ -126,6 +128,34 @@
             },
             "node1": {
                 "tid": "6",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day05_goto_partner": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "7",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day05_goto_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "8",
                 "answers": [
                     {
                         "tid": "x",

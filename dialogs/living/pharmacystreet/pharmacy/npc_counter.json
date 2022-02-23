@@ -87,7 +87,7 @@
                     {
                         "tid": "selling_deny_payment",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_failed_to_buy_meds"
                     }
                 ],
                 "trigger_id": null

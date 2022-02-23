@@ -13,6 +13,7 @@
         "day01_check_fridge": "Thanks again for bringing me my meds.  Have you actually eaten anything today? If not, check your fridge.",
         "day01_fridge_answer": "Thanks for the hint [sarcastic]",
         "day01_check_police": "I heard that the police are looking for new recruits. Why don't you ask at the job center tomorrow if they'll hire you?",
+		"day05_thanks": "Thanks for the meds. What would I do without you.",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -144,6 +145,34 @@
                 ],
                 "trigger_id": null
             }
-        }
+        },
+		"day05_bring_meds": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day05_thanks",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_day05_brought_meds"
+                    }
+                ],
+                "trigger_id": null
+            }
+		},
+		"day05_got_meds": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day05_thanks",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+		}
     }
 }

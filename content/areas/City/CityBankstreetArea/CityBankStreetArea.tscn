@@ -83,6 +83,7 @@ collision_trigger_id = "tid_city_bankstreet_leave_bank"
 [node name="LeaveBankTrigger" type="Node" parent="LeaveBankTriggerArea"]
 script = ExtResource( 4 )
 id = "tid_city_bankstreet_leave_bank"
+blocked_dialog_filename = "res://dialogs/city/bankstreet/bank_self_talk.json"
 
 [node name="TrafficLight" parent="." groups=[
 "persistent",

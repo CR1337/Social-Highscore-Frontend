@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "0": "Damn. It seems the bank is already closed. Tomorrow I should come before work.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "blocked": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

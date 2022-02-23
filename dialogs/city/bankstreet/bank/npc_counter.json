@@ -9,6 +9,7 @@
         "6": "Yes",
         "7": "No",
         "8": "You cannot take out consumer loans at this time. Improve your Citizen Score first ",
+		"day05_debug_unlock": "DEBUG UNLOCK",
         "9": "(end dialog)"
     },
     "graphs": {
@@ -149,6 +150,20 @@
                         "tid": "9",
                         "nid": null,
                         "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day05_unlock_account": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day05_debug_unlock",
+                "answers": [
+                    {
+                        "tid": "9",
+                        "nid": null,
+                        "trigger_id": "tid_day05_unlocked_account"
                     }
                 ],
                 "trigger_id": null

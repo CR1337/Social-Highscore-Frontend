@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "0": "I should go to the bank before work, so that I can unlock my account, before the bank closes.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "goto_bank": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

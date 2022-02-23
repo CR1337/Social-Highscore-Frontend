@@ -16,3 +16,5 @@ signal sig_payment_successfull(handle)
 signal sig_payment_failed(handle)
 
 signal sig_fridge_content_changed()
+
+signal sig_ate_in_mall(item_key)

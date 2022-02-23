@@ -84,6 +84,7 @@ collision_trigger_id = "tid_city_policestreet_leave_police"
 [node name="LeavePoliceTrigger" type="Node" parent="LeavePoliceTriggerArea"]
 script = ExtResource( 4 )
 id = "tid_city_policestreet_leave_police"
+blocked_dialog_filename = "res://dialogs/city/policestreet/police_self_talk.json"
 
 [node name="TrafficLight" parent="." groups=[
 "persistent",

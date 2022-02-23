@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/living/busstreet/npc.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=8]
 [ext_resource path="res://content/areas/components/CrossingArea.tscn" type="PackedScene" id=10]
-[ext_resource path="res://content/trigger/AuthenticationTrigger.gd" type="Script" id=12]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=14]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=15]
 [ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=16]
@@ -59,16 +58,12 @@ position = Vector2( 544.449, 383.054 )
 scale = Vector2( 1, 2 )
 is_activated_by_action = true
 walkable = true
-action_trigger_id = "tid_living_busstreet_authentication"
+action_trigger_id = "tid_living_busstreet_bus"
 
 [node name="BusTrigger" type="Node" parent="BusTriggerArea"]
 script = ExtResource( 6 )
 id = "tid_living_busstreet_bus"
-
-[node name="AuthenticationTrigger" type="Node" parent="BusTriggerArea"]
-script = ExtResource( 12 )
-id = "tid_living_busstreet_authentication"
-post_authentication_trigger_id = "tid_living_busstreet_bus"
+blocked_dialog_filename = "res://dialogs/other/bus_self_talk.json"
 
 [node name="CrossingArea" parent="." instance=ExtResource( 10 )]
 position = Vector2( 383.593, 287.371 )

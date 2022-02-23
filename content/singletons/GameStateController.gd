@@ -31,7 +31,9 @@ func persistent_state():
 		'current_day': current_day,
 		'contact_state': contact_state,
 		'current_preferred_emotions': current_preferred_emotions,
-		'ticket_bought': ticket_bought
+		'ticket_bought': ticket_bought,
+		'mall_food_timer_items': _mall_food_timer_items,
+		'bank_account_blocked': bank_account_blocked
 	}
 
 func restore_state(state):
@@ -46,6 +48,8 @@ func restore_state(state):
 	current_day = state["current_day"]
 	current_preferred_emotions = state['current_preferred_emotions']
 	ticket_bought = state['ticket_bought']
+	_mall_food_timer_items = state['mall_food_timer_items']
+	bank_account_blocked = state['bank_account_blocked']
 	
 	emit_signal("sig_hunger_changed", hunger)
 	EventBus.emit_signal("sig_fridge_content_changed")
@@ -73,7 +77,7 @@ enum SCORE_CLASS {
 	AAA, AA, A, B, C, D, E, X, Z	
 }
 
-func _score_class():
+func score_class():
 	if score >= 1501:
 		return SCORE_CLASS.AAA
 	elif score >= 1051:
@@ -117,6 +121,8 @@ func visited_mom():
 
 func _on_add_money(amount, description):
 	change_money(amount)
+	
+var bank_account_blocked = false
 	
 # BEGIN work
 
@@ -201,7 +207,7 @@ const _price_factors = {
 }
 
 func price_factor():
-	return _price_factors[_score_class()]
+	return _price_factors[score_class()]
 
 const _shopping_payment_handle = 'ph_shopping_success'
 const fridge_capacity = 3
@@ -242,30 +248,45 @@ func _clear_shopping_cart():
 func shopping_total_price():
 	var total_price = 0
 	for food_item in shopping_cart:
-		total_price += food_item['base_price'] * _price_factors[_score_class()]
+		total_price += food_item['base_price'] * _price_factors[score_class()]
 	return total_price
 
 func buy_shopping_cart_content():
 	for food_item in shopping_cart:
 		fridge_content.append(food_item)
-		_food_scoring(food_item)
+		_food_scoring(food_item, false)
 	_clear_shopping_cart()
 	EventBus.emit_signal("sig_fridge_content_changed")
 	
-func _food_scoring(food_item):
-	match food_item['healthieness']:
-		HEALTHIENESS.healthy:
-			CitizenRecord.add_healthy_food_at_home(2, food_item['name'])
-		HEALTHIENESS.unhealthy:
-			CitizenRecord.add_unhealthy_food_at_home(-15, food_item['name'])
-		HEALTHIENESS.neutral:
-			pass  # TODO?
+func _food_scoring(food_item, at_mall):
+	if at_mall:
+		match food_item['healthieness']:
+			HEALTHIENESS.healthy:
+				CitizenRecord.add_healthy_food_in_restaurant(2, food_item['name'])
+			HEALTHIENESS.unhealthy:
+				CitizenRecord.add_unhealthy_food_in_restaurant(-35, food_item['name'])
+			HEALTHIENESS.neutral:
+				pass  # TODO?
+	else:
+		match food_item['healthieness']:
+			HEALTHIENESS.healthy:
+				CitizenRecord.add_healthy_food_at_home(2, food_item['name'])
+			HEALTHIENESS.unhealthy:
+				CitizenRecord.add_unhealthy_food_at_home(-15, food_item['name'])
+			HEALTHIENESS.neutral:
+				pass  # TODO?
 
 func eat_fridge_content(index):
 	var food_item = fridge_content[index]
 	eat(food_item['hunger_decrease'])
 	fridge_content.remove(index)
 	EventBus.emit_signal("sig_fridge_content_changed")
+	
+func delete_fridge_content_by_name(name):
+	for food_item in fridge_content:
+		if food_item['name'] == name:
+			fridge_content.erase(food_item)
+			return
 # END shopping + fridge
 
 # BEGIN hunger
@@ -285,7 +306,7 @@ func increase_hunger():
 	_handle_hunger()
 	
 func eat(amount):
-	hunger -= int(max(amount, hunger + 1))
+	hunger = int(max(-1, hunger - amount))
 	_handle_hunger()
 		
 func _handle_hunger():
@@ -320,3 +341,43 @@ func _starve():
 	reset_hunger()
 
 # END hunger
+
+# BEGIN mall buffet
+var _mall_food_timer_items = {}
+func get_buffet_item_price(item_key):
+	return _buffet_item_prototypes[item_key]['base_price'] * price_factor()
+
+func _score_mall_food(handle):
+	var item_key = _mall_food_timer_items[handle]
+	_mall_food_timer_items.erase(handle)
+	_food_scoring(_buffet_item_prototypes[item_key], true)
+	
+func eat_mall_food(item_key):
+	var food_item = _buffet_item_prototypes[item_key]
+	eat(food_item['hunger_decrease'])
+	var handle = TimeController.setTimer(3, self, '_score_mall_food')
+	_mall_food_timer_items[handle] = item_key
+	EventBus.emit_signal("sig_ate_in_mall", item_key)
+
+const _buffet_item_prototypes = {
+	'fruits': {
+		'base_price': 15,
+		'hunger_decrease': 1,
+		'healthieness': HEALTHIENESS.healthy,
+		'name': "fruits"
+	},
+	'fast_food': {
+		'base_price': 10,
+		'hunger_decrease': 2,
+		'healthieness': HEALTHIENESS.unhealthy,
+		'name': "fast food"
+	},
+	'ice_cream': {
+		'base_price': 5,
+		'hunger_decrease': 1,
+		'healthieness': HEALTHIENESS.unhealthy,
+		'name': "ice cream"
+	}
+}
+	
+# END mall buffet

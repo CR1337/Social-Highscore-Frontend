@@ -3,21 +3,13 @@ extends "res://content/trigger/Trigger.gd"
 var target_area: Node2D
 var new_player_position: Vector2
 
-var blocked = false
-
-export var blocked_dialog_filename: String
+func _on_trigger(trigger_id, kwargs):
+	._on_trigger(trigger_id, kwargs)
+	get_parent().walkable = not _blocked
 
 func trigger(kwargs):
 	.trigger(kwargs)
-	if kwargs.get('action') == 'block':
-		blocked = true
-		get_parent().walkable = false
-		return
-	if kwargs.get('action') == 'unblock':
-		blocked = false
-		get_parent().walkable = true
-		return
-	if not blocked:
+	if not _blocked:
 		ViewportManager.change_area(target_area, new_player_position)
 	else:
-		ViewportManager.change_to_dialog(blocked_dialog_filename, "blocked")
+		ViewportManager.change_to_dialog(blocked_dialog_filename, _block_state)

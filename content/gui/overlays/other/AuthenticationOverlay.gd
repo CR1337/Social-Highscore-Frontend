@@ -40,6 +40,6 @@ func _on_CancelButton_pressed():
 	_exit_overlay()
 
 func _exit_overlay():
-	ViewportManager.change_to_transparent()
+	ViewportManager.change_to_last()
 	_label.text = "Please take a picture of your face."
 

@@ -10,9 +10,6 @@ func _ready():
 	
 func payment_needed():
 	return not GameStateController.ticket_bought
-	
-func bus_enabled():
-	return StoryController.day01_bus_enabled
 
 func _on_payment_failed(handle):
 	if handle == _payment_handle:
@@ -28,11 +25,10 @@ func _on_payment_successfull(handle):
 
 func trigger(kwargs):
 	.trigger(kwargs)
-	
-	if not bus_enabled():
+	if _blocked:
 		ViewportManager.change_to_dialog(
-			"res://dialogs/other/bus_self_talk.json",
-			StoryController.day01_states[StoryController.day01_progress]
+			blocked_dialog_filename,
+			_block_state
 		)
 	elif payment_needed():
 		ViewportManager.change_to_payment(_recipient, _base_amount * GameStateController.price_factor(), _payment_handle)

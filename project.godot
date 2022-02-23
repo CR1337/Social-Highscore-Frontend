@@ -31,7 +31,11 @@ TrafficController="*res://content/singletons/TrafficController.gd"
 GameStateController="*res://content/singletons/GameStateController.gd"
 SaveGameController="*res://content/singletons/SaveGameController.gd"
 NewsController="*res://content/singletons/NewsController.gd"
-StoryController="*res://content/singletons/StoryController.gd"
+StoryController01="*res://content/singletons/story_controllers/StoryController01.gd"
+StoryController02="*res://content/singletons/story_controllers/StoryController02.gd"
+StoryController03="*res://content/singletons/story_controllers/StoryController03.gd"
+StoryController04="*res://content/singletons/story_controllers/StoryController04.gd"
+StoryController05="*res://content/singletons/story_controllers/StoryController05.gd"
 
 [display]
 
