@@ -32,7 +32,8 @@ func _display_current():
 	_arrange_buttons(len(_current_node['answers']))
 
 	var text_id = _current_node['tid']
-	_label.text = _dialog_dict['texts'][text_id]
+	var text = _dialog_dict['texts'][text_id]
+	_label.text = _format_text(text)
 
 	for i in len(_current_node['answers']):
 		text_id = _current_node['answers'][i]['tid']
@@ -106,3 +107,54 @@ func restore_state(state):
 	_current_node = state['current_node']
 	if not _dialog_dict.empty():
 		_display_current()
+
+# BEGIN system for dialog text formatting
+
+# With this system we can now reference variables ans functions
+# of any autoloaded singleton inside dialog texts
+# Use "...$$<singleton>.<variable_name>$$..." 
+# or "...§§<singleton>.<function_name>§§..."
+# eg: $$GameStateController.score$$ will evaluate to the current score
+# §§GameStateController.remaining_shopping_capacity§§ will evaluate
+# to the current remaining space in the shopping cart
+
+func _format_text(text):
+	var variable_escape_sequence = "$$"
+	var function_escape_sequence = "§§"
+	if text.find(variable_escape_sequence) >= 0:
+		text = _format_text_replace(
+			text, variable_escape_sequence, 
+			"_get_replacement_variable"
+		)
+	if text.find(function_escape_sequence) >= 0:
+		text = _format_text_replace(
+			text, function_escape_sequence,
+			"_get_replacement_function_value"
+		)
+	return text
+	
+func _format_text_replace(text, escape_sequence, replacement_func):
+	var splits = text.split(escape_sequence)
+	var start_index = 1
+	if text.begins_with(escape_sequence):
+		start_index = 0
+	for i in range(start_index, len(splits), 2):
+		var target = splits[i].split(".")
+		splits[i] = str(call(replacement_func, target))
+	var result = ""
+	for s in splits:
+		result += s
+	return result
+
+func _get_replacement_variable(target):
+	var singleton = _get_singleton(target[0])
+	return singleton.get(target[1])
+	
+func _get_replacement_function_value(target):
+	var singleton = _get_singleton(target[0])
+	return singleton.call(target[1])
+	
+func _get_singleton(singleton_name):
+	return get_node("/root/" + singleton_name)
+
+# END system for dialog text formatting
