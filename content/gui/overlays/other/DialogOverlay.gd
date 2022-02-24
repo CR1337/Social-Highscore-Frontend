@@ -110,7 +110,7 @@ func restore_state(state):
 
 # BEGIN system for dialog text formatting
 
-# With this system we can now reference variables ans functions
+# With this system we can now reference variables and functions
 # of any autoloaded singleton inside dialog texts
 # Use "...$$<singleton>.<variable_name>$$..." 
 # or "...§§<singleton>.<function_name>§§..."
