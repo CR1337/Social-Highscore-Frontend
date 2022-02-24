@@ -19,9 +19,37 @@ func _update_progress(new_state):
 		{'action': 'block',
 		'block_state': 'day01_' + new_state}
 	)
-	if new_state != 'read_moms_message':
-		if EventBus.is_connected("sig_opened_message", self, "day01_on_opened_moms_message"):
+	match new_state:
+		'goto_pharmacy':
+			_request_state_change(
+				"tid_living_pharmacystreet_pharmacy_npc_counter_state_change",
+				'selling'
+			)
+			_request_state_change(
+				_state_change_trigger_ids['mom'],
+				'day01_waiting_for_meds'
+			)
 			EventBus.disconnect("sig_opened_message", self, "day01_on_opened_moms_message")
+		'bring_meds':
+			_request_state_change(
+				"tid_living_pharmacystreet_pharmacy_npc_counter_state_change",
+				'idle'
+			)
+			_request_state_change(
+				_state_change_trigger_ids['mom'],
+				'day01_waiting_for_bought_meds'
+			)
+			TimeController.setTimer(5, self, "day01_get_your_job")
+		'goto_bed':
+			_request_state_change(
+				_state_change_trigger_ids['mom'],
+				'day01_got_meds'
+			)
+			_request_state_change(
+				_state_change_trigger_ids['partner'],
+				'day01_react_to_tiredness'
+			)
+
 
 func start_day():
 	.start_day()
@@ -33,42 +61,18 @@ func day01_get_your_job(handle):
 	CitizenRecord.add_no_job(-5)
 
 func day01_on_opened_moms_message(contact):
-	_update_progress('goto_mom')
+	if states[progress] == 'read_moms_message':
+		_update_progress('goto_mom')
 	
 func _on_trigger(trigger_id, kwargs):
 	match trigger_id:
 		'tid_day01_talked_to_mom':
-			_request_state_change(
-				"tid_living_pharmacystreet_pharmacy_npc_counter_state_change",
-				'selling'
-			)
-			_request_state_change(
-				"tid_living_homestreet_mom_npc_mom_state_change",
-				'day01_waiting_for_meds'
-			)
 			_update_progress('goto_pharmacy')
 		'tid_bought_meds':
-			_request_state_change(
-				"tid_living_pharmacystreet_pharmacy_npc_counter_state_change",
-				'idle'
-			)
-			_request_state_change(
-				"tid_living_homestreet_mom_npc_mom_state_change",
-				'day01_waiting_for_bought_meds'
-			)
-			TimeController.setTimer(5, self, "day01_get_your_job")
 			_update_progress('bring_meds')
 		'tid_day01_brought_meds':
-			_request_state_change(
-				"tid_living_homestreet_mom_npc_mom_state_change",
-				'day01_got_meds'
-			)
-			_request_state_change(
-				"tid_living_friendstreet_partner_npc_partner_state_change",
-				'day01_react_to_tiredness'
-			)
-			GameStateController.increase_hunger()
 			_update_progress('goto_bed')
+			GameStateController.increase_hunger()
 		_: 
 			._on_trigger(trigger_id, kwargs)
 	

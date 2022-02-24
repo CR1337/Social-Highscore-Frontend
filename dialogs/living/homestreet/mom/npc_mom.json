@@ -4,20 +4,26 @@
         "day01_hello_answer1": "Quite well. You?",
         "day01_hello_answer2": "I'm ok.",
         "day01_ask_meds": "You look a little tired today. I'm not feeling so well, unfortunately. My illness is getting to me again. Can you please go to the pharmacy to pick up my medication?",
-        "day01_ask_meds_ok": "Of course.",
-        "day01_ask_meds_where": "Where do I have to go?",
-        "day01_where_pharmacy": "You'll find the pharmacy west of my house. You can't miss it.",
+        "ask_meds_ok": "Of course.",
+        "ask_meds_where": "Where do I have to go?",
+        "where_pharmacy": "You'll find the pharmacy west of my house. You can't miss it.",
         "day01_ask_meds_again": "Can you please go to the pharmacy to pick up my medication?",
         "day01_thanks": "Thank you so much, you are a treasure. What would I do without you.",
         "day01_thanks_answer": "Always happy to",
         "day01_check_fridge": "Thanks again for bringing me my meds.  Have you actually eaten anything today? If not, check your fridge.",
         "day01_fridge_answer": "Thanks for the hint [sarcastic]",
         "day01_check_police": "I heard that the police are looking for new recruits. Why don't you ask at the job center tomorrow if they'll hire you?",
-		"day05_thanks": "Thanks for the meds. What would I do without you.",
+        "day04_pre_message": "I don't feel so good today. But don't worry. It will be all right. ",
+        "day04_post_message": "Did you bring my medication?",
+        "day04_post_pharmacy": "What? Your account is blocked? Maybe you should go to the bank to clarify this.",
+        "day04_post_bank": "The bank is already closed? There's nothing we can do. Then I'll have to endure another day without my medication.",
+        "day05_pre_bank": "Why don't you go to the bank and sort it out with your account. I really need my medication urgently.",
+        "day05_post_bank": "Good that your account is unlocked again. Now please get my medication from the pharmacy.",
+        "day05_thanks": "Thanks for the meds. What would I do without you.",
         "x": "(end dialog)"
     },
     "graphs": {
-        "idle": {
+        "day01_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day01_hello",
@@ -53,12 +59,12 @@
                 "tid": "day01_ask_meds",
                 "answers": [
                     {
-                        "tid": "day01_ask_meds_ok",
+                        "tid": "ask_meds_ok",
                         "nid": null,
                         "trigger_id": null
                     },
                     {
-                        "tid": "day01_ask_meds_where",
+                        "tid": "ask_meds_where",
                         "nid": "node2",
                         "trigger_id": null
                     }
@@ -66,7 +72,7 @@
                 "trigger_id": null
             },
             "node2": {
-                "tid": "day01_where_pharmacy",
+                "tid": "where_pharmacy",
                 "answers": [
                     {
                         "tid": "x",
@@ -83,12 +89,12 @@
                 "tid": "day01_ask_meds_again",
                 "answers": [
                     {
-                        "tid": "day01_ask_meds_ok",
+                        "tid": "ask_meds_ok",
                         "nid": null,
                         "trigger_id": null
                     },
                     {
-                        "tid": "day01_ask_meds_where",
+                        "tid": "ask_meds_where",
                         "nid": "node1",
                         "trigger_id": null
                     }
@@ -96,7 +102,7 @@
                 "trigger_id": null
             },
             "node1": {
-                "tid": "day01_where_pharmacy",
+                "tid": "where_pharmacy",
                 "answers": [
                     {
                         "tid": "x",
@@ -146,7 +152,107 @@
                 "trigger_id": null
             }
         },
-		"day05_bring_meds": {
+        "day04_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day04_pre_message",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day04_post_message": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day04_post_message",
+                "answers": [
+                    {
+                        "tid": "ask_meds_ok",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "ask_meds_where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "where_pharmacy",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day04_post_pharmacy": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day04_post_pharmacy",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day04_post_bank": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day04_post_bank",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day05_pre_bank",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_unlocked_account": {
+            "initial_nid": "day05_post_bank",
+            "node0": {
+                "tid": "day05_pre_bank",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_bring_meds": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day05_thanks",
@@ -159,8 +265,8 @@
                 ],
                 "trigger_id": null
             }
-		},
-		"day05_got_meds": {
+        },
+        "day05_got_meds": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day05_thanks",
@@ -173,6 +279,6 @@
                 ],
                 "trigger_id": null
             }
-		}
+        }
     }
 }

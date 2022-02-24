@@ -19,14 +19,14 @@ const _friend_positions = {
 const _invisible_position = Vector2(-1, -1)
 
 
-const _important_npc_state_change_trigger_ids = [
-	'tid_living_homestreet_mom_npc_mom_state_change',
-	'tid_living_friendstreet_friend_npc_friend_state_change',
-	'tid_living_friendstreet_partner_npc_partner_state_change',
-	'tid_city_policestreet_police_npc_boss_state_change',
-	'tid_city_busstreet_npc1_state_change',
-	'tid_city_busstreet_npc2_state_change'
-]
+const _state_change_trigger_ids = {
+	'mom': 'tid_living_homestreet_mom_npc_mom_state_change',
+	'friend':'tid_living_friendstreet_friend_npc_friend_state_change',
+	'partner': 'tid_living_friendstreet_partner_npc_partner_state_change',
+	'boss': 'tid_city_policestreet_police_npc_boss_state_change',
+	'busstreet01': 'tid_city_busstreet_npc1_state_change',
+	'busstreet02': 'tid_city_busstreet_npc2_state_change'
+}
 
 func _set_friend_visibility(friend_key):
 	for node in _friend_nodes.values():
@@ -43,7 +43,7 @@ func _get_day():
 	return name.right(15)
 	
 func _set_initial_dialog():
-	for tid in _important_npc_state_change_trigger_ids:
+	for tid in _state_change_trigger_ids.values():
 		EventBus.emit_signal(
 			"sig_trigger", tid, 
 			{'new_state': "day" + _get_day() + "_initial"}

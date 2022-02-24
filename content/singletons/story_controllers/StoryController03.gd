@@ -13,7 +13,24 @@ func _ready():
 
 func _update_progress(new_state):
 	._update_progress(new_state)
-	
+	match new_state:
+		'talk_to_friend':
+			_set_friend_visibility('mall')
+			TimeController.setTimer(4, self, '_friend_mall_message')
+			_request_state_change(
+				"tid_utility_busstreet_mall_npc_friend_state_change",
+				'day03_talk_to_friend'
+			)
+		'get_food':
+			EventBus.connect("sig_ate_in_mall", self, "_on_ate_in_mall")
+		'goto_bed':
+			ViewportManager.blend_with_black()
+			_set_friend_visibility('home')
+			_request_state_change(
+				_state_change_trigger_ids['friend'],
+				'day03_post_meeting'
+			)
+
 func _friend_mall_message(handle):
 	EventBus.emit_signal("sig_got_phone_message", 'friend', "Hi, I'm at the mall right now. Why don't you come by and we can have a bite to eat together?")
 	
@@ -26,33 +43,26 @@ func _on_ate_in_mall(item_key):
 		_update_progress('talk_to_friend_again')
 		EventBus.disconnect("sig_ate_in_mall", self, "_on_ate_in_mall")
 		if item_key == "fast_food":
-			EventBus.emit_signal("sig_trigger", "tid_utility_busstreet_mall_npc_friend_state_change", {'new_state': "day03_ate_fast_food"})
+			_request_state_change(
+				"tid_utility_busstreet_mall_npc_friend_state_change",
+				"day03_ate_fast_food"
+			)
 		else:
-			EventBus.emit_signal("sig_trigger", "tid_utility_busstreet_mall_npc_friend_state_change", {'new_state': "day03_not_ate_fast_food"})
+			_request_state_change(
+				"tid_utility_busstreet_mall_npc_friend_state_change",
+				"day03_not_ate_fast_food"
+			)
 
 func _on_trigger(trigger_id, kwargs):
 	match trigger_id:
 		'tid_work_finished':
 			GameStateController.increase_hunger()
 			_update_progress('talk_to_friend')
-			_set_friend_visibility('mall')
-			TimeController.setTimer(4, self, '_friend_mall_message')
-			_request_state_change(
-				"tid_utility_busstreet_mall_npc_friend_state_change",
-				'day03_talk_to_friend'
-			)
 		'tid_day03_talked_to_friend':
 			GameStateController.increase_hunger()
 			_update_progress('get_food')
-			EventBus.connect("sig_ate_in_mall", self, "_on_ate_in_mall")
 		'tid_day03_talked_to_friend_again':
-			ViewportManager.blend_with_black()
-			_set_friend_visibility('home')
 			_update_progress('goto_bed')
-			_request_state_change(
-				"tid_living_friendstreet_friend_npc_friend_state_change",
-				'day03_post_meeting'
-			)
 		_: 
 			._on_trigger(trigger_id, kwargs)
 	

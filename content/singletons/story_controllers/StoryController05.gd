@@ -45,7 +45,7 @@ func _update_progress(new_state):
 		'goto_bank':
 			GameStateController.ticket_bought = true
 			_request_state_change(
-				'tid_living_friendstreet_partner_npc_partner_state_change',
+				_state_change_trigger_ids['partner'],
 				'day05_gave_ticket'
 			)
 			EventBus.emit_signal(
@@ -85,7 +85,7 @@ func _update_progress(new_state):
 				'selling'
 			)
 			_request_state_change(
-				'tid_living_homestreet_mom_npc_mom_state_change',
+				_state_change_trigger_ids['mom'],
 				'day05_unlocked_account'
 			)
 			EventBus.emit_signal(
@@ -96,7 +96,7 @@ func _update_progress(new_state):
 
 		'bring_meds':
 			_request_state_change(
-				'tid_living_homestreet_mom_npc_mom_state_change',
+				_state_change_trigger_ids['mom'],
 				'day05_bring_meds'
 			)
 			_request_state_change(
@@ -105,7 +105,7 @@ func _update_progress(new_state):
 			)
 		'goto_bed':
 			_request_state_change(
-				'tid_living_homestreet_mom_npc_mom_state_change',
+				_state_change_trigger_ids['mom'],
 				'day05_got_meds'
 			)
 
@@ -122,10 +122,12 @@ func _on_trigger(trigger_id, kwargs):
 			_update_progress('goto_work')
 		'tid_work_finished':
 			_update_progress('buy_meds')
+			GameStateController.increase_hunger()
 		'tid_bought_meds':
 			_update_progress('bring_meds')
 		'tid_day05_brought_meds':
 			_update_progress('goto_bed')
+			GameStateController.increase_hunger()
 		_: 
 			._on_trigger(trigger_id, kwargs)
 	

@@ -19,19 +19,22 @@ func _update_progress(new_state):
 	match new_state:
 		'buy_choc':
 			_request_state_change(
-				"tid_living_friendstreet_partner_npc_partner_state_change",
+				_state_change_trigger_ids['partner'],
 				'day02_buy_choc'
 			)
 		'bring_choc':
 			_request_state_change(
-				"tid_living_friendstreet_partner_npc_partner_state_change",
+				_state_change_trigger_ids['partner'],
 				'day02_bring_choc'
 			)
 		'goto_bed':
 			_request_state_change(
-				"tid_living_friendstreet_partner_npc_partner_state_change",
+				_state_change_trigger_ids['partner'],
 				'day02_goto_bed'
-			)	
+			)
+			
+			GameStateController.delete_fridge_content_by_name('chocolate')
+			EventBus.disconnect("sig_fridge_content_changed", self, "_on_fridge_content_changed")
 
 func start_day():
 	.start_day()
@@ -63,9 +66,7 @@ func _on_trigger(trigger_id, kwargs):
 			TimeController.setTimer(5, self, "_partner_choc_message")
 		'tid_day02_brought_choc':
 			GameStateController.increase_hunger()
-			GameStateController.delete_fridge_content_by_name('chocolate')
 			_update_progress('goto_bed')
-			EventBus.disconnect("sig_fridge_content_changed", self, "_on_fridge_content_changed")
 		_: 
 			._on_trigger(trigger_id, kwargs)
 	
