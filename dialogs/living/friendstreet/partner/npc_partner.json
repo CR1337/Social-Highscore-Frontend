@@ -3,13 +3,18 @@
         "day01_hello": "Hello darling. I have no time for you right now. Come by again tomorrow.",
         "day01_you_look_tired": "Hello darling. I have no time for you right now. Come by again tomorrow. But you look tired. Go to bed early tonight.",
         "day02_buy_choc": "Did you bear in mind to buy my chocolate?",
-		"day02_answer_no": "I'll go get it. I still have to go shopping anyway.",
-		"day02_answer_yes": "Of course. Here you go.",
-		"day02_thanks1": "Thank you very much. You can be counted on.",
-		"day02_thanks2": "Thank you honey. I love you.",
-		"day02_idle": "Good morning honey. Weren't you supposed to go to the job center today to get a job?",
-		"day05_initial": "DEBUG Hier hast du ein Ticket",
-		"x": "(end dialog)"
+        "day02_answer_no": "I'll go get it. I still have to go shopping anyway.",
+        "day02_answer_yes": "Of course. Here you go.",
+        "day02_thanks1": "Thank you very much. You can be counted on.",
+        "day02_thanks2": "Thank you honey. I love you.",
+        "day02_initial": "Good morning honey. Weren't you supposed to go to the job center today to get a job?",
+        "day04_initial": "How is <FRIEND>? I haven't seen him for a long time.",
+        "day04_fine": "Quite good. Saw him yesterday",
+        "day04_worried": "I'm a bit worried about him.",
+        "day05_initial": "That with your account is bad. Here you can use my one-day ticket. I don't need it anymore today.",
+        "day05_thanks": "Thank you",
+        "day05_post_ticket": "Hi. I'm planning a game night tomorrow. Feel free to stop by. I'm also still trying to reach <FRIEND>.",
+        "x": "(end dialog)"
     },
     "graphs": {
         "day01_initial": {
@@ -40,7 +45,7 @@
                 "trigger_id": null
             }
         },
-		"day02_initial": {
+        "day02_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02_idle",
@@ -54,7 +59,7 @@
                 "trigger_id": null
             }
         },
-		"day02_buy_choc": {
+        "day02_buy_choc": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02_buy_choc",
@@ -68,7 +73,7 @@
                 "trigger_id": null
             }
         },
-		"day02_bring_choc": {
+        "day02_bring_choc": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02_buy_choc",
@@ -81,7 +86,7 @@
                 ],
                 "trigger_id": null
             },
-			"node1": {
+            "node1": {
                 "tid": "day02_buy_choc",
                 "answers": [
                     {
@@ -93,7 +98,7 @@
                 "trigger_id": null
             }
         },
-		"day02_goto_bed": {
+        "day02_goto_bed": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02_thanks2",
@@ -107,20 +112,52 @@
                 "trigger_id": null
             }
         },
-		"day05_initial": {
+        "day04_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day04_initial",
+                "answers": [
+                    {
+                        "tid": "day04_fine",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day04_worried",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day05_initial",
                 "answers": [
                     {
-                        "tid": "x",
+                        "tid": "day05_thanks",
                         "nid": null,
                         "trigger_id": "tid_day05_got_bus_ticket"
                     }
                 ],
                 "trigger_id": null
             }
+        },
+        "day05_gave_ticket": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day05_post_ticket",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
         }
-
     }
 }

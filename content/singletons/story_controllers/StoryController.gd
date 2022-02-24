@@ -24,7 +24,7 @@ const _state_change_trigger_ids = {
 	'friend':'tid_living_friendstreet_friend_npc_friend_state_change',
 	'partner': 'tid_living_friendstreet_partner_npc_partner_state_change',
 	'boss': 'tid_city_policestreet_police_npc_boss_state_change',
-	'busstreet01': 'tid_city_busstreet_npc1_state_change',
+	'busstreet01': 'tid_city_busstreet_npc_state_change',
 	'busstreet02': 'tid_city_busstreet_npc2_state_change'
 }
 
@@ -56,9 +56,11 @@ func _update_progress(new_state):
 	
 func start_day():
 	_set_initial_dialog()
+	
 	EventBus.connect("sig_trigger", self, "_on_trigger")
 	
 func _on_trigger(trigger_id, kwargs):
+	
 	match trigger_id:
 		'tid_bed':
 			if progress < states.find('goto_bed'):
@@ -81,3 +83,9 @@ func _end_day():
 	
 func _request_state_change(tid, new_state):
 	EventBus.emit_signal("sig_trigger", tid, {'new_state': new_state})
+	
+func _block_trigger(tid, block_state = 'blocked'):
+	EventBus.emit_signal("sig_trigger", tid, {'action': 'block', 'block_state': block_state})
+
+func _unblock_trigger(tid):
+	EventBus.emit_signal("sig_trigger", tid, {'action': 'unblock'})

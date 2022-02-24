@@ -39,6 +39,5 @@ func _on_PhoneButton_button_down():
 func _on_PhoneButton_button_up():
 	InputBus.emit_signal("sig_phone_released")
 
-
-func _on_DEBUGWorkFinishedButton_pressed():
-	EventBus.emit_signal("sig_trigger", "tid_work_finished", {})
+func _on_DEBUGTriggerButton_pressed():
+	EventBus.emit_signal("sig_trigger", $DEBUGTriggerLabel.text, {})

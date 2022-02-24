@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "0": "Without a working account, I can't buy anything here anyway.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "account_locked": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

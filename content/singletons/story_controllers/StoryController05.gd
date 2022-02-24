@@ -9,6 +9,7 @@ func _ready():
 	states = [
 		'goto_partner',
 		'goto_bank',
+		'unlock_account',
 		'goto_work',
 		'buy_meds',
 		'bring_meds'
@@ -20,23 +21,13 @@ func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
 		'goto_partner':
-			EventBus.emit_signal(
-				"sig_trigger",
-				_police_enter_trigger_id,
-				{'action': 'block',
-				'block_state': 'goto_bank'}
-			)
-			EventBus.emit_signal(
-				"sig_trigger",
-				_bank_enter_trigger_id,
-				{'action': 'unblock'}
-			)
-			EventBus.emit_signal(
-				"sig_trigger", 
-				_bus_living_trigger_id,
-				{'action': 'block',
-				'block_state': 'day05_goto_partner'}
-			)
+			_block_trigger(_police_enter_trigger_id, 'goto_bank')
+			_block_trigger('tid_living_pharmacystreet_leave_pharmacy', 'account_locked')
+			_block_trigger('tid_city_storestreet_leave_store', 'account_locked')
+			_block_trigger('tid_utility_busstreet_leave_mall', 'account_locked')
+			
+			_unblock_trigger(_bank_enter_trigger_id)
+			_block_trigger(_bus_living_trigger_id, 'day05_goto_partner')
 			_request_state_change(
 				'tid_city_bankstreet_bank_npc_counter_state_change',
 				'day05_unlock_account'
@@ -48,22 +39,15 @@ func _update_progress(new_state):
 				_state_change_trigger_ids['partner'],
 				'day05_gave_ticket'
 			)
-			EventBus.emit_signal(
-				"sig_trigger",
-				_bus_living_trigger_id,
-				{'action': 'unblock'}
-			)
-			EventBus.emit_signal(
-				"sig_trigger",
-				_police_enter_trigger_id,
-				{'action': 'unblock'}
-			)
+			_unblock_trigger(_bus_living_trigger_id)
+		'unlocking_account':
+			GameStateController.bank_account_blocked = false
 		'goto_work':
-			EventBus.emit_signal(
-				"sig_trigger",
-				_bus_city_trigger_id,
-				{'action': 'block',
-				'block_state': 'day05_goto_work'})
+			_unblock_trigger(_police_enter_trigger_id)
+			_unblock_trigger('tid_living_pharmacystreet_leave_pharmacy')
+			_unblock_trigger('tid_city_storestreet_leave_store')
+			_unblock_trigger('tid_utility_busstreet_leave_mall')
+			_block_trigger(_bus_city_trigger_id, 'day05_goto_work')
 			if GameStateController.score_class() <= GameStateController.SCORE_CLASS.B:
 				_request_state_change(
 						"tid_city_bankstreet_bank_npc_counter_state_change",
@@ -88,12 +72,7 @@ func _update_progress(new_state):
 				_state_change_trigger_ids['mom'],
 				'day05_unlocked_account'
 			)
-			EventBus.emit_signal(
-				"sig_trigger",
-				_bus_city_trigger_id,
-				{'action': 'unblock'}
-			)
-
+			_unblock_trigger(_bus_city_trigger_id)
 		'bring_meds':
 			_request_state_change(
 				_state_change_trigger_ids['mom'],
@@ -118,6 +97,8 @@ func _on_trigger(trigger_id, kwargs):
 	match trigger_id:
 		'tid_day05_got_bus_ticket':
 			_update_progress('goto_bank')
+		'tid_day05_unlock_account':
+			_update_progress('unlocking_account')
 		'tid_day05_unlocked_account':
 			_update_progress('goto_work')
 		'tid_work_finished':

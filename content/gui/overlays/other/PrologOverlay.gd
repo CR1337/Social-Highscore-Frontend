@@ -94,7 +94,7 @@ func _load_tutorial_picture():
 	
 func _start_game():
 	TrafficController.start_cars()
-	StoryController05.start_day()  # DEBUG!
+	StoryController04.start_day()  # DEBUG!
 	ViewportManager.change_to_transparent()
 
 func _on_YesButton_pressed():

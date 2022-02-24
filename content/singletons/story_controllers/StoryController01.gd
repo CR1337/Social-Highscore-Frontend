@@ -13,12 +13,8 @@ func _ready():
 	
 func _update_progress(new_state):
 	._update_progress(new_state)
-	EventBus.emit_signal(
-		"sig_trigger", 
-		_bus_trigger_id,
-		{'action': 'block',
-		'block_state': 'day01_' + new_state}
-	)
+	_block_trigger(_bus_trigger_id, 'day01_' + new_state)
+
 	match new_state:
 		'goto_pharmacy':
 			_request_state_change(
@@ -78,9 +74,5 @@ func _on_trigger(trigger_id, kwargs):
 	
 func _end_day():
 	._end_day()
-	EventBus.emit_signal(
-		"sig_trigger", 
-		_bus_trigger_id,
-		{'action': 'unblock'}
-	)
+	_unblock_trigger(_bus_trigger_id)
 	StoryController02.start_day()

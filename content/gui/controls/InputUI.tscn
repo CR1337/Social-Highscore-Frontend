@@ -127,11 +127,19 @@ frames = ExtResource( 5 )
 animation = "hungry"
 playing = true
 
-[node name="DEBUGWorkFinishedButton" type="Button" parent="."]
-margin_left = 302.76
-margin_top = 1041.35
-margin_right = 450.76
-margin_bottom = 1139.35
+[node name="DEBUGTriggerLabel" type="LineEdit" parent="."]
+margin_left = 262.519
+margin_top = 1055.01
+margin_right = 488.519
+margin_bottom = 1134.01
+custom_fonts/font = ExtResource( 2 )
+align = 2
+
+[node name="DEBUGTriggerButton" type="Button" parent="."]
+margin_left = 299.763
+margin_top = 1293.07
+margin_right = 447.763
+margin_bottom = 1391.07
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -149,4 +157,4 @@ __meta__ = {
 [connection signal="button_up" from="ActionButton" to="." method="_on_ActionButton_button_up"]
 [connection signal="button_down" from="PhoneButton" to="." method="_on_PhoneButton_button_down"]
 [connection signal="button_up" from="PhoneButton" to="." method="_on_PhoneButton_button_up"]
-[connection signal="pressed" from="DEBUGWorkFinishedButton" to="." method="_on_DEBUGWorkFinishedButton_pressed"]
+[connection signal="pressed" from="DEBUGTriggerButton" to="." method="_on_DEBUGTriggerButton_pressed"]

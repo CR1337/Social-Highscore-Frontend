@@ -9,8 +9,11 @@
         "6": "Yes",
         "7": "No",
         "8": "You cannot take out consumer loans at this time. Improve your Citizen Score first ",
-		"day05_debug_unlock": "DEBUG UNLOCK",
-        "9": "(end dialog)"
+        "day05_want_to_unlock": "I want to unlock my account",
+        "day05_unlock": "You are not the first with this concern today. Since the introduction of the new system. We more frequently have such requests. However, I see that in your case it is an error. Please verify this transaction via 0 Y to unlock your account.",
+        "day05_not_worked": "It seems like your authentication didn't work. Please try it again",
+        "day05_sorry": "Your account is now available again. Sorry for the inconvenience. Have a nice day.",
+        "x": "(end dialog)"
     },
     "graphs": {
         "idle": {
@@ -96,7 +99,7 @@
                 "tid": "4",
                 "answers": [
                     {
-                        "tid": "9",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -147,7 +150,7 @@
                 "tid": "8",
                 "answers": [
                     {
-                        "tid": "9",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -155,13 +158,67 @@
                 "trigger_id": null
             }
         },
-		"day05_unlock_account": {
+        "day05_unlock_account": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day05_debug_unlock",
+                "tid": "0",
                 "answers": [
                     {
-                        "tid": "9",
+                        "tid": "day05_want_to_unlock",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "day05_unlock",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_day05_unlock_account"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_authentication_failed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day05_not_worked",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_day05_unlock_account"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_authentication_accepted": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day05_sorry",
+                "answers": [
+                    {
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": "tid_day05_unlocked_account"
                     }

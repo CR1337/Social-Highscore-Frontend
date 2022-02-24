@@ -1,8 +1,10 @@
 {
     "texts": {
-        "day01": "What are you doing here? You aren't supposed to be able to go to the city today",
-        "day04": "Through the Communityscore, I was finally able to motivate myself to live healthier. I now collect points for healthy food.",
-        "day05": "...",
+        "day01": "You should not be here today",
+        "day04": "Good day. I almost forgot. I still have to inform you that every officer is obligated to report people who show antisocial behavior and could be a danger to our society. If you know of such a person, just contact me. Then get to work. Here is your briefing.",
+        "day05": "You are too late. This is not acceptable and will have consequences. Now put on your Uniform and get to work. Here are your tasks for today.",
+        "start_briefing": "(start briefing)",
+        "cancel": "(cancel)",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -26,7 +28,12 @@
                 "tid": "day04",
                 "answers": [
                     {
-                        "tid": "x",
+                        "tid": "start_briefing",
+                        "nid": null,
+                        "trigger_id": "tid_start_work"
+                    },
+                    {
+                        "tid": "cancel",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -37,10 +44,15 @@
         "day05_initial": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day04",
+                "tid": "day05",
                 "answers": [
                     {
-                        "tid": "x",
+                        "tid": "start_briefing",
+                        "nid": null,
+                        "trigger_id": "tid_start_work"
+                    },
+                    {
+                        "tid": "cancel",
                         "nid": null,
                         "trigger_id": null
                     }

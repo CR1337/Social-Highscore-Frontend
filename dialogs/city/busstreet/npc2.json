@@ -1,69 +1,51 @@
 {
     "texts": {
-        "0": "Hi",
-        "1": "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "2": "Tschüss!",
-        "3": "Auch Hi",
-        "4": "Hallo",
-        "5": "Ganz gut",
-        "6": "Schrecklich",
-        "7": "END"
+        "day01": "What are you doing here? You aren't supposed to be able to go to the city today",
+        "day04": "...",
+        "day05": "Finally there are consequences for these conspiracy theorists who have nothing better to do than to divide society and set us exemplary citizens against each other. A longer stay in reform school is exactly the right thing for these folks.",
+        "x": "(end dialog)"
     },
     "graphs": {
-        "state0": {
+        "day01_initial": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "0",
+                "tid": "day01",
                 "answers": [
-                    {"tid": "3", "nid": "node1", "trigger_id": null},
-                    {"tid": "4", "nid": "node1", "trigger_id": null}
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
                 ],
                 "trigger_id": null
-            },
-            "node1": {
-                "tid": "1",
-                "answers": [
-                    {"tid": "5", "nid": "node2", "trigger_id": null},
-                    {"tid": "6", "nid": "node2", "trigger_id": null},
-                    {"tid": "5", "nid": "node2", "trigger_id": null},
-                    {"tid": "6", "nid": "node2", "trigger_id": null}
-                ],
-                "trigger_id": null
-            },
-            "node2": {
-                "tid": "2",
-                "answers": [
-                    {"tid": "7", "nid": null, "trigger_id": "debug_toilet_trigger"}
-                ],
-                "trigger_id": "debug_toilet_trigger"
             }
         },
-        "idle": {
+        "day04_initial": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "0",
+                "tid": "day04",
                 "answers": [
-                    {"tid": "3", "nid": "node1", "trigger_id": null},
-                    {"tid": "4", "nid": "node1", "trigger_id": null}
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
                 ],
                 "trigger_id": null
-            },
-            "node1": {
-                "tid": "1",
+            }
+        },
+        "day05_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day04",
                 "answers": [
-                    {"tid": "5", "nid": "node2", "trigger_id": null},
-                    {"tid": "6", "nid": "node2", "trigger_id": null},
-                    {"tid": "5", "nid": "node2", "trigger_id": null},
-                    {"tid": "6", "nid": "node2", "trigger_id": null}
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
                 ],
                 "trigger_id": null
-            },
-            "node2": {
-                "tid": "2",
-                "answers": [
-                    {"tid": "7", "nid": null, "trigger_id": "debug_toilet_trigger"}
-                ],
-                "trigger_id": "debug_toilet_trigger"
             }
         }
     }

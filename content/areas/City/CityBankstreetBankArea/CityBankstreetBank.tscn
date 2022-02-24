@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/tilesets/interior/Modern_Office_Black_Shadow_32x32.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/19_Hospital_32x32.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/bankstreet/bank/npc_counter2.tres" type="SpriteFrames" id=21]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/bankstreet/bank/npc_security2.tres" type="SpriteFrames" id=22]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/bankstreet/bank/npc_officer.tres" type="SpriteFrames" id=23]
+[ext_resource path="res://content/areas/City/CityBankstreetBankArea/BankPaymentTrigger.gd" type="Script" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -2681,6 +2682,10 @@ id = "tid_city_bankstreet_bank_npc_counter_start_dialog"
 [node name="StateChangeTrigger" type="Node" parent="NpcCounter"]
 script = ExtResource( 16 )
 id = "tid_city_bankstreet_bank_npc_counter_state_change"
+
+[node name="BankPaymentTrigger" type="Node" parent="NpcCounter"]
+script = ExtResource( 24 )
+id = "tid_day05_unlock_account"
 
 [node name="NpcCounter2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 576, 800 )

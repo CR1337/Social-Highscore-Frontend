@@ -7,8 +7,8 @@
         "4": "I should go to the pharmacy.",
         "5": "I should bring mom her medication.",
         "6": "Maybe I could go to bed early today.",
-		"7": "I can't buy a ticket because my bank account is blocked. Maybe <partner> can help me.",
-		"8": "I should really go to work now. I'm already late.",
+        "7": "I can't buy a ticket because my bank account is blocked. Maybe <partner> can help me.",
+        "8": "I should really go to work now. I'm already late.",
         "payment_message": "It seems like the payment didn't work.",
         "x": "(end monolog)"
     },
@@ -138,7 +138,7 @@
                 "trigger_id": null
             }
         },
-		"day05_goto_partner": {
+        "day05_goto_partner": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "7",
@@ -152,7 +152,7 @@
                 "trigger_id": null
             }
         },
-		"day05_goto_work": {
+        "day05_goto_work": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "8",

@@ -16,7 +16,7 @@ func _update_progress(new_state):
 	match new_state:
 		'buy_meds':
 			EventBus.emit_signal("sig_got_phone_message", 'mom', "Hello darling. I am not feeling so well again. Could you please go to the pharmacy and get me my medication?")
-			EventBus.emit_signal("sig_trigger", _bank_enter_trigger_id, {'action': 'block'})
+			_block_trigger(_bank_enter_trigger_id)
 			GameStateController.bank_account_blocked = true
 			_request_state_change(
 				"tid_living_pharmacystreet_pharmacy_npc_counter_state_change",
@@ -44,6 +44,7 @@ func start_day():
 
 
 func _on_trigger(trigger_id, kwargs):
+	
 	match trigger_id:
 		'tid_work_finished':
 			_update_progress('buy_meds')
