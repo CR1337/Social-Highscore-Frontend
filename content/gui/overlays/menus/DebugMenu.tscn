@@ -1,0 +1,180 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=1]
+[ext_resource path="res://content/gui/overlays/menus/DebugMenu.gd" type="Script" id=2]
+
+[node name="ConfigMenu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 768.0
+margin_bottom = 1408.0
+mouse_filter = 2
+color = Color( 0.257813, 0.257813, 0.257813, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+margin_right = 768.0
+margin_bottom = 1365.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 748.0
+margin_bottom = 1345.0
+custom_constants/separation = 26
+
+[node name="TidTextEdit" type="TextEdit" parent="Background/Margin/VBox"]
+margin_right = 728.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "tid_"
+
+[node name="TriggerButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 90.0
+margin_right = 728.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "Trigger"
+
+[node name="SigTextEdit" type="TextEdit" parent="Background/Margin/VBox"]
+margin_top = 180.0
+margin_right = 728.0
+margin_bottom = 244.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "sig_"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SignalButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 270.0
+margin_right = 728.0
+margin_bottom = 334.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "Emit EventBus Signal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkipWorkButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 360.0
+margin_right = 728.0
+margin_bottom = 424.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "Skip Work"
+
+[node name="DayButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 450.0
+margin_right = 728.0
+margin_bottom = 514.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Next Day"
+
+[node name="MoneyHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 540.0
+margin_right = 728.0
+margin_bottom = 604.0
+
+[node name="MoneySpinBox" type="SpinBox" parent="Background/Margin/VBox/MoneyHBox"]
+margin_right = 362.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+min_value = -1000.0
+max_value = 10000.0
+align = 1
+
+[node name="MoneyButton" type="Button" parent="Background/Margin/VBox/MoneyHBox"]
+margin_left = 366.0
+margin_right = 728.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Set Money"
+
+[node name="ScoreHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 630.0
+margin_right = 728.0
+margin_bottom = 694.0
+
+[node name="ScoreSpinBox" type="SpinBox" parent="Background/Margin/VBox/ScoreHBox"]
+margin_right = 362.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+max_value = 5000.0
+align = 1
+
+[node name="ScoreButton" type="Button" parent="Background/Margin/VBox/ScoreHBox"]
+margin_left = 366.0
+margin_right = 728.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Set Score"
+
+[node name="HungerHBox" type="HBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 720.0
+margin_right = 728.0
+margin_bottom = 784.0
+
+[node name="HungerSpinBox" type="SpinBox" parent="Background/Margin/VBox/HungerHBox"]
+margin_right = 362.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+min_value = -1.0
+max_value = 2.0
+align = 1
+
+[node name="HungerButton" type="Button" parent="Background/Margin/VBox/HungerHBox"]
+margin_left = 366.0
+margin_right = 728.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Set Hunger"
+
+[node name="BusticketButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 810.0
+margin_right = 728.0
+margin_bottom = 874.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "Get Bus Ticket"
+
+[node name="BackButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 900.0
+margin_right = 728.0
+margin_bottom = 964.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "Back"
+
+[connection signal="pressed" from="Background/Margin/VBox/TriggerButton" to="." method="_on_TriggerButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/SignalButton" to="." method="_on_SignalButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/SkipWorkButton" to="." method="_on_SkipWorkButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/DayButton" to="." method="_on_DayButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/MoneyHBox/MoneyButton" to="." method="_on_MoneyButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/ScoreHBox/ScoreButton" to="." method="_on_ScoreButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/HungerHBox/HungerButton" to="." method="_on_HungerButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/BusticketButton" to="." method="_on_BusticketButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/BackButton" to="." method="_on_BackButton_pressed"]

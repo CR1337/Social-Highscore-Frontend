@@ -1373,11 +1373,11 @@
         "movement_waiting_handle": 0
     },
     "/root/MainScene/Areas/CityJobcenterstreetJobcenterArea/NpcCounter": {
-        "current_position_x": 0,
-        "current_position_y": 0,
+        "current_position_x": 6.5,
+        "current_position_y": 12,
         "active": false,
-        "announced_position_x": 0,
-        "announced_position_y": 0,
+        "announced_position_x": 6.5,
+        "announced_position_y": 12,
         "looking_direction_x": 0,
         "looking_direction_y": 1,
         "state": "idle",
@@ -1552,7 +1552,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/MainScene/Areas/CityPolicestreetArea/Npc": {
+    "/root/MainScene/Areas/CityPolicestreetArea/NpcPolice1": {
         "current_position_x": 8,
         "current_position_y": 11,
         "active": false,
@@ -1571,7 +1571,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/MainScene/Areas/CityPolicestreetArea/Npc2": {
+    "/root/MainScene/Areas/CityPolicestreetArea/NpcPolice2": {
         "current_position_x": 10,
         "current_position_y": 11,
         "active": false,
@@ -1590,7 +1590,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/MainScene/Areas/CityPolicestreetPoliceArea/Npc3": {
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcPolice3": {
         "current_position_x": 1,
         "current_position_y": 10,
         "active": false,
@@ -1609,7 +1609,7 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/MainScene/Areas/CityPolicestreetPoliceArea/Npc4": {
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcPolice4": {
         "current_position_x": 6,
         "current_position_y": 11,
         "active": false,

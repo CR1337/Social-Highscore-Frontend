@@ -36,6 +36,7 @@ func _friend_mall_message(handle):
 	
 func start_day():
 	.start_day()
+	_set_friend_visibility('home')
 	_update_progress('goto_work')
 
 func _on_ate_in_mall(item_key):

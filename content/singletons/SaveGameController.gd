@@ -55,6 +55,7 @@ func _save_default_game():
 
 func start_new_game():
 	ViewportManager.change_to_prolog()
+	EventBus.emit_signal("sig_fridge_content_changed")
 	
 func load_default_game():
 	print("savegame empty")

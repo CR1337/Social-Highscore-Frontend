@@ -25,7 +25,11 @@ const _state_change_trigger_ids = {
 	'partner': 'tid_living_friendstreet_partner_npc_partner_state_change',
 	'boss': 'tid_city_policestreet_police_npc_boss_state_change',
 	'busstreet01': 'tid_city_busstreet_npc_state_change',
-	'busstreet02': 'tid_city_busstreet_npc2_state_change'
+	'busstreet02': 'tid_city_busstreet_npc2_state_change',
+	'police1': 'tid_city_policestreet_npc_police1_state_change',
+	'police2': 'tid_city_policestreet_npc_police2_state_change',
+	'police3': 'tid_city_policestreet_police_npc_police3_state_change',
+	'police4': 'tid_city_policestreet_police_npc_police4_state_change',
 }
 
 func _set_friend_visibility(friend_key):
@@ -55,14 +59,15 @@ func _update_progress(new_state):
 		_end_day()
 	
 func start_day():
+	GameStateController.next_day()
 	_set_initial_dialog()
-	
 	EventBus.connect("sig_trigger", self, "_on_trigger")
 	
 func _on_trigger(trigger_id, kwargs):
 	
 	match trigger_id:
 		'tid_bed':
+			print(trigger_id)
 			if progress < states.find('goto_bed'):
 				ViewportManager.change_to_dialog(
 					"res://dialogs/other/bed_self_talk.json",

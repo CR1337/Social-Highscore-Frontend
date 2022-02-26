@@ -19,6 +19,13 @@ func _on_image_processing_done(parsed_response, job_id, image):
 func _add_record(params):
 	records.append(params)
 	GameStateController.change_score(params['score'])
+	
+func add_debug(score):
+	var params = {
+		'type': 'debug',
+		'score': score
+	}
+	_add_record(params)
 
 func add_emotional_reaction_on_news(score, news, face, emotion, preferred_emotions):
 	var params = {
@@ -243,6 +250,8 @@ func record_display_string_for_app(record):
 	# maybe put this into file?
 	var result = ""
 	match record['type']:
+		'debug':
+			result += "DEBUG"
 		'emotional_reaction_on_news':
 			result += "The news was:\n"
 			result += record['news'] + "\n"

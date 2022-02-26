@@ -41,3 +41,7 @@ func _on_PhoneButton_button_up():
 
 func _on_DEBUGTriggerButton_pressed():
 	EventBus.emit_signal("sig_trigger", $DEBUGTriggerLabel.text, {})
+
+
+func _on_DEBUGMenuButton_pressed():
+	ViewportManager.change_to_debug()

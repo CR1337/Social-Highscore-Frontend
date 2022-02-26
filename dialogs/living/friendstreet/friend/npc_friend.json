@@ -1,7 +1,9 @@
 {
     "texts": {
         "day01_hello": "Hi buddy. Nice to see you again. Let's do something together again in the next few days.",
-        "x": "(end dialog)"
+		"day03_initial": "Hey. Do you feel like doing something after work? I'll text you later.",
+		"day03_post_dinner": "It was nice today. We should do that again sometime.",
+		"x": "(end dialog)"
     },
     "graphs": {
         "day01_initial": {
@@ -21,7 +23,7 @@
 		"day02_initial": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day01_hello",
+                "tid": "x",
                 "answers": [
                     {
                         "tid": "x",
@@ -35,7 +37,7 @@
 		"day03_initial": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day01_hello",
+                "tid": "day03_initial",
                 "answers": [
                     {
                         "tid": "x",
@@ -46,10 +48,10 @@
                 "trigger_id": null
             }
         },
-		"day03_post_meeting": {
+		"day03_post_dinner": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day01_hello",
+                "tid": "day03_post_dinner",
                 "answers": [
                     {
                         "tid": "x",

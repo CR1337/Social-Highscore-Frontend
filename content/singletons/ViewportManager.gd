@@ -1,5 +1,7 @@
 extends Node
 
+onready var _debug_menu = get_node("/root/MainScene/Overlays/DebugMenu")
+
 onready var config_menu = get_node("/root/MainScene/Overlays/ConfigMenu")
 onready var reference_image_menu = get_node("/root/MainScene/Overlays/ReferenceImageMenu")
 
@@ -187,3 +189,7 @@ func change_dialog_overlay(target_overlay):
 	target_overlay.position = _current_dialog_overlay.position
 	_current_dialog_overlay.position = tmp_position
 	_current_dialog_overlay = target_overlay
+
+func change_to_debug():
+	_debug_menu._update_debug_menu()
+	change_overlay(_debug_menu)

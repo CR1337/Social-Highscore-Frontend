@@ -13,7 +13,8 @@ func _ready():
 	
 func _update_progress(new_state):
 	._update_progress(new_state)
-	_block_trigger(_bus_trigger_id, 'day01_' + new_state)
+	if states.find(new_state) <= states.find('goto_bed'):
+		_block_trigger(_bus_trigger_id, 'day01_' + new_state)
 
 	match new_state:
 		'goto_pharmacy':
@@ -74,5 +75,4 @@ func _on_trigger(trigger_id, kwargs):
 	
 func _end_day():
 	._end_day()
-	_unblock_trigger(_bus_trigger_id)
 	StoryController02.start_day()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -13,7 +13,9 @@
 [ext_resource path="res://content/areas/components/CrossingArea.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=12]
 [ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=13]
+[ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=14]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/policestreet/npc2.tres" type="SpriteFrames" id=15]
+[ext_resource path="res://content/trigger/StateChangeTrigger.gd" type="Script" id=16]
 
 [node name="CityPolicestreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -145,12 +147,32 @@ current_position = Vector2( 5, 17 )
 script = ExtResource( 13 )
 id = "tid_city_policestreet_car_11_1_start"
 
-[node name="Npc" parent="." instance=ExtResource( 12 )]
+[node name="NpcPolice1" parent="." instance=ExtResource( 12 )]
 position = Vector2( 544, 736 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_policestreet_npc_police1_start_dialog"
 animation = ExtResource( 10 )
 current_position = Vector2( 8, 11 )
 
-[node name="Npc2" parent="." instance=ExtResource( 12 )]
+[node name="DialogStartTrigger" type="Node" parent="NpcPolice1"]
+script = ExtResource( 14 )
+id = "tid_city_policestreet_npc_police1_start_dialog"
+
+[node name="StateChangeTrigger" type="Node" parent="NpcPolice1"]
+script = ExtResource( 16 )
+id = "tid_city_policestreet_npc_police1_state_change"
+
+[node name="NpcPolice2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 672, 736 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_policestreet_npc_police2_start_dialog"
 animation = ExtResource( 15 )
 current_position = Vector2( 10, 11 )
+
+[node name="DialogStartTrigger" type="Node" parent="NpcPolice2"]
+script = ExtResource( 14 )
+id = "tid_city_policestreet_npc_police2_start_dialog"
+
+[node name="StateChangeTrigger" type="Node" parent="NpcPolice2"]
+script = ExtResource( 16 )
+id = "tid_city_policestreet_npc_police2_state_change"

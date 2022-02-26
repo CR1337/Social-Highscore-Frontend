@@ -1,15 +1,33 @@
 {
     "texts": {
-        "day03_DEBUG": "DEBUG DEBUG DEBUG",
-		"day03_DEBUG_again": "DEBUG DEBUG DEBUG again",
-		"day03_DEBUG_again_ff": "DEBUG DEBUG DEBUG again fast food",
-        "x": "(end dialog)"
+		"day03_pre_eat": "I'm glad you came. Why don't you get something to eat first? You have here in the counters many great stuff. I especially like the burgers, although the state doesn't like that at all.",
+		"day03_question1": "I heard you're working for the police now. How do you like it there?",
+		"day03_q1_answer1": "It's really a great job.",
+		"day03_q1_reaction1": "Good to hear.",
+		"day03_q1_answer2": "Some rules are really absurd.",
+		"day03_q1_reaction2": "You just got points deducted, didn't you? Some things you shouldn't say too loudly. The state listens in everywhere.",
+		"day03_q1_answer3": "I am proud to be able to make a contribution.",
+		"day03_q1_reaction3": "Now you sound like them, too. That happened fast.",
+		"day03_question2": "I couldn't do a job like that. I don't know what to make of this new system. I think it can still lead to some problems for all of us.",
+		"day03_q2_answer1": "Oh, it's not so bad.",
+		"day03_q2_answer2": "Yes, I worry about such things too.",
+		"day03_question3": "You already know what you're getting into. An old friend I trust. But enough of that. We haven't done anything for ages. How's your food?",
+		"day03_q3_answer1": "Really tasty.",
+		"day03_q3_reaction1_fast_food": "Cool, my burger is delicious too.",
+		"day03_q3_reaction1_no_fast_food": "Cool, I'll stick with my burger anyway.",
+		"day03_q3_answer2": "Disgusting.",
+		"day03_q3_reaction2_fast_food": "I don't even know what you have. I think the burger is great.",
+		"day03_q3_reaction2_no_fast_food": "You should have taken the burger.",
+		"day03_bye": "It's getting late. I have to go. Say hello to your mother for me.",
+
+        "x": "(end dialog)",
+		"next": "(next)"
     },
     "graphs": {
         "day03_talk_to_friend": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day03_DEBUG",
+                "tid": "day03_pre_eat",
                 "answers": [
                     {
                         "tid": "x",
@@ -21,9 +39,117 @@
             }
         },
 		"day03_ate_fast_food": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "day03_DEBUG_again_ff",
+            "initial_nid": "q1",
+            "q1": {
+                "tid": "day03_question1",
+                "answers": [
+                    {
+                        "tid": "day03_q1_answer1",
+                        "nid": "q1r1",
+                        "trigger_id": null
+                    },
+					{
+                        "tid": "day03_q1_answer2",
+                        "nid": "q1r2",
+                        "trigger_id": "tid_critical_speach"
+                    },
+					{
+                        "tid": "day03_q1_answer3",
+                        "nid": "q1r3",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q1r1": {
+                "tid": "day03_q1_reaction1",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "q2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q1r2": {
+                "tid": "day03_q1_reaction2",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "q2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q1r3": {
+                "tid": "day03_q1_reaction3",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "q2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q2": {
+                "tid": "day03_question2",
+                "answers": [
+                    {
+                        "tid": "day03_q2_answer1",
+                        "nid": "q3",
+                        "trigger_id": null
+                    },
+					{
+                        "tid": "day03_q2_answer2",
+                        "nid": "q3",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q3": {
+                "tid": "day03_question3",
+                "answers": [
+                    {
+                        "tid": "day03_q3_answer1",
+                        "nid": "q3r1",
+                        "trigger_id": null
+                    },
+					{
+                        "tid": "day03_q3_answer2",
+                        "nid": "q3r2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q3r1": {
+                "tid": "day03_q3_reaction1_fast_food",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "bye",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q3r2": {
+                "tid": "day03_q3_reaction2_fast_food",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "bye",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"bye": {
+                "tid": "day03_bye",
                 "answers": [
                     {
                         "tid": "x",
@@ -35,9 +161,117 @@
             }
         },
 		"day03_not_ate_fast_food": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "day03_DEBUG_again",
+            "initial_nid": "q1",
+            "q1": {
+                "tid": "day03_question1",
+                "answers": [
+                    {
+                        "tid": "day03_q1_answer1",
+                        "nid": "q1r1",
+                        "trigger_id": null
+                    },
+					{
+                        "tid": "day03_q1_answer2",
+                        "nid": "q1r2",
+                        "trigger_id": "tid_critical_speach"
+                    },
+					{
+                        "tid": "day03_q1_answer3",
+                        "nid": "q1r3",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q1r1": {
+                "tid": "day03_q1_reaction1",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "q2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q1r2": {
+                "tid": "day03_q1_reaction2",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "q2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q1r3": {
+                "tid": "day03_q1_reaction3",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "q2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q2": {
+                "tid": "day03_question2",
+                "answers": [
+                    {
+                        "tid": "day03_q2_answer1",
+                        "nid": "q3",
+                        "trigger_id": null
+                    },
+					{
+                        "tid": "day03_q2_answer2",
+                        "nid": "q3",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q3": {
+                "tid": "day03_question3",
+                "answers": [
+                    {
+                        "tid": "day03_q3_answer1",
+                        "nid": "q3r1",
+                        "trigger_id": null
+                    },
+					{
+                        "tid": "day03_q3_answer2",
+                        "nid": "q3r2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q3r1": {
+                "tid": "day03_q3_reaction1_no_fast_food",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "bye",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"q3r2": {
+                "tid": "day03_q3_reaction2_no_fast_food",
+                "answers": [
+                    {
+                        "tid": "next",
+                        "nid": "bye",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"bye": {
+                "tid": "day03_bye",
                 "answers": [
                     {
                         "tid": "x",

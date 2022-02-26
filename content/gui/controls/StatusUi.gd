@@ -20,7 +20,7 @@ func _display_work():
 	timer_label.visible = true
 	
 func _display_hunger():
-	var hunger = GameStateController.hunger
+	var hunger = int(GameStateController.hunger)
 	match hunger:
 		-1:
 			status_sprite.visible = false

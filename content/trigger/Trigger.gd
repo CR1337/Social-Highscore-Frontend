@@ -13,6 +13,9 @@ func _on_trigger(trigger_id, kwargs):
 	if trigger_id != id:
 		return
 		
+	if trigger_id == "tid_living_busstreet_bus":
+		print("")
+		
 	if kwargs.get('action') == 'block':
 		_blocked = true
 		if kwargs.has('block_state'):

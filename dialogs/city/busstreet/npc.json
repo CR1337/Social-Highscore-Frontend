@@ -1,7 +1,9 @@
 {
     "texts": {
         "day01": "What are you doing here? You aren't supposed to be able to go to the city today",
-        "day04": "Through the Communityscore, I was finally able to motivate myself to live healthier. I now collect points for healthy food.",
+        "day02": "I was just at the job center. They gave me a job as a cook. I can start tomorrow and I'm totally looking forward to it. If you need a new job, check out the job center too. It's right over there a little east of here.",
+		"day03": "Thanks to the many police officers, I feel totally safe even at night. If you ever need the police, you can find them in the east.",
+		"day04": "Through the Communityscore, I was finally able to motivate myself to live healthier. I now collect points for healthy food.",
         "day05": "...",
         "x": "(end dialog)"
     },
@@ -10,6 +12,34 @@
             "initial_nid": "node0",
             "node0": {
                 "tid": "day01",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day02_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day02",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day03_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day03",
                 "answers": [
                     {
                         "tid": "x",

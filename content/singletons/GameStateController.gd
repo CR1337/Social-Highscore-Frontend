@@ -97,17 +97,20 @@ func score_class():
 	else:
 		return SCORE_CLASS.Z
 
-func _next_day():
+onready var story_controllers = [
+	null,
+	StoryController01,
+	StoryController02,
+	StoryController03,
+	StoryController04,
+	StoryController05
+	# TODO
+]
+
+func next_day():
 	current_day += 1
 	days_without_mom += 1
 	
-func timer(handle):
-	if handle == _next_day_handle:
-		_next_day()
-		_next_day_handle = TimeController.setTimer(Globals.seconds_per_day, self, "timer")
-	if handle == _next_status_update_handle:
-		_next_status_update_handle = TimeController.setTimer(Globals.seconds_per_day / 24, self, "timer")
-
 func change_score(amount):
 	score += amount
 	emit_signal("sig_score_changed", score)
@@ -208,6 +211,10 @@ const _price_factors = {
 
 func price_factor():
 	return _price_factors[score_class()]
+	
+const _medication_base_price = 50
+func medication_price():
+	return _medication_base_price * price_factor()
 
 const _shopping_payment_handle = 'ph_shopping_success'
 const fridge_capacity = 3
@@ -286,6 +293,7 @@ func delete_fridge_content_by_name(name):
 	for food_item in fridge_content:
 		if food_item['name'] == name:
 			fridge_content.erase(food_item)
+			EventBus.emit_signal("sig_fridge_content_changed")
 			return
 # END shopping + fridge
 
