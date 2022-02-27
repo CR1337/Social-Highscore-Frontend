@@ -3,6 +3,17 @@ extends Node2D
 onready var shopping_sprite = $ShoppingSprite
 onready var timer_label = $TimerLabel
 onready var status_sprite = $StatusSprite
+onready var weekday_label = $WeekdayLabel
+
+const _weekdays = [
+	"Saturday",
+	"Sunday",
+	"Monday",
+	"Tuesday",
+	"Wednesday",
+	"Thursday",
+	"Friday"
+]
 
 func _process(delta):
 	shopping_sprite.visible = len(GameStateController.shopping_cart) > 0
@@ -10,6 +21,7 @@ func _process(delta):
 		_display_work()
 	else:
 		_display_hunger()
+	_display_weekday()
 		
 func _display_work():
 	status_sprite.animation = 'work'
@@ -48,3 +60,7 @@ func _display_timer(total_seconds):
 	var seconds_string = "%02d" % seconds
 
 	timer_label.text = minutes_string + ":" + seconds_string
+	
+func _display_weekday():
+	var weekday_index = GameStateController.current_day % 7
+	weekday_label.text = _weekdays[weekday_index]

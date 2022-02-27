@@ -127,13 +127,28 @@ frames = ExtResource( 5 )
 animation = "hungry"
 playing = true
 
+[node name="WeekdayLabel" type="Label" parent="StatusUi"]
+margin_left = 650.561
+margin_top = 1362.94
+margin_right = 758.561
+margin_bottom = 1396.94
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sunday"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="DEBUGTriggerLabel" type="LineEdit" parent="."]
-margin_left = 262.519
-margin_top = 1055.01
-margin_right = 488.519
-margin_bottom = 1134.01
+margin_left = 241.282
+margin_top = 1062.09
+margin_right = 467.282
+margin_bottom = 1141.09
 custom_fonts/font = ExtResource( 2 )
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DEBUGTriggerButton" type="Button" parent="."]
 margin_left = 299.763

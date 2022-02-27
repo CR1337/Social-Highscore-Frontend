@@ -149,7 +149,6 @@ func current_story_controller():
 	
 func set_day(day):
 	current_day = day
-	current_day += 1
 	days_without_mom += 1
 	# TODO: handling Loan, Rent, Debt, daily score updates...
 
