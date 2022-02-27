@@ -2862,5 +2862,20 @@
     },
     "/root/TrafficController": {
         "traffic_toggle_handle": 0
+    },
+    "/root/StoryController01": {
+        "progress": 0
+    },
+    "/root/StoryController02": {
+        "progress": 0
+    },
+    "/root/StoryController03": {
+        "progress": 0
+    },
+    "/root/StoryController04": {
+        "progress": 0
+    },
+    "/root/StoryController05": {
+        "progress": 0
     }
 }

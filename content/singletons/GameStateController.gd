@@ -5,7 +5,7 @@ var money = 1000
 
 var days_without_mom = 0
 
-var current_day = 0
+
 
 var ticket_bought = false
 
@@ -50,6 +50,8 @@ func restore_state(state):
 	ticket_bought = state['ticket_bought']
 	_mall_food_timer_items = state['mall_food_timer_items']
 	bank_account_blocked = state['bank_account_blocked']
+	
+	current_story_controller().activate()
 	
 	emit_signal("sig_hunger_changed", hunger)
 	EventBus.emit_signal("sig_fridge_content_changed")
@@ -97,19 +99,7 @@ func score_class():
 	else:
 		return SCORE_CLASS.Z
 
-onready var story_controllers = [
-	null,
-	StoryController01,
-	StoryController02,
-	StoryController03,
-	StoryController04,
-	StoryController05
-	# TODO
-]
 
-func next_day():
-	current_day += 1
-	days_without_mom += 1
 	
 func change_score(amount):
 	score += amount
@@ -126,6 +116,44 @@ func _on_add_money(amount, description):
 	change_money(amount)
 	
 var bank_account_blocked = false
+
+# BEGIN story
+
+var current_day = 0
+onready var story_controllers = [
+	null,
+	StoryController01,
+	StoryController02,
+	StoryController03,
+	StoryController04,
+	StoryController05,
+	StoryController06,
+	StoryController07,
+	StoryController08,
+	StoryController09,
+	StoryController10,
+	StoryController11,
+	StoryController12,
+	StoryController13,
+	StoryController14,
+	StoryController15
+]
+
+func deactivate_all_story_controllers():
+	for story_controller in story_controllers:
+		if story_controller != null:
+			story_controller.deactivate()
+
+func current_story_controller():
+	return story_controllers[current_day]
+	
+func set_day(day):
+	current_day = day
+	current_day += 1
+	days_without_mom += 1
+	# TODO: handling Loan, Rent, Debt, daily score updates...
+
+# END story
 	
 # BEGIN work
 

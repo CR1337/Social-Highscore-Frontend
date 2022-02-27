@@ -10,6 +10,13 @@ func _ready():
 	]
 	._ready()
 	
+func activate():
+	.activate()
+	EventBus.connect("sig_ate_in_mall", self, "_on_ate_in_mall")
+	
+func deactivate():
+	.deactivate()	
+	EventBus.disconnect("sig_ate_in_mall", self, "_on_ate_in_mall")
 
 func _update_progress(new_state):
 	._update_progress(new_state)
@@ -22,7 +29,7 @@ func _update_progress(new_state):
 				'day03_talk_to_friend'
 			)
 		'get_food':
-			EventBus.connect("sig_ate_in_mall", self, "_on_ate_in_mall")
+			pass
 		'goto_bed':
 			ViewportManager.blend_with_black()
 			_set_friend_visibility('home')
@@ -42,7 +49,6 @@ func start_day():
 func _on_ate_in_mall(item_key):
 	if states[progress] == 'get_food':
 		_update_progress('talk_to_friend_again')
-		EventBus.disconnect("sig_ate_in_mall", self, "_on_ate_in_mall")
 		if item_key == "fast_food":
 			_request_state_change(
 				"tid_utility_busstreet_mall_npc_friend_state_change",

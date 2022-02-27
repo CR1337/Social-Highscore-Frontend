@@ -18,7 +18,9 @@ func _singletons():
 		ImageProcessor,
 		NewsController,
 		TrafficController
-	]
+	] + GameStateController.story_controllers.slice(
+		1, len(GameStateController.story_controllers) - 1
+	)
 
 func _create_file():
 	var file = File.new()
@@ -54,6 +56,7 @@ func _save_default_game():
 	file.close()
 
 func start_new_game():
+	GameStateController.deactivate_all_story_controllers()
 	ViewportManager.change_to_prolog()
 	EventBus.emit_signal("sig_fridge_content_changed")
 	
@@ -102,8 +105,8 @@ func _debug_save_default_game():
 	call_deferred("start_new_game")
 
 func _ready():
-#	_debug_save_default_game()
-#	return
+	_debug_save_default_game()
+	return
 	var file = File.new()
 	if not file.file_exists(_save_filename):
 		_create_file()

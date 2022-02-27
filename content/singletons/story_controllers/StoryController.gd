@@ -3,6 +3,14 @@ extends Node
 var progress = 0
 var states: Array
 
+func persistent_state():
+	return {
+		'progress': progress
+	}
+	
+func restore_state(state):
+	progress = state['progress']
+
 onready var _friend_nodes = {
 	'home': get_node("/root/MainScene/Areas/LivingFriendstreetFriendArea/NpcFriend"),
 	'mall': get_node("/root/MainScene/Areas/UtilityBusstreetMallArea/NpcFriend")
@@ -32,6 +40,12 @@ const _state_change_trigger_ids = {
 	'police4': 'tid_city_policestreet_police_npc_police4_state_change',
 }
 
+func activate():
+	EventBus.connect("sig_trigger", self, "_on_trigger")
+
+func deactivate():
+	EventBus.disconnect("sig_trigger", self, "_on_trigger")
+
 func _set_friend_visibility(friend_key):
 	for node in _friend_nodes.values():
 		node.set_current_position(_invisible_position)
@@ -58,10 +72,12 @@ func _update_progress(new_state):
 	if new_state == 'finished':
 		_end_day()
 	
+	
 func start_day():
-	GameStateController.next_day()
+	activate()
 	_set_initial_dialog()
-	EventBus.connect("sig_trigger", self, "_on_trigger")
+	GameStateController.set_day(int(_get_day()))
+	
 	
 func _on_trigger(trigger_id, kwargs):
 	
@@ -82,7 +98,7 @@ func _on_trigger(trigger_id, kwargs):
 			_update_progress('finished')
 	
 func _end_day():
-	EventBus.disconnect("sig_trigger", self, "_on_trigger")
+	deactivate()
 	ViewportManager.blend_with_black()
 	GameStateController.ticket_bought = false
 	

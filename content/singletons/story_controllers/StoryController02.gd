@@ -8,6 +8,13 @@ func _ready():
 	]
 	._ready()
 	
+func activate():
+	.activate()
+	EventBus.connect("sig_fridge_content_changed", self, "_on_fridge_content_changed")
+	
+func deactivate():
+	.deactivate()
+	EventBus.disconnect("sig_fridge_content_changed", self, "_on_fridge_content_changed")
 	
 func _update_progress(new_state):
 	._update_progress(new_state)
@@ -33,16 +40,13 @@ func _update_progress(new_state):
 				_state_change_trigger_ids['partner'],
 				'day02_goto_bed'
 			)
-			
 			GameStateController.delete_fridge_content_by_name('chocolate')
-			EventBus.disconnect("sig_fridge_content_changed", self, "_on_fridge_content_changed")
 
 func start_day():
 	.start_day()
 	_unblock_trigger('tid_living_busstreet_bus')
 	_set_friend_visibility('none')
 	_update_progress('goto_jobcenter')
-	EventBus.connect("sig_fridge_content_changed", self, "_on_fridge_content_changed")
 	
 func _choc_in_fridge():
 	for food_item in GameStateController.fridge_content:

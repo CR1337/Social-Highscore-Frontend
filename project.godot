@@ -36,6 +36,16 @@ StoryController02="*res://content/singletons/story_controllers/StoryController02
 StoryController03="*res://content/singletons/story_controllers/StoryController03.gd"
 StoryController04="*res://content/singletons/story_controllers/StoryController04.gd"
 StoryController05="*res://content/singletons/story_controllers/StoryController05.gd"
+StoryController06="*res://content/singletons/story_controllers/StoryController06.gd"
+StoryController07="*res://content/singletons/story_controllers/StoryController07.gd"
+StoryController08="*res://content/singletons/story_controllers/StoryController08.gd"
+StoryController09="*res://content/singletons/story_controllers/StoryController09.gd"
+StoryController10="*res://content/singletons/story_controllers/StoryController10.gd"
+StoryController11="*res://content/singletons/story_controllers/StoryController11.gd"
+StoryController12="*res://content/singletons/story_controllers/StoryController12.gd"
+StoryController13="*res://content/singletons/story_controllers/StoryController13.gd"
+StoryController14="*res://content/singletons/story_controllers/StoryController14.gd"
+StoryController15="*res://content/singletons/story_controllers/StoryController15.gd"
 
 [display]
 

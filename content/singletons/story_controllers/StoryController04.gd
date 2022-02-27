@@ -10,6 +10,11 @@ func _ready():
 	]
 	._ready()
 	
+func activate():
+	.activate()
+	
+func deactivate():
+	.deactivate()	
 
 func _update_progress(new_state):
 	._update_progress(new_state)

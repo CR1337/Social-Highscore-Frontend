@@ -2,6 +2,14 @@ extends "res://content/singletons/story_controllers/StoryController.gd"
 
 onready var _bus_trigger_id = "tid_living_busstreet_bus"
 
+func activate():
+	.activate()
+	EventBus.connect("sig_opened_message", self, "day01_on_opened_moms_message")
+	
+func deactivate():
+	.deactivate()
+	EventBus.disconnect("sig_opened_message", self, "day01_on_opened_moms_message")
+
 func _ready():
 	states = [
 		'read_moms_message',
@@ -26,7 +34,7 @@ func _update_progress(new_state):
 				_state_change_trigger_ids['mom'],
 				'day01_waiting_for_meds'
 			)
-			EventBus.disconnect("sig_opened_message", self, "day01_on_opened_moms_message")
+			
 		'bring_meds':
 			_request_state_change(
 				"tid_living_pharmacystreet_pharmacy_npc_counter_state_change",
@@ -52,7 +60,7 @@ func start_day():
 	.start_day()
 	EventBus.emit_signal("sig_got_phone_message", 'mom', "I hope you had a good night's sleep. Could you stop by for a moment. You don't have far to go, you just have to cross the street. I'm not feeling so well again today. My illness is making itself felt.")
 	_update_progress('read_moms_message')
-	EventBus.connect("sig_opened_message", self, "day01_on_opened_moms_message")
+	
 
 func day01_get_your_job(handle):
 	CitizenRecord.add_no_job(-5)
