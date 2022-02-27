@@ -5,6 +5,8 @@
 		"day03": "Thanks to the many police officers, I feel totally safe even at night. If you ever need the police, you can find them in the east.",
 		"day04": "Through the Communityscore, I was finally able to motivate myself to live healthier. I now collect points for healthy food.",
         "day05": "...",
+
+		"day07": "I think it's really great that the Communityscore is such a success. I think our society is moving in the right direction.",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -67,7 +69,22 @@
         "day05_initial": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day04",
+                "tid": "day05",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+
+		"day07_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day07",
                 "answers": [
                     {
                         "tid": "x",

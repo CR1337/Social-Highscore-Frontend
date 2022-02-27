@@ -8,7 +8,9 @@
 
 		"day04": "Good day. I almost forgot. I still have to inform you that every officer is obligated to report people who show antisocial behavior and could be a danger to our society. If you know of such a person, just contact me. Then get to work. Here is your briefing.",
         "day05": "You are too late. This is not acceptable and will have consequences. Now put on your Uniform and get to work. Here are your tasks for today.",
-        "start_briefing": "(start briefing)",
+        "day07": "I admire your commitment. But you are not on duty today. Come back on Monday.",
+
+		"start_briefing": "(start briefing)",
         "cancel": "(cancel)",
         "x": "(end dialog)",
 		"debriefing": "Your shift is over. Lets look at how you performed today.",
@@ -109,6 +111,21 @@
                     },
                     {
                         "tid": "cancel",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+
+		"day07_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day07",
+                "answers": [
+                    {
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }

@@ -31,6 +31,12 @@
 		"day05_pre_bank": "Why don't you go to the bank and sort it out with your account. I really need my medication urgently.",
 		"day05_post_bank": "Good that your account is unlocked again. Now please get my medication from the pharmacy.",
 		"day05_thanks": "Thanks for the meds. What would I do without you.",
+
+		"day06_ask_for_application": "Is there anything new on the application yet?",
+		"day06_answer_dont_know": "I don't know.",
+		"day06_answer_takes_time": "I think it still needs time.",
+		"day06_response": "I hope this works out soon. Slowly these drugs are getting really expensive.",
+
 		"x": "(end dialog)"
 	},
 	"graphs": {
@@ -353,6 +359,68 @@
 			"initial_nid": "node0",
 			"node0": {
 				"tid": "day05_thanks",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+
+		"day06_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			},
+			"node1": {
+				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+
+		"day07_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			},
+			"node1": {
+				"tid": "day06_response",
 				"answers": [
 					{
 						"tid": "x",

@@ -56,6 +56,23 @@ func _ready():
 	states.insert(0, 'initial')
 	states.append('goto_bed')
 	states.append('finished')
+	_load_news()
+	
+const _news_filename = "res://texts/news.json"
+var _news: Dictionary
+func _load_news():
+	var file = File.new()
+	file.open(_news_filename, File.READ)
+	_news = JSON.parse(file.get_as_text()).result
+	file.close()
+func _publish_news(news_id):
+	var news = _news[news_id]
+	NewsController.publish_news(
+		news['title'],
+		news['text'],
+		news['preferred_emotions'],
+		news['lifetime']
+	)
 	
 func _get_day():
 	return name.right(15)

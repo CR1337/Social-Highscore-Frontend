@@ -61,6 +61,62 @@
                 ],
                 "trigger_id": null
             }
-        }
-    }
+        },
+
+		"day04_initial": {
+			"initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+		},
+		"day05_initial": {
+			"initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+		},
+		"day06_initial": {
+			"initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+		},
+		"day07_initial": {
+			"initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+		}    }
 }

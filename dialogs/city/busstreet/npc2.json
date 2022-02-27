@@ -5,7 +5,9 @@
 		"day03": "I just came from the mall. You should pay it a visit, too. Just take the bus to the commercial area. You can't miss it there.",
 		"day04": "...",
         "day05": "Finally there are consequences for these conspiracy theorists who have nothing better to do than to divide society and set us exemplary citizens against each other. A longer stay in reform school is exactly the right thing for these folks.",
-        "x": "(end dialog)"
+
+		"day07": "These terrorists that were mentioned in the news today really scare me.",
+		"x": "(end dialog)"
     },
     "graphs": {
         "day01_initial": {
@@ -67,7 +69,22 @@
         "day05_initial": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day04",
+                "tid": "day05",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+
+		"day07_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day07",
                 "answers": [
                     {
                         "tid": "x",

@@ -1,0 +1,14 @@
+{
+	"id": {
+		"title": "",
+		"text": "",
+		"preferred_emotions": [],
+		"lifetime": 0
+	},
+	"nid_day07": {
+		"title": "Community score complete success",
+		"text": "The community score is a complete success. It has been extremely well received by the population. Already, the decreasing crime rate and increasing happiness cannot be overlooked. The police have been able to identify isolated small groups that oppose the positive change. Such people are very dangerous and do not shy away from violence. For this reason, the Ministry of Public Security has classified these groups as terrorists. All citizens are called upon to report people whom they suspect of having contact with such groups. It is understandable to be afraid in the face of this development. Nevertheless, we encourage you to continue to look forward with joy and confidence to the success of the community score.",
+		"preferred_emotions": ["fear", "happy", "angry"],
+		"lifetime": 2
+	}
+}

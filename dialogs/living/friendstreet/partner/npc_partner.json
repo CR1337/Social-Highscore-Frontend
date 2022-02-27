@@ -18,7 +18,18 @@
         "day05_initial": "That with your account is bad. Here you can use my one-day ticket. I don't need it anymore today.",
         "day05_thanks": "Thank you",
         "day05_post_ticket": "Hi. I'm planning a game night tomorrow. Feel free to stop by. I'm also still trying to reach <FRIEND>.",
-        "x": "(end dialog)"
+
+		"day07_q1": "Hello darling. It's good to see you. Last night was really fun. I have been thinking again about the conversation with <FRIEND> though. I'm worried that he's meeting the wrong people and slipping into something as a result. With his attitude, I'm sure he's easily susceptible to bad influences. I've also seen him talking to shady characters before.",
+		"day07_q1a1": "He knows what he's doing.",
+		"day07_q1a2": "I am also worried.",
+		"day07_q2": "Maybe we should protect him from himself and report him before he slips into things he can't judge and does something he regrets later. You're on the police force now, aren't you? Can't you talk to your boss?",
+		"day07_q2a1": "Good idea.",
+		"day07_q2a2": "I'll think about it.",
+		"day07_q2a3": "I don't know yet.",
+		"day07_post": "I'm really worried about <FRIEND>. You should talk to your boss about him.",
+
+
+		"x": "(end dialog)"
     },
     "graphs": {
         "day01_initial": {
@@ -192,6 +203,60 @@
                 ],
                 "trigger_id": null
             }
-        }
+        },
+
+		"day07_initial": {
+			"initial_nid": "node0",
+            "node0": {
+                "tid": "day07_q1",
+                "answers": [
+                    {
+                        "tid": "day07_q1a1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day07_q1a2",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"node1": {
+                "tid": "day07_q2",
+                "answers": [
+                    {
+                        "tid": "day07_q2a1",
+                        "nid": "x",
+                        "trigger_id": "tid_day07_talked_to_partner"
+                    },
+                    {
+                        "tid": "day07_q2a2",
+                        "nid": "x",
+                        "trigger_id": "tid_day07_talked_to_partner"
+                    },
+					{
+                        "tid": "day07_q2a3",
+                        "nid": "x",
+                        "trigger_id": "tid_day07_talked_to_partner"
+                    }
+                ],
+                "trigger_id": null
+            }
+		},
+		"day07_talked_to_partner": {
+			"initial_nid": "node0",
+            "node0": {
+                "tid": "day07_post",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+		}
     }
 }
