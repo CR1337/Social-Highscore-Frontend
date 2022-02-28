@@ -1,9 +1,11 @@
 {
     "texts": {
         "day01_hello": "Hi buddy. Nice to see you again. Let's do something together again in the next few days.",
-		"day03_initial": "Hey. Do you feel like doing something after work? I'll text you later.",
-		"day03_post_dinner": "It was nice today. We should do that again sometime.",
-		"x": "(end dialog)"
+        "day03_initial": "Hey. Do you feel like doing something after work? I'll text you later.",
+        "day03_post_dinner": "It was nice today. We should do that again sometime.",
+        "day06_looking_forward": "I'm already looking forward to the games evening later. I wanted to talk to you anyway.",
+        "day06_goto_bed": "It was a nice evening, even if we don't all always agree. Good night.",
+        "x": "(end dialog)"
     },
     "graphs": {
         "day01_initial": {
@@ -20,7 +22,7 @@
                 "trigger_id": null
             }
         },
-		"day02_initial": {
+        "day02_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "x",
@@ -34,7 +36,7 @@
                 "trigger_id": null
             }
         },
-		"day03_initial": {
+        "day03_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day03_initial",
@@ -48,7 +50,7 @@
                 "trigger_id": null
             }
         },
-		"day03_post_dinner": {
+        "day03_post_dinner": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day03_post_dinner",
@@ -62,9 +64,8 @@
                 "trigger_id": null
             }
         },
-
-		"day04_initial": {
-			"initial_nid": "node0",
+        "day04_initial": {
+            "initial_nid": "node0",
             "node0": {
                 "tid": "x",
                 "answers": [
@@ -76,9 +77,9 @@
                 ],
                 "trigger_id": null
             }
-		},
-		"day05_initial": {
-			"initial_nid": "node0",
+        },
+        "day05_initial": {
+            "initial_nid": "node0",
             "node0": {
                 "tid": "x",
                 "answers": [
@@ -90,9 +91,37 @@
                 ],
                 "trigger_id": null
             }
-		},
-		"day06_initial": {
-			"initial_nid": "node0",
+        },
+        "day06_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day06_looking_forward",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day06_post_game_evening": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day06_goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day07_initial": {
+            "initial_nid": "node0",
             "node0": {
                 "tid": "x",
                 "answers": [
@@ -104,19 +133,6 @@
                 ],
                 "trigger_id": null
             }
-		},
-		"day07_initial": {
-			"initial_nid": "node0",
-            "node0": {
-                "tid": "x",
-                "answers": [
-                    {
-                        "tid": "x",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            }
-		}    }
+        }
+    }
 }

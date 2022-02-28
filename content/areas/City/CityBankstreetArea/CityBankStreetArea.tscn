@@ -73,6 +73,7 @@ collision_trigger_id = "tid_city_bankstreet_leave_office"
 [node name="LeaveOfficeTrigger" type="Node" parent="LeaveOfficeTriggerArea"]
 script = ExtResource( 4 )
 id = "tid_city_bankstreet_leave_office"
+blocked_dialog_filename = "res://dialogs/city/bankstreet/office_self_talk.json"
 
 [node name="LeaveBankTriggerArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 350.515, 925.194 )

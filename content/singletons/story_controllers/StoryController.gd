@@ -13,15 +13,16 @@ func restore_state(state):
 
 onready var _friend_nodes = {
 	'home': get_node("/root/MainScene/Areas/LivingFriendstreetFriendArea/NpcFriend"),
-	'mall': get_node("/root/MainScene/Areas/UtilityBusstreetMallArea/NpcFriend")
+	'mall': get_node("/root/MainScene/Areas/UtilityBusstreetMallArea/NpcFriend"),
 #	'prison':
 #	'shadystreet': 
-#	'partner': 
+	'partner': get_node("/root/MainScene/Areas/LivingFriendstreetPartnerArea/NpcFriend")
 }
 
 const _friend_positions = {
 	'home': Vector2(8, 10),
 	'mall': Vector2(10.8, 14),
+	'partner': Vector2(10, 11)
 }
 
 const _invisible_position = Vector2(-1, -1)

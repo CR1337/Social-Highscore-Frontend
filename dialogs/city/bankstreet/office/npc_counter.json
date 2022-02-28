@@ -11,7 +11,12 @@
         "8": "With your current score you are in class D. You have serious problems with integration into society. Your focus should now be exclusively on becoming a valuable part of society again. Visits to recreational facilities and consumer credit are therefore not an option for you at this time. As a sign of your good will, you will also pay a compensatory tax on all your purchases.  ",
         "9": "With your current score, you are in Class E. You are not currently a valuable member of society. If you do not change your behavior immediately, serious action will have to be taken. To be able to work in a profession again, they must have more than 300 points to move up to Class D. ",
         "10": "With your current score, you are in class X. With your antisocial behavior, you are not part of society. Therefore, you have no right to housing. I remind you that failure to change your behavior will result in a stay in the reformatory. Please leave this building immediately. ",
-        "11": "(end dialog)"
+        "day06_make_application": "(ask for cost coverage)",
+        "day06_cost_coverage_answer": "I have taken up their request. It will take a few days for the application to be fully reviewed. You will be notified of progress.",
+        "day06_thanks": "Thank you",
+        "ask_for_application": "(ask for application)",
+        "be_patient": "Your application is under consideration. Please be patient a little longer.",
+        "x": "(end dialog)"
     },
     "graphs": {
         "idle": {
@@ -36,7 +41,99 @@
                 "tid": "5",
                 "answers": [
                     {
-                        "tid": "11",
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day06_idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day06_make_application",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "5",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "day06_cost_coverage_answer",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_day06_made_application"
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "with_application_idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "ask_for_application",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "5",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "be_patient",
+                "answers": [
+                    {
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -66,7 +163,7 @@
                 "tid": "3",
                 "answers": [
                     {
-                        "tid": "11",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -96,7 +193,7 @@
                 "tid": "4",
                 "answers": [
                     {
-                        "tid": "11",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -126,7 +223,7 @@
                 "tid": "6",
                 "answers": [
                     {
-                        "tid": "11",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -156,7 +253,7 @@
                 "tid": "7",
                 "answers": [
                     {
-                        "tid": "11",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -186,7 +283,7 @@
                 "tid": "8",
                 "answers": [
                     {
-                        "tid": "11",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -216,7 +313,7 @@
                 "tid": "9",
                 "answers": [
                     {
-                        "tid": "11",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -246,7 +343,7 @@
                 "tid": "10",
                 "answers": [
                     {
-                        "tid": "11",
+                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }

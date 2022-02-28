@@ -2,11 +2,11 @@
     "texts": {
         "day01": "What are you doing here? You aren't supposed to be able to go to the city today",
         "day02": "I was just at the job center. They gave me a job as a cook. I can start tomorrow and I'm totally looking forward to it. If you need a new job, check out the job center too. It's right over there a little east of here.",
-		"day03": "Thanks to the many police officers, I feel totally safe even at night. If you ever need the police, you can find them in the east.",
-		"day04": "Through the Communityscore, I was finally able to motivate myself to live healthier. I now collect points for healthy food.",
+        "day03": "Thanks to the many police officers, I feel totally safe even at night. If you ever need the police, you can find them in the east.",
+        "day04": "Through the Communityscore, I was finally able to motivate myself to live healthier. I now collect points for healthy food.",
         "day05": "...",
-
-		"day07": "I think it's really great that the Communityscore is such a success. I think our society is moving in the right direction.",
+        "day06": "...",
+        "day07": "I think it's really great that the Communityscore is such a success. I think our society is moving in the right direction.",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -24,7 +24,7 @@
                 "trigger_id": null
             }
         },
-		"day02_initial": {
+        "day02_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02",
@@ -38,7 +38,7 @@
                 "trigger_id": null
             }
         },
-		"day03_initial": {
+        "day03_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day03",
@@ -80,8 +80,21 @@
                 "trigger_id": null
             }
         },
-
-		"day07_initial": {
+        "day06_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day06",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day07_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day07",

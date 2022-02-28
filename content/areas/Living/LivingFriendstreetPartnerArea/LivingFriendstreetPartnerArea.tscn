@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=1]
 [ext_resource path="res://content/trigger/StateChangeTrigger.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/tilesets/interior/17_Visibile_Upstairs_System_32x32.png" type="Texture" id=8]
 [ext_resource path="res://content/areas/Living/LivingFriendstreetPartnerArea/LivingFriendstreetPartnerArea.gd" type="Script" id=9]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/animated_sprites/tres/characters/living/friendstreet/friend.tres" type="SpriteFrames" id=11]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/animated_sprites/tres/characters/living/friendstreet/partner.tres" type="SpriteFrames" id=13]
 
@@ -1868,3 +1869,11 @@ id = "tid_living_friendstreet_partner_npc_partner_start_dialog"
 [node name="StateChangeTrigger" type="Node" parent="NpcPartner"]
 script = ExtResource( 2 )
 id = "tid_living_friendstreet_partner_npc_partner_state_change"
+
+[node name="NpcFriend" parent="." instance=ExtResource( 12 )]
+position = Vector2( -32, -32 )
+is_activated_by_action = true
+action_trigger_id = "tid_living_friendstreet_partner_npc_friend_start_dialog"
+animation = ExtResource( 11 )
+current_position = Vector2( -1, -1 )
+looking_direction = Vector2( -1, 0 )

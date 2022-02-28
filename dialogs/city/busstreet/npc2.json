@@ -2,12 +2,12 @@
     "texts": {
         "day01": "What are you doing here? You aren't supposed to be able to go to the city today",
         "day02": "You should visit the supermarket in the southeast of the city. There you can find everything.",
-		"day03": "I just came from the mall. You should pay it a visit, too. Just take the bus to the commercial area. You can't miss it there.",
-		"day04": "...",
+        "day03": "I just came from the mall. You should pay it a visit, too. Just take the bus to the commercial area. You can't miss it there.",
+        "day04": "...",
         "day05": "Finally there are consequences for these conspiracy theorists who have nothing better to do than to divide society and set us exemplary citizens against each other. A longer stay in reform school is exactly the right thing for these folks.",
-
-		"day07": "These terrorists that were mentioned in the news today really scare me.",
-		"x": "(end dialog)"
+        "day06": "I think it's really great that you can get points for contributing to our health system. I'm sure more people will donate blood that way. I just did it yesterday. Just ask at the hospital.",
+        "day07": "These terrorists that were mentioned in the news today really scare me.",
+        "x": "(end dialog)"
     },
     "graphs": {
         "day01_initial": {
@@ -24,7 +24,7 @@
                 "trigger_id": null
             }
         },
-		"day02_initial": {
+        "day02_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02",
@@ -38,7 +38,7 @@
                 "trigger_id": null
             }
         },
-		"day03_initial": {
+        "day03_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day03",
@@ -80,8 +80,21 @@
                 "trigger_id": null
             }
         },
-
-		"day07_initial": {
+        "day06_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day06",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day07_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day07",
