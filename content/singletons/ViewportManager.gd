@@ -152,7 +152,13 @@ func change_to_hospital():
 	change_area(_hospital_area, Vector2(11, 12))
 	
 func blend_with_black():
-	_shader_rect.area_change()
+	_shader_rect.blend_with_color('black')
+	
+func blend_with_green():
+	_shader_rect.blend_with_color('green')
+	
+func blend_with_red():
+	_shader_rect.blend_with_color('red')
 
 func change_area(target_area, new_player_position):
 	_shader_rect.cover()

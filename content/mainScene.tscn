@@ -53,14 +53,16 @@
 code = "shader_type canvas_item;
 
 uniform float opacity = 0.0;
+uniform vec3 color;
 
 void fragment() {
-	COLOR = vec4(0.0, 0.0, 0.0, opacity);
+	COLOR = vec4(color.x, color.y, color.z, opacity);
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/opacity = 0.0
+shader_param/color = Vector3( 1, 0, 0 )
 
 [node name="MainScene" type="Node2D"]
 
@@ -333,7 +335,6 @@ material = SubResource( 2 )
 margin_right = 768.0
 margin_bottom = 1024.0
 mouse_filter = 2
-color = Color( 0, 0, 0, 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -46,6 +46,7 @@ StoryController12="*res://content/singletons/story_controllers/StoryController12
 StoryController13="*res://content/singletons/story_controllers/StoryController13.gd"
 StoryController14="*res://content/singletons/story_controllers/StoryController14.gd"
 StoryController15="*res://content/singletons/story_controllers/StoryController15.gd"
+MinigameController="*res://content/singletons/MinigameController.gd"
 
 [display]
 

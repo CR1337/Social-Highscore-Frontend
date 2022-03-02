@@ -1,21 +1,21 @@
 {
     "texts": {
         "day01": "You should not be here today",
-		"day02_pre_job": "To enforce the new regulations, we really need more people. Don't you want to give it a try?",
-		"day02_got_job": "It's nice that we finally have support now.",
+        "day02_pre_job": "To enforce the new regulations, we really need more people. Don't you want to give it a try?",
+        "day02_got_job": "It's nice that we finally have support now.",
         "day03": "Ready for your first day on the job? The boss is waiting for you inside.",
-		"day04": "",
-		"day05": "",
-		"day06": "",
-		"day07": "Get ready for Monday. We are hunting terrorists now.",
-		"day08": "",
-		"day09": "",
-		"day10": "",
-		"day11": "",
-		"day12": "",
-		"day13": "",
-		"day14": "",
-		"day15": "",
+        "day04": "",
+        "day05": "",
+        "day06": "",
+        "day07": "Get ready for Monday. We are hunting terrorists now.",
+        "day08": "Get ready for Monday. We are hunting terrorists now.",
+        "day09": "",
+        "day10": "",
+        "day11": "",
+        "day12": "",
+        "day13": "",
+        "day14": "",
+        "day15": "",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -33,7 +33,7 @@
                 "trigger_id": null
             }
         },
-		"day02_initial": {
+        "day02_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02_pre_job",
@@ -47,7 +47,7 @@
                 "trigger_id": null
             }
         },
-		"day02_got_job": {
+        "day02_got_job": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02_got_job",
@@ -61,7 +61,7 @@
                 "trigger_id": null
             }
         },
-		"day03_initial": {
+        "day03_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day03",
@@ -93,7 +93,7 @@
             "initial_nid": "node0",
             "node0": {
                 "tid": "day05",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -103,11 +103,11 @@
                 "trigger_id": null
             }
         },
-		"day06_initial": {
+        "day06_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day06",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -117,11 +117,11 @@
                 "trigger_id": null
             }
         },
-		"day07_initial": {
+        "day07_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day07",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -131,11 +131,11 @@
                 "trigger_id": null
             }
         },
-		"day08_initial": {
+        "day08_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day08",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -145,11 +145,11 @@
                 "trigger_id": null
             }
         },
-		"day09_initial": {
+        "day09_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day09",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -159,11 +159,11 @@
                 "trigger_id": null
             }
         },
-		"day10_initial": {
+        "day10_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day10",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -173,11 +173,11 @@
                 "trigger_id": null
             }
         },
-		"day11_initial": {
+        "day11_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day11",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -187,11 +187,11 @@
                 "trigger_id": null
             }
         },
-		"day12_initial": {
+        "day12_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day12",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -201,11 +201,11 @@
                 "trigger_id": null
             }
         },
-		"day13_initial": {
+        "day13_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day13",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -215,11 +215,11 @@
                 "trigger_id": null
             }
         },
-		"day14_initial": {
+        "day14_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day14",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
@@ -229,11 +229,11 @@
                 "trigger_id": null
             }
         },
-		"day15_initial": {
+        "day15_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day15",
-				"answers": [
+                "answers": [
                     {
                         "tid": "x",
                         "nid": null,
