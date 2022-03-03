@@ -13,6 +13,10 @@ func reset_minigame():
 	t_n_counter = 0
 	f_n_counter = 0
 
+func start():
+	#TODO
+	ViewportManager.change_to_transparent()
+
 func handle_true_positive_penalty(score):
 	current_work_score += score
 	t_p_counter += 1
@@ -24,3 +28,6 @@ func handle_false_positive_penalty(score):
 func handle_false_negative_penalty(score):
 	current_work_score += score
 	f_n_counter += 1
+
+func loan():
+	return current_work_score

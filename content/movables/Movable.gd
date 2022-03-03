@@ -63,7 +63,7 @@ func restore_state(json_state):
 	active = json_state['active']
 	_movement_waiting = json_state['movement_waiting']
 	_movement_step_index = json_state['movement_step_index']
-	_movement_step_repeat_counter = json_state['smovement_step_repeat_counterate']
+	_movement_step_repeat_counter = json_state['movement_step_repeat_counter']
 	_movement_sequence_repeat_counter = json_state['movement_sequence_repeat_counter']
 	announced_position = Vector2(
 		json_state['announced_position_x'],

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://content/gui/overlays/other/PaymentOverlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/gfx/ShaderRect.gd" type="Script" id=2]
@@ -48,6 +48,8 @@
 [ext_resource path="res://content/gui/overlays/other/GameoverOverlay.tscn" type="PackedScene" id=46]
 [ext_resource path="res://content/gui/overlays/other/FridgeOverlay.tscn" type="PackedScene" id=47]
 [ext_resource path="res://content/gui/overlays/menus/DebugMenu.tscn" type="PackedScene" id=48]
+[ext_resource path="res://content/gui/overlays/other/DebriefingOverlay.tscn" type="PackedScene" id=49]
+[ext_resource path="res://content/gui/overlays/other/BriefingOverlay.tscn" type="PackedScene" id=50]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -319,6 +321,12 @@ position = Vector2( 5466.73, -6245.27 )
 
 [node name="DebugMenu" parent="Overlays" instance=ExtResource( 48 )]
 position = Vector2( 7055.46, -4930.64 )
+
+[node name="DebriefingOverlay" parent="Overlays" instance=ExtResource( 49 )]
+position = Vector2( -3187.83, 169.587 )
+
+[node name="BriefingOverlay" parent="Overlays" instance=ExtResource( 50 )]
+position = Vector2( -4044.58, 552.603 )
 
 [node name="Player" parent="." groups=[
 "persistent",

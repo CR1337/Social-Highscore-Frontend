@@ -40,6 +40,9 @@ onready var _last_overlay = _transparent_overlay
 onready var _current_notification_overlay = _transparent_notification_overlay
 onready var _current_dialog_overlay = _transparent_dialog_overlag
 
+onready var _briefing_overlay = get_node("/root/MainScene/Overlays/BriefingOverlay")
+onready var _debriefing_overlay = get_node("/root/MainScene/Overlays/DebriefingOverlay")
+
 onready var _prolog_overlay = get_node("/root/MainScene/Overlays/PrologOverlay")
 onready var _gameover_overlay = get_node("/root/MainScene/Overlays/GameoverOverlay")
 
@@ -144,6 +147,14 @@ func change_to_authentication(post_authentication_trigger_id):
 func change_to_payment(recipient, amount, payment_handle):
 	_payment_overlay.update_payment(recipient, amount, payment_handle)
 	change_overlay(_payment_overlay)
+
+func change_to_briefing():
+	_briefing_overlay.start_briefing(GameStateController.current_day)
+	change_overlay(_briefing_overlay)
+	
+func change_to_debriefing():
+	_debriefing_overlay.show_debriefing()
+	change_overlay(_debriefing_overlay)
 
 func change_to_bus():
 	change_overlay(_bus_menu)

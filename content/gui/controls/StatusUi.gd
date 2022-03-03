@@ -62,5 +62,5 @@ func _display_timer(total_seconds):
 	timer_label.text = minutes_string + ":" + seconds_string
 	
 func _display_weekday():
-	var weekday_index = GameStateController.current_day % 7
+	var weekday_index = int(GameStateController.current_day) % 7
 	weekday_label.text = _weekdays[weekday_index]

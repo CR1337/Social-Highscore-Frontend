@@ -2059,6 +2059,14 @@
         "blocked": false,
         "block_state": "blocked"
     },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcBoss/StartBriefingTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcBoss/StartDebriefingTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
     "/root/MainScene/Areas/CityBankstreetArea/LeaveRightTriggerArea/LeaveRightTrigger": {
         "blocked": false,
         "block_state": "blocked"
@@ -3507,7 +3515,7 @@
                 "name": "yogurt"
             }
         ],
-        "current_day": 0,
+        "current_day": 1,
         "contact_state": {
             "friend": "state0",
             "partner": "state0",

@@ -5,8 +5,6 @@ var money = 1000
 
 var days_without_mom = 0
 
-
-
 var ticket_bought = false
 
 var current_preferred_emotions = []
@@ -119,7 +117,7 @@ var bank_account_blocked = false
 
 # BEGIN story
 
-var current_day = 0
+var current_day = 1
 onready var story_controllers = [
 	null,
 	StoryController01,
