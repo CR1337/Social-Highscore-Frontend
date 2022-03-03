@@ -6,7 +6,18 @@ var _blocked = false
 var _block_state = "blocked"
 export var blocked_dialog_filename: String
 
+func persistent_state():
+	return {
+		'blocked': _blocked,
+		'block_state': _block_state
+	}
+	
+func restore_state(state):
+	_blocked = state['blocked']
+	_block_state = state['block_state']
+
 func _ready():
+	add_to_group("persistent")
 	EventBus.connect("sig_trigger", self, "_on_trigger")
 
 func _on_trigger(trigger_id, kwargs):
