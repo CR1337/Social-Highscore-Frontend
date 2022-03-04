@@ -53,6 +53,9 @@ func _set_friend_visibility(friend_key):
 	if friend_key != 'none':
 		_friend_nodes[friend_key].set_current_position(_friend_positions[friend_key])
 	
+func _set_partner_visibility(partner_key):
+	pass
+
 func _ready():
 	states.insert(0, 'initial')
 	states.append('goto_bed')

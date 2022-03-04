@@ -34,7 +34,6 @@ func set_current_contact(contact):
 
 	_display_messages()
 	
-	EventBus.emit_signal("sig_opened_message", contact)
 
 func _display_messages():
 	_messages_label.bbcode_text = ""
@@ -49,3 +48,4 @@ func _display_messages():
 
 func _on_BackButton_pressed():
 	ViewportManager.change_to_messenger_contacts()
+	EventBus.emit_signal("sig_opened_message", _current_contact)
