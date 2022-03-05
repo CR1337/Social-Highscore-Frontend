@@ -18,7 +18,7 @@ func deactivate():
 
 
 func _partner_message(handle):
-	EventBus.emit_signal("sig_got_phone_message", 'partner','Hi honey, my game night is about to start. <Friend> is already here too. Are you coming?')
+	_send_phone_message('partner', 'day06_partner_message')
 
 func _update_progress(new_state):
 	._update_progress(new_state)

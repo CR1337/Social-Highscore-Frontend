@@ -5,6 +5,8 @@
         "day03_post_dinner": "It was nice today. We should do that again sometime.",
         "day06_looking_forward": "I'm already looking forward to the games evening later. I wanted to talk to you anyway.",
         "day06_goto_bed": "It was a nice evening, even if we don't all always agree. Good night.",
+        "day08_thought": "Have you thought about my question?",
+        "day08_answer": "I need time",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -127,6 +129,20 @@
                 "answers": [
                     {
                         "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day08_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day08_thought",
+                "answers": [
+                    {
+                        "tid": "day08_answer",
                         "nid": null,
                         "trigger_id": null
                     }

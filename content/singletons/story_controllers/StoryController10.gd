@@ -16,7 +16,7 @@ func deactivate():
 	EventBus.disconnect("sig_opened_message", self, "day10_on_opened_message")
 
 func friend_message(handle):
-	EventBus.emit_signal("sig_got_phone_message", 'friend', "I told you the other day about my new friends. I'm meeting them the day after tomorrow, on Thursday. We'll meet at the place where we used to meet when we were at school. I would be happy if you came too. The meeting starts during your working hours, but you are welcome to join us later.")
+	_send_phone_message('friend', 'day10_friend_message')
 
 func day10_on_opened_message(contact):
 	if contact == 'friend' and states[progress] == 'goto_bed':

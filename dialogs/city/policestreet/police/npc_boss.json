@@ -1,22 +1,30 @@
 {
     "texts": {
         "day01": "You should not be here today",
-		"day02_pre_job": "We are looking for new recruits. If you are interested, stop by the Job Center.",
-		"day02_got_job": "Glad you want to join us in making this country a better place. See you tomorrow morning.",
-
-		"day03": "Hello new guy. Glad you decided to join the police. You will see that here you can make a significant contribution to a harmonious society. It is not an easy job. Since you are a role model for your fellow citizens, you must always behave absolutely according to the rules. I will brief you every day before you go on duty. The laws and rules change quickly and we must always be up to date.",
-
-		"day04": "Good day. I almost forgot. I still have to inform you that every officer is obligated to report people who show antisocial behavior and could be a danger to our society. If you know of such a person, just contact me. Then get to work. Here is your briefing.",
+        "day02_pre_job": "We are looking for new recruits. If you are interested, stop by the Job Center.",
+        "day02_got_job": "Glad you want to join us in making this country a better place. See you tomorrow morning.",
+        "day03": "Hello new guy. Glad you decided to join the police. You will see that here you can make a significant contribution to a harmonious society. It is not an easy job. Since you are a role model for your fellow citizens, you must always behave absolutely according to the rules. I will brief you every day before you go on duty. The laws and rules change quickly and we must always be up to date.",
+        "day04": "Good day. I almost forgot. I still have to inform you that every officer is obligated to report people who show antisocial behavior and could be a danger to our society. If you know of such a person, just contact me. Then get to work. Here is your briefing.",
         "day05": "You are too late. This is not acceptable and will have consequences. Now put on your Uniform and get to work. Here are your tasks for today.",
         "day07": "I admire your commitment. But you are not on duty today. Come back on Monday.",
-
-		"start_briefing": "(start briefing)",
+        "day08": "The police is closed today",
+        "day09_good_morning": "Good morning. I hope you had a nice weekend.",
+        "day09_answer": "Yes it was good, thanks",
+        "day09_new": "Is there anything new you want to tell me?",
+        "day09_report": "(report <friend>)",
+        "day09_not_report": "(not report <friend>)",
+        "day09_glad": "I am glad that they share their fears with me. I will look into the matter.",
+        "day09_nothing": "Ok if there is nothing more to say, go ahead.",
+        "day10_friend": "Good morning.  Before you start work I have something to tell you. Your friend <FRIEND> is now on a list of persons considered a risk to society.  We have reason to believe that he is part of an underground network planning terrorist actions against society. So behave cautiously in his presence. If he mentions anything to you that could help the police uncover his network, please let me know immediately.",
+        "day10_ok": "ok",
+        "day10_start": "Good then your shift begins now.",
+        "start_briefing": "(start briefing)",
         "cancel": "(cancel)",
         "x": "(end dialog)",
-		"debriefing": "Your shift is over. Lets look at how you performed today.",
-		"post_work": "See you tomorrow. Be on time.",
-		"post_work_weekend": "See you on monday. Be on time.",
-		"unemployed": "You are a disappointment. Get out of my sight."
+        "debriefing": "Your shift is over. Lets look at how you performed today.",
+        "post_work": "See you tomorrow. Be on time.",
+        "post_work_weekend": "See you on monday. Be on time.",
+        "unemployed": "You are a disappointment. Get out of my sight."
     },
     "graphs": {
         "day01_initial": {
@@ -33,7 +41,7 @@
                 "trigger_id": null
             }
         },
-		"day02_initial": {
+        "day02_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02_pre_job",
@@ -47,7 +55,7 @@
                 "trigger_id": null
             }
         },
-		"day02_got_job": {
+        "day02_got_job": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day02_got_job",
@@ -61,7 +69,7 @@
                 "trigger_id": null
             }
         },
-		"day03_initial": {
+        "day03_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day03",
@@ -118,8 +126,7 @@
                 "trigger_id": null
             }
         },
-
-		"day07_initial": {
+        "day07_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day07",
@@ -133,7 +140,7 @@
                 "trigger_id": null
             }
         },
-		"post_work": {
+        "post_work": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "post_work",
@@ -147,7 +154,7 @@
                 "trigger_id": null
             }
         },
-		"post_work_weekend": {
+        "post_work_weekend": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "post_work_weekend",
@@ -161,13 +168,109 @@
                 "trigger_id": null
             }
         },
-		"unemployed": {
+        "unemployed": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "unemployed",
                 "answers": [
                     {
                         "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day08_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day08",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day09_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day09_good_morning",
+                "answers": [
+                    {
+                        "tid": "day09_answer",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "day09_new",
+                "answers": [
+                    {
+                        "tid": "day09_report",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day09_not_report",
+                        "nid": "node3",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "day09_glad",
+                "answers": [
+                    {
+                        "tid": "start_briefing",
+                        "nid": null,
+                        "trigger_id": "tid_start_work"
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node3": {
+                "tid": "day09_nothing",
+                "answers": [
+                    {
+                        "tid": "start_briefing",
+                        "nid": null,
+                        "trigger_id": "tid_start_work"
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day10_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day10_friend",
+                "answers": [
+                    {
+                        "tid": "day10_ok",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "day10_start",
+                "answers": [
+                    {
+                        "tid": "start_briefing",
+                        "nid": null,
+                        "trigger_id": "tid_start_work"
+                    },
+                    {
+                        "tid": "cancel",
                         "nid": null,
                         "trigger_id": null
                     }

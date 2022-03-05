@@ -27,7 +27,6 @@ const _friend_positions = {
 
 const _invisible_position = Vector2(-1, -1)
 
-
 const _state_change_trigger_ids = {
 	'mom': 'tid_living_homestreet_mom_npc_mom_state_change',
 	'friend':'tid_living_friendstreet_friend_npc_friend_state_change',
@@ -56,6 +55,19 @@ func _set_friend_visibility(friend_key):
 func _set_partner_visibility(partner_key):
 	pass
 
+const _phone_message_filename = "res://text/phone_messages.json"
+var _phone_messages: Dictionary
+
+func _send_phone_message(contact, text_id):
+	var message = _phone_messages[text_id]
+	EventBus.emit_signal("sig_got_phone_message", contact, message)
+
+func _load_phone_messages():
+	var file = File.new()
+	file.open(_phone_message_filename, File.READ)
+	_phone_messages = JSON.parse(file.get_as_text()).result
+	file.close()
+	
 func _ready():
 	states.insert(0, 'initial')
 	states.append('goto_bed')
@@ -64,11 +76,13 @@ func _ready():
 	
 const _news_filename = "res://texts/news.json"
 var _news: Dictionary
+
 func _load_news():
 	var file = File.new()
 	file.open(_news_filename, File.READ)
 	_news = JSON.parse(file.get_as_text()).result
 	file.close()
+
 func _publish_news(news_id):
 	var news = _news[news_id]
 	NewsController.publish_news(

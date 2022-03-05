@@ -7,6 +7,9 @@
         "day05": "...",
         "day06": "...",
         "day07": "I think it's really great that the Communityscore is such a success. I think our society is moving in the right direction.",
+        "day08": "...",
+        "day09": "I reported my neighbour to the police yesterday. Her antisocial behaviour has always bothered me. I think it's good that the state is now taking action against it.",
+        "day10": "I have heard that a list of potential terrorists has now been drawn up. I hope they will be arrested soon",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -98,6 +101,48 @@
             "initial_nid": "node0",
             "node0": {
                 "tid": "day07",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day08_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day08",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day09_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day09",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day10_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day10",
                 "answers": [
                     {
                         "tid": "x",

@@ -20,7 +20,7 @@ func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
 		'buy_meds':
-			EventBus.emit_signal("sig_got_phone_message", 'mom', "Hello darling. I am not feeling so well again. Could you please go to the pharmacy and get me my medication?")
+			_send_phone_message('mom', 'day04_mom_message')
 			_block_trigger(_bank_enter_trigger_id)
 			GameStateController.bank_account_blocked = true
 			_request_state_change(

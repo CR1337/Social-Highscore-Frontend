@@ -1,0 +1,79 @@
+{
+    "texts": {
+        "day08_nice_to_meet_you": "I'm glad you could come. I need your help now. I met with some people the other day and we think that this community score is being used to suppress the population.",
+        "day08_agree": "I agree",
+        "day08_go_on": "Go on",
+        "day08_demonstrations": "We are planning demonstrations and actions against this system and the government. But some members are afraid that they or their families will be persecuted because of this.",
+        "day08_my_part": "What's my part",
+        "day08_save": "I'm sure they are save.",
+        "day08_your_part": "You work for the police. I'm sure you hear when operations are planned against us demonstrators. Could you ask around and tell me what you find out?",
+        "day08_thinking": "I'll think about it.",
+        "day08_dangerous": "That sounds dangerous",
+        "day08_end": "Think about it carefully. This can't be easy for you. But I think it's the right thing to do. It is our duty to fight against this injustice.",
+        "x": "(end dialog)"
+    },
+    "graphs": {
+        "initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day08_nice_to_meet_you",
+                "answers": [
+                    {
+                        "tid": "day08_agree",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day08_go_on",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "day08_demonstrations",
+                "answers": [
+                    {
+                        "tid": "day08_my_part",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day08_save",
+                        "nid": "node2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "day08_your_part",
+                "answers": [
+                    {
+                        "tid": "day08_thinking",
+                        "nid": "node3",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day08_dangerous",
+                        "nid": "node3",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node3": {
+                "tid": "day08_end",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

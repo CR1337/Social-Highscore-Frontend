@@ -15,14 +15,14 @@ func deactivate():
 	.deactivate()
 
 func friend_message(handle):
-	EventBus.emit_signal("sig_got_phone_message", 'friend', "I need to talk to you urgently. Please come into town quickly. I'm in one of the side streets south of the bus stop.")
+	_send_phone_message('friend', 'day08_friend_message')
 
 func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
 		'buy_meds':
 			_set_friend_visibility('none')
-			EventBus.emit_signal("sig_got_phone_message", 'mom', "Hello darling, Can you please buy me medicine again?")
+			_send_phone_message('mom', 'day08_mom_message')
 			_request_state_change(
 				"tid_living_pharmacystreet_pharmacy_npc_counter_state_change",
 				'selling'

@@ -25,7 +25,7 @@ func _update_progress(new_state):
 			pass
 		'goto_mall':
 			_set_partner_visibility('mall')
-			EventBus.emit_signal("sig_got_phone_message", 'partner', "Hi, honey. Do you want to meet at the mall after work? We can have dinner together.")
+			_send_phone_message('partner', 'day09_partner_message')
 			_request_state_change(
 				"tid_utility_busstreet_mall_npc_partner_state_change",
 				"day09_dinner"
@@ -65,7 +65,7 @@ func _on_trigger(trigger_id, kwargs):
 	match trigger_id:
 		'tid_work_finished':
 			_update_progress('goto_mall')
-		'tid_day09_talked_with_partner':
+		'tid_day09_talked_to_partner':
 			_update_progress('get_food')
 		'tid_day09_continue_talk':
 			_update_progress('continue_talking')

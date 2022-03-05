@@ -17,7 +17,7 @@ func deactivate():
 	_unblock_trigger(_police_enter_trigger_id)
 	
 func _partner_message():
-	EventBus.emit_signal("sig_got_phone_message", 'partner', "Hi honey. I would like to talk to you. Please come over.")
+	_send_phone_message('partner', "day07_partner_message")
 	
 func _publish_community_score_news():
 	_publish_news('nid_day07')

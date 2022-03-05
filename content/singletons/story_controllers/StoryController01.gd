@@ -58,9 +58,8 @@ func _update_progress(new_state):
 
 func start_day():
 	.start_day()
-	EventBus.emit_signal("sig_got_phone_message", 'mom', "I hope you had a good night's sleep. Could you stop by for a moment. You don't have far to go, you just have to cross the street. I'm not feeling so well again today. My illness is making itself felt.")
+	_send_phone_message('mom', 'day01_mom_message')
 	_update_progress('read_moms_message')
-	
 
 func day01_get_your_job(handle):
 	CitizenRecord.add_no_job(-5)

@@ -55,7 +55,7 @@ func _choc_in_fridge():
 	return false
 	
 func _partner_choc_message(handle):
-	EventBus.emit_signal("sig_got_phone_message", 'partner', "Hi honey. Can you bring me my favorite chocolate from the supermarket? You had to go shopping anyway, right?")
+	_send_phone_message('partner', 'day02_partner_message')
 	
 func _on_fridge_content_changed():
 	if states[progress] == 'buy_choc' and _choc_in_fridge():

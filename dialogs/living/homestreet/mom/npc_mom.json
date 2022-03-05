@@ -34,6 +34,11 @@
 		"day06_answer_dont_know": "I don't know.",
 		"day06_answer_takes_time": "I think it still needs time.",
 		"day06_response": "I hope this works out soon. Slowly these drugs are getting really expensive.",
+		"day08_pre_meds": "Hello, good to see you. Have you been to the pharmacy to get my medication yet?",
+		"day08_pre_meds_answer": "No. I'm on my way.",
+		"day08_post_meds": "Thank you for the medication. You are a great help. I see they have become more expensive. I hope that the costs will be covered soon.",
+		"day09_small_talk": "Nice of you to visit me again. How are you?",
+		"day09_fine": "I'm fine",
 		"x": "(end dialog)"
 	},
 	"graphs": {
@@ -422,6 +427,105 @@
 			}
 		},
 		"day07_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			},
+			"node1": {
+				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day08_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day08_pre_meds",
+				"answers": [
+					{
+						"tid": "day08_pre_meds_answer",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day08_post_meds": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day08_post_meds",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day09_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day09_small_talk",
+				"answers": [
+					{
+						"tid": "day09_fine",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			},
+			"node1": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node2",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node2",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			},
+			"node2": {
+				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day10_initial": {
 			"initial_nid": "node0",
 			"node0": {
 				"tid": "day06_ask_for_application",

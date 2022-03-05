@@ -39,7 +39,7 @@ func _update_progress(new_state):
 			)
 
 func _friend_mall_message(handle):
-	EventBus.emit_signal("sig_got_phone_message", 'friend', "Hi, I'm at the mall right now. Why don't you come by and we can have a bite to eat together?")
+	_send_phone_message('friend', 'day03_friend_message')
 	
 func start_day():
 	.start_day()

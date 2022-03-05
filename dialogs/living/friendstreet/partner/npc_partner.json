@@ -58,6 +58,14 @@
         "day07_q2a2": "I'll think about it.",
         "day07_q2a3": "I don't know yet.",
         "day07_post": "I'm really worried about <FRIEND>. You should talk to your boss about him.",
+        "day08_pre_friend": "I am still worried about <FRIEND>. He's been out with weird people all the time lately.",
+        "day08_post_friend": "I am still very worried about <FRIEND>. Have you spoken to him?",
+        "day08_trouble": "He's in trouble",
+        "day08_trouble_answer": "Then you should really talk to your boss about him.",
+        "day08_no": "No, didn't see him",
+        "day08_no_answer": "Maybe he is in trouble. He often hangs around and is rarely at home. Why don't you talk to your boss about it?",
+        "day08_fine": "Yes, but he's fine",
+        "day08_fine_answer": "Maybe you should still talk to your boss about him.",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -532,6 +540,77 @@
             "initial_nid": "node0",
             "node0": {
                 "tid": "day07_post",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day08_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day08_pre_friend",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day08_post_friend": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day08_post_friend",
+                "answers": [
+                    {
+                        "tid": "day08_trouble",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day08_no",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day08_fine",
+                        "nid": "node3",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "day08_trouble_answer",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "day08_no_answer",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node3": {
+                "tid": "day08_fine_answer",
                 "answers": [
                     {
                         "tid": "x",
