@@ -26,8 +26,18 @@
 		"day11_dont_correct_reaction": "Good, I hope it's all settled. Be on time tomorrow.",
 		"day11_post_debriefing": "Is there anything else?",
 		"day11_post_corrected": "Be on time tomorrow. This will be an important day.",
+
+		"day12_initial_not_corrected": "Good morning. We have received information that the gathering will be held at a different location. We have adjusted our operations plan accordingly. The access will now take place in the park south of the bus stop.",
+		"day12_initial_corrected": "Good morning. Access is immediate. Let's go ahead and catch these guys.",
+		"day12_rebel_talk": "<FRIEND>: ... ... This will set a great example.  With this action we will make a difference... ...",
+		"day12_operation_not_corrected": "Boss: All on the ground. You are under arrest for forming a terrorist organization. Arrest the new guy too. He's in with them.",
+		"day12_operation_corrected": "Boss: All on the ground. You are arrested for forming a terrorist organization.",
+		"day12_debriefing": "That was good work. Thanks to your tip, the operation was a complete success. You can be proud of yourself. Why don't you take the day off tomorrow? You have earned it.",
+		"day12_in_prison": "Did you think we wouldn't notice if you secretly helped them? We knew from the beginning where the meeting would take place. You can't hide anything from us. I am deeply disappointed in you. You're in for a long time behind bars. I feel sorry for your mother... By the way, here is your file. Feel free to read how antisocially you behaved.",
+
         "start_briefing": "(start briefing)",
         "cancel": "(cancel)",
+		"next": "(next)",
         "x": "(end dialog)",
         "debriefing": "Your shift is over. Lets look at how you performed today.",
         "post_work": "See you tomorrow. Be on time.",
@@ -397,5 +407,119 @@
 			],
 			"trigger_id": null
 		}
+	},
+	"day12_initial": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day12_initial_corrected",
+			"answers": [
+				{
+					"tid": "next",
+					"nid": null,
+					"trigger_id": "tid_day12_blend_to_busstreet"
+				}
+			],
+			"trigger_id": null
+		}
+	},
+	"day12_in_park": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day12_rebel_talk",
+			"answers": [
+				{
+					"tid": "next",
+					"nid": null,
+					"trigger_id": "tid_day12_start_operation"
+				}
+			],
+			"trigger_id": null
+		}
+	},
+	"day12_in_operation_corrected": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day12_operation_corrected",
+			"answers": [
+				{
+					"tid": "next",
+					"nid": null,
+					"trigger_id": "tid_day12_blend_to_police"
+				}
+			],
+			"trigger_id": null
+		}
+	},
+	"day12_post_operation": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day12_debrifing",
+			"answers": [
+				{
+					"tid": "x",
+					"nid": null,
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		}
+	},
+
+	"day12_initial_not_corrected": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day12_initial_not_corrected",
+			"answers": [
+				{
+					"tid": "next",
+					"nid": null,
+					"trigger_id": "tid_day12_blend_to_busstreet"
+				}
+			],
+			"trigger_id": null
+		}
+	},
+	"day12_in_park_not_corrected": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day12_rebel_talk",
+			"answers": [
+				{
+					"tid": "next",
+					"nid": null,
+					"trigger_id": "tid_day12_start_operation"
+				}
+			],
+			"trigger_id": null
+		}
+	},
+	"day12_in_operation_not_corrected": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day12_operation_not_corrected",
+			"answers": [
+				{
+					"tid": "next",
+					"nid": null,
+					"trigger_id": "tid_day12_blend_to_prison"
+				}
+			],
+			"trigger_id": null
+		}
+	},
+	"day12_in_prison": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day12_in_prison",
+			"answers": [
+				{
+					"tid": "x",
+					"nid": null,
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		}
 	}
+
 }

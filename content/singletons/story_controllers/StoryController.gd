@@ -15,14 +15,15 @@ onready var _friend_nodes = {
 	'home': get_node("/root/MainScene/Areas/LivingFriendstreetFriendArea/NpcFriend"),
 	'mall': get_node("/root/MainScene/Areas/UtilityBusstreetMallArea/NpcFriend"),
 #	'prison':
-#	'shadystreet': 
+	'busstreet': get_node("/root/MainScene/Areas/CityBusstreetArea/NpcFriend"), 
 	'partner': get_node("/root/MainScene/Areas/LivingFriendstreetPartnerArea/NpcFriend")
 }
 
 const _friend_positions = {
 	'home': Vector2(8, 10),
 	'mall': Vector2(10.8, 14),
-	'partner': Vector2(10, 11)
+	'partner': Vector2(10, 11),
+	'busstreet': Vector2(7, 13)
 }
 
 const _invisible_position = Vector2(-1, -1)

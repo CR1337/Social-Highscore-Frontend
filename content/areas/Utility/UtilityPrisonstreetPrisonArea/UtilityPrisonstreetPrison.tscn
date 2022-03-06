@@ -19,8 +19,8 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_guard.tres" type="SpriteFrames" id=17]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_prisoner1.tres" type="SpriteFrames" id=18]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_prisoner2.tres" type="SpriteFrames" id=19]
-[ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_prisoner3.tres" type="SpriteFrames" id=20]
-[ext_resource path="res://assets/animated_sprites/tres/characters/utility/prisonstreet/prison/npc_interrogator.tres" type="SpriteFrames" id=21]
+[ext_resource path="res://assets/sprites/citizen_record.png" type="Texture" id=20]
+[ext_resource path="res://assets/animated_sprites/tres/characters/friend.tres" type="SpriteFrames" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -2190,7 +2190,6 @@ format = 1
 tile_data = PoolIntArray( 458753, 119, 196608, 458754, 119, 196609, 458755, 119, 196611, 655360, 116, 0, 655361, 116, 1, 655362, 116, 2, 655369, 116, 0, 655370, 116, 1, 655371, 116, 2, 786442, 118, 131077, 917504, 118, 65536, 917505, 118, 65537, 917506, 118, 65536, 917507, 118, 65537 )
 
 [node name="Details" type="TileMap" parent="."]
-z_index = 5
 tile_set = SubResource( 4 )
 format = 1
 tile_data = PoolIntArray( 65538, 114, 2, 65541, 114, 2, 65544, 114, 2, 65547, 114, 2, 196608, 112, 0, 458752, 112, 0, 458758, 112, 1, 458760, 112, 65536, 458763, 112, 1, 720905, 116, 393216, 720907, 116, 131072, 851968, 118, 0, 851969, 118, 0, 851970, 118, 1, 851971, 118, 0, 917512, 113, 0, 917514, 113, 0, 983048, 113, 65536, 983050, 113, 65536 )
@@ -2200,7 +2199,7 @@ z_index = 5
 tile_set = SubResource( 4 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 131071, 97, 0, 65536, 97, 0, 65537, 97, 0, 65538, 97, 0, 65539, 97, 0, 65540, 97, 0, 65541, 97, 0, 65542, 97, 0, 65543, 97, 0, 65544, 97, 0, 65545, 97, 0, 65546, 97, 0, 65547, 97, 0, 196607, 97, 0, 131072, 97, 0, 131075, 97, 0, 131078, 97, 0, 131081, 97, 0, 131084, 97, 0, 262143, 97, 0, 196608, 97, 0, 196611, 97, 0, 196614, 97, 0, 196617, 97, 0, 196620, 97, 0, 327679, 97, 0, 262144, 97, 0, 262145, 97, 0, 262146, 97, 0, 262147, 97, 0, 262148, 97, 0, 262149, 97, 0, 262150, 97, 0, 262151, 97, 0, 262152, 97, 0, 262153, 97, 0, 262154, 97, 0, 262155, 97, 0, 262156, 97, 0, 393215, 97, 0, 327692, 97, 0, 458751, 97, 0, 393228, 97, 0, 524287, 97, 0, 458764, 97, 0, 589823, 97, 0, 524288, 97, 0, 524289, 97, 0, 524290, 97, 0, 524291, 97, 0, 524292, 97, 0, 524295, 97, 0, 524296, 97, 0, 524297, 97, 0, 524298, 97, 0, 524299, 97, 0, 524300, 97, 0, 655359, 97, 0, 589825, 97, 0, 589826, 97, 0, 589827, 97, 0, 589828, 97, 0, 589831, 97, 0, 589834, 97, 0, 589836, 97, 0, 720895, 97, 0, 655364, 97, 0, 655367, 97, 0, 655372, 97, 0, 786431, 97, 0, 720896, 97, 0, 720897, 97, 0, 720898, 97, 0, 720905, 97, 0, 720906, 97, 0, 720907, 97, 0, 720908, 97, 0, 851967, 97, 0, 786436, 97, 0, 786439, 97, 0, 786444, 97, 0, 917503, 97, 0, 851972, 97, 0, 851975, 97, 0, 851978, 97, 0, 851980, 97, 0, 983039, 97, 0, 917508, 97, 0, 917511, 97, 0, 917516, 97, 0, 1048575, 97, 0, 983040, 97, 0, 983041, 97, 0, 983042, 97, 0, 983043, 97, 0, 983044, 97, 0, 983047, 97, 0, 983048, 97, 0, 983050, 97, 0, 983052, 97, 0, 1048576, 97, 0, 1048577, 97, 0, 1048578, 97, 0, 1048579, 97, 0, 1048580, 97, 0, 1048583, 97, 0, 1048584, 97, 0, 1048585, 97, 0, 1048586, 97, 0, 1048587, 97, 0 )
+tile_data = PoolIntArray( 131071, 97, 0, 65536, 97, 0, 65537, 97, 0, 65538, 97, 0, 65539, 97, 0, 65540, 97, 0, 65541, 97, 0, 65542, 97, 0, 65543, 97, 0, 65544, 97, 0, 65545, 97, 0, 65546, 97, 0, 65547, 97, 0, 196607, 97, 0, 131072, 97, 0, 131075, 97, 0, 131078, 97, 0, 131081, 97, 0, 131084, 97, 0, 262143, 97, 0, 196608, 97, 0, 196611, 97, 0, 196614, 97, 0, 196617, 97, 0, 196620, 97, 0, 327679, 97, 0, 262144, 97, 0, 262145, 97, 0, 262146, 97, 0, 262147, 97, 0, 262148, 97, 0, 262149, 97, 0, 262150, 97, 0, 262151, 97, 0, 262152, 97, 0, 262153, 97, 0, 262154, 97, 0, 262155, 97, 0, 262156, 97, 0, 393215, 97, 0, 327692, 97, 0, 458751, 97, 0, 393228, 97, 0, 524287, 97, 0, 458764, 97, 0, 589823, 97, 0, 524288, 97, 0, 524289, 97, 0, 524290, 97, 0, 524291, 97, 0, 524292, 97, 0, 524295, 97, 0, 524296, 97, 0, 524297, 97, 0, 524298, 97, 0, 524299, 97, 0, 524300, 97, 0, 655359, 97, 0, 589825, 97, 0, 589826, 97, 0, 589827, 97, 0, 589828, 97, 0, 589831, 97, 0, 589834, 97, 0, 589836, 97, 0, 720895, 97, 0, 655364, 97, 0, 655367, 97, 0, 655369, 97, 0, 655371, 97, 0, 655372, 97, 0, 786431, 97, 0, 720896, 97, 0, 720897, 97, 0, 720898, 97, 0, 720905, 97, 0, 720906, 97, 0, 720907, 97, 0, 720908, 97, 0, 851967, 97, 0, 786436, 97, 0, 786439, 97, 0, 786444, 97, 0, 917503, 97, 0, 851972, 97, 0, 851975, 97, 0, 851978, 97, 0, 851980, 97, 0, 983039, 97, 0, 917508, 97, 0, 917511, 97, 0, 917516, 97, 0, 1048575, 97, 0, 983040, 97, 0, 983041, 97, 0, 983042, 97, 0, 983043, 97, 0, 983044, 97, 0, 983047, 97, 0, 983048, 97, 0, 983050, 97, 0, 983052, 97, 0, 1048576, 97, 0, 1048577, 97, 0, 1048578, 97, 0, 1048579, 97, 0, 1048580, 97, 0, 1048583, 97, 0, 1048584, 97, 0, 1048585, 97, 0, 1048586, 97, 0, 1048587, 97, 0 )
 
 [node name="TriggerArea" parent="." instance=ExtResource( 11 )]
 position = Vector2( 377.568, 1058.04 )
@@ -2242,14 +2241,6 @@ looking_direction = Vector2( -1, 0 )
 script = ExtResource( 15 )
 id = "tid_utility_prisonstreet_prison_npc_guard_start_dialog"
 
-[node name="Npc" parent="." instance=ExtResource( 14 )]
-position = Vector2( 672, 672 )
-z_index = 1
-speed = 2.0
-active_on_start = true
-animation = ExtResource( 21 )
-current_position = Vector2( 10, 10 )
-
 [node name="Npc2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 672, 800 )
 z_index = 1
@@ -2276,10 +2267,22 @@ animation = ExtResource( 19 )
 current_position = Vector2( 5, 2 )
 looking_direction = Vector2( -1, 0 )
 
-[node name="NpcPrisoner3" parent="." instance=ExtResource( 14 )]
-position = Vector2( 672, 224 )
-z_index = 3
+[node name="NpcPrisonerFriend" parent="." instance=ExtResource( 14 )]
+position = Vector2( 544, 160 )
+z_index = 1
 speed = 2.0
 active_on_start = true
-animation = ExtResource( 20 )
-current_position = Vector2( 10, 3 )
+animation = ExtResource( 21 )
+current_position = Vector2( 8, 2 )
+
+[node name="NpcPrisoner3" parent="." instance=ExtResource( 14 )]
+z_index = 3
+
+[node name="CitizenRecordTiggerArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 673.244, 720.552 )
+z_index = 5
+is_activated_by_action = true
+action_trigger_id = "tid_read_citizen_record"
+
+[node name="Sprite" type="Sprite" parent="CitizenRecordTiggerArea"]
+texture = ExtResource( 20 )

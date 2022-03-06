@@ -333,8 +333,8 @@ func persistent_state():
 	}
 
 func restore_state(jsonstate):
-	if str(get_path()) == "/root/MainScene/Areas/LivingHomestreetArea/Car2_3":
-		pass
+#	if str(get_path()) == "/root/MainScene/Areas/LivingHomestreetArea/Car2_3":
+#		pass
 	set_current_position(Vector2(jsonstate['current_position_x'], jsonstate['current_position_y']))
 	_active =  jsonstate['active']
 	announced_position = (Vector2(jsonstate['announced_position_x'], jsonstate['announced_position_y']))

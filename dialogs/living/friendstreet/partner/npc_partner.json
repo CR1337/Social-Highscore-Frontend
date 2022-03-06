@@ -71,7 +71,9 @@
 		"day11_post_work_answer1": "Yes I am.",
 		"day11_post_work_answer2": "No I am not.",
 		"day11_post_work_reaction": "I am definitely excited. But I'm sure you can do it and the mission will be a great success. I just hope <friend> comes to his senses and realizes that he was wrong.",
-        "x": "(end dialog)"
+        "day12_intial": "Good luck today.",
+		"day12_post_work": "I am totally proud of you too. Now a flourishing career in the police force awaits you for sure.",
+		"x": "(end dialog)"
     },
     "graphs": {
         "day01_initial": {
@@ -669,6 +671,34 @@
                 ],
                 "trigger_id": null
             }
-        }
+        },
+		"day12_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day12_initial",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day12_post_work": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day12_post_work",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		}
     }
 }

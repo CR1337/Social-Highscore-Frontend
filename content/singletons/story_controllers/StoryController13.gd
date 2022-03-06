@@ -2,6 +2,8 @@ extends "res://content/singletons/story_controllers/StoryController.gd"
 
 func _ready():
 	states = [
+		'goto_partner',
+		'partner_away'
 	]
 	._ready()
 

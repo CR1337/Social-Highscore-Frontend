@@ -12,10 +12,9 @@
         "day09": "I love my job.",
         "day10": "I'm already excited about the big operation. Oh, damn, you told me not to talk about that. You didn't hear anything.",
         "day11": "Tomorrow is the big day. If we succeed, it will send an important signal.",
-        "day12": "",
+        "day12": "What are you still standing around here. Let's start with the work.",
+		"day12_post_work": "Finally, this scum is behind bars.",
         "day13": "",
-        "day14": "",
-        "day15": "",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -188,51 +187,37 @@
             }
         },
         "day12_initial": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "day12",
-                "answers": [
-                    {
-                        "tid": "x",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            }
-        },
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day12",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day12_post_work": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day12_post_work",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
         "day13_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day13",
-                "answers": [
-                    {
-                        "tid": "x",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            }
-        },
-        "day14_initial": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "day14",
-                "answers": [
-                    {
-                        "tid": "x",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            }
-        },
-        "day15_initial": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "day15",
                 "answers": [
                     {
                         "tid": "x",
