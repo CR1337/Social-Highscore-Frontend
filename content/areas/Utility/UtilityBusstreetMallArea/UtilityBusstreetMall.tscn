@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/tilesets/interior/black.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/16_Grocery_store_32x32.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://content/areas/Utility/UtilityBusstreetMallArea/BuffetPaymentTrigger.gd" type="Script" id=23]
 [ext_resource path="res://assets/animated_sprites/tres/characters/living/friendstreet/friend.tres" type="SpriteFrames" id=24]
 [ext_resource path="res://content/trigger/StateChangeTrigger.gd" type="Script" id=25]
+[ext_resource path="res://assets/animated_sprites/tres/characters/living/friendstreet/partner.tres" type="SpriteFrames" id=26]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -3132,3 +3133,24 @@ position = Vector2( -18.6453, -0.146545 )
 scale = Vector2( 2, 1 )
 is_activated_by_action = true
 action_trigger_id = "tid_utility_busstreet_mall_npc_friend_start_dialog"
+
+[node name="NpcPartner" parent="." instance=ExtResource( 16 )]
+position = Vector2( -32, -32 )
+idle_animation = "sitting"
+animation = ExtResource( 26 )
+current_position = Vector2( -1, -1 )
+looking_direction = Vector2( -1, 0 )
+
+[node name="DialogStartTrigger" type="Node" parent="NpcPartner"]
+script = ExtResource( 17 )
+id = "tid_utility_busstreet_mall_npc_partner_start_dialog"
+
+[node name="StateChangeTrigger" type="Node" parent="NpcPartner"]
+script = ExtResource( 25 )
+id = "tid_utility_busstreet_mall_npc_partner_state_change"
+
+[node name="DialogTriggerArea" parent="NpcPartner" instance=ExtResource( 11 )]
+position = Vector2( -18.6453, -0.146545 )
+scale = Vector2( 2, 1 )
+is_activated_by_action = true
+action_trigger_id = "tid_utility_busstreet_mall_npc_partner_start_dialog"

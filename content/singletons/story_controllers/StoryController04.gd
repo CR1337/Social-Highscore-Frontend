@@ -45,7 +45,7 @@ func _update_progress(new_state):
 func start_day():
 	.start_day()
 	_update_progress('goto_work')
-	_set_friend_visibility('none')
+	_set_npc_visibility('friend', 'none')
 
 
 func _on_trigger(trigger_id, kwargs):

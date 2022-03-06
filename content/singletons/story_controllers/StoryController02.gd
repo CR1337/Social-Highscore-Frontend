@@ -45,7 +45,7 @@ func _update_progress(new_state):
 func start_day():
 	.start_day()
 	_unblock_trigger('tid_living_busstreet_bus')
-	_set_friend_visibility('none')
+	_set_npc_visibility('friend', 'none')
 	_update_progress('goto_jobcenter')
 	
 func _choc_in_fridge():

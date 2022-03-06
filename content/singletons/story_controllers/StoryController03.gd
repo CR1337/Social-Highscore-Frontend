@@ -22,7 +22,7 @@ func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
 		'talk_to_friend':
-			_set_friend_visibility('mall')
+			_set_npc_visibility('friend', 'mall')
 			TimeController.setTimer(4, self, '_friend_mall_message')
 			_request_state_change(
 				"tid_utility_busstreet_mall_npc_friend_state_change",
@@ -32,7 +32,7 @@ func _update_progress(new_state):
 			pass
 		'goto_bed':
 			ViewportManager.blend_with_black()
-			_set_friend_visibility('home')
+			_set_npc_visibility('friend', 'home')
 			_request_state_change(
 				_state_change_trigger_ids['friend'],
 				'day03_post_meeting'
@@ -43,7 +43,7 @@ func _friend_mall_message(handle):
 	
 func start_day():
 	.start_day()
-	_set_friend_visibility('home')
+	_set_npc_visibility('friend', 'home')
 	_update_progress('goto_work')
 
 func _on_ate_in_mall(item_key):

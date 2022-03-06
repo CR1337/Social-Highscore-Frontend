@@ -20,7 +20,7 @@
         "next": "(next)"
     },
     "graphs": {
-        "day09_talk_to_partner": {
+        "day09_dinner": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day09_pre_eat",
@@ -53,7 +53,7 @@
                 "trigger_id": null
             }
         },
-        "day09_not_ate_fast_food": {
+        "day09_not_ate_fruits": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day09_t2",
@@ -123,7 +123,7 @@
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_day09_finished_talk"
                     }
                 ],
                 "trigger_id": null

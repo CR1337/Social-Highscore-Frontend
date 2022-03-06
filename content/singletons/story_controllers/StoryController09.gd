@@ -24,7 +24,7 @@ func _update_progress(new_state):
 		'goto_work':
 			pass
 		'goto_mall':
-			_set_partner_visibility('mall')
+			_set_npc_visibility('partner', 'mall')
 			_send_phone_message('partner', 'day09_partner_message')
 			_request_state_change(
 				"tid_utility_busstreet_mall_npc_partner_state_change",
@@ -35,13 +35,14 @@ func _update_progress(new_state):
 		'talk_to_partner_again':
 			pass
 		'continue_talking':
-			pass
-		'goto_bed':
-			_set_partner_visibility('home')
 			_request_state_change(
-				_state_change_trigger_ids['partner'],
-				"day09_after_dinner"
+				"tid_utility_busstreet_mall_npc_partner_state_change",
+				"day09_continue_talking"
 			)
+			EventBus.call_deferred("emit_signal","sig_trigger", "tid_utility_busstreet_mall_npc_partner_start_dialog", {})
+		'goto_bed':
+			_set_npc_visibility('partner', 'none')
+			ViewportManager.blend_with_black()
 
 func start_day():
 	.start_day()

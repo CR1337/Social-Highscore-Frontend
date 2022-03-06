@@ -15,14 +15,25 @@ onready var _friend_nodes = {
 	'home': get_node("/root/MainScene/Areas/LivingFriendstreetFriendArea/NpcFriend"),
 	'mall': get_node("/root/MainScene/Areas/UtilityBusstreetMallArea/NpcFriend"),
 #	'prison':
-#	'shadystreet': 
+	'shadystreet': get_node("/root/MainScene/Areas/CityShadystreetArea/NpcFriend"),
 	'partner': get_node("/root/MainScene/Areas/LivingFriendstreetPartnerArea/NpcFriend")
 }
 
 const _friend_positions = {
 	'home': Vector2(8, 10),
 	'mall': Vector2(10.8, 14),
-	'partner': Vector2(10, 11)
+	'partner': Vector2(10, 11),
+	'shadystreet': Vector2(6, 1)
+}
+
+onready var _partner_nodes = {
+	'home': get_node("/root/MainScene/Areas/LivingFriendstreetPartnerArea/NpcPartner"),
+	'mall': get_node("/root/MainScene/Areas/UtilityBusstreetMallArea/NpcPartner"),
+}
+
+const _partner_positions = {
+	'home': Vector2(8, 10),
+	'mall': Vector2(10.8, 14)
 }
 
 const _invisible_position = Vector2(-1, -1)
@@ -46,16 +57,21 @@ func activate():
 func deactivate():
 	EventBus.disconnect("sig_trigger", self, "_on_trigger")
 
-func _set_friend_visibility(friend_key):
-	for node in _friend_nodes.values():
-		node.set_current_position(_invisible_position)
-	if friend_key != 'none':
-		_friend_nodes[friend_key].set_current_position(_friend_positions[friend_key])
-	
-func _set_partner_visibility(partner_key):
-	pass
+func _set_npc_visibility(npc, key):
+	match npc:
+		'friend':
+			for node in _friend_nodes.values():
+				node.set_current_position(_invisible_position)
+			if key != 'none':
+				_friend_nodes[key].set_current_position(_friend_positions[key])
+		'partner':
+			for node in _partner_nodes.values():
+				node.set_current_position(_invisible_position)
+			if key != 'none':
+				_partner_nodes[key].set_current_position(_partner_positions[key])
 
-const _phone_message_filename = "res://text/phone_messages.json"
+
+const _phone_message_filename = "res://texts/phone_messages.json"
 var _phone_messages: Dictionary
 
 func _send_phone_message(contact, text_id):
@@ -73,6 +89,7 @@ func _ready():
 	states.append('goto_bed')
 	states.append('finished')
 	_load_news()
+	_load_phone_messages()
 	
 const _news_filename = "res://texts/news.json"
 var _news: Dictionary

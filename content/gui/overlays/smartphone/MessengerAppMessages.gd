@@ -47,5 +47,5 @@ func _display_messages():
 
 
 func _on_BackButton_pressed():
-	ViewportManager.change_to_messenger_contacts()
+	ViewportManager.change_to_last()
 	EventBus.emit_signal("sig_opened_message", _current_contact)

@@ -21,7 +21,7 @@ func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
 		'buy_meds':
-			_set_friend_visibility('none')
+			_set_npc_visibility('friend', 'none')
 			_send_phone_message('mom', 'day08_mom_message')
 			_request_state_change(
 				"tid_living_pharmacystreet_pharmacy_npc_counter_state_change",
@@ -34,21 +34,21 @@ func _update_progress(new_state):
 			)
 			_request_state_change(
 				_state_change_trigger_ids['mom'],
-				'day08_waiting_for_bought_meds'
+				'day08_post_meds'
 			)
 		'meet_friend':
 			TimeController.setTimer(3, self, "friend_message")
-			_set_friend_visibility('shadystreet')
+			_set_npc_visibility('friend', 'shadystreet')
 			_request_state_change(
 				_state_change_trigger_ids['mom'],
 				'day08_got_meds'
 			)
 		'goto_bed':
-			_set_friend_visibility('home')
+			_set_npc_visibility('friend', 'home')
 			ViewportManager.blend_with_black()
 			_request_state_change(
 				_state_change_trigger_ids['partner'],
-				'day08_met_friend'
+				'day08_post_friend'
 			)
 
 func start_day():

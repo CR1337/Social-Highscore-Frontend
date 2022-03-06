@@ -24,19 +24,19 @@ func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
 		'goto_work':
-			_set_friend_visibility('home')
+			_set_npc_visibility('friend', 'home')
 		'goto_office':
 			_unblock_trigger('tid_city_bankstreet_leave_office')
 			_request_state_change(_state_change_trigger_ids['mom'], 'day06_post_work')
 			_request_state_change('tid_city_bankstreet_office_npc_counter_state_change', 'day06_idle')
 		'goto_partner':
-			_set_friend_visibility('partner')
+			_set_npc_visibility('friend', 'partner')
 			TimeController.setTimer(2, self, '_partner_message')
 			_request_state_change(_state_change_trigger_ids['mom'], 'day06_post_application')
 			_request_state_change(_state_change_trigger_ids['partner'], 'day06_game_evening')
 			_request_state_change('tid_city_bankstreet_office_npc_counter_state_change', 'with_application_idle')
 		'goto_bed':
-			_set_friend_visibility('home')
+			_set_npc_visibility('friend', 'home')
 			ViewportManager.blend_with_black()
 			_request_state_change(_state_change_trigger_ids['partner'], 'day06_post_game_evening')
 			_request_state_change(_state_change_trigger_ids['friend'], 'day06_post_game_evening')

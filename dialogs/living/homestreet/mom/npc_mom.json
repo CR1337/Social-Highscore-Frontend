@@ -479,6 +479,36 @@
 					{
 						"tid": "x",
 						"nid": null,
+						"trigger_id": "tid_day08_brought_meds"
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day08_got_meds": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			},
+			"node1": {
+				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
 						"trigger_id": null
 					}
 				],
