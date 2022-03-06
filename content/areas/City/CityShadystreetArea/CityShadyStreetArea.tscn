@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
-[ext_resource path="res://content/areas/City/CityShadystreetArea/CityShadyStreetArea.gd" type="Script" id=3]
+[ext_resource path="res://content/areas/City/CityShadystreetArea/CityShadystreetArea.gd" type="Script" id=3]
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/outdoor/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/shadystreet/npc1.tres" type="SpriteFrames" id=6]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/shadystreet/npc2.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=10]
 [ext_resource path="res://assets/animated_sprites/tres/cars/animated_taxi_car.tres" type="SpriteFrames" id=11]
+[ext_resource path="res://content/trigger/StateChangeTrigger.gd" type="Script" id=12]
+[ext_resource path="res://assets/animated_sprites/tres/characters/living/friendstreet/friend.tres" type="SpriteFrames" id=13]
 
 [node name="CityShadystreetArea" type="Node2D"]
 script = ExtResource( 3 )
@@ -111,3 +113,19 @@ current_position = Vector2( 2, -1 )
 [node name="CarStartTrigger" type="Node" parent="Car7_1"]
 script = ExtResource( 10 )
 id = "tid_city_shadystreet_car_7_1_start"
+
+[node name="NpcFriend" parent="." instance=ExtResource( 8 )]
+position = Vector2( -32, -32 )
+initial_state = "initial"
+is_activated_by_action = true
+action_trigger_id = "tid_city_shadystreet_npc_friend_start_dialog"
+animation = ExtResource( 13 )
+current_position = Vector2( -1, -1 )
+
+[node name="DialogStartTrigger" type="Node" parent="NpcFriend"]
+script = ExtResource( 7 )
+id = "tid_city_shadystreet_npc_friend_start_dialog"
+
+[node name="StateChangeTrigger" type="Node" parent="NpcFriend"]
+script = ExtResource( 12 )
+id = "tid_city_shadystreet_npc_friend_state_change"

@@ -37,7 +37,7 @@ func _update_progress(new_state):
 				'tid_city_bankstreet_bank_npc_counter_state_change',
 				'day05_unlock_account'
 			)
-			_set_friend_visibility('none')
+			_set_npc_visibility('friend', 'none')
 		'goto_bank':
 			GameStateController.ticket_bought = true
 			_request_state_change(

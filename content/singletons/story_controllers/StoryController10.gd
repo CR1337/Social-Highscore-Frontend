@@ -29,7 +29,7 @@ func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
 		'goto_bed':
-			TimeController.setTimer(10, self, "friend_message")
+			TimeController.setTimer(3, self, "friend_message")
 	
 
 func start_day():

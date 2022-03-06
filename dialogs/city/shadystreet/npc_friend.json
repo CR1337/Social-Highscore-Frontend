@@ -69,7 +69,7 @@
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_day08_talked_with_friend"
                     }
                 ],
                 "trigger_id": null

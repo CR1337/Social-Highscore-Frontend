@@ -902,6 +902,33 @@
         "blocked": false,
         "block_state": "blocked"
     },
+    "/root/MainScene/Areas/CityShadystreetArea/NpcFriend": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "initial",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/NpcFriend/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/NpcFriend/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
     "/root/MainScene/Areas/CityBusstreetArea/LeaveBottomTriggerArea/LeaveBottomTrigger": {
         "blocked": false,
         "block_state": "blocked"
@@ -3255,6 +3282,33 @@
         "blocked": false,
         "block_state": "blocked"
     },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcPartner": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcPartner/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcPartner/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
     "/root/MainScene/Areas/UtilityPrisonstreetArea/LeaveRightTriggerArea/LeaveRightTrigger": {
         "blocked": false,
         "block_state": "blocked"
@@ -3622,18 +3676,14 @@
         "progress": 0
     },
     "/root/StoryController11": {
-        "progress": 0
+        "progress": 0,
+        "corrected_boss": false
     },
     "/root/StoryController12": {
-        "progress": 0
+        "progress": 0,
+        "corrected_boss": false
     },
     "/root/StoryController13": {
-        "progress": 0
-    },
-    "/root/StoryController14": {
-        "progress": 0
-    },
-    "/root/StoryController15": {
         "progress": 0
     }
 }

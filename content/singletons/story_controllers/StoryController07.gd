@@ -31,7 +31,7 @@ func _update_progress(new_state):
 
 func start_day():
 	.start_day()
-	_set_friend_visibility('none')
+	_set_npc_visibility('friend', 'none')
 	_update_progress('talk_to_partner')
 
 func _on_trigger(trigger_id, kwargs):
