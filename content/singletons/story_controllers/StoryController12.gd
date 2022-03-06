@@ -1,7 +1,21 @@
 extends "res://content/singletons/story_controllers/StoryController.gd"
 
+var corrected_boss = false
+
+func persistent_state():
+	var state = .persistent_state()
+	state['corrected_boss'] = corrected_boss
+	return state
+	
+func restore_state(state):
+	.restore_state(state)
+	corrected_boss = state['corrected_boss']
+
 func _ready():
 	states = [
+		'goto_work',
+		'mission',
+		'in_prison'
 	]
 	._ready()
 

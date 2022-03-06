@@ -39,6 +39,7 @@
 		"day08_post_meds": "Thank you for the medication. You are a great help. I see they have become more expensive. I hope that the costs will be covered soon.",
 		"day09_small_talk": "Nice of you to visit me again. How are you?",
 		"day09_fine": "I'm fine",
+		"day11_initial": "What a tragedy with <Friend>. I never expected anything like this from him. He was always such a sweet boy.",
 		"x": "(end dialog)"
 	},
 	"graphs": {
@@ -545,6 +546,20 @@
 			},
 			"node1": {
 				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day11_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day11_initial",
 				"answers": [
 					{
 						"tid": "x",

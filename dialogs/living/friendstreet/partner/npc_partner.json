@@ -66,6 +66,11 @@
         "day08_no_answer": "Maybe he is in trouble. He often hangs around and is rarely at home. Why don't you talk to your boss about it?",
         "day08_fine": "Yes, but he's fine",
         "day08_fine_answer": "Maybe you should still talk to your boss about him.",
+		"day11_initial": "Have fun at work.",
+		"day11_post_work_question": "Are you excited about the operation tomorrow?",
+		"day11_post_work_answer1": "Yes I am.",
+		"day11_post_work_answer2": "No I am not.",
+		"day11_post_work_reaction": "I am definitely excited. But I'm sure you can do it and the mission will be a great success. I just hope <friend> comes to his senses and realizes that he was wrong.",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -611,6 +616,50 @@
             },
             "node3": {
                 "tid": "day08_fine_answer",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day11_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day11_initial",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day11_post_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day11_post_work_question",
+                "answers": [
+                    {
+                        "tid": "day11_post_work_answer1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+					{
+                        "tid": "day11_post_work_answer2",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+			"node1": {
+                "tid": "day11_post_work_reaction",
                 "answers": [
                     {
                         "tid": "x",

@@ -18,6 +18,14 @@
         "day10_friend": "Good morning.  Before you start work I have something to tell you. Your friend <FRIEND> is now on a list of persons considered a risk to society.  We have reason to believe that he is part of an underground network planning terrorist actions against society. So behave cautiously in his presence. If he mentions anything to you that could help the police uncover his network, please let me know immediately.",
         "day10_ok": "ok",
         "day10_start": "Good then your shift begins now.",
+		"day11_pre_work": "Good morning. Let's get started right away. Why don't you stick around after your shift? I still need to talk to you.",
+		"day11_post_work": "I'll get straight to the point. We have a large-scale operation planned for tomorrow to dismantle the underground network to which your former friend also belongs. We received an anonymous tip that a meeting is planned behind the job center.",
+		"day11_correct": "(tell correct location)",
+		"day11_dont_correct": "(don't tell)",
+		"day11_correct_reaction": "Thank you very much for this valuable information. I see they are a very loyal member of society. I will discuss with the operation management and adjust the plan accordingly.",
+		"day11_dont_correct_reaction": "Good, I hope it's all settled. Be on time tomorrow.",
+		"day11_post_debriefing": "Is there anything else?",
+		"day11_post_corrected": "Be on time tomorrow. This will be an important day.",
         "start_briefing": "(start briefing)",
         "cancel": "(cancel)",
         "x": "(end dialog)",
@@ -278,5 +286,116 @@
                 "trigger_id": null
             }
         }
-    }
+    },
+
+	"day11_initial": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day11_pre_work",
+			"answers": [
+				{
+					"tid": "start_briefing",
+					"nid": null,
+					"trigger_id": "tid_start_work"
+				}
+			],
+			"trigger_id": null
+		}
+	},
+	"day11_post_work": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day11_post_work",
+			"answers": [
+				{
+					"tid": "day11_correct",
+					"nid": "node1",
+					"trigger_id": "tid_day11_corrected_boss"
+				},
+				{
+					"tid": "day11_dont_correct",
+					"nid": "node2",
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		},
+		"node1": {
+			"tid": "day11_correct_reaction",
+			"answers": [
+				{
+					"tid": "x",
+					"nid": null,
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		},
+		"node2": {
+			"tid": "day11_post_corrected_reaction",
+			"answers": [
+				{
+					"tid": "x",
+					"nid": null,
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		}
+	},
+	"day11_post_debriefing": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day11_post_debriefing",
+			"answers": [
+				{
+					"tid": "day11_correct",
+					"nid": "node1",
+					"trigger_id": "tid_day11_corrected_boss"
+				},
+				{
+					"tid": "day11_dont_correct",
+					"nid": "node2",
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		},
+		"node1": {
+			"tid": "day11_correct_reaction",
+			"answers": [
+				{
+					"tid": "x",
+					"nid": null,
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		},
+		"node2": {
+			"tid": "day11_post_corrected_reaction",
+			"answers": [
+				{
+					"tid": "x",
+					"nid": null,
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		}
+	},
+	"day11_post_corrected": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day11_post_corrected",
+			"answers": [
+				{
+					"tid": "x",
+					"nid": null,
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		}
+	}
 }

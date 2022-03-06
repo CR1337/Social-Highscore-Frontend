@@ -10,7 +10,8 @@
         "day08": "...",
         "day09": "I reported my neighbour to the police yesterday. Her antisocial behaviour has always bothered me. I think it's good that the state is now taking action against it.",
         "day10": "I have heard that a list of potential terrorists has now been drawn up. I hope they will be arrested soon",
-        "x": "(end dialog)"
+        "day11": "...",
+		"x": "(end dialog)"
     },
     "graphs": {
         "day01_initial": {
@@ -143,6 +144,20 @@
             "initial_nid": "node0",
             "node0": {
                 "tid": "day10",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day11_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day11",
                 "answers": [
                     {
                         "tid": "x",

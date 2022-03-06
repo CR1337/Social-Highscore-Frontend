@@ -132,9 +132,7 @@ onready var story_controllers = [
 	StoryController10,
 	StoryController11,
 	StoryController12,
-	StoryController13,
-	StoryController14,
-	StoryController15
+	StoryController13
 ]
 
 func deactivate_all_story_controllers():
