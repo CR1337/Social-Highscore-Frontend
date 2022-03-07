@@ -1310,6 +1310,158 @@
         "blocked": false,
         "block_state": "blocked"
     },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcFriend": {
+        "current_position_x": 7,
+        "current_position_y": 13,
+        "active": true,
+        "announced_position_x": 7,
+        "announced_position_y": 13,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcRebel1": {
+        "current_position_x": 6,
+        "current_position_y": 14,
+        "active": false,
+        "announced_position_x": 6,
+        "announced_position_y": 14,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcRebel2": {
+        "current_position_x": 8,
+        "current_position_y": 14,
+        "active": false,
+        "announced_position_x": 8,
+        "announced_position_y": 14,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcRebel3": {
+        "current_position_x": 7,
+        "current_position_y": 15,
+        "active": false,
+        "announced_position_x": 7,
+        "announced_position_y": 15,
+        "looking_direction_x": 0,
+        "looking_direction_y": -1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcPolice1": {
+        "current_position_x": 9,
+        "current_position_y": 15,
+        "active": false,
+        "announced_position_x": 9,
+        "announced_position_y": 15,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcPolice2": {
+        "current_position_x": 5,
+        "current_position_y": 15,
+        "active": false,
+        "announced_position_x": 5,
+        "announced_position_y": 15,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcPolice3": {
+        "current_position_x": 5,
+        "current_position_y": 12,
+        "active": false,
+        "announced_position_x": 5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcBoss": {
+        "current_position_x": 7,
+        "current_position_y": 12,
+        "active": false,
+        "announced_position_x": 7,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
     "/root/MainScene/Areas/CityJobcenterstreetArea/LeaveBottomTriggerArea/LeaveBottomTrigger": {
         "blocked": false,
         "block_state": "blocked"
@@ -3413,25 +3565,6 @@
         "blocked": false,
         "block_state": "blocked"
     },
-    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/Npc": {
-        "current_position_x": 10,
-        "current_position_y": 10,
-        "active": true,
-        "announced_position_x": 10,
-        "announced_position_y": 10,
-        "looking_direction_x": 0,
-        "looking_direction_y": 1,
-        "state": "idle",
-        "is_new_state_requested": false,
-        "requested_state": "",
-        "movement_dict": {
-
-        },
-        "movement_step_index": 0,
-        "movement_step_repeat_counter": 0,
-        "movement_waiting": false,
-        "movement_waiting_handle": 0
-    },
     "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/Npc2": {
         "current_position_x": 10,
         "current_position_y": 12,
@@ -3489,12 +3622,31 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
-    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcPrisoner3": {
-        "current_position_x": 10,
-        "current_position_y": 3,
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcPrisonerFriend": {
+        "current_position_x": 8,
+        "current_position_y": 2,
         "active": true,
-        "announced_position_x": 10,
-        "announced_position_y": 3,
+        "announced_position_x": 8,
+        "announced_position_y": 2,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcPrisoner3": {
+        "current_position_x": 0,
+        "current_position_y": 0,
+        "active": false,
+        "announced_position_x": 0,
+        "announced_position_y": 0,
         "looking_direction_x": 0,
         "looking_direction_y": 1,
         "state": "idle",

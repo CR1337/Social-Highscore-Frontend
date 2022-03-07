@@ -97,7 +97,7 @@ func start_day():
 	.start_day()
 	_bus_npc1.set_current_position(_invisible_position)
 	_bus_npc2.set_current_position(_invisible_position)
-	_set_friend_visibility('none')
+	_set_npc_visibility('friend', 'none')
 	_update_progress('goto_work')
 
 

@@ -105,8 +105,8 @@ func _debug_save_default_game():
 	call_deferred("start_new_game")
 
 func _ready():
-	_debug_save_default_game()
-	return
+#	_debug_save_default_game()
+#	return
 	var file = File.new()
 	if not file.file_exists(_save_filename):
 		_create_file()

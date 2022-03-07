@@ -49,7 +49,8 @@ func restore_state(state):
 	_mall_food_timer_items = state['mall_food_timer_items']
 	bank_account_blocked = state['bank_account_blocked']
 	
-	current_story_controller().activate()
+	if current_day > 0:
+		current_story_controller().activate()
 	
 	emit_signal("sig_hunger_changed", hunger)
 	EventBus.emit_signal("sig_fridge_content_changed")
