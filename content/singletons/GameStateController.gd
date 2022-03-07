@@ -64,6 +64,7 @@ var _next_status_update_handle = 2 # Stated in default_savegame
 
 signal sig_money_changed(new_value)
 signal sig_score_changed(new_value)
+signal sig_score_class_changed()
 
 func _ready():
 	EventBus.connect("sig_add_money", self, "_on_add_money")
@@ -86,6 +87,18 @@ func _on_trigger(trigger_id, kwargs):
 	
 enum SCORE_CLASS {
 	AAA, AA, A, B, C, D, E, X, Z	
+}
+
+const _score_class_name = {
+	SCORE_CLASS.AAA: "AAA",
+	SCORE_CLASS.AA: "AA",
+	SCORE_CLASS.A: "A",
+	SCORE_CLASS.B: "B",
+	SCORE_CLASS.C: "C",
+	SCORE_CLASS.D: "D",
+	SCORE_CLASS.E: "E",
+	SCORE_CLASS.X: "X",
+	SCORE_CLASS.Z: "Z",
 }
 
 func score_class():
@@ -111,7 +124,11 @@ func score_class():
 
 	
 func change_score(amount):
+	var _previous_score_class = score_class()
 	score += amount
+	if _previous_score_class != score_class():
+		CitizenRecord.add_score_class_changed(_score_class_name[score_class()])
+		emit_signal("sig_score_class_changed")
 	emit_signal("sig_score_changed", score)
 
 func change_money(amount):

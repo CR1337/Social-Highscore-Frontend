@@ -18,6 +18,7 @@ const _info_text = """
 
 func _ready():
 	GameStateController.connect("sig_score_changed", self, "_on_score_changed")
+	GameStateController.connect("sig_score_class_changed", self, "_on_score_class_changed")
 	call_deferred("_DEBUG_add_records")
 
 func _display_score():
@@ -29,7 +30,9 @@ func _display_records():
 		var record_string = CitizenRecord.record_display_string_for_app(record)
 		_record_label.append_bbcode("\n\n" + record_string)
 		var color = 'green'
-		if record['score'] < 0:
+		if record['score'] == 0:
+			continue
+		elif record['score'] < 0:
 			color = 'red'
 		_record_label.append_bbcode("\n[color=" + color + "]" + str(record['score']) + "[/color]")
 	_record_label.scroll_to_line(_record_label.get_line_count() - 1)
@@ -41,6 +44,14 @@ func _on_score_changed(new_value):
 	_display_score()
 	_display_records()
 	EventBus.emit_signal("sig_notification", 'score', "Your score has changed")
+
+func _on_score_class_changed():
+	_display_score()
+	_display_records()
+	TimeController.setTimer(2, self, "score_class_change")
+
+func score_class_change(handle):
+	EventBus.emit_signal("sig_notification", 'score', "Your score class has changed")
 
 func _on_InfoButton_pressed():
 	_show_info()

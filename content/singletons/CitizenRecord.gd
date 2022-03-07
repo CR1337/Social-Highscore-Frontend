@@ -27,6 +27,14 @@ func add_debug(score):
 	}
 	_add_record(params)
 
+func add_score_class_changed(new_class):
+	var params = {
+		'type': 'score_class_changed',
+		'score': 0,
+		'new_class': new_class
+	}
+	_add_record(params)
+
 func add_emotional_reaction_on_news(score, news, face, emotion, preferred_emotions):
 	var params = {
 		'type': 'emotional_reaction_on_news',
@@ -252,6 +260,9 @@ func record_display_string_for_app(record):
 	match record['type']:
 		'debug':
 			result += "DEBUG"
+		'score_class_changed':
+			result += "Your score class changed to class "
+			result += str(record['new_class'])
 		'emotional_reaction_on_news':
 			result += "The news was:\n"
 			result += record['news'] + "\n"
