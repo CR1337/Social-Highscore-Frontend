@@ -11,6 +11,7 @@
         "day09": "...",
         "day10": "Have you heard? The police are in the process of uncovering a large underground network.",
 		"day11": "The policemen seem more tense than usual today. Something is up.",
+		"day13": "You were on the news, right?",
         "x": "(end dialog)"
     },
     "graphs": {
@@ -158,6 +159,34 @@
             "initial_nid": "node0",
             "node0": {
                 "tid": "day11",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day12_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day13_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day13",
                 "answers": [
                     {
                         "tid": "x",

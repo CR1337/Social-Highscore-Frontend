@@ -238,47 +238,47 @@ script = ExtResource( 15 )
 id = "tid_city_busstreet_npc2_state_change"
 
 [node name="NpcFriend" parent="." instance=ExtResource( 17 )]
-position = Vector2( 480, 864 )
+position = Vector2( -32, -32 )
 active_on_start = true
 animation = ExtResource( 16 )
-current_position = Vector2( 7, 13 )
+current_position = Vector2( -1, -1 )
 
 [node name="NpcRebel1" parent="." instance=ExtResource( 17 )]
-position = Vector2( 416, 928 )
+position = Vector2( -32, -32 )
 animation = ExtResource( 22 )
-current_position = Vector2( 6, 14 )
+current_position = Vector2( -1, -1 )
 looking_direction = Vector2( 1, 0 )
 
 [node name="NpcRebel2" parent="." instance=ExtResource( 17 )]
-position = Vector2( 544, 928 )
+position = Vector2( -32, -32 )
 animation = ExtResource( 24 )
-current_position = Vector2( 8, 14 )
+current_position = Vector2( -1, -1 )
 looking_direction = Vector2( -1, 0 )
 
 [node name="NpcRebel3" parent="." instance=ExtResource( 17 )]
-position = Vector2( 480, 992 )
+position = Vector2( -32, -32 )
 animation = ExtResource( 23 )
-current_position = Vector2( 7, 15 )
+current_position = Vector2( -1, -1 )
 looking_direction = Vector2( 0, -1 )
 
 [node name="NpcPolice1" parent="." instance=ExtResource( 17 )]
-position = Vector2( 608, 992 )
+position = Vector2( -32, -32 )
 animation = ExtResource( 25 )
-current_position = Vector2( 9, 15 )
+current_position = Vector2( -1, -1 )
 looking_direction = Vector2( -1, 0 )
 
 [node name="NpcPolice2" parent="." instance=ExtResource( 17 )]
-position = Vector2( 352, 992 )
+position = Vector2( -32, -32 )
 animation = ExtResource( 25 )
-current_position = Vector2( 5, 15 )
+current_position = Vector2( -1, -1 )
 looking_direction = Vector2( 1, 0 )
 
 [node name="NpcPolice3" parent="." instance=ExtResource( 17 )]
-position = Vector2( 352, 800 )
+position = Vector2( -32, -32 )
 animation = ExtResource( 25 )
-current_position = Vector2( 5, 12 )
+current_position = Vector2( -1, -1 )
 
 [node name="NpcBoss" parent="." instance=ExtResource( 17 )]
-position = Vector2( 480, 800 )
+position = Vector2( -32, -32 )
 animation = ExtResource( 26 )
-current_position = Vector2( 7, 12 )
+current_position = Vector2( -1, -1 )

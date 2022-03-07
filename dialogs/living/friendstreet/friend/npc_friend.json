@@ -163,6 +163,34 @@
                 ],
                 "trigger_id": null
             }
+        },
+		"day12_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day13_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
         }
     }
 }

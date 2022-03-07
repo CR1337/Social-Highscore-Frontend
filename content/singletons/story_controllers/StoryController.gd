@@ -22,7 +22,7 @@ onready var _friend_nodes = {
 const _friend_positions = {
 	'home': Vector2(8, 10),
 	'mall': Vector2(10.8, 14),
-	'partner': Vector2(10, 11),
+	'partner': Vector2(9, 12),
 	'busstreet': Vector2(7, 13),
 	'shadystreet': Vector2(6, 1)
 }
@@ -33,7 +33,7 @@ onready var _partner_nodes = {
 }
 
 const _partner_positions = {
-	'home': Vector2(8, 10),
+	'home': Vector2(8, 11),
 	'mall': Vector2(10.8, 14)
 }
 

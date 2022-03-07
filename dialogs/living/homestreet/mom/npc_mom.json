@@ -40,8 +40,9 @@
 		"day09_small_talk": "Nice of you to visit me again. How are you?",
 		"day09_fine": "I'm fine",
 		"day11_initial": "What a tragedy with <Friend>. I never expected anything like this from him. He was always such a sweet boy.",
-		"day12_intial": "I wish you every success in your mission today.",
+		"day12_initial": "I wish you every success in your mission today.",
 		"day12_post_work": "The mission was a complete success, I heard. It is really a pity about <FRIEND>. I would never have expected something like this from him.",
+		"day13_initial": "Have you heard anything from Friend? I hope he is treated well there.",
 		"x": "(end dialog)"
 	},
 	"graphs": {
@@ -620,6 +621,20 @@
 			"initial_nid": "node0",
 			"node0": {
 				"tid": "day12_post_work",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day13_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day13_initial",
 				"answers": [
 					{
 						"tid": "x",

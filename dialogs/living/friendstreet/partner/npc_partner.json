@@ -73,6 +73,10 @@
 		"day11_post_work_reaction": "I am definitely excited. But I'm sure you can do it and the mission will be a great success. I just hope <friend> comes to his senses and realizes that he was wrong.",
         "day12_intial": "Good luck today.",
 		"day12_post_work": "I am totally proud of you too. Now a flourishing career in the police force awaits you for sure.",
+		"day13_initial": "I am so glad that <FRIEND> is now in a place where he will be helped. I am sure he will soon understand that this is the best thing for him.",
+		"day13_answer1": "Yes, I think so too.",
+		"day13_answer2": "I feel bad for him.",
+		"day13_phone_rings": "(<PARTNER> phone rings) Oh, I have to take this. It's an important call. Why don't you wait here for a minute? I'll be right back.",
 		"x": "(end dialog)"
     },
     "graphs": {
@@ -695,6 +699,36 @@
 						"tid": "x",
 						"nid": null,
 						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
+		"day13_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day13_initial",
+				"answers": [
+					{
+						"tid": "day13_answer1",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day13_answer2",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			},
+			"node1": {
+				"tid": "day13_phone_rings",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": "tid_day13_partner_away"
 					}
 				],
 				"trigger_id": null

@@ -35,6 +35,8 @@
 		"day12_debriefing": "That was good work. Thanks to your tip, the operation was a complete success. You can be proud of yourself. Why don't you take the day off tomorrow? You have earned it.",
 		"day12_in_prison": "Did you think we wouldn't notice if you secretly helped them? We knew from the beginning where the meeting would take place. You can't hide anything from us. I am deeply disappointed in you. You're in for a long time behind bars. I feel sorry for your mother... By the way, here is your file. Feel free to read how antisocially you behaved.",
 
+		"day13_initial": "That was really good work yesterday. Enjoy your day off.",
+
         "start_briefing": "(start briefing)",
         "cancel": "(cancel)",
 		"next": "(next)",
@@ -520,6 +522,19 @@
 			],
 			"trigger_id": null
 		}
+	},
+	"day13_initial": {
+		"initial_nid": "node0",
+		"node0": {
+			"tid": "day13_initial",
+			"answers": [
+				{
+					"tid": "x",
+					"nid": null,
+					"trigger_id": null
+				}
+			],
+			"trigger_id": null
+		}
 	}
-
 }
