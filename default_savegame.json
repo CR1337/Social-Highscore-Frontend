@@ -671,14 +671,6 @@
         "blocked": false,
         "block_state": "blocked"
     },
-    "/root/MainScene/Areas/LivingHomestreetHomeArea/DebugDialogTriggerArea/DebugDialogTrigger": {
-        "blocked": false,
-        "block_state": "blocked"
-    },
-    "/root/MainScene/Areas/LivingHomestreetHomeArea/DebugDialogTriggerArea/DebugToiletTrigger": {
-        "blocked": false,
-        "block_state": "blocked"
-    },
     "/root/MainScene/Areas/LivingHomestreetHomeArea/FridgeTriggerArea/FridgeTrigger": {
         "blocked": false,
         "block_state": "blocked"
@@ -688,11 +680,11 @@
         "block_state": "blocked"
     },
     "/root/MainScene/Areas/LivingHomestreetMomArea/NpcMom": {
-        "current_position_x": 3,
-        "current_position_y": 3,
+        "current_position_x": 5,
+        "current_position_y": 9,
         "active": false,
-        "announced_position_x": 3,
-        "announced_position_y": 3,
+        "announced_position_x": 5,
+        "announced_position_y": 9,
         "looking_direction_x": 0,
         "looking_direction_y": 1,
         "state": "day01_waiting_for_son",
@@ -720,10 +712,10 @@
     },
     "/root/MainScene/Areas/LivingFriendstreetPartnerArea/NpcPartner": {
         "current_position_x": 8,
-        "current_position_y": 10,
+        "current_position_y": 11,
         "active": false,
         "announced_position_x": 8,
-        "announced_position_y": 10,
+        "announced_position_y": 11,
         "looking_direction_x": 0,
         "looking_direction_y": 1,
         "state": "idle",
@@ -1311,11 +1303,11 @@
         "block_state": "blocked"
     },
     "/root/MainScene/Areas/CityBusstreetArea/NpcFriend": {
-        "current_position_x": 7,
-        "current_position_y": 13,
+        "current_position_x": -1,
+        "current_position_y": -1,
         "active": true,
-        "announced_position_x": 7,
-        "announced_position_y": 13,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
         "looking_direction_x": 0,
         "looking_direction_y": 1,
         "state": "idle",
@@ -1330,11 +1322,11 @@
         "movement_waiting_handle": 0
     },
     "/root/MainScene/Areas/CityBusstreetArea/NpcRebel1": {
-        "current_position_x": 6,
-        "current_position_y": 14,
+        "current_position_x": -1,
+        "current_position_y": -1,
         "active": false,
-        "announced_position_x": 6,
-        "announced_position_y": 14,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
         "looking_direction_x": 1,
         "looking_direction_y": 0,
         "state": "idle",
@@ -1349,11 +1341,11 @@
         "movement_waiting_handle": 0
     },
     "/root/MainScene/Areas/CityBusstreetArea/NpcRebel2": {
-        "current_position_x": 8,
-        "current_position_y": 14,
+        "current_position_x": -1,
+        "current_position_y": -1,
         "active": false,
-        "announced_position_x": 8,
-        "announced_position_y": 14,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
         "looking_direction_x": -1,
         "looking_direction_y": 0,
         "state": "idle",
@@ -1368,11 +1360,11 @@
         "movement_waiting_handle": 0
     },
     "/root/MainScene/Areas/CityBusstreetArea/NpcRebel3": {
-        "current_position_x": 7,
-        "current_position_y": 15,
+        "current_position_x": -1,
+        "current_position_y": -1,
         "active": false,
-        "announced_position_x": 7,
-        "announced_position_y": 15,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
         "looking_direction_x": 0,
         "looking_direction_y": -1,
         "state": "idle",
@@ -1387,11 +1379,11 @@
         "movement_waiting_handle": 0
     },
     "/root/MainScene/Areas/CityBusstreetArea/NpcPolice1": {
-        "current_position_x": 9,
-        "current_position_y": 15,
+        "current_position_x": -1,
+        "current_position_y": -1,
         "active": false,
-        "announced_position_x": 9,
-        "announced_position_y": 15,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
         "looking_direction_x": -1,
         "looking_direction_y": 0,
         "state": "idle",
@@ -1406,11 +1398,11 @@
         "movement_waiting_handle": 0
     },
     "/root/MainScene/Areas/CityBusstreetArea/NpcPolice2": {
-        "current_position_x": 5,
-        "current_position_y": 15,
+        "current_position_x": -1,
+        "current_position_y": -1,
         "active": false,
-        "announced_position_x": 5,
-        "announced_position_y": 15,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
         "looking_direction_x": 1,
         "looking_direction_y": 0,
         "state": "idle",
@@ -1425,11 +1417,11 @@
         "movement_waiting_handle": 0
     },
     "/root/MainScene/Areas/CityBusstreetArea/NpcPolice3": {
-        "current_position_x": 5,
-        "current_position_y": 12,
+        "current_position_x": -1,
+        "current_position_y": -1,
         "active": false,
-        "announced_position_x": 5,
-        "announced_position_y": 12,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
         "looking_direction_x": 0,
         "looking_direction_y": 1,
         "state": "idle",
@@ -1444,11 +1436,11 @@
         "movement_waiting_handle": 0
     },
     "/root/MainScene/Areas/CityBusstreetArea/NpcBoss": {
-        "current_position_x": 7,
-        "current_position_y": 12,
+        "current_position_x": -1,
+        "current_position_y": -1,
         "active": false,
-        "announced_position_x": 7,
-        "announced_position_y": 12,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
         "looking_direction_x": 0,
         "looking_direction_y": 1,
         "state": "idle",
