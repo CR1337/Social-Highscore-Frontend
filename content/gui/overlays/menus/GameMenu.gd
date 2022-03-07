@@ -22,7 +22,7 @@ func _on_NewGameButton_pressed():
 	
 func _on_ConfirmationDialog_confirmed():
 	SaveGameController.delete_game()
-	SaveGameController.load_default_game()
+	get_tree().quit()
 
 
 func _on_DebugCitizenRecordButton_pressed():
