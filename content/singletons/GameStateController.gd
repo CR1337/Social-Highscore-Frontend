@@ -3,8 +3,6 @@ extends Node
 var score = 1000
 var money = 1000
 
-var days_without_mom = 0
-
 var ticket_bought = false
 
 var current_preferred_emotions = []
@@ -25,13 +23,16 @@ func persistent_state():
 		'at_work': at_work,
 		'hunger_timer_handle': hunger_timer_handle,
 		'days_without_mom': days_without_mom,
+		'days_without_fitness': _days_without_fitness,
 		'fridge_content': fridge_content,
 		'current_day': current_day,
 		'contact_state': contact_state,
 		'current_preferred_emotions': current_preferred_emotions,
 		'ticket_bought': ticket_bought,
 		'mall_food_timer_items': _mall_food_timer_items,
-		'bank_account_blocked': bank_account_blocked
+		'bank_account_blocked': bank_account_blocked,
+		'bank_loan_debt': _bank_loan_debt,
+		'bank_loan_daily_repayment_amount': _bank_loan_daily_repayment_amount
 	}
 
 func restore_state(state):
@@ -42,12 +43,15 @@ func restore_state(state):
 	at_work = state['at_work']
 	hunger_timer_handle = state['hunger_timer_handle']
 	days_without_mom = state["days_without_mom"]
+	_days_without_fitness = state["days_without_fitness"]
 	fridge_content = state["fridge_content"]
 	current_day = state["current_day"]
 	current_preferred_emotions = state['current_preferred_emotions']
 	ticket_bought = state['ticket_bought']
 	_mall_food_timer_items = state['mall_food_timer_items']
 	bank_account_blocked = state['bank_account_blocked']
+	_bank_loan_debt = state["bank_loan_debt"]
+	_bank_loan_daily_repayment_amount = state["bank_loan_daily_repayment_amount"]
 	
 	if current_day > 0:
 		current_story_controller().activate()
@@ -71,6 +75,12 @@ func _ready():
 func _on_trigger(trigger_id, kwargs):
 	if trigger_id.begins_with('tid_shopping_'):
 		_shopping_event(trigger_id, kwargs)
+	elif trigger_id.begins_with('tid_loan_'):
+		_handle_bank_loan(trigger_id)
+	elif trigger_id == 'tid_visited_mom':
+		days_without_mom = 0
+	elif trigger_id == 'tid_gym_visit':
+		_days_without_fitness = 0
 	else:
 		pass  # TODO
 	
@@ -147,9 +157,73 @@ func current_story_controller():
 func set_day(day):
 	current_day = day
 	days_without_mom += 1
-	# TODO: handling Loan, Rent, Debt, daily score updates...
+	_days_without_fitness += 1
+	_handle_bank_loan_repayment()
+	_pay_rent()
+	_handle_debt_score()
+	_handle_mom_vists()
+	_handle_fitness_visits()
+	# TODO: maybe more daily stuff
 
 # END story
+
+# BEGIN bank loan
+
+const _bank_loan_interest = 10
+const _bank_loan_repay_period = 8
+var _bank_loan_debt = 0
+var _bank_loan_daily_repayment_amount = 0
+
+func _handle_bank_loan(trigger_id):
+	var amount = int(trigger_id.right(9))
+	EventBus.emit_signal("sig_add_money", amount, 'Bank loan')
+	_bank_loan_debt += amount + (amount * (_bank_loan_interest / 100))
+	_bank_loan_daily_repayment_amount = ceil(_bank_loan_debt / _bank_loan_repay_period)
+
+# END bank loan
+
+# BEGIN daily stuff
+
+const _punishable_days_without_mom = 2
+var days_without_mom = 0
+const _punishable_days_without_fitness = 2
+var _days_without_fitness = 0
+
+const _rent_price = 23
+const _debt_score_factor = 0.1
+
+func _handle_bank_loan_repayment():
+	if _bank_loan_debt > 0:
+		_bank_loan_debt -= _bank_loan_daily_repayment_amount
+		EventBus.emit_signal(
+			"sig_add_money", 
+			-_bank_loan_daily_repayment_amount, 
+			'Bank loan repayment'
+		)
+	
+func _pay_rent():
+	EventBus.emit_signal(
+		"sig_add_money", 
+		_rent_price * price_factor(),
+		'Rent'
+	)
+	
+func _handle_debt_score():
+	if money < 0:
+		score = int(-money * _debt_score_factor)
+		CitizenRecord.add_dept(score, money)
+	
+func _handle_mom_vists():
+	if days_without_mom > _punishable_days_without_mom:
+		var days_too_much = days_without_mom - _punishable_days_without_mom
+		var score = -30 - 20 * days_too_much
+		CitizenRecord.add_didnt_visit_mom(score, days_too_much)
+	
+func _handle_fitness_visits():
+	if _days_without_fitness > _punishable_days_without_fitness:
+		CitizenRecord.add_fitness_studio_not_visited(-15)
+
+# END daily stuff
 	
 # BEGIN work
 

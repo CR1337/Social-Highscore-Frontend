@@ -1,11 +1,11 @@
 {
     "texts": {
         "0": "Hello, how can I help you? ",
-        "1": "I would like to take out a loan for 500  ",
-        "2": "I would like to take out a loan for 100 ",
+        "1": "I would like to take out a loan for 500.",
+        "2": "I would like to take out a loan for 100.",
         "3": "Nothing, thank you ",
         "4": "Sorry, your credit rating does not allow that at the moment ",
-        "5": "You will receive the amount immediately credited to your account. You must repay this amount, plus 10% interest within the next 10 days in installments. Do you agree with this? ",
+        "5": "You will receive the amount immediately credited to your account. You must repay this amount, plus $$GameStateController._bank_loan_interest$$% interest within the next $$GameStateController._bank_loan_repay_period$$ days in installments. Do you agree with this? ",
         "6": "Yes",
         "7": "No",
         "8": "You cannot take out consumer loans at this time. Improve your Citizen Score first ",

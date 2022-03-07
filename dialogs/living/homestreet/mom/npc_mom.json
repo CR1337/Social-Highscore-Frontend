@@ -54,15 +54,15 @@
 					{
 						"tid": "day01_hello_answer1",
 						"nid": "node1",
-						"trigger_id": null
+						"trigger_id": "tid_day01_talked_to_mom"
 					},
 					{
 						"tid": "day01_hello_answer2",
 						"nid": "node1",
-						"trigger_id": null
+						"trigger_id": "tid_day01_talked_to_mom"
 					}
 				],
-				"trigger_id": "tid_day01_talked_to_mom"
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "day01_ask_meds",
@@ -172,7 +172,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day02_proud": {
@@ -200,7 +200,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day03_post_work": {
@@ -255,7 +255,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day04_post_message": {
@@ -274,7 +274,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "where_pharmacy",
@@ -327,7 +327,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day05_unlocked_account": {
@@ -341,7 +341,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day05_bring_meds": {
@@ -355,7 +355,7 @@
 						"trigger_id": "tid_day05_brought_meds"
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day05_got_meds": {
@@ -369,7 +369,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day06_initial": {
@@ -383,7 +383,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day06_post_work": {
@@ -397,7 +397,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day06_post_application": {
@@ -416,7 +416,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "day06_response",
@@ -446,7 +446,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "day06_response",
@@ -471,7 +471,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day08_post_meds": {
@@ -485,7 +485,7 @@
 						"trigger_id": "tid_day08_brought_meds"
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day08_got_meds": {
@@ -504,7 +504,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "day06_response",
@@ -529,7 +529,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "day06_ask_for_application",
@@ -575,7 +575,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "day06_response",
@@ -600,7 +600,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day12_initial": {
@@ -614,7 +614,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day12_post_work": {
@@ -628,7 +628,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day13_initial": {
@@ -642,7 +642,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		}
 	}

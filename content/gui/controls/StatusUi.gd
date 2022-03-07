@@ -4,6 +4,7 @@ onready var shopping_sprite = $ShoppingSprite
 onready var timer_label = $TimerLabel
 onready var status_sprite = $StatusSprite
 onready var weekday_label = $WeekdayLabel
+onready var sleep_sprite = $SleepSprite
 
 const _weekdays = [
 	"Saturday",
@@ -22,6 +23,7 @@ func _process(delta):
 	else:
 		_display_hunger()
 	_display_weekday()
+	_display_sleep()
 		
 func _display_work():
 	status_sprite.animation = 'work'
@@ -64,3 +66,7 @@ func _display_timer(total_seconds):
 func _display_weekday():
 	var weekday_index = int(GameStateController.current_day) % 7
 	weekday_label.text = _weekdays[weekday_index]
+	
+func _display_sleep():
+	var current_story_controller = GameStateController.current_story_controller()
+	sleep_sprite.visible = current_story_controller.states[current_story_controller.progress] == 'goto_bed'
