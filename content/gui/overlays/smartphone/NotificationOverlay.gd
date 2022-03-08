@@ -2,6 +2,7 @@ extends Node2D
 
 onready var _text_label = $Background/Margin/HBox/NotificationLabel
 onready var _icon_texture = $Background/Margin/HBox/IconTexture
+onready var _notification_sprite = $Background/NotificationSprite
 
 export var news_icon: Texture
 export var bank_icon: Texture
@@ -11,14 +12,16 @@ export var default_icon: Texture
 
 var _current_type = "None"
 
-var _hide_overlay_handle = -1
-
 func _ready():
 	EventBus.connect("sig_notification", self, '_on_notification')
 
-func _on_notification(type, text):
+func _on_notification(type, text, important = false):
 	_current_type = type
-	_hide_overlay_handle = TimeController.setTimer(10, self, "timer")
+	if not important:
+		TimeController.setTimer(10, self, "hide_overlay")
+		_notification_sprite.animation = 'default'
+	else:
+		_notification_sprite.animation = 'important'
 	match type:
 		'news':
 			_icon_texture.texture = news_icon
@@ -35,10 +38,8 @@ func _on_notification(type, text):
 
 	ViewportManager.change_to_notification()
 
-func timer(handle):
-	if _hide_overlay_handle == handle:
-		_hide_overlay_handle = -1
-		ViewportManager.change_to_transparent_notification()
+func hide_overlay(handle):
+	ViewportManager.change_to_transparent_notification()
 
 func _on_Button_pressed():
 	match _current_type:
