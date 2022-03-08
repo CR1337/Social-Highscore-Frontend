@@ -70,10 +70,6 @@ func _process_answer(answer_index):
 		ViewportManager.change_to_transparent_dialog()
 	else:
 		_current_node_id = next_node_id
-		trigger_id = _current_node['answers'][answer_index]['trigger_id']
-		if trigger_id != null:
-			EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id, _current_node['answers'][answer_index].get('trigger_kwargs', {}))
-			# yield(EventBus, "sig_dialog_trigger_completed")
 		_display()
 
 

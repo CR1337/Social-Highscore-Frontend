@@ -32,7 +32,8 @@ func persistent_state():
 		'mall_food_timer_items': _mall_food_timer_items,
 		'bank_account_blocked': bank_account_blocked,
 		'bank_loan_debt': _bank_loan_debt,
-		'bank_loan_daily_repayment_amount': _bank_loan_daily_repayment_amount
+		'bank_loan_daily_repayment_amount': _bank_loan_daily_repayment_amount,
+		'screenshot_counter': _screenshot_counter
 	}
 
 func restore_state(state):
@@ -52,6 +53,7 @@ func restore_state(state):
 	bank_account_blocked = state['bank_account_blocked']
 	_bank_loan_debt = state["bank_loan_debt"]
 	_bank_loan_daily_repayment_amount = state["bank_loan_daily_repayment_amount"]
+	_screenshot_counter = state['screenshot_counter']
 	
 	if current_day > 0:
 		current_story_controller().activate()
@@ -82,6 +84,12 @@ func _on_trigger(trigger_id, kwargs):
 		days_without_mom = 0
 	elif trigger_id == 'tid_gym_visit':
 		_days_without_fitness = 0
+	elif trigger_id == 'tid_critical_speech':
+		_handle_critical_speech(
+			kwargs.get('addressee', 'unknown person'),
+			kwargs.get('place', 'unknown location'),
+			kwargs.get('text', 'unknown text')
+		)
 	else:
 		pass  # TODO
 	
@@ -507,3 +515,22 @@ const _buffet_item_prototypes = {
 }
 	
 # END mall buffet
+
+var _screenshot_counter = 0
+const _screenshot_path = "user://screenshots/screenshot"
+# BEGIN critical speech
+func _handle_critical_speech(addressee, place, text):
+	var image = get_viewport().get_texture().get_data()
+	var path = _screenshot_path + str(_screenshot_counter) + ".png"
+	image.flip_y()
+	image.crop(768, 1024)
+	image.save_png(path)
+	_screenshot_counter += 1
+	CitizenRecord.add_critical_speech_in_reallife(
+		-50,
+		addressee,
+		text,
+		place,
+		path
+	)
+# END critical speech

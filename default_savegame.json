@@ -3734,7 +3734,8 @@
         },
         "bank_account_blocked": false,
         "bank_loan_debt": 0,
-        "bank_loan_daily_repayment_amount": 0
+        "bank_loan_daily_repayment_amount": 0,
+        "screenshot_counter": 0
     },
     "/root/TimeController": {
         "timer_list": [

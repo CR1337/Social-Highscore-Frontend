@@ -24,19 +24,19 @@ func _create_label():
 
 func _create_header(record):
 	var label = _create_label()
+	label.text = record['type']
 	label.rect_min_size = Vector2(708, 64)
-	label.append_bbcode("[color=red]" + record['type'] + "[/color]\ntime: " + str(record['time']))
 	return label
 
-func _create_texture(b64image):
+func _create_texture(image_path):
 	var textureRect = TextureRect.new()
 	textureRect.rect_min_size = Vector2(128, 128)
+	textureRect.rect_size = Vector2(128, 128)
 	textureRect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	textureRect.expand = true
 
-	var raw_image = Marshalls.base64_to_raw(b64image)
 	var image = Image.new()
-	image.load_jpg_from_buffer(raw_image)
+	image.load(image_path)
 
 	var tmp_texture = ImageTexture.new()
 	tmp_texture.create_from_image(image)
@@ -243,9 +243,9 @@ func _display_critical_speech_in_reallife(record):
 		false
 	)
 		# resize
-	new_background.rect_min_size = Vector2(728, 288)
-	new_record.rect_min_size = Vector2(728, 288)
-	info_label.rect_min_size = Vector2(550, 228)
+	new_background.rect_min_size = Vector2(728, 300)
+	new_record.rect_min_size = Vector2(728, 300)
+	info_label.rect_min_size = Vector2(550, 300-64)
 
 	new_background.add_child(new_record)
 	new_record.add_child(_create_header(record))
@@ -408,6 +408,24 @@ func _display_too_late_to_work(record):
 	var info_label = _create_info_list(record,
 		['score', 'amount_of_time'],
 		['Score Difference', 'Amount of lateness'],
+		true
+	)
+	# resize
+	new_background.rect_min_size = Vector2(728, 196)
+	new_record.rect_min_size = Vector2(728, 196)
+	info_label.rect_min_size = Vector2(550, 196)
+	new_background.add_child(new_record)
+	new_record.add_child(_create_header(record))
+	new_record.add_child(info_label)
+	_box_container.add_child(new_background)
+
+func _display_score_class_changed(record):
+	var new_background = _create_background()
+	var new_record = _create_record()
+
+	var info_label = _create_info_list(record,
+		['new_class'],
+		['New Class'],
 		true
 	)
 	# resize
