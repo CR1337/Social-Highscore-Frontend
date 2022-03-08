@@ -70,8 +70,6 @@ signal sig_score_class_changed()
 
 func _ready():
 	EventBus.connect("sig_add_money", self, "_on_add_money")
-	EventBus.connect("sig_payment_successfull", self, "_on_payment_successfull")
-	EventBus.connect("sig_payment_failed", self, "_on_payment_failure")
 	EventBus.connect("sig_trigger", self, "_on_trigger")
 
 	
@@ -342,7 +340,6 @@ const _medication_base_price = 50
 func medication_price():
 	return _medication_base_price * price_factor()
 
-const _shopping_payment_handle = 'ph_shopping_success'
 const fridge_capacity = 3
 var fridge_content = [{
 		'base_price': 15,
