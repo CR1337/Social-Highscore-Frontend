@@ -2423,6 +2423,10 @@
         "blocked": false,
         "block_state": "blocked"
     },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter/AlreadyLoanTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
     "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter2": {
         "current_position_x": 8.5,
         "current_position_y": 12,
@@ -3705,6 +3709,7 @@
         "at_work": false,
         "hunger_timer_handle": -1,
         "days_without_mom": 0,
+        "days_without_fitness": 0,
         "fridge_content": [
             {
                 "base_price": 15,
@@ -3727,7 +3732,9 @@
         "mall_food_timer_items": {
 
         },
-        "bank_account_blocked": false
+        "bank_account_blocked": false,
+        "bank_loan_debt": 0,
+        "bank_loan_daily_repayment_amount": 0
     },
     "/root/TimeController": {
         "timer_list": [

@@ -9,6 +9,7 @@
         "6": "Yes",
         "7": "No",
         "8": "You cannot take out consumer loans at this time. Improve your Citizen Score first ",
+        "already_loan": "You already have a loan. You can only take out another loan once you have paid off your current loan.",
         "day05_want_to_unlock": "I want to unlock my account",
         "day05_unlock": "You are not the first with this concern today. Since the introduction of the new system. We more frequently have such requests. However, I see that in your case it is an error. Please verify this transaction via 0 Y to unlock your account.",
         "day05_not_worked": "It seems like your authentication didn't work. Please try it again",
@@ -153,6 +154,20 @@
                         "tid": "x",
                         "nid": null,
                         "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "has_already_loan": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "already_loan",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_city_bankstreet_bank_counter_already_loan"
                     }
                 ],
                 "trigger_id": null

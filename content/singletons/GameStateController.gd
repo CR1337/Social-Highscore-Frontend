@@ -192,10 +192,13 @@ var _bank_loan_debt = 0
 var _bank_loan_daily_repayment_amount = 0
 
 func _handle_bank_loan(trigger_id):
-	var amount = int(trigger_id.right(9))
-	EventBus.emit_signal("sig_add_money", amount, 'Bank loan')
-	_bank_loan_debt += amount + (amount * (_bank_loan_interest / 100))
-	_bank_loan_daily_repayment_amount = ceil(_bank_loan_debt / _bank_loan_repay_period)
+	if _bank_loan_debt > 0:
+		EventBus.emit_signal("sig_trigger", "tid_city_bankstreet_bank_counter_already_loan", {})
+	else:
+		var amount = int(trigger_id.right(9))
+		EventBus.emit_signal("sig_add_money", amount, 'Bank loan')
+		_bank_loan_debt += amount + (amount * (_bank_loan_interest / 100))
+		_bank_loan_daily_repayment_amount = ceil(_bank_loan_debt / _bank_loan_repay_period)
 
 # END bank loan
 

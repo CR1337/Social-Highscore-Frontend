@@ -21,4 +21,3 @@ func _on_payment_successfull(handle):
 
 func trigger(kwargs):
 	ViewportManager.change_to_payment(_recipient, 0, _payment_handle)
-	
