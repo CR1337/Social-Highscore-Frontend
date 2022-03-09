@@ -19,8 +19,6 @@ func persistent_state():
 		'score': score,
 		'money': money,
 		'hunger': hunger,
-		'work_timer_handle': work_timer_handle,
-		'at_work': at_work,
 		'hunger_timer_handle': hunger_timer_handle,
 		'days_without_mom': days_without_mom,
 		'days_without_fitness': _days_without_fitness,
@@ -40,8 +38,6 @@ func restore_state(state):
 	score = state['score']
 	money = state["money"]
 	hunger = int(state["hunger"])
-	work_timer_handle = state['work_timer_handle']
-	at_work = state['at_work']
 	hunger_timer_handle = state['hunger_timer_handle']
 	days_without_mom = state["days_without_mom"]
 	_days_without_fitness = state["days_without_fitness"]
@@ -230,7 +226,7 @@ func _handle_bank_loan_repayment():
 func _pay_rent():
 	EventBus.emit_signal(
 		"sig_add_money", 
-		_rent_price * price_factor(),
+		-_rent_price * price_factor(),
 		'Rent'
 	)
 	
@@ -250,31 +246,6 @@ func _handle_fitness_visits():
 		CitizenRecord.add_fitness_studio_not_visited(-15)
 
 # END daily stuff
-	
-# BEGIN work
-
-var at_work = false
-var work_timer_handle = -1
-const _work_timer_start_value = 60 * 5
-
-func _start_work():
-	# TODO: npc state changes, change player sprite, ...
-	_pause_hunger_timer()
-	at_work = true
-	work_timer_handle = TimeController.setTimer(
-		_work_timer_start_value, self, "_work_timer"
-	)
-	
-func _end_work():
-	_continue_hunger_timer()
-	# TODO: reverse all work related stuff, payment, debriefing,...
-	
-func _work_timer(handle):
-	if handle == work_timer_handle:
-		_end_work()
-		
-
-# END work
 	
 # BEGIN shopping + fridge
 
@@ -452,7 +423,7 @@ func _handle_hunger():
 			_hunger_timer_start_value, self, "_hunger_timer"
 		)
 		
-func _pause_hunger_timer():
+func pause_hunger_timer():
 	TimeController.pause_timer(hunger_timer_handle)
 	
 func _continue_hunger_timer():

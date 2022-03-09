@@ -1,6 +1,7 @@
 extends Node2D
 
 export var speed = 3
+export var is_police = false
 
 onready var _movement_ray = $RayCast2DMovement
 onready var _trigger_ray = $RayCast2DTrigger
@@ -13,6 +14,9 @@ var _directions = {
 	Vector2.RIGHT: 'right',
 	Vector2.UP: 'up',
 }
+
+func _outfit_animation_prefix():
+	return 'police_' if is_police else 'normal_'
 
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.tile_size)
@@ -29,7 +33,7 @@ func _process(delta):
 			_looking_direction = InputBus.direction
 			_move()
 		else:
-			$AnimatedSprite.animation = 'idle_' + _directions[_looking_direction]
+			$AnimatedSprite.animation = _outfit_animation_prefix() +'idle_' + _directions[_looking_direction]
 
 func move_tween():
 	_tween.interpolate_property(self, "position",
@@ -71,7 +75,7 @@ func _move():
 			return
 	if not _movement_ray_colliding and not _colliding_with_npc():
 		move_tween()
-		$AnimatedSprite.animation = 'walk_' + _directions[_looking_direction]
+		$AnimatedSprite.animation = _outfit_animation_prefix() + 'walk_' + _directions[_looking_direction]
 
 func _on_action_pressed():
 	_trigger_ray.force_raycast_update()

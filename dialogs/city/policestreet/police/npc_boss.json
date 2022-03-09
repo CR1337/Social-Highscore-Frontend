@@ -47,6 +47,20 @@
         "unemployed": "You are a disappointment. Get out of my sight."
     },
     "graphs": {
+		"debriefing": {
+			"initial_nid": "node0",
+            "node0": {
+                "tid": "debriefing",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_start_debriefing"
+                    }
+                ],
+                "trigger_id": null
+            }
+		},
         "day01_initial": {
             "initial_nid": "node0",
             "node0": {

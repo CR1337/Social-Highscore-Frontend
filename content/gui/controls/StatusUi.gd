@@ -18,7 +18,7 @@ const _weekdays = [
 
 func _process(delta):
 	shopping_sprite.visible = len(GameStateController.shopping_cart) > 0
-	if GameStateController.at_work:
+	if MinigameController.at_work:
 		_display_work()
 	else:
 		_display_hunger()
@@ -28,7 +28,7 @@ func _process(delta):
 func _display_work():
 	status_sprite.animation = 'work'
 	_display_timer(TimeController.get_remaining_seconds(
-		GameStateController.work_timer_handle
+		MinigameController.work_timer_handle
 	))
 	status_sprite.visible = true
 	timer_label.visible = true
