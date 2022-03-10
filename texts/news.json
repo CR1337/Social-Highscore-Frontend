@@ -1,14 +1,80 @@
 {
-	"id": {
-		"title": "",
-		"text": "",
-		"preferred_emotions": [],
-		"lifetime": 0
+	"nid_day01": {
+		"title": "Fluffy's Birthday",
+		"text": "Fluffy, our president's beloved dog, has a birthday today. The Pitbull Terrier turns 6 years old. We congratulate on this proud age and rejoice together with the birthday boy us his master. Due to this day of [color=green]joy[/color], it is inappropriate to show negative emotions, such as [color=red]fear[/color], [color=red]anger[/color], [color=red]sadness[/color] and [color=red]disgust[/color]. Please keep this in mind when dealing with your fellow human beings.",
+		"preferred_emotions": ["happy"],
+		"forbidden_emotions" : ["disgust", "fear", "angry", "sad"]
+	},
+	"nid_day02": {
+		"title": "Breakthrough in genetic engineering",
+		"text": "Leading scientists report [color=green]surprising[/color] breakthroughs in the field of genetic engineering.The new HAPPI method makes it possible to give unborn children positive traits, such as good looks, kindness and discipline, and to weed out undesirable traits, such as rebelliousness, laziness and homosexuality. The new [color=green]HAPPI[/color] (High Accuracy Performance Peptide Injection) method makes it possible to give unborn children positive traits, such as good looks, kindness and discipline, and to weed out undesirable traits, such as rebelliousness, laziness and homosexuality. [color=red]Negative emotions[/color] are inappropriate today because of this incredible news.",
+		"preferred_emotions": ["happy", "surprise"],
+		"forbidden_emotions" : ["disgust", "fear", "angry", "sad"]
+	},
+	"nid_day03": {
+		"title": "Criminal escaped",
+		"text": "In the early hours of the morning, the wanted criminal Roger Atkins escaped from the maximum security prison. Atkins was sentenced to life imprisonment for conspiracy and endangering the public. The police are proceeding with united forces and are sure to take him back into custody soon. If you have any information that could assist in his apprehension, contact your local police station immediately. It is understandable if you are [color=green]angry[/color] or showing [color=green]fear[/color]. [color=red]Happiness[/color], however, is inappropriate in the current situation.",
+		"preferred_emotions": ["angry", "fear"],
+		"forbidden_emotions" : ["happy"]
+	},
+	"nid_day04": {
+		"title": "Rotten meat scandal",
+		"text": "Health experts warn! In random samples, [color=green]surprisingly[/color], an elevated concentration of salmonella was found in the burger meat of various shopping centers. How [color=green]disgusting[/color]! So on your next visit, for the sake of your health, forgo the burger and reach for healthier alternatives. You really can't be [color=red]happy[/color] about that.",
+		"preferred_emotions": ["surprise", "disgust"],
+		"forbidden_emotions" : ["happy"]
+	},
+	"nid_day05": {
+		"title": "Criminal dead!",
+		"text": "Wanted felon Roger Atkins was struck by a car early this morning. He ran across the road without looking while fleeing from the police and died of his injuries on the spot. His fate exemplifies the potential consequences of violating traffic laws. We can be [color=green]happy[/color] that it did not happen to a valuable member of society. Since Roger Atkins was an enemy of society, [color=red]negative emotions[/color] are inappropriate today.",
+		"preferred_emotions": ["happy"],
+		"forbidden_emotions" : ["disgust", "fear", "angry", "sad"]
+	},
+	"nid_day06": {
+		"title": "National tragedy: death in the family of the president",
+		"text": "Last night, the father of our beloved President died at the age of 87. Doctors suspect a heart attack. Out of deep dismay and grief, the President proclaimed today a national day of mourning. So we urge you to share your [color=green]sadness[/color] with their friends and family, and also to express your compassion in public.",
+		"preferred_emotions": ["sad"],
+		"forbidden_emotions" : ["angry", "surprise", "fear", "happy", "disgust", "neutral"]
 	},
 	"nid_day07": {
 		"title": "Community score complete success",
-		"text": "The community score is a complete success. It has been extremely well received by the population. Already, the decreasing crime rate and increasing happiness cannot be overlooked. The police have been able to identify isolated small groups that oppose the positive change. Such people are very dangerous and do not shy away from violence. For this reason, the Ministry of Public Security has classified these groups as terrorists. All citizens are called upon to report people whom they suspect of having contact with such groups. It is understandable to be afraid in the face of this development. Nevertheless, we encourage you to continue to look forward with joy and confidence to the success of the community score.",
+		"text": "The community score is a complete success. It has been extremely well received by the population. Already, the decreasing crime rate and increasing [color=green]happiness[/color] cannot be overlooked. The police have been able to identify isolated small groups that oppose the positive change. Such people are very dangerous and do not shy away from violence. For this reason, the Ministry of Public Security has classified these groups as terrorists. All citizens are called upon to report people whom they suspect of having contact with such groups. It is understandable to feel [color=green]anger[/color] and [color=green]fear[/color] in the face of this development. Nevertheless, we encourage you to continue to look forward with joy and confidence to the success of the community score.",
 		"preferred_emotions": ["fear", "happy", "angry"],
-		"lifetime": 2
+		"forbidden_emotions" : ["neutral"]
+	},
+	"nid_day08": {
+		"title": "Success: Nuclear weapon completed",
+		"text": "Our generals celebrate the completion of the first nuclear weapon with intercontinental range. We are now able to respond to global threats. With this revolutionary technology, there is no longer any reason to fear threats from enemies abroad. Because of this incredible achievement, one can [color=green]only be happy[/color].",
+		"preferred_emotions": ["happy"],
+		"forbidden_emotions" : ["angry", "surprise", "fear", "sad", "disgust", "neutral"]
+	},
+	"nid_day09": {
+		"title": "Aggression against our country",
+		"text": "Experts are [color=green]surprised[/color]: demonstrations and verbal hostility against our technological progress are increasingly being reported from other countries. In a statement, our beloved president reports full of [color=green]anger[/color]: 'This shows once again, demonstrations and uncontrolled exchange of opinions only lead to a division of society. Democracy is not a model for the future, but an aberration'. But we show no [color=red]fear[/color] of such threats. We are not [color=red]happy[/color] about these hostilities and will not [color=red]hide our emotions[/color] in this regard.",
+		"preferred_emotions": ["surprise", "angry"],
+		"forbidden_emotions" : ["happy", "fear", "neutral"]
+	},
+	"nid_day10": {
+		"title": "Breakthrough in safety technology",
+		"text": "Experts have developed an algorithm that automatically detects any type of encryption software and reports it to the police. This algorithm contributes to the enforcement of the anti-encryption law that was passed earlier this year. The law aims to prevent conspiracies and hate crimes, and to automatically identify and render dangerous people harmless. Share with us your [color=green]happiness[/color] about this novel technology. [color=red]Negative emotions[/color] are inappropriate in light of this innovation for our security.",
+		"preferred_emotions": ["happy"],
+		"forbidden_emotions" : ["disgust", "fear", "angry", "sad"]
+	},
+	"nid_day11": {
+		"title": "Temperance Day",
+		"text": "Today is the day of [color=green]temperance[/color]. Use the day to go into yourself and reflect on your actions and your role in society. We urge you to avoid [color=red]exuberant emotions[/color] to allow those around you the peace and time to be introspective as well.",
+		"preferred_emotions": ["neutral"],
+		"forbidden_emotions" : ["angry", "surprise", "fear", "sad", "disgust", "happy"]
+	},
+	"nid_day12": {
+		"title": "Innovation in medicine",
+		"text": "Today is a day of [color=green]happiness[/color]. Medical experts have developed a drug that allows people to be more accepting. The drug acts on the areas of the brain responsible for antisocial behavior and rejection of rules. Thus, it enables people who would not easily fit into society to be a valuable part of the community.",
+		"preferred_emotions": ["happy"],
+		"forbidden_emotions" : ["angry", "surprise", "fear", "sad", "disgust", "neutral"]
+	},
+	"nid_day13": {
+		"title": "Successful disruption of a terrorist network",
+		"text": "The police spokesman reports: A terrorist network that operated underground for years was successfully disrupted yesterday. Members of the network were planning a plot to assassinate our beloved president. Fortunately, there is now medicine to help these poor, confused people and allow them to reintegrate into society. A special thanks to <Player>, who was able to contribute to the arrest of the head of the organization through a crucial tip.",
+		"preferred_emotions": ["happy"],
+		"forbidden_emotions" : ["angry", "surprise", "fear", "sad", "disgust", "neutral"]
 	}
 }

@@ -19,15 +19,15 @@ func deactivate():
 func _partner_message():
 	_send_phone_message('partner', "day07_partner_message")
 	
-func _publish_community_score_news():
-	_publish_news('nid_day07')
+#func _publish_community_score_news():
+#	_publish_news('nid_day07')
 
 func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
 		'talk_to_partner':
-			TimeController.setTimer(1, self, "_partner_message")
-			TimeController.setTimer(7, self, "_publish_community_score_news")
+			TimeController.setTimer(7, self, "_partner_message")
+#			TimeController.setTimer(1, self, "_publish_community_score_news")
 
 func start_day():
 	.start_day()

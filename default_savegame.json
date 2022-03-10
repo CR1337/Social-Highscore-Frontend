@@ -3699,14 +3699,13 @@
     "/root/CitizenRecord": {
         "records": [
 
-        ]
+        ],
+        "image_counter": 0
     },
     "/root/GameStateController": {
         "score": 1000,
         "money": 1000,
         "hunger": 0,
-        "work_timer_handle": -1,
-        "at_work": false,
         "hunger_timer_handle": -1,
         "days_without_mom": 0,
         "days_without_fitness": 0,
@@ -3726,6 +3725,9 @@
             "boss": "state0"
         },
         "current_preferred_emotions": [
+
+        ],
+        "current_forbidden_emotions": [
 
         ],
         "ticket_bought": false,
@@ -3756,43 +3758,9 @@
     },
     "/root/NewsController": {
         "news": [
-            {
-                "title": "BREAKING NEWS: We are happy",
-                "text": "The people are happy",
-                "preferred_emotions": [
-                    "happy"
-                ],
-                "lifetime": 1,
-                "age": 0,
-                "reacted_on": false,
-                "expired": false
-            },
-            {
-                "title": "BREAKING NEWS: We are angry",
-                "text": "The people are angry",
-                "preferred_emotions": [
-                    "angry",
-                    "sad"
-                ],
-                "lifetime": 2,
-                "age": 0,
-                "reacted_on": false,
-                "expired": false
-            },
-            {
-                "title": "BREAKING NEWS: Some other news",
-                "text": "The people are",
-                "preferred_emotions": [
-                    "happy",
-                    "angry",
-                    "disgusted"
-                ],
-                "lifetime": 3,
-                "age": 0,
-                "reacted_on": false,
-                "expired": false
-            }
-        ]
+
+        ],
+        "image_counter": 0
     },
     "/root/TrafficController": {
         "traffic_toggle_handle": 0

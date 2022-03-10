@@ -70,6 +70,9 @@ func _ready():
 	InputBus.connect("sig_menu_pressed", self, "_on_menu_pressed")
 	# _last_overlay = _transparent_overlay
 
+func current_place_string():
+	return _current_area.human_readable_name
+	
 func _on_phone_pressed():
 	change_to_smartphone()
 

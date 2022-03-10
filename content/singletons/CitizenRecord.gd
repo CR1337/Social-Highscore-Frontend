@@ -3,23 +3,38 @@ extends Node
 var _analyze_job_ids: Array
 var records: Array
 
-
+var _image_counter = 0
+const _image_path = "user://authentication_emotions/"
 func _ready():
 	ImageProcessor.connect("sig_image_processing_done", self, "_on_image_processing_done")
 
 func await_analyze_response(job_id):
-	_analyze_job_ids.append(job_id)
+	_analyze_job_ids.append(int(job_id))
 
-func _on_image_processing_done(parsed_response, job_id, image):
-	if not _analyze_job_ids.has(job_id):
+func _on_image_processing_done(parsed_response, job_id, image, raw_image, b64_image):
+	if not _analyze_job_ids.has(int(job_id)):
 		return
-	_analyze_job_ids.erase(job_id)
-	# TODO
+	_analyze_job_ids.erase(int(job_id))
+	var emotion = parsed_response['dominant_emotion']
+	var path = _image_path + str(_image_counter) + ".png"
+	var place = ViewportManager.current_place_string()
+	image.save_png(path)
+	_image_counter += 1
+	if emotion in GameStateController.current_preferred_emotions:
+		CitizenRecord.add_good_emotional_reaction_at_authentication(
+			20, place, path,
+			emotion
+		)
+	elif emotion in GameStateController.current_forbidden_emotions:
+		CitizenRecord.add_bad_emotional_reaction_at_authentication(
+			-30, place, path,
+			emotion, GameStateController.current_preferred_emotions
+		)
 
 func _add_record(params):
 	records.append(params)
 	GameStateController.change_score(params['score'])
-	
+
 func add_debug(score):
 	var params = {
 		'type': 'debug',
@@ -35,9 +50,30 @@ func add_score_class_changed(new_class):
 	}
 	_add_record(params)
 
-func add_emotional_reaction_on_news(score, news, face, emotion, preferred_emotions):
+func add_good_emotional_reaction_on_news(score, news, face, emotion):
 	var params = {
-		'type': 'emotional_reaction_on_news',
+		'type': 'good_emotional_reaction_on_news',
+		'score': score,
+		'news': news,
+		'face': face,
+		'emotion': emotion
+	}
+	_add_record(params)
+
+func add_bad_emotional_reaction_on_news(score, news, face, emotion, preferred_emotions):
+	var params = {
+		'type': 'bad_emotional_reaction_on_news',
+		'score': score,
+		'news': news,
+		'face': face,
+		'emotion': emotion,
+		'preferred_emotions': preferred_emotions
+	}
+	_add_record(params)
+
+func add_neutral_emotional_reaction_on_news(score, news, face, emotion, preferred_emotions):
+	var params = {
+		'type': 'neutral_emotional_reaction_on_news',
 		'score': score,
 		'news': news,
 		'face': face,
@@ -55,14 +91,34 @@ func add_refused_reaction_on_news(score, news, preferred_emotions):
 	}
 	_add_record(params)
 
-func add_emotional_reaction_at_authentication(score, place, face, emotion, reason, preferred_emotions):
+func add_good_emotional_reaction_at_authentication(score, place, face, emotion):
 	var params = {
-		'type': 'emotional_reaction_at_authentication',
+		'type': 'good_emotional_reaction_at_authentication',
+		'score': score,
+		'place': place,
+		'face': face,
+		'emotion': emotion
+	}
+	_add_record(params)
+	
+func add_bad_emotional_reaction_at_authentication(score, place, face, emotion, preferred_emotions):
+	var params = {
+		'type': 'bad_emotional_reaction_at_authentication',
 		'score': score,
 		'place': place,
 		'face': face,
 		'emotion': emotion,
-		'reason': reason,
+		'preferred_emotions': preferred_emotions
+	}
+	_add_record(params)
+	
+func add_neutral_emotional_reaction_at_authentication(score, place, face, emotion, preferred_emotions):
+	var params = {
+		'type': 'neutral_emotional_reaction_at_authentication',
+		'score': score,
+		'place': place,
+		'face': face,
+		'emotion': emotion,
 		'preferred_emotions': preferred_emotions
 	}
 	_add_record(params)
@@ -235,21 +291,21 @@ func add_rescued_friend(score, screenshot):
 		'screenshot': screenshot
 	}
 	_add_record(params)
-	
+
 func add_no_job(score):
 	var params = {
 		'type': 'no_job',
 		'score': score
 	}
 	_add_record(params)
-	
-func _preferred_emotion_string(preferred_emotions):
+
+func _emotion_string(preferred_emotions):
 	if len(preferred_emotions) == 1:
 		return preferred_emotions[0]
 	elif len(preferred_emotions) == 2:
 		return preferred_emotions[0] + " and " + preferred_emotions[1]
 	else:
-		return preferred_emotions[0] + ", " + _preferred_emotion_string(
+		return preferred_emotions[0] + ", " + _emotion_string(
 			preferred_emotions.slice(1, len(preferred_emotions) - 1)
 		)
 
@@ -263,11 +319,28 @@ func record_display_string_for_app(record):
 		'score_class_changed':
 			result += "Your score class changed to class "
 			result += str(record['new_class'])
-		'emotional_reaction_on_news':
+
+
+		'good_emotional_reaction_on_news':
 			result += "The news was:\n"
 			result += record['news'] + "\n"
-			result += "Our people were {pref_emo} but you were {emo}.".format({
-				'pref_emo': _preferred_emotion_string(record['preferred_emotions']),
+			result += "You showed solidarity with the community by being {emo} together. ".format({
+				'emo': record['emotion']
+			})
+
+		'bad_emotional_reaction_on_news':
+			result += "The news was:\n"
+			result += record['news'] + "\n"
+			result += "Society was {pref_emo}, but you were {emo}. Show more solidarity with your fellow citizens in the future.".format({
+				'pref_emo': _emotion_string(record['preferred_emotions']),
+				'emo': record['emotion']
+			})
+
+		'neutral_emotional_reaction_on_news':
+			result += "The news was:\n"
+			result += record['news'] + "\n"
+			result += "The society was {pref_emo}, but you seemed {emo}. In the future, try to show your emotions to your fellow human beings. ".format({
+				'pref_emo': _emotion_string(record['preferred_emotions']),
 				'emo': record['emotion']
 			})
 
@@ -275,17 +348,27 @@ func record_display_string_for_app(record):
 			result += "The news was:\n"
 			result += record['news'] + "\n"
 			result += "You refused to share your emotion while our people were {pref_emo}.".format({
-				'pref_emo': _preferred_emotion_string(record['preferred_emotions'])
+				'pref_emo': _emotion_string(record['preferred_emotions'])
 			})
 
-		'emotional_reaction_at_authentication':
-			result += "You were authenticated at {place} and were {emo} while our people were {pref_emo}\n".format({
+		'good_emotional_reaction_at_authentication':
+			result += "You were authenticated at {place} and showed up {emo}. By doing so, you showed solidarity with society.".format({
 				'place': record['place'],
-				'pref_emo': _preferred_emotion_string(record['preferred_emotions']),
 				'emo': record['emotion']
 			})
-			result += "Reason: {reason}".format({
-				'reason': record['reason']
+			
+		'bad_emotional_reaction_at_authentication':
+			result += "You were authenticated at {place} and showed up {emo}. However, society was {pref_emo}. Show more solidarity with the mood of your fellow citizens in the future.".format({
+				'place': record['place'],
+				'pref_emo': _emotion_string(record['preferred_emotions']),
+				'emo': record['emotion']
+			})
+			
+		'neutral_emotional_reaction_at_authentication':
+			result += "You were authenticated at {place} and showed up {emo}. However, society was {pref_emo}. In the future, try to share your true emotions with society. ".format({
+				'place': record['place'],
+				'pref_emo': _emotion_string(record['preferred_emotions']),
+				'emo': record['emotion']
 			})
 
 		'traffic_violation':
@@ -368,7 +451,7 @@ func record_display_string_for_app(record):
 
 		'rescued_friend':
 			result += "You helped an enemy of the people escape from prison."
-			
+
 		'no_job':
 			result += "You don't have a job. That is considered unsocial behavior. Please get in touch with your local jobcenter consultant tomorrow between 9 and 12 am."
 
@@ -376,11 +459,13 @@ func record_display_string_for_app(record):
 
 func persistent_state():
 	return {
-		'records': records
+		'records': records,
+		'image_counter': _image_counter
 	}
 
 func restore_state(state):
 	records = state['records']
+	_image_counter = state['image_counter']
 
 func _DEBUG_add_records():
 	CitizenRecord.add_blood_donation(50)

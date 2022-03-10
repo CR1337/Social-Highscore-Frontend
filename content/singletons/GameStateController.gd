@@ -6,6 +6,7 @@ var money = 1000
 var ticket_bought = false
 
 var current_preferred_emotions = []
+var current_forbidden_emotions = []
 
 var contact_state = {
 	'friend': "state0",
@@ -26,6 +27,7 @@ func persistent_state():
 		'current_day': current_day,
 		'contact_state': contact_state,
 		'current_preferred_emotions': current_preferred_emotions,
+		'current_forbidden_emotions': current_forbidden_emotions,
 		'ticket_bought': ticket_bought,
 		'mall_food_timer_items': _mall_food_timer_items,
 		'bank_account_blocked': bank_account_blocked,
@@ -44,6 +46,7 @@ func restore_state(state):
 	fridge_content = state["fridge_content"]
 	current_day = state["current_day"]
 	current_preferred_emotions = state['current_preferred_emotions']
+	current_forbidden_emotions = state['current_forbidden_emotions']
 	ticket_bought = state['ticket_bought']
 	_mall_food_timer_items = state['mall_food_timer_items']
 	bank_account_blocked = state['bank_account_blocked']
@@ -63,6 +66,7 @@ var _next_status_update_handle = 2 # Stated in default_savegame
 signal sig_money_changed(new_value)
 signal sig_score_changed(new_value)
 signal sig_score_class_changed()
+signal sig_new_day()
 
 func _ready():
 	EventBus.connect("sig_add_money", self, "_on_add_money")
@@ -182,6 +186,7 @@ func set_day(day):
 	_handle_debt_score()
 	_handle_mom_vists()
 	_handle_fitness_visits()
+	emit_signal("sig_new_day")
 	# TODO: maybe more daily stuff
 
 # END story

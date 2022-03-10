@@ -107,7 +107,8 @@ func _publish_news(news_id):
 		news['title'],
 		news['text'],
 		news['preferred_emotions'],
-		news['lifetime']
+		news['forbidden_emotions'],
+		1
 	)
 	
 func _get_day():
@@ -125,12 +126,15 @@ func _update_progress(new_state):
 	if new_state == 'finished':
 		_end_day()
 	
+func _publish_daily_news():
+	var news_id = "nid_day" + _get_day()
+	_publish_news(news_id)
 	
 func start_day():
 	activate()
 	_set_initial_dialog()
 	GameStateController.set_day(int(_get_day()))
-	
+	_publish_daily_news()
 	
 func _on_trigger(trigger_id, kwargs):
 	

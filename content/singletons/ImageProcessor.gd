@@ -18,7 +18,7 @@ var _image_dict: Dictionary
 var _raw_image_dict: Dictionary
 var _b64_image_dict: Dictionary
 
-signal sig_image_processing_done(response, job_id, image)
+signal sig_image_processing_done(parsed_response, job_id, image, raw_image, b64_image)
 signal sig_image_processing_error(response_code)
 signal sig_reference_image_taken(image, job_id)
 

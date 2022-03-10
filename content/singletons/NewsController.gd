@@ -1,48 +1,50 @@
 extends Node
 
 
-signal sig_publish_news(title, text, preferred_emotions, lifetime)
+signal sig_publish_news()
 
 var news = []
 var _ongoing_reactions = {}
 
 func persistent_state():
 	return {
-		'news': news
+		'news': news,
+		'image_counter': _image_counter
 	}
 
 func restore_state(state):
 	news = state['news']
+	_image_counter = state['image_counter']
 
 func _ready():
-	connect("sig_publish_news", self, "_on_publish_news")
-	TimeController.connect("sig_new_day", self, "_on_new_day")
+	GameStateController.connect("sig_new_day", self, "_on_new_day")
 	ImageProcessor.connect("sig_image_processing_done", self, "_on_image_processing_done")
-	_DEBUG_add_news()
 
 func clear_news():
 	# Called when the node enters the scene tree for the first time.
 	news = []
 
-func publish_news(title, text, preferred_emotions, lifetime):
-	emit_signal("sig_publish_news", title, text, preferred_emotions, lifetime)
+func publish_news(title, text, preferred_emotions, forbidden_emotions, lifetime):
+	emit_signal("sig_publish_news")
 	EventBus.emit_signal("sig_notification", 'news', title)
-
-func _on_publish_news(title, text, preferred_emotions, lifetime):
-	news.append({
+	GameStateController.current_preferred_emotions = preferred_emotions
+	GameStateController.current_forbidden_emotions = forbidden_emotions
+	news.insert(0, {
 		'title': title,
 		'text': text,
 		'preferred_emotions': preferred_emotions,
+		'forbidden_emotions': forbidden_emotions,
 		'lifetime': lifetime,
 		'age': 0,
 		'reacted_on': false,
 		'expired': false
 	})
 
+
 func react_on(news_index, want_to_react):
 	if want_to_react:
 		var job_id = ImageProcessor.analyze()
-		_ongoing_reactions[job_id] = news_index
+		_ongoing_reactions[int(job_id)] = news_index
 	else:
 		var news_reacting_on = news[news_index]
 		news_reacting_on['reacted_on'] = true
@@ -51,40 +53,37 @@ func react_on(news_index, want_to_react):
 		)
 
 func _on_image_processing_done(parsed_response, job_id, image, raw_image, b64_image):
-	if _ongoing_reactions.has(job_id):
-		_handle_reaction(b64_image, parsed_response['dominant_emotion'], _ongoing_reactions[job_id])
-		_ongoing_reactions.erase(job_id)
+	if _ongoing_reactions.has(int(job_id)):
+		_handle_reaction(image, parsed_response['dominant_emotion'], _ongoing_reactions[int(job_id)])
+		_ongoing_reactions.erase(int(job_id))
 
-func _handle_reaction(b64_image, emotion, news_id_reacting_on):
-	var delta_score
+var _image_counter = 0
+const _image_path = "user://news_reactions/"
+
+func _handle_reaction(image, emotion, news_id_reacting_on):
 	var news_reacting_on = news[news_id_reacting_on]
 	news_reacting_on['reacted_on'] = true
-	if not (emotion in news_reacting_on['preferred_emotions']):
-		delta_score = -30
+	var path = _image_path + str(_image_counter) + ".png"
+	image.save_png(path)
+	_image_counter += 1
+	
+	if (emotion in news_reacting_on['preferred_emotions']):
+		CitizenRecord.add_good_emotional_reaction_on_news(
+			20, news_reacting_on['title'], path,
+			emotion
+		)
+	elif emotion in news_id_reacting_on['forbidden_emotions']:
+		CitizenRecord.add_bad_emotional_reaction_on_news(
+			-30, news_reacting_on['title'], path,
+			emotion, news_reacting_on['preferred_emotions']
+		)
 	else:
-		delta_score = 20
-	CitizenRecord.add_emotional_reaction_on_news(
-		delta_score, news_reacting_on['title'], b64_image,
-		emotion, news_reacting_on['preferred_emotions']
-	)
-
-#func _oldest_news(skip_running_reactions):
-#	var n = news[0]
-#	for i in len(news) - 1:
-#		if news[i + 1]['age'] > n['age']:
-#			if skip_running_reactions and (i + 1) in _ongoing_reactions.values():
-#				continue
-#			n = news[i + 1]
-#	return n
-
-#func _erase_news(news_to_erase):
-
-#	news.erase(news_to_erase)
-
-
+		CitizenRecord.add_neutral_emotional_reaction_on_news(
+			0, news_reacting_on['title'], path,
+			emotion, news_reacting_on['preferred_emotions']
+		)
 
 func _on_new_day():
-#	var to_erase = []
 	for n in news:
 		n['age'] += 1
 		if n['lifetime'] >= n['age']:
@@ -93,26 +92,3 @@ func _on_new_day():
 				CitizenRecord.add_refused_reaction_on_news(
 					-40, n['title'], n['preferred_emotions']
 				)
-#		to_erase.append(n)
-#	for n in to_erase:
-#		_erase_news(n)
-
-func _DEBUG_add_news():
-	NewsController.publish_news(
-		"BREAKING NEWS: We are happy",
-		"The people are happy",
-		['happy'],
-		1
-	);
-	NewsController.publish_news(
-		"BREAKING NEWS: We are angry",
-		"The people are angry",
-		['angry', 'sad'],
-		2
-	);
-	NewsController.publish_news(
-		"BREAKING NEWS: Some other news",
-		"The people are",
-		['happy', 'angry', 'disgusted'],
-		3
-	);

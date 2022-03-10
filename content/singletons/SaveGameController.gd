@@ -103,18 +103,30 @@ func _notification(what):
 func _debug_save_default_game():
 	call_deferred("_save_default_game")
 	call_deferred("start_new_game")
+	
+const _user_directories = [
+	"screenshots",
+	"news_reactions",
+	"authentication_emotions"
+]
+func _create_directories():
+	var dir = Directory.new()
+	dir.open("user://")
+	for directory in _user_directories:
+		if not dir.dir_exists(directory):
+			dir.make_dir(directory)
 
 func _ready():
 #	_debug_save_default_game()
 #	return
+	_create_directories()
 	var file = File.new()
 	if not file.file_exists(_save_filename):
 		_create_file()
-	_autosave_handle = TimeController.setTimer(60, self, "timer")
+	_autosave_handle = TimeController.setTimer(60, self, "autosave")
 	call_deferred("load_game")
 
 
-func timer(handle):
-	if handle == _autosave_handle:
-		_autosave_handle = TimeController.setTimer(60, self, "timer")
-		save_game()
+func autosave(handle):
+	TimeController.setTimer(60, self, "autosave")
+	save_game()

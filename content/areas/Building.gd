@@ -1,5 +1,7 @@
 extends Node2D
 
+export (String) var human_readable_name
+
 export (NodePath) var leave_area_path
 export (Vector2) var leave_player_position
 

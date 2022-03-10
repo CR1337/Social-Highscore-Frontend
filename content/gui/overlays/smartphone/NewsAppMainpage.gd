@@ -46,6 +46,6 @@ func _on_news_button_pressed(news_index):
 func _on_BackButton_pressed():
 	ViewportManager.change_to_smartphone()
 
-func _on_publish_news(title, text, preferred_emotion):
+func _on_publish_news():
 	call_deferred("update_mainpage")
 
