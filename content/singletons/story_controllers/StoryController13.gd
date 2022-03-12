@@ -29,6 +29,7 @@ func _update_progress(new_state):
 func start_day():
 	.start_day()
 	_update_progress('goto_partner')
+	_set_npc_visibility('shady2', 'none')
 
 
 func _on_trigger(trigger_id, kwargs):

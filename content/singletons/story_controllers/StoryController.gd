@@ -50,6 +50,13 @@ const _state_change_trigger_ids = {
 	'police2': 'tid_city_policestreet_npc_police2_state_change',
 	'police3': 'tid_city_policestreet_police_npc_police3_state_change',
 	'police4': 'tid_city_policestreet_police_npc_police4_state_change',
+	'shady1': 'tid_city_shadystreet_npc_state_change',
+	'shady2': 'tid_city_shadystreet_npc2_state_change'
+}
+
+onready var _shady_nodes = {
+	'shady1': get_node("/root/MainScene/Areas/CityShadystreetArea/Npc"),
+	'shady2': get_node("/root/MainScene/Areas/CityShadystreetArea/Npc2")
 }
 
 func activate():
@@ -70,6 +77,12 @@ func _set_npc_visibility(npc, key):
 				node.set_current_position(_invisible_position)
 			if key != 'none':
 				_partner_nodes[key].set_current_position(_partner_positions[key])
+		'shady1':
+			_shady_nodes['shady1'].set_current_position(_invisible_position)
+			# shady npcs just disappear
+		'shady2':
+			_shady_nodes['shady2'].set_current_position(_invisible_position)
+			# shady npcs just disappear
 
 
 const _phone_message_filename = "res://texts/phone_messages.json"

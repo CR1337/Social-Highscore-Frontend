@@ -41,6 +41,7 @@ func start_day():
 	.start_day()
 	_update_progress('goto_work')
 	_set_npc_visibility('friend', 'none')
+	_set_npc_visibility('shady1', 'none')
 
 
 func _on_trigger(trigger_id, kwargs):

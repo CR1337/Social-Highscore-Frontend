@@ -86,6 +86,10 @@ current_position = Vector2( 9, 5 )
 script = ExtResource( 7 )
 id = "tid_city_shadystreet_npc_start_dialog"
 
+[node name="StateChangeTrigger" type="Node" parent="Npc"]
+script = ExtResource( 12 )
+id = "tid_city_shadystreet_npc_state_change"
+
 [node name="Npc2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 160, 736 )
 z_index = 1
@@ -99,6 +103,10 @@ current_position = Vector2( 2, 11 )
 [node name="DialogStartTrigger" type="Node" parent="Npc2"]
 script = ExtResource( 7 )
 id = "tid_city_shadystreet_npc2_start_dialog"
+
+[node name="StateChangeTrigger" type="Node" parent="Npc2"]
+script = ExtResource( 12 )
+id = "tid_city_shadystreet_npc2_state_change"
 
 [node name="NpcFriend" parent="." instance=ExtResource( 8 )]
 position = Vector2( -32, -32 )
