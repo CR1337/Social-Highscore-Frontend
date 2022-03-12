@@ -12,10 +12,24 @@ export var default_icon: Texture
 
 var _current_type = "None"
 
+var _important_notifications = []
+var _notifications = []
+
 func _ready():
 	EventBus.connect("sig_notification", self, '_on_notification')
 
 func _on_notification(type, text, important = false):
+	if important:
+		_important_notifications.append({
+			'type': type,
+			'text': text
+		})
+	else:
+		_notifications.append({
+			'type': type,
+			'text': text
+		})
+	
 	_current_type = type
 	if not important:
 		TimeController.setTimer(10, self, "hide_overlay")
