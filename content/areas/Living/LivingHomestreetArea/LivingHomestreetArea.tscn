@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -8,12 +8,7 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/living/homestreet/npc.tres" type="SpriteFrames" id=6]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=7]
 [ext_resource path="res://content/areas/components/CrossingArea.tscn" type="PackedScene" id=8]
-[ext_resource path="res://content/movables/Movable.tscn" type="PackedScene" id=9]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=15]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=16]
-[ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=17]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_green_car.tres" type="SpriteFrames" id=18]
 
 [node name="LivingHomestreetArea" type="Node2D"]
 position = Vector2( 0, -1.33484 )
@@ -118,68 +113,6 @@ position = Vector2( 159.843, 511.632 )
 scale = Vector2( 1, 2 )
 slow_down = 0.5
 
-[node name="Car1_1" parent="." instance=ExtResource( 11 )]
-position = Vector2( 352, -32 )
-ignores_crosswalks = false
-speed = 2.0
-active_on_start = true
-animation = ExtResource( 16 )
-current_position = Vector2( 5, -1 )
-
-[node name="CarStartTrigger" type="Node" parent="Car1_1"]
-script = ExtResource( 17 )
-id = "tid_living_homestreet_car_1_1_start"
-
-[node name="Car1_3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 864, 480 )
-ignores_crosswalks = false
-speed = 2.0
-active_on_start = true
-animation = ExtResource( 16 )
-current_position = Vector2( 13, 7 )
-looking_direction = Vector2( -1, 0 )
-
-[node name="CarStartTrigger" type="Node" parent="Car1_3"]
-script = ExtResource( 17 )
-id = "tid_living_homestreet_car_1_3_start"
-
-[node name="Car2_1" parent="." instance=ExtResource( 11 )]
-position = Vector2( 352, -32 )
-ignores_crosswalks = false
-speed = 2.0
-active_on_start = true
-animation = ExtResource( 15 )
-current_position = Vector2( 5, -1 )
-
-[node name="CarStartTrigger" type="Node" parent="Car2_1"]
-script = ExtResource( 17 )
-id = "tid_living_homestreet_car_2_1_start"
-
-[node name="Car2_3" parent="." instance=ExtResource( 11 )]
-position = Vector2( -96, 544 )
-ignores_crosswalks = false
-speed = 2.0
-active_on_start = true
-animation = ExtResource( 15 )
-current_position = Vector2( -2, 8 )
-looking_direction = Vector2( 1, 0 )
-
-[node name="CarStartTrigger" type="Node" parent="Car2_3"]
-script = ExtResource( 17 )
-id = "tid_living_homestreet_car_2_3_start"
-
-[node name="Car3_1_a" parent="." instance=ExtResource( 11 )]
-position = Vector2( 352, -32 )
-ignores_crosswalks = false
-speed = 2.0
-active_on_start = true
-animation = ExtResource( 18 )
-current_position = Vector2( 5, -1 )
-
-[node name="CarStartTrigger" type="Node" parent="Car3_1_a"]
-script = ExtResource( 17 )
-id = "tid_living_homestreet_car_3_1_start"
-
 [node name="Npc" parent="." instance=ExtResource( 11 )]
 position = Vector2( 672, 352 )
 z_index = 1
@@ -193,7 +126,3 @@ current_position = Vector2( 10, 5 )
 [node name="DialogStartTrigger" type="Node" parent="Npc"]
 script = ExtResource( 7 )
 id = "tid_living_homestreet_npc_start_dialog"
-
-[node name="Car3_1" parent="." instance=ExtResource( 9 )]
-position = Vector2( 374.853, 494.626 )
-animation = ExtResource( 16 )

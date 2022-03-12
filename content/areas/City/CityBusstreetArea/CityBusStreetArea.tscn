@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -8,19 +8,12 @@
 [ext_resource path="res://content/trigger/BusTrigger.gd" type="Script" id=6]
 [ext_resource path="res://content/areas/components/TrafficLight.tscn" type="PackedScene" id=7]
 [ext_resource path="res://content/areas/components/CrossingArea.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=9]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_taxi_car.tres" type="SpriteFrames" id=10]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_red_car.tres" type="SpriteFrames" id=11]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/busstreet/npc2.tres" type="SpriteFrames" id=12]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=13]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/busstreet/npc.tres" type="SpriteFrames" id=14]
 [ext_resource path="res://content/trigger/StateChangeTrigger.gd" type="Script" id=15]
 [ext_resource path="res://assets/animated_sprites/tres/characters/friend.tres" type="SpriteFrames" id=16]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=17]
-[ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=18]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_yellow_car.tres" type="SpriteFrames" id=19]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_magenta_car.tres" type="SpriteFrames" id=20]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_orange_car.tres" type="SpriteFrames" id=21]
 [ext_resource path="res://assets/animated_sprites/tres/characters/female_citizen1.tres" type="SpriteFrames" id=22]
 [ext_resource path="res://assets/animated_sprites/tres/characters/living/pharmacystreet/npc.tres" type="SpriteFrames" id=23]
 [ext_resource path="res://assets/animated_sprites/tres/characters/male_citizen1.tres" type="SpriteFrames" id=24]
@@ -104,102 +97,6 @@ slow_down = 0.2
 position = Vector2( 229.506, 355.327 )
 scale = Vector2( 3, 3 )
 slow_down = 0.1
-
-[node name="Car4_0" parent="." instance=ExtResource( 17 )]
-position = Vector2( -32, 352 )
-ignores_crosswalks = false
-speed = 3.0
-active_on_start = true
-animation = ExtResource( 19 )
-current_position = Vector2( -1, 5 )
-
-[node name="CarStartTrigger" type="Node" parent="Car4_0"]
-script = ExtResource( 18 )
-id = "tid_city_busstreet_car_4_0_start"
-
-[node name="Car5_0" parent="." instance=ExtResource( 17 )]
-position = Vector2( -32, 224 )
-ignores_crosswalks = false
-speed = 4.0
-active_on_start = true
-animation = ExtResource( 20 )
-current_position = Vector2( -1, 3 )
-
-[node name="CarStartTrigger" type="Node" parent="Car5_0"]
-script = ExtResource( 18 )
-id = "tid_city_busstreet_car_5_0_start"
-
-[node name="Car6_0" parent="." instance=ExtResource( 17 )]
-position = Vector2( -32, 96 )
-ignores_crosswalks = false
-speed = 4.0
-active_on_start = true
-animation = ExtResource( 21 )
-current_position = Vector2( -1, 1 )
-
-[node name="CarStartTrigger" type="Node" parent="Car6_0"]
-script = ExtResource( 18 )
-id = "tid_city_busstreet_car_6_0_start"
-
-[node name="Car7_0" parent="." instance=ExtResource( 17 )]
-position = Vector2( -32, 352 )
-ignores_crosswalks = false
-speed = 4.0
-active_on_start = true
-animation = ExtResource( 10 )
-current_position = Vector2( -1, 5 )
-
-[node name="CarStartTrigger" type="Node" parent="Car7_0"]
-script = ExtResource( 18 )
-id = "tid_city_busstreet_car_7_0_start"
-
-[node name="Car7_2" parent="." instance=ExtResource( 17 )]
-position = Vector2( 288, 1120 )
-ignores_crosswalks = false
-speed = 4.0
-active_on_start = true
-animation = ExtResource( 10 )
-current_position = Vector2( 4, 17 )
-
-[node name="CarStartTrigger" type="Node" parent="Car7_2"]
-script = ExtResource( 18 )
-id = "tid_city_busstreet_car_7_2_start"
-
-[node name="Car8_0" parent="." instance=ExtResource( 17 )]
-position = Vector2( -32, 352 )
-ignores_crosswalks = false
-speed = 4.0
-active_on_start = true
-animation = ExtResource( 19 )
-current_position = Vector2( -1, 5 )
-
-[node name="CarStartTrigger" type="Node" parent="Car8_0"]
-script = ExtResource( 18 )
-id = "tid_city_busstreet_car_8_0_start"
-
-[node name="Car9_3" parent="." instance=ExtResource( 17 )]
-position = Vector2( 800, 608 )
-ignores_crosswalks = false
-speed = 4.0
-active_on_start = true
-animation = ExtResource( 11 )
-current_position = Vector2( 12, 9 )
-
-[node name="CarStartTrigger" type="Node" parent="Car9_3"]
-script = ExtResource( 18 )
-id = "tid_city_busstreet_car_9_3_start"
-
-[node name="Car11_3" parent="." instance=ExtResource( 17 )]
-position = Vector2( 800, 608 )
-ignores_crosswalks = false
-speed = 4.0
-active_on_start = true
-animation = ExtResource( 9 )
-current_position = Vector2( 12, 9 )
-
-[node name="CarStartTrigger" type="Node" parent="Car11_3"]
-script = ExtResource( 18 )
-id = "tid_city_busstreet_car_11_3_start"
 
 [node name="Npc" parent="." instance=ExtResource( 17 )]
 position = Vector2( 544, 416 )

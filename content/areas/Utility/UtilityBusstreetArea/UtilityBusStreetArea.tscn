@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -6,13 +6,10 @@
 [ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/outdoor/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/trigger/BusTrigger.gd" type="Script" id=6]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_grey_car.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/npc.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/npc2.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://content/trigger/AuthenticationTrigger.gd" type="Script" id=10]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_white_car.tres" type="SpriteFrames" id=12]
-[ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=13]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=14]
 
 [node name="UtilityBusstreetArea" type="Node2D"]
@@ -89,30 +86,6 @@ post_authentication_trigger_id = "tid_utility_busstreet_bus"
 [node name="BusTrigger" type="Node" parent="BusTriggerArea"]
 script = ExtResource( 6 )
 id = "tid_utility_busstreet_bus"
-
-[node name="Car13_0" parent="." instance=ExtResource( 11 )]
-position = Vector2( 800, 736 )
-ignores_crosswalks = false
-speed = 3.0
-active_on_start = true
-animation = ExtResource( 7 )
-current_position = Vector2( 12, 11 )
-
-[node name="CarStartTrigger" type="Node" parent="Car13_0"]
-script = ExtResource( 13 )
-id = "tid_utility_busstreet_car_13_0_start"
-
-[node name="Car14_0" parent="." instance=ExtResource( 11 )]
-position = Vector2( 800, 736 )
-ignores_crosswalks = false
-speed = 3.0
-active_on_start = true
-animation = ExtResource( 12 )
-current_position = Vector2( 12, 11 )
-
-[node name="CarStartTrigger" type="Node" parent="Car14_0"]
-script = ExtResource( 13 )
-id = "tid_utility_busstreet_car_14_0_start"
 
 [node name="Npc" parent="." instance=ExtResource( 11 )]
 position = Vector2( 352, 608 )

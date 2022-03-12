@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -6,9 +6,6 @@
 [ext_resource path="res://content/areas/Living/LivingFriendstreetArea/LivingFriendstreetArea.gd" type="Script" id=4]
 [ext_resource path="res://assets/tilesets/outdoor/collision_tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://content/areas/components/CrossingArea.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/animated_sprites/tres/cars/animated_blue_car.tres" type="SpriteFrames" id=9]
-[ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=10]
-[ext_resource path="res://content/trigger/StartNPCTrigger.gd" type="Script" id=11]
 
 [node name="LivingFriendstreetArea" type="Node2D"]
 script = ExtResource( 4 )
@@ -73,14 +70,3 @@ position = Vector2( 414.676, 510.675 )
 scale = Vector2( 1, 2 )
 slow_down = 1.0
 crosswalk = true
-
-[node name="Car1_2" parent="." instance=ExtResource( 10 )]
-position = Vector2( -32, 544 )
-speed = 2.0
-active_on_start = true
-animation = ExtResource( 9 )
-current_position = Vector2( -1, 8 )
-
-[node name="CarStartTrigger" type="Node" parent="Car1_2"]
-script = ExtResource( 11 )
-id = "tid_living_friendstreet_car_1_2_start"
