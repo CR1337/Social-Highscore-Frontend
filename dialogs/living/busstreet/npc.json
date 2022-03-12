@@ -1,6 +1,6 @@
 {
     "texts": {
-        "0": "I like the public transport in our country. A day ticket costs only <PRICE>. You can even pay for it easily with your face now. The bus takes you to the city, to the business park and back at any time of the day. ", 
+        "0": "I like the public transport in our country. A day ticket costs only $$GameStateController.ticket_base_price$$ ¥. You can even pay for it easily with your face now. The bus takes you to the city, to the business park and back at any time of the day. ",
         "1": "(end dialog)"
     },
     "graphs": {

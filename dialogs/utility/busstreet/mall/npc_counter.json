@@ -1,6 +1,6 @@
 {
     "texts": {
-        "0": "Hey, how about a workout here at Hyper Fit? One hour costs only <price>. ", 
+        "0": "Hey, how about a workout here at Hyper Fit? One hour costs only §§GameStateController.gym_price§§ ¥. ",
         "1": "For sure",
         "2": "Maybe later"
     },

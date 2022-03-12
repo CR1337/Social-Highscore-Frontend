@@ -2,7 +2,6 @@ extends "res://content/trigger/Trigger.gd"
 
 const _payment_handle = 'ph_bus'
 const _recipient =  'Transportation services'
-const _base_amount = 10
 
 func _ready():
 	EventBus.connect("sig_payment_failed", self, "_on_payment_failed")
@@ -31,6 +30,10 @@ func trigger(kwargs):
 			_block_state
 		)
 	elif payment_needed():
-		ViewportManager.change_to_payment(_recipient, _base_amount * GameStateController.price_factor(), _payment_handle)
+		ViewportManager.change_to_payment(
+			_recipient, 
+			GameStateController.ticket_base_price * GameStateController.price_factor(),
+			_payment_handle
+		)
 	else:
 		ViewportManager.change_to_bus()

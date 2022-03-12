@@ -3,6 +3,7 @@ extends Node
 var score = 1000
 var money = 1000
 
+const ticket_base_price = 10
 var ticket_bought = false
 
 var current_preferred_emotions = []
@@ -80,8 +81,8 @@ func _on_trigger(trigger_id, kwargs):
 		_handle_bank_loan(trigger_id)
 	elif trigger_id == 'tid_visited_mom':
 		days_without_mom = 0
-	elif trigger_id == 'tid_gym_visit':
-		_days_without_fitness = 0
+	elif trigger_id.begins_with('tid_gym_'):
+		_handle_gym_event(trigger_id, kwargs)
 	elif trigger_id == 'tid_critical_speech':
 		_handle_critical_speech(
 			kwargs.get('addressee', 'unknown person'),
@@ -148,6 +149,26 @@ func _on_add_money(amount, description):
 	change_money(amount)
 	
 var bank_account_blocked = false
+
+# BEGIN gym
+
+const _gym_base_price = 25
+
+func gym_price():
+	return _gym_base_price * price_factor()
+
+func _handle_gym_event(trigger_id, kwargs):
+	match trigger_id:
+		'tid_gym_visit':
+			EventBus.emit_signal("sig_trigger", "tid_utility_busstreet_mall_pay_gym", {})
+			
+func gym_payment_failed():
+	pass
+			
+func gym_payment_successful():
+	_days_without_fitness = 0
+
+# END gym
 
 # BEGIN story
 
