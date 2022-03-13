@@ -22,16 +22,20 @@ func _create_label():
 	label.set("custom_colors/default_color", Color(1, 1, 1, 1))
 	return label
 
-func _create_header(record):
+func _create_big_label():
 	var label = _create_label()
-	label.text = record['type']
-	label.rect_min_size = Vector2(708, 64)
+	label.rect_min_size = Vector2(688, 216)
+	return label
+
+func _create_small_label():
+	var label = _create_label()
+	label.rect_min_size = Vector2(540, 216)
 	return label
 
 func _create_texture(image_path):
 	var textureRect = TextureRect.new()
-	textureRect.rect_min_size = Vector2(128, 128)
-	textureRect.rect_size = Vector2(128, 128)
+	textureRect.rect_min_size = Vector2(128, 216)
+	textureRect.rect_size = Vector2(128, 216)
 	textureRect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	textureRect.expand = true
 
@@ -43,15 +47,6 @@ func _create_texture(image_path):
 	textureRect.texture = tmp_texture
 	return textureRect
 
-func _create_info_list(record, parameter_list, label_list, fullwidth = true):
-	var label = _create_label()
-	label.rect_min_size = Vector2(728, 192) if fullwidth else Vector2(550, 152)
-	for i in len(parameter_list):
-		label.append_bbcode(
-			label_list[i] + ": " +
-			str(record[parameter_list[i]]) + "\n")
-	return label
-
 func _create_background():
 	var new_background = ColorRect.new()
 	new_background.rect_min_size = Vector2(728, 256)
@@ -59,496 +54,491 @@ func _create_background():
 	return new_background
 
 func _create_record():
-	var new_record = VBoxContainer.new()
-	new_record.rect_min_size = Vector2(728, 256)
+	var new_record = HBoxContainer.new()
+	new_record.rect_size = Vector2(728, 256)
 	new_record.alignment = BoxContainer.ALIGN_CENTER
 	new_record.set("custom_constants/separation", 20)
-	new_record.margin_left = 10
-	new_record.margin_top = 10
-	new_record.margin_bottom = 246
-	new_record.margin_right = 718
+	new_record.margin_left = 20
+	new_record.margin_top = 20
+	new_record.margin_bottom = 236
+	new_record.margin_right = 708
 
 	return new_record
 
+func _emotion_string(preferred_emotions):
+	if len(preferred_emotions) == 1:
+		return preferred_emotions[0]
+	elif len(preferred_emotions) == 2:
+		return preferred_emotions[0] + " and " + preferred_emotions[1]
+	else:
+		return preferred_emotions[0] + ", " + _emotion_string(
+			preferred_emotions.slice(1, len(preferred_emotions) - 1)
+		)
+
 func _display_record(record):
 	match record['type']:
-		'emotional_reaction_on_news':
-			_display_emotional_reaction_on_news(record)
-		'refused_reaction_on_news':
-			_display_refused_reaction_on_news(record)
-		'emotional_reaction_at_authentication':
-			_display_emotional_reaction_at_authentication(record)
 		_:
 			var label = _create_label()
 			label.rect_min_size = Vector2(728, 64)
 			label.append_bbcode(record['type'])
 			_box_container.add_child(label)
 
-func _display_emotional_reaction_on_news(record):
+func _display_score_class_changed(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-	var body_container = HBoxContainer.new()
-	body_container.set("custom_constants/separation", 0)
+	var label = _create_big_label()
+	var text = "The target's score class changed to Class {class}".format(
+		{"class": record["new_class"]}
+	)
+	label.append_bbcode(text)
+	new_background.add_child(new_record)
+	new_record.add_child(label)
+	_box_container.add_child(new_background)
 
+func _display_good_emotional_reaction_on_news(record):
+	var new_background = _create_background()
+	var new_record = _create_record()
+	var label = _create_small_label()
+	var text = "The target reacted to the news {news} with {emo} as intended by the government".format(
+		{"news": record["news"],
+		"emo": record["emotion"]}
+	)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 	var image_texture_rect = _create_texture(record['face'])
 
-	var info_label = _create_info_list(record,
-		['score', 'news', 'preferred_emotion', 'emotion'],
-		['Score Difference', 'News', 'Expected emotion', 'Actual Emotion'],
-		false
+	new_background.add_child(new_record)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
+	_box_container.add_child(new_background)
+
+func _display_bad_emotional_reaction_on_news(record):
+	var new_background = _create_background()
+	var new_record = _create_record()
+	var label = _create_small_label()
+	var text = "The target reacted to the news {news} with {emo}, which was not accepted by the government.The government intended {pref_emo}".format(
+		{"news": record["news"],
+		"emo": record["emotion"],
+		"pref_emo": _emotion_string(record['preferred_emotions'])}
 	)
-		# resize
-	new_background.rect_min_size = Vector2(728, 288)
-	new_record.rect_min_size = Vector2(728, 288)
-	info_label.rect_min_size = Vector2(550, 228)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+	var image_texture_rect = _create_texture(record['face'])
 
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	body_container.add_child(info_label)
-	body_container.add_child(image_texture_rect)
-	new_record.add_child(body_container)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
+	_box_container.add_child(new_background)
+
+func _display_neutral_emotional_reaction_on_news(record):
+	var new_background = _create_background()
+	var new_record = _create_record()
+	var label = _create_small_label()
+	var text = "The target reacted to the news {news} with {emo},while the government intended {pref_emo}".format(
+		{"news": record["news"],
+		"emo": record["emotion"],
+		"pref_emo": _emotion_string(record['preferred_emotions'])}
+	)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+	var image_texture_rect = _create_texture(record['face'])
+
+	new_background.add_child(new_record)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
 	_box_container.add_child(new_background)
 
 func _display_refused_reaction_on_news(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'news', 'preferred_emotion'],
-		['Score Difference', 'News', 'Expected Emotion'],
-		true
+	var label = _create_big_label()
+	var text = "The target refused to share his reaction on the news {news}. The emotions {pref_emo} were intended.".format(
+		{"news": record["news"],
+		"pref_emo": _emotion_string(record['preferred_emotions'])}
 	)
-
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+	label.append_bbcode(text)
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
-
-func _display_emotional_reaction_at_authentication(record):
+func _display_good_emotional_reaction_at_authentication(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-	var body_container = HBoxContainer.new()
-	body_container.set("custom_constants/separation", 0)
-
+	var label = _create_small_label()
+	var text = "The target was authenticated at {place} with {emo}, and showed one of the daily preferred emotions".format(
+		{"place": record["place"],
+		"emo": record["emotion"]}
+	)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 	var image_texture_rect = _create_texture(record['face'])
 
-	var info_label = _create_info_list(record,
-		['score', 'place', 'preferred_emotion', 'reason', 'emotion'],
-		['Score Difference', 'Place', 'Expected emotion', 'Reason', 'Actual Emotion'],
-		false
+	new_background.add_child(new_record)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
+	_box_container.add_child(new_background)
+
+func _display_bad_emotional_reaction_at_authentication(record):
+	var new_background = _create_background()
+	var new_record = _create_record()
+	var label = _create_small_label()
+	var text = "The target was authenticated at {place} with {emo}, and showed one of the daily forbidden emotions. The preferred emotions were {pref_emo}".format(
+		{"place": record["place"],
+		"emo": record["emotion"],
+		"pref_emo": _emotion_string(record['preferred_emotions'])}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 288)
-	new_record.rect_min_size = Vector2(728, 288)
-	info_label.rect_min_size = Vector2(550, 228)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+	var image_texture_rect = _create_texture(record['face'])
 
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	body_container.add_child(info_label)
-	body_container.add_child(image_texture_rect)
-	new_record.add_child(body_container)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
+	_box_container.add_child(new_background)
+
+func _display_neutral_emotional_reaction_at_authentication(record):
+	var new_background = _create_background()
+	var new_record = _create_record()
+	var label = _create_small_label()
+	var text = "The target was authenticated at {place} with {emo}. The daily preferred emotions were {pref_emo}".format(
+		{"place": record["place"],
+		"emo": record["emotion"],
+		"pref_emo": _emotion_string(record['preferred_emotions'])}
+	)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+	var image_texture_rect = _create_texture(record['face'])
+
+	new_background.add_child(new_record)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
 	_box_container.add_child(new_background)
 
 func _display_traffic_violation(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-	var body_container = HBoxContainer.new()
-	body_container.set("custom_constants/separation", 0)
-
+	var label = _create_small_label()
+	var text = "The target commited a traffic violation of type [color=red]{type}[/color] at the location {place}".format(
+		{"type": record["violation_type"],
+		"place": record["place"]}
+	)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 	var image_texture_rect = _create_texture(record['screenshot'])
 
-	var info_label = _create_info_list(record,
-		['score', 'violation_type', 'place'],
-		['Score Difference', 'Type of violation', 'Location'],
-		false
-	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 288)
-	new_record.rect_min_size = Vector2(728, 288)
-	info_label.rect_min_size = Vector2(550, 228)
-
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	body_container.add_child(info_label)
-	body_container.add_child(image_texture_rect)
-	new_record.add_child(body_container)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
 	_box_container.add_child(new_background)
-
 
 func _display_blood_donation(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score'],
-		['Score Difference'],
-		true
+	var label = _create_big_label()
+	var text = "The target donated blood.".format(
+		{"type": record["violation_type"],
+		"place": record["place"]}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 156)
-	new_record.rect_min_size = Vector2(728, 156)
-	info_label.rect_min_size = Vector2(550, 156)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_organ_donation(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score'],
-		['Score Difference'],
-		true
+	var label = _create_big_label()
+	var text = "The target donated a kidney.".format(
+		{"type": record["violation_type"],
+		"place": record["place"]}
 	)
-
-	# resize
-	new_background.rect_min_size = Vector2(728, 156)
-	new_record.rect_min_size = Vector2(728, 156)
-	info_label.rect_min_size = Vector2(550, 156)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
-	_box_container.add_child(new_background)
-
-func _display_critical_speech_in_messenger(record):
-	var new_background = _create_background()
-	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'addressee', 'text'],
-		['Score Difference', 'Addressee', 'Text'],
-		true
-	)
-	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_critical_speech_in_reallife(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-	var body_container = HBoxContainer.new()
-	body_container.set("custom_constants/separation", 0)
-
+	var label = _create_small_label()
+	var text = "The target criticised the government at {place} by saying: [i]{text}[/i] to {addressee}.".format(
+		{"text": record["text"],
+		"place": record["place"],
+		"addressee": record["addressee"]}
+	)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 	var image_texture_rect = _create_texture(record['screenshot'])
 
-	var info_label = _create_info_list(record,
-		['score', 'addressee', 'place', 'text'],
-		['Score Difference', 'Addressee', 'Location', 'Text'],
-		false
-	)
-		# resize
-	new_background.rect_min_size = Vector2(728, 300)
-	new_record.rect_min_size = Vector2(728, 300)
-	info_label.rect_min_size = Vector2(550, 300-64)
-
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	body_container.add_child(info_label)
-	body_container.add_child(image_texture_rect)
-	new_record.add_child(body_container)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
 	_box_container.add_child(new_background)
 
 func _display_fitness_studio_visit(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score'],
-		['Score Difference'],
-		true
+	var label = _create_big_label()
+	var text = "The target visited the gym.".format(
+		{}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 156)
-	new_record.rect_min_size = Vector2(728, 156)
-	info_label.rect_min_size = Vector2(550, 156)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
-
+	
 func _display_fitness_studio_not_visited(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score'],
-		['Score Difference'],
-		true
+	var label = _create_big_label()
+	var text = "The target did not visited the gym for a while.".format(
+		{}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 156)
-	new_record.rect_min_size = Vector2(728, 156)
-	info_label.rect_min_size = Vector2(550, 156)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_healthy_food_in_restaurant(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'food'],
-		['Score Difference', 'Food choice'],
-		true
+	var label = _create_big_label()
+	var text = "The target ate {food} in the Mall.".format(
+		{"food": record['food']}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 196)
-	new_record.rect_min_size = Vector2(728, 196)
-	info_label.rect_min_size = Vector2(550, 196)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
-func _display_unhealthy_food_in_restaurant(record):
+func _undisplay_healthy_food_in_restaurant(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'food'],
-		['Score Difference', 'Food choice'],
-		true
+	var label = _create_big_label()
+	var text = "The target ate {food} in the Mall.".format(
+		{"food": record['food']}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 196)
-	new_record.rect_min_size = Vector2(728, 196)
-	info_label.rect_min_size = Vector2(550, 196)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_healthy_food_at_home(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'food'],
-		['Score Difference', 'Food choice'],
-		true
+	var label = _create_big_label()
+	var text = "The target bought {food} in the store.".format(
+		{"food": record['food']}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 196)
-	new_record.rect_min_size = Vector2(728, 196)
-	info_label.rect_min_size = Vector2(550, 196)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_unhealthy_food_at_home(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'food'],
-		['Score Difference', 'Food choice'],
-		true
+	var label = _create_big_label()
+	var text = "The target bought {food} in the store.".format(
+		{"food": record['food']}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 196)
-	new_record.rect_min_size = Vector2(728, 196)
-	info_label.rect_min_size = Vector2(550, 196)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_dept(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'amount'],
-		['Score Difference', 'Dept amount'],
-		true
+	var label = _create_big_label()
+	var text = "The target has depts of {amount}".format(
+		{"amount": record['amount']}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 196)
-	new_record.rect_min_size = Vector2(728, 196)
-	info_label.rect_min_size = Vector2(550, 196)
-	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
-	_box_container.add_child(new_background)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 
+	new_background.add_child(new_record)
+	new_record.add_child(label)
+	_box_container.add_child(new_background)
+	
 func _display_skipped_work(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score'],
-		['Score Difference'],
-		true
+	var label = _create_big_label()
+	var text = "The target skipped work".format(
+		{}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 156)
-	new_record.rect_min_size = Vector2(728, 156)
-	info_label.rect_min_size = Vector2(550, 156)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_too_late_to_work(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'amount_of_time'],
-		['Score Difference', 'Amount of lateness'],
-		true
+	var label = _create_big_label()
+	var text = "The target arrived {amount} minutes late for work".format(
+		{"amount": record["amount_of_time"]}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 196)
-	new_record.rect_min_size = Vector2(728, 196)
-	info_label.rect_min_size = Vector2(550, 196)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
-	_box_container.add_child(new_background)
-
-func _display_score_class_changed(record):
-	var new_background = _create_background()
-	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['new_class'],
-		['New Class'],
-		true
-	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 196)
-	new_record.rect_min_size = Vector2(728, 196)
-	info_label.rect_min_size = Vector2(550, 196)
-	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
-	_box_container.add_child(new_background)
-
-
-func _display_left_work_too_early(record):
-	var new_background = _create_background()
-	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'amount_of_time'],
-		['Score Difference', 'Amount of time'],
-		true
-	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 196)
-	new_record.rect_min_size = Vector2(728, 196)
-	info_label.rect_min_size = Vector2(550, 196)
-	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_didnt_visit_mom(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'amount_of_time'],
-		['Score Difference', 'Amount of time'],
-		true
+	var label = _create_big_label()
+	var text = "The target didn't visit his mother for {amount} days".format(
+		{"amount": record["amount_of_time"]}
 	)
-	# resize
-	new_background.rect_min_size = Vector2(728, 196)
-	new_record.rect_min_size = Vector2(728, 196)
-	info_label.rect_min_size = Vector2(550, 196)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_contact_to_dissident(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-	var body_container = HBoxContainer.new()
-	body_container.set("custom_constants/separation", 0)
-
+	var label = _create_small_label()
+	var text = "The target had contact to {person}, an enemy of the society. The contact took place at {place}".format(
+		{"person": record["person"],
+		"place": record["place"]}
+	)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 	var image_texture_rect = _create_texture(record['screenshot'])
 
-	var info_label = _create_info_list(record,
-		['score', 'person', 'place'],
-		['Score Difference', 'Suspicious person', 'Location'],
-		false
-	)
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	body_container.add_child(info_label)
-	body_container.add_child(image_texture_rect)
-	new_record.add_child(body_container)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
 	_box_container.add_child(new_background)
 
 func _display_reported_dissident(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-
-	var info_label = _create_info_list(record,
-		['score', 'person', 'reason'],
-		['Score Difference', 'Reported person', 'Reason for report'],
-		true
+	var label = _create_big_label()
+	var text = "The target reported {person}, an enemy of the society, because of {reason}".format(
+		{"person": record["person"],
+		"reason": record["reason"]}
 	)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
+
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	new_record.add_child(info_label)
+	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
 func _display_lied_to_boss(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
-	var body_container = HBoxContainer.new()
-	body_container.set("custom_constants/separation", 0)
-
+	var label = _create_small_label()
+	var text = "The target lied to his boss".format(
+		{}
+	)
+	if record['score'] > 0:
+		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
+	elif record['score'] < 0:
+		label.append_bbcode("[color=red]" + str(record['score']) + "[/color]\n")
+	label.append_bbcode(text)
 	var image_texture_rect = _create_texture(record['screenshot'])
 
-	var info_label = _create_info_list(record,
-		['score'],
-		['Score Difference'],
-		false
-	)
-
 	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	body_container.add_child(info_label)
-	body_container.add_child(image_texture_rect)
-	new_record.add_child(body_container)
-	_box_container.add_child(new_background)
-
-
-func _display_rescued_friend(record):
-	var new_background = _create_background()
-	var new_record = _create_record()
-	var body_container = HBoxContainer.new()
-	body_container.set("custom_constants/separation", 0)
-
-	var image_texture_rect = _create_texture(record['screenshot'])
-
-	var info_label = _create_info_list(record,
-		['score'],
-		['Score Difference'],
-		false
-	)
-
-	new_background.add_child(new_record)
-	new_record.add_child(_create_header(record))
-	body_container.add_child(info_label)
-	body_container.add_child(image_texture_rect)
-	new_record.add_child(body_container)
+	new_record.add_child(label)
+	new_record.add_child(image_texture_rect)
 	_box_container.add_child(new_background)
 
 func _on_Button_pressed():
