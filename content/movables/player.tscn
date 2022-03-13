@@ -17,8 +17,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.353546, -32 )
 frames = ExtResource( 1 )
-animation = "police_walk_down"
-frame = 2
+animation = "normal_idle_down"
 playing = true
 
 [node name="RayCast2DMovement" type="RayCast2D" parent="."]

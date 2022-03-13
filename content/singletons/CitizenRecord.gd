@@ -123,13 +123,13 @@ func add_neutral_emotional_reaction_at_authentication(score, place, face, emotio
 	}
 	_add_record(params)
 
-func add_traffic_violation(score, violation_type, place, screenshot):
+func add_traffic_violation(score, violation_type, place):
 	var params = {
 		'type': 'traffic_violation',
 		'score': score,
 		'violation_type': violation_type,
 		'place': place,
-		'screenshot': screenshot
+		'screenshot': _take_screenshot()
 	}
 	_add_record(params)
 
@@ -158,14 +158,14 @@ func add_critical_speech_in_messenger(score, addressee, text):
 	}
 	_add_record(params)
 
-func add_critical_speech_in_reallife(score, addressee, text, place, screenshot):
+func add_critical_speech_in_reallife(score, addressee, text, place):
 	var params = {
 		'type': 'critical_speech_in_reallife',
 		'score': score,
 		'addressee': addressee,
 		'text': text,
 		'place': place,
-		'screenshot': screenshot
+		'screenshot': _take_screenshot()
 	}
 	_add_record(params)
 
@@ -257,13 +257,13 @@ func add_didnt_visit_mom(score, amount_of_time):
 	}
 	_add_record(params)
 
-func add_contact_to_dissident(score, person, place, screenshot):
+func add_contact_to_dissident(score, person, place):
 	var params = {
 		'type': 'contact_to_dissident',
 		'score': score,
 		'person': person,
 		'place': place,
-		'screenshot': screenshot
+		'screenshot': _take_screenshot()
 	}
 	_add_record(params)
 
@@ -276,19 +276,19 @@ func add_reported_dissident(score, person, reason):
 	}
 	_add_record(params)
 
-func add_lied_to_boss(score, screenshot):
+func add_lied_to_boss(score):
 	var params = {
 		'type': 'lied_to_boss',
 		'score': score,
-		'screenshot': screenshot
+		'screenshot': _take_screenshot()
 	}
 	_add_record(params)
 
-func add_rescued_friend(score, screenshot):
+func add_rescued_friend(score):
 	var params = {
 		'type': 'rescued_friend',
 		'score': score,
-		'screenshot': screenshot
+		'screenshot': _take_screenshot()
 	}
 	_add_record(params)
 
@@ -298,6 +298,18 @@ func add_no_job(score):
 		'score': score
 	}
 	_add_record(params)
+
+var _screenshot_counter = 0
+const _screenshot_path = "user://screenshots/screenshot"
+
+func _take_screenshot():
+	var image = get_viewport().get_texture().get_data()
+	var path = _screenshot_path + str(_screenshot_counter) + ".png"
+	image.flip_y()
+	image.crop(768, 1024)
+	image.save_png(path)
+	_screenshot_counter += 1
+	return path
 
 func _emotion_string(preferred_emotions):
 	if len(preferred_emotions) == 1:
@@ -460,12 +472,14 @@ func record_display_string_for_app(record):
 func persistent_state():
 	return {
 		'records': records,
-		'image_counter': _image_counter
+		'image_counter': _image_counter,
+		'screenshot_counter': _screenshot_counter
 	}
 
 func restore_state(state):
 	records = state['records']
 	_image_counter = state['image_counter']
+	_screenshot_counter = state['screenshot_counter']
 
 func _DEBUG_add_records():
 	CitizenRecord.add_blood_donation(50)

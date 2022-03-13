@@ -147,7 +147,7 @@ human_readable_name = "Shadystreet"
 leave_right_area_path = NodePath("../CityPolicestreetArea")
 leave_right_player_position = Vector2( 0, -1 )
 leave_top_area_path = NodePath("../CityBusstreetArea")
-leave_top_player_position = Vector2( -1, 13 )
+leave_top_player_position = Vector2( -1, 17 )
 leave_bottom_area_path = NodePath("../CityBankstreetArea")
 leave_bottom_player_position = Vector2( -1, 0 )
 
