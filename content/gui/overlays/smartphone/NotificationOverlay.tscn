@@ -52,7 +52,9 @@ animations = [ {
 
 [sub_resource type="StyleBoxEmpty" id=10]
 
-[node name="NotificationOverlay" type="Node2D"]
+[node name="NotificationOverlay" type="Node2D" groups=[
+"persistent",
+]]
 script = ExtResource( 2 )
 news_icon = ExtResource( 1 )
 bank_icon = ExtResource( 7 )
@@ -71,7 +73,6 @@ __meta__ = {
 
 [node name="NotificationSprite" type="AnimatedSprite" parent="Background"]
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 
