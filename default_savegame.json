@@ -378,7 +378,7 @@
         "block_state": "blocked"
     },
     "/root/MainScene/Areas/CityBusstreetArea/TrafficLight": {
-        "is_green": false
+        "is_green": true
     },
     "/root/MainScene/Areas/CityBusstreetArea/Npc": {
         "current_position_x": 8,
@@ -856,7 +856,7 @@
         "is_green": false
     },
     "/root/MainScene/Areas/CityBankstreetArea/TrafficLight3": {
-        "is_green": false
+        "is_green": true
     },
     "/root/MainScene/Areas/CityBankstreetArea/Npc": {
         "current_position_x": 10,
@@ -1090,7 +1090,7 @@
         "block_state": "blocked"
     },
     "/root/MainScene/Areas/CityStorestreetArea/TrafficLight": {
-        "is_green": false
+        "is_green": true
     },
     "/root/MainScene/Areas/CityStorestreetArea/TrafficLight2": {
         "is_green": false
@@ -1879,6 +1879,19 @@
     },
     "/root/MainScene/Overlays/NewsAppNewspage": {
         "news_index": -1
+    },
+    "/root/MainScene/Overlays/NotificationOverlay": {
+        "notifications": {
+            "news": null,
+            "bank": null,
+            "score": null,
+            "message": null,
+            "message_partner": null,
+            "message_friend": null,
+            "message_mom": null,
+            "message_boss": null
+        },
+        "current_notification": null
     },
     "/root/MainScene/Player": {
         "position_x": 608,
