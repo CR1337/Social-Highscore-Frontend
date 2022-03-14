@@ -12,11 +12,22 @@ var _dialog_dict = {}
 var _current_state: String
 var _current_node_id: String
 var _current_node = {}
+var _current_addressee: String
+
+func _filename_to_addressee(filename):
+	var _arr = filename.split("/")
+	var _addressee = _arr[len(_arr)-1]
+	_arr = _addressee.split(".")
+	_addressee = _arr[0]
+	_arr = _addressee.split("_")
+	_current_addressee = _arr[len(_arr)-1]
 
 func initialize(json_filename, state):
 	_load_json(json_filename)
 	_current_state = state
 	_current_node_id = _dialog_dict['graphs'][_current_state]['initial_nid']
+	_filename_to_addressee(json_filename)
+	print("talking to " + _current_addressee)
 	_display()
 
 func _load_json(filename):
@@ -62,8 +73,17 @@ func _arrange_buttons(answer_count):
 func _process_answer(answer_index):
 	var trigger_id = _current_node['answers'][answer_index]['trigger_id']
 	if trigger_id != null:
-		EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id, _current_node['answers'][answer_index].get('trigger_kwargs', {}))
-		# yield(EventBus, "sig_dialog_trigger_completed")
+		if trigger_id == "tid_critical_speech":
+			var text_id = _current_node['answers'][answer_index]['tid']
+			var body = {
+				"addressee": _current_addressee,
+				"place": ViewportManager.current_place_string(),
+				"text": _dialog_dict['texts'][text_id]
+			}
+			EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id, body)
+
+		else:
+			EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id, _current_node['answers'][answer_index].get('trigger_kwargs', {}))
 
 	var next_node_id = _current_node['answers'][answer_index]['nid']
 	if next_node_id == null:

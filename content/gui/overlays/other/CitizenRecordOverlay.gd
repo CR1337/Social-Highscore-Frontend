@@ -95,6 +95,18 @@ func _display_score_class_changed(record):
 	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
+func _display_no_job(record):
+	var new_background = _create_background()
+	var new_record = _create_record()
+	var label = _create_big_label()
+	var text = "The target has no job.".format(
+		{}
+	)
+	label.append_bbcode(text)
+	new_background.add_child(new_record)
+	new_record.add_child(label)
+	_box_container.add_child(new_background)
+
 func _display_good_emotional_reaction_on_news(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
