@@ -25,7 +25,7 @@ func restore_state(state):
 func _ready():
 	EventBus.connect("sig_got_phone_message", self, "_on_got_phone_message")
 
-func _on_got_phone_message(contact, message):
+func _on_got_phone_message(contact, message, important = false):
 	_messages[contact].append([false, message])
 
 func set_current_contact(contact):

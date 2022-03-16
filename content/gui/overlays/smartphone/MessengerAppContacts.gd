@@ -46,7 +46,7 @@ func add_boss_to_contacts():
 	_boss_in_contacts = true
 	_boss_button.visible = true
 
-func _on_got_phone_message(contact, message):
+func _on_got_phone_message(contact, message, important = false):
 	match contact:
 		'partner':
 			_partner_button.icon = new_message_texture
@@ -57,7 +57,7 @@ func _on_got_phone_message(contact, message):
 		'boss':
 			_boss_button.icon = new_message_texture
 	var notification_text = "New message from " + contact
-	EventBus.emit_signal("sig_notification", 'message_' + contact, notification_text, true)
+	EventBus.emit_signal("sig_notification", 'message_' + contact, notification_text, important)
 
 func _on_PartnerButton_pressed():
 	_partner_button.icon = no_message_texture

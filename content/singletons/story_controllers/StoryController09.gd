@@ -66,8 +66,10 @@ func _on_trigger(trigger_id, kwargs):
 	match trigger_id:
 		'tid_work_finished':
 			_update_progress('goto_mall')
+			GameStateController.increase_hunger()
 		'tid_day09_talked_to_partner':
 			_update_progress('get_food')
+			GameStateController.increase_hunger()
 		'tid_day09_continue_talk':
 			_update_progress('continue_talking')
 		'tid_day09_finished_talk':

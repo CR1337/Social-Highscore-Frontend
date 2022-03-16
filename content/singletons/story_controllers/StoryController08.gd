@@ -62,7 +62,9 @@ func _on_trigger(trigger_id, kwargs):
 			_update_progress('bring_meds')
 		'tid_day08_brought_meds':
 			_update_progress('meet_friend')
+			GameStateController.increase_hunger()
 		'tid_day08_talked_with_friend':
+			GameStateController.increase_hunger()
 			_update_progress('goto_bed')
 		_: 
 			._on_trigger(trigger_id, kwargs)

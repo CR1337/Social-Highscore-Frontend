@@ -88,9 +88,9 @@ func _set_npc_visibility(npc, key):
 const _phone_message_filename = "res://texts/phone_messages.json"
 var _phone_messages: Dictionary
 
-func _send_phone_message(contact, text_id):
+func _send_phone_message(contact, text_id, important = true):
 	var message = _phone_messages[text_id]
-	EventBus.emit_signal("sig_got_phone_message", contact, message)
+	EventBus.emit_signal("sig_got_phone_message", contact, message, important)
 
 func _load_phone_messages():
 	var file = File.new()

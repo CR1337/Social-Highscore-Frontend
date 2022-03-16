@@ -40,6 +40,7 @@ func start_day():
 func _on_trigger(trigger_id, kwargs):
 	match trigger_id:
 		'tid_work_finished':
+			GameStateController.increase_hunger()
 			_update_progress('goto_bed')
 		_: 
 			._on_trigger(trigger_id, kwargs)

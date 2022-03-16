@@ -38,6 +38,7 @@ func _on_trigger(trigger_id, kwargs):
 	match trigger_id:
 		'tid_day07_talked_to_partner':
 			_update_progress('goto_bed')
+			GameStateController.increase_hunger()
 			_request_state_change(
 				_state_change_trigger_ids['partner'],
 				'day07_talked_to_partner'

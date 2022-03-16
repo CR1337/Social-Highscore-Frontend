@@ -48,6 +48,7 @@ func _on_trigger(trigger_id, kwargs):
 	match trigger_id:
 		'tid_work_finished':
 			_update_progress('goto_bed')
+			GameStateController.increase_hunger()
 		'tid_debriefing_finished':
 			if not _corrected_boss:
 				_request_state_change(

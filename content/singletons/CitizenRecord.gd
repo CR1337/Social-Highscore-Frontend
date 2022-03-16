@@ -31,9 +31,9 @@ func _on_image_processing_done(parsed_response, job_id, image, raw_image, b64_im
 			emotion, GameStateController.current_preferred_emotions
 		)
 
-func _add_record(params):
+func _add_record(params, important=false):
 	records.append(params)
-	GameStateController.change_score(params['score'])
+	GameStateController.change_score(params['score'], important)
 
 func add_debug(score):
 	var params = {
@@ -137,7 +137,6 @@ func add_blood_donation(score):
 	var params = {
 		'type': 'blood_donation',
 		'score': score,
-
 	}
 	_add_record(params)
 
@@ -145,7 +144,6 @@ func add_organ_donation(score):
 	var params = {
 		'type': 'organ_donation',
 		'score': score,
-
 	}
 	_add_record(params)
 
@@ -173,7 +171,6 @@ func add_fitness_studio_visit(score):
 	var params = {
 		'type': 'fitness_studio_visit',
 		'score': score,
-
 	}
 	_add_record(params)
 
@@ -181,9 +178,8 @@ func add_fitness_studio_not_visited(score):
 	var params = {
 		'type': 'fitness_studio_not_visited',
 		'score': score,
-
 	}
-	_add_record(params)
+	_add_record(params, true)
 
 func add_healthy_food_in_restaurant(score, food):
 	var params = {
@@ -229,7 +225,6 @@ func add_skipped_work(score):
 	var params = {
 		'type': 'skipped_work',
 		'score': score,
-
 	}
 	_add_record(params)
 
@@ -255,7 +250,7 @@ func add_didnt_visit_mom(score, amount_of_time):
 		'score': score,
 		'amount_of_time': amount_of_time
 	}
-	_add_record(params)
+	_add_record(params, true)
 
 func add_contact_to_dissident(score, person, place):
 	var params = {
@@ -297,7 +292,7 @@ func add_no_job(score):
 		'type': 'no_job',
 		'score': score
 	}
-	_add_record(params)
+	_add_record(params, true)
 
 var _screenshot_counter = 0
 const _screenshot_path = "user://screenshots/screenshot"
@@ -330,7 +325,8 @@ func record_display_string_for_app(record):
 			result += "DEBUG"
 		'score_class_changed':
 			result += "Your score class changed to class "
-			result += str(record['new_class'])
+			result += str(record['new_class']) + ".\n"
+			result += "Visit the Citizen Office for more information."
 
 
 		'good_emotional_reaction_on_news':

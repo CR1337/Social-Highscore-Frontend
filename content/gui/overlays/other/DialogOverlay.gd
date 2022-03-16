@@ -23,6 +23,7 @@ func _filename_to_addressee(filename):
 	_current_addressee = _arr[len(_arr)-1]
 
 func initialize(json_filename, state):
+	GameStateController.pause_hunger_timer()
 	_load_json(json_filename)
 	_current_state = state
 	_current_node_id = _dialog_dict['graphs'][_current_state]['initial_nid']
@@ -87,6 +88,7 @@ func _process_answer(answer_index):
 
 	var next_node_id = _current_node['answers'][answer_index]['nid']
 	if next_node_id == null:
+		GameStateController.continue_hunger_timer()
 		ViewportManager.change_to_transparent_dialog()
 	else:
 		_current_node_id = next_node_id

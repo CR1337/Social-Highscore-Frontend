@@ -63,7 +63,7 @@ var _next_day_handle = 1 # Stated in default_savegame
 var _next_status_update_handle = 2 # Stated in default_savegame
 
 signal sig_money_changed(new_value)
-signal sig_score_changed(new_value)
+signal sig_score_changed(new_value, important)
 signal sig_score_class_changed()
 signal sig_new_day()
 
@@ -128,13 +128,14 @@ func score_class():
 
 
 	
-func change_score(amount):
+func change_score(amount, important=false):
 	var _previous_score_class = score_class()
 	score += amount
 	if _previous_score_class != score_class():
 		CitizenRecord.add_score_class_changed(_score_class_name[score_class()])
 		emit_signal("sig_score_class_changed")
-	emit_signal("sig_score_changed", score)
+	if amount != 0:
+		emit_signal("sig_score_changed", score, important)
 
 func change_money(amount):
 	money += amount
@@ -450,7 +451,7 @@ func _handle_hunger():
 func pause_hunger_timer():
 	TimeController.pause_timer(hunger_timer_handle)
 	
-func _continue_hunger_timer():
+func continue_hunger_timer():
 	TimeController.continue_timer(hunger_timer_handle)
 
 func _hunger_timer(handle):

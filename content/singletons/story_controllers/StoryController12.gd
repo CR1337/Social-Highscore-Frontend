@@ -88,6 +88,7 @@ func _update_progress(new_state):
 			)
 		'in_prison':
 			_blend_to_prison()
+			CitizenRecord.add_lied_to_boss(-100)
 			_request_state_change(
 				_state_change_trigger_ids['boss'],
 				'day12_in_prison'
@@ -109,6 +110,7 @@ func _on_trigger(trigger_id, kwargs):
 			_update_progress('in_operation')
 		'tid_day12_blend_to_police':
 			_update_progress('post_operation')
+			GameStateController.increase_hunger()
 		'tid_day12_blend_to_prison':
 			_update_progress('in_prison')
 		'tid_read_citizen_record':

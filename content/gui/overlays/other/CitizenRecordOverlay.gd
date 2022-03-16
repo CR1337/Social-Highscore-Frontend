@@ -87,7 +87,7 @@ func _display_score_class_changed(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
 	var label = _create_big_label()
-	var text = "The target's score class changed to Class {class}".format(
+	var text = "The target's score class changed to Class {class}.".format(
 		{"class": record["new_class"]}
 	)
 	label.append_bbcode(text)

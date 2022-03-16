@@ -50,12 +50,7 @@
                     {
                         "tid": "day03_q1_answer2",
                         "nid": "q1r2",
-                        "trigger_id": "tid_critical_speech",
-                        "kwargs": {
-                            "addressee": "<friend>",
-                            "place": "Mall",
-                            "text": "Some rules are really absurd"
-                        }
+                        "trigger_id": "tid_critical_speech"
                     },
                     {
                         "tid": "day03_q1_answer3",

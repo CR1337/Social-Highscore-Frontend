@@ -40,10 +40,10 @@ func _display_records():
 func _show_info():
 	OS.alert(_info_text, "Good Citizen Guide")
 
-func _on_score_changed(new_value):
+func _on_score_changed(new_value, important=false):
 	_display_score()
 	_display_records()
-	EventBus.emit_signal("sig_notification", 'score', "Your score has changed")
+	EventBus.emit_signal("sig_notification", 'score', "Your score has changed", important)
 
 func _on_score_class_changed():
 	_display_score()
@@ -51,7 +51,7 @@ func _on_score_class_changed():
 	TimeController.setTimer(2, self, "score_class_change")
 
 func score_class_change(handle):
-	EventBus.emit_signal("sig_notification", 'score', "Your score class has changed")
+	EventBus.emit_signal("sig_notification", 'score', "Your score class has changed", true)
 
 func _on_InfoButton_pressed():
 	_show_info()

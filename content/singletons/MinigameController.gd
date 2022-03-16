@@ -60,7 +60,7 @@ func _end():
 	EventBus.emit_signal("sig_trigger", "tid_city_policestreet_police_npc_boss_state_change", {'new_state': 'debriefing'})
 	ViewportManager.change_area(_police_area, _player_at_boss_position)
 	EventBus.emit_signal("sig_trigger", "tid_city_policestreet_police_npc_boss_start_dialog")
-	GameStateController._continue_hunger_timer()
+	GameStateController.continue_hunger_timer()
 	at_work = false
 
 	
