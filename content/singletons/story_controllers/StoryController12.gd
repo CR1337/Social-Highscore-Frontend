@@ -16,7 +16,6 @@ func _ready():
 		'goto_work',
 		'in_park',
 		'in_operation',
-		'post_operation',
 		'in_prison'
 	]
 	._ready()
@@ -65,7 +64,7 @@ func _update_progress(new_state):
 					'day12_in_operation_not_corrected'
 				)
 			_start_boss_dialog()
-		'post_operation':
+		'goto_bed':
 			_blend_to_police()
 			_request_state_change(
 				_state_change_trigger_ids['boss'],
@@ -116,7 +115,7 @@ func _on_trigger(trigger_id, kwargs):
 		'tid_day12_start_operation':
 			_update_progress('in_operation')
 		'tid_day12_blend_to_police':
-			_update_progress('post_operation')
+			_update_progress('goto_bed')
 			GameStateController.increase_hunger()
 		'tid_day12_blend_to_prison':
 			_update_progress('in_prison')			
@@ -134,8 +133,8 @@ onready var _police_area = get_node("/root/MainScene/Areas/CityPolicestreetPolic
 onready var _prison_area = get_node("/root/MainScene/Areas/UtilityPrisonstreetPrisonArea")	
 	
 onready var _player = get_node("/root/MainScene/Player")
-const _player_operation_position = Vector2(8, 12)
-const _player_police_position = Vector2(10, 5)
+const _player_operation_position = Vector2(9, 14)
+const _player_police_position = Vector2(11, 6)
 const _player_prison_position = Vector2(11, 11)
 
 onready var _bus_npc1 = get_node("/root/MainScene/Areas/CityBusstreetArea/Npc")

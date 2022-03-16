@@ -367,18 +367,18 @@
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_debriefing_finished"
                     }
                 ],
                 "trigger_id": null
             },
             "node2": {
-                "tid": "day11_post_corrected_reaction",
+                "tid": "day11_dont_correct_reaction",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_debriefing_finished"
                     }
                 ],
                 "trigger_id": null
@@ -414,7 +414,7 @@
                 "trigger_id": null
             },
             "node2": {
-                "tid": "day11_post_corrected_reaction",
+                "tid": "day11_dont_correct_reaction",
                 "answers": [
                     {
                         "tid": "x",
@@ -425,7 +425,7 @@
                 "trigger_id": null
             }
         },
-        "day11_post_corrected": {
+        "day11_corrected": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day11_post_corrected",
@@ -484,7 +484,7 @@
         "day12_post_operation": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day12_debrifing",
+                "tid": "day12_debriefing",
                 "answers": [
                     {
                         "tid": "x",

@@ -13,7 +13,8 @@ func restore_state(state):
 
 func _ready():
 	states = [
-		'goto_work'
+		'goto_work',
+		'talk_to_boss'
 	]
 	._ready()
 
@@ -26,7 +27,7 @@ func deactivate():
 func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
-		'goto_bed':
+		'talk_to_boss':
 			_request_state_change(
 				_state_change_trigger_ids['partner'],
 				'day11_post_work'
@@ -35,7 +36,13 @@ func _update_progress(new_state):
 				_state_change_trigger_ids['boss'],
 				'day11_post_work'
 			)
-
+			EventBus.call_deferred("emit_signal", "sig_trigger", "tid_city_policestreet_police_npc_boss_start_dialog", {})
+		'goto_bed':
+			if not _corrected_boss:
+				_request_state_change(
+					_state_change_trigger_ids['boss'],
+					'day11_post_debriefing'
+				)
 
 func start_day():
 	.start_day()
@@ -47,14 +54,10 @@ func start_day():
 func _on_trigger(trigger_id, kwargs):
 	match trigger_id:
 		'tid_work_finished':
-			_update_progress('goto_bed')
+			_update_progress('talk_to_boss')
 			GameStateController.increase_hunger()
 		'tid_debriefing_finished':
-			if not _corrected_boss:
-				_request_state_change(
-					_state_change_trigger_ids['boss'],
-					'day11_post_debriefing'
-				)
+			_update_progress('goto_bed')
 		'tid_day11_corrected_boss':
 			_corrected_boss = true
 			_request_state_change(

@@ -1,12 +1,12 @@
 extends Node
 
 var score = 1000
-var money = 1000
+var money = 200
 
 const ticket_base_price = 10
 var ticket_bought = false
 
-const _work_loan = 100
+const _work_loan = 150
 
 var current_preferred_emotions = []
 var current_forbidden_emotions = []
@@ -99,10 +99,11 @@ func _on_trigger(trigger_id, kwargs):
 		ViewportManager.blend_with_black()
 		EventBus.emit_signal("sig_trigger", "tid_work_finished", {})
 		EventBus.emit_signal("sig_add_money", _work_loan, "Work loan")
-		if (GameStateController.current_day + 1) % 7 > 2:
-			EventBus.emit_signal("sig_trigger", "tid_city_policestreet_police_npc_boss_state_change", {'new_state': 'post_work'})
-		else:
-			EventBus.emit_signal("sig_trigger", "tid_city_policestreet_police_npc_boss_state_change", {'new_state': 'post_work_weekend'})
+		if current_day != 11:
+			if (current_day + 1) % 7 > 2:
+				EventBus.emit_signal("sig_trigger", "tid_city_policestreet_police_npc_boss_state_change", {'new_state': 'post_work'})
+			else:
+				EventBus.emit_signal("sig_trigger", "tid_city_policestreet_police_npc_boss_state_change", {'new_state': 'post_work_weekend'})
 	elif trigger_id == 'tid_blood_donated': 
 		_donate_blood()
 	elif trigger_id == 'tid_kidney_donated':
