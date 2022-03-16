@@ -228,11 +228,10 @@ func add_skipped_work(score):
 	}
 	_add_record(params)
 
-func add_too_late_to_work(score, amount_of_time):
+func add_too_late_to_work(score):
 	var params = {
 		'type': 'too_late_to_work',
-		'score': score,
-		'amount_of_time': amount_of_time
+		'score': score
 	}
 	_add_record(params)
 

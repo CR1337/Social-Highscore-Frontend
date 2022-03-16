@@ -39,9 +39,9 @@ func _on_PhoneButton_button_down():
 func _on_PhoneButton_button_up():
 	InputBus.emit_signal("sig_phone_released")
 
-func _on_DEBUGTriggerButton_pressed():
-	EventBus.emit_signal("sig_trigger", $DEBUGTriggerLabel.text, {})
-
-
 func _on_DEBUGMenuButton_pressed():
 	ViewportManager.change_to_debug()
+
+
+func _on_WhatNextButton_pressed():
+	EventBus.emit_signal("sig_what_next")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/gui/messenger_app.png" type="Texture" id=1]
 [ext_resource path="res://assets/gui/back_button.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/gui/news_app.png" type="Texture" id=5]
 [ext_resource path="res://assets/gui/citizen_app.png" type="Texture" id=6]
 [ext_resource path="res://assets/tilesets/interior/black.png" type="Texture" id=7]
-[ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=8]
 
 [node name="SmartphoneMenu" type="Node2D"]
 script = ExtResource( 3 )
@@ -17,18 +16,6 @@ margin_right = 768.0
 margin_bottom = 1408.0
 texture = ExtResource( 7 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Background"]
-margin_left = 665.248
-margin_top = 10.4881
-margin_right = 755.248
-margin_bottom = 44.4881
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "00:00"
 __meta__ = {
 "_edit_use_anchors_": false
 }

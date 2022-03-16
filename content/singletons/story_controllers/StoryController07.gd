@@ -16,7 +16,7 @@ func deactivate():
 	.deactivate()
 	_unblock_trigger(_police_enter_trigger_id)
 	
-func _partner_message():
+func _partner_message(handle):
 	_send_phone_message('partner', "day07_partner_message")
 	
 #func _publish_community_score_news():

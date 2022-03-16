@@ -56,7 +56,7 @@ func _on_got_phone_message(contact, message, important = false):
 			_mom_button.icon = new_message_texture
 		'boss':
 			_boss_button.icon = new_message_texture
-	var notification_text = "New message from " + contact
+	var notification_text = "New message from " + Globals.contact_names[contact]
 	EventBus.emit_signal("sig_notification", 'message_' + contact, notification_text, important)
 
 func _on_PartnerButton_pressed():

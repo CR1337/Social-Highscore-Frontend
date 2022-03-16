@@ -1,13 +1,13 @@
 {
     "texts": {
-        "friend_place": "I often met with Lee Bai in the small park south of the bus stop. He probably means this place.",
+        "0": "Oh, there are documents here. But I'm sure Ming An wouldn't like it if I looked at them now.",
         "x": "(end monolog)"
     },
     "graphs": {
-        "friend_selftalk": {
+        "blocked": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "friend_place",
+                "tid": "0",
                 "answers": [
                     {
                         "tid": "x",

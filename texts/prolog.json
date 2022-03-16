@@ -1,5 +1,5 @@
 {
-	"start": "Dear <player name>,\n\nthank you for downloading the Citizen App.This is the dawn of a new age for the <STATE> people. This App manages your Citizen score. You will receive points if you are an exemplary citizen, helpful and friendly towards your fellow citizens. If you harm others, points will be deducted. A high number of points gives you discounts and small gifts from the state.\n\nPlease take a profile picture in which your face is clearly visible. If necessary, rotate it to the correct orientation.",
+	"start": "Dear Zheng Bo,\n\nthank you for downloading the Citizen App.This is the dawn of a new age. This App manages your Citizen score. You will receive points if you are an exemplary citizen, helpful and friendly towards your fellow citizens. If you harm others, points will be deducted. A high number of points gives you discounts and small gifts from the state.\n\nPlease take a profile picture in which your face is clearly visible. If necessary, rotate it to the correct orientation.",
 	"ask_tutorial": "Do you need a short introduction to the controls?",
 	"tutorial_dpad": "The directional pad lets you move around the world.",
 	"tutorial_action": "The action button allows interaction with objects and people.",

@@ -36,8 +36,7 @@ func update_mainpage():
 	_remove_all_buttons()
 	for news_index in len(NewsController.news):
 		var news = NewsController.news[news_index]
-		if not news['expired']:
-			_add_button(news['title'], news_index)
+		_add_button(news['title'], news_index)
 	_scroll_container.scroll_vertical = 0
 
 func _on_news_button_pressed(news_index):

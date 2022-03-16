@@ -241,6 +241,10 @@
         "movement_waiting": false,
         "movement_waiting_handle": 0
     },
+    "/root/MainScene/Areas/LivingFriendstreetPartnerArea/CitizenRecordTriggerArea/CitizenRecordTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
     "/root/MainScene/Areas/LivingFriendstreetFriendArea/TriggerArea/LeaveTrigger": {
         "blocked": false,
         "block_state": "blocked"
@@ -1039,6 +1043,10 @@
         "blocked": false,
         "block_state": "blocked"
     },
+    "/root/MainScene/Areas/CityBankstreetOfficeArea/NpcCounter/ScoreImpactTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
     "/root/MainScene/Areas/CityBankstreetOfficeArea/NPC1": {
         "current_position_x": 3,
         "current_position_y": 10,
@@ -1251,10 +1259,6 @@
         "block_state": "blocked"
     },
     "/root/MainScene/Areas/UtilityBusstreetArea/LeaveMallTriggerArea/LeaveMallTrigger": {
-        "blocked": false,
-        "block_state": "blocked"
-    },
-    "/root/MainScene/Areas/UtilityBusstreetArea/BusTriggerArea/AuthenticationTrigger": {
         "blocked": false,
         "block_state": "blocked"
     },
@@ -1941,7 +1945,9 @@
         },
         "bank_account_blocked": false,
         "bank_loan_debt": 0,
-        "bank_loan_daily_repayment_amount": 0
+        "bank_loan_daily_repayment_amount": 0,
+        "blood_donated": false,
+        "kidney_donated": false
     },
     "/root/TimeController": {
         "timer_list": [

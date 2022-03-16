@@ -39,6 +39,7 @@ func update_newspage(news_index):
 		_react_button.disabled = false
 		_react_button.text = "React"
 		_dont_react_button.text = "Don't react"
+	_text_label.scroll_to_line(0)
 
 func _on_DontReactButton_pressed():
 	if not _news()['reacted_on']:

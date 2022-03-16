@@ -79,3 +79,4 @@ func _on_trigger(trigger_id, kwargs):
 
 func _end_day():
 	._end_day()
+	StoryController10.start_day()

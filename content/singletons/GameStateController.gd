@@ -6,6 +6,8 @@ var money = 1000
 const ticket_base_price = 10
 var ticket_bought = false
 
+const _work_loan = 100
+
 var current_preferred_emotions = []
 var current_forbidden_emotions = []
 
@@ -33,7 +35,9 @@ func persistent_state():
 		'mall_food_timer_items': _mall_food_timer_items,
 		'bank_account_blocked': bank_account_blocked,
 		'bank_loan_debt': _bank_loan_debt,
-		'bank_loan_daily_repayment_amount': _bank_loan_daily_repayment_amount
+		'bank_loan_daily_repayment_amount': _bank_loan_daily_repayment_amount,
+		'blood_donated': _blood_donated,
+		'kidney_donated': _kidney_donated
 	}
 
 func restore_state(state):
@@ -52,6 +56,8 @@ func restore_state(state):
 	bank_account_blocked = state['bank_account_blocked']
 	_bank_loan_debt = state["bank_loan_debt"]
 	_bank_loan_daily_repayment_amount = state["bank_loan_daily_repayment_amount"]
+	_blood_donated = state['blood_donated']
+	_kidney_donated = state['kidney_donated']
 	
 	if current_day > 0:
 		current_story_controller().activate()
@@ -87,9 +93,61 @@ func _on_trigger(trigger_id, kwargs):
 			kwargs.get('place', 'unknown location'),
 			kwargs.get('text', 'unknown text')
 		)
+	elif trigger_id == 'tid_read_citizen_record':
+		ViewportManager.change_to_citizen_record_overlay()
+	elif trigger_id == 'tid_start_work':
+		ViewportManager.blend_with_black()
+		EventBus.emit_signal("sig_trigger", "tid_work_finished", {})
+		EventBus.emit_signal("sig_add_money", _work_loan, "Work loan")
+		if (GameStateController.current_day + 1) % 7 > 2:
+			EventBus.emit_signal("sig_trigger", "tid_city_policestreet_police_npc_boss_state_change", {'new_state': 'post_work'})
+		else:
+			EventBus.emit_signal("sig_trigger", "tid_city_policestreet_police_npc_boss_state_change", {'new_state': 'post_work_weekend'})
+	elif trigger_id == 'tid_blood_donated': 
+		_donate_blood()
+	elif trigger_id == 'tid_kidney_donated':
+		_donate_kidney()
 	else:
 		pass  # TODO
 	
+
+
+func change_money(amount):
+	money += amount
+	emit_signal("sig_money_changed", money)
+
+func visited_mom():
+	days_without_mom = 0
+
+func _on_add_money(amount, description):
+	change_money(amount)
+	
+var bank_account_blocked = false
+
+# BEGIN donations
+var _blood_donated = false
+var _kidney_donated = false
+
+func _donate_blood():
+	if _blood_donated:
+		EventBus.emit_signal("sig_trigger", "tid_utility_busstreet_hospital_npc_counter_state_change", {"new_state": "already_blood_donated"})
+		EventBus.call_deferred("emit_signal", "sig_trigger", "tid_utility_busstreet_hospital_npc_counter_start_dialog", {})
+	else:
+		CitizenRecord.add_blood_donation(50)
+		_blood_donated = true
+	
+func _donate_kidney():
+	if _kidney_donated:
+		EventBus.emit_signal("sig_trigger", "tid_utility_busstreet_hospital_npc_counter_state_change", {"new_state": "already_kidney_donated"})
+		EventBus.call_deferred("emit_signal", "sig_trigger", "tid_utility_busstreet_hospital_npc_counter_start_dialog", {})
+	else:
+		CitizenRecord.add_organ_donation(200)
+		_kidney_donated = true
+
+# END donations
+
+# BEGIN score
+
 enum SCORE_CLASS {
 	AAA, AA, A, B, C, D, E, X, Z	
 }
@@ -125,8 +183,6 @@ func score_class():
 		return SCORE_CLASS.X
 	else:
 		return SCORE_CLASS.Z
-
-
 	
 func change_score(amount, important=false):
 	var _previous_score_class = score_class()
@@ -136,18 +192,16 @@ func change_score(amount, important=false):
 		emit_signal("sig_score_class_changed")
 	if amount != 0:
 		emit_signal("sig_score_changed", score, important)
+	if score <= 0:
+		_arrest()
+		
+func _arrest():
+	var _prison_area = get_node("/root/MainScene/Areas/UtilityPrisonstreetPrisonArea") 
+	var _player_prison_position = Vector2(11, 11)
+	ViewportManager.change_area(_prison_area, _player_prison_position)
+	ViewportManager.change_to_dialog("res://dialogs/utility/prisonstreet/prison/arrest.json", "arrested")
 
-func change_money(amount):
-	money += amount
-	emit_signal("sig_money_changed", money)
-
-func visited_mom():
-	days_without_mom = 0
-
-func _on_add_money(amount, description):
-	change_money(amount)
-	
-var bank_account_blocked = false
+# END score
 
 # BEGIN gym
 
@@ -199,6 +253,7 @@ func current_story_controller():
 	
 func set_day(day):
 	current_day = day
+	_blood_donated = false
 	days_without_mom += 1
 	_days_without_fitness += 1
 	_handle_bank_loan_repayment()

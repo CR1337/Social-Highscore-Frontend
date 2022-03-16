@@ -1,6 +1,6 @@
 {
 	"texts": {
-		"day01_hello": "Hi <player name>, glad you came. You look good. How are you doing?",
+		"day01_hello": "Hi Zheng Bo, glad you came. You look good. How are you doing?",
 		"day01_hello_answer1": "Quite well. You?",
 		"day01_hello_answer2": "I'm ok.",
 		"day01_ask_meds": "You look a little tired today. I'm not feeling so well, unfortunately. My illness is getting to me again. Can you please go to the pharmacy to pick up my medication?",
@@ -39,9 +39,9 @@
 		"day08_post_meds": "Thank you for the medication. You are a great help. I see they have become more expensive. I hope that the costs will be covered soon.",
 		"day09_small_talk": "Nice of you to visit me again. How are you?",
 		"day09_fine": "I'm fine",
-		"day11_initial": "What a tragedy with <Friend>. I never expected anything like this from him. He was always such a sweet boy.",
+		"day11_initial": "What a tragedy with Lee Bai. I never expected anything like this from him. He was always such a sweet boy.",
 		"day12_initial": "I wish you every success in your mission today.",
-		"day12_post_work": "The mission was a complete success, I heard. It is really a pity about <FRIEND>. I would never have expected something like this from him.",
+		"day12_post_work": "The mission was a complete success, I heard. It is really a pity about Lee Bai. I would never have expected something like this from him.",
 		"day13_initial": "Have you heard anything from Friend? I hope he is treated well there.",
 		"x": "(end dialog)"
 	},
@@ -78,7 +78,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node2": {
 				"tid": "where_pharmacy",
@@ -89,7 +89,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day01_waiting_for_meds": {
@@ -108,7 +108,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "where_pharmacy",
@@ -119,7 +119,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day01_waiting_for_bought_meds": {
@@ -147,7 +147,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "day01_check_police",
@@ -158,7 +158,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day02_initial": {
@@ -186,7 +186,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day03_initial": {
@@ -219,7 +219,7 @@
 						"trigger_id": "tid_critical_speach"
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node1": {
 				"tid": "day03_reaction_good",
@@ -230,7 +230,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node2": {
 				"tid": "day03_reaction_bad",
@@ -241,7 +241,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day04_initial": {
@@ -285,7 +285,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day04_post_pharmacy": {
@@ -299,7 +299,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day04_post_bank": {
@@ -313,7 +313,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day05_initial": {
@@ -331,9 +331,9 @@
 			}
 		},
 		"day05_unlocked_account": {
-			"initial_nid": "day05_post_bank",
+			"initial_nid": "node0",
 			"node0": {
-				"tid": "day05_pre_bank",
+				"tid": "day05_post_bank",
 				"answers": [
 					{
 						"tid": "x",
@@ -427,7 +427,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day07_initial": {
@@ -457,7 +457,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day08_initial": {
@@ -515,7 +515,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day09_initial": {
@@ -545,7 +545,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			},
 			"node2": {
 				"tid": "day06_response",
@@ -556,7 +556,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day10_initial": {
@@ -586,7 +586,7 @@
 						"trigger_id": null
 					}
 				],
-				"trigger_id": null
+				"trigger_id": "tid_visited_mom"
 			}
 		},
 		"day11_initial": {

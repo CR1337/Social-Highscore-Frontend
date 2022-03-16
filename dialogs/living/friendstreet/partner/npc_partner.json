@@ -10,74 +10,74 @@
         "day02_initial": "Good morning honey. Weren't you supposed to go to the job center today to get a job?",
         "day03_initial": "Hi honey. Shouldn't you get going to work? I don't want you to be late.",
         "day03_post_work": "Hey, I hope you like your new work.",
-        "day04_initial": "How is <FRIEND>? I haven't seen him for a long time.",
+        "day04_initial": "How is Lee Bai? I haven't seen him for a long time.",
         "day04_fine": "Quite good. Saw him yesterday",
         "day04_worried": "I'm a bit worried about him.",
         "day05_initial": "That with your account is bad. Here you can use my one-day ticket. I don't need it anymore today.",
         "day05_thanks": "Thank you",
-        "day05_post_ticket": "Hi. I'm planning a game night tomorrow. Feel free to stop by. I'm also still trying to reach <FRIEND>.",
-        "day06_looking_forward": "Hi darling. I'm looking forward to games night later. I even managed to get hold of <FRIEND>. He's coming too.",
+        "day05_post_ticket": "Hi. I'm planning a game night tomorrow. Feel free to stop by. I'm also still trying to reach Lee Bai.",
+        "day06_looking_forward": "Hi darling. I'm looking forward to games night later. I even managed to get hold of Lee Bai. He's coming too.",
         "day06_game_evening_game_evening_hello": "It's nice that you're both here. The three of us haven't done anything for ages. I was really looking forward to game night. Let me deal the cards for a round of Mau Mau. Do you want me to explain the rules again? ",
         "day06_game_evening_yes": "Yes please",
         "day06_game_evening_no": "No thanks",
         "day06_game_evening_rules": "We play with normal playing cards. So each card has a suit and a number. There is a pile of cards in the middle. The players now place one of their hand cards on the pile in turn. Either the color or the number must match. If you cannot place a card, you must draw a new card. The first player to run out of cards wins. An ace makes the next player sit out and a seven makes him draw two cards. If you lay a Jack, you can choose the next suit. Now, let us begin",
         "day06_game_evening_no_rules": "Ok, let us begin",
         "day06_game_evening_ok": "Ok",
-        "day06_game_evening_game_start": "(<partner> deals the cards. You have the following cards in your hand: \n10 of spades, ace of diamonds, 7 of diamonds, king of hearts, 3 of hearts.\nThe Queen of Clubs is on the table. <friend> lays the Queen of Spades. \nIt's your turn. You can only lay the 10 of spades.)",
+        "day06_game_evening_game_start": "(Ming An deals the cards. You have the following cards in your hand: \n10 of spades, ace of diamonds, 7 of diamonds, king of hearts, 3 of hearts.\nThe Queen of Clubs is on the table. Lee Bai lays the Queen of Spades. \nIt's your turn. You can only lay the 10 of spades.)",
         "day06_game_evening_lay_01": "(Lay 10 of spades)",
-        "day06_game_evening_dialog_partner_01": "(<partner> puts the cross 10.)\n\n<Partner>: Have you noticed that people have become much friendlier since the introduction of Communityscore. I now walk the streets much more relaxed and feel safer doing so.",
+        "day06_game_evening_dialog_partner_01": "(Ming An puts the cross 10.)\n\nMing An: Have you noticed that people have become much friendlier since the introduction of Communityscore. I now walk the streets much more relaxed and feel safer doing so.",
         "day06_game_evening_keep_quiet": "(keep quiet)",
         "day06_game_evening_nod": "(nod)",
-        "day06_game_evening_dialog_friend_01": "(<friend> puts the king of cross)\n\n<Friend>: Yes, I have that feeling, too. But I think it's just because people no longer dare to speak their minds. The other day I overheard a woman complaining about the high prices of baby food and she immediately lost points. Harmony and friendliness are all well and good. But one is still allowed to speak one's mind.",
+        "day06_game_evening_dialog_friend_01": "(Lee Bai puts the king of cross)\n\nLee Bai: Yes, I have that feeling, too. But I think it's just because people no longer dare to speak their minds. The other day I overheard a woman complaining about the high prices of baby food and she immediately lost points. Harmony and friendliness are all well and good. But one is still allowed to speak one's mind.",
         "day06_game_evening_dialog_01_answer_01": "I think that people are friendlier.",
         "day06_game_evening_dialog_01_answer_02": "That has also happened to me.",
         "day06_game_evening_your_turn_01": "(It's your turn. You have the following cards in your hand: \nace of diamonds, 7 of diamonds, king of hearts, 3 of hearts. \nYou can only lay the king of hearts.",
         "day06_game_evening_lay_02": "(Lay the king of hearts)",
-        "day06_game_evening_dialog_partner_02": "(<partner> puts the 9 of hearts)\n\n<Partner>: I admit, a few finer points still need some minor adjustments. But I am convinced that in the end everyone will be much happier than before the introduction of the community score.",
-        "day06_game_evening_dialog_friend_02": "(<friend> puts the queen of hearts)\n\n<Friend>: I disagree with you on that. No one will change their real views through fear of punishment. I don't think the community score is a good idea.",
+        "day06_game_evening_dialog_partner_02": "(Ming An puts the 9 of hearts)\n\nMing An: I admit, a few finer points still need some minor adjustments. But I am convinced that in the end everyone will be much happier than before the introduction of the community score.",
+        "day06_game_evening_dialog_friend_02": "(Lee Bai puts the queen of hearts)\n\nLee Bai: I disagree with you on that. No one will change their real views through fear of punishment. I don't think the community score is a good idea.",
         "day06_game_evening_dialog_02_answer_01": "I agree",
         "day06_game_evening_dialog_02_answer_02": "I like the Score.",
         "day06_game_evening_your_turn_02": "(It's your turn. You have the following cards in your hand: \n ace of diamonds, 7 of diamonds, 3 of hearts.\nYou can only lay the 3 of hearts.",
         "day06_game_evening_lay_03": "(Lay the 3 of hearts.)",
-        "day06_game_evening_dialog_partner_03": "(<partner> puts the 3 of diamonds)\n\n<Partner>: It does not depend on the real views. As far as I'm concerned, everyone can think what he wants, but he must abide by the rules in society. This is the only way it can work. The latest statistics already show that the crime rate has dropped drastically in recent days, and that's only thanks to the community score.",
-        "day06_game_evening_dialog_friend_03": "(<friend> puts the king of diamonds, he says mau, because he has only one card left)\n\n<Friend>: I'm pretty sure that this constant pressure of being watched and evaluated is not good for your mental health. I have heard of some people who are afraid for their own existence, because they could lose their job at the slightest mistake.",
+        "day06_game_evening_dialog_partner_03": "(Ming An puts the 3 of diamonds)\n\nMing An: It does not depend on the real views. As far as I'm concerned, everyone can think what he wants, but he must abide by the rules in society. This is the only way it can work. The latest statistics already show that the crime rate has dropped drastically in recent days, and that's only thanks to the community score.",
+        "day06_game_evening_dialog_friend_03": "(Lee Bai puts the king of diamonds, he says mau, because he has only one card left)\n\nLee Bai: I'm pretty sure that this constant pressure of being watched and evaluated is not good for your mental health. I have heard of some people who are afraid for their own existence, because they could lose their job at the slightest mistake.",
         "day06_game_evening_dialog_03_answer_01": "I have also met such people",
         "day06_game_evening_your_turn_03": "(It's your turn. You have the following cards in your hand:\nace of diamonds,7 of diamonds",
         "day06_game_evening_lay_04_01": "(Lay the ace of diamonds)",
         "day06_game_evening_lay_04_02": "(Lay the 7 of diamonds)",
-        "day06_game_evening_dialog_04_partner_01": "(<partner> must miss this round)\n\n<Partner>: If people really do have such a low score, they will have brought it on themselves. As a result, they do not deserve the support of society, since they have not contributed themselves. There must always be give and take. It must not be the case that there are people who only take. That would not be fair to others.",
-        "day06_game_evening_dialog_04_partner_02": "(<partner> must draw two cards)\n\n<Partner>: If people really do have such a low score, they will have brought it on themselves. As a result, they do not deserve the support of society, since they have not contributed themselves. There must always be give and take. It must not be the case that there are people who only take. That would not be fair to others.",
-        "day06_game_evening_dialog_friend_04": "(<friend> puts the 6 of diamonds and says mau mau. He wins)\n\n<Friend>: I can see we can't come to a common denominator. I hope we can still be friends. It's getting late and I have to get up early tomorrow. I'll be on my way then.",
+        "day06_game_evening_dialog_04_partner_01": "(Ming An must miss this round)\n\nMing An: If people really do have such a low score, they will have brought it on themselves. As a result, they do not deserve the support of society, since they have not contributed themselves. There must always be give and take. It must not be the case that there are people who only take. That would not be fair to others.",
+        "day06_game_evening_dialog_04_partner_02": "(Ming An must draw two cards)\n\nMing An: If people really do have such a low score, they will have brought it on themselves. As a result, they do not deserve the support of society, since they have not contributed themselves. There must always be give and take. It must not be the case that there are people who only take. That would not be fair to others.",
+        "day06_game_evening_dialog_friend_04": "(Lee Bai puts the 6 of diamonds and says mau mau. He wins)\n\nLee Bai: I can see we can't come to a common denominator. I hope we can still be friends. It's getting late and I have to get up early tomorrow. I'll be on my way then.",
         "day06_game_evening_bye": "Ok, bye",
         "day06_goto_bed": "That was an interesting conversation. I should also go to bed. Good night.",
-        "day07_q1": "Hello darling. It's good to see you. Last night was really fun. I have been thinking again about the conversation with <FRIEND> though. I'm worried that he's meeting the wrong people and slipping into something as a result. With his attitude, I'm sure he's easily susceptible to bad influences. I've also seen him talking to shady characters before.",
+        "day07_q1": "Hello darling. It's good to see you. Last night was really fun. I have been thinking again about the conversation with Lee Bai though. I'm worried that he's meeting the wrong people and slipping into something as a result. With his attitude, I'm sure he's easily susceptible to bad influences. I've also seen him talking to shady characters before.",
         "day07_q1a1": "He knows what he's doing.",
         "day07_q1a2": "I am also worried.",
         "day07_q2": "Maybe we should protect him from himself and report him before he slips into things he can't judge and does something he regrets later. You're on the police force now, aren't you? Can't you talk to your boss?",
         "day07_q2a1": "Good idea.",
         "day07_q2a2": "I'll think about it.",
         "day07_q2a3": "I don't know yet.",
-        "day07_post": "I'm really worried about <FRIEND>. You should talk to your boss about him.",
-        "day08_pre_friend": "I am still worried about <FRIEND>. He's been out with weird people all the time lately.",
-        "day08_post_friend": "I am still very worried about <FRIEND>. Have you spoken to him?",
+        "day07_post": "I'm really worried about Lee Bai. You should talk to your boss about him.",
+        "day08_pre_friend": "I am still worried about Lee Bai. He's been out with weird people all the time lately.",
+        "day08_post_friend": "I am still very worried about Lee Bai. Have you spoken to him?",
         "day08_trouble": "He's in trouble",
         "day08_trouble_answer": "Then you should really talk to your boss about him.",
         "day08_no": "No, didn't see him",
         "day08_no_answer": "Maybe he is in trouble. He often hangs around and is rarely at home. Why don't you talk to your boss about it?",
         "day08_fine": "Yes, but he's fine",
         "day08_fine_answer": "Maybe you should still talk to your boss about him.",
-		"day11_initial": "Have fun at work.",
-		"day11_post_work_question": "Are you excited about the operation tomorrow?",
-		"day11_post_work_answer1": "Yes I am.",
-		"day11_post_work_answer2": "No I am not.",
-		"day11_post_work_reaction": "I am definitely excited. But I'm sure you can do it and the mission will be a great success. I just hope <friend> comes to his senses and realizes that he was wrong.",
+        "day11_initial": "Have fun at work.",
+        "day11_post_work_question": "Are you excited about the operation tomorrow?",
+        "day11_post_work_answer1": "Yes I am.",
+        "day11_post_work_answer2": "No I am not.",
+        "day11_post_work_reaction": "I am definitely excited. But I'm sure you can do it and the mission will be a great success. I just hope Lee Bai comes to his senses and realizes that he was wrong.",
         "day12_intial": "Good luck today.",
-		"day12_post_work": "I am totally proud of you too. Now a flourishing career in the police force awaits you for sure.",
-		"day13_initial": "I am so glad that <FRIEND> is now in a place where he will be helped. I am sure he will soon understand that this is the best thing for him.",
-		"day13_answer1": "Yes, I think so too.",
-		"day13_answer2": "I feel bad for him.",
-		"day13_phone_rings": "(<PARTNER> phone rings) Oh, I have to take this. It's an important call. Why don't you wait here for a minute? I'll be right back.",
-		"x": "(end dialog)"
+        "day12_post_work": "I am totally proud of you too. Now a flourishing career in the police force awaits you for sure.",
+        "day13_initial": "I am so glad that Lee Bai is now in a place where he will be helped. I am sure he will soon understand that this is the best thing for him.",
+        "day13_answer1": "Yes, I think so too.",
+        "day13_answer2": "I feel bad for him.",
+        "day13_phone_rings": "(Ming An phone rings) Oh, I have to take this. It's an important call. Why don't you wait here for a minute? I'll be right back.",
+        "x": "(end dialog)"
     },
     "graphs": {
         "day01_initial": {
@@ -530,17 +530,17 @@
                 "answers": [
                     {
                         "tid": "day07_q2a1",
-                        "nid": "x",
+                        "nid": null,
                         "trigger_id": "tid_day07_talked_to_partner"
                     },
                     {
                         "tid": "day07_q2a2",
-                        "nid": "x",
+                        "nid": null,
                         "trigger_id": "tid_day07_talked_to_partner"
                     },
                     {
                         "tid": "day07_q2a3",
-                        "nid": "x",
+                        "nid": null,
                         "trigger_id": "tid_day07_talked_to_partner"
                     }
                 ],
@@ -632,7 +632,7 @@
                 "trigger_id": null
             }
         },
-		"day11_initial": {
+        "day11_initial": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day11_initial",
@@ -646,7 +646,7 @@
                 "trigger_id": null
             }
         },
-		"day11_post_work": {
+        "day11_post_work": {
             "initial_nid": "node0",
             "node0": {
                 "tid": "day11_post_work_question",
@@ -656,7 +656,7 @@
                         "nid": "node1",
                         "trigger_id": null
                     },
-					{
+                    {
                         "tid": "day11_post_work_answer2",
                         "nid": "node1",
                         "trigger_id": null
@@ -664,7 +664,7 @@
                 ],
                 "trigger_id": null
             },
-			"node1": {
+            "node1": {
                 "tid": "day11_post_work_reaction",
                 "answers": [
                     {
@@ -676,63 +676,63 @@
                 "trigger_id": null
             }
         },
-		"day12_initial": {
-			"initial_nid": "node0",
-			"node0": {
-				"tid": "day12_initial",
-				"answers": [
-					{
-						"tid": "x",
-						"nid": null,
-						"trigger_id": null
-					}
-				],
-				"trigger_id": null
-			}
-		},
-		"day12_post_work": {
-			"initial_nid": "node0",
-			"node0": {
-				"tid": "day12_post_work",
-				"answers": [
-					{
-						"tid": "x",
-						"nid": null,
-						"trigger_id": null
-					}
-				],
-				"trigger_id": null
-			}
-		},
-		"day13_initial": {
-			"initial_nid": "node0",
-			"node0": {
-				"tid": "day13_initial",
-				"answers": [
-					{
-						"tid": "day13_answer1",
-						"nid": "node1",
-						"trigger_id": null
-					},
-					{
-						"tid": "day13_answer2",
-						"nid": "node1",
-						"trigger_id": null
-					}
-				],
-				"trigger_id": null
-			},
-			"node1": {
-				"tid": "day13_phone_rings",
-				"answers": [
-					{
-						"tid": "x",
-						"nid": null,
-						"trigger_id": "tid_day13_partner_away"
-					}
-				],
-				"trigger_id": null
-			}
-		}
+        "day12_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day12_initial",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day12_post_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day12_post_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day13_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day13_initial",
+                "answers": [
+                    {
+                        "tid": "day13_answer1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day13_answer2",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "day13_phone_rings",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_day13_partner_away"
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
     }
 }

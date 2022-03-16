@@ -46,6 +46,7 @@ func _display_current():
 	var text_id = _current_node['tid']
 	var text = _dialog_dict['texts'][text_id]
 	_label.text = _format_text(text)
+	_label.scroll_to_line(0)
 
 	for i in len(_current_node['answers']):
 		text_id = _current_node['answers'][i]['tid']
@@ -82,7 +83,6 @@ func _process_answer(answer_index):
 				"text": _dialog_dict['texts'][text_id]
 			}
 			EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id, body)
-
 		else:
 			EventBus.call_deferred("emit_signal", "sig_trigger", trigger_id, _current_node['answers'][answer_index].get('trigger_kwargs', {}))
 

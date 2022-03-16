@@ -26,22 +26,11 @@
                 "answers": [
                     {
                         "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
+                        "nid": null,
+                        "trigger_id": "tid_ask_score_impact"
                     },
                     {
                         "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
-            "node1": {
-                "tid": "5",
-                "answers": [
-                    {
-                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -56,8 +45,8 @@
                 "answers": [
                     {
                         "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
+                        "nid": null,
+                        "trigger_id": "tid_ask_score_impact"
                     },
                     {
                         "tid": "day06_make_application",
@@ -66,17 +55,6 @@
                     },
                     {
                         "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
-            "node1": {
-                "tid": "5",
-                "answers": [
-                    {
-                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -102,8 +80,8 @@
                 "answers": [
                     {
                         "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
+                        "nid": null,
+                        "trigger_id": "tid_ask_score_impact"
                     },
                     {
                         "tid": "ask_for_application",
@@ -112,17 +90,6 @@
                     },
                     {
                         "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
-            "node1": {
-                "tid": "5",
-                "answers": [
-                    {
-                        "tid": "x",
                         "nid": null,
                         "trigger_id": null
                     }
@@ -142,210 +109,98 @@
             }
         },
         "class AAA": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "1",
-                "answers": [
-                    {
-                        "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
-                    },
-                    {
-                        "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
+            "initial_nid": "node1",
             "node1": {
                 "tid": "3",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_ask_score_impact"
                     }
                 ],
                 "trigger_id": null
             }
         },
         "class AA": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "1",
-                "answers": [
-                    {
-                        "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
-                    },
-                    {
-                        "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
+            "initial_nid": "node1",
             "node1": {
                 "tid": "4",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_ask_score_impact"
                     }
                 ],
                 "trigger_id": null
             }
         },
         "class B": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "1",
-                "answers": [
-                    {
-                        "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
-                    },
-                    {
-                        "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
+            "initial_nid": "node1",
             "node1": {
                 "tid": "6",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_ask_score_impact"
                     }
                 ],
                 "trigger_id": null
             }
         },
         "class C": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "1",
-                "answers": [
-                    {
-                        "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
-                    },
-                    {
-                        "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
+            "initial_nid": "node1",
             "node1": {
                 "tid": "7",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_ask_score_impact"
                     }
                 ],
                 "trigger_id": null
             }
         },
         "class D": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "1",
-                "answers": [
-                    {
-                        "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
-                    },
-                    {
-                        "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
+            "initial_nid": "node1",
             "node1": {
                 "tid": "8",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_ask_score_impact"
                     }
                 ],
                 "trigger_id": null
             }
         },
         "class E": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "1",
-                "answers": [
-                    {
-                        "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
-                    },
-                    {
-                        "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
+            "initial_nid": "node1",
             "node1": {
                 "tid": "9",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_ask_score_impact"
                     }
                 ],
                 "trigger_id": null
             }
         },
         "class X": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "1",
-                "answers": [
-                    {
-                        "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
-                    },
-                    {
-                        "tid": "2",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
+            "initial_nid": "node1",
             "node1": {
                 "tid": "10",
                 "answers": [
                     {
                         "tid": "x",
                         "nid": null,
-                        "trigger_id": null
+                        "trigger_id": "tid_ask_score_impact"
                     }
                 ],
                 "trigger_id": null

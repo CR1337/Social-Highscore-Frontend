@@ -66,8 +66,19 @@
                     },
                     {
                         "tid": "3",
-                        "nid": null,
+                        "nid": "node1",
                         "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "4",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_shopping_reset"
                     }
                 ],
                 "trigger_id": null

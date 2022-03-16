@@ -106,6 +106,8 @@ func _on_trigger(trigger_id, kwargs):
 			_update_progress('unlocking_account')
 		'tid_day05_unlocked_account':
 			_update_progress('goto_work')
+		'tid_start_work':
+			CitizenRecord.add_too_late_to_work(-75)
 		'tid_work_finished':
 			_update_progress('buy_meds')
 			GameStateController.increase_hunger()

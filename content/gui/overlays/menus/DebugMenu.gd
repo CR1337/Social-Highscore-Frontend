@@ -21,7 +21,7 @@ func _on_SignalButton_pressed():
 
 
 func _on_SkipWorkButton_pressed():
-	EventBus.emit_signal("sig_trigger", 'tid_work_finished')
+	EventBus.emit_signal("sig_trigger", 'tid_work_finished', {})
 
 
 func _on_DayButton_pressed():

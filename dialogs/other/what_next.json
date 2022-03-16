@@ -1,13 +1,13 @@
 {
     "texts": {
-        "friend_place": "I often met with Lee Bai in the small park south of the bus stop. He probably means this place.",
+        "01_read_moms_message": "I should read moms message.",
         "x": "(end monolog)"
     },
     "graphs": {
-        "friend_selftalk": {
+        "01_read_moms_message": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "friend_place",
+                "tid": "01_read_moms_message",
                 "answers": [
                     {
                         "tid": "x",

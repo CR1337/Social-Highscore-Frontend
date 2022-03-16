@@ -61,9 +61,11 @@ onready var _shady_nodes = {
 
 func activate():
 	EventBus.connect("sig_trigger", self, "_on_trigger")
+	EventBus.connect("sig_what_next", self, "_on_what_next")
 
 func deactivate():
 	EventBus.disconnect("sig_trigger", self, "_on_trigger")
+	EventBus.disconnect("sig_what_next", self, "_on_what_next")
 
 func _set_npc_visibility(npc, key):
 	match npc:
@@ -142,6 +144,10 @@ func _update_progress(new_state):
 func _publish_daily_news():
 	var news_id = "nid_day" + _get_day()
 	_publish_news(news_id)
+
+func _on_what_next():
+	var state = _get_day() + "_" + states[progress]
+	ViewportManager.change_to_dialog("res://dialogs/other/what_next.json", state)
 	
 func start_day():
 	activate()

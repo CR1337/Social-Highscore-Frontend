@@ -1,11 +1,11 @@
 {
-    "texts": {
-        "0": "I hope you are happy with your new job. ",
-        "1": "Yes I am totally happy ",
-        "2": "Could be better ",
-        "3": "I'm sorry, we currently have no openings for anyone with your profile",
-        "x": "(end dialog)",
-		"day02_greeting": "Good day Mr. <NAME>\nHow can I help you?",
+	"texts": {
+		"0": "I hope you are happy with your new job. ",
+		"1": "Yes I am totally happy ",
+		"2": "Could be better ",
+		"3": "I'm sorry, we currently have no openings for anyone with your profile",
+		"x": "(end dialog)",
+		"day02_greeting": "Good day Mr. Zheng\nHow can I help you?",
 		"day02_answer1": "I'm looking for a job.",
 		"day02_no1": "Not at all. Thank you.",
 		"day02_job_offers": "Oh how nice. I can offer you a trainee position with the police. Alternatively, you can get a cashier job in the Super Store.",
@@ -14,43 +14,43 @@
 		"day02_pleased": "We are pleased about that. Especially now after the introduction of Communityscore, we need exemplary citizens like you who can help their fellow citizens become better people.",
 		"day02_honor": "It is an honor.",
 		"day02_need_money": "Actually, I just need the money.",
-		"day02_honor_answer": "We need people like you in this country.\n\nReport to Chief Inspector <BOSS> tomorrow at 10:00. He will explain everything else to you. The police station is located south of here.",
-		"day02_money_answer": "If you serve our state faithfully, you will not have to worry about this.\n\nReport to Chief Inspector <BOSS> tomorrow at 10:00. He will explain everything else to you. The police station is located south of here."
-    },
-    "graphs": {
-        "idle": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "0",
-                "answers": [
-                    {
-                        "tid": "1",
-                        "nid": null,
-                        "trigger_id": null
-                    },
-                    {
-                        "tid": "2",
-                        "nid": null,
-                        "trigger_id": "tid_critical_speach_about_job"
-                    }
-                ],
-                "trigger_id": null
-            }
+		"day02_honor_answer": "We need people like you in this country.\n\nReport to Chief Inspector Wang tomorrow at 10:00. He will explain everything else to you. The police station is located south of here.",
+		"day02_money_answer": "If you serve our state faithfully, you will not have to worry about this.\n\nReport to Chief Inspector Wang tomorrow at 10:00. He will explain everything else to you. The police station is located south of here."
+	},
+	"graphs": {
+		"idle": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "0",
+				"answers": [
+					{
+						"tid": "1",
+						"nid": null,
+						"trigger_id": null
+					},
+					{
+						"tid": "2",
+						"nid": null,
+						"trigger_id": "tid_critical_speach_about_job"
+					}
+				],
+				"trigger_id": null
+			}
 		},
-        "unemployed": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "3",
-                "answers": [
-                    {
-                        "tid": "x",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            }
-        },
+		"unemployed": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "3",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": null
+			}
+		},
 		"day02_job_offer": {
 			"initial_nid": "node0",
 			"node0": {
@@ -124,5 +124,5 @@
 				"trigger_id": null
 			}
 		}
-    }
+	}
 }

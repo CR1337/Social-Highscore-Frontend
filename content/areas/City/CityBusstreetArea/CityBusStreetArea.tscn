@@ -21,10 +21,10 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/policestreet/npc1.tres" type="SpriteFrames" id=25]
 [ext_resource path="res://assets/animated_sprites/tres/characters/police_boss.tres" type="SpriteFrames" id=26]
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
-[sub_resource type="TileSet" id=3]
+[sub_resource type="TileSet" id=2]
 0/name = "EmptyTile.png 0"
 0/texture = ExtResource( 9 )
 0/tex_offset = Vector2( 0, 0 )
@@ -35,14 +35,14 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 2 )
+0/shape = SubResource( 1 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -68,7 +68,7 @@ format = 1
 tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 393223, 0, 0, 524287, 0, 0, 589823, 0, 0, 524296, 0, 0, 655359, 0, 0, 720895, 0, 0, 786431, 0, 0, 851967, 0, 0, 786438, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 917503, 0, 0, 983039, 0, 0, 917509, 0, 0, 917513, 0, 0, 917515, 0, 0, 1048575, 0, 0, 1114111, 0, 0, 1048588, 0, 0 )
 
 [node name="Street" type="TileMap" parent="."]
-tile_set = SubResource( 3 )
+tile_set = SubResource( 2 )
 show_collision = true
 collision_layer = 2
 collision_mask = 2

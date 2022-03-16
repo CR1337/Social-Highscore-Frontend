@@ -10,10 +10,10 @@
         "day07": "I am glad to see you. But you are not on duty today.",
         "day08": "I am glad to see you. But you are not on duty today.",
         "day09": "What a wonderful day. I look forward to chasing criminals.",
-        "day10": "Weren't you friends with <friend>? How wrong you can be about some people....",
+        "day10": "Weren't you friends with Lee Bai? How wrong you can be about some people....",
         "day11": "That must not be easy for you to lose a friend to crime.",
         "day12": "I am totally excited. The operation is about to begin.",
-		"day12_post_work": "Well done. That must not have been easy for you.",
+        "day12_post_work": "Well done. That must not have been easy for you.",
         "day13": "Yesterday was an important day for all of us.",
         "x": "(end dialog)"
     },
@@ -187,33 +187,33 @@
             }
         },
         "day12_initial": {
-			"initial_nid": "node0",
-			"node0": {
-				"tid": "day12",
-				"answers": [
-					{
-						"tid": "x",
-						"nid": null,
-						"trigger_id": null
-					}
-				],
-				"trigger_id": null
-			}
-		},
-		"day12_post_work": {
-			"initial_nid": "node0",
-			"node0": {
-				"tid": "day12_post_work",
-				"answers": [
-					{
-						"tid": "x",
-						"nid": null,
-						"trigger_id": null
-					}
-				],
-				"trigger_id": null
-			}
-		},
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day12",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day12_post_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day12_post_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
         "day13_initial": {
             "initial_nid": "node0",
             "node0": {
@@ -227,6 +227,6 @@
                 ],
                 "trigger_id": null
             }
-		}
+        }
     }
 }

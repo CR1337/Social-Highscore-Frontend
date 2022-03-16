@@ -27,6 +27,9 @@ func activate():
 func deactivate():
 	.deactivate()
 
+func _start_boss_dialog():
+	EventBus.call_deferred("emit_signal", "sig_trigger", "tid_city_policestreet_police_npc_boss_start_dialog", {})
+
 func _update_progress(new_state):
 	._update_progress(new_state)
 	match new_state:
@@ -48,6 +51,7 @@ func _update_progress(new_state):
 					_state_change_trigger_ids['boss'],
 					'day12_in_park'
 				)
+			_start_boss_dialog()
 		'in_operation':
 			_start_operation()
 			if corrected_boss:
@@ -60,12 +64,14 @@ func _update_progress(new_state):
 					_state_change_trigger_ids['boss'],
 					'day12_in_operation_not_corrected'
 				)
+			_start_boss_dialog()
 		'post_operation':
 			_blend_to_police()
 			_request_state_change(
 				_state_change_trigger_ids['boss'],
 				'day12_post_operation'
 			)
+			_start_boss_dialog()
 			_request_state_change(
 				_state_change_trigger_ids['mom'],
 				'day12_post_work'
@@ -93,6 +99,7 @@ func _update_progress(new_state):
 				_state_change_trigger_ids['boss'],
 				'day12_in_prison'
 			)
+			_start_boss_dialog()
 
 func start_day():
 	.start_day()
@@ -112,9 +119,7 @@ func _on_trigger(trigger_id, kwargs):
 			_update_progress('post_operation')
 			GameStateController.increase_hunger()
 		'tid_day12_blend_to_prison':
-			_update_progress('in_prison')
-		'tid_read_citizen_record':
-			ViewportManager.change_to_citizen_record_overlay()
+			_update_progress('in_prison')			
 		_: 
 			._on_trigger(trigger_id, kwargs)
 
@@ -131,7 +136,7 @@ onready var _prison_area = get_node("/root/MainScene/Areas/UtilityPrisonstreetPr
 onready var _player = get_node("/root/MainScene/Player")
 const _player_operation_position = Vector2(8, 12)
 const _player_police_position = Vector2(10, 5)
-const _player_prison_position = Vector2(10, 10)
+const _player_prison_position = Vector2(11, 11)
 
 onready var _bus_npc1 = get_node("/root/MainScene/Areas/CityBusstreetArea/Npc")
 onready var _bus_npc2 = get_node("/root/MainScene/Areas/CityBusstreetArea/Npc")

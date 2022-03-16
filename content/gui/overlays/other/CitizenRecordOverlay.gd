@@ -83,6 +83,18 @@ func _display_record(record):
 			label.append_bbcode(record['type'])
 			_box_container.add_child(label)
 
+func _display_debug(record):
+	var new_background = _create_background()
+	var new_record = _create_record()
+	var label = _create_big_label()
+	var text = "The target has cheated.".format(
+		{}
+	)
+	label.append_bbcode(text)
+	new_background.add_child(new_record)
+	new_record.add_child(label)
+	_box_container.add_child(new_background)
+
 func _display_score_class_changed(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
@@ -466,8 +478,8 @@ func _display_too_late_to_work(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
 	var label = _create_big_label()
-	var text = "The target arrived {amount} minutes late for work".format(
-		{"amount": record["amount_of_time"]}
+	var text = "The target arrived too late for work".format(
+		{}
 	)
 	if record['score'] > 0:
 		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
@@ -554,4 +566,5 @@ func _display_lied_to_boss(record):
 	_box_container.add_child(new_background)
 
 func _on_Button_pressed():
+	# TODO: change to Gameover Overlay
 	ViewportManager.change_to_transparent()

@@ -131,13 +131,13 @@ leave_player_position = Vector2( 3, 14 )
 
 [node name="LivingFriendstreetPartnerArea" parent="Areas" instance=ExtResource( 26 )]
 position = Vector2( 1203.67, -1226.45 )
-human_readable_name = "<Partner>'s Home"
+human_readable_name = "Ming An's Home"
 leave_area_path = NodePath("../LivingFriendstreetArea")
 leave_player_position = Vector2( 3, 6 )
 
 [node name="LivingFriendstreetFriendArea" parent="Areas" instance=ExtResource( 6 )]
 position = Vector2( 1133.21, 1180.88 )
-human_readable_name = "<Friend>'s Home"
+human_readable_name = "Lee Bai's Home"
 leave_area_path = NodePath("../LivingFriendstreetArea")
 leave_player_position = Vector2( 10, 14 )
 

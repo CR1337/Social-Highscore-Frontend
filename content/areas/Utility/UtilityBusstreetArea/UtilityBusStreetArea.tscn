@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://assets/tilesets/EmptyTile.png" type="Texture" id=7]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/npc.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/npc2.tres" type="SpriteFrames" id=9]
-[ext_resource path="res://content/trigger/AuthenticationTrigger.gd" type="Script" id=10]
 [ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=14]
 
@@ -111,12 +110,7 @@ position = Vector2( 479.856, 634.792 )
 scale = Vector2( 1, 2 )
 is_activated_by_action = true
 walkable = true
-action_trigger_id = "tid_utility_busstreet_authentication"
-
-[node name="AuthenticationTrigger" type="Node" parent="BusTriggerArea"]
-script = ExtResource( 10 )
-id = "tid_utility_busstreet_authentication"
-post_authentication_trigger_id = "tid_utility_busstreet_bus"
+action_trigger_id = "tid_utility_busstreet_bus"
 
 [node name="BusTrigger" type="Node" parent="BusTriggerArea"]
 script = ExtResource( 6 )

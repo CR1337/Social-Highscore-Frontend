@@ -57,7 +57,7 @@ margin_bottom = 134.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
-text = "Partner"
+text = "Ming An <3"
 icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -83,7 +83,7 @@ margin_bottom = 428.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
-text = "Friend"
+text = "Lee Bai"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -95,7 +95,7 @@ margin_bottom = 572.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
-text = "Boss"
+text = "Inspector Wang"
 __meta__ = {
 "_edit_use_anchors_": false
 }

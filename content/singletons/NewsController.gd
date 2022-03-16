@@ -72,7 +72,7 @@ func _handle_reaction(image, emotion, news_id_reacting_on):
 			20, news_reacting_on['title'], path,
 			emotion
 		)
-	elif emotion in news_id_reacting_on['forbidden_emotions']:
+	elif emotion in news_reacting_on['forbidden_emotions']:
 		CitizenRecord.add_bad_emotional_reaction_on_news(
 			-30, news_reacting_on['title'], path,
 			emotion, news_reacting_on['preferred_emotions']

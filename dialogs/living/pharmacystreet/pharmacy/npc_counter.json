@@ -3,7 +3,7 @@
         "idle_hello": "Good day, what can I do for you? ",
         "idle_answer": "Nothing, thank you",
         "selling_answer": "(Order medication)",
-        "selling_demand_payment": "This will make §§GameStateController.medication_price§§ ¥. From today we use the new <PAYSYSTEM>. You now pay everywhere with your face.",
+        "selling_demand_payment": "This will make §§GameStateController.medication_price§§ ¥.",
         "selling_accept_payment": "(pay medication)",
         "selling_deny_payment": "I will come back later.",
         "selling_payment_failed": "It seems like the payment didn't work. Please try it again.",

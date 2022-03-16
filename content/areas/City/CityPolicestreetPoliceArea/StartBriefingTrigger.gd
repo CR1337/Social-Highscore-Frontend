@@ -2,4 +2,5 @@ extends "res://content/trigger/Trigger.gd"
 
 func trigger(kwargs):
 	.trigger(kwargs)
-	ViewportManager.change_to_briefing()
+	# activate this for starting minigame
+	# ViewportManager.change_to_briefing()

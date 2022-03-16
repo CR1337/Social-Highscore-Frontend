@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/tilesets/interior/Modern_Office_Black_Shadow_32x32.png" type="Texture" id=1]
 [ext_resource path="res://assets/tilesets/interior/19_Hospital_32x32.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/bankstreet/office/npc1.tres" type="SpriteFrames" id=18]
 [ext_resource path="res://assets/animated_sprites/tres/characters/city/bankstreet/office/npc_counter.tres" type="SpriteFrames" id=19]
 [ext_resource path="res://content/trigger/StateChangeTrigger.gd" type="Script" id=20]
+[ext_resource path="res://content/areas/City/CityBankstreetOfficeArea/ScoreImpactTrigger.gd" type="Script" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 512, 64, 128, 64, 128, 0, 512, 0 )
@@ -2610,6 +2611,10 @@ id = "tid_city_bankstreet_office_npc_counter_start_dialog"
 [node name="StateChangeTrigger" type="Node" parent="NpcCounter"]
 script = ExtResource( 20 )
 id = "tid_city_bankstreet_office_npc_counter_state_change"
+
+[node name="ScoreImpactTrigger" type="Node" parent="NpcCounter"]
+script = ExtResource( 21 )
+id = "tid_ask_score_impact"
 
 [node name="NPC1" parent="." instance=ExtResource( 14 )]
 position = Vector2( 224, 672 )

@@ -7,7 +7,7 @@ onready var _movement_ray = $RayCast2DMovement
 onready var _trigger_ray = $RayCast2DTrigger
 onready var _tween = $Tween
 
-var _looking_direction: Vector2
+var looking_direction: Vector2
 var _directions = {
 	Vector2.DOWN: 'down',
 	Vector2.LEFT: 'left',
@@ -27,7 +27,7 @@ func _ready():
 	position = position.snapped(Vector2.ONE * Globals.tile_size)
 	position -= Vector2.ONE * Globals.tile_size / 2
 
-	_looking_direction = Vector2.DOWN
+	looking_direction = Vector2.DOWN
 
 	InputBus.connect("sig_action_pressed", self, "_on_action_pressed")
 
@@ -35,19 +35,19 @@ func _ready():
 func _process(delta):
 	if not _tween.is_active():
 		if InputBus.direction != Vector2.ZERO:
-			_looking_direction = InputBus.direction
+			looking_direction = InputBus.direction
 			_move()
 		else:
-			$AnimatedSprite.animation = _outfit_animation_prefix() +'idle_' + _directions[_looking_direction]
+			$AnimatedSprite.animation = _outfit_animation_prefix() +'idle_' + _directions[looking_direction]
 
 func move_tween():
 	_tween.interpolate_property(self, "position",
-		position, position + _looking_direction * Globals.tile_size,
+		position, position + looking_direction * Globals.tile_size,
 		1.0 / speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	_tween.start()
 
 func _is_ray_colliding(ray):
-	ray.cast_to = _looking_direction * Globals.tile_size
+	ray.cast_to = looking_direction * Globals.tile_size
 	ray.force_raycast_update()
 	return ray.is_colliding()
 
@@ -60,8 +60,8 @@ func _colliding_with_npc():
 		if npc.get("announced_position") == null or npc.get("current_position") == null :
 			continue
 		if (
-			npc.announced_position == position / Globals.tile_size + _looking_direction
-			or npc.current_position == position / Globals.tile_size + _looking_direction
+			npc.announced_position == position / Globals.tile_size + looking_direction
+			or npc.current_position == position / Globals.tile_size + looking_direction
 		):
 				return true
 	return false
@@ -90,7 +90,7 @@ func _move():
 		_on_street = false
 	if not _movement_ray_colliding and not _colliding_with_npc():
 		move_tween()
-		$AnimatedSprite.animation = _outfit_animation_prefix() + 'walk_' + _directions[_looking_direction]
+		$AnimatedSprite.animation = _outfit_animation_prefix() + 'walk_' + _directions[looking_direction]
 	
 
 func _on_action_pressed():
@@ -104,8 +104,8 @@ func persistent_state():
 	return {
 		'position_x': position.x,
 		'position_y': position.y,
-		'looking_direction_x': _looking_direction.x,
-		'looking_direction_y': _looking_direction.y,
+		'looking_direction_x': looking_direction.x,
+		'looking_direction_y': looking_direction.y,
 		'on_street': _on_street
 	}
 
@@ -114,9 +114,9 @@ func restore_state(state):
 		state['position_x'],
 		state['position_y']
 	)
-	_looking_direction = Vector2(
+	looking_direction = Vector2(
 		state['looking_direction_x'],
 		state['looking_direction_y']
 	)
-	$AnimatedSprite.animation = 'idle_' + _directions[_looking_direction]
+	$AnimatedSprite.animation = 'idle_' + _directions[looking_direction]
 	_on_street = state['on_street']

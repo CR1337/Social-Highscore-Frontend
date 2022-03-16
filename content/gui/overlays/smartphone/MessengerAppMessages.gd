@@ -7,6 +7,8 @@ var _messages = {
 	'boss': []
 }
 
+
+
 onready var _name_label = $Background/Margin/VBox/NameLabel
 onready var _messages_label = $Background/Margin/VBox/MessagesLabel
 
@@ -29,7 +31,7 @@ func _on_got_phone_message(contact, message, important = false):
 	_messages[contact].append([false, message])
 
 func set_current_contact(contact):
-	_name_label.text = contact
+	_name_label.text = Globals.contact_names[contact]
 	_current_contact = contact
 
 	_display_messages()
@@ -37,11 +39,15 @@ func set_current_contact(contact):
 
 func _display_messages():
 	_messages_label.bbcode_text = ""
-	for message_tuple in _messages[_current_contact]:
+	for i in len(_messages[_current_contact]):
+		var message_tuple = _messages[_current_contact][i]
 		if message_tuple[0]:
 			_messages_label.append_bbcode("\n\n[color=green][right]" + message_tuple[1] + "[/right][/color]")
 		else:
-			_messages_label.append_bbcode("\n\n[color=white]" + message_tuple[1] + "[/color]")
+			if i < len(_messages[_current_contact]) -1:
+				_messages_label.append_bbcode("\n\n[color=gray]" + message_tuple[1] + "[/color]")
+			else:
+				_messages_label.append_bbcode("\n\n[color=white]" + message_tuple[1] + "[/color]")
 	_messages_label.scroll_to_line(_messages_label.get_line_count()-1)
 
 
