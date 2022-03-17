@@ -4,7 +4,8 @@
         "1": "I would like to donate blood",
         "2": "I would like to donate a kidney",
         "3": "Have a nice day",
-        "4": "Very nice, please sign here: ",
+        "4_blood": "Very good. You may experience an increased feeling of hunger after donating blood. Please sign here:",
+		"4_kidney": "Very good. After the surgery, you may feel hungry more often. Please sign here:",
         "5": "(I agree)",
         "6": "(I have changed my mind)",
         "7": "Good day. You have been admitted to our clinic because of a fainting spell. Please make sure you eat and sleep enough in the future. We will debit the invoice amount from your account.",
@@ -37,7 +38,7 @@
                 "trigger_id": null
             },
             "node1": {
-                "tid": "4",
+                "tid": "4_blood",
                 "answers": [
                     {
                         "tid": "5",
@@ -53,47 +54,12 @@
                 "trigger_id": null
             },
             "node2": {
-                "tid": "4",
+                "tid": "4_kidney",
                 "answers": [
                     {
                         "tid": "5",
                         "nid": null,
                         "trigger_id": "tid_kidney_donated"
-                    },
-                    {
-                        "tid": "6",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            }
-        },
-        "kindey donated": {
-            "initial_nid": "node0",
-            "node0": {
-                "tid": "0",
-                "answers": [
-                    {
-                        "tid": "1",
-                        "nid": "node1",
-                        "trigger_id": null
-                    },
-                    {
-                        "tid": "3",
-                        "nid": null,
-                        "trigger_id": null
-                    }
-                ],
-                "trigger_id": null
-            },
-            "node1": {
-                "tid": "4",
-                "answers": [
-                    {
-                        "tid": "5",
-                        "nid": null,
-                        "trigger_id": "tid_blood_donated"
                     },
                     {
                         "tid": "6",

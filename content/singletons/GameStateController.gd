@@ -135,6 +135,7 @@ func _donate_blood():
 		EventBus.call_deferred("emit_signal", "sig_trigger", "tid_utility_busstreet_hospital_npc_counter_start_dialog", {})
 	else:
 		CitizenRecord.add_blood_donation(50)
+		increase_hunger()
 		_blood_donated = true
 	
 func _donate_kidney():
@@ -489,7 +490,8 @@ func increase_hunger():
 	_handle_hunger()
 	
 func eat(amount):
-	hunger = int(max(-1, hunger - amount))
+	var min_hunger = 0 if _kidney_donated else -1
+	hunger = int(max(min_hunger, hunger - amount))
 	_handle_hunger()
 		
 func _handle_hunger():
