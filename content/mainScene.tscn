@@ -70,7 +70,8 @@ shader_param/color = Vector3( 1, 0, 0 )
 [node name="MainScene" type="Node2D"]
 
 [node name="InputUI" parent="." instance=ExtResource( 41 )]
-z_index = 2
+z_index = 30
+z_as_relative = false
 
 [node name="Areas" type="Node2D" parent="."]
 
@@ -275,36 +276,57 @@ z_index = 10
 
 [node name="FridgeOverlay" parent="Overlays" instance=ExtResource( 47 )]
 position = Vector2( 5511.95, 3058.51 )
+z_index = 60
+z_as_relative = false
 
 [node name="PaymentOverlay" parent="Overlays" instance=ExtResource( 1 )]
 position = Vector2( 6248.28, 1227.63 )
+z_index = 60
+z_as_relative = false
 
 [node name="ConfigMenu" parent="Overlays" instance=ExtResource( 11 )]
 position = Vector2( 2151.24, 1279.81 )
+z_index = 60
+z_as_relative = false
 
 [node name="ReferenceImageMenu" parent="Overlays" instance=ExtResource( 12 )]
 position = Vector2( 2994.75, 1078.88 )
+z_index = 60
+z_as_relative = false
 
 [node name="GameMenu" parent="Overlays" instance=ExtResource( 3 )]
 position = Vector2( 2841.38, -652 )
+z_index = 60
+z_as_relative = false
 
 [node name="SmartphoneMenu" parent="Overlays" instance=ExtResource( 38 )]
 position = Vector2( 3018.55, 2666.58 )
+z_index = 60
+z_as_relative = false
 
 [node name="PrologOverlay" parent="Overlays" instance=ExtResource( 45 )]
 position = Vector2( 4087.35, -6659.93 )
+z_index = 60
+z_as_relative = false
 
 [node name="TransparentOverlay" type="Node2D" parent="Overlays"]
+z_index = 60
+z_as_relative = false
 
 [node name="CitizenRecordCoverOverlay" parent="Overlays" instance=ExtResource( 51 )]
 position = Vector2( 3220.1, -6719.51 )
+z_index = 60
+z_as_relative = false
 
 [node name="AuthenticationOverlay" parent="Overlays" instance=ExtResource( 13 )]
 position = Vector2( 3633.01, -651.034 )
-z_index = 3
+z_index = 60
+z_as_relative = false
 
 [node name="BusMenu" parent="Overlays" instance=ExtResource( 32 )]
 position = Vector2( 2049.05, 2118.92 )
+z_index = 60
+z_as_relative = false
 leave_city_area_path = NodePath("../../Areas/CityBusstreetArea")
 leave_city_player_position = Vector2( 8, 8 )
 leave_living_area_path = NodePath("../../Areas/LivingBusstreetArea")
@@ -313,59 +335,90 @@ leave_utility_area_path = NodePath("../../Areas/UtilityBusstreetArea")
 leave_utility_player_position = Vector2( 9, 11 )
 
 [node name="TransparentDialog" type="Node2D" parent="Overlays"]
+z_index = 60
+z_as_relative = false
 
 [node name="DialogOverlay" parent="Overlays" groups=[
 "persistent",
 ] instance=ExtResource( 14 )]
 position = Vector2( 4086.9, 1102.63 )
+z_index = 40
+z_as_relative = false
 
 [node name="MessengerAppContacts" parent="Overlays" instance=ExtResource( 15 )]
 position = Vector2( 4816.45, -561.626 )
+z_index = 60
+z_as_relative = false
 
 [node name="MessengerAppMessages" parent="Overlays" instance=ExtResource( 21 )]
 position = Vector2( 4986.02, 1105.24 )
+z_index = 60
+z_as_relative = false
 
 [node name="BankingApp" parent="Overlays" instance=ExtResource( 29 )]
 position = Vector2( 5785.58, -627.315 )
+z_index = 60
+z_as_relative = false
 
 [node name="NewsAppMainpage" parent="Overlays" instance=ExtResource( 43 )]
 position = Vector2( 4921.06, -3670.1 )
+z_index = 60
+z_as_relative = false
 
 [node name="NewsAppNewspage" parent="Overlays" instance=ExtResource( 22 )]
 position = Vector2( 5803.65, -3701.84 )
+z_index = 60
+z_as_relative = false
 
 [node name="CitizenApp" parent="Overlays" instance=ExtResource( 44 )]
 position = Vector2( 4887.99, -2086.34 )
+z_index = 60
+z_as_relative = false
 
 [node name="TransparentNotificationOverlay" type="Node2D" parent="Overlays"]
+z_index = 60
+z_as_relative = false
 
 [node name="NotificationOverlay" parent="Overlays" instance=ExtResource( 37 )]
 position = Vector2( 4238.74, 2725.83 )
+z_index = 50
+z_as_relative = false
 
 [node name="CitizenRecordOverlay" parent="Overlays" instance=ExtResource( 34 )]
 position = Vector2( -2104, -2016 )
+z_index = 60
+z_as_relative = false
 
 [node name="GameoverOverlay" parent="Overlays" instance=ExtResource( 46 )]
 position = Vector2( 5466.73, -6245.27 )
+z_index = 60
+z_as_relative = false
 
 [node name="DebugMenu" parent="Overlays" instance=ExtResource( 48 )]
 position = Vector2( 7055.46, -4930.64 )
+z_index = 60
+z_as_relative = false
 
 [node name="DebriefingOverlay" parent="Overlays" instance=ExtResource( 49 )]
 position = Vector2( -3187.83, 169.587 )
+z_index = 60
+z_as_relative = false
 
 [node name="BriefingOverlay" parent="Overlays" instance=ExtResource( 50 )]
 position = Vector2( -4044.58, 552.603 )
+z_index = 60
+z_as_relative = false
 
 [node name="Player" parent="." groups=[
 "persistent",
 ] instance=ExtResource( 24 )]
 position = Vector2( 610.022, 964.115 )
-z_index = 1
+z_as_relative = false
 speed = 6
 
 [node name="ShaderRectNode" type="Node2D" parent="."]
-z_index = 5
+z_index = 20
+z_as_relative = false
 
 [node name="ShaderRect" type="ColorRect" parent="ShaderRectNode"]
 material = SubResource( 2 )

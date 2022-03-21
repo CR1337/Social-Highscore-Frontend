@@ -1,0 +1,9 @@
+Overlays	 60	
+Notifications	 50
+Dialogoverlay	 40
+InputUI		 30
+ShaderRect	 20
+Foreground	 10
+Player		  0
+NPCs		-10
+Background	-20
