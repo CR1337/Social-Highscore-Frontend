@@ -14,12 +14,14 @@ var _states = [
 	"ask_tutorial",
 	"tutorial_dpad",
 	"tutorial_action",
-	"tutorial_time",
-	"tutorial_bars",
+	"tutorial_weekday",
+	"tutorial_hunger",
+	"tutorial_shopping",
+	"tutorial_sleep",
 	"tutorial_smartphone",
 	"tutorial_banking_app",
 	"tutorial_messenger_app",
-	"tutorial_citzen_app",
+	"tutorial_citizen_app",
 	"tutorial_news_app",
 	"start_game",
 	"finished"
@@ -60,9 +62,13 @@ func _next_state():
 			_load_tutorial_picture()
 		"tutorial_action":
 			_load_tutorial_picture()
-		"tutorial_time":
+		"tutorial_weekday":
 			_load_tutorial_picture()
-		"tutorial_bars":
+		"tutorial_hunger":
+			_load_tutorial_picture()
+		"tutorial_shopping":
+			_load_tutorial_picture()
+		"tutorial_sleep":
 			_load_tutorial_picture()
 		"tutorial_smartphone":
 			_load_tutorial_picture()
@@ -70,7 +76,7 @@ func _next_state():
 			_load_tutorial_picture()
 		"tutorial_messenger_app":
 			_load_tutorial_picture()
-		"tutorial_citzen_app":
+		"tutorial_citizen_app":
 			_load_tutorial_picture()
 		"tutorial_news_app":
 			_load_tutorial_picture()
@@ -84,8 +90,6 @@ func _next_state():
 
 
 func _load_tutorial_picture():
-	# TODO: add tutorial pictures:
-	pass
 	var texture = ImageTexture.new()
 	var image = Image.new()
 	image.load("res://assets/tutorial/" + _states[_state] + ".png")

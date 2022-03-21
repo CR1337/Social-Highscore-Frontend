@@ -49,6 +49,8 @@ margin_top = 598.0
 margin_right = 728.0
 margin_bottom = 1165.0
 size_flags_vertical = 3
+expand = true
+stretch_mode = 5
 
 [node name="HBox" type="HBoxContainer" parent="Background/Margin/VBox"]
 margin_top = 1197.0
