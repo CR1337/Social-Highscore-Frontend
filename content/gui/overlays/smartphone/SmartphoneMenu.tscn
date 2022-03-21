@@ -65,9 +65,9 @@ __meta__ = {
 }
 
 [node name="BackButton" type="Button" parent="Background"]
-margin_left = 412.0
+margin_left = 259.414
 margin_top = 1010.0
-margin_right = 668.0
+margin_right = 515.414
 margin_bottom = 1266.0
 icon = ExtResource( 2 )
 expand_icon = true
