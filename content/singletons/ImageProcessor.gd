@@ -25,6 +25,9 @@ signal sig_reference_image_taken(image, job_id)
 var _b64_reference_image: String
 var _reference_image: Image
 
+func get_reference_image():
+	return _reference_image
+
 func _ready():
 	NativeCameraController.connect("sig_got_image", self, "_on_got_image")
 	_http_request = HTTPRequest.new()

@@ -45,7 +45,7 @@ func _update_progress(new_state):
 				'day05_gave_ticket'
 			)
 			_unblock_trigger(_bus_living_trigger_id)
-		'unlocking_account':
+		'unlock_account':
 			GameStateController.bank_account_blocked = false
 		'goto_work':
 			_unblock_trigger(_police_enter_trigger_id)
@@ -103,7 +103,7 @@ func _on_trigger(trigger_id, kwargs):
 		'tid_day05_got_bus_ticket':
 			_update_progress('goto_bank')
 		'tid_day05_unlock_account':
-			_update_progress('unlocking_account')
+			_update_progress('unlock_account')
 		'tid_day05_unlocked_account':
 			_update_progress('goto_work')
 		'tid_start_work':

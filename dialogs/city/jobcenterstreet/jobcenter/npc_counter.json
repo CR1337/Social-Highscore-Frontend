@@ -31,7 +31,7 @@
 					{
 						"tid": "2",
 						"nid": null,
-						"trigger_id": "tid_critical_speach_about_job"
+						"trigger_id": "tid_critical_speech"
 					}
 				],
 				"trigger_id": null
@@ -96,7 +96,7 @@
 					{
 						"tid": "day02_need_money",
 						"nid": "node4",
-						"trigger_id": null
+						"trigger_id": "tid_critical_speech"
 					}
 				],
 				"trigger_id": null

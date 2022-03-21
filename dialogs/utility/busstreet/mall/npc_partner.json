@@ -112,7 +112,7 @@
                     {
                         "tid": "day09_t5_a2",
                         "nid": "node3",
-                        "trigger_id": null
+                        "trigger_id": "tid_critical_speech"
                     }
                 ],
                 "trigger_id": null

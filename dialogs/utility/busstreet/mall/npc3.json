@@ -1,6 +1,6 @@
 {
     "texts": {
-        "0": "Once when I didn't eat for too long, I suddenly woke up in the hospital next door. You don't want to see this bill. ", 
+        "0": "Once when I didn't eat for too long, I suddenly woke up in the hospital next door. You don't want to see this bill. ",
         "1": "(end dialog)"
     },
     "graphs": {
@@ -9,7 +9,11 @@
             "node0": {
                 "tid": "0",
                 "answers": [
-                    {"tid": "1", "nid": null, "trigger_id": null}
+                    {
+                        "tid": "1",
+                        "nid": null,
+                        "trigger_id": null
+                    }
                 ],
                 "trigger_id": null
             }

@@ -30,6 +30,8 @@ onready var _transparent_dialog_overlag = get_node("/root/MainScene/Overlays/Tra
 onready var _dialog_overlay = get_node("/root/MainScene/Overlays/DialogOverlay")
 
 onready var _citizen_record_overlay = get_node("/root/MainScene/Overlays/CitizenRecordOverlay")
+onready var _citizen_record_cover_overlay = get_node("/root/MainScene/Overlays/CitizenRecordCoverOverlay")
+
 
 onready var _transparent_notification_overlay = get_node("/root/MainScene/Overlays/TransparentNotificationOverlay")
 onready var _notification_overlay = get_node("/root/MainScene/Overlays/NotificationOverlay")
@@ -115,6 +117,10 @@ func change_to_citizen_app():
 	change_overlay(_citizen_app_overlay)
 
 func change_to_citizen_record_overlay():
+	change_overlay(_citizen_record_cover_overlay)
+	_citizen_record_cover_overlay.show()
+
+func change_to_citizen_record():
 	change_overlay(_citizen_record_overlay)
 	_citizen_record_overlay.display_records()
 

@@ -659,7 +659,7 @@
                     {
                         "tid": "day11_post_work_answer2",
                         "nid": "node1",
-                        "trigger_id": null
+                        "trigger_id": "tid_critical_speech"
                     }
                 ],
                 "trigger_id": null
@@ -717,7 +717,7 @@
                     {
                         "tid": "day13_answer2",
                         "nid": "node1",
-                        "trigger_id": null
+                        "trigger_id": "tid_critical_speech"
                     }
                 ],
                 "trigger_id": null

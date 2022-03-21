@@ -1,6 +1,40 @@
 {
     "texts": {
-        "01_read_moms_message": "I should read moms message.",
+        "read_moms_message": "I should read moms message.",
+        "goto_mom": "I should visit my mom",
+        "goto_pharmacy": "I should go to the pharmacy to buy mom's medicine.",
+        "bring_meds": "I should bring mom her medicine.",
+        "goto_jobcenter": "I should go to the jobcenter to get a job.",
+        "buy_choc": "I should buy chocolate in the store",
+        "bring_choc": "I should bring my girlfriend her chocolate",
+        "goto_work": "I should go to work now.",
+        "talk_to_friend": "I should go to the mall and meet my friend Lee Bai.",
+        "get_food": "I should get something to eat.",
+        "talk_to_friend_again": "I should talk to Lee Bai.",
+        "goto_bank": "I should go to the bank to ask about the blocked account.",
+        "goto_partner": "I should ask Ming An to give me her bus ticket so I can go into town.",
+        "unlock_account": "I should unlock my account",
+        "goto_office": "I should go to the office to ask for cost coverage.",
+        "goto_game_evening": "I should go to Ming An for the game evening.",
+        "talk_to_partner": "Ming An wants to talk to me. I should visit her.",
+        "meet_friend": "I should meet Lee Bai in the street south of the city busstation.",
+        "goto_mall": "I should go to the mall to meet Ming An.",
+        "talk_to_partner_again": "I should talk to Ming An.",
+        "talk_to_boss": "I should talk to my boss Inspector Wang",
+        "in_prison": "I wonder what's the file in front of me...",
+        "goto_parter": "I should visit Ming An.",
+        "partner_away": "I wonder what's in the file on Ming An's desk...",
+        "goto_bed": "I can go to bed now.",
+        "jobcenter_place": "The jobcenter is in the city. From the busstation I have to go east.",
+        "store_place": "The store is in the southeast of the city.",
+        "police_place": "The police station is in the east of the city.",
+        "partner_place": "My girlfriend Ming An lives in the green house in the east of the residential area.",
+        "pharmacy_place": "The pharmacy is the white house with the green cross in the southwest of the residential area.",
+        "mom_place": "Mom lives in the yellow house in the south of the neighbourhood.",
+        "mall_place": "The mall is the yellow building in the commercial area. I can take the bus to get there.",
+        "bank_place": "The bank is the big building in the southwest of the city.",
+        "office_place": "The office is in the southwest of the city. It is the small building north of the bank.",
+        "where": "Where do I have to go?",
         "x": "(end monolog)"
     },
     "graphs": {
@@ -8,6 +42,1140 @@
             "initial_nid": "node0",
             "node0": {
                 "tid": "01_read_moms_message",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "01_goto_mom": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_mom",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "mom_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "01_goto_pharmacy": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_pharmacy",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "pharmacy_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "01_bring_meds": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "bring_meds",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "mom_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "01_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "02_goto_jobcenter": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_jobcenter",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "jobcenter_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "02_buy_choc": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "buy_choc",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "store_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "02_bring_choc": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "bring_choc",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "partner_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "02_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "03_goto_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "police_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "03_talk_to_friend": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "talk_to_friend",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "mall_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "03_get_food": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "get_food",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "03_talk_to_friend_again": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "talk_to_friend_again",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "03_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "04_goto_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "police_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "04_buy_meds": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_pharmacy",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "pharmacy_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "04_goto_bank": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bank",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "bank_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "04_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "05_goto_partner": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_partner",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "partner_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "05_goto_bank": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bank",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "bank_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "05_unlock_account": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "unlock_account",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "05_goto_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "police_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "05_buy_meds": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_pharmacy",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "pharmacy_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "05_bring_meds": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "bring_meds",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "mom_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "05_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "06_goto_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "police_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "06_goto_office": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_office",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "office_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "06_goto_partner": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_game_evening",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "partner_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "06_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "07_talk_to_partner": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "talk_to_partner",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "partner_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "07_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "08_buy_meds": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_pharmacy",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "pharmacy_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "08_bring_meds": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "bring_meds",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "mom_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "08_meet_friend": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "meet_friend",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "08_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "09_goto_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "police_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "09_goto_mall": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_mall",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "police_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "09_get_food": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "get_food",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "09_talk_to_partner_again": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "talk_to_partner_again",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "09_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "10_goto_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "police_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "10_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "11_goto_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "police_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "11_talk_to_boss": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "talk_to_boss",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "11_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "12_goto_work": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_work",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "police_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "12_in_prison": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "in_prison",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "12_goto_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "13_goto_partner": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "goto_parter",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "where",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "partner_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "13_partner_away": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "partner_away",
                 "answers": [
                     {
                         "tid": "x",

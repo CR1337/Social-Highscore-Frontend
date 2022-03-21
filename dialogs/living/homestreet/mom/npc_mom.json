@@ -33,7 +33,7 @@
 		"day06_ask_for_application": "Is there anything new on the application yet?",
 		"day06_answer_dont_know": "I don't know.",
 		"day06_answer_takes_time": "I think it still needs time.",
-		"day06_response": "I hope this works out soon. Slowly these drugs are getting really expensive.",
+		"day06_response": "I hope this works out soon. Slowly these meds are getting really expensive.",
 		"day08_pre_meds": "Hello, good to see you. Have you been to the pharmacy to get my medication yet?",
 		"day08_pre_meds_answer": "No. I'm on my way.",
 		"day08_post_meds": "Thank you for the medication. You are a great help. I see they have become more expensive. I hope that the costs will be covered soon.",
@@ -42,7 +42,7 @@
 		"day11_initial": "What a tragedy with Lee Bai. I never expected anything like this from him. He was always such a sweet boy.",
 		"day12_initial": "I wish you every success in your mission today.",
 		"day12_post_work": "The mission was a complete success, I heard. It is really a pity about Lee Bai. I would never have expected something like this from him.",
-		"day13_initial": "Have you heard anything from Friend? I hope he is treated well there.",
+		"day13_initial": "Have you heard anything from Lee Bai? I hope he is treated well there.",
 		"x": "(end dialog)"
 	},
 	"graphs": {
