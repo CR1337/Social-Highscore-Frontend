@@ -29,22 +29,24 @@ func _create_big_label():
 
 func _create_small_label():
 	var label = _create_label()
-	label.rect_min_size = Vector2(540, 216)
+	label.rect_min_size = Vector2(452, 216)
 	return label
 
 func _create_texture(image_path):
 	var textureRect = TextureRect.new()
-	textureRect.rect_min_size = Vector2(128, 216)
-	textureRect.rect_size = Vector2(128, 216)
+	textureRect.rect_min_size = Vector2(216, 216)
+	textureRect.rect_size = Vector2(216, 216)
 	textureRect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	textureRect.expand = true
 
 	var image = Image.new()
 	image.load(image_path)
+	
 
 	var tmp_texture = ImageTexture.new()
 	tmp_texture.create_from_image(image)
 	textureRect.texture = tmp_texture
+	textureRect.rect_rotation = Config.image_rotation_angle
 	return textureRect
 
 func _create_background():

@@ -10,97 +10,97 @@
 10        android:targetSdkVersion="30" />
 11
 12    <supports-screens
-12-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:12:5-16:40
+12-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:12:5-16:40
 13        android:largeScreens="true"
-13-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:15:9-36
+13-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:15:9-36
 14        android:normalScreens="true"
-14-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:14:9-37
+14-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:14:9-37
 15        android:smallScreens="true"
-15-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:13:9-36
+15-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:13:9-36
 16        android:xlargeScreens="true" />
-16-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:16:9-37
+16-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:16:9-37
 17
 18    <uses-permission android:name="android.permission.CAMERA" />
-18-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:10:5-65
-18-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:10:22-62
+18-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:10:5-65
+18-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:10:22-62
 19    <uses-permission android:name="android.permission.INTERNET" />
-19-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:11:5-67
-19-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:11:22-64
+19-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:11:5-67
+19-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:11:22-64
 20    <uses-permission
-20-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:5-107
+20-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:5-107
 21        android:name="android.permission.READ_EXTERNAL_STORAGE"
-21-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:22-77
+21-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:22-77
 22        android:maxSdkVersion="29" />
-22-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:78-104
+22-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:78-104
 23    <uses-permission
-23-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:5-108
+23-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:5-108
 24        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-24-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:22-78
+24-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:22-78
 25        android:maxSdkVersion="29" />
-25-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:79-105
+25-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:79-105
 26
 27    <instrumentation
-27-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:14:5-19:62
+27-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:14:5-19:62
 28        android:name=".GodotInstrumentation"
-28-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:16:9-45
+28-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:16:9-45
 29        android:icon="@mipmap/icon"
-29-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:17:9-36
+29-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:17:9-36
 30        android:label="@string/godot_project_name_string"
-30-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:18:9-58
+30-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:18:9-58
 31        android:targetPackage="com.DarkAI.SocialHighscore" />
-31-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:19:9-59
+31-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:19:9-59
 32    <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
 33    <uses-feature
-33-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:19:5-21:35
+33-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:19:5-21:35
 34        android:glEsVersion="0x00020000"
-34-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:20:9-41
+34-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:20:9-41
 35        android:required="true" />
-35-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:21:9-32
+35-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:21:9-32
 36    <uses-feature
-36-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:16:5-18:35
+36-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:16:5-18:35
 37        android:name="android.hardware.camera"
-37-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:17:9-47
+37-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:17:9-47
 38        android:required="true" />
-38-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:18:9-32
+38-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:18:9-32
 39
 40    <application
-40-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:5-69:19
+40-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:5-69:19
 41        android:allowBackup="false"
-41-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:68-95
+41-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:68-95
 42        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-42-->[androidx.core:core:1.0.0] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\ee4998e5c44f8791e55e396202e7f092\core-1.0.0\AndroidManifest.xml:22:18-86
+42-->[androidx.core:core:1.0.0] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\ee4998e5c44f8791e55e396202e7f092\core-1.0.0\AndroidManifest.xml:22:18-86
 43        android:debuggable="true"
 44        android:icon="@mipmap/icon"
-44-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:181-208
+44-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:181-208
 45        android:label="@string/godot_project_name_string"
-45-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:18-67
+45-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:18-67
 46        android:requestLegacyExternalStorage="true" >
-46-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:136-180
+46-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:136-180
 47        <activity
-47-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:46:9-63:20
+47-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:46:9-63:20
 48            android:name="com.godot.game.GodotApp"
-48-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:47:13-37
+48-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:47:13-37
 49            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-49-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:52:13-141
+49-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:52:13-141
 50            android:label="@string/godot_project_name_string"
-50-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:48:13-62
+50-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:48:13-62
 51            android:launchMode="singleTask"
-51-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:50:13-44
+51-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:50:13-44
 52            android:resizeableActivity="false"
-52-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:53:13-47
+52-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:53:13-47
 53            android:screenOrientation="portrait"
-53-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:51:13-50
+53-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:51:13-50
 54            android:theme="@style/GodotAppSplashTheme" >
-54-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:49:13-55
+54-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:49:13-55
 55            <intent-filter>
-55-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:59:13-62:29
+55-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:59:13-62:29
 56                <action android:name="android.intent.action.MAIN" />
-56-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:60:17-69
-56-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:60:25-66
+56-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:60:17-69
+56-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:60:25-66
 57
 58                <category android:name="android.intent.category.LAUNCHER" />
-58-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:61:17-77
-58-->C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:61:27-74
+58-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:61:17-77
+58-->C:\Users\jessi\OneDrive\HPI\Semester05\Dark AI\Godot\Social-Highscore-Frontend\android\build\AndroidManifest.xml:61:27-74
 59            </intent-filter>
 60        </activity>
 61        <!-- Records the version of the Godot editor used for building -->
@@ -108,39 +108,39 @@
 63            android:name="org.godotengine.editor.version"
 64            android:value="3.3.4.stable" /> <!-- Records the version of the Godot library -->
 65        <meta-data
-65-->[godot-lib.debug.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:20:9-22:44
+65-->[godot-lib.debug.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:20:9-22:44
 66            android:name="org.godotengine.library.version"
-66-->[godot-lib.debug.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:21:13-59
+66-->[godot-lib.debug.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:21:13-59
 67            android:value="3.3.4.stable" />
-67-->[godot-lib.debug.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:22:13-41
+67-->[godot-lib.debug.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:22:13-41
 68
 69        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-69-->[godot-lib.debug.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:24:9-80
-69-->[godot-lib.debug.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:24:18-77
+69-->[godot-lib.debug.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:24:9-80
+69-->[godot-lib.debug.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:24:18-77
 70
 71        <meta-data
-71-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:21:9-23:78
+71-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:21:9-23:78
 72            android:name="org.godotengine.plugin.v1.GodotGetImage"
-72-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:22:13-67
+72-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:22:13-67
 73            android:value="com.gmail.lamelynx.godotgetimage.GodotGetImage" />
-73-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:23:13-75
+73-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:23:13-75
 74
 75        <provider
-75-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:25:9-33:20
+75-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:25:9-33:20
 76            android:name="com.gmail.lamelynx.godotgetimage.GGIFileProvider"
-76-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:26:13-76
+76-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:26:13-76
 77            android:authorities="com.DarkAI.SocialHighscore.ggi_FileProvider"
-77-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:27:13-68
+77-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:27:13-68
 78            android:exported="false"
-78-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:28:13-37
+78-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:28:13-37
 79            android:grantUriPermissions="true" >
-79-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:29:13-47
+79-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:29:13-47
 80            <meta-data
-80-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:30:13-32:67
+80-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:30:13-32:67
 81                android:name="android.support.FILE_PROVIDER_PATHS"
-81-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:31:17-67
+81-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:31:17-67
 82                android:resource="@xml/ggi_file_provider_paths" />
-82-->[GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:32:17-64
+82-->[GodotGetImage.release.aar] C:\Users\jessi\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:32:17-64
 83        </provider>
 84    </application>
 85

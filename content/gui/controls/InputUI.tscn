@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/gui/circle.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=2]
@@ -14,11 +14,6 @@
 [ext_resource path="res://assets/gui/arrow_left.png" type="Texture" id=12]
 [ext_resource path="res://assets/gui/arrow_down.png" type="Texture" id=13]
 [ext_resource path="res://assets/gui/menu.png" type="Texture" id=14]
-[ext_resource path="res://assets/gui/arrow_up_pressed.png" type="Texture" id=15]
-[ext_resource path="res://assets/gui/arrow_down_pressed.png" type="Texture" id=16]
-[ext_resource path="res://assets/gui/arrow_right_pressed.png" type="Texture" id=17]
-[ext_resource path="res://assets/gui/arrow_left_pressed.png" type="Texture" id=18]
-[ext_resource path="res://assets/gui/circle_pressed.png" type="Texture" id=19]
 
 [node name="InputUI" type="Node2D"]
 script = ExtResource( 4 )
@@ -33,30 +28,60 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuButton" type="TouchScreenButton" parent="."]
-position = Vector2( 11, 1035 )
-normal = ExtResource( 14 )
-pressed = ExtResource( 14 )
+[node name="MenuButton" type="Button" parent="."]
+margin_left = 2.51727
+margin_top = 1028.49
+margin_right = 78.5173
+margin_bottom = 1098.49
+icon = ExtResource( 14 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="UpButton" type="TouchScreenButton" parent="."]
-position = Vector2( 132, 1064 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 15 )
+[node name="UpButton" type="Button" parent="."]
+margin_left = 187.081
+margin_top = 1061.95
+margin_right = 295.081
+margin_bottom = 1163.95
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="DownButton" type="TouchScreenButton" parent="."]
-position = Vector2( 132, 1264 )
-normal = ExtResource( 13 )
-pressed = ExtResource( 16 )
+[node name="DownButton" type="Button" parent="."]
+margin_left = 193.197
+margin_top = 1275.14
+margin_right = 301.197
+margin_bottom = 1377.14
+icon = ExtResource( 13 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="LeftButton" type="TouchScreenButton" parent="."]
-position = Vector2( 32, 1164 )
-normal = ExtResource( 12 )
-pressed = ExtResource( 18 )
+[node name="LeftButton" type="Button" parent="."]
+margin_left = 85.9096
+margin_top = 1165.3
+margin_right = 193.91
+margin_bottom = 1267.3
+icon = ExtResource( 12 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="RightButton" type="TouchScreenButton" parent="."]
-position = Vector2( 232, 1164 )
-normal = ExtResource( 11 )
-pressed = ExtResource( 17 )
+[node name="RightButton" type="Button" parent="."]
+margin_left = 299.518
+margin_top = 1165.71
+margin_right = 407.518
+margin_bottom = 1267.71
+icon = ExtResource( 11 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="WhatNextButton" type="Button" parent="."]
 margin_left = 4.10005
@@ -69,15 +94,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ActionButton" type="TouchScreenButton" parent="."]
-position = Vector2( 639, 1132 )
-normal = ExtResource( 1 )
-pressed = ExtResource( 19 )
+[node name="ActionButton" type="Button" parent="."]
+margin_left = 606.496
+margin_top = 1127.37
+margin_right = 718.496
+margin_bottom = 1233.37
+icon = ExtResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PhoneButton" type="TouchScreenButton" parent="."]
-position = Vector2( 523, 1200 )
-normal = ExtResource( 9 )
-pressed = ExtResource( 9 )
+[node name="PhoneButton" type="Button" parent="."]
+margin_left = 493.71
+margin_top = 1239.57
+margin_right = 605.71
+margin_bottom = 1345.57
+icon = ExtResource( 9 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StatusUi" type="Node2D" parent="."]
 script = ExtResource( 10 )
@@ -137,17 +174,15 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="UpButton" to="." method="_on_UpButton_pressed"]
-[connection signal="released" from="UpButton" to="." method="_on_UpButton_released"]
-[connection signal="pressed" from="DownButton" to="." method="_on_DownButton_pressed"]
-[connection signal="released" from="DownButton" to="." method="_on_DownButton_released"]
-[connection signal="pressed" from="LeftButton" to="." method="_on_LeftButton_pressed"]
-[connection signal="released" from="LeftButton" to="." method="_on_LeftButton_released"]
-[connection signal="pressed" from="RightButton" to="." method="_on_RightButton_pressed"]
-[connection signal="released" from="RightButton" to="." method="_on_RightButton_released"]
+[connection signal="button_down" from="UpButton" to="." method="_on_UpButton_pressed"]
+[connection signal="button_up" from="UpButton" to="." method="_on_UpButton_released"]
+[connection signal="button_down" from="DownButton" to="." method="_on_DownButton_pressed"]
+[connection signal="button_up" from="DownButton" to="." method="_on_DownButton_released"]
+[connection signal="button_down" from="LeftButton" to="." method="_on_LeftButton_pressed"]
+[connection signal="button_up" from="LeftButton" to="." method="_on_LeftButton_released"]
+[connection signal="button_down" from="RightButton" to="." method="_on_RightButton_pressed"]
+[connection signal="button_up" from="RightButton" to="." method="_on_RightButton_released"]
 [connection signal="pressed" from="WhatNextButton" to="." method="_on_WhatNextButton_pressed"]
 [connection signal="pressed" from="ActionButton" to="." method="_on_ActionButton_pressed"]
-[connection signal="released" from="ActionButton" to="." method="_on_ActionButton_released"]
 [connection signal="pressed" from="PhoneButton" to="." method="_on_PhoneButton_pressed"]
-[connection signal="released" from="PhoneButton" to="." method="_on_PhoneButton_released"]
 [connection signal="pressed" from="DEBUGMenuButton" to="." method="_on_DEBUGMenuButton_pressed"]

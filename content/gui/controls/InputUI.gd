@@ -58,3 +58,4 @@ func _on_PhoneButton_pressed():
 
 func _on_PhoneButton_released():
 	InputBus.emit_signal("sig_phone_released")
+
