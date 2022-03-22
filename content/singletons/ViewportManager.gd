@@ -79,6 +79,9 @@ func _on_phone_pressed():
 	change_to_smartphone()
 
 func _on_menu_pressed():
+	change_to_menu()
+	
+func change_to_menu():
 	change_overlay(_game_menu)
 	
 func change_to_prolog():

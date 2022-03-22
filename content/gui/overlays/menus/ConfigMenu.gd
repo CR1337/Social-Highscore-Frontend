@@ -44,10 +44,10 @@ func _on_OkButton_pressed():
 	Config.server_port = _port_line_edit.text
 	Config.image_rotation_angle = _get_selected_angle()
 	Config.store_to_file()
-	ViewportManager.change_to_last()
+	ViewportManager.change_to_menu()
 
 func _on_CancelButton_pressed():
-	ViewportManager.change_to_last()
+	ViewportManager.change_to_menu()
 
 
 func _port_is_valid():

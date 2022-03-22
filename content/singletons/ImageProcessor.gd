@@ -71,14 +71,18 @@ func _on_got_image(image, rawImage):
 	var endpoint
 	var body
 	var do_request = true
+	
+	var angle = Config.image_rotation_angle + 180
+	if angle > 360:
+		angle -= 360
 
 	match _current_job_type:
 		JOB_TYPE.ANALYZE:
 			endpoint = "analyze"
-			body = {'img': b64_image, 'angle': Config.image_rotation_angle, 'job_id': _current_job_id}
+			body = {'img': b64_image, 'angle': angle, 'job_id': _current_job_id}
 		JOB_TYPE.VERIFY:
 			endpoint = "verify"
-			body = {'img0': b64_image, 'img1': _b64_reference_image, 'angle': Config.image_rotation_angle, 'job_id': _current_job_id}
+			body = {'img0': b64_image, 'img1': _b64_reference_image, 'angle': angle, 'job_id': _current_job_id}
 		JOB_TYPE.REFERENCE_IMAGE:
 			_reference_image = image
 			_b64_reference_image = b64_image
