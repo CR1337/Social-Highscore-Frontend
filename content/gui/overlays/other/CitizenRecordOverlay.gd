@@ -3,7 +3,7 @@ extends Node2D
 onready var _box_container = $Background/Margin/HBox/ScrollContainer/VBox
 
 func _ready():
-	call_deferred("_display_records")
+	call_deferred("display_records")
 
 func _clear():
 	for child in _box_container.get_children():

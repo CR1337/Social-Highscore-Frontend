@@ -19,7 +19,6 @@ const _info_text = """
 func _ready():
 	GameStateController.connect("sig_score_changed", self, "_on_score_changed")
 	GameStateController.connect("sig_score_class_changed", self, "_on_score_class_changed")
-	call_deferred("_DEBUG_add_records")
 
 func _display_score():
 	_score_label.text = str(GameStateController.score)

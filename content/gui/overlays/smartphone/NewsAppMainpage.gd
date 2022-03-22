@@ -12,8 +12,6 @@ func _ready():
 	NewsController.connect("sig_publish_news", self, "_on_publish_news")
 	call_deferred("update_mainpage")
 
-	call_deferred("_DEBUG_add_news")
-
 func _add_button(title, news_index):
 	var button = Button.new()
 	button.text = title

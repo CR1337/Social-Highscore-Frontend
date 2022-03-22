@@ -67,7 +67,10 @@ shader = SubResource( 1 )
 shader_param/opacity = 0.0
 shader_param/color = Vector3( 1, 0, 0 )
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="InputUI" parent="." instance=ExtResource( 41 )]
 z_index = 30

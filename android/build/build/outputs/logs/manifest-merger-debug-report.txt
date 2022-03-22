@@ -36,9 +36,9 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\HPI\.gradle\ca
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\684ec28b4d47b99702b87e0142b87abc\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\d3d8c18a79b67d645bddfdd6fffb8703\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f9e8569deeaf180b86f7562a710bfef1\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:2:1-30:12
 	package
 		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:4:5-29
 		INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml
@@ -76,7 +76,6 @@ REJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project
 		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:16:9-37
 uses-feature#0x00020000
 ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:19:5-21:35
-REJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:19:5-21:35
 	android:glEsVersion
 		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:20:9-41
 	android:required
@@ -107,12 +106,12 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\HP
 	android:allowBackup
 		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:31:68-95
 	tools:replace
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:23:9-61
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:22:9-61
 meta-data#xr_mode_metadata_name
 ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:42:9-44:54
 REJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:42:9-44:54
 	tools:node
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:26:20-39
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:25:20-39
 	android:value
 		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:44:13-51
 	android:name
@@ -143,14 +142,14 @@ MERGED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\S
 		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:49:13-55
 		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:49:13-55
 	tools:replace
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:27:58-99
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:26:58-99
 	android:name
 		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:47:13-37
 meta-data#com.oculus.vr.focusaware
 ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:57:13-88
 REJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:57:13-88
 	tools:node
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:28:24-43
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:27:24-43
 	android:value
 		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml:57:64-85
 	android:name
@@ -231,51 +230,45 @@ INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project
 	android:minSdkVersion
 		INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\AndroidManifest.xml
 		INJECTED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml
-uses-feature#0x00030000
-ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:10:5-78
-	android:glEsVersion
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:10:19-51
-	android:required
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:10:52-75
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:11:5-65
+ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:10:5-65
 MERGED from [GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:14:5-65
 MERGED from [GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:14:5-65
 	android:name
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:11:22-62
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:10:22-62
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:5-67
+ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:22-64
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:11:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:5-107
+ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:5-107
 MERGED from [GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:12:5-80
 MERGED from [GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:12:5-80
 	android:maxSdkVersion
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:78-104
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:78-104
 	android:name
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:22-77
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:12:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:14:5-108
+ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:5-108
 MERGED from [GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:13:5-81
 MERGED from [GodotGetImage.release.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\f290e1b03af2c1180fc7db03768cd548\jetified-GodotGetImage.release\AndroidManifest.xml:13:5-81
 	android:maxSdkVersion
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:14:79-105
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:79-105
 	android:name
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:14:22-78
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:13:22-78
 instrumentation
-ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:15:5-20:62
+ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:14:5-19:62
 REJECTED from [godot-lib.debug.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:11:5-15:57
 	tools:node
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:16:9-29
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:15:9-29
 	android:label
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:19:9-58
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:18:9-58
 	android:icon
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:18:9-36
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:17:9-36
 	android:targetPackage
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:20:9-59
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:19:9-59
 	android:name
-		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:17:9-45
+		ADDED from C:\Users\HPI\OneDrive\STUDIUM\HPI\Semester_5\Dark AI\Godot Project\Social-Highscore-Frontend\android\build\src\debug\AndroidManifest.xml:16:9-45
 meta-data#org.godotengine.library.version
 ADDED from [godot-lib.debug.aar] C:\Users\HPI\.gradle\caches\transforms-2\files-2.1\ffbaff7c2eb1d8319c1ccff75db3c820\jetified-godot-lib.debug\AndroidManifest.xml:20:9-22:44
 	android:value

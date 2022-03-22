@@ -44,8 +44,6 @@ StoryController10="*res://content/singletons/story_controllers/StoryController10
 StoryController11="*res://content/singletons/story_controllers/StoryController11.gd"
 StoryController12="*res://content/singletons/story_controllers/StoryController12.gd"
 StoryController13="*res://content/singletons/story_controllers/StoryController13.gd"
-StoryController14="*res://content/singletons/story_controllers/StoryController14.gd"
-StoryController15="*res://content/singletons/story_controllers/StoryController15.gd"
 MinigameController="*res://content/singletons/MinigameController.gd"
 
 [display]
@@ -76,5 +74,7 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
 quality/filters/use_nearest_mipmap_filter=true
 environment/default_environment="res://default_env.tres"
