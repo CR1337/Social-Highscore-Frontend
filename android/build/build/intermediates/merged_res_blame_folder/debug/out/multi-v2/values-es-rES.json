@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\jessi\\OneDrive\\HPI\\Semester05\\Dark AI\\Godot\\Social-Highscore-Frontend\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rES\\values-es-rES.xml",
+            "outputFile": "C:\\Users\\HPI\\OneDrive\\STUDIUM\\HPI\\Semester_5\\Dark AI\\Godot Project\\Social-Highscore-Frontend\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rES\\values-es-rES.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jessi\\OneDrive\\HPI\\Semester05\\Dark AI\\Godot\\Social-Highscore-Frontend\\android\\build\\res\\values-es-rES\\godot_project_name_string.xml",
+                    "source": "C:\\Users\\HPI\\OneDrive\\STUDIUM\\HPI\\Semester_5\\Dark AI\\Godot Project\\Social-Highscore-Frontend\\android\\build\\res\\values-es-rES\\godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",
