@@ -74,6 +74,7 @@ func _on_got_image(image, rawImage):
 	
 	var angle = Config.image_rotation_angle
 	if NativeCameraController.runs_on_android():
+		# for some reason images on android are rotated by 180°
 		angle += 180
 		if angle > 360:
 			angle -= 360
