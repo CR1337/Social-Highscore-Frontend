@@ -27,9 +27,12 @@ func _received_image(dict):
 		current_image.load_jpg_from_buffer(image)
 		yield(get_tree(), "idle_frame")
 		emit_signal("sig_got_image", current_image, image)
+		
+func runs_on_android():
+	return true if _image_plugin else false
 
 func take_image():
-	if _image_plugin:
+	if runs_on_android():
 		EventBus.emit_signal("sig_debug_error", "take_picture")
 		_image_plugin.getCameraImage()
 	else:

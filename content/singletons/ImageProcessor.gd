@@ -72,9 +72,11 @@ func _on_got_image(image, rawImage):
 	var body
 	var do_request = true
 	
-	var angle = Config.image_rotation_angle + 180
-	if angle > 360:
-		angle -= 360
+	var angle = Config.image_rotation_angle
+	if NativeCameraController.runs_on_android():
+		angle += 180
+		if angle > 360:
+			angle -= 360
 
 	match _current_job_type:
 		JOB_TYPE.ANALYZE:
