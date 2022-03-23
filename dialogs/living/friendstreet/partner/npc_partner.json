@@ -111,7 +111,7 @@
         "day02_initial": {
             "initial_nid": "node0",
             "node0": {
-                "tid": "day02_idle",
+                "tid": "day02_initial",
                 "answers": [
                     {
                         "tid": "x",
