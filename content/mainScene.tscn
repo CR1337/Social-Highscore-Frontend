@@ -206,9 +206,9 @@ leave_right_player_position = Vector2( 0, -1 )
 leave_top_area_path = NodePath("../CityShadystreetArea")
 leave_top_player_position = Vector2( -1, 17 )
 leave_office_area_path = NodePath("../CityBankstreetOfficeArea")
-leave_office_player_position = Vector2( 7, 17 )
+leave_office_player_position = Vector2( 7, 16 )
 leave_bank_area_path = NodePath("../CityBankstreetBankArea")
-leave_bank_player_position = Vector2( 7, 17 )
+leave_bank_player_position = Vector2( 7, 16 )
 
 [node name="CityBankstreetBankArea" parent="Areas" instance=ExtResource( 25 )]
 position = Vector2( 279.298, -2530.93 )
