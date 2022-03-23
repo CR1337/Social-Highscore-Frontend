@@ -1,5 +1,7 @@
 # Social Highscore
 
+Autoren: Jessica Dierking, Christian Raue
+
 ## Inhaltsverzeichnis
 1. [Motivation & Hintergrund](#motivation)
 2. [Über das Projekt](#about)
