@@ -5,6 +5,32 @@ onready var _tutorial_texture_rect = $Background/Margin/VBox/TutorialTextureRect
 onready var _yes_button = $Background/Margin/VBox/HBox/YesButton
 onready var _no_button = $Background/Margin/VBox/HBox/NoButton
 
+export var dpad_picture: Texture
+export var action_picture: Texture
+export var weekday_picture: Texture
+export var hunger_picture: Texture
+export var shopping_picture: Texture
+export var sleep_picture: Texture
+export var smartphone_picture: Texture
+export var banking_picture: Texture
+export var messenger_picture: Texture
+export var citizen_picture: Texture
+export var news_picture: Texture
+
+onready var _tutorial_pictures = {
+	"tutorial_dpad": dpad_picture,
+	"tutorial_action": action_picture,
+	"tutorial_weekday": weekday_picture,
+	"tutorial_hunger": hunger_picture,
+	"tutorial_shopping": shopping_picture,
+	"tutorial_sleep": sleep_picture,
+	"tutorial_smartphone": smartphone_picture,
+	"tutorial_banking_app": banking_picture,
+	"tutorial_messenger_app": messenger_picture,
+	"tutorial_citizen_app": citizen_picture,
+	"tutorial_news_app": news_picture
+}
+
 var _text_dict: Dictionary
 const _text_dict_filename = "res://texts/prolog.json"
 
@@ -90,11 +116,12 @@ func _next_state():
 
 
 func _load_tutorial_picture():
-	var texture = ImageTexture.new()
-	var image = Image.new()
-	image.load("res://assets/tutorial/" + _states[_state] + ".png")
-	texture.create_from_image(image)
-	_tutorial_texture_rect.texture = texture
+#	var texture = ImageTexture.new()
+#	var image = Image.new()
+#	image.load("res://assets/tutorial/" + _states[_state] + ".png")
+#	texture.create_from_image(image)
+#	_tutorial_texture_rect.texture = texture
+	_tutorial_texture_rect.texture = _tutorial_pictures[_states[_state]]
 	
 func _start_game():
 	TrafficController.start_cars()

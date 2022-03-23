@@ -41,12 +41,6 @@ func _hide():
 func _show():
 	ViewportManager.change_to_notification()
 	
-func timer_elapsed(handle):
-	if _current_notification == null:
-		return
-	if not _current_notification['important']:
-		_show_next()
-	
 func _show_next():
 	_notifications[_current_notification['type']] = null
 	_change_current_notification(_next_notification())
@@ -75,7 +69,6 @@ func _change_current_notification(new_notification):
 			_notification_sprite.animation = 'important'
 		else:
 			_notification_sprite.animation = 'default'
-			TimeController.setTimer(10, self, "timer_elapsed")
 		match new_notification['type']:
 			'news':
 				_icon_texture.texture = news_icon

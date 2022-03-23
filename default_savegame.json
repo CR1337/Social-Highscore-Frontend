@@ -1918,7 +1918,7 @@
     },
     "/root/GameStateController": {
         "score": 1000,
-        "money": 200,
+        "money": 420,
         "hunger": 0,
         "hunger_timer_handle": -1,
         "days_without_mom": 0,

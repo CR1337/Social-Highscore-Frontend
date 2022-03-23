@@ -1,12 +1,12 @@
 extends Node
 
 var score = 1000
-var money = 200
+var money = 420
 
 const ticket_base_price = 10
 var ticket_bought = false
 
-const _work_loan = 150
+const _work_loan = 153
 
 var current_preferred_emotions = []
 var current_forbidden_emotions = []
@@ -290,7 +290,7 @@ func _handle_bank_loan(trigger_id):
 
 const _punishable_days_without_mom = 2
 var days_without_mom = 0
-const _punishable_days_without_fitness = 2
+const _punishable_days_without_fitness = 3
 var _days_without_fitness = 0
 
 const _rent_price = 23
@@ -314,14 +314,14 @@ func _pay_rent():
 	
 func _handle_debt_score():
 	if money < 0:
-		score = int(-money * _debt_score_factor)
-		CitizenRecord.add_dept(score, money)
+		var dscore = int(money * _debt_score_factor)
+		CitizenRecord.add_dept(dscore, money)
 	
 func _handle_mom_vists():
 	if days_without_mom > _punishable_days_without_mom:
 		var days_too_much = days_without_mom - _punishable_days_without_mom
-		var score = -30 - 20 * days_too_much
-		CitizenRecord.add_didnt_visit_mom(score, days_too_much)
+		var dscore = -30 - 20 * days_too_much
+		CitizenRecord.add_didnt_visit_mom(dscore, days_too_much)
 	
 func _handle_fitness_visits():
 	if _days_without_fitness > _punishable_days_without_fitness:

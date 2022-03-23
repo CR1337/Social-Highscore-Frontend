@@ -36,9 +36,9 @@ custom_constants/separation = 150
 alignment = 1
 
 [node name="ContinueButton" type="Button" parent="Background/Margin/VBox"]
-margin_top = 42.0
+margin_top = 181.0
 margin_right = 728.0
-margin_bottom = 170.0
+margin_bottom = 309.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
@@ -48,9 +48,9 @@ __meta__ = {
 }
 
 [node name="ConfigButton" type="Button" parent="Background/Margin/VBox"]
-margin_top = 320.0
+margin_top = 459.0
 margin_right = 728.0
-margin_bottom = 448.0
+margin_bottom = 587.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
@@ -60,6 +60,7 @@ __meta__ = {
 }
 
 [node name="DebugCitizenRecordButton" type="Button" parent="Background/Margin/VBox"]
+visible = false
 margin_top = 598.0
 margin_right = 728.0
 margin_bottom = 726.0
@@ -72,9 +73,9 @@ __meta__ = {
 }
 
 [node name="NewGameButton" type="Button" parent="Background/Margin/VBox"]
-margin_top = 876.0
+margin_top = 737.0
 margin_right = 728.0
-margin_bottom = 1004.0
+margin_bottom = 865.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
@@ -84,9 +85,9 @@ __meta__ = {
 }
 
 [node name="QuitButton" type="Button" parent="Background/Margin/VBox"]
-margin_top = 1154.0
+margin_top = 1015.0
 margin_right = 728.0
-margin_bottom = 1282.0
+margin_bottom = 1143.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0

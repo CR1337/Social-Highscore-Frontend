@@ -17,7 +17,7 @@ func _add_button(title, news_index):
 	button.text = title
 	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	button.rect_min_size = Vector2(0, _button_height)
-	button.mouse_filter = Control.MOUSE_FILTER_PASS
+	# button.mouse_filter = Control.MOUSE_FILTER_PASS
 	button.add_font_override("font", load(_font_path))
 	button.connect("pressed", self, "_on_news_button_pressed", [news_index])
 	_buttons.append(button)

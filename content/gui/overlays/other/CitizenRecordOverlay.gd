@@ -568,5 +568,5 @@ func _display_lied_to_boss(record):
 	_box_container.add_child(new_background)
 
 func _on_Button_pressed():
-	# TODO: change to Gameover Overlay
-	ViewportManager.change_to_transparent()
+	SaveGameController.delete_game()
+	get_tree().quit()

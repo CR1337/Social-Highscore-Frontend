@@ -40,16 +40,16 @@ rect_min_size = Vector2( 728, 1328 )
 
 [node name="VBox" type="VBoxContainer" parent="Background/Margin/HBox/ScrollContainer"]
 margin_right = 728.0
-margin_bottom = 1328.0
-rect_min_size = Vector2( 728, 1328 )
+margin_bottom = 1300.0
+rect_min_size = Vector2( 728, 1300 )
 custom_constants/separation = 20
 
 [node name="Button" type="Button" parent="Background/Margin/HBox"]
-margin_top = 1332.0
+margin_top = 1310.0
 margin_right = 728.0
-margin_bottom = 1372.0
+margin_bottom = 1374.0
 custom_fonts/font = ExtResource( 4 )
-text = "Back"
+text = "Exit Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }

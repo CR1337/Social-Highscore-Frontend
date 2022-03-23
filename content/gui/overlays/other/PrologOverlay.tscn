@@ -1,10 +1,32 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=1]
 [ext_resource path="res://content/gui/overlays/other/PrologOverlay.gd" type="Script" id=2]
+[ext_resource path="res://assets/tutorial/tutorial_messenger_app.png" type="Texture" id=3]
+[ext_resource path="res://assets/tutorial/tutorial_weekday.png" type="Texture" id=4]
+[ext_resource path="res://assets/tutorial/tutorial_dpad.png" type="Texture" id=5]
+[ext_resource path="res://assets/tutorial/tutorial_action.png" type="Texture" id=6]
+[ext_resource path="res://assets/tutorial/tutorial_news_app.png" type="Texture" id=7]
+[ext_resource path="res://assets/tutorial/tutorial_banking_app.png" type="Texture" id=8]
+[ext_resource path="res://assets/tutorial/tutorial_citizen_app.png" type="Texture" id=9]
+[ext_resource path="res://assets/tutorial/tutorial_shopping.png" type="Texture" id=10]
+[ext_resource path="res://assets/tutorial/tutorial_hunger.png" type="Texture" id=11]
+[ext_resource path="res://assets/tutorial/tutorial_sleep.png" type="Texture" id=12]
+[ext_resource path="res://assets/tutorial/tutorial_smartphone.png" type="Texture" id=13]
 
 [node name="PrologOverlay" type="Node2D"]
 script = ExtResource( 2 )
+dpad_picture = ExtResource( 5 )
+action_picture = ExtResource( 6 )
+weekday_picture = ExtResource( 4 )
+hunger_picture = ExtResource( 11 )
+shopping_picture = ExtResource( 10 )
+sleep_picture = ExtResource( 12 )
+smartphone_picture = ExtResource( 13 )
+banking_picture = ExtResource( 8 )
+messenger_picture = ExtResource( 3 )
+citizen_picture = ExtResource( 9 )
+news_picture = ExtResource( 7 )
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 768.0
@@ -37,7 +59,7 @@ alignment = 1
 
 [node name="TextLabel" type="RichTextLabel" parent="Background/Margin/VBox"]
 margin_right = 728.0
-margin_bottom = 566.0
+margin_bottom = 405.0
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 1 )
 meta_underlined = false
@@ -45,12 +67,13 @@ text = "efvefv
 "
 
 [node name="TutorialTextureRect" type="TextureRect" parent="Background/Margin/VBox"]
-margin_top = 598.0
+margin_top = 437.0
 margin_right = 728.0
 margin_bottom = 1165.0
+rect_min_size = Vector2( 0, 728 )
 size_flags_vertical = 3
 expand = true
-stretch_mode = 5
+stretch_mode = 6
 
 [node name="HBox" type="HBoxContainer" parent="Background/Margin/VBox"]
 margin_top = 1197.0

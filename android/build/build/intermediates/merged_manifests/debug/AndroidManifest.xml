@@ -3,8 +3,7 @@
     package="com.DarkAI.SocialHighscore"
     android:installLocation="auto"
     android:versionCode="1"
-    android:versionName="1.0" >
-
+    android:versionName="1.0" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="30" />
@@ -14,6 +13,10 @@
         android:normalScreens="true"
         android:smallScreens="true"
         android:xlargeScreens="true" />
+
+    <uses-feature
+        android:glEsVersion="0x00030000"
+        android:required="true" />
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -29,10 +32,7 @@
         android:icon="@mipmap/icon"
         android:label="@string/godot_project_name_string"
         android:targetPackage="com.DarkAI.SocialHighscore" />
-    <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />

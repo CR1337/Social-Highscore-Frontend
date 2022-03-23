@@ -3,16 +3,14 @@
 	"ask_tutorial": "Do you need a short introduction to the controls?",
 	"tutorial_dpad": "The directional pad lets you move around the world.",
 	"tutorial_action": "The action button allows interaction with objects and people.",
-
 	"tutorial_weekday": "Here you can see the current weekday.",
 	"tutorial_hunger": "This icon indicates your hunger. When the timer starts you should immediately eat something to not end in the hospital.",
 	"tutorial_shopping": "This icon indicates whether you have items in your cart during shopping.",
 	"tutorial_sleep": "When this icons shows up, you have nothing important left to do on this day and can go to sleep in your bed.",
-
 	"tutorial_smartphone": "Use your smartphone with this button.",
 	"tutorial_banking_app": "Here you open the banking app. It provides you with an overview of your current balance and your last transactions.",
 	"tutorial_messenger_app": "This is the messenger app. It allows you to receive messages from your contacts.",
-	"tutorial_citzen_app": "Here you launch the Citizen app to see check your score.",
+	"tutorial_citizen_app": "Here you launch the Citizen app to see check your score.",
 	"tutorial_news_app": "This is the News app. With this app you will stay informed about the current events of the day. It also allows you to share your feelings about the latest news with your fellow citizens.",
 	"start_game": "You start in front of your house...",
 	"finished": ""

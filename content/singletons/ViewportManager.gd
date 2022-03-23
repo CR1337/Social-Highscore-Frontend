@@ -64,6 +64,8 @@ func restore_state(state):
 
 	_current_area = new_current_area
 
+	if get_node(state['current_overlay']) == _prolog_overlay:
+		_prolog_overlay.reset()
 	change_overlay(get_node(state['current_overlay']))
 	_last_overlay = get_node(state['last_overlay'])
 
