@@ -1,0 +1,649 @@
+{
+	"texts": {
+		"day01_hello": "Hi Zheng Bo, glad you came. You look good. How are you doing?",
+		"day01_hello_answer1": "Quite well. You?",
+		"day01_hello_answer2": "I'm ok.",
+		"day01_ask_meds": "You look a little tired today. I'm not feeling so well, unfortunately. My illness is getting to me again. Can you please go to the pharmacy to pick up my medication?",
+		"ask_meds_ok": "Of course.",
+		"ask_meds_where": "Where do I have to go?",
+		"where_pharmacy": "You'll find the pharmacy west of my house. You can't miss it.",
+		"day01_ask_meds_again": "Can you please go to the pharmacy to pick up my medication?",
+		"day01_thanks": "Thank you so much, you are a treasure. What would I do without you.",
+		"day01_thanks_answer": "Always happy to",
+		"day01_check_fridge": "Thanks again for bringing me my meds.  Have you actually eaten anything today? If not, check your fridge.",
+		"day01_fridge_answer": "Thanks for the hint [sarcastic]",
+		"day01_check_police": "I heard that the police are looking for new recruits. Why don't you ask at the job center tomorrow if they'll hire you?",
+		"day02_get_job": "How nice that you come to visit me. I am feeling much better thanks to the medication. Weren't you going to get a new job today?",
+		"day02_proud": "It's nice that my little one is now going to be a policeman.",
+		"day03_pre_work": "Good to hear that you have a new job now. I wish you lots of fun.",
+		"day03_post_work": "How was work?",
+		"day03_answer_good": "It was very good.",
+		"day03_answer_bad": "I don't like my boss.",
+		"day03_reaction_good": "I'm glad to hear that darling.",
+		"day03_reaction_bad": "Get a grip. I'm sure he's a nice guy.",
+		"day04_pre_message": "I don't feel so good today. But don't worry. It will be all right. ",
+		"day04_post_message": "Did you bring my medication?",
+		"day04_post_pharmacy": "What? Your account is blocked? Maybe you should go to the bank to clarify this.",
+		"day04_post_bank": "The bank is already closed? There's nothing we can do. Then I'll have to endure another day without my medication.",
+		"day05_pre_bank": "Why don't you go to the bank and sort it out with your account. I really need my medication urgently.",
+		"day05_post_bank": "Good that your account is unlocked again. Now please get my medication from the pharmacy.",
+		"day05_thanks": "Thanks for the meds. What would I do without you.",
+		"day06_go_to_office": "Why don't you drop by the office after work today and ask if the costs for my medication can be covered?",
+		"day06_post_work_to_office": "Have you already been to the office? It would be really nice if the costs could be covered. The medication is really expensive in the long run.",
+		"day06_ask_for_application": "Is there anything new on the application yet?",
+		"day06_answer_dont_know": "I don't know.",
+		"day06_answer_takes_time": "I think it still needs time.",
+		"day06_response": "I hope this works out soon. Slowly these meds are getting really expensive.",
+		"day08_pre_meds": "Hello, good to see you. Have you been to the pharmacy to get my medication yet?",
+		"day08_pre_meds_answer": "No. I'm on my way.",
+		"day08_post_meds": "Thank you for the medication. You are a great help. I see they have become more expensive. I hope that the costs will be covered soon.",
+		"day09_small_talk": "Nice of you to visit me again. How are you?",
+		"day09_fine": "I'm fine",
+		"day11_initial": "What a tragedy with Lee Bai. I never expected anything like this from him. He was always such a sweet boy.",
+		"day12_initial": "I wish you every success in your mission today.",
+		"day12_post_work": "The mission was a complete success, I heard. It is really a pity about Lee Bai. I would never have expected something like this from him.",
+		"day13_initial": "Have you heard anything from Lee Bai? I hope he is treated well there.",
+		"x": "(end dialog)"
+	},
+	"graphs": {
+		"day01_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day01_hello",
+				"answers": [
+					{
+						"tid": "day01_hello_answer1",
+						"nid": "node1",
+						"trigger_id": "tid_day01_talked_to_mom"
+					},
+					{
+						"tid": "day01_hello_answer2",
+						"nid": "node1",
+						"trigger_id": "tid_day01_talked_to_mom"
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "day01_ask_meds",
+				"answers": [
+					{
+						"tid": "ask_meds_ok",
+						"nid": null,
+						"trigger_id": null
+					},
+					{
+						"tid": "ask_meds_where",
+						"nid": "node2",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node2": {
+				"tid": "where_pharmacy",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day01_waiting_for_meds": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day01_ask_meds_again",
+				"answers": [
+					{
+						"tid": "ask_meds_ok",
+						"nid": null,
+						"trigger_id": null
+					},
+					{
+						"tid": "ask_meds_where",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "where_pharmacy",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day01_waiting_for_bought_meds": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day01_thanks",
+				"answers": [
+					{
+						"tid": "day01_thanks_answer",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_day01_brought_meds"
+			}
+		},
+		"day01_got_meds": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day01_check_fridge",
+				"answers": [
+					{
+						"tid": "day01_fridge_answer",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "day01_check_police",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day02_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day02_get_job",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day02_proud": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day02_proud",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day03_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day03_pre_work",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day03_post_work": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day03_post_work",
+				"answers": [
+					{
+						"tid": "day03_answer_good",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day03_answer_bad",
+						"nid": "node2",
+						"trigger_id": "tid_critical_speach"
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "day03_reaction_good",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node2": {
+				"tid": "day03_reaction_bad",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day04_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day04_pre_message",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day04_post_message": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day04_post_message",
+				"answers": [
+					{
+						"tid": "ask_meds_ok",
+						"nid": null,
+						"trigger_id": null
+					},
+					{
+						"tid": "ask_meds_where",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "where_pharmacy",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day04_post_pharmacy": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day04_post_pharmacy",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day04_post_bank": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day04_post_bank",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day05_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day05_pre_bank",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day05_unlocked_account": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day05_post_bank",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day05_bring_meds": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day05_thanks",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": "tid_day05_brought_meds"
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day05_got_meds": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day05_thanks",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day06_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_go_to_office",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day06_post_work": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_post_work_to_office",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day06_post_application": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day07_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day08_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day08_pre_meds",
+				"answers": [
+					{
+						"tid": "day08_pre_meds_answer",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day08_post_meds": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day08_post_meds",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": "tid_day08_brought_meds"
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day08_got_meds": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day09_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day09_small_talk",
+				"answers": [
+					{
+						"tid": "day09_fine",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node2",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node2",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node2": {
+				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day10_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day06_ask_for_application",
+				"answers": [
+					{
+						"tid": "day06_answer_dont_know",
+						"nid": "node1",
+						"trigger_id": null
+					},
+					{
+						"tid": "day06_answer_takes_time",
+						"nid": "node1",
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			},
+			"node1": {
+				"tid": "day06_response",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day11_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day11_initial",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day12_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day12_initial",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day12_post_work": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day12_post_work",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		},
+		"day13_initial": {
+			"initial_nid": "node0",
+			"node0": {
+				"tid": "day13_initial",
+				"answers": [
+					{
+						"tid": "x",
+						"nid": null,
+						"trigger_id": null
+					}
+				],
+				"trigger_id": "tid_visited_mom"
+			}
+		}
+	}
+}

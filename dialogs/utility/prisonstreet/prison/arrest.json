@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "0": "Officer: You are sitting here because your community score has dropped to 0. You will now spend some time here in the reformatory so that you have time to reconsider your previous behaviour and become a better citizen.\n\nThis file summarises the actions that have led to your current situation. Read it through at your leisure and reflect on what you could have done better.",
+        "x": "(end dialog)"
+    },
+    "graphs": {
+        "arrested": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

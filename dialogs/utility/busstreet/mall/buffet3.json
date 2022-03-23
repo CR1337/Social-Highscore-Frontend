@@ -1,0 +1,28 @@
+{
+    "texts": {
+        "buy": "Do you want to eat fruits?",
+        "yes": "Yes",
+        "no": "No"
+    },
+    "graphs": {
+        "buy": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "buy",
+                "answers": [
+                    {
+                        "tid": "yes",
+                        "nid": null,
+                        "trigger_id": "tid_mall_buffet_fruits"
+                    },
+                    {
+                        "tid": "no",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

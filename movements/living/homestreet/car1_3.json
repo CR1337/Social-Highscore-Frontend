@@ -1,0 +1,19 @@
+{
+    "state0": {
+        "new_start_position_x": 13,
+        "new_start_position_y": 7,
+        "sequence": [
+            {
+                "direction": "left",
+                "repeats": 7,
+                "trigger_id": null
+            },
+            {
+                "direction": "up",
+                "repeats": 11,
+                "trigger_id": "tid_living_busstreet_car_1_4_start"
+            }
+        ],
+        "repeats": 1
+    }
+}

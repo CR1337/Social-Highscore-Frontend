@@ -1,0 +1,137 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/gui/news_app.png" type="Texture" id=1]
+[ext_resource path="res://content/gui/overlays/smartphone/NotificationOverlay.gd" type="Script" id=2]
+[ext_resource path="res://assets/gui/action_button_normal.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/gui/messenger_app.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui/citizen_app.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/banking_app.png" type="Texture" id=7]
+[ext_resource path="res://assets/gui/notification_sprites.png" type="Texture" id=8]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 768, 128 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 768, 128 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 768, 128 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 128, 768, 128 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "important",
+"speed": 2.0
+} ]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[node name="NotificationOverlay" type="Node2D" groups=[
+"persistent",
+]]
+script = ExtResource( 2 )
+news_icon = ExtResource( 1 )
+bank_icon = ExtResource( 7 )
+score_icon = ExtResource( 6 )
+message_icon = ExtResource( 5 )
+default_icon = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 768.0
+margin_bottom = 128.0
+mouse_filter = 2
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NotificationSprite" type="AnimatedSprite" parent="Background"]
+frames = SubResource( 5 )
+playing = true
+centered = false
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+margin_right = 768.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 768, 128 )
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Background/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 748.0
+margin_bottom = 108.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IconTexture" type="TextureRect" parent="Background/Margin/HBox"]
+margin_right = 64.0
+margin_bottom = 88.0
+texture = ExtResource( 1 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NotificationLabel" type="RichTextLabel" parent="Background/Margin/HBox"]
+margin_left = 74.0
+margin_right = 720.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 646, 88 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "This is a Notification Message with a long text... "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 768.0
+margin_bottom = 128.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_colors/font_color_disabled = Color( 0.305882, 0.305882, 0.305882, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

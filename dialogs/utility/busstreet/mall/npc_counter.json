@@ -1,0 +1,20 @@
+{
+    "texts": {
+        "0": "Hey, how about a workout here at Hyper Fit? One hour costs only §§GameStateController.gym_price§§ ¥. ",
+        "1": "For sure",
+        "2": "Maybe later"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {"tid": "1", "nid": null, "trigger_id": "tid_gym_visit"},
+                    {"tid": "2", "nid": null, "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

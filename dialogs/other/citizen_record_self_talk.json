@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "0": "Oh, there are documents here. But I'm sure Ming An wouldn't like it if I looked at them now.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "blocked": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

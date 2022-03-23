@@ -1,0 +1,19 @@
+{
+    "state0": {
+        "new_start_position_x": -1,
+        "new_start_position_y": 11,
+        "sequence": [
+            {
+                "direction": "right",
+                "repeats": 4,
+                "trigger_id": null
+            },
+            {
+                "direction": "down",
+                "repeats": 7,
+                "trigger_id": "tid_city_policestreet_car_8_2_start"
+            }
+        ],
+        "repeats": 1
+    }
+}

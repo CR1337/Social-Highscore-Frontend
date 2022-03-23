@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=1]
+[ext_resource path="res://content/gui/overlays/other/ReferenceImageMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/gui/rotate_clockwise.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui/rotate_counterclockwise.png" type="Texture" id=4]
+
+[node name="ReferenceImageMenu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 768.0
+margin_bottom = 1408.0
+mouse_filter = 2
+color = Color( 0.257813, 0.257813, 0.257813, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="Background"]
+margin_right = 768.0
+margin_bottom = 1365.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Background/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 748.0
+margin_bottom = 1345.0
+custom_constants/separation = 32
+alignment = 1
+
+[node name="TakeImageButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 58.0
+margin_right = 728.0
+margin_bottom = 186.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 1 )
+text = "Take reference image"
+
+[node name="ImageTextureRect" type="TextureRect" parent="Background/Margin/VBox"]
+margin_top = 218.0
+margin_right = 728.0
+margin_bottom = 946.0
+rect_min_size = Vector2( 0, 728 )
+rect_pivot_offset = Vector2( 364, 364 )
+expand = true
+stretch_mode = 6
+
+[node name="HBox" type="HBoxContainer" parent="Background/Margin/VBox"]
+margin_top = 978.0
+margin_right = 728.0
+margin_bottom = 1106.0
+alignment = 1
+
+[node name="TurnClockwiseButton" type="Button" parent="Background/Margin/VBox/HBox"]
+margin_left = 234.0
+margin_right = 362.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+input_pass_on_modal_close_click = false
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="TurnCounterclockwiseButton" type="Button" parent="Background/Margin/VBox/HBox"]
+margin_left = 366.0
+margin_right = 494.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+input_pass_on_modal_close_click = false
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="OkButton" type="Button" parent="Background/Margin/VBox"]
+margin_top = 1138.0
+margin_right = 728.0
+margin_bottom = 1266.0
+rect_min_size = Vector2( 0, 128 )
+custom_fonts/font = ExtResource( 1 )
+text = "Ok"
+
+[connection signal="pressed" from="Background/Margin/VBox/TakeImageButton" to="." method="_on_TakeImageButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/HBox/TurnClockwiseButton" to="." method="_on_TurnClockwiseButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/HBox/TurnCounterclockwiseButton" to="." method="_on_TurnCounterclockwiseButton_pressed"]
+[connection signal="pressed" from="Background/Margin/VBox/OkButton" to="." method="_on_OkButton_pressed"]

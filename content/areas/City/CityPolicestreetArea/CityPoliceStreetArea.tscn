@@ -1,0 +1,167 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://content/areas/City/CityPolicestreetArea/CityPoliceStreetArea.gd" type="Script" id=3]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
+[ext_resource path="res://assets/tilesets/outdoor/collision_tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://content/areas/components/TrafficLight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/tilesets/EmptyTile.png" type="Texture" id=7]
+[ext_resource path="res://assets/animated_sprites/tres/characters/city/policestreet/npc1.tres" type="SpriteFrames" id=10]
+[ext_resource path="res://content/areas/components/CrossingArea.tscn" type="PackedScene" id=11]
+[ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=12]
+[ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=14]
+[ext_resource path="res://assets/animated_sprites/tres/characters/city/policestreet/npc2.tres" type="SpriteFrames" id=15]
+[ext_resource path="res://content/trigger/StateChangeTrigger.gd" type="Script" id=16]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "EmptyTile.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="CityPolicestreetArea" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="TileMap" parent="."]
+z_index = -20
+z_as_relative = false
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 1, -65535, 1, 1, -65534, 1, 2, -65530, 1, 0, -65529, 1, 1, -65528, 1, 1, -65527, 1, 1, -65526, 1, 1, -65525, 1, 1, -65524, 1, 2, 65535, 1, 65536, 0, 1, 65537, 1, 1, 65537, 2, 1, 65538, 3, 25, 131074, 4, 25, 131075, 5, 25, 131076, 6, 1, 65536, 7, 1, 65537, 8, 1, 65537, 9, 1, 65537, 10, 1, 65537, 11, 1, 65537, 12, 1, 65538, 131071, 1, 65536, 65536, 1, 65537, 65537, 1, 65537, 65538, 1, 65538, 65539, 25, 131074, 65540, 25, 131081, 65541, 25, 131076, 65542, 1, 65536, 65543, 1, 65537, 65544, 1, 65537, 65545, 1, 65537, 65546, 1, 65537, 65547, 1, 65537, 65548, 1, 65538, 196607, 1, 65536, 131072, 1, 65537, 131073, 1, 65537, 131074, 1, 65538, 131075, 25, 65538, 131076, 25, 65539, 131077, 25, 65540, 131078, 1, 65536, 131079, 1, 65537, 131080, 1, 65537, 131081, 1, 65537, 131082, 1, 65537, 131083, 1, 65537, 131084, 1, 65538, 262143, 1, 65536, 196608, 1, 65537, 196609, 1, 65537, 196610, 1, 65538, 196611, 25, 131074, 196612, 25, 65545, 196613, 25, 131076, 196614, 1, 65536, 196615, 1, 65537, 196616, 1, 65537, 196617, 1, 65537, 196618, 1, 65537, 196619, 1, 65537, 196620, 1, 65538, 327679, 1, 65536, 262144, 1, 65537, 262145, 1, 65537, 262146, 1, 65538, 262147, 25, 131074, 262148, 25, 131075, 262149, 25, 131076, 262150, 1, 65536, 262151, 1, 65537, 262152, 1, 65537, 262153, 1, 65537, 262154, 1, 65537, 262155, 1, 65537, 262156, 1, 65538, 393215, 1, 131072, 327680, 1, 131073, 327681, 1, 131073, 327682, 1, 131074, 327683, 25, 131074, 327684, 25, 131081, 327685, 25, 131076, 327686, 1, 65536, 327687, 1, 65537, 327688, 1, 65537, 327689, 1, 65537, 327690, 1, 65537, 327691, 1, 65537, 327692, 1, 65538, 393216, 43, 65545, 393217, 43, 65545, 393218, 43, 3, 393219, 25, 131074, 393220, 25, 131075, 393221, 25, 131076, 393222, 1, 65536, 393223, 1, 65537, 393224, 1, 65537, 393225, 1, 65537, 393226, 1, 65537, 393227, 1, 65537, 393228, 1, 65538, 524287, 1, 0, 458752, 1, 1, 458753, 1, 1, 458754, 1, 2, 458755, 25, 131074, 458756, 25, 65545, 458757, 25, 131076, 458758, 1, 65536, 458759, 1, 65537, 458760, 1, 65537, 458761, 1, 65537, 458762, 1, 65537, 458763, 1, 65537, 458764, 1, 65538, 589823, 1, 65536, 524288, 1, 65537, 524289, 1, 65537, 524290, 1, 65538, 524291, 25, 131074, 524292, 25, 131075, 524293, 25, 131076, 524294, 1, 65536, 524295, 1, 65537, 524296, 1, 65537, 524297, 1, 65537, 524298, 1, 65537, 524299, 1, 65537, 524300, 1, 65538, 655359, 1, 65536, 589824, 1, 65537, 589825, 1, 65537, 589826, 1, 65538, 589827, 25, 131074, 589828, 25, 131081, 589829, 25, 131076, 589830, 1, 65536, 589831, 1, 65537, 589832, 1, 65537, 589833, 1, 65537, 589834, 1, 65537, 589835, 1, 65537, 589836, 1, 65538, 720895, 1, 65536, 655360, 1, 65537, 655361, 1, 65537, 655362, 1, 65538, 655363, 25, 131074, 655364, 25, 131075, 655365, 25, 131076, 655366, 1, 65536, 655367, 1, 65537, 655368, 1, 65537, 655369, 1, 65537, 655370, 1, 65537, 655371, 1, 65537, 655372, 1, 65538, 786431, 1, 65536, 720896, 1, 65537, 720897, 1, 65537, 720898, 1, 65538, 720899, 25, 131074, 720900, 25, 65545, 720901, 25, 131076, 720902, 1, 65536, 720903, 1, 65537, 720904, 1, 65537, 720905, 1, 65537, 720906, 1, 65537, 720907, 1, 65537, 720908, 1, 65538, 851967, 1, 131072, 786432, 1, 131073, 786433, 1, 131073, 786434, 1, 131074, 786435, 25, 131074, 786436, 25, 131075, 786437, 25, 131076, 786438, 1, 65536, 786439, 1, 65537, 786440, 1, 65537, 786441, 1, 65537, 786442, 1, 65537, 786443, 1, 65537, 786444, 1, 65538, 851968, 43, 3, 851969, 43, 65545, 851970, 43, 3, 851971, 25, 131074, 851972, 25, 65545, 851973, 25, 131076, 851974, 1, 65536, 851975, 1, 65537, 851976, 1, 65537, 851977, 1, 65537, 851978, 1, 65537, 851979, 1, 65537, 851980, 1, 65538, 983039, 1, 0, 917504, 1, 1, 917505, 1, 1, 917506, 1, 2, 917507, 25, 131074, 917508, 25, 131075, 917509, 25, 131076, 917510, 1, 65536, 917511, 1, 65537, 917512, 1, 65537, 917513, 1, 65537, 917514, 1, 65537, 917515, 1, 65537, 917516, 1, 65538, 1048575, 1, 65536, 983040, 1, 65537, 983041, 1, 65537, 983042, 1, 65538, 983043, 25, 131074, 983044, 25, 65545, 983045, 25, 131076, 983046, 1, 65536, 983047, 1, 65537, 983048, 1, 65537, 983049, 1, 65537, 983050, 1, 65537, 983051, 1, 65537, 983052, 1, 65538, 1114111, 1, 131072, 1048576, 1, 131073, 1048577, 1, 131073, 1048578, 1, 131074, 1048582, 1, 131072, 1048583, 1, 131073, 1048584, 1, 131073, 1048585, 1, 131073, 1048586, 1, 131073, 1048587, 1, 131073, 1048588, 1, 131074 )
+
+[node name="Houses" type="TileMap" parent="."]
+z_index = -20
+z_as_relative = false
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 196615, 38, 1, 196616, 38, 2, 196617, 38, 2, 196618, 38, 2, 196619, 38, 3, 262151, 38, 65537, 262152, 38, 65538, 262153, 38, 65538, 262154, 38, 65538, 262155, 38, 65539, 327687, 38, 65537, 327688, 38, 65538, 327689, 38, 65538, 327690, 38, 65538, 327691, 38, 65539, 393223, 46, 0, 393224, 46, 1, 393225, 46, 1, 393226, 46, 1, 393227, 46, 2, 458759, 46, 65536, 458760, 46, 65537, 458761, 46, 65537, 458762, 46, 65537, 458763, 46, 65538, 524295, 46, 131072, 524296, 46, 131073, 524297, 46, 131073, 524298, 46, 131073, 524299, 46, 131074, 589831, 46, 131072, 589832, 46, 131075, 589833, 46, 131076, 589834, 46, 131077, 589835, 46, 131074, 655367, 46, 196608, 655368, 46, 196612, 655369, 46, 196609, 655370, 46, 196612, 655371, 46, 196610 )
+
+[node name="Details" type="TileMap" parent="."]
+z_index = 10
+z_as_relative = false
+tile_set = ExtResource( 1 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 65536, 42, 0, 131072, 42, 0, 196608, 42, 0, 262144, 42, 0, 524288, 42, 0, 589824, 42, 0, 655360, 42, 0, 720896, 42, 0, 983040, 42, 0 )
+
+[node name="Collsion" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 12, 0, 0, 131071, 0, 0, 65536, 0, 0, 65538, 0, 0, 65548, 0, 0, 196607, 0, 0, 131072, 0, 0, 131084, 0, 0, 262143, 0, 0, 196608, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 327679, 0, 0, 262144, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 589823, 0, 0, 524288, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 655359, 0, 0, 589824, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 720895, 0, 0, 655360, 0, 0, 655367, 0, 0, 655368, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 786431, 0, 0, 720896, 0, 0, 720908, 0, 0, 786444, 0, 0, 851980, 0, 0, 917516, 0, 0, 983040, 0, 0, 983052, 0, 0 )
+
+[node name="Street" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+show_collision = true
+collision_layer = 2
+collision_mask = 2
+format = 1
+tile_data = PoolIntArray( 3, 0, 0, 4, 0, 0, 5, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0 )
+
+[node name="LeaveBottomTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 384.697, 1056.56 )
+scale = Vector2( 12, 1 )
+is_activated_by_collision = true
+walkable = true
+collision_trigger_id = "tid_city_policestreet_leave_bottom"
+
+[node name="LeaveBottomTrigger" type="Node" parent="LeaveBottomTriggerArea"]
+script = ExtResource( 4 )
+id = "tid_city_policestreet_leave_bottom"
+
+[node name="LeaveLeftTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( -30.4464, 514.5 )
+scale = Vector2( 1, 16 )
+is_activated_by_collision = true
+walkable = true
+collision_trigger_id = "tid_city_policestreet_leave_left"
+
+[node name="LeaveLeftTrigger" type="Node" parent="LeaveLeftTriggerArea"]
+script = ExtResource( 4 )
+id = "tid_city_policestreet_leave_left"
+
+[node name="LeaveTopTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 384.494, -30.9504 )
+scale = Vector2( 12, 1 )
+is_activated_by_collision = true
+walkable = true
+collision_trigger_id = "tid_city_policestreet_leave_top"
+
+[node name="LeaveTopTrigger" type="Node" parent="LeaveTopTriggerArea"]
+script = ExtResource( 4 )
+id = "tid_city_policestreet_leave_top"
+
+[node name="LeavePoliceTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 607.331, 672.88 )
+is_activated_by_collision = true
+walkable = true
+collision_trigger_id = "tid_city_policestreet_leave_police"
+
+[node name="LeavePoliceTrigger" type="Node" parent="LeavePoliceTriggerArea"]
+script = ExtResource( 4 )
+id = "tid_city_policestreet_leave_police"
+blocked_dialog_filename = "res://dialogs/city/policestreet/police_self_talk.json"
+
+[node name="TrafficLight" parent="." groups=[
+"persistent",
+] instance=ExtResource( 6 )]
+position = Vector2( 153.714, 70.0627 )
+z_index = 10
+z_as_relative = false
+has_crosswalk = true
+crosswalk = NodePath("../CrossingArea")
+
+[node name="CrossingArea" parent="." instance=ExtResource( 11 )]
+position = Vector2( 287.899, 161.042 )
+scale = Vector2( 3, 1 )
+
+[node name="NpcPolice1" parent="." instance=ExtResource( 12 )]
+position = Vector2( 544, 736 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_policestreet_npc_police1_start_dialog"
+animation = ExtResource( 10 )
+current_position = Vector2( 8, 11 )
+
+[node name="DialogStartTrigger" type="Node" parent="NpcPolice1"]
+script = ExtResource( 14 )
+id = "tid_city_policestreet_npc_police1_start_dialog"
+
+[node name="StateChangeTrigger" type="Node" parent="NpcPolice1"]
+script = ExtResource( 16 )
+id = "tid_city_policestreet_npc_police1_state_change"
+
+[node name="NpcPolice2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 672, 736 )
+is_activated_by_action = true
+action_trigger_id = "tid_city_policestreet_npc_police2_start_dialog"
+animation = ExtResource( 15 )
+current_position = Vector2( 10, 11 )
+
+[node name="DialogStartTrigger" type="Node" parent="NpcPolice2"]
+script = ExtResource( 14 )
+id = "tid_city_policestreet_npc_police2_start_dialog"
+
+[node name="StateChangeTrigger" type="Node" parent="NpcPolice2"]
+script = ExtResource( 16 )
+id = "tid_city_policestreet_npc_police2_state_change"

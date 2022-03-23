@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "0": "It seems the office is closed. I should come back after work.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "day06_closed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

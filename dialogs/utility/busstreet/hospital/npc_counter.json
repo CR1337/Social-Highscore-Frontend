@@ -1,0 +1,122 @@
+{
+    "texts": {
+        "0": "Welcome to the Clinic. What can I do for you? ",
+        "1": "I would like to donate blood",
+        "2": "I would like to donate a kidney",
+        "3": "Have a nice day",
+        "4_blood": "Very good. You may experience an increased feeling of hunger after donating blood. Please sign here:",
+		"4_kidney": "Very good. After the surgery, you may feel hungry more often. Please sign here:",
+        "5": "(I agree)",
+        "6": "(I have changed my mind)",
+        "7": "Good day. You have been admitted to our clinic because of a fainting spell. Please make sure you eat and sleep enough in the future. We will debit the invoice amount from your account.",
+        "already_blood": "Oh I see you already have donated blood today. You can't donate blood twice a day. Please come back another day.",
+        "already_kidney": "Oh I see you already have donated a kidney. I am sorry but you are not allowed to donate the other one.",
+        "8": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "4_blood",
+                "answers": [
+                    {
+                        "tid": "5",
+                        "nid": null,
+                        "trigger_id": "tid_blood_donated"
+                    },
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "4_kidney",
+                "answers": [
+                    {
+                        "tid": "5",
+                        "nid": null,
+                        "trigger_id": "tid_kidney_donated"
+                    },
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "hospitalized": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "7",
+                "answers": [
+                    {
+                        "tid": "8",
+                        "nid": null,
+                        "trigger_id": "tid_hospital_reset"
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "already_blood_donated": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "already_blood",
+                "answers": [
+                    {
+                        "tid": "8",
+                        "nid": null,
+                        "trigger_id": "tid_utility_busstreet_hospital_npc_counter_state_change",
+                        "trigger_kwargs": {
+                            "new_state": "idle"
+                        }
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "already_kidney_donated": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "already_kidney",
+                "answers": [
+                    {
+                        "tid": "8",
+                        "nid": null,
+                        "trigger_id": "tid_utility_busstreet_hospital_npc_counter_state_change",
+                        "trigger_kwargs": {
+                            "new_state": "idle"
+                        }
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

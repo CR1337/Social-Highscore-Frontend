@@ -1,0 +1,196 @@
+{
+    "texts": {
+        "day01_hello": "Hi buddy. Nice to see you again. Let's do something together again in the next few days.",
+        "day03_initial": "Hey. Do you feel like doing something after work? I'll text you later.",
+        "day03_post_dinner": "It was nice today. We should do that again sometime.",
+        "day06_looking_forward": "I'm already looking forward to the games evening later. I wanted to talk to you anyway.",
+        "day06_goto_bed": "It was a nice evening, even if we don't all always agree. Good night.",
+        "day08_thought": "Have you thought about my question?",
+        "day08_answer": "I need time",
+        "x": "(end dialog)"
+    },
+    "graphs": {
+        "day01_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day01_hello",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day02_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day03_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day03_initial",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day03_post_dinner": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day03_post_dinner",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day04_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day06_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day06_looking_forward",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day06_post_game_evening": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day06_goto_bed",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day07_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day08_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day08_thought",
+                "answers": [
+                    {
+                        "tid": "day08_answer",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day11_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day12_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+		"day13_initial": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "x",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

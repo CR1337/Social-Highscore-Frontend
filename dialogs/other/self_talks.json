@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "friend_place": "I often met with Lee Bai in the small park south of the bus stop. He probably means this place.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "friend_selftalk": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "friend_place",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

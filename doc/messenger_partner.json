@@ -1,0 +1,53 @@
+{
+    "texts": {
+        "0": "Hallo",
+        "1": "Wie gehts?",
+        "2": "Tschüss!",
+        "3": "Auch Hi",
+        "4": "Hallo",
+        "5": "Ganz gut",
+        "6": "Schrecklich",
+        "7": "Hab keine Zeit!",
+        "8": "",
+        "9": "ok"
+    },
+    "graphs": {
+        "state0": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {"tid": "3", "nid": "node1", "trigger_id": null},
+                    {"tid": "4", "nid": "node1", "trigger_id": null}
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "1",
+                "answers": [
+                    {"tid": "5", "nid": "node0", "trigger_id": null},
+                    {"tid": "6", "nid": "node0", "trigger_id": null}
+                ],
+                "trigger_id": "tid_debug_idle_messenger"
+            }
+        },
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "8",
+                "answers": [
+                    {"tid": "0", "nid": "node1", "trigger_id": null},
+                    {"tid": "1", "nid": "node1", "trigger_id": null}
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "7",
+                "answers": [
+                    {"tid": "9", "nid": "node0", "trigger_id": null}
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

@@ -1,0 +1,245 @@
+{
+    "texts": {
+        "0": "Hello, how can I help you? ",
+        "1": "I would like to take out a loan for 500.",
+        "2": "I would like to take out a loan for 100.",
+        "3": "Nothing, thank you ",
+        "4": "Sorry, your credit rating does not allow that at the moment ",
+        "5": "You will receive the amount immediately credited to your account. You must repay this amount, plus $$GameStateController._bank_loan_interest$$% interest within the next $$GameStateController._bank_loan_repay_period$$ days in installments. Do you agree with this? ",
+        "6": "Yes",
+        "7": "No",
+        "8": "You cannot take out consumer loans at this time. Improve your Citizen Score first ",
+        "already_loan": "You already have a loan. You can only take out another loan once you have paid off your current loan.",
+        "day05_want_to_unlock": "I want to unlock my account",
+        "day05_unlock": "You are not the first with this concern today. Since the introduction of the new system. We more frequently have such requests. However, I see that in your case it is an error. Please verify this transaction via 0 Y to unlock your account.",
+        "day05_not_worked": "It seems like your authentication didn't work. Please try it again",
+        "day05_sorry": "Your account is now available again. Sorry for the inconvenience. Have a nice day.",
+        "x": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "5",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_loan_500"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "5",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_loan_100"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "Class C": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": "node2",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "4",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "5",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_loan_100"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "Class D": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "2",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "3",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "8",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "has_already_loan": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "already_loan",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_city_bankstreet_bank_counter_already_loan"
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_unlock_account": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "0",
+                "answers": [
+                    {
+                        "tid": "day05_want_to_unlock",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "day05_unlock",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_day05_unlock_account"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_authentication_failed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day05_not_worked",
+                "answers": [
+                    {
+                        "tid": "6",
+                        "nid": null,
+                        "trigger_id": "tid_day05_unlock_account"
+                    },
+                    {
+                        "tid": "7",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day05_authentication_accepted": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day05_sorry",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_day05_unlocked_account"
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

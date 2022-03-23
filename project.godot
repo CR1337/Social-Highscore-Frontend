@@ -11,7 +11,62 @@ config_version=4
 [application]
 
 config/name="SocialHighscoreFrontend"
+run/main_scene="res://content/MainScene.tscn"
 config/icon="res://icon.png"
+config/auto_accept_quit=false
+
+[autoload]
+
+EventBus="*res://content/singletons/EventBus.gd"
+NativeCameraController="*res://content/singletons/NativeCameraController.gd"
+ImageProcessor="*res://content/singletons/ImageProcessor.gd"
+InputBus="*res://content/singletons/InputBus.gd"
+Debug="*res://content/singletons/Debug.gd"
+ViewportManager="*res://content/singletons/ViewportManager.gd"
+Config="*res://content/singletons/Config.gd"
+Globals="*res://content/singletons/Globals.gd"
+TimeController="*res://content/singletons/TimeController.gd"
+CitizenRecord="*res://content/singletons/CitizenRecord.gd"
+TrafficController="*res://content/singletons/TrafficController.gd"
+GameStateController="*res://content/singletons/GameStateController.gd"
+SaveGameController="*res://content/singletons/SaveGameController.gd"
+NewsController="*res://content/singletons/NewsController.gd"
+StoryController01="*res://content/singletons/story_controllers/StoryController01.gd"
+StoryController02="*res://content/singletons/story_controllers/StoryController02.gd"
+StoryController03="*res://content/singletons/story_controllers/StoryController03.gd"
+StoryController04="*res://content/singletons/story_controllers/StoryController04.gd"
+StoryController05="*res://content/singletons/story_controllers/StoryController05.gd"
+StoryController06="*res://content/singletons/story_controllers/StoryController06.gd"
+StoryController07="*res://content/singletons/story_controllers/StoryController07.gd"
+StoryController08="*res://content/singletons/story_controllers/StoryController08.gd"
+StoryController09="*res://content/singletons/story_controllers/StoryController09.gd"
+StoryController10="*res://content/singletons/story_controllers/StoryController10.gd"
+StoryController11="*res://content/singletons/story_controllers/StoryController11.gd"
+StoryController12="*res://content/singletons/story_controllers/StoryController12.gd"
+StoryController13="*res://content/singletons/story_controllers/StoryController13.gd"
+MinigameController="*res://content/singletons/MinigameController.gd"
+
+[display]
+
+window/size/width=768
+window/size/height=1408
+window/handheld/orientation="portrait"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[global]
+
+kame=false
+kamera=false
+screen=false
+Collision=false
+touch=false
+window=false
+qui=false
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 
@@ -19,4 +74,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+vram_compression/import_etc=true
+quality/filters/use_nearest_mipmap_filter=true
 environment/default_environment="res://default_env.tres"

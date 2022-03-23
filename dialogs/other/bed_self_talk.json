@@ -1,0 +1,44 @@
+{
+    "texts": {
+        "something_todo": "I think there is still something to do before going to bed.",
+        "sleep": "Do you want to go to bed?",
+        "yes": "Yes",
+        "no": "No",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "todo": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "something_todo",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "go_to_bed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "sleep",
+                "answers": [
+                    {
+                        "tid": "yes",
+                        "nid": null,
+                        "trigger_id": "tid_end_day"
+                    },
+                    {
+                        "tid": "no",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

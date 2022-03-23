@@ -1,0 +1,72 @@
+START SCORE: 1000
+
+EmotionalReactionOnNews (+20, -30)
+	news
+	face
+	emotion
+	preferred_emotion
+RefusedReactionOnNews (-40)
+	news
+	preferred_emotion
+EmotionalReactionAtAuthentication (+15, -25)
+	place
+	reason
+	face
+	emotion
+	preferred_emotion
+TrafficViolation (-25)
+	violation_type
+	place
+	screenshot
+BloodDonation (+50)
+OrganDonation (+200)
+CriticalSpeechInMessenger (-50)
+	adressee
+	text
+CriticalSpeechInRL (-50)
+	adressee
+	text
+	place
+	screenshot
+FitnessStudioVisit (+3)
+FitnessStudioNotVisited (-15)
+HealthyFoodinRestaurant (+2)
+	food
+HealthyFoodAtHome (+2)
+	food
+UnhealthyFoodinRestaurant (-35)
+	food
+UnhealthyFoodAtHome (-15)
+	food
+Debt (x * dept)
+	amount
+SkippedWork (-180)
+TooLateToWork (-150 * (amountOfTime / workDuration))
+	amountOfTime
+TooEarlyLeftWork (-150 * (amountOfTime / workDuration))
+	amountOfTime
+DidntVisitMom (-30 - 20 * amountOfTime)
+	amountOfTime
+ConatctToDissident (-80)
+	person
+	place
+	screenshot
+ReportedDissident (+20)
+	person
+	reason
+LiedToBoss (-500, lose job)
+	screenshot
+RescuedFriend (-500, lose job)
+	screenshots
+
+
+AAA	1501+		even cheaper prices + bonus payment
+AA	1051 - 1500	cheaper prices
+A	951 - 1050	everything normal
+B	801 - 950	a bit higher prices
+C	401 - 800	much higher prices, credits are capped
+D	301 - 400	no visits in mall, no more credits
+E	201 - 300	loses job
+X	1   - 200	loses home
+Z	0-		jail (game over)
+

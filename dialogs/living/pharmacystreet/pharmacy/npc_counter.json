@@ -1,0 +1,97 @@
+{
+    "texts": {
+        "idle_hello": "Good day, what can I do for you? ",
+        "idle_answer": "Nothing, thank you",
+        "selling_answer": "(Order medication)",
+        "selling_demand_payment": "This will make §§GameStateController.medication_price§§ ¥.",
+        "selling_accept_payment": "(pay medication)",
+        "selling_deny_payment": "I will come back later.",
+        "selling_payment_failed": "It seems like the payment didn't work. Please try it again.",
+        "selling_bye": "Thank you for your visit.",
+        "x": "(end dialog)"
+    },
+    "graphs": {
+        "idle": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "idle_hello",
+                "answers": [
+                    {
+                        "tid": "idle_answer",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "selling": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "idle_hello",
+                "answers": [
+                    {
+                        "tid": "idle_answer",
+                        "nid": null,
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "selling_answer",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "selling_demand_payment",
+                "answers": [
+                    {
+                        "tid": "selling_accept_payment",
+                        "nid": null,
+                        "trigger_id": "tid_living_pharmacystreet_pharmacy_pay_medication"
+                    },
+                    {
+                        "tid": "selling_deny_payment",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "payment_accepted": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "selling_bye",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_bought_meds"
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "payment_failed": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "selling_payment_failed",
+                "answers": [
+                    {
+                        "tid": "selling_accept_payment",
+                        "nid": null,
+                        "trigger_id": "tid_living_pharmacystreet_pharmacy_pay_medication"
+                    },
+                    {
+                        "tid": "selling_deny_payment",
+                        "nid": null,
+                        "trigger_id": "tid_failed_to_buy_meds"
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

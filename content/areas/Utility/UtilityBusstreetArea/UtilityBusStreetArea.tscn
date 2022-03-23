@@ -1,0 +1,149 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/tilesets/outdoor/city_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://content/trigger/TriggerArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://content/areas/Utility/UtilityBusstreetArea/UtilityBusStreetArea.gd" type="Script" id=3]
+[ext_resource path="res://content/trigger/AreaChangeTrigger.gd" type="Script" id=4]
+[ext_resource path="res://assets/tilesets/outdoor/collision_tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://content/trigger/BusTrigger.gd" type="Script" id=6]
+[ext_resource path="res://assets/tilesets/EmptyTile.png" type="Texture" id=7]
+[ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/npc.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://assets/animated_sprites/tres/characters/utility/busstreet/npc2.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://content/movables/NPC.tscn" type="PackedScene" id=11]
+[ext_resource path="res://content/trigger/StartDialogTrigger.gd" type="Script" id=14]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "EmptyTile.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="UtilityBusstreetArea" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="TileMap" parent="."]
+z_index = -20
+z_as_relative = false
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 1, -65535, 1, 1, -65534, 1, 1, -65533, 1, 1, -65532, 1, 1, -65531, 1, 1, -65530, 1, 1, -65529, 1, 1, -65528, 1, 1, -65527, 1, 1, -65526, 1, 1, -65525, 1, 1, -65524, 1, 2, 65535, 1, 65536, 0, 1, 65537, 1, 1, 65537, 2, 1, 65537, 3, 1, 65537, 4, 1, 65537, 5, 1, 65537, 6, 1, 65537, 7, 1, 65537, 8, 1, 65537, 9, 1, 65537, 10, 1, 65537, 11, 1, 65537, 12, 1, 65538, 131071, 1, 65536, 65536, 1, 65537, 65537, 1, 65537, 65538, 1, 65537, 65539, 1, 65537, 65540, 1, 65537, 65541, 1, 65537, 65542, 1, 65537, 65543, 1, 65537, 65544, 1, 65537, 65545, 1, 65537, 65546, 1, 65537, 65547, 1, 65537, 65548, 1, 65538, 196607, 1, 65536, 131072, 1, 65537, 131073, 1, 65537, 131074, 1, 65537, 131075, 1, 65537, 131076, 1, 65537, 131077, 1, 65537, 131078, 1, 65537, 131079, 1, 65537, 131080, 1, 65537, 131081, 1, 65537, 131082, 1, 65537, 131083, 1, 65537, 131084, 1, 65538, 262143, 1, 65536, 196608, 1, 65537, 196609, 1, 65537, 196610, 1, 65537, 196611, 1, 65537, 196612, 1, 65537, 196613, 1, 65537, 196614, 1, 65537, 196615, 1, 65537, 196616, 1, 65537, 196617, 1, 65537, 196618, 1, 65537, 196619, 1, 65537, 196620, 1, 65538, 327679, 1, 65536, 262144, 1, 65537, 262145, 1, 65537, 262146, 1, 65537, 262147, 1, 65537, 262148, 1, 65537, 262149, 1, 65537, 262150, 1, 65537, 262151, 1, 65537, 262152, 1, 65537, 262153, 1, 65537, 262154, 1, 65537, 262155, 1, 65537, 262156, 1, 65538, 393215, 1, 65536, 327680, 1, 65537, 327681, 1, 65537, 327682, 1, 65537, 327683, 1, 65537, 327684, 1, 65537, 327685, 1, 65537, 327686, 1, 65537, 327687, 1, 65537, 327688, 1, 65537, 327689, 1, 65537, 327690, 1, 65537, 327691, 1, 65537, 327692, 1, 65538, 458751, 1, 65536, 393216, 1, 65537, 393217, 1, 65537, 393218, 1, 65537, 393219, 1, 65537, 393220, 1, 65537, 393221, 1, 65537, 393222, 1, 65537, 393223, 1, 65537, 393224, 1, 65537, 393225, 1, 65537, 393226, 1, 65537, 393227, 1, 65537, 393228, 1, 65538, 524287, 1, 65536, 458752, 1, 65537, 458753, 1, 65537, 458754, 1, 65537, 458755, 1, 65537, 458756, 1, 65537, 458757, 1, 65537, 458758, 1, 65537, 458759, 1, 65537, 458760, 1, 65537, 458761, 1, 65537, 458762, 1, 65537, 458763, 1, 65537, 458764, 1, 65538, 589823, 1, 65536, 524288, 1, 65537, 524289, 1, 65537, 524290, 1, 65537, 524291, 1, 65537, 524292, 1, 65537, 524293, 1, 65537, 524294, 1, 65537, 524295, 1, 65537, 524296, 1, 65537, 524297, 1, 65537, 524298, 1, 65537, 524299, 1, 65537, 524300, 1, 65538, 655359, 1, 65536, 589824, 1, 65537, 589825, 1, 65537, 589826, 1, 65537, 589827, 1, 65537, 589828, 1, 65537, 589829, 1, 65537, 589830, 1, 65537, 589831, 1, 65537, 589832, 1, 65537, 589833, 1, 65537, 589834, 1, 65537, 589835, 1, 65537, 589836, 1, 65538, 720895, 1, 131072, 655360, 1, 131073, 655361, 1, 131073, 655362, 1, 131073, 655363, 1, 131073, 655364, 1, 131073, 655365, 1, 131073, 655366, 1, 131073, 655367, 1, 131073, 655368, 1, 131073, 655369, 1, 131073, 655370, 1, 131073, 655371, 1, 131073, 655372, 1, 131074, 720896, 25, 65541, 720897, 25, 1, 720898, 25, 1, 720899, 25, 1, 720900, 25, 1, 720901, 25, 1, 720902, 25, 1, 720903, 25, 1, 720904, 25, 1, 720905, 25, 1, 720906, 25, 1, 720907, 25, 1, 786432, 25, 131074, 786433, 25, 65537, 786434, 25, 131081, 786435, 25, 65537, 786436, 25, 131081, 786437, 25, 65537, 786438, 25, 131081, 786439, 25, 65537, 786440, 25, 131081, 786441, 25, 65537, 786442, 25, 131081, 786443, 25, 65537, 851968, 25, 131077, 851969, 25, 131073, 851970, 25, 131073, 851971, 25, 131073, 851972, 25, 131073, 851973, 25, 131073, 851974, 25, 131073, 851975, 25, 131073, 851976, 25, 131073, 851977, 25, 131073, 851978, 25, 131073, 851979, 25, 131073, 983039, 1, 0, 917504, 1, 1, 917505, 1, 1, 917506, 1, 1, 917507, 1, 1, 917508, 1, 1, 917509, 1, 1, 917510, 1, 1, 917511, 1, 1, 917512, 1, 1, 917513, 1, 1, 917514, 1, 1, 917515, 1, 1, 917516, 1, 2, 1048575, 1, 65536, 983040, 1, 65537, 983041, 1, 65537, 983042, 1, 65537, 983043, 1, 65537, 983044, 1, 65537, 983045, 1, 65537, 983046, 1, 65537, 983047, 1, 65537, 983048, 1, 65537, 983049, 1, 65537, 983050, 1, 65537, 983051, 1, 65537, 983052, 1, 65538, 1114111, 1, 131072, 1048576, 1, 131073, 1048577, 1, 131073, 1048578, 1, 131073, 1048579, 1, 131073, 1048580, 1, 131073, 1048581, 1, 131073, 1048582, 1, 131073, 1048583, 1, 131073, 1048584, 1, 131073, 1048585, 1, 131073, 1048586, 1, 131073, 1048587, 1, 131073, 1048588, 1, 131074 )
+
+[node name="Houses" type="TileMap" parent="."]
+z_index = -20
+z_as_relative = false
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 38, 1, 1, 38, 2, 2, 38, 2, 3, 38, 2, 4, 38, 2, 5, 38, 3, 6, 38, 1, 7, 38, 2, 8, 38, 2, 9, 38, 2, 10, 38, 2, 11, 38, 3, 65536, 38, 131073, 65537, 38, 131074, 65538, 38, 131074, 65539, 38, 131074, 65540, 38, 131074, 65541, 38, 131075, 65542, 38, 131073, 65543, 38, 131074, 65544, 38, 131074, 65545, 38, 131074, 65546, 38, 131074, 65547, 38, 131075, 131072, 47, 4, 131073, 47, 5, 131074, 47, 5, 131075, 47, 5, 131076, 47, 5, 131077, 47, 6, 131078, 47, 0, 131079, 47, 1, 131080, 47, 1, 131081, 47, 1, 131082, 47, 1, 131083, 47, 2, 196608, 47, 196612, 196609, 47, 196615, 196610, 47, 196615, 196611, 47, 196615, 196612, 47, 196615, 196613, 47, 196614, 196614, 47, 196608, 196615, 47, 131073, 196616, 47, 131073, 196617, 47, 131073, 196618, 47, 131073, 196619, 47, 196610, 262144, 47, 196612, 262145, 47, 196615, 262146, 47, 196615, 262147, 47, 196615, 262148, 47, 196615, 262149, 47, 196614, 262150, 47, 196608, 262151, 47, 196611, 262152, 47, 196611, 262153, 47, 196611, 262154, 47, 196611, 262155, 47, 196610, 327680, 47, 196612, 327681, 47, 196615, 327682, 47, 196615, 327683, 47, 262145, 327684, 47, 196613, 327685, 47, 196614, 327686, 47, 196608, 327687, 47, 196611, 327688, 47, 196609, 327689, 47, 262145, 327690, 47, 196609, 327691, 47, 196610 )
+
+[node name="Details" type="TileMap" parent="."]
+z_index = 10
+z_as_relative = false
+tile_set = ExtResource( 1 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 589831, 53, 0 )
+
+[node name="Collsion" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 393228, 0, 0, 458764, 0, 0, 524300, 0, 0, 589836, 0, 0, 655367, 0, 0, 655372, 0, 0, 720908, 0, 0, 786444, 0, 0, 851980, 0, 0, 917516, 0, 0, 983052, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0 )
+
+[node name="Street" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+show_collision = true
+collision_layer = 2
+collision_mask = 2
+format = 1
+tile_data = PoolIntArray( 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0 )
+
+[node name="LeaveLeftTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( -32.2436, 509.548 )
+scale = Vector2( 1, 16 )
+is_activated_by_collision = true
+walkable = true
+collision_trigger_id = "tid_utility_busstreet_leave_left"
+
+[node name="LeaveLeftTrigger" type="Node" parent="LeaveLeftTriggerArea"]
+script = ExtResource( 4 )
+id = "tid_utility_busstreet_leave_left"
+
+[node name="LeaveHospitalTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 224.335, 350.968 )
+is_activated_by_collision = true
+walkable = true
+collision_trigger_id = "tid_utility_busstreet_leave_hospital"
+
+[node name="LeaveHospitalTrigger" type="Node" parent="LeaveHospitalTriggerArea"]
+script = ExtResource( 4 )
+id = "tid_utility_busstreet_leave_hospital"
+
+[node name="LeaveMallTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 608.102, 349.633 )
+is_activated_by_collision = true
+walkable = true
+collision_trigger_id = "tid_utility_busstreet_leave_mall"
+
+[node name="LeaveMallTrigger" type="Node" parent="LeaveMallTriggerArea"]
+script = ExtResource( 4 )
+id = "tid_utility_busstreet_leave_mall"
+blocked_dialog_filename = "res://dialogs/utility/busstreet/mall_self_talk.json"
+
+[node name="BusTriggerArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 479.856, 634.792 )
+scale = Vector2( 1, 2 )
+is_activated_by_action = true
+walkable = true
+action_trigger_id = "tid_utility_busstreet_bus"
+
+[node name="BusTrigger" type="Node" parent="BusTriggerArea"]
+script = ExtResource( 6 )
+id = "tid_utility_busstreet_bus"
+
+[node name="Npc" parent="." instance=ExtResource( 11 )]
+position = Vector2( 352, 608 )
+z_index = 1
+is_activated_by_action = true
+action_trigger_id = "tid_utility_busstreet_npc_start_dialog"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 8 )
+current_position = Vector2( 5, 9 )
+
+[node name="DialogStartTrigger" type="Node" parent="Npc"]
+script = ExtResource( 14 )
+id = "tid_utility_busstreet_npc_start_dialog"
+
+[node name="Npc2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 288, 544 )
+z_index = 1
+is_activated_by_action = true
+action_trigger_id = "tid_utility_busstreet_npc2_start_dialog"
+speed = 2.0
+active_on_start = true
+animation = ExtResource( 9 )
+current_position = Vector2( 4, 8 )
+
+[node name="DialogStartTrigger" type="Node" parent="Npc2"]
+script = ExtResource( 14 )
+id = "tid_utility_busstreet_npc2_start_dialog"

@@ -1,0 +1,22 @@
+{
+    "texts": {
+        "dont_leave": "It would be very rude to just leave now.",
+        "x": "(end monolog)"
+    },
+    "graphs": {
+        "blocked": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "dont_leave",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}

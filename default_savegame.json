@@ -1,0 +1,2024 @@
+{
+    "empty": false,
+    "/root/MainScene/Areas/LivingHomestreetArea/LeaveLeftTriggerArea/LeaveLeftTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetArea/LeaveRightTriggerArea/LeaveRightTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetArea/LeaveTopTriggerArea/LeaveTopTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetArea/LeaveHomeTriggerArea/LeaveHomeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetArea/LeaveMomTriggerArea/LeaveMomTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetArea/Npc": {
+        "current_position_x": 10,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": 10,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingHomestreetArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetArea/LeaveLeftTriggerArea/LeaveLeftTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetArea/LeaveFriendTriggerArea/LeaveFriendTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetArea/LeavePartnerTriggerArea/LeavePartnerTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingPharmacystreetArea/LeaveRightTriggerArea/LeaveRightTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingPharmacystreetArea/LeavePharmacyTriggerArea/LeavePharmacyTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingPharmacystreetArea/Npc": {
+        "current_position_x": 6,
+        "current_position_y": 4,
+        "active": true,
+        "announced_position_x": 6,
+        "announced_position_y": 4,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingPharmacystreetArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingPharmacystreetPharmacyArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingPharmacystreetPharmacyArea/NpcCounter": {
+        "current_position_x": 7,
+        "current_position_y": 9,
+        "active": true,
+        "announced_position_x": 7,
+        "announced_position_y": 9,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingPharmacystreetPharmacyArea/NpcCounter/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingPharmacystreetPharmacyArea/NpcCounter/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingPharmacystreetPharmacyArea/NpcCounter/PaymentTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingBusstreetArea/LeaveBottomTriggerArea/LeaveBottomTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingBusstreetArea/BusTriggerArea/BusTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingBusstreetArea/Npc": {
+        "current_position_x": 9,
+        "current_position_y": 7,
+        "active": true,
+        "announced_position_x": 9,
+        "announced_position_y": 7,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingBusstreetArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetHomeArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetHomeArea/FridgeTriggerArea/FridgeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetMomArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetMomArea/NpcMom": {
+        "current_position_x": 5,
+        "current_position_y": 9,
+        "active": false,
+        "announced_position_x": 5,
+        "announced_position_y": 9,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "day01_waiting_for_son",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingHomestreetMomArea/NpcMom/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingHomestreetMomArea/NpcMom/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetPartnerArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetPartnerArea/NpcPartner": {
+        "current_position_x": 8,
+        "current_position_y": 11,
+        "active": false,
+        "announced_position_x": 8,
+        "announced_position_y": 11,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingFriendstreetPartnerArea/NpcPartner/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetPartnerArea/NpcPartner/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetPartnerArea/NpcFriend": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingFriendstreetPartnerArea/CitizenRecordTriggerArea/CitizenRecordTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetFriendArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetFriendArea/NpcFriend": {
+        "current_position_x": 8,
+        "current_position_y": 10,
+        "active": false,
+        "announced_position_x": 8,
+        "announced_position_y": 10,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/LivingFriendstreetFriendArea/NpcFriend/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/LivingFriendstreetFriendArea/NpcFriend/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/LeaveBottomTriggerArea/LeaveBottomTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/LeaveRightTriggerArea/LeaveRightTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/LeaveTopTriggerArea/LeaveTopTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/Npc": {
+        "current_position_x": 9,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": 9,
+        "announced_position_y": 5,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/Npc/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/Npc2": {
+        "current_position_x": 2,
+        "current_position_y": 11,
+        "active": true,
+        "announced_position_x": 2,
+        "announced_position_y": 11,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/Npc2/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/Npc2/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/NpcFriend": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "initial",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/NpcFriend/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityShadystreetArea/NpcFriend/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/LeaveBottomTriggerArea/LeaveBottomTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/LeaveRightTriggerArea/LeaveRightTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/BusTriggerArea/BusTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/TrafficLight": {
+        "is_green": true
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/Npc": {
+        "current_position_x": 8,
+        "current_position_y": 6,
+        "active": true,
+        "announced_position_x": 8,
+        "announced_position_y": 6,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/Npc/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/Npc2": {
+        "current_position_x": 9,
+        "current_position_y": 6,
+        "active": true,
+        "announced_position_x": 9,
+        "announced_position_y": 6,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/Npc2/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/Npc2/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcFriend": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": true,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcRebel1": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcRebel2": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcRebel3": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": -1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcPolice1": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcPolice2": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcPolice3": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBusstreetArea/NpcBoss": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityJobcenterstreetArea/LeaveBottomTriggerArea/LeaveBottomTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityJobcenterstreetArea/LeaveLeftTriggerArea/LeaveLeftTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityJobcenterstreetArea/LeaveJobcenterTriggerArea/LeaveJobcenterTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityJobcenterstreetJobcenterArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityJobcenterstreetJobcenterArea/NpcCounter": {
+        "current_position_x": 6.5,
+        "current_position_y": 12,
+        "active": false,
+        "announced_position_x": 6.5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityJobcenterstreetJobcenterArea/NpcCounter/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityJobcenterstreetJobcenterArea/NpcCounter/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityJobcenterstreetJobcenterArea/Npc": {
+        "current_position_x": 3,
+        "current_position_y": 10,
+        "active": true,
+        "announced_position_x": 3,
+        "announced_position_y": 10,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityJobcenterstreetJobcenterArea/Npc2": {
+        "current_position_x": 7,
+        "current_position_y": 8,
+        "active": true,
+        "announced_position_x": 7,
+        "announced_position_y": 8,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/LeaveBottomTriggerArea/LeaveBottomTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/LeaveLeftTriggerArea/LeaveLeftTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/LeaveTopTriggerArea/LeaveTopTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/LeavePoliceTriggerArea/LeavePoliceTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/TrafficLight": {
+        "is_green": false
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/NpcPolice1": {
+        "current_position_x": 8,
+        "current_position_y": 11,
+        "active": false,
+        "announced_position_x": 8,
+        "announced_position_y": 11,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/NpcPolice1/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/NpcPolice1/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/NpcPolice2": {
+        "current_position_x": 10,
+        "current_position_y": 11,
+        "active": false,
+        "announced_position_x": 10,
+        "announced_position_y": 11,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/NpcPolice2/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetArea/NpcPolice2/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcPolice3": {
+        "current_position_x": 1,
+        "current_position_y": 10,
+        "active": false,
+        "announced_position_x": 1,
+        "announced_position_y": 10,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcPolice3/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcPolice3/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcPolice4": {
+        "current_position_x": 6,
+        "current_position_y": 11,
+        "active": false,
+        "announced_position_x": 6,
+        "announced_position_y": 11,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcPolice4/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcPolice4/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcBoss": {
+        "current_position_x": 10,
+        "current_position_y": 4,
+        "active": false,
+        "announced_position_x": 10,
+        "announced_position_y": 4,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcBoss/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcBoss/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcBoss/StartBriefingTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityPolicestreetPoliceArea/NpcBoss/StartDebriefingTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetArea/LeaveRightTriggerArea/LeaveRightTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetArea/LeaveTopTriggerArea/LeaveTopTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetArea/LeaveOfficeTriggerArea/LeaveOfficeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetArea/LeaveBankTriggerArea/LeaveBankTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetArea/TrafficLight": {
+        "is_green": false
+    },
+    "/root/MainScene/Areas/CityBankstreetArea/TrafficLight2": {
+        "is_green": false
+    },
+    "/root/MainScene/Areas/CityBankstreetArea/TrafficLight3": {
+        "is_green": true
+    },
+    "/root/MainScene/Areas/CityBankstreetArea/Npc": {
+        "current_position_x": 10,
+        "current_position_y": 1,
+        "active": true,
+        "announced_position_x": 10,
+        "announced_position_y": 1,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter": {
+        "current_position_x": 2.5,
+        "current_position_y": 12,
+        "active": true,
+        "announced_position_x": 2.5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter/BankPaymentTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter/AlreadyLoanTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter2": {
+        "current_position_x": 8.5,
+        "current_position_y": 12,
+        "active": true,
+        "announced_position_x": 8.5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter2/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcCounter2/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcSecurity": {
+        "current_position_x": 1,
+        "current_position_y": 15,
+        "active": true,
+        "announced_position_x": 1,
+        "announced_position_y": 15,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcSecurity/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcSecurity2": {
+        "current_position_x": 1,
+        "current_position_y": 7,
+        "active": true,
+        "announced_position_x": 1,
+        "announced_position_y": 7,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetBankArea/NpcOfficer": {
+        "current_position_x": 9,
+        "current_position_y": 4,
+        "active": true,
+        "announced_position_x": 9,
+        "announced_position_y": 4,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetOfficeArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetOfficeArea/NpcCounter": {
+        "current_position_x": 6.5,
+        "current_position_y": 12,
+        "active": true,
+        "announced_position_x": 6.5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetOfficeArea/NpcCounter/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetOfficeArea/NpcCounter/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetOfficeArea/NpcCounter/ScoreImpactTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityBankstreetOfficeArea/NPC1": {
+        "current_position_x": 3,
+        "current_position_y": 10,
+        "active": true,
+        "announced_position_x": 3,
+        "announced_position_y": 10,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityBankstreetOfficeArea/NPC2": {
+        "current_position_x": 3,
+        "current_position_y": 8,
+        "active": true,
+        "announced_position_x": 3,
+        "announced_position_y": 8,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityStorestreetArea/LeaveLeftTriggerArea/LeaveLeftTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetArea/LeaveTopTriggerArea/LeaveTopTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetArea/LeaveStoreTriggerArea/LeaveStoreTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetArea/TrafficLight": {
+        "is_green": true
+    },
+    "/root/MainScene/Areas/CityStorestreetArea/TrafficLight2": {
+        "is_green": false
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/NpcCounter": {
+        "current_position_x": 0,
+        "current_position_y": 10.8,
+        "active": true,
+        "announced_position_x": 0,
+        "announced_position_y": 10.8,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/NpcCounter/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/NpcCounter/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/NpcCounter/PaymentTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/NpcCounter2": {
+        "current_position_x": 11,
+        "current_position_y": 10.8,
+        "active": true,
+        "announced_position_x": 11,
+        "announced_position_y": 10.8,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/NpcCounter2/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/NpcCounter2/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Npc1": {
+        "current_position_x": 1,
+        "current_position_y": 2,
+        "active": true,
+        "announced_position_x": 1,
+        "announced_position_y": 2,
+        "looking_direction_x": 0,
+        "looking_direction_y": -1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Npc2": {
+        "current_position_x": 10,
+        "current_position_y": 5,
+        "active": true,
+        "announced_position_x": 10,
+        "announced_position_y": 5,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Npc3": {
+        "current_position_x": 5,
+        "current_position_y": 9,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 9,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Shelf1TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Shelf2TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Shelf3TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Shelf4TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Shelf5TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Shelf6TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/CityStorestreetStoreArea/Shelf7TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetArea/LeaveLeftTriggerArea/LeaveLeftTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetArea/LeaveHospitalTriggerArea/LeaveHospitalTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetArea/LeaveMallTriggerArea/LeaveMallTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetArea/BusTriggerArea/BusTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetArea/Npc": {
+        "current_position_x": 5,
+        "current_position_y": 9,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 9,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetArea/Npc2": {
+        "current_position_x": 4,
+        "current_position_y": 8,
+        "active": true,
+        "announced_position_x": 4,
+        "announced_position_y": 8,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetArea/Npc2/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/Npc": {
+        "current_position_x": 0,
+        "current_position_y": 11.9,
+        "active": true,
+        "announced_position_x": 0,
+        "announced_position_y": 11.9,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/Npc2": {
+        "current_position_x": 0,
+        "current_position_y": 13.9,
+        "active": true,
+        "announced_position_x": 0,
+        "announced_position_y": 13.9,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/Npc2/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/NpcDoctor1": {
+        "current_position_x": 9,
+        "current_position_y": 4,
+        "active": true,
+        "announced_position_x": 9,
+        "announced_position_y": 4,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/NpcDoctor2": {
+        "current_position_x": 1,
+        "current_position_y": 4,
+        "active": true,
+        "announced_position_x": 1,
+        "announced_position_y": 4,
+        "looking_direction_x": 0,
+        "looking_direction_y": -1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/NpcDoctor3": {
+        "current_position_x": 3,
+        "current_position_y": 8,
+        "active": true,
+        "announced_position_x": 3,
+        "announced_position_y": 8,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/NpcCounter": {
+        "current_position_x": 5.5,
+        "current_position_y": 12,
+        "active": true,
+        "announced_position_x": 5.5,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/NpcCounter/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/NpcCounter/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetHospitalArea/NpcCounter/HospitalResetTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Npc": {
+        "current_position_x": 0.2,
+        "current_position_y": 14,
+        "active": true,
+        "announced_position_x": 0.2,
+        "announced_position_y": 14,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Npc2": {
+        "current_position_x": 10.8,
+        "current_position_y": 12,
+        "active": true,
+        "announced_position_x": 10.8,
+        "announced_position_y": 12,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Npc2/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Npc3": {
+        "current_position_x": 9.2,
+        "current_position_y": 11,
+        "active": true,
+        "announced_position_x": 9.2,
+        "announced_position_y": 11,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Npc3/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Npc4": {
+        "current_position_x": 3.5,
+        "current_position_y": 2.2,
+        "active": true,
+        "announced_position_x": 3.5,
+        "announced_position_y": 2.2,
+        "looking_direction_x": 1,
+        "looking_direction_y": 0,
+        "state": "idle_walking",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Npc4/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcCounter": {
+        "current_position_x": 10.5,
+        "current_position_y": 3,
+        "active": true,
+        "announced_position_x": 10.5,
+        "announced_position_y": 3,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcCounter/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcCounter/PaymentTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Buffet1TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Buffet1TriggerArea/PaymentTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Buffet2TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Buffet2TriggerArea/PaymentTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Buffet3TriggerArea/DialogTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/Buffet3TriggerArea/PaymentTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcFriend": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcFriend/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcFriend/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcPartner": {
+        "current_position_x": -1,
+        "current_position_y": -1,
+        "active": false,
+        "announced_position_x": -1,
+        "announced_position_y": -1,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcPartner/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityBusstreetMallArea/NpcPartner/StateChangeTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetArea/LeaveRightTriggerArea/LeaveRightTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetArea/LeavePrisonTriggerArea/LeavePrisonTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetArea/Npc": {
+        "current_position_x": 0,
+        "current_position_y": 15,
+        "active": true,
+        "announced_position_x": 0,
+        "announced_position_y": 15,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetArea/Npc/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetArea/Npc2": {
+        "current_position_x": 5,
+        "current_position_y": 15,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 15,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetArea/Npc2/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/TriggerArea/LeaveTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcOfficer": {
+        "current_position_x": 2,
+        "current_position_y": 10,
+        "active": true,
+        "announced_position_x": 2,
+        "announced_position_y": 10,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcOfficer/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcGuard": {
+        "current_position_x": 7,
+        "current_position_y": 11,
+        "active": true,
+        "announced_position_x": 7,
+        "announced_position_y": 11,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcGuard/DialogStartTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/Npc2": {
+        "current_position_x": 10,
+        "current_position_y": 12,
+        "active": true,
+        "announced_position_x": 10,
+        "announced_position_y": 12,
+        "looking_direction_x": 0,
+        "looking_direction_y": -1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcPrisoner1": {
+        "current_position_x": 2,
+        "current_position_y": 2,
+        "active": true,
+        "announced_position_x": 2,
+        "announced_position_y": 2,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcPrisoner2": {
+        "current_position_x": 5,
+        "current_position_y": 2,
+        "active": true,
+        "announced_position_x": 5,
+        "announced_position_y": 2,
+        "looking_direction_x": -1,
+        "looking_direction_y": 0,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcPrisonerFriend": {
+        "current_position_x": 8,
+        "current_position_y": 2,
+        "active": true,
+        "announced_position_x": 8,
+        "announced_position_y": 2,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Areas/UtilityPrisonstreetPrisonArea/NpcPrisoner3": {
+        "current_position_x": 0,
+        "current_position_y": 0,
+        "active": false,
+        "announced_position_x": 0,
+        "announced_position_y": 0,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "state": "idle",
+        "is_new_state_requested": false,
+        "requested_state": "",
+        "movement_dict": {
+
+        },
+        "movement_step_index": 0,
+        "movement_step_repeat_counter": 0,
+        "movement_waiting": false,
+        "movement_waiting_handle": 0
+    },
+    "/root/MainScene/Overlays/DialogOverlay": {
+        "dialog_dict": {
+
+        },
+        "current_state": "",
+        "current_node_id": "",
+        "current_node": {
+
+        }
+    },
+    "/root/MainScene/Overlays/MessengerAppMessages": {
+        "messages": {
+            "friend": [
+
+            ],
+            "partner": [
+
+            ],
+            "mom": [
+
+            ],
+            "boss": [
+
+            ]
+        },
+        "current_contact": "mom"
+    },
+    "/root/MainScene/Overlays/MessengerAppMessages/DebugMessengerIdleTrigger": {
+        "blocked": false,
+        "block_state": "blocked"
+    },
+    "/root/MainScene/Overlays/BankingApp": {
+        "transactions": [
+
+        ]
+    },
+    "/root/MainScene/Overlays/NewsAppNewspage": {
+        "news_index": -1
+    },
+    "/root/MainScene/Overlays/NotificationOverlay": {
+        "notifications": {
+            "news": null,
+            "bank": null,
+            "score": null,
+            "message": null,
+            "message_partner": null,
+            "message_friend": null,
+            "message_mom": null,
+            "message_boss": null
+        },
+        "current_notification": null
+    },
+    "/root/MainScene/Player": {
+        "position_x": 608,
+        "position_y": 928,
+        "looking_direction_x": 0,
+        "looking_direction_y": 1,
+        "on_street": false
+    },
+    "/root/CitizenRecord": {
+        "records": [
+
+        ],
+        "image_counter": 0,
+        "screenshot_counter": 0
+    },
+    "/root/GameStateController": {
+        "score": 1000,
+        "money": 420,
+        "hunger": 0,
+        "hunger_timer_handle": -1,
+        "days_without_mom": 0,
+        "days_without_fitness": 0,
+        "fridge_content": [
+            {
+                "base_price": 15,
+                "hunger_decrease": 1,
+                "healthieness": 1,
+                "name": "yogurt"
+            }
+        ],
+        "current_day": 1,
+        "contact_state": {
+            "friend": "state0",
+            "partner": "state0",
+            "mom": "state0",
+            "boss": "state0"
+        },
+        "current_preferred_emotions": [
+
+        ],
+        "current_forbidden_emotions": [
+
+        ],
+        "ticket_bought": false,
+        "mall_food_timer_items": {
+
+        },
+        "bank_account_blocked": false,
+        "bank_loan_debt": 0,
+        "bank_loan_daily_repayment_amount": 0,
+        "blood_donated": false,
+        "kidney_donated": false
+    },
+    "/root/TimeController": {
+        "timer_list": [
+
+        ],
+        "paused_timer_handles": [
+
+        ],
+        "active": true
+    },
+    "/root/ViewportManager": {
+        "current_area": "/root/MainScene/Areas/LivingHomestreetArea",
+        "current_overlay": "/root/MainScene/Overlays/TransparentOverlay",
+        "last_overlay": "/root/MainScene/Overlays/TransparentOverlay"
+    },
+    "/root/ImageProcessor": {
+        "b64_reference_image": ""
+    },
+    "/root/NewsController": {
+        "news": [
+
+        ],
+        "image_counter": 0
+    },
+    "/root/TrafficController": {
+        "traffic_toggle_handle": 0
+    },
+    "/root/StoryController01": {
+        "progress": 0
+    },
+    "/root/StoryController02": {
+        "progress": 0
+    },
+    "/root/StoryController03": {
+        "progress": 0
+    },
+    "/root/StoryController04": {
+        "progress": 0
+    },
+    "/root/StoryController05": {
+        "progress": 0
+    },
+    "/root/StoryController06": {
+        "progress": 0
+    },
+    "/root/StoryController07": {
+        "progress": 0
+    },
+    "/root/StoryController08": {
+        "progress": 0
+    },
+    "/root/StoryController09": {
+        "progress": 0
+    },
+    "/root/StoryController10": {
+        "progress": 0
+    },
+    "/root/StoryController11": {
+        "progress": 0,
+        "corrected_boss": false
+    },
+    "/root/StoryController12": {
+        "progress": 0,
+        "corrected_boss": false
+    },
+    "/root/StoryController13": {
+        "progress": 0
+    }
+}

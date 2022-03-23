@@ -1,0 +1,133 @@
+{
+    "texts": {
+        "day09_pre_eat": "Hi, honey. I'm glad you're here. Why don't you get something to eat first? I can recommend the fruit, it's really tasty, healthy and you even get points for it.",
+        "day09_t1": "Oh how nice that you have also decided to eat fruit. It's great that you now have another incentive to eat healthy.",
+        "day09_t1_a1": "I agree",
+        "day09_t1_a2": "I don't know",
+        "day09_t2": "Oh, what a shame, I thought you were going to have the fruit too. The state recommends eating at least one vitamin-rich meal every day. It's really nice that the state cares so much about its citizens. It's a pity that some people haven't accepted it yet.",
+        "day09_t2_a1": "Next time",
+        "day09_t2_a2": "I don't like fruits",
+        "day09_t3": "However, I find the government measures of the last few days extremely positive. I think the community score brings society closer together and ensures cohesion between citizens. I see many more beaming people on the streets since the introduction of the new system. That shows how happy people are lately.  And on Remembrance Day the other day I felt really understood. Everyone mourned in their own way, but we were still a community. Do you know what I mean?",
+        "day09_t3_a1": "I think so",
+        "day09_t3_a2": "I don't know",
+        "day09_t4": "Do you know Mrs Schmidt? She is always so nice and helpful to everyone. Because she has such a high score, she was given a free holiday. I think she totally deserves it. It's really nice to see that people who give so much to society finally get something in return. Everyone should take her as an example.",
+        "day09_t4_a1": "I'm happy for her",
+        "day09_t5": "Me too. It's such a shame that there are still people who oppose any change, no matter how demonstrably positive it is. And apparently there are even people who don't shy away from violence to achieve their goals. That scares me. It is good that measures are being taken to protect citizens from these people. We have to stand together united and then these terrorists won't stand a chance.",
+        "day09_t5_a1": "You're right",
+        "day09_t5_a2": "That sounds very radical",
+        "day09_t6": "Even if this sounds very harsh, I think it is important to protect society from its enemies.  \nSo late already? I have to get going. It was nice talking to you again. I love you, bye. ",
+        "x": "(end dialog)",
+        "next": "(next)"
+    },
+    "graphs": {
+        "day09_dinner": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day09_pre_eat",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_day09_talked_to_partner"
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day09_ate_fruits": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day09_t1",
+                "answers": [
+                    {
+                        "tid": "day09_t1_a1",
+                        "nid": null,
+                        "trigger_id": "tid_day09_continue_talk"
+                    },
+                    {
+                        "tid": "day09_t1_a2",
+                        "nid": null,
+                        "trigger_id": "tid_day09_continue_talk"
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day09_not_ate_fruits": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day09_t2",
+                "answers": [
+                    {
+                        "tid": "day09_t2_a1",
+                        "nid": null,
+                        "trigger_id": "tid_day09_continue_talk"
+                    },
+                    {
+                        "tid": "day09_t2_a2",
+                        "nid": null,
+                        "trigger_id": "tid_day09_continue_talk"
+                    }
+                ],
+                "trigger_id": null
+            }
+        },
+        "day09_continue_talking": {
+            "initial_nid": "node0",
+            "node0": {
+                "tid": "day09_t3",
+                "answers": [
+                    {
+                        "tid": "day09_t3_a1",
+                        "nid": "node1",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day09_t3_a2",
+                        "nid": "node1",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node1": {
+                "tid": "day09_t4",
+                "answers": [
+                    {
+                        "tid": "day09_t4_a1",
+                        "nid": "node2",
+                        "trigger_id": null
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node2": {
+                "tid": "day09_t5",
+                "answers": [
+                    {
+                        "tid": "day09_t5_a1",
+                        "nid": "node3",
+                        "trigger_id": null
+                    },
+                    {
+                        "tid": "day09_t5_a2",
+                        "nid": "node3",
+                        "trigger_id": "tid_critical_speech"
+                    }
+                ],
+                "trigger_id": null
+            },
+            "node3": {
+                "tid": "day09_t6",
+                "answers": [
+                    {
+                        "tid": "x",
+                        "nid": null,
+                        "trigger_id": "tid_day09_finished_talk"
+                    }
+                ],
+                "trigger_id": null
+            }
+        }
+    }
+}
