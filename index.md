@@ -47,9 +47,16 @@ _Abbildung 2_
 Für unser Projekt vernwenden wir die Identitätsprüfung und die Gesichtsanalyse, dabei speziell die Emotionsanalyse. DeepFace erhält dazu ein bzw. zwei Bilder als Input und liefert die Ergebnisse im JSON-Format zurück.
 
 ### 3.3. Kamera Plugin <a name="camplugin"></a>
-Das GodotGetImagePlugin ermöglicht die Interaktion der Godot Engine mit der Android Kameraapp. Ein so aufgenommenes Bild kann dann vom Spiel weiterverwendet werden. Das Plugin 
+Das GodotGetImagePlugin ermöglicht die Interaktion der Godot Engine mit der Android Kameraapp. Ein so aufgenommenes Bild kann dann vom Spiel weiterverwendet werden.
+
+In Abbildung 3 ist die Funktionsweise des Plugins am Beispiel einer Gesichtsanalyse dargestellt. Der ImageProcessor wird dazu vom Spiel beauftragt und ist dafür verantwortlich, das Bild zu beschaffen und im Anschluss mit dem Backend zu kommunizieren. Um das Bild zu erhalten, sendet er eine Nachricht an den NativeCameraController. Dieser testet, ob das Plugin geladen ist und veranlasst dieses dann dazu, die Kameraapp zu öffnen. Das Bild, sowie die Ergebnisse der Analyse gelangen dann auf ansynchronem Wege über Signale zurück ans Spiel. Bei den [Signalen](https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html) handelt es sich um Godots Implementierung des [Observer Patterns](https://refactoring.guru/design-patterns/observer).
+
+![](UML_Camera.png)
+_Abbildung 3_
 
 ### 3.4. Godot Game Engine <a name="godot"></a>
+
+Bei Godot handelt es sich um eine Open Source Game Engine. Sie eigent sich sowohl für die Entwicklung von 2D, als auch von 3D Anwendungen. Godot verwendet die eigene Programmiersprache GDScript. Sie ist für die Verwendung mit Godot optimiert und an Python angelehnt. Godot-Spiele sind aus sogenannten Szenen aufgebaut, welche hierarchisch in einem Szenenbaum als Nodes organisiert sind. Die Engine stellt bereits eine Vielzahl an verschiedenen Nodetypen bereit wie bspw. Steuerelemente, Sprites, Collision Boxes und Tilemaps. Diese bringen viele Funktionalitäten mit und können durch eigene Scripte erweitert werden.
 
 ## 4. Setup <a name="setup"></a>
 Um die App selbst auszuprobieren, installieren Sie [diese](https://github.com/CR1337/Social-Highscore-Frontend/raw/main/apk/SocialHighscoreFrontend.apk) Anwendung auf Ihrem Android Device. Eine Anleitung zur Installation von APK-Dateien finden Sie [hier](https://android.imyfone.com/android-issues/how-to-install-apk-file-on-android/).
