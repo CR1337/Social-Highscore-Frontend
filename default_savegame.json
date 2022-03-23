@@ -1881,6 +1881,11 @@
         "blocked": false,
         "block_state": "blocked"
     },
+    "/root/MainScene/Overlays/BankingApp": {
+        "transactions": [
+
+        ]
+    },
     "/root/MainScene/Overlays/NewsAppNewspage": {
         "news_index": -1
     },

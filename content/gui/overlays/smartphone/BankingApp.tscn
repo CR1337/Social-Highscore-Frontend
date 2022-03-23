@@ -4,8 +4,9 @@
 [ext_resource path="res://content/gui/overlays/smartphone/BankingApp.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/Consolas.tres" type="DynamicFont" id=4]
 
-
-[node name="BankingApp" type="Node2D"]
+[node name="BankingApp" type="Node2D" groups=[
+"persistent",
+]]
 script = ExtResource( 2 )
 
 [node name="Background" type="ColorRect" parent="."]
