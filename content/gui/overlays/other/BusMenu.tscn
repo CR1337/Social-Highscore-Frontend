@@ -42,7 +42,7 @@ margin_bottom = 309.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
-text = "Living"
+text = "Home"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -66,7 +66,7 @@ margin_bottom = 865.0
 rect_min_size = Vector2( 0, 128 )
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
-text = "Utility"
+text = "Commercial area"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,4 +1,4 @@
-#Wed Mar 23 11:37:17 CET 2022
+#Thu Mar 24 10:23:05 CET 2022
 base.0=C\:\\Users\\jessi\\OneDrive\\HPI\\Semester05\\Dark AI\\Godot\\Social-Highscore-Frontend\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

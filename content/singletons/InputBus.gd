@@ -54,3 +54,19 @@ func _on_left_released():
 
 func _on_right_released():
 	direction = Vector2.ZERO
+
+func _process(delta):
+	if Input.is_key_pressed(KEY_S):
+		_take_screenshot()
+
+
+var _screenshot_counter = 0
+const _screenshot_path = "user://screenshots/presentation"
+
+func _take_screenshot():
+	var image = get_viewport().get_texture().get_data()
+	var path = _screenshot_path + str(_screenshot_counter) + ".png"
+	image.flip_y()
+	image.save_png(path)
+	_screenshot_counter += 1
+	return path

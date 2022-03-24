@@ -288,8 +288,7 @@ func _display_blood_donation(record):
 	var new_record = _create_record()
 	var label = _create_big_label()
 	var text = "The target donated blood.".format(
-		{"type": record["violation_type"],
-		"place": record["place"]}
+		{}
 	)
 	if record['score'] > 0:
 		label.append_bbcode("[color=green]" + str(record['score']) + "[/color]\n")
@@ -391,7 +390,7 @@ func _display_healthy_food_in_restaurant(record):
 	new_record.add_child(label)
 	_box_container.add_child(new_background)
 
-func _undisplay_healthy_food_in_restaurant(record):
+func _display_unhealthy_food_in_restaurant(record):
 	var new_background = _create_background()
 	var new_record = _create_record()
 	var label = _create_big_label()
