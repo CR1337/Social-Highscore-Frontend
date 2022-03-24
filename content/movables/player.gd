@@ -118,5 +118,5 @@ func restore_state(state):
 		state['looking_direction_x'],
 		state['looking_direction_y']
 	)
-	$AnimatedSprite.animation = 'idle_' + _directions[looking_direction]
+	$AnimatedSprite.animation = _outfit_animation_prefix() + 'idle_' + _directions[looking_direction]
 	_on_street = state['on_street']
