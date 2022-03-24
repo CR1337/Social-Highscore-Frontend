@@ -11,13 +11,13 @@ animations = [ {
 "name": "very_hungry",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "hungry",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "work",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "hungry",
 "speed": 5.0
 } ]
