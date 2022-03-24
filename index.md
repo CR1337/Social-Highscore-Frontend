@@ -74,7 +74,7 @@ _Abbildung 4_
 _Abbildung 5_
 
 ## 4. Setup <a name="setup"></a>
-Um die App selbst auszuprobieren, installieren Sie [diese](https://github.com/CR1337/Social-Highscore-Frontend/raw/main/apk/SocialHighscoreFrontend.apk) Anwendung auf Ihrem Android Device. Eine Anleitung zur Installation von APK-Dateien finden Sie [hier](https://android.imyfone.com/android-issues/how-to-install-apk-file-on-android/).
+Um die App selbst auszuprobieren, installieren Sie [diese](https://github.com/CR1337/Social-Highscore-Frontend/raw/release/SocialHighscoreFrontend.apk) Anwendung auf Ihrem Android Device. Eine Anleitung zur Installation von APK-Dateien finden Sie [hier](https://android.imyfone.com/android-issues/how-to-install-apk-file-on-android/).
 
 
 ## 5. Ausblick <a name="outlook"></a>
