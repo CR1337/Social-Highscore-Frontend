@@ -40,11 +40,13 @@ Im Folgenden eine Auswahl an Screenshots:
 
 Hier eine Demo des Projekts: 
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/watch?v=NLMnKiBMcpc" 
-frameborder="0" 
-allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+<video src="https://user-images.githubusercontent.com/68076323/160671417-238dee33-01ba-458f-beca-cf4a6e1f754e.mp4"> 
+Der Browser kann das Video nicht anzeigen. 
+</video> 
+
+
+
+
 
 
 ## 3. Technischer Hintergrund <a name="tech"></a>
