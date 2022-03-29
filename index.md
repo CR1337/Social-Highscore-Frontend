@@ -39,8 +39,9 @@ Im Folgenden eine Auswahl an Screenshots:
 | ![game_busstop](https://user-images.githubusercontent.com/62649536/159738717-61f3da3b-8221-4db3-9a23-1e949c1e4d42.png)   | ![game_hospital](https://user-images.githubusercontent.com/62649536/159738721-dd47f0ad-9453-481d-96ac-7e8a1cddabfd.png) | ![game_mall](https://user-images.githubusercontent.com/62649536/159738729-4d64cfc4-c2a4-4e41-897b-7264f17a6e76.png)  |
 
 Hier eine Demo des Projekts: 
- 
-[](https://user-images.githubusercontent.com/68076323/160665345-21046599-13fe-4dfa-8ccb-c79d026c0ff0.mp4)
+
+https://user-images.githubusercontent.com/68076323/160667813-1fec03de-2cbe-43cc-b860-99944ae28473.mp4
+
 
 ## 3. Technischer Hintergrund <a name="tech"></a>
 
