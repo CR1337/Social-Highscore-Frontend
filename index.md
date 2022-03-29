@@ -40,9 +40,13 @@ Im Folgenden eine Auswahl an Screenshots:
 
 Hier eine Demo des Projekts: 
 
-<iframe width="1280" height="855" src="https://www.youtube.com/embed/NLMnKiBMcpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<video width=300 height=506 src="https://user-images.githubusercontent.com/68076323/160672381-7ef318ce-079d-4b98-835b-d3787dba908a.mp4"> 
+Der Browser kann das Video nicht anzeigen. 
+</video> 
 
-<iframe width="1280" height="855" src="https://www.youtube.com/embed/NLMnKiBMcpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
 
 ## 3. Technischer Hintergrund <a name="tech"></a>
 
