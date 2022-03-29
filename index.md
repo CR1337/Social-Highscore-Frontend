@@ -40,12 +40,9 @@ Im Folgenden eine Auswahl an Screenshots:
 
 Hier eine Demo des Projekts: 
 
-<video width=300 height=506 src="https://user-images.githubusercontent.com/68076323/160672381-7ef318ce-079d-4b98-835b-d3787dba908a.mp4"> 
+<video controls width=300 height=506 src="https://user-images.githubusercontent.com/68076323/160672381-7ef318ce-079d-4b98-835b-d3787dba908a.mp4"> 
 Der Browser kann das Video nicht anzeigen. 
 </video> 
-
-
-
 
 
 ## 3. Technischer Hintergrund <a name="tech"></a>
